@@ -1,0 +1,187 @@
+---
+description: Convenciones de tema UI y estilos (MUI v9 + Emotion)
+globs:
+  - src/component/**/*.tsx
+  - src/**/theme*.ts
+  - src/hook/**/*Theme*.ts
+  - src/main.tsx
+  - src/App.tsx
+alwaysApply: false
+---
+
+# Estilos (MUI v9 + Emotion)
+
+Reglas para el **tema UI y estilos** con **MUI v9** + **Emotion**. Componentes UI: `@ui`. Contexto: `@base`, `@stack`, `@methodology`.
+
+## Stack UI
+
+- **MUI v9** (`@mui/material`, `@mui/icons-material`)
+- **Emotion** (`@emotion/react`, `@emotion/styled`) — motor de estilos por defecto de MUI
+- **`@prosperia/atoms.*`** cuando exista equivalente corporativo; no reinventar átomos publicados
+
+## Imports
+
+Preferir **barrel imports** (`@mui/material`):
+
+```tsx
+// ✅
+import { Button, Box } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+// ❌ Evitar path imports salvo que sea necesario
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+```
+
+Orden: copyright → React → MUI Material → MUI Icons → `@prosperia/*` → internos.
+
+## Tema global
+
+- Configurar **una vez** en el entry (`main.tsx`) o en un provider dedicado:
+  - `ThemeProvider` + `CssBaseline`
+  - `createTheme()` centralizado (p. ej. `src/model/Theme.ts`)
+- Tokens de marca (`palette`, `typography`, `shape`, `spacing`) viven en el **tema**, no hardcodeados por componente.
+- Extensiones personalizadas del tema → module augmentation en `src/model/Theme.ts` o junto al hook del tema.
+
+```tsx
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: { main: '#32ADC4' },
+  },
+  typography: {
+    fontFamily: ['Plus Jakarta Sans Variable', 'sans-serif'].join(','),
+  },
+});
+```
+
+- Colores: `theme.palette.*`, `theme.palette.primary.main`, etc.
+- Tipografía: variantes de `Typography` (`h1`–`body2`) antes de estilos manuales en `<p>`/`<span>`.
+
+## Estrategia de estilos
+
+| Situación | Enfoque |
+|-----------|---------|
+| Ajuste puntual en un componente | prop **`sx`** |
+| Estilos reutilizados en el mismo archivo | `const STYLES = { ... }` + `sx={STYLES.container}` |
+| Reutilizados entre archivos | `src/styles/{Component}.ts` (ver `@stack`) |
+| Componente grande (estilos inflan `.tsx` > 150 líneas) | extraer a `src/styles/{Component}.ts` |
+| Variantes complejas / styled component | `styled()` desde `@mui/material/styles` |
+| CSS global | solo en entry (`index.css`); evitar en componentes |
+
+### Reglas de `sx`
+
+- Preferir tokens del tema: `'primary.main'`, `'spacing(2)'`, `theme => theme.spacing(2)`.
+- Responsive con breakpoints de MUI:
+
+```tsx
+sx={{
+  p: 2,
+  width: '100%',
+  [theme => theme.breakpoints.up('md')]: { width: 480 },
+}}
+```
+
+- No mezclar `sx` + `style={{}}` en el mismo elemento salvo para animaciones no cubiertas.
+
+### Objetos de estilo (patrón Prosperia)
+
+En organismos/moléculas con muchos estilos, agrupar por sección:
+
+```tsx
+const styles = {
+  container: { display: 'flex', gap: 2 },
+  typography: {
+    title: { variant: 'h6' as const, sx: { fontWeight: 600 } },
+  },
+};
+```
+
+Extraer a `src/styles/{Component}.ts` si hay ~30+ líneas de estilos, reutilización en 2+ componentes, o `.tsx` supera 150 líneas (máx. 200). **No** poner estilos UI en `src/model/`.
+
+## Componentes MUI — cuándo usar cuál
+
+| Necesidad | Componente MUI |
+|-----------|----------------|
+| Contenedor / layout | `Box`, `Stack`, `Grid` |
+| Texto | `Typography` |
+| Acción | `Button`, `IconButton`, `LoadingButton` |
+| Formulario | `TextField`, `Select`, `Checkbox`, `FormControl`, `FormHelperText` |
+| Superficie | `Paper`, `Card` |
+| Feedback | `Alert`, `Snackbar`, `CircularProgress`, `Skeleton` |
+| Overlay | `Dialog`, `Drawer`, `Modal` |
+| Lista / tabla | `List`, `DataGrid` (`@mui/x-data-grid`) |
+| Iconos | `@mui/icons-material/*` con `fontSize="small"` / `medium` |
+
+- **`Grid`**: API unificada de MUI v9 (`size={{ xs: 12, md: 6 }}`).
+- **`slotProps` / `slots`**: preferir sobre props deprecadas cuando esté documentado.
+
+## Layout y espaciado
+
+- Escala de espaciado del tema (`p: 2`, `gap: 1.5`, `m: 3`) — base 8px por defecto.
+- Preferir **`Stack`** sobre `Box` + `display: 'flex'` para apilados simples.
+- Evitar dimensiones mágicas; usar `theme.spacing`, `%`, `min/max`, o tokens del tema.
+
+## Formularios
+
+- Inputs controlados: `TextField` + `value` / `onChange`.
+- Errores: `error`, `helperText`; no solo color rojo manual.
+- Labels accesibles: `label`, `id` + `htmlFor`, o `aria-label`.
+- Botones submit: `type="submit"` dentro de `<form>`; el resto `type="button"`.
+
+## Iconos
+
+```tsx
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+
+<IconButton aria-label="Delete item" onClick={onDelete}>
+  <DeleteOutlineIcon fontSize="small" />
+</IconButton>
+```
+
+- Siempre `aria-label` en `IconButton` sin texto visible.
+
+## Tema claro / oscuro
+
+- Variantes con `createTheme({ palette: { mode: 'light' | 'dark' } })`.
+- Toggle vía Zustand o preferencia del sistema; no duplicar lógica de tema por componente.
+- Colores de estado (`success`, `error`, `warning`, `info`) desde `palette`, no hex sueltos.
+
+## `@prosperia/*` vs MUI directo
+
+1. ¿`@prosperia/atoms.*` cubre el caso? → usarlo.
+2. ¿Átomo del proyecto sin paquete corporativo? → wrapper en `src/component/atoms/` sobre MUI.
+3. ¿Layout/composición? → molécula/organismo con base MUI.
+
+## Accesibilidad (MUI)
+
+- Confiar en la a11y nativa de MUI (`Button`, `TextField`, `Dialog` focus trap).
+- No quitar `outline` sin un reemplazo de foco visible.
+- `Dialog`: siempre título accesible (`DialogTitle` o `aria-labelledby`).
+- Cumplir `eslint-plugin-jsx-a11y`.
+
+## Qué evitar
+
+| Evitar | Usar en su lugar |
+|--------|------------------|
+| `@mui/styles` / `makeStyles` (legacy) | `sx` o `styled()` |
+| Colores hex sueltos repetidos | `theme.palette` |
+| `styled-components` en paralelo a Emotion | `@mui/material/styles` |
+| CSS modules por componente | `sx` / tema |
+| `@material-ui/*` (v4) | `@mui/material` |
+| Overrides globales masivos | `theme.components` dirigidos |
+| Path imports `@mui/material/Button` en todos lados | `import { Button, Box } from '@mui/material'` |
+
+## Checklist al crear UI
+
+1. ¿Hay equivalente en `@prosperia/*`?
+2. ¿Colores/tipografía vienen del tema?
+3. ¿`sx` o styled — extraer si crece?
+4. ¿Layout con `Stack`/`Grid`/`Box`?
+5. ¿Formularios con `helperText` / `error` / labels?
+6. ¿`IconButton` con `aria-label`?
+7. ¿Responsive con breakpoints del tema?

@@ -1,0 +1,131 @@
+---
+description: Stack, estructura de carpetas y convenciones del repositorio (admin-chatbot-front)
+alwaysApply: true
+---
+
+# Stack — admin-chatbot-front
+
+Tecnologías, estructura de carpetas y convenciones de este repositorio. Reglas portables: `@base`. Metodología UI: `@methodology`.
+
+## Tecnologías
+
+| Tecnología | Rol | Regla |
+|------------|-----|-------|
+| React 19 + TypeScript | UI, hooks | `@ui` |
+| MUI v9 + Emotion | Componentes, tema, `sx` | `@styles` |
+| Zustand v5 | Estado global | `@global-state` |
+| Vite 8 | Build / dev server | — |
+| axios | Cliente HTTP | `src/services/` (abajo) |
+| React Router 7 | Navegación | — |
+| `@prosperia/*` | Paquetes corporativos | — |
+| `@fontsource-variable/plus-jakarta-sans` | Tipografía | — |
+
+## Estructura de carpetas
+
+```text
+src/
+├── component/     # UI (Atomic Design — ver @methodology)
+├── hook/          # Hooks React reutilizables
+├── styles/        # Objetos de estilo compartidos (MUI sx — ver @styles)
+├── zustand/       # Stores de estado global
+├── model/         # Lógica de negocio, reglas, tipos de dominio
+├── services/      # Llamadas HTTP (axios)
+└── utils/         # Helpers puros y constantes compartidas
+```
+
+## Convenciones del repositorio
+
+- Hooks reutilizables → `src/hook/`.
+- Stores globales → `src/zustand/` (un store por dominio). Detalles: `@global-state`.
+- `src/model/`: lógica de negocio, reglas, tipos de entidades de dominio. **Sin** estilos UI (`sx`, CSS).
+- `src/styles/`: objetos de estilo solo de presentación. Detalles: `@styles`.
+- `src/services/`: HTTP con axios; sin lógica UI.
+- `src/utils/`: helpers puros (sin dependencias React); constantes compartidas en `constants.ts`.
+- Archivos de componentes: **PascalCase** (p. ej. `Chatbot.tsx`).
+- Archivos de model: **PascalCase** (p. ej. `Flow.tsx`).
+- Un `export default` por archivo; `export` nombrado cuando hagan falta varios exports.
+- Comillas simples, indentación consistente con el archivo editado, `const` por defecto.
+- Orden de imports: React → librerías del stack → `@prosperia/*` → internos → relativos.
+
+## TypeScript
+
+- Interfaces para props y modelos; evitar `any`.
+- Union types para variantes; utility types (Pick, Omit, Partial) cuando simplifiquen las APIs.
+
+### Ubicación de tipos e interfaces (`src/model/`)
+
+| Caso | Ubicación |
+|------|-----------|
+| Reutilizado en **2+ archivos** | `src/model/Common.ts` |
+| Un solo archivo, **≤3** tipos/interfaces | Co-localizado en el archivo consumidor |
+| Un solo archivo, **>3** tipos/interfaces | `src/model/{Name}.ts` — primera letra mayúscula, coincide con el módulo consumidor |
+
+**Nombre del archivo dedicado:** debe coincidir con el módulo consumidor, sin prefijos ni sufijos.
+- `useChatbot.tsx` → `src/model/Chatbot.ts`
+- `Theme.tsx` → `src/model/Theme.ts`
+
+**Checklist antes de crear un tipo:**
+1. ¿Ya está en `Common.ts` u otro archivo de `model/`? → reutilizar.
+2. ¿Se usa en 2+ archivos? → `src/model/Common.ts`.
+3. ¿Un solo archivo y ≤3? → co-localizar.
+4. ¿Un solo archivo y >3? → `src/model/{Name}.ts`.
+
+### Ubicación de estilos UI (`src/styles/`)
+
+| Caso | Ubicación |
+|------|-----------|
+| Un componente, `.tsx` ≤ 150 líneas (máx. 200) | Co-localizado en `.tsx` |
+| Reutilizado en **2+ componentes** | `src/styles/{Name}.ts` |
+| Un componente pero `.tsx` supera el límite | `src/styles/{ComponentName}.ts` |
+
+**Checklist antes de crear un archivo en `styles/`:**
+1. ¿Se usa en 2+ componentes? → `src/styles/{Name}.ts`.
+2. ¿Un solo componente y cabe en `.tsx` ≤ 150 líneas? → mantener en `.tsx`.
+3. ¿`.tsx` supera 150/200 líneas por los estilos? → extraer a `src/styles/{ComponentName}.ts`.
+
+### Qué NO pertenece a `src/styles/`
+
+`src/styles/` es **solo presentación**: `SxProps`, tokens visuales del tema, mapas estáticos de tokens por variante. No es un contenedor genérico de "comportamiento por marca".
+
+| Contenido | Capa correcta | Ejemplo |
+|-----------|---------------|---------|
+| `sx`, `styled()`, selectores MUI | `src/styles/` | `CHANNEL_LIST_PAGE_STYLES` |
+| Tokens visuales por variante | `src/styles/` | `NAVBAR_VARIANT_STYLES` |
+| Config de variantes de componente (no visual) | `src/model/{Name}.ts` | `CHANNEL_LIST_VARIANT_CONFIG` |
+| Rutas, paths de navegación | `src/utils/constants.ts` | `ROUTES` |
+| Fetch, navigate, helpers de validación | `src/hook/`, `src/model/`, `src/utils/` | — |
+
+### Ubicación de constantes (`src/utils/constants.ts`)
+
+| Caso | Ubicación |
+|------|-----------|
+| Reutilizado en **2+ archivos** | `src/utils/constants.ts` |
+| Un solo consumidor | Co-localizado en ese archivo |
+
+- No poner valores de un solo módulo en `constants.ts` hasta que haya reutilización real.
+- Constantes de dominio acotadas a un model pueden vivir en `src/model/{Name}.ts`.
+
+- **Sin** estilos UI en `src/model/` — solo dominio, no presentación.
+- **Fuente canónica:** dominio de negocio y tipos transversales en `src/model/`. Los consumidores importan desde ahí; sin re-exports passthrough redundantes.
+
+```typescript
+// ❌ Passthrough redundante
+import type { ChatbotActionsApi } from 'model/chatbot';
+export type { ChatbotActionsApi } from 'model/chatbot';
+
+// ✅ Solo import interno
+import type { ChatbotActionsApi } from 'model/chatbot';
+```
+
+## React y estado
+
+- Solo componentes funcionales y hooks.
+- **Componentes UI:** `@ui` — cabecera de copyright, props, a11y.
+- **Estado UI local:** `useState` / `useReducer` para estado efímero del componente.
+- **Estado global:** Zustand en `src/zustand/` — `@global-state`. Sin Context API para estado de aplicación.
+- `React.memo`, `useMemo`, `useCallback` solo con coste medible; no memorizar por defecto.
+
+## Accesibilidad (stack)
+
+- Apoyarse en la a11y de MUI cuando aplique (`Button`, `TextField`, `Dialog` focus trap).
+- `eslint-plugin-jsx-a11y` está en el proyecto; no introducir violaciones.

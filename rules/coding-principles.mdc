@@ -1,0 +1,164 @@
+---
+description: Buenas prácticas de codificación: KISS, DRY, SOLID y antipatrones.
+alwaysApply: true
+---
+
+## 1. PRINCIPIOS GENERALES
+
+### KISS (Keep It Simple, Stupid)
+- Prefiere soluciones simples sobre complejas
+- Evita abstracciones innecesarias
+- Si una función necesita un comentario para explicar qué hace, es demasiado compleja
+
+### DRY (Don't Repeat Yourself)
+- No dupliques lógica: extrae a funciones/repositorios/servicios
+- La misma información debe existir en un solo lugar
+- Excepción: la duplicación para claridad en contextos distintos puede ser aceptable
+
+### YAGNI (You Aren't Gonna Need It)
+- No implementes funcionalidades "por si acaso"
+- Solo escribe código que resuelva requisitos actuales
+- La sobreingeniería es peor que la solución directa
+
+### Principio de Mínima Sorpresa
+- El código debe comportarse como cualquier programador razonable esperaría
+- Sigue las convenciones del lenguaje y framework
+- Evita efectos secundarios inesperados
+
+## 2. PRINCIPIOS SOLID (Desglosados)
+
+### S - Single Responsibility Principle
+**Una clase/módulo debe tener una sola razón para cambiar**
+
+Reglas:
+- Una clase debe tener exactamente una responsabilidad
+- Cambios en requisitos específicos afectan solo una clase
+- Señales de violación: clases con múltiples "porque" en su descripción
+
+### O - Open/Closed Principle
+**Abierto para extensión, cerrado para modificación**
+
+Reglas:
+- Debes poder añadir funcionalidad sin modificar código existente
+- Usa herencia, interfaces o estrategias
+- El código base no debería cambiar al añadir nuevas features
+
+### L - Liskov Substitution Principle
+**Las clases derivadas deben poder sustituir a sus clases base**
+
+Reglas:
+- Las subclases no deben cambiar el comportamiento esperado
+- Precondiciones no pueden ser más fuertes
+- Postcondiciones no pueden ser más débiles
+
+### I - Interface Segregation Principle
+**Muchas interfaces específicas son mejores que una general**
+
+Reglas:
+- No forces a las clases a implementar métodos que no usan
+- Divide interfaces grandes en interfaces más pequeñas
+- Los clientes no deben depender de métodos que no usan
+
+### D - Dependency Inversion Principle
+**Depende de abstracciones, no de concreciones**
+
+Reglas:
+- Los módulos de alto nivel no deben depender de los de bajo nivel
+- Ambos deben depender de abstracciones
+- Usa inyección de dependencias
+
+## 3. PRINCIPIOS AVANZADOS DE POO
+
+### Encapsulamiento
+- Oculta los detalles internos de implementación
+- Usa modificadores de acceso (private, protected, public según lenguaje)
+- Expón solo lo necesario a través de interfaces públicas
+- Ejemplo: class Car: self.engine = Engine() en lugar de class Car(Engine)
+
+### Composición sobre Herencia
+- Prefiere composición (has-a) sobre herencia (is-a)
+- La herencia crea acoplamiento fuerte
+
+### Ley de Demeter (Principio de menor conocimiento)
+
+Un método solo puede llamar a:
+
+- Métodos de su propia clase
+- Métodos de objetos que posee
+- Métodos de objetos pasados como parámetros
+- Evita: objeto.x.y.z.hacer_algo()
+
+### Tell, Don't Ask
+
+- Dile al objeto qué hacer, no preguntes su estado
+- Encapsula la lógica de decisión dentro del objeto
+❌: if user.is_active: user.activate()
+✅: user.activate_if_possible()
+
+### Inmutabilidad Preferida
+
+- Prefiere objetos inmutables cuando sea posible
+- Los objetos inmutables son thread-safe y más predecibles
+- Si necesitas cambio, crea una nueva instancia
+
+## 4. BUENAS PRÁCTICAS DE CÓDIGO
+
+### Nombres Significativos
+
+- Variables: sustantivos descriptivos
+- Funciones: verbos o frases verbales
+- Clases: sustantivos o frases nominales
+- Evita: data, temp, x, foo, thing
+
+### Funciones Pequeñas
+
+- Una función debe hacer UNA cosa
+- Máximo 20-30 líneas (idealmente menos de 10)
+- Si necesitas comentar secciones, extrae a función
+
+### Manejo de Errores
+
+- No silencies excepciones
+- Usa excepciones específicas, no genéricas
+- Limpia recursos con try-with-resources o using
+- Valida inputs temprano (fail fast)
+
+### Comentarios Útiles
+
+- Explican el POR QUÉ, no el QUÉ
+- El código debería ser autodocumentado
+- Comentarios de TODOs deben tener un issue asociado
+
+## 5. PRÁCTICAS DE ARQUITECTURA Y DISEÑO
+
+### Separación en Capas
+
+- Presentación → Aplicación → Dominio → Infraestructura
+- Las dependencias van hacia adentro (Clean Architecture)
+- El dominio no conoce detalles externos
+
+### Patrones Recomendados
+
+- Repository: abstrae acceso a datos
+- Service Layer: contiene lógica de negocio
+- Dependency Injection: desacopla componentes
+- Factory: centraliza creación compleja
+
+## 6. REVISIÓN DE CÓDIGO (CODE REVIEW)
+
+### Checklist de Validación
+- ¿Sigue SOLID?
+- ¿Nombres claros y descriptivos?
+- ¿Código duplicado (DRY)?
+- ¿Complejidad innecesaria (KISS)?
+- ¿Manejo adecuado de errores?
+- ¿Pruebas incluidas?
+- ¿Documentación suficiente?
+
+## 7. QUÉ EVITAR (ANTI-PATRONES)
+- God Object: clase que hace todo
+- Spaghetti Code: flujo desordenado sin estructura
+- Copy-Paste Programming: viola DRY
+- Magic Numbers: números sin constante explicativa
+- Side Effects: funciones que modifican estado externo sin aviso
+- Premature Optimization: optimizar sin evidencia

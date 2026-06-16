@@ -1,0 +1,65 @@
+---
+description: Comportamiento del agente y guías portables de colaboración
+alwaysApply: true
+---
+
+# Base
+
+Reglas portables de comportamiento del agente y colaboración en código. El stack, la metodología y las convenciones del proyecto viven en otras reglas cuando existan.
+
+El contenido de las reglas del proyecto está en **español**; los comentarios en código siguen en **inglés**.
+
+## Estilo de respuesta del agente
+
+- Responde en español salvo que el usuario pida otro idioma.
+- Comentarios del código en **inglés**.
+- **Cuándo sí comentar:**
+  - **Explicar el porqué:** razón de una decisión de diseño compleja o de una solución poco habitual.
+  - **Advertencias y riesgos:** consecuencias de modificar una línea o bloque concreto.
+  - **Documentación de APIs públicas:** JSDoc (o equivalente) en funciones, hooks y stores exportados — qué hacen, parámetros, retorno y efectos secundarios relevantes.
+  - **Licencias y derechos de autor:** cabecera legal al inicio del archivo cuando aplique.
+  - **Lógica difícil de leer:** fórmulas, algoritmos o reglas de negocio que no se entienden a simple vista.
+- **Qué evitar:**
+  - **Comentar lo obvio** (p. ej. `// increment counter`).
+  - **Código comentado** en lugar de eliminarlo; el historial vive en git.
+  - **Justificar código confuso** con comentarios; mejor refactorizar hasta que el código se explique solo.
+- Sé directo y conciso; no añadas comentarios salvo en los casos anteriores o petición explícita.
+- Respeta patrones y componentes ya usados en el archivo.
+- Sugiere proactivamente mejoras de rendimiento, seguridad y patrones de diseño según las herramientas del proyecto.
+- Si detectas APIs obsoletas (deprecated) o malas prácticas del stack, adviértelo y ofrece la alternativa moderna según la documentación oficial.
+- Mantén el código limpio, tipado estrictamente y modular.
+- Explica brevemente el "por qué" de la sugerencia basándote en buenas prácticas oficiales de las herramientas del proyecto.
+- Principios generales de código (KISS, DRY, SOLID, etc.): ver `@coding-principles`.
+- En **modo Agente**, si **no** invocas `@superpowers`: antes de implementar, presenta una propuesta con el enfoque recomendado y el porqué; espera tu confirmación. Si la tarea es solo consulta o revisión, responde sin tocar código.
+
+## Cambios en modo Agente
+
+Al implementar cualquier cambio en **modo Agente**:
+
+- **No romper funcionalidad existente:** el comportamiento previo de la feature o pantalla afectada debe seguir funcionando salvo que el cambio lo modifique explícitamente.
+- **Verificar antes de dar por terminado:** ejecutar `npm run build` (o el comando de compilación del proyecto) y corregir errores introducidos o descubiertos por el cambio.
+- **Alcance mínimo:** no mezclar refactors no solicitados; si un error de compilación preexistente bloquea la verificación, corregirlo solo si es necesario para validar el cambio o si es trivial y seguro.
+- **Regresiones visibles:** si el cambio toca UI o flujos interactivos, comprobar manualmente los casos relacionados (p. ej. filtros, loaders, acciones) además de la compilación.
+
+## Reglas relacionadas
+
+Si existen en el proyecto, consúltalas según el contexto:
+
+| Regla | Para qué sirve |
+|-------|----------------|
+| `@coding-principles` | KISS, DRY, SOLID, anti-patrones |
+| `@methodology` | Metodología de arquitectura (p. ej. Atomic Design, FDD) |
+| `@stack` | Tecnologías, estructura de carpetas, convenciones del repo |
+| `@ui` | Convenciones de componentes UI |
+| `@styles` | Estilos y tema |
+| `@global-state` | Estado global de la aplicación |
+
+## Accesibilidad
+
+- HTML semántico; apoyarse en la accesibilidad nativa de la librería UI cuando aplique.
+- No introducir patrones que violen el linter de accesibilidad del proyecto.
+- Objetivo: WCAG 2.1 AA.
+
+## Qué no hacer
+
+- No añadir librerías ni refactorizar fuera del alcance de la tarea.

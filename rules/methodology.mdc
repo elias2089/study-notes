@@ -1,0 +1,52 @@
+---
+description: Metodología de composición UI (Atomic Design)
+globs:
+  - src/component/**/*
+alwaysApply: false
+---
+
+# Metodología
+
+Este proyecto usa **Atomic Design** para la composición de UI. En otro repositorio esta regla puede describir otra metodología (FDD, hexagonal UI, etc.).
+
+Contexto: `@base`. Rutas y herramientas del stack: `@stack`.
+
+## Mapa de capas
+
+| Capa | Ruta | Responsabilidad |
+|------|------|-----------------|
+| Atom | `src/component/atoms/` | Bloque UI indivisible y reutilizable. Solo presentación. |
+| Molecule | `src/component/molecules/` | Composición simple de átomos que trabajan juntos. |
+| Organism | `src/component/organisms/` | Secciones complejas compuestas de moléculas y/o átomos. |
+
+## Atoms
+
+- Un `export default` por archivo. Nombres de archivo en **PascalCase**.
+- **Composición:** no importar otros componentes del proyecto (`@/component/atoms`, `@/component/molecules`, `@/component/organisms`). Se permiten librerías UI de terceros y paquetes corporativos.
+- **Props:** solo datos y callbacks; sin lógica de negocio; sin HTTP.
+- **Estado local:** solo estado UI efímero (hover, focus, animación interna). Debe poder sustituirse por props si el padre necesita control.
+- **Estado global de la app:** no permitido. Si se necesita estado global, separar en átomo presentacional + organismo contenedor (ver `@global-state` vía `@stack`).
+
+### Checklist de átomo
+
+1. ¿Es un bloque UI único e indivisible? → átomo.
+2. ¿Importa otro `@/component/*`? → mover a molécula u organismo.
+3. ¿Lee o escribe estado global de la app? → átomo presentacional + organismo contenedor.
+4. ¿El estado es solo UI interna efímera? → `useState` / `useReducer` permitidos.
+5. ¿Necesita fetch, router o hooks de dominio? → no es un átomo.
+
+## Molecules
+
+- Combinan átomos que operan juntos.
+- Estado local permitido; estado global de la app permitido (ver `@global-state`).
+- Sin llamadas HTTP directas.
+
+## Organisms
+
+- Secciones UI completas: moléculas, átomos, hooks de dominio y estado local del módulo.
+- Estado global de la app y orquestación de dominio permitidos aquí.
+
+## Dirección de composición
+
+```text
+atoms → molecules → organisms
