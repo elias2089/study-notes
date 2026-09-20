@@ -1611,6 +1611,1978 @@ Orden del plan completo (este archivo desarrolla el punto 1):
     // el test solo verifica lo que el usuario ve y hace.
     ```
 
+## 5. APIs y comunicación cliente-servidor
+
+### Básico
+
+- Diseño REST desde el punto de vista del consumidor
+
+  - **Teoría**: REST (*REpresentational State Transfer* — ver Glosario) no
+    es un estándar rígido, es un estilo: modela el dominio como
+    **recursos** (sustantivos, `/products`, `/orders/42`) y usa los verbos
+    HTTP (ya vistos en la sección 1) para las operaciones sobre ellos
+    (**CRUD** — *Create, Read, Update, Delete* — ver Glosario), en vez de
+    codificar la acción en la URL (`/getProduct?id=42`). Desde el lado del
+    consumidor (el frontend) esto importa porque una API bien diseñada es
+    predecible: si sabes que `GET /products/42` trae un producto, ya
+    intuyes que `DELETE /products/42` lo elimina, sin tener que leer
+    documentación para cada endpoint nuevo.
+  - **Ejemplo**:
+    ```
+    GET    /products          -- lista de productos
+    GET    /products/42       -- un producto específico
+    POST   /products          -- crea un producto nuevo
+    PUT    /products/42       -- reemplaza el producto 42 completo
+    PATCH  /products/42       -- actualiza parcialmente el producto 42
+    DELETE /products/42       -- elimina el producto 42
+    ```
+    Un anti-patrón común visto desde el consumidor: una API que expone
+    `POST /products/42/delete` en vez de `DELETE /products/42` — funciona,
+    pero rompe la convención que el resto del ecosistema (herramientas,
+    librerías HTTP, caché) da por sentada.
+
+- Fetch API vs XMLHttpRequest, y por qué `fetch` no rechaza en 4xx/5xx
+
+  - **Teoría**: **XHR** (*XMLHttpRequest* — ver Glosario) es la API
+    original del navegador para peticiones asíncronas, basada en eventos
+    (`onload`, `onerror`) y con una sintaxis verbosa. `fetch` es la API
+    moderna, basada en Promises. La trampa que sorprende a quien recién
+    empieza: la Promise que devuelve `fetch` **solo se rechaza por errores
+    de red** (sin conexión, DNS que falla, CORS bloqueado) — un `404` o un
+    `500` son respuestas HTTP **válidas** desde la perspectiva del
+    protocolo, así que `fetch` las resuelve normalmente. Hay que revisar
+    `response.ok` (o `response.status`) explícitamente para saber si la
+    petición "tuvo éxito" en términos de la aplicación.
+  - **Ejemplo**:
+    ```ts
+    async function obtenerProducto(id: string) {
+      const response = await fetch(`/api/products/${id}`);
+
+      // BUG común: asumir que si no lanzó, todo salió bien
+      // const data = await response.json(); // explotaría feo en un 404
+
+      if (!response.ok) {
+        // response.ok es false para cualquier status fuera del rango 200-299
+        throw new Error(`Error ${response.status}: no se pudo obtener el producto`);
+      }
+      return response.json();
+    }
+    ```
+
+- Serialización JSON y `Content-Type`
+
+  - **Teoría**: HTTP transporta bytes, no objetos de JS — hay que
+    serializar el cuerpo de la petición (normalmente a **JSON**, ya visto
+    en la sección 3) y declarar explícitamente qué formato es con el header
+    `Content-Type`. Si lo omites o lo pones mal, el servidor puede
+    interpretar el body como texto plano en vez de JSON y fallar el
+    parseo, incluso si el JSON en sí es válido.
+  - **Ejemplo**:
+    ```ts
+    fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }, // sin esto, muchos backends ignoran el body
+      body: JSON.stringify({ productId: 42, quantity: 2 }),
+    });
+    ```
+
+- Query params vs path params vs body
+
+  - **Teoría**: cada uno comunica una intención distinta. Los **path
+    params** identifican un recurso específico dentro de la jerarquía de
+    la URL (`/products/42` — el `42` no tiene sentido sin la ruta). Los
+    **query params** filtran, ordenan o paginan una colección, son
+    opcionales por naturaleza (`/products?category=zapatos&sort=price`).
+    El **body** transporta datos estructurados que no caben legibles en
+    una URL (un formulario completo, un array de items) y es obligatorio
+    para `POST`/`PUT`/`PATCH` con payloads no triviales — los navegadores y
+    proxies además imponen límites de longitud a las URLs, así que datos
+    grandes nunca deberían ir en query params.
+  - **Ejemplo**:
+    ```
+    GET /products/42?include=reviews&currency=USD
+    -- "42"                -> path param: identifica el recurso
+    -- "include", "currency" -> query params: modifican la respuesta, opcionales
+
+    POST /orders
+    { "items": [...], "shippingAddress": {...} }
+    -- body: estructura completa, no cabría legible en una URL
+    ```
+
+- Paginación: offset-based vs cursor-based
+
+  - **Teoría**: la paginación por **offset** (`?page=3&limit=20`) es simple
+    de implementar y permite saltar a cualquier página directamente, pero
+    tiene un problema real con datos que cambian: si se inserta un
+    elemento nuevo mientras el usuario pagina, los resultados se
+    "corren" y puede ver un elemento duplicado o saltarse uno. La
+    paginación por **cursor** (`?after=eyJpZCI6NDJ9`) usa un puntero
+    opaco al último elemento visto en vez de una posición numérica, es
+    estable frente a inserciones/eliminaciones concurrentes, y escala
+    mejor en bases de datos grandes (un `OFFSET` alto obliga a la base de
+    datos a recorrer y descartar todas las filas anteriores). El costo:
+    no puedes saltar directamente a "la página 8", solo avanzar
+    secuencialmente.
+  - **Ejemplo**:
+    ```ts
+    // Offset-based: simple, pero inestable si la lista cambia mientras se pagina
+    fetch('/api/products?page=3&limit=20');
+
+    // Cursor-based: estable, típico en feeds infinitos (redes sociales, timelines)
+    fetch('/api/products?after=eyJpZCI6NDJ9&limit=20').then((res) => res.json());
+    // La respuesta trae el siguiente cursor a usar:
+    // { data: [...], nextCursor: "eyJpZCI6NjJ9" }
+    ```
+
+### En profundidad
+
+- GraphQL: qué problema resuelve y su propio problema (N+1)
+
+  - **Teoría**: en REST, cada endpoint devuelve una forma fija de datos —
+    si necesitas menos campos de los que trae, hay **over-fetching**
+    (descargas datos que no usas); si necesitas combinar varios endpoints
+    para armar una pantalla, hay **under-fetching** (múltiples round-trips
+    para una sola vista). GraphQL resuelve ambos con un único endpoint
+    donde el **cliente declara exactamente qué campos necesita** en una
+    **query**, y las escrituras se hacen con **mutations**. El costo que
+    introduce: el problema **N+1** — si resolver una lista de N elementos
+    dispara una consulta a la base de datos por cada uno (en vez de una
+    sola consulta por lote), una query aparentemente simple puede generar
+    cientos de queries a la base de datos en el backend. Mitigarlo
+    (con *DataLoader* y batching) es responsabilidad del backend, pero un
+    frontend senior debe reconocer el síntoma al ver latencias altas en
+    queries anidadas.
+  - **Ejemplo**:
+    ```graphql
+    # El cliente pide exactamente estos campos, ni uno más: sin over-fetching
+    query ObtenerPedido($id: ID!) {
+      order(id: $id) {
+        id
+        total
+        customer {
+          name # sin GraphQL, esto exigiría un segundo request a /customers/:id
+        }
+      }
+    }
+
+    mutation CrearPedido($input: OrderInput!) {
+      createOrder(input: $input) {
+        id
+      }
+    }
+    ```
+    Si `order` trae 50 líneas de pedido y cada una resuelve su producto
+    con una consulta individual a la base de datos, son 51 consultas para
+    una sola query — el clásico N+1 visible en el tiempo de respuesta.
+
+- Diseño de contrato API desde el consumidor: tipos compartidos y generación de tipos
+
+  - **Teoría**: cuando el frontend define manualmente los tipos de la
+    respuesta de una API (`interface Product { ... }`) sin ninguna
+    garantía de que coincidan con lo que el backend realmente envía, el
+    contrato puede desincronizarse en silencio — TypeScript valida contra
+    un tipo que ya no refleja la realidad, dando falsa seguridad. Dos
+    soluciones consolidadas: generar los tipos del cliente automáticamente
+    a partir de un **OpenAPI** (especificación estándar de una API REST)
+    con herramientas como `openapi-typescript`; o usar **tRPC**, que
+    comparte directamente los tipos de TypeScript del backend con el
+    frontend en un monorepo, sin generación de código ni esquema
+    intermedio — el tipo de retorno de un procedimiento del servidor es,
+    literalmente, el mismo tipo que ve el cliente.
+  - **Ejemplo**:
+    ```bash
+    # A partir de un openapi.yaml, genera tipos TS reales para el cliente
+    npx openapi-typescript ./openapi.yaml -o ./src/api-types.ts
+    ```
+    ```ts
+    // Con tRPC: el tipo de "getProduct" viaja del backend al frontend sin generación
+    // server.ts
+    export const appRouter = router({
+      getProduct: publicProcedure
+        .input(z.string())
+        .query(({ input }) => db.products.findById(input)), // el retorno define el tipo
+    });
+    export type AppRouter = typeof appRouter;
+
+    // client.ts
+    const trpc = createTRPCClient<AppRouter>({ url: '/api/trpc' });
+    const product = await trpc.getProduct.query('42'); // tipado end-to-end, sin *.d.ts manual
+    ```
+
+- Manejo robusto de errores de red: reintentos, timeouts y cancelación
+
+  - **Teoría**: una petición de red puede fallar de formas que no son "el
+    servidor rechazó la petición": puede quedarse colgada indefinidamente,
+    fallar por una caída momentánea de red, o volverse innecesaria porque
+    el usuario navegó a otra pantalla. Un frontend senior maneja los tres
+    casos: **timeout** (aborta si tarda demasiado, en vez de dejar al
+    usuario esperando para siempre), **retry con backoff exponencial**
+    (reintenta solo errores transitorios — `5xx`, timeouts, nunca un `4xx`,
+    que es un error del propio cliente que no se arregla repitiendo — con
+    una espera creciente entre intentos para no saturar un servidor ya
+    sobrecargado), y **cancelación** con `AbortController` (si el usuario
+    cambia de búsqueda antes de que responda la anterior, cancelarla evita
+    una condición de carrera donde la respuesta vieja "gana" y sobrescribe
+    la más reciente).
+  - **Ejemplo paso a paso**:
+    ```ts
+    async function fetchConTimeoutYRetry(url: string, intentos = 3): Promise<Response> {
+      for (let intento = 0; intento < intentos; intento++) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // timeout de 5s
+
+        try {
+          const res = await fetch(url, { signal: controller.signal });
+          clearTimeout(timeoutId);
+          if (res.status >= 500 && intento < intentos - 1) {
+            // Error del servidor: reintentable. Backoff exponencial: 500ms, 1000ms, 2000ms...
+            await new Promise((r) => setTimeout(r, 500 * 2 ** intento));
+            continue;
+          }
+          return res; // éxito, o un 4xx que no tiene sentido reintentar
+        } catch (err) {
+          clearTimeout(timeoutId);
+          if (intento === intentos - 1) throw err; // se acabaron los intentos
+        }
+      }
+      throw new Error('No se pudo completar la petición');
+    }
+
+    // Cancelación al escribir en un buscador: cada tecleo cancela la búsqueda anterior
+    let controladorActual: AbortController | null = null;
+    async function buscar(texto: string) {
+      controladorActual?.abort(); // cancela la petición en vuelo, si había una
+      controladorActual = new AbortController();
+      const res = await fetch(`/api/search?q=${texto}`, { signal: controladorActual.signal });
+      return res.json();
+    }
+    ```
+
+## 6. Gestión de estado y datos
+
+### Básico
+
+- Las tres categorías de estado, y por qué mezclarlas es un antipatrón
+
+  - **Teoría**: no todo "estado" es del mismo tipo, y tratarlo como si lo
+    fuera lleva a arquitecturas confusas. **Estado local de componente**
+    (un input abierto/cerrado, el valor de un formulario) solo le importa
+    a ese componente y sus hijos directos. **Estado global de UI**
+    (usuario autenticado, tema claro/oscuro, idioma) es compartido pero no
+    viene de una API, cambia poco. **Estado de servidor** (la lista de
+    productos, el perfil del usuario) es una **copia cacheada** de datos
+    que en realidad viven en el backend, pueden quedar desactualizados, y
+    necesitan revalidarse. El antipatrón común es meter estado de servidor
+    dentro de un store global de UI (Redux, Context) y reimplementar a
+    mano problemas que una librería especializada ya resuelve: caché,
+    invalidación, refetch, estados de carga por petición.
+  - **Ejemplo**:
+    ```tsx
+    // Antipatrón: tratar datos del servidor igual que estado de UI puro
+    const [usuarioActual, setUsuarioActual] = useState(null); // esto sí es UI global: OK
+    const [productos, setProductos] = useState([]); // esto es estado de SERVIDOR
+    useEffect(() => {
+      fetch('/api/products').then((r) => r.json()).then(setProductos);
+      // A mano tocaría reimplementar: caché, revalidación, deduplicación,
+      // reintentos, estado de loading/error... todo lo que una librería
+      // de estado de servidor (ver "en profundidad") ya resuelve.
+    }, []);
+    ```
+
+- Context API y su problema de rendimiento
+
+  - **Teoría**: `Context` resuelve el problema de pasar props a través de
+    muchos niveles intermedios (*prop drilling*), pero tiene una
+    limitación importante: cuando el valor de un `Provider` cambia,
+    **todos** los componentes que consumen ese contexto con `useContext`
+    se re-renderizan, sin importar si a ese componente en particular le
+    importa la parte del valor que cambió. Si el contexto agrupa varios
+    datos no relacionados (usuario + tema + idioma) en un solo objeto,
+    cambiar cualquiera de ellos re-renderiza a **todos** los consumers de
+    los otros dos también.
+  - **Ejemplo**:
+    ```tsx
+    // Un solo contexto con datos que cambian a ritmos distintos: mala señal
+    const AppContext = createContext({ usuario: null, tema: 'claro', notificaciones: [] });
+
+    // Si "notificaciones" cambia cada pocos segundos (polling), CUALQUIER
+    // componente que solo lea "tema" desde este contexto se re-renderiza
+    // igual, aunque el tema nunca haya cambiado.
+    function BotonTema() {
+      const { tema } = useContext(AppContext); // re-renderiza también con cada notificación nueva
+      return <button>{tema}</button>;
+    }
+    ```
+
+- Cuándo Context es suficiente vs cuándo hace falta una librería
+
+  - **Teoría**: Context es la herramienta correcta para estado de UI que
+    cambia poco y tiene pocos consumers (tema, idioma, usuario
+    autenticado). Cuando el estado cambia con frecuencia, tiene muchos
+    consumers distribuidos por el árbol, o necesita selectores (leer solo
+    una parte específica sin re-renderizar por cambios en el resto), una
+    librería dedicada (Zustand, Redux, Jotai — ver "en profundidad")
+    resuelve el problema de raíz con una suscripción granular, en vez de
+    forzar a dividir el contexto en cada vez más providers anidados para
+    esquivar el problema.
+  - **Ejemplo**: la señal de alarma típica es un árbol de providers que
+    crece sin parar solo para separar cada pedazo de estado:
+    ```tsx
+    // Cuando llegas a esto, es señal de que Context ya no escala bien
+    <UsuarioProvider>
+      <TemaProvider>
+        <CarritoProvider>
+          <NotificacionesProvider>
+            <App />
+          </NotificacionesProvider>
+        </CarritoProvider>
+      </TemaProvider>
+    </UsuarioProvider>
+    ```
+
+### En profundidad
+
+- Estado de servidor con caché: el patrón *stale-while-revalidate*
+
+  - **Teoría**: librerías como React Query y **SWR** (*stale-while-revalidate*
+    — ver Glosario, también el nombre de la librería) tratan cada
+    petición como una entrada de caché identificada por una "query key",
+    y resuelven exactamente lo que un `useEffect` + `useState` manual no
+    resuelve bien: **caché** (si dos componentes piden los mismos datos,
+    solo se hace una petición real), **deduplicación** (varias llamadas
+    simultáneas a la misma query key se combinan en una sola petición de
+    red), **invalidación** (marcar datos como obsoletos tras una mutación,
+    para que se vuelvan a pedir), y **refetch en background** (mostrar el
+    dato cacheado — "stale", desactualizado — de inmediato, mientras en
+    segundo plano se revalida contra el servidor y se actualiza la UI si
+    cambió, sin bloquear al usuario con un spinner).
+  - **Ejemplo**:
+    ```tsx
+    import { useQuery, useQueryClient } from '@tanstack/react-query';
+
+    function ListaProductos() {
+      // "products" es la query key: si otro componente usa la misma key,
+      // React Query reutiliza el caché en vez de pedir de nuevo
+      const { data, isLoading } = useQuery({
+        queryKey: ['products'],
+        queryFn: () => fetch('/api/products').then((r) => r.json()),
+        staleTime: 60_000, // considera los datos "frescos" por 1 minuto
+      });
+
+      if (isLoading) return <Spinner />;
+      return <ul>{data.map((p) => <li key={p.id}>{p.name}</li>)}</ul>;
+    }
+
+    function useCrearProducto() {
+      const queryClient = useQueryClient();
+      return async (producto) => {
+        await fetch('/api/products', { method: 'POST', body: JSON.stringify(producto) });
+        queryClient.invalidateQueries({ queryKey: ['products'] }); // fuerza refetch: la lista se actualiza sola
+      };
+    }
+    ```
+    Ninguna de estas cuatro garantías (caché, dedup, invalidación,
+    refetch en background) existe en un `useState` + `useEffect` manual
+    sin reimplementarlas a mano.
+
+- Zustand vs Redux vs Jotai: qué problema resuelve cada uno
+
+  - **Teoría**: los tres son librerías de estado global de **UI** (no de
+    servidor), pero con filosofías distintas. **Redux** centraliza todo
+    el estado en un único store inmutable, con actualizaciones explícitas
+    vía *reducers* y *actions* — muy predecible y con buenas herramientas
+    de debugging (time-travel), a costa de bastante código ceremonial
+    (aunque Redux Toolkit lo redujo mucho). **Zustand** ofrece un store
+    global minimalista sin *boilerplate*, con suscripción granular por
+    selector (un componente solo re-renderiza si el pedazo de estado que
+    lee cambió, sin el problema de Context visto arriba). **Jotai** usa un
+    modelo **atómico**: en vez de un store único, defines "átomos" de
+    estado pequeños e independientes que se combinan bottom-up, útil
+    cuando el estado global es en realidad muchos pedazos no
+    relacionados entre sí.
+  - **Ejemplo**:
+    ```tsx
+    // Zustand: sin boilerplate, con selector para suscripción granular
+    const useCarritoStore = create((set) => ({
+      items: [],
+      agregar: (item) => set((state) => ({ items: [...state.items, item] })),
+    }));
+    function ContadorCarrito() {
+      // Solo re-renderiza si "items.length" cambia, no por cualquier otro cambio del store
+      const cantidad = useCarritoStore((state) => state.items.length);
+      return <span>{cantidad}</span>;
+    }
+
+    // Jotai: átomos independientes, se combinan según se necesiten
+    const temaAtom = atom('claro');
+    const usuarioAtom = atom(null);
+    function BotonTema() {
+      const [tema, setTema] = useAtom(temaAtom); // no le importa nada de "usuarioAtom"
+      return <button onClick={() => setTema(tema === 'claro' ? 'oscuro' : 'claro')}>{tema}</button>;
+    }
+    ```
+
+- Normalización de estado
+
+  - **Teoría**: guardar datos anidados y duplicados en el estado (una
+    lista de pedidos donde cada pedido incluye una copia completa del
+    objeto cliente) genera un problema real: si el nombre del cliente
+    cambia, hay que encontrar y actualizar **todas** las copias
+    duplicadas, y es fácil olvidar una y dejar el estado inconsistente.
+    **Normalizar** el estado significa guardarlo como una base de datos
+    en memoria — entidades planas indexadas por id, y referencias por id
+    en vez de objetos anidados completos — igual que se normalizan tablas
+    relacionales en una base de datos.
+  - **Ejemplo**:
+    ```ts
+    // Sin normalizar: el mismo cliente duplicado en cada pedido
+    const pedidos = [
+      { id: 1, cliente: { id: 9, nombre: 'Ana' }, total: 100 },
+      { id: 2, cliente: { id: 9, nombre: 'Ana' }, total: 50 }, // copia duplicada
+    ];
+
+    // Normalizado: una sola fuente de verdad por entidad, referenciada por id
+    const estado = {
+      pedidos: {
+        byId: { 1: { id: 1, clienteId: 9, total: 100 }, 2: { id: 2, clienteId: 9, total: 50 } },
+        allIds: [1, 2],
+      },
+      clientes: { byId: { 9: { id: 9, nombre: 'Ana' } } },
+    };
+    // Actualizar el nombre de Ana ahora es un solo cambio, en un solo lugar
+    ```
+
+- Actualizaciones optimistas a nivel de librería
+
+  - **Teoría**: la sección 5 de `GOOD-FRONTEND-PRACTICES.md` ya cubrió el
+    concepto de actualización optimista con rollback manual. Las
+    librerías de estado de servidor lo formalizan como una función de
+    primera clase: puedes decirle a la librería "muestra este valor de
+    inmediato" y ella se encarga de revertirlo automáticamente al caché
+    anterior si la mutación falla, sin que el componente tenga que guardar
+    manualmente el valor previo para poder deshacerlo.
+  - **Ejemplo**:
+    ```tsx
+    const mutation = useMutation({
+      mutationFn: (id: string) => fetch(`/api/likes/${id}`, { method: 'POST' }),
+      onMutate: async (id) => {
+        await queryClient.cancelQueries({ queryKey: ['post', id] });
+        const anterior = queryClient.getQueryData(['post', id]); // guarda el snapshot
+        queryClient.setQueryData(['post', id], (post) => ({ ...post, liked: true })); // optimista
+        return { anterior }; // se pasa al contexto de onError
+      },
+      onError: (err, id, context) => {
+        queryClient.setQueryData(['post', id], context.anterior); // rollback automático
+      },
+    });
+    ```
+
+## 7. Estrategias de renderizado y meta-frameworks
+
+### Básico
+
+- CSR, SSR, SSG e ISR: definición y trade-offs
+
+  - **Teoría**: son cuatro formas distintas de responder a la misma
+    pregunta — "¿dónde y cuándo se genera el HTML?" — cada una con un
+    trade-off distinto entre velocidad, SEO, costo de servidor y
+    frescura de datos.
+    - **CSR** (*Client-Side Rendering* — ver Glosario): el servidor manda
+      un HTML casi vacío y todo el renderizado ocurre en el navegador con
+      JS. Tiempo a interactivo más lento (hay que descargar y ejecutar
+      todo el JS antes de ver algo), y SEO pobre si el crawler no ejecuta
+      JS; a cambio, tras la carga inicial las navegaciones son muy
+      rápidas (SPA — *Single Page Application* — ver Glosario) y el costo
+      de servidor es mínimo (solo sirve archivos estáticos).
+    - **SSR** (*Server-Side Rendering* — ver Glosario): el servidor genera
+      el HTML completo en cada petición. Buen SEO y buen primer pintado
+      con contenido real, pero cada visita cuesta cómputo de servidor y
+      depende de la latencia del backend en ese momento.
+    - **SSG** (*Static Site Generation* — ver Glosario): el HTML se genera
+      **una vez, en build time**, y se sirve como archivo estático desde
+      un CDN. El más rápido y barato posible, pero los datos quedan
+      fijos hasta el próximo build — no sirve para contenido que cambia
+      todo el tiempo.
+    - **ISR** (*Incremental Static Regeneration* — ver Glosario): un
+      híbrido — sirve la versión estática cacheada (rápida, como SSG),
+      pero la regenera en segundo plano después de un tiempo configurado,
+      sin necesitar un build completo del sitio para reflejar datos
+      nuevos.
+  - **Ejemplo**: una tienda online real suele combinar las cuatro
+    estrategias según la página:
+    ```
+    /                     -> SSG (la home cambia poco, se puede pre-generar)
+    /productos/[slug]     -> ISR (miles de productos, precios cambian, no todo el tiempo)
+    /checkout             -> CSR (muy interactivo, no necesita SEO, ya autenticado)
+    /buscar?q=zapatillas  -> SSR (resultado depende 100% de la query, cada vez distinto)
+    ```
+
+- Hidratación y por qué puede ser costosa
+
+  - **Teoría**: cuando SSR/SSG entregan HTML ya generado, ese HTML es
+    "inerte" — se ve completo, pero ningún `onClick` funciona todavía
+    porque React aún no tomó control de él. La **hidratación** es el
+    proceso donde React descarga su JS, vuelve a ejecutar el árbol de
+    componentes en el navegador, y "adjunta" los event listeners sobre el
+    HTML que ya existe, verificando que coincida con lo que el servidor
+    generó. El costo real: React tiene que procesar **todo** el árbol de
+    componentes de la página para hidratarlo, aunque el 90% del HTML sea
+    estático y jamás vaya a cambiar (un footer, una barra de navegación) —
+    es trabajo de CPU que compite directamente con la interactividad
+    temprana, sobre todo notorio en dispositivos de gama baja.
+  - **Ejemplo**: el síntoma clásico es una página que **se ve** lista
+    (el HTML ya está pintado) pero no responde al primer clic durante un
+    instante — el usuario hace clic en un botón y no pasa nada porque
+    React todavía está hidratando ese árbol en segundo plano. Esto es
+    justamente lo que las soluciones de "en profundidad" (streaming,
+    islands, resumability) atacan desde ángulos distintos.
+
+### En profundidad
+
+- Streaming SSR y Suspense en el servidor
+
+  - **Teoría**: el SSR tradicional espera a que **todo** el árbol de
+    componentes esté listo (incluyendo datos lentos de una API o base de
+    datos) antes de enviar el primer byte de HTML — si una sola sección
+    de la página es lenta, retrasa a toda la página. El **streaming SSR**
+    (ya visto en `REACT19.md`) envía el HTML por partes: el shell
+    principal sale de inmediato, y cada `<Suspense>` que envuelve una
+    parte lenta se resuelve y se "inyecta" en el HTML ya enviado en
+    cuanto sus datos están listos, sin bloquear el resto de la página.
+  - **Ejemplo**:
+    ```tsx
+    // El header y el layout salen de inmediato; los reviews (lentos de
+    // consultar en la base de datos) se transmiten después, sin bloquear
+    // el resto de la página
+    function ProductPage({ id }: { id: string }) {
+      return (
+        <Layout>
+          <ProductHeader id={id} />
+          <Suspense fallback={<SpinnerReviews />}>
+            <ProductReviews id={id} /> {/* streaming: llega cuando está lista */}
+          </Suspense>
+        </Layout>
+      );
+    }
+    ```
+    El navegador recibe el fallback del spinner de inmediato dentro del
+    HTML inicial, y cuando el servidor termina de resolver `ProductReviews`,
+    envía un fragmento adicional que reemplaza ese spinner in-place, sin
+    esperar a que termine toda la respuesta.
+
+- Islands architecture y resumability como alternativas a hidratar todo
+
+  - **Teoría**: dos frameworks atacan el costo de hidratación desde raíces
+    distintas. **Astro** usa *islands architecture* (arquitectura de
+    islas): por defecto todo se renderiza a HTML estático puro, sin JS, y
+    solo los componentes explícitamente marcados como interactivos
+    ("islas") se hidratan de forma **independiente y aislada** — el resto
+    de la página nunca paga el costo de hidratación porque nunca tuvo
+    JS que ejecutar. **Qwik** va un paso más allá con **resumability**:
+    en vez de re-ejecutar todo el árbol de componentes en el cliente para
+    "reconstruir" dónde estaban los event listeners (lo que hace la
+    hidratación tradicional), serializa ese estado directamente en el
+    HTML, de modo que el navegador puede "resumir" la ejecución exacta
+    donde la dejó el servidor, sin repetir trabajo — el JS de un
+    componente ni siquiera se descarga hasta el momento en que el
+    usuario interactúa con él.
+  - **Ejemplo**:
+    ```astro
+    ---
+    // Astro: el carrusel es una isla, todo lo demás es HTML puro sin JS
+    import Carousel from '../components/Carousel.jsx';
+    ---
+    <Layout>
+      <h1>Bienvenida</h1> {/* HTML estático puro, cero JS enviado */}
+      <Carousel client:visible /> {/* solo esta isla se hidrata, y solo cuando entra al viewport */}
+    </Layout>
+    ```
+
+- Framework para decidir qué estrategia usar según el tipo de página
+
+  - **Teoría**: la pregunta correcta no es "¿cuál es la mejor estrategia?"
+    sino "¿qué necesita **esta** página en particular?". Tres preguntas
+    guía: (1) ¿necesita SEO/compartirse en redes? (descarta CSR puro);
+    (2) ¿los datos cambian por usuario o son iguales para todos? (datos
+    iguales para todos → candidato a SSG/ISR; datos personalizados →
+    SSR/CSR); (3) ¿qué tan frecuente es la interacción una vez cargada?
+    (mucha interacción sostenida → prioriza CSR tras la carga inicial,
+    como un dashboard).
+  - **Ejemplo** (aplicando el framework):
+    ```
+    Página de marketing (landing pública, mismo contenido para todos)
+      -> SEO: sí. Datos: iguales para todos. Interacción: baja.
+      -> SSG
+
+    Dashboard autenticado (métricas del propio usuario, muy interactivo)
+      -> SEO: no (está detrás de login). Datos: por usuario. Interacción: alta.
+      -> CSR (quizás con un SSR inicial ligero solo para el layout)
+
+    E-commerce: catálogo de productos (público, con precios que cambian)
+      -> SEO: sí. Datos: casi iguales para todos, cambian ocasionalmente.
+      -> ISR
+    ```
+
+## 8. Performance web y Core Web Vitals
+
+Esto amplía la sección 1 de `GOOD-FRONTEND-PRACTICES.md` con temas de nivel
+senior que no se cubrieron ahí:
+
+### En profundidad
+
+- Costo relativo de reflow, repaint y composite-only en el rendering pipeline
+
+  - **Teoría**: no todos los cambios visuales cuestan lo mismo, y saber
+    cuál dispara qué es la base de animar sin destruir el rendimiento
+    (conectando con el Critical Rendering Path visto en la sección 1).
+    Cambiar una propiedad que afecta el **layout** (`width`, `top`,
+    agregar/quitar contenido) fuerza un **reflow**: el navegador
+    recalcula la posición y tamaño de ese elemento y potencialmente de
+    todos sus hermanos y descendientes, y luego repinta. Cambiar solo el
+    **color** (`background-color`, `color`) dispara un **repaint** sin
+    reflow: no cambia el layout, pero sí hay que redibujar los píxeles.
+    Cambiar `transform` u `opacity` es **composite-only**: el navegador ya
+    tiene esa capa pintada en la GPU (ver sección 1) y solo tiene que
+    recombinarla, sin recalcular layout ni repintar nada — es la única
+    categoría que puede animarse a 60fps de forma confiable incluso en
+    hardware modesto.
+  - **Ejemplo**:
+    ```css
+    /* Costoso: cambia el layout en cada frame -> reflow + repaint + composite */
+    .modal-mala {
+      transition: top 0.3s, left 0.3s;
+    }
+    .modal-mala.abierto {
+      top: 0;
+      left: 0;
+    }
+
+    /* Barato: composite-only, la GPU solo recombina capas ya pintadas */
+    .modal-buena {
+      transition: transform 0.3s, opacity 0.3s;
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    .modal-buena.abierto {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    ```
+    En Chrome DevTools → Performance, un reflow aparece como una barra
+    morada "Layout"; si tu animación genera esas barras en cada frame,
+    es candidata a reescribirse con `transform`/`opacity`.
+
+- Presupuestos de performance (*performance budgets*) automatizados en CI
+
+  - **Teoría**: sin un límite explícito, el peso del bundle y las métricas
+    de Core Web Vitals tienden a degradarse gradualmente con cada
+    feature nueva — nadie decide "vamos a hacer la app más lenta", pero
+    la suma de pequeños añadidos lo logra igual. Un **performance
+    budget** fija un umbral máximo (peso de JS, LCP, tamaño de una
+    imagen) y falla el pipeline de CI si un cambio lo supera, convirtiendo
+    una regresión de rendimiento en un error de build detectado antes de
+    llegar a producción, en vez de un hallazgo tardío en una auditoría
+    manual ocasional.
+  - **Ejemplo**:
+    ```json
+    // lighthouserc.json — falla el CI si el LCP supera 2.5s o el bundle JS supera 300kb
+    {
+      "ci": {
+        "assert": {
+          "assertions": {
+            "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+            "total-byte-weight": ["error", { "maxNumericValue": 300000 }]
+          }
+        }
+      }
+    }
+    ```
+
+- Diagnosticar long tasks e INP con la Performance API
+
+  - **Teoría**: una **long task** es cualquier trabajo síncrono en el
+    hilo principal que dura más de 50ms — durante ese tiempo el
+    navegador no puede responder a ninguna interacción del usuario
+    (clic, tecla), lo que degrada directamente el INP (ya visto en
+    `GOOD-FRONTEND-PRACTICES.md`). `PerformanceObserver` permite
+    detectar estas long tasks en producción real, en vez de solo en un
+    entorno de laboratorio como Lighthouse, capturando exactamente qué
+    interacción del usuario real se vio afectada y cuánto duró.
+  - **Ejemplo**:
+    ```ts
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        // Cualquier tarea de más de 50ms bloqueó el hilo principal
+        console.warn(`Long task detectada: ${entry.duration}ms`, entry);
+        // En producción, esto se enviaría a RUM (ver Glosario) para
+        // correlacionar long tasks con caídas reales de INP.
+      }
+    });
+    observer.observe({ type: 'longtask', buffered: true });
+    ```
+
+- Virtualización de listas largas (*windowing*)
+
+  - **Teoría**: renderizar 10,000 filas al DOM real es inviable — cada
+    nodo del DOM tiene un costo de memoria y de cálculo de layout, y el
+    navegador se vuelve inmanejable mucho antes de llegar a esa cantidad.
+    La **virtualización** (o *windowing*) renderiza únicamente las filas
+    que son visibles en el viewport en un momento dado (más un pequeño
+    margen), y a medida que el usuario hace scroll, reemplaza y reposiciona
+    ese pequeño conjunto de nodos del DOM en vez de crear nodos nuevos
+    para cada fila — el usuario percibe una lista infinita, pero el DOM
+    real nunca tiene más de unas pocas decenas de nodos a la vez.
+  - **Ejemplo (`react-window`)**:
+    ```tsx
+    import { FixedSizeList } from 'react-window';
+
+    function ListaVirtualizada({ productos }) {
+      return (
+        <FixedSizeList
+          height={600}
+          itemCount={productos.length} // puede ser 10,000+ items
+          itemSize={50}
+          width="100%"
+        >
+          {({ index, style }) => (
+            // Solo se llama esta función para las filas realmente visibles
+            <div style={style}>{productos[index].name}</div>
+          )}
+        </FixedSizeList>
+      );
+    }
+    ```
+
+## 9. Accesibilidad e i18n
+
+Esto amplía la sección 2 de `GOOD-FRONTEND-PRACTICES.md` con temas de nivel
+senior que no se cubrieron ahí:
+
+### En profundidad
+
+- Patrones ARIA avanzados con manejo de teclado completo
+
+  - **Teoría**: un componente ARIA complejo (combobox, listbox, modal) no
+    es solo poner los atributos `role`/`aria-*` correctos — requiere
+    implementar el **manejo de teclado completo** que ese patrón exige
+    según el WAI-ARIA Authoring Practices Guide, o el componente queda
+    inaccesible aunque el HTML "parezca" correcto. Un ejemplo concreto
+    de trampa: un modal con **focus trap** debe atrapar el foco dentro de
+    sí mismo mientras está abierto — al presionar `Tab` en el último
+    elemento enfocable, el foco debe volver al primero (y `Shift+Tab` en
+    el primero debe ir al último), en vez de "escaparse" hacia el
+    contenido de fondo que sigue técnicamente presente en el DOM detrás
+    del overlay.
+  - **Ejemplo paso a paso** (focus trap en un modal):
+    ```tsx
+    function useFocusTrap(modalRef: React.RefObject<HTMLElement>) {
+      useEffect(() => {
+        const modal = modalRef.current;
+        if (!modal) return;
+
+        function handleKeyDown(e: KeyboardEvent) {
+          if (e.key !== 'Tab') return;
+          const focusables = modal.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+          );
+          const primero = focusables[0];
+          const ultimo = focusables[focusables.length - 1];
+
+          if (e.shiftKey && document.activeElement === primero) {
+            e.preventDefault();
+            ultimo.focus(); // Shift+Tab en el primero -> salta al último
+          } else if (!e.shiftKey && document.activeElement === ultimo) {
+            e.preventDefault();
+            primero.focus(); // Tab en el último -> vuelve al primero
+          }
+        }
+
+        modal.addEventListener('keydown', handleKeyDown);
+        return () => modal.removeEventListener('keydown', handleKeyDown);
+      }, [modalRef]);
+    }
+    ```
+    Para un **combobox** (input con sugerencias) o un **listbox**
+    (lista seleccionable), el patrón exige además `ArrowDown`/`ArrowUp`
+    para moverse entre opciones, `Enter` para seleccionar, `Escape` para
+    cerrar, y `aria-activedescendant` para anunciar la opción resaltada
+    sin mover el foco del DOM del input — replicar esto a mano es
+    exactamente el trabajo que hacen librerías como Radix UI o React
+    Aria, y es una razón legítima para no reinventarlas.
+
+- Proceso real de testing con lector de pantalla
+
+  - **Teoría**: axe y Lighthouse (vistos en `GOOD-FRONTEND-PRACTICES.md`)
+    detectan violaciones estructurales, pero no pueden evaluar si la
+    **experiencia real** de navegar con un lector de pantalla tiene
+    sentido — eso exige probarlo tú mismo, con el mouse desconectado.
+  - **Ejemplo paso a paso** (VoiceOver en macOS, flujo típico de QA):
+    1. Actívalo con `Cmd + F5`.
+    2. Navega la página **solo** con `Tab`/`Shift+Tab` (elementos
+       interactivos) y `Ctrl+Option+Flecha` (cualquier contenido,
+       elemento por elemento).
+    3. En cada control, escucha qué anuncia VoiceOver: ¿dice el rol
+       ("botón", "enlace")? ¿dice el estado (`"seleccionado"`,
+       `"expandido"`)? ¿el nombre accesible tiene sentido fuera de
+       contexto visual (un botón que solo dice "Editar" sin decir
+       *qué* se edita es ambiguo para quien no ve la fila completa)?
+    4. Dispara una validación de formulario y confirma que se **anuncia
+       automáticamente** el error (esto prueba en la práctica el
+       `aria-live` visto en `GOOD-FRONTEND-PRACTICES.md`) sin que el
+       usuario tenga que navegar manualmente hasta encontrarlo.
+    5. Abre y cierra un modal, y confirma que el foco entra al abrir y
+       vuelve al botón que lo disparó al cerrar.
+
+    El mismo flujo aplica con NVDA (*NonVisual Desktop Access* — ver
+    Glosario) en Windows, el lector de pantalla gratuito más usado fuera
+    del ecosistema Apple.
+
+- Soporte RTL y propiedades lógicas de CSS
+
+  - **Teoría**: idiomas como árabe o hebreo se leen de derecha a
+    izquierda (**RTL**, *Right-To-Left* — ver Glosario), al contrario del
+    español o inglés (**LTR**, *Left-To-Right* — ver Glosario). Usar
+    propiedades físicas de CSS (`margin-left`, `text-align: left`)
+    hardcodea una dirección de lectura específica: en un layout RTL,
+    "izquierda" ya no significa "donde empieza el texto", produce un
+    diseño invertido visualmente pero no semánticamente. Las
+    **propiedades lógicas** (`margin-inline-start`, `text-align: start`)
+    se definen en relación al flujo de lectura, no a un lado físico de
+    la pantalla, y el navegador las traduce automáticamente a
+    izquierda/derecha real según el `dir` del documento.
+  - **Ejemplo**:
+    ```css
+    /* Malo: en RTL, esto sigue empujando a la izquierda -- lado incorrecto */
+    .card {
+      margin-left: 16px;
+      text-align: left;
+    }
+
+    /* Bueno: se adapta automáticamente según dir="ltr" o dir="rtl" */
+    .card {
+      margin-inline-start: 16px;
+      text-align: start;
+    }
+    ```
+    ```html
+    <html lang="ar" dir="rtl">
+      <!-- margin-inline-start ahora empuja hacia la derecha automáticamente -->
+    </html>
+    ```
+
+- Pluralización compleja con ICU MessageFormat
+
+  - **Teoría**: la pluralización de dos formas (singular/plural) que
+    alcanza para español o inglés no alcanza para todos los idiomas —
+    ruso y polaco, por ejemplo, tienen hasta **cuatro formas plurales**
+    distintas según reglas gramaticales sobre el número exacto (una
+    forma para 1, otra para 2-4, otra para 5-20, etc.). **ICU**
+    (*International Components for Unicode* — ver Glosario)
+    **MessageFormat** es el estándar que las librerías de i18n
+    (`react-intl`, `next-intl`) usan para declarar todas las formas
+    plurales necesarias por idioma, delegando en la librería la regla de
+    cuál aplica para cada número.
+  - **Ejemplo**:
+    ```json
+    // en.json -- dos formas alcanzan para inglés
+    { "unread": "{count, plural, one {# unread message} other {# unread messages}}" }
+
+    // ru.json -- el ruso necesita más formas para ser gramaticalmente correcto
+    {
+      "unread": "{count, plural, one {# непрочитанное сообщение} few {# непрочитанных сообщения} many {# непрочитанных сообщений} other {# непрочитанных сообщений}}"
+    }
+    ```
+    ```tsx
+    <FormattedMessage id="unread" values={{ count: 3 }} />
+    // La librería elige automáticamente la forma plural correcta
+    // según el idioma activo y el valor de "count" -- el componente
+    // nunca necesita saber cuántas formas tiene cada idioma.
+    ```
+
+## 10. Seguridad en frontend
+
+Esto amplía la sección 4 de `GOOD-FRONTEND-PRACTICES.md` con temas de nivel
+senior que no se cubrieron ahí:
+
+### En profundidad
+
+- Mapeo del OWASP Top 10 a riesgos específicos de frontend
+
+  - **Teoría**: **OWASP** (*Open Web Application Security Project* — ver
+    Glosario) publica el Top 10 de riesgos de seguridad web más comunes;
+    no todos aplican igual al frontend, pero varios sí tienen una cara
+    específica del lado del cliente que vale la pena reconocer por
+    nombre en una entrevista: *Broken Access Control* (el frontend oculta
+    un botón, pero si el backend no revalida el permiso, el usuario
+    puede llamar el endpoint directamente); *Injection* (XSS, ya visto en
+    `GOOD-FRONTEND-PRACTICES.md`, es la variante de inyección más
+    relevante en frontend); *Identification and Authentication Failures*
+    (tokens mal gestionados, sesiones que no expiran); *Security
+    Misconfiguration* (CSP ausente o demasiado permisiva, CORS mal
+    configurado); *Vulnerable and Outdated Components* (dependencias con
+    CVEs conocidos, ya visto también en la sección de seguridad
+    existente).
+  - **Ejemplo**: el caso de *Broken Access Control* es el que más
+    sorprende a quien viene de pensar la seguridad solo desde la UI:
+    ```tsx
+    // Ocultar el botón NO es seguridad, es solo UX -- el backend es quien
+    // debe rechazar la petición si el usuario no tiene el rol correcto
+    {usuario.rol === 'admin' && <button onClick={eliminarUsuario}>Eliminar</button>}
+    ```
+    Si el endpoint `DELETE /users/:id` no revalida el rol en el servidor,
+    cualquier usuario autenticado puede llamarlo directamente desde la
+    consola del navegador o Postman, sin pasar nunca por ese botón.
+
+- Flujo OAuth 2.0 + OIDC con PKCE, paso a paso
+
+  - **Teoría**: **OAuth 2.0** es un protocolo de **autorización**
+    (delega acceso a un recurso sin compartir la contraseña); **OIDC**
+    (*OpenID Connect* — ver Glosario) se construye encima para añadir
+    **autenticación** (identificar quién es el usuario, no solo qué
+    puede hacer). Un backend tradicional puede guardar un *client
+    secret* de forma segura para completar el intercambio de código por
+    token, pero una SPA no tiene dónde esconder un secreto (todo su
+    código es visible en el navegador) — es un *cliente público*. **PKCE**
+    (*Proof Key for Code Exchange* — ver Glosario) resuelve esto sin
+    necesitar un secreto fijo: la propia app genera un secreto
+    **temporal y de un solo uso** en cada login, así que aunque alguien
+    intercepte el código de autorización a mitad de camino, no puede
+    canjearlo por un token sin ese secreto efímero que solo la app
+    original generó.
+  - **Ejemplo paso a paso**:
+    1. La SPA genera un `code_verifier` aleatorio y su hash SHA-256, el
+       `code_challenge`.
+    2. Redirige al usuario al proveedor de identidad con el
+       `code_challenge` (no el verifier — ese nunca sale del navegador
+       todavía):
+       ```
+       GET https://auth.miapp.com/authorize
+         ?client_id=abc123&response_type=code
+         &code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
+         &code_challenge_method=S256
+       ```
+    3. El usuario se autentica en el proveedor y es redirigido de vuelta
+       con un `code` de un solo uso.
+    4. La SPA canjea ese `code` **junto con el `code_verifier` original**
+       (guardado localmente desde el paso 1) por un token:
+       ```ts
+       fetch('https://auth.miapp.com/token', {
+         method: 'POST',
+         body: new URLSearchParams({ grant_type: 'authorization_code', code, code_verifier }),
+       });
+       ```
+    5. El servidor de autorización recalcula el hash de `code_verifier` y
+       lo compara contra el `code_challenge` del paso 2 — si alguien
+       robó el `code` en el paso 3 pero no tiene el `code_verifier`
+       original (que nunca viajó por la URL), el intercambio falla.
+
+- Access token vs refresh token: dónde debe vivir cada uno
+
+  - **Teoría**: el **access token** (normalmente un **JWT**, *JSON Web
+    Token*) es de corta duración (minutos) y se envía en cada petición
+    a la API — si se filtra, la ventana de daño es corta. El **refresh
+    token** vive mucho más tiempo y sirve solo para pedir un access token
+    nuevo sin obligar al usuario a volver a iniciar sesión — si este se
+    filtra, el daño es mucho mayor (acceso indefinido). Por eso el
+    refresh token debe protegerse con el máximo cuidado: una cookie
+    `HttpOnly` (inaccesible desde JS, ya visto en la sección de
+    seguridad existente) es preferible a guardarlo en memoria o
+    `localStorage`, donde cualquier XSS podría robarlo directamente.
+  - **Ejemplo**:
+    ```
+    # El backend setea el refresh token como cookie HttpOnly -- el JS del
+    # frontend nunca lo toca ni lo ve
+    Set-Cookie: refresh_token=eyJ...; HttpOnly; Secure; SameSite=Strict
+    ```
+    ```ts
+    // El access token sí lo maneja el frontend, pero solo en memoria
+    // (nunca en localStorage) y con vida corta
+    let accessToken: string | null = null;
+
+    async function renovarAccessToken() {
+      // La cookie HttpOnly viaja sola, automáticamente, con credentials: 'include'
+      const res = await fetch('/auth/refresh', { credentials: 'include' });
+      const { accessToken: nuevo } = await res.json();
+      accessToken = nuevo; // solo vive en memoria del proceso de JS
+    }
+    ```
+
+- Content Security Policy avanzada con nonces y `strict-dynamic`
+
+  - **Teoría**: la CSP básica ya vista en `GOOD-FRONTEND-PRACTICES.md`
+    (`script-src 'self'`) es rígida y difícil de mantener con scripts
+    inyectados dinámicamente (analytics, A/B testing) — cada nuevo
+    dominio de terceros obliga a editar la política. Una **nonce**
+    (número usado una sola vez) generada por el servidor en cada
+    petición, y puesta tanto en el header CSP como en el atributo
+    `nonce` del `<script>`, autoriza scripts específicos sin necesitar
+    listar dominios. `'strict-dynamic'` extiende esa confianza:
+    un script ya autorizado por nonce puede a su vez cargar otros
+    scripts dinámicamente (`document.createElement('script')`), sin que
+    cada uno necesite su propia nonce — resolviendo el caso común de
+    librerías de analytics que cargan sub-scripts propios.
+  - **Ejemplo**:
+    ```
+    Content-Security-Policy: script-src 'self' 'nonce-r4nd0mAB12' 'strict-dynamic'
+    ```
+    ```html
+    <!-- Solo este script (con la nonce exacta del header) se ejecuta -->
+    <script nonce="r4nd0mAB12" src="/analytics.js"></script>
+
+    <!-- Un <script> inyectado sin esa nonce es bloqueado por el navegador,
+         aunque un atacante lograra inyectarlo vía XSS -->
+    <script src="https://evil.com/malware.js"></script>
+    ```
+    La nonce debe generarse **de nuevo en cada respuesta del servidor**
+    (nunca reutilizarse): si fuera fija, un atacante que la descubra una
+    vez podría reutilizarla para autorizar su propio script inyectado.
+
+## 11. Testing y calidad
+
+### Básico
+
+- La pirámide de testing: unit, integration y e2e
+
+  - **Teoría**: la pirámide describe el trade-off entre velocidad y
+    confianza según el nivel de test. Los **tests unitarios** (base ancha
+    de la pirámide) prueban una función o componente aislado, son
+    rapidísimos de ejecutar (miles en segundos) y muy baratos de
+    mantener, pero dan confianza limitada porque no prueban cómo
+    interactúan las piezas entre sí. Los **tests de integración**
+    prueban varios módulos trabajando juntos (un formulario completo con
+    su validación y su llamada a la API mockeada), dan más confianza real
+    a un costo intermedio. Los **tests e2e** (*end-to-end* — ver
+    Glosario, cúspide de la pirámide) prueban la app completa en un
+    navegador real, contra un backend real o casi real — dan la máxima
+    confianza (es lo más parecido a cómo lo usa una persona real), pero
+    son lentos, más frágiles y caros de mantener. La regla práctica:
+    muchos unitarios, una cantidad moderada de integración, pocos e2e
+    (solo los flujos críticos del negocio: login, checkout).
+  - **Ejemplo**: para un flujo de checkout, una distribución razonable
+    sería: decenas de tests unitarios para `calcularTotal()`,
+    `aplicarDescuento()`, `validarTarjeta()`; unos pocos tests de
+    integración para "el formulario de pago muestra el error correcto si
+    la API rechaza la tarjeta"; y un único test e2e que recorra el
+    checkout completo de principio a fin, porque ese flujo específico es
+    donde un fallo cuesta dinero directamente.
+
+- Cuándo mockear una dependencia y cuándo no
+
+  - **Teoría**: un *mock* reemplaza una dependencia real (una API, una
+    fecha, un valor aleatorio) por una versión controlada y predecible.
+    Tiene sentido mockear lo que es lento, no determinista, o está fuera
+    de tu control (una API externa real, `Date.now()`, `Math.random()`).
+    Mockear **de más** —por ejemplo, simular la respuesta exacta de un
+    módulo interno propio en vez de dejar que corra— da una falsa
+    sensación de cobertura: el test pasa siempre, pase lo que pase con
+    la lógica real, porque nunca la ejecuta de verdad.
+  - **Ejemplo**:
+    ```ts
+    // Correcto mockear: la API externa es lenta, no determinista, fuera de tu control
+    vi.mock('./api/pagos', () => ({
+      procesarPago: vi.fn().mockResolvedValue({ status: 'aprobado' }),
+    }));
+
+    // Mockear de más: esto reemplaza tu propia lógica de negocio,
+    // el test ya no prueba nada real de calcularDescuento()
+    vi.mock('./calcularDescuento', () => ({
+      calcularDescuento: vi.fn().mockReturnValue(10),
+    }));
+    ```
+
+- Qué hace a un buen test
+
+  - **Teoría**: un buen test es **aislado** (no depende del orden de
+    ejecución ni del estado que dejó otro test), **determinista** (el
+    mismo código siempre da el mismo resultado — nada de `setTimeout`
+    reales ni dependencias de la hora del sistema sin mockear) y
+    **legible como documentación** (alguien que nunca vio el código
+    debería entender qué comportamiento se espera solo leyendo el
+    nombre del test y sus aserciones).
+  - **Ejemplo**:
+    ```ts
+    // Mal nombre, no dice qué se espera, no es legible como documentación
+    test('test1', () => {
+      expect(calcularDescuento(100, true)).toBe(20);
+    });
+
+    // Buen nombre: documenta la regla de negocio que protege
+    test('aplica 20% de descuento a usuarios premium', () => {
+      expect(calcularDescuento(100, true)).toBe(20);
+    });
+    ```
+
+### En profundidad
+
+- TDD aplicado a lógica de UI: el ciclo red-green-refactor
+
+  - **Teoría**: **TDD** (*Test-Driven Development* — ver Glosario) invierte
+    el orden habitual: se escribe primero el test (que falla, porque el
+    código todavía no existe — **red**), luego el mínimo código necesario
+    para que pase (**green**), y recién después se mejora ese código sin
+    cambiar su comportamiento observable (**refactor**), repitiendo el
+    ciclo para cada nuevo requisito. Aplicado a lógica de UI, funciona
+    mejor sobre reglas de negocio concretas (validaciones, cálculos,
+    transformaciones de estado) que sobre JSX puramente visual.
+  - **Ejemplo paso a paso** (validación de un campo de descuento):
+    ```ts
+    // 1. RED -- se escribe el test antes de que exista la función
+    test('rechaza un descuento mayor al 50%', () => {
+      expect(validarDescuento(60)).toBe(false);
+    });
+    // Falla: "validarDescuento is not defined"
+
+    // 2. GREEN -- código mínimo para que pase, sin preocuparse por elegancia
+    function validarDescuento(porcentaje: number) {
+      if (porcentaje > 50) return false;
+      return true;
+    }
+
+    // 3. REFACTOR -- se limpia sin cambiar el comportamiento observable
+    function validarDescuento(porcentaje: number): boolean {
+      const LIMITE_MAXIMO = 50;
+      return porcentaje <= LIMITE_MAXIMO;
+    }
+    // El test del paso 1 sigue pasando exactamente igual tras el refactor
+    ```
+
+- Testing de custom hooks con `renderHook`
+
+  - **Teoría**: un custom hook no es un componente — no se puede
+    "renderizar" directamente en un test con `render()` porque no
+    devuelve JSX. `renderHook` de Testing Library crea un componente
+    envoltorio invisible solo para poder ejecutar el hook en un contexto
+    de React real (con su propio ciclo de renders) y así probar su
+    lógica de estado sin acoplar el test a ningún componente visual
+    específico que lo use.
+  - **Ejemplo**:
+    ```tsx
+    import { renderHook, act } from '@testing-library/react';
+
+    function useContador() {
+      const [valor, setValor] = useState(0);
+      const incrementar = () => setValor((v) => v + 1);
+      return { valor, incrementar };
+    }
+
+    test('incrementa el valor al llamar incrementar', () => {
+      const { result } = renderHook(() => useContador());
+
+      expect(result.current.valor).toBe(0);
+
+      act(() => {
+        result.current.incrementar(); // dispara un update de estado real
+      });
+
+      expect(result.current.valor).toBe(1);
+    });
+    ```
+
+- E2E con Playwright/Cypress: Page Object y causas de *flakiness*
+
+  - **Teoría**: el patrón **Page Object** encapsula los selectores y
+    acciones de una página en una clase reutilizable, en vez de
+    repetir selectores CSS en cada test — si el selector de un botón
+    cambia, se actualiza en un solo lugar. Los tests e2e son propensos a
+    ser *flaky* (fallan de forma intermitente sin que el código haya
+    cambiado); la causa más común es **esperar por tiempo fijo**
+    (`sleep(1000)`) en vez de **esperar por estado** (esperar a que un
+    elemento específico aparezca o a que una petición de red termine) —
+    un `sleep` fijo a veces alcanza y a veces no, dependiendo de la
+    carga de la máquina que ejecuta el test.
+  - **Ejemplo**:
+    ```ts
+    // Page Object: encapsula los selectores de la página de login
+    class LoginPage {
+      constructor(private page: Page) {}
+      async login(email: string, password: string) {
+        await this.page.fill('[name=email]', email);
+        await this.page.fill('[name=password]', password);
+        await this.page.click('button[type=submit]');
+      }
+    }
+
+    test('login exitoso redirige al dashboard', async ({ page }) => {
+      const login = new LoginPage(page);
+      await login.login('ana@mail.com', 'clave123');
+
+      // Malo (flaky): await page.waitForTimeout(2000);
+      // Bueno: espera por el estado real, sin importar cuánto tarde exactamente
+      await page.waitForURL('/dashboard');
+      await expect(page.locator('h1')).toHaveText('Bienvenida');
+    });
+    ```
+
+- Testing de regresión visual
+
+  - **Teoría**: hay bugs que ningún test funcional detecta porque el
+    comportamiento es correcto pero la **apariencia** se rompió (un
+    padding que desapareció, un ícono que se superpone con texto). El
+    testing de regresión visual toma una captura de pantalla de un
+    componente o página y la compara pixel a pixel contra una versión
+    "aprobada" anterior, marcando el test como fallido si hay una
+    diferencia visual significativa. Vale la pena en componentes de
+    diseño crítico (un design system compartido, ver sección 12) donde un
+    cambio visual accidental afecta a decenas de pantallas a la vez; no
+    se justifica para cada componente trivial del proyecto por el costo
+    de mantener y revisar capturas de referencia.
+  - **Ejemplo** (conceptual, con una herramienta como Chromatic o
+    Percy):
+    ```ts
+    test('el botón primario no cambia visualmente', async ({ page }) => {
+      await page.goto('/storybook/button--primary');
+      await expect(page).toHaveScreenshot('button-primary.png'); // compara contra el snapshot aprobado
+    });
+    ```
+    Si alguien cambia sin querer el `border-radius` del design system,
+    este test falla mostrando el diff visual exacto, aunque ningún test
+    funcional se vea afectado.
+
+## 12. Arquitectura frontend a escala
+
+### Básico
+
+- Qué es un design system y qué problema organizacional resuelve
+
+  - **Teoría**: un design system no es solo "una librería de
+    componentes bonitos" — es la solución a un problema **organizacional**:
+    cuando varios equipos construyen features en paralelo, sin un
+    lenguaje visual y de componentes compartido cada equipo reinventa su
+    propio botón, su propio modal, su propia validación de formulario,
+    con pequeñas inconsistencias que se acumulan (un botón "primario" se
+    ve distinto en cada pantalla) y con esfuerzo duplicado. Un design
+    system centraliza componentes, tokens de diseño (colores, espaciados,
+    tipografía) y sus reglas de uso en un solo lugar versionado, dando
+    **consistencia** visual y **velocidad** (un equipo nuevo no
+    reconstruye un botón desde cero, lo importa).
+  - **Ejemplo**: sin design system, tres equipos distintos terminan con
+    tres implementaciones del "mismo" botón:
+    ```tsx
+    // Equipo A
+    <button className="btn-blue-rounded">Guardar</button>
+    // Equipo B
+    <button style={{ background: '#1a73e8', borderRadius: 8 }}>Guardar</button>
+    // Equipo C
+    <Button variant="primary">Guardar</Button> // el único que usa el design system
+    ```
+    Los primeros dos tienen colores y radios ligeramente distintos, y si
+    la marca cambia de color primario, hay que encontrar y actualizar
+    cada implementación manual una por una — con un design system, se
+    actualiza un token en un solo lugar.
+
+- Estructura de carpetas feature-based vs type-based
+
+  - **Teoría**: una estructura **type-based** agrupa archivos por su tipo
+    técnico (`components/`, `hooks/`, `services/`) sin importar a qué
+    parte del negocio pertenecen. Una estructura **feature-based** agrupa
+    todo lo relacionado con una funcionalidad de negocio en una misma
+    carpeta (componentes, hooks, tipos, tests de esa feature juntos).
+    Feature-based escala mejor en proyectos grandes porque el "radio de
+    cambio" de una tarea típica (modificar el checkout) queda contenido
+    en una sola carpeta, en vez de obligar a saltar entre `components/`,
+    `hooks/` y `services/` buscando las piezas dispersas de esa misma
+    feature — y facilita borrar una feature completa sin dejar archivos
+    huérfanos regados por el proyecto.
+  - **Ejemplo**:
+    ```
+    # Type-based: todo el checkout está disperso en 3 carpetas distintas
+    src/
+      components/CheckoutForm.tsx
+      hooks/useCheckout.ts
+      services/checkoutApi.ts
+
+    # Feature-based: todo el checkout vive junto, es un módulo autocontenido
+    src/
+      features/checkout/
+        CheckoutForm.tsx
+        useCheckout.ts
+        checkoutApi.ts
+        checkout.test.ts
+    ```
+
+### En profundidad
+
+- Monorepos con Turborepo/Nx: qué problemas resuelven
+
+  - **Teoría**: un monorepo (varios paquetes/apps en un solo repositorio
+    Git) sin herramienta especializada sufre dos problemas concretos a
+    medida que crece: **builds lentos** (reconstruir todo el repositorio
+    en cada cambio, aunque solo se haya tocado un paquete pequeño) y
+    **grafo de dependencias implícito** (no está claro qué paquete
+    interno depende de cuál, hasta que algo se rompe en cadena).
+    Turborepo y Nx resuelven ambos: cachean el resultado de builds/tests
+    por paquete (si un paquete no cambió, reutilizan el resultado
+    anterior en vez de reconstruirlo) y modelan explícitamente el grafo
+    de dependencias entre paquetes internos, permitiendo ejecutar tareas
+    solo sobre lo que realmente cambió y sus dependientes.
+  - **Ejemplo**:
+    ```json
+    // turbo.json -- declara que "build" depende del "build" de sus paquetes internos,
+    // y que su resultado puede cachearse
+    {
+      "tasks": {
+        "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] }
+      }
+    }
+    ```
+    ```bash
+    turbo run build
+    # Si "ui-kit" no cambió desde el último build, Turborepo reusa su
+    # resultado cacheado en vez de reconstruirlo -- solo reconstruye
+    # "checkout-app", que sí cambió, y lo que depende de él.
+    ```
+
+- Micro-frontends y module federation: cuándo (no) usarlos
+
+  - **Teoría**: los micro-frontends dividen una aplicación grande en
+    fragmentos desplegables **de forma independiente**, cada uno
+    mantenido por un equipo distinto. **Module federation** (de
+    Webpack/Rio) es una de las técnicas para lograrlo: permite que una
+    app cargue en runtime código JS compilado y desplegado por otra app
+    completamente distinta, como si fuera un import normal. El problema
+    organizacional real que resuelven es de **escala de equipos**:
+    cuando varios equipos grandes necesitan desplegar sus partes de la
+    app de forma independiente, sin coordinar un único release conjunto
+    que se vuelve un cuello de botella. La advertencia importante: si no
+    tienes ese problema real (equipos grandes, despliegues
+    independientes necesarios), adoptar micro-frontends solo añade
+    complejidad de infraestructura, duplicación de dependencias entre
+    fragmentos, y una experiencia de desarrollo más difícil de depurar —
+    es sobreingeniería (ver YAGNI) resolver un problema de coordinación
+    de equipos que en realidad no existe.
+  - **Ejemplo**:
+    ```js
+    // webpack.config.js del "host" (la app contenedora)
+    new ModuleFederationPlugin({
+      remotes: {
+        checkout: 'checkout@https://checkout.miapp.com/remoteEntry.js', // otro equipo, otro deploy
+      },
+    });
+
+    // Uso dentro del host: se importa como si fuera código local,
+    // pero en runtime viene de un despliegue completamente separado
+    const CheckoutApp = React.lazy(() => import('checkout/CheckoutApp'));
+    ```
+
+- Versionado semántico de librerías internas compartidas
+
+  - **Teoría**: cuando un design system o una librería de utilidades se
+    comparte entre varios equipos/apps dentro de la organización,
+    necesita las mismas garantías que cualquier paquete público de npm:
+    **SemVer** (versionado semántico, `MAJOR.MINOR.PATCH`) comunica el
+    impacto de cada cambio — `PATCH` para bugfixes sin romper nada,
+    `MINOR` para funcionalidad nueva compatible hacia atrás, `MAJOR` para
+    cambios que rompen el contrato existente (renombrar una prop, quitar
+    un componente). Sin esta disciplina, un equipo que actualiza el
+    design system no puede saber, sin leer el código fuente, si esa
+    actualización es segura o va a romper su app.
+  - **Ejemplo**:
+    ```json
+    // Antes: Button acepta `variant="primary" | "secondary"`
+    // Después: se renombra a `type="primary" | "secondary"`
+    // Esto ROMPE a cualquier consumidor que use `variant` -> requiere un MAJOR bump
+    { "name": "@miorg/design-system", "version": "3.0.0" }
+    ```
+    ```tsx
+    // Un CHANGELOG claro, ligado al bump de versión, evita que otros
+    // equipos actualicen a ciegas y descubran el breaking change en producción
+    // v3.0.0 -- BREAKING: Button.variant renombrado a Button.type
+    ```
+
+## 13. Build tools y tooling moderno
+
+### Básico
+
+- Qué hace un bundler, en tres pasos
+
+  - **Teoría**: un bundler resuelve tres problemas distintos, aunque a
+    menudo se piensen como uno solo. (1) **Bundling**: combina decenas o
+    cientos de archivos JS/CSS separados (con sus `import`s entre sí) en
+    un número pequeño de archivos finales, porque servir cientos de
+    archivos sueltos por HTTP es ineficiente. (2) **Transpiling**:
+    convierte sintaxis moderna de JS/TS/JSX que el navegador del usuario
+    quizás no entiende todavía, a una versión compatible (esto lo hacen
+    Babel o esbuild por debajo). (3) **Minification**: elimina espacios,
+    acorta nombres de variables y quita código muerto, reduciendo el peso
+    final del archivo sin cambiar su comportamiento.
+  - **Ejemplo**: el mismo código pasa por las tres fases:
+    ```ts
+    // Entrada: TSX moderno, varios archivos con imports entre sí
+    const saludar = (nombre: string): string => `Hola, ${nombre}`;
+    ```
+    ```js
+    // Salida tras bundling + transpiling + minification: un archivo,
+    // sintaxis compatible, nombres acortados, sin espacios innecesarios
+    const a=e=>`Hola, ${e}`;
+    ```
+
+- Vite vs Webpack: por qué Vite es más rápido en desarrollo
+
+  - **Teoría**: Webpack, en desarrollo, hace lo mismo que en producción —
+    construye un bundle completo antes de poder servir la primera
+    página, y cada cambio de código exige reconstruir (aunque sea de
+    forma incremental) ese bundle. Vite explota que los navegadores
+    modernos soportan **ESM** nativamente (ya visto en la sección 2): en
+    desarrollo, **no empaqueta nada** — sirve cada módulo tal cual, y es
+    el propio navegador quien resuelve los `import` haciendo peticiones
+    HTTP individuales bajo demanda (rápidas gracias al multiplexado de
+    HTTP/2, visto en la sección 1). Esto significa que el servidor de
+    desarrollo arranca casi instantáneamente sin importar el tamaño del
+    proyecto, y un cambio en un archivo solo recompila **ese** archivo,
+    no el proyecto entero. Para producción, Vite sí empaqueta (usando
+    Rollup por debajo), porque ahí sí importa minimizar el número de
+    peticiones HTTP.
+  - **Ejemplo**: la diferencia se siente directamente al iniciar el
+    servidor de desarrollo en un proyecto grande:
+    ```bash
+    # Webpack: debe construir el bundle completo antes de servir algo
+    # (segundos a minutos, según el tamaño del proyecto)
+    webpack serve
+
+    # Vite: sirve los módulos sin empaquetar, el navegador los pide vía ESM
+    # (arranque casi instantáneo, independiente del tamaño del proyecto)
+    vite dev
+    ```
+
+### En profundidad
+
+- Tree-shaking en profundidad y el flag `sideEffects`
+
+  - **Teoría**: el tree-shaking (mencionado ya en la sección 2 al hablar
+    de ESM) depende de que el bundler pueda probar, con certeza
+    estática, que eliminar un export no cambia el comportamiento del
+    programa. El problema: un módulo puede tener **side effects** en su
+    nivel superior (registrar un polyfill, modificar un objeto global)
+    que ocurren solo por **importar** el archivo, sin usar ningún export
+    específico — el bundler, por seguridad, no puede eliminar ese código
+    aunque nada lo referencie explícitamente, a menos que se le diga
+    explícitamente que es seguro hacerlo. El campo `"sideEffects"` en
+    `package.json` es esa declaración: le dice al bundler "ningún
+    archivo de este paquete tiene efectos secundarios a nivel de módulo,
+    puedes eliminar con confianza lo que no se use". Un paquete que omite
+    esta declaración (o la pone mal) impide el tree-shaking completo de
+    sus consumidores, aunque tanto el paquete como el proyecto que lo usa
+    estén en ESM puro.
+  - **Ejemplo**:
+    ```js
+    // utils.js -- un archivo con un side effect a nivel de módulo
+    window.miLibreria = { version: '1.0' }; // ocurre solo con importar el archivo
+    export function sumar(a, b) { return a + b; }
+    ```
+    ```json
+    // Sin esto, el bundler asume que TODOS los archivos podrían tener
+    // side effects como el de arriba, y no puede eliminar nada con seguridad
+    { "sideEffects": false }
+
+    // Declaración más fina: solo estos archivos tienen side effects,
+    // el resto del paquete es seguro de tree-shakear
+    { "sideEffects": ["./src/polyfills.js"] }
+    ```
+
+- Code splitting a nivel de bundler: chunks automáticos vs manuales
+
+  - **Teoría**: más allá del `import()` dinámico manual (ya visto en
+    `GOOD-FRONTEND-PRACTICES.md`), los bundlers modernos hacen **chunk
+    splitting automático**: detectan qué dependencias se comparten entre
+    varias rutas/páginas y las agrupan en un chunk común, en vez de
+    duplicar esa misma dependencia dentro de cada chunk de ruta. El
+    **splitting manual** (`manualChunks` en Rollup/Vite) le da control
+    explícito al desarrollador cuando la heurística automática no es
+    óptima — por ejemplo, para forzar que una librería pesada y
+    rara vez actualizada (React mismo) quede en su propio chunk,
+    separado del código de la app que cambia constantemente, así el
+    navegador puede cachear ese chunk de librería por mucho más tiempo
+    sin invalidarlo en cada deploy.
+  - **Ejemplo**:
+    ```ts
+    // vite.config.ts
+    export default {
+      build: {
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              // React casi nunca cambia entre deploys: aislarlo en su propio
+              // chunk permite que el navegador lo cachee por mucho más tiempo
+              vendor: ['react', 'react-dom'],
+            },
+          },
+        },
+      },
+    };
+    ```
+
+- Análisis de bundle: qué buscar en `vite-bundle-visualizer`
+
+  - **Teoría**: sin visibilidad real de qué compone el bundle final, es
+    fácil que una dependencia pesada se cuele sin que nadie lo note (una
+    librería completa de íconos importada entera para usar un solo
+    ícono, una librería de fechas con soporte para todos los locales del
+    mundo cuando solo se necesita uno). Estas herramientas generan un
+    **treemap** visual donde el tamaño de cada rectángulo es
+    proporcional al peso real de ese módulo en el bundle final,
+    facilitando detectar de un vistazo cuál es el mayor contribuyente al
+    peso total.
+  - **Ejemplo**:
+    ```bash
+    npx vite-bundle-visualizer
+    # Abre un treemap interactivo: rectángulos grandes = módulos pesados
+    ```
+    Señales típicas al leer el resultado: un rectángulo enorme llamado
+    `moment.js` cuando el proyecto solo formatea dos fechas (candidato a
+    reemplazar por `date-fns`, que sí es tree-shakeable); o una misma
+    librería apareciendo **duplicada** dos veces con versiones distintas
+    (señal de que dos dependencias directas fijaron versiones
+    incompatibles entre sí de una tercera dependencia común).
+
+## 14. CI/CD, despliegue y observabilidad
+
+Esto amplía la sección 8 de `GOOD-FRONTEND-PRACTICES.md` (monitoreo de
+errores) con el resto del ciclo de vida de un cambio: cómo llega a
+producción y cómo se sabe que sigue funcionando ahí.
+
+### Básico
+
+- Qué es un pipeline CI/CD y sus etapas típicas para frontend
+
+  - **Teoría**: **CI** (ya definido en el Glosario de
+    `GOOD-FRONTEND-PRACTICES.md`) automatiza validar cada cambio; **CD**
+    (*Continuous Delivery/Deployment* — ver Glosario) automatiza
+    **llevarlo** a producción de forma segura una vez validado. Un
+    pipeline de frontend típico encadena etapas donde cada una debe pasar
+    para continuar a la siguiente: si el lint falla, ni siquiera se
+    ejecutan los tests — se falla rápido, ahorrando tiempo de cómputo y
+    dando feedback antes.
+  - **Ejemplo**:
+    ```yaml
+    # .github/workflows/ci.yml (simplificado)
+    jobs:
+      ci:
+        steps:
+          - run: npm ci
+          - run: npm run lint       # falla rápido si el estilo/reglas no pasan
+          - run: npm run typecheck  # errores de tipos antes de gastar tiempo en tests
+          - run: npm test           # tests unitarios y de integración
+          - run: npm run build      # confirma que el build de producción compila
+          - run: npm run deploy     # solo si todo lo anterior pasó
+    ```
+
+### En profundidad
+
+- Feature flags y despliegues progresivos
+
+  - **Teoría**: desplegar una feature nueva al 100% de los usuarios de
+    una sola vez maximiza el **blast radius** (el alcance del daño) si
+    tiene un bug no detectado en testing. Un **feature flag** permite
+    activar código nuevo en producción sin necesariamente exponerlo a
+    todos: se puede habilitar solo para el equipo interno, para un
+    porcentaje pequeño de usuarios reales (**canary release**), y
+    ampliarlo gradualmente si las métricas se mantienen sanas. **Blue-green
+    deployment** es una técnica complementaria a nivel de infraestructura:
+    mantener dos entornos idénticos ("blue" en producción actual, "green"
+    con la versión nueva), enrutar tráfico al nuevo solo cuando está
+    verificado, y poder revertir el tráfico al entorno anterior
+    instantáneamente si algo sale mal, sin necesitar un nuevo deploy.
+  - **Ejemplo**:
+    ```tsx
+    function CheckoutPage() {
+      const nuevoFlujoHabilitado = useFeatureFlag('nuevo-checkout-v2');
+      // Sin necesidad de un deploy nuevo para revertir: basta con apagar
+      // el flag remotamente si el nuevo flujo muestra errores en producción
+      return nuevoFlujoHabilitado ? <CheckoutV2 /> : <CheckoutV1 />;
+    }
+    ```
+    Con un canary release, `useFeatureFlag` podría estar configurado para
+    devolver `true` solo para el 5% de los usuarios inicialmente, y
+    ampliarse a 25%, 50%, 100% conforme se confirma que no introdujo
+    regresiones.
+
+- RUM vs synthetic monitoring: por qué se complementan
+
+  - **Teoría**: **RUM** (ya definido en el Glosario de
+    `GOOD-FRONTEND-PRACTICES.md`) mide el rendimiento real que
+    experimentan usuarios reales, en sus dispositivos y redes reales —
+    pero solo detecta un problema **después** de que ya afectó a alguien.
+    El *synthetic monitoring* (monitoreo sintético) ejecuta chequeos
+    automatizados y programados desde un entorno controlado (Lighthouse
+    CI, un bot que visita la página cada 10 minutos desde distintas
+    ubicaciones), sin depender de tráfico real — detecta una regresión
+    de forma proactiva, incluso a las 3am cuando casi no hay usuarios
+    reales navegando para que RUM la capture. Ninguno reemplaza al otro:
+    RUM da la verdad de campo, sintético da alertas tempranas y
+    consistentes.
+  - **Ejemplo**:
+    ```ts
+    // RUM: mide en el navegador real de cada visitante y envía a un backend propio
+    import { onLCP, onINP, onCLS } from 'web-vitals';
+    onLCP((metric) => enviarAMonitoreo('LCP', metric.value, navigator.userAgent));
+    ```
+    ```yaml
+    # Synthetic: corre cada hora desde un entorno controlado, sin depender de tráfico real
+    - schedule: '0 * * * *'
+      run: lighthouse-ci https://miapp.com --assert-lcp=2500
+    ```
+
+- Estrategias de rollback rápido
+
+  - **Teoría**: cuando un despliegue introduce un bug crítico en
+    producción, la prioridad inmediata es **detener el sangrado**, no
+    diagnosticar la causa raíz — eso viene después, con calma. Un
+    rollback rápido revierte al último estado conocido como bueno.
+    Combinado con feature flags, muchos rollbacks ni siquiera necesitan
+    un nuevo deploy: si el bug está detrás de un flag, apagarlo
+    revierte el comportamiento al instante; si el bug está en el código
+    base general, el pipeline de CD debe permitir re-desplegar la
+    versión anterior con un solo comando, sin tener que reconstruir
+    manualmente un commit viejo bajo presión.
+  - **Ejemplo**:
+    ```bash
+    # Rollback casi instantáneo: apunta el tráfico a la versión anterior
+    # ya construida y verificada, sin reconstruir nada
+    vercel rollback --to=deployment-anterior-verificado
+
+    # O, si el bug está detrás de un feature flag, ni siquiera se necesita
+    # un rollback de infraestructura: basta con apagar el flag remotamente
+    ```
+
+## 15. IA aplicada al desarrollo frontend
+
+### Básico
+
+- Autocompletado asistido por IA vs un agente que ejecuta tareas completas
+
+  - **Teoría**: son dos niveles de autonomía muy distintos, aunque ambos
+    se apoyen en un **LLM** (*Large Language Model* — ver Glosario). El
+    autocompletado **inline** (tipo GitHub Copilot) sugiere la siguiente
+    línea o bloque de código mientras escribes, dentro del archivo que
+    ya tienes abierto — el desarrollador revisa cada sugerencia en el
+    momento, prácticamente carácter por carácter, antes de aceptarla. Un
+    **agente** (tipo Claude Code) recibe un objetivo de más alto nivel
+    ("agrega validación al formulario de login") y decide por sí mismo
+    qué archivos leer, qué cambios hacer en cuántos archivos, y puede
+    ejecutar comandos (tests, builds) sin supervisión línea por línea.
+    Mayor autonomía significa mayor productividad potencial, pero también
+    mayor riesgo si el resultado no se revisa con el mismo estándar que
+    cualquier otro cambio de código.
+  - **Ejemplo**: la diferencia práctica en el flujo de trabajo:
+    ```
+    Autocompletado inline: escribes "function calcularDescuento(" y la
+    IA sugiere el cuerpo de la función; tú decides aceptar (Tab) o
+    ignorar esa sugerencia puntual, una línea a la vez.
+
+    Agente: le pides "agrega un test para calcularDescuento cubriendo el
+    caso de precio negativo" y el agente decide solo en qué archivo va el
+    test, qué herramienta de testing usar (detectándola del proyecto), y
+    corre el test para confirmar que pasa -- sin que reveses cada paso
+    intermedio en tiempo real.
+    ```
+
+### En profundidad
+
+- Por qué y cómo verificar código generado por IA antes de aceptarlo
+
+  - **Teoría**: código generado por **IA** (Inteligencia Artificial — ver
+    Glosario) puede ser sintácticamente correcto y "verse bien" sin ser
+    correcto en su lógica de negocio o sus casos límite — el modelo
+    genera texto estadísticamente plausible, no garantiza corrección. El
+    estándar de revisión de código generado por IA debe ser **el mismo**
+    (o más estricto, mientras se genera confianza en el patrón) que el
+    de código escrito por una persona: leerlo línea por línea, correr los
+    tests, verificar los casos límite, nunca aceptarlo "porque compiló" o
+    "porque se ve razonable".
+  - **Ejemplo**: un caso típico donde "se ve bien" no es suficiente:
+    ```ts
+    // Código sugerido por IA: se ve razonable a primera vista
+    function calcularDescuento(precio: number, porcentaje: number) {
+      return precio - precio * (porcentaje / 100);
+    }
+
+    // Al revisarlo con atención (o con un test), aparece el caso límite
+    // que la sugerencia no contempló:
+    calcularDescuento(100, -50); // devuelve 150 -- un "descuento" negativo sube el precio
+    calcularDescuento(100, 150); // devuelve -50 -- un precio negativo no tiene sentido
+    // Ambos casos necesitan validación explícita que el modelo no agregó por sí solo
+    ```
+
+- Riesgos conocidos: alucinación de APIs y código inseguro con buena sintaxis
+
+  - **Teoría**: dos riesgos concretos y documentados de aceptar código de
+    IA sin verificar. La **alucinación** ocurre cuando el modelo genera
+    con total confianza el nombre de un paquete, una función o un
+    parámetro que **no existe** — es sintácticamente indistinguible de
+    una llamada real hasta que se ejecuta (o hasta que TypeScript/el
+    linter la marcan, si existen). El segundo riesgo es más sutil: código
+    con **sintaxis impecable** pero que introduce una vulnerabilidad de
+    seguridad conocida (por ejemplo, insertar HTML de usuario sin
+    sanitizar, ya visto en `GOOD-FRONTEND-PRACTICES.md`) porque el modelo
+    reprodujo un patrón común en su entrenamiento sin aplicar el
+    contexto de seguridad específico de este proyecto.
+  - **Ejemplo**:
+    ```ts
+    // Alucinación: este método no existe en la API real de axios,
+    // el modelo lo generó por similitud con otras librerías
+    axios.getWithRetry('/api/data'); // TypeError en runtime: no es una función real
+
+    // Sintaxis correcta, pero inseguro: reproduce un patrón común sin
+    // aplicar la sanitización que el proyecto ya exige en otros lugares
+    <div dangerouslySetInnerHTML={{ __html: comentarioDelUsuario }} />
+    // Un revisor humano (o un linter de seguridad) debe detectar que
+    // falta DOMPurify.sanitize(), tal como se exige en el resto del código
+    ```
+
+- Cómo dar contexto efectivo a un asistente de código
+
+  - **Teoría**: la calidad de lo que un asistente de IA genera depende
+    directamente de cuánto contexto real del proyecto recibe. Un prompt
+    vago ("agrega un botón") fuerza al modelo a adivinar convenciones —
+    qué librería de estilos usa el proyecto, cómo se nombran los
+    componentes, si hay que agregar un test. Un prompt efectivo incluye
+    restricciones explícitas y, cuando es posible, apunta a un ejemplo
+    ya existente en el propio repositorio para que el resultado siga el
+    mismo patrón, en vez de introducir un estilo nuevo e inconsistente.
+  - **Ejemplo**:
+    ```
+    Prompt vago:
+    "Agrega un botón de exportar a CSV en la tabla de pedidos"
+
+    Prompt efectivo:
+    "Agrega un botón de exportar a CSV en OrdersTable.tsx, siguiendo el
+    mismo patrón que ExportButton.tsx en features/inventory/ (usa
+    Button del design system, dispara un toast de éxito/error con la
+    misma librería que ya usa ese archivo). Agrega un test unitario
+    co-localizado igual que los demás archivos de features/orders/."
+    ```
+    El segundo prompt reduce directamente el riesgo de alucinación (le
+    da un ejemplo real y verificable para imitar) y de inconsistencia
+    (fija de antemano qué convenciones seguir), en vez de dejar que el
+    modelo elija por defecto un patrón genérico.
+
+## 16. Habilidades de senior (no técnicas)
+
+### Básico
+
+- Cómo dar code review efectivo
+
+  - **Teoría**: un code review efectivo separa explícitamente lo
+    **bloqueante** (bugs reales, problemas de seguridad, violaciones de
+    convenciones acordadas del equipo) de lo **opcional** (preferencias
+    de estilo personal, una forma alternativa que no es objetivamente
+    mejor) — mezclar ambos sin distinguirlos hace que el autor no sepa
+    qué debe corregir antes de mergear y qué puede ignorar. Cada
+    comentario bloqueante debería explicar el **porqué**, no solo señalar
+    el qué, para que el autor aprenda el criterio y no solo aplique el
+    cambio puntual sin entenderlo.
+  - **Ejemplo**:
+    ```
+    Comentario malo (no explica el porqué, sin distinguir prioridad):
+    "Esto está mal, usa otro nombre."
+
+    Comentario bueno (bloqueante, explica el porqué):
+    "Bloqueante: `data` es demasiado genérico acá -- en una revisión
+    futura no queda claro qué contiene sin leer el resto de la función.
+    ¿Qué tal `pedidosDelUsuario`?"
+
+    Comentario bueno (opcional, marcado como tal):
+    "Nit (opcional): podrías simplificar esto con optional chaining,
+    pero no es bloqueante -- el código actual también es correcto."
+    ```
+
+### En profundidad
+
+- ADR (*Architecture Decision Record*): qué es y su estructura mínima
+
+  - **Teoría**: un **ADR** (ver Glosario) es un documento corto que
+    registra una decisión de arquitectura importante **en el momento en
+    que se toma**, junto con el contexto que la motivó y sus
+    consecuencias conocidas. Su valor no es "documentar por documentar":
+    meses después, cuando alguien nuevo se pregunte "¿por qué elegimos
+    Zustand en vez de Redux?", un ADR responde esa pregunta sin depender
+    de que alguien del equipo original todavía esté disponible para
+    explicarlo de memoria (y sin especular con el código solo). La
+    estructura mínima tiene tres partes: **contexto** (qué problema
+    forzó la decisión, qué opciones se consideraron), **decisión** (qué
+    se eligió, en una frase clara) y **consecuencias** (qué se gana, qué
+    se sacrifica, qué queda pendiente de revisar).
+  - **Ejemplo** (ADR real y corto):
+    ```markdown
+    # ADR-007: Adoptar Zustand para estado global de UI
+
+    ## Contexto
+    El estado de tema/usuario/sidebar vive hoy en 4 Context providers
+    anidados. Agregar un nuevo pedazo de estado global requiere otro
+    provider, y ya vemos re-renders innecesarios cuando cualquiera cambia
+    (ver sección 6 de FRONTEND-SENIOR.md). Se evaluaron Redux Toolkit,
+    Jotai y Zustand.
+
+    ## Decisión
+    Usamos Zustand para todo el estado global de UI nuevo. Los Context
+    providers existentes se migran de forma incremental, no de una vez.
+
+    ## Consecuencias
+    - (+) Sin boilerplate de actions/reducers, curva de aprendizaje baja.
+    - (+) Selectores evitan el problema de re-render de Context.
+    - (-) Menos herramientas de debugging (time-travel) que Redux DevTools.
+    - Pendiente: definir convención de nombres para los stores nuevos.
+    ```
+
+- Mentoring técnico: dar la respuesta vs guiar a que la encuentren
+
+  - **Teoría**: dar la respuesta directa resuelve el problema **de hoy**
+    más rápido, pero no desarrolla la capacidad de la persona para
+    resolver el problema **de mañana** por sí misma. Guiar con preguntas
+    (¿qué intentaste ya? ¿qué esperabas que pasara vs qué pasó
+    realmente? ¿dónde pondrías el primer `console.log` para acotar
+    dónde está el problema?) construye el criterio de debugging de la
+    persona, a costa de tomar más tiempo en el momento puntual — un
+    trade-off deliberado que un senior debe elegir conscientemente según
+    el contexto (una urgencia de producción no es el momento para
+    mentoring socrático; una tarea sin presión de tiempo sí lo es).
+  - **Ejemplo**:
+    ```
+    Dar la respuesta directa:
+    "Te falta el `key` en el map, ponle `key={item.id}`."
+
+    Guiar a que la encuentren:
+    "React nos está avisando algo en la consola sobre esta lista --
+    ¿qué dice el warning exactamente? ¿Qué tienen en común todos los
+    ejemplos de listas que ya vimos en el proyecto?"
+    ```
+    La segunda opción, si el tiempo lo permite, deja a la persona con la
+    herramienta ("leer warnings de la consola con atención") en vez de
+    solo con la solución puntual de este caso.
+
+- Cómo argumentar un trade-off técnico ante producto o diseño
+
+  - **Teoría**: producto y diseño no comparten el vocabulario técnico, y
+    explicar un trade-off en términos de "deuda técnica" o "complejidad
+    de arquitectura" sin traducirlo a impacto de negocio o de usuario
+    no logra una decisión informada de la contraparte — solo genera la
+    sensación de que "ingeniería está poniendo trabas". La traducción
+    efectiva conecta la decisión técnica con una consecuencia que sí les
+    importa directamente: tiempo de entrega, riesgo de bugs en
+    producción, o experiencia real del usuario.
+  - **Ejemplo** (conversación real):
+    ```
+    Mal argumento (jerga técnica sin traducir):
+    "No podemos hacer el filtro en tiempo real, tendríamos que refactorizar
+    el estado global y migrar de Context a una librería con selectores."
+
+    Buen argumento (traducido a impacto):
+    "Podemos entregar el filtro para el viernes si se aplica al hacer
+    clic en 'Buscar', como ya funciona hoy. La versión 'en tiempo real
+    mientras escribes' es posible, pero agrega ~3 días más de trabajo
+    porque toca una parte del código que hoy re-renderiza toda la
+    pantalla en cada cambio, y necesitamos arreglar eso primero para que
+    no se sienta lento. ¿La fecha del viernes es más importante, o
+    prefieren esperar los 3 días extra por esa mejora de UX?"
+    ```
+    Esto le da a producto una decisión real e informada (fecha vs UX),
+    en vez de una negativa técnica que no pueden evaluar.
+
+## 17. Preparación específica para entrevistas
+
+### Básico
+
+- Qué formato tienen los coding challenges de frontend hoy
+
+  - **Teoría**: los coding challenges de frontend senior ya no son
+    principalmente algoritmos abstractos (invertir un árbol binario) —
+    suelen pedir **implementar un componente real** con estado,
+    interactividad y accesibilidad (un autocompletar, un modal, una
+    lista paginada), evaluado en vivo o como take-home. Lo que realmente
+    se evalúa no es solo "¿funciona?", sino: ¿maneja los estados de
+    loading/error/vacío (sección de `GOOD-FRONTEND-PRACTICES.md`)? ¿es
+    accesible por teclado? ¿el código está organizado de forma que un
+    compañero lo entendería sin explicación? ¿pensó en casos límite sin
+    que se los señalaran?
+  - **Ejemplo**: un enunciado típico ("implementa un componente de
+    autocompletar que busque en una API") se evalúa en capas, no solo en
+    el resultado visual final:
+    ```
+    Capa 1 (mínimo esperado): el input filtra resultados y los muestra.
+    Capa 2 (diferenciador): debounce en la búsqueda (sección 2), manejo
+      de loading/error, cancelación de peticiones obsoletas (sección 5).
+    Capa 3 (senior real): navegable con teclado (flechas + Enter +
+      Escape), anuncia resultados a lectores de pantalla (sección 9),
+      código con nombres claros y sin duplicación evidente.
+    ```
+
+### En profundidad
+
+- Framework de 4-5 pasos para un frontend system design interview
+
+  - **Teoría**: sin una estructura, es fácil lanzarse directo a proponer
+    tecnologías específicas sin haber entendido el problema real, o
+    quedarse pegado en un solo detalle sin cubrir la vista completa.
+    Un framework probado: (1) **Clarificar requisitos** (funcionales y no
+    funcionales: ¿cuántos usuarios? ¿tiempo real o no? ¿qué dispositivos?);
+    (2) **Estimar escala** (número de usuarios concurrentes, frecuencia de
+    actualización, volumen de datos — esto condiciona decisiones
+    posteriores); (3) **Proponer arquitectura de alto nivel** (qué
+    estrategia de renderizado, cómo fluyen los datos, qué se cachea);
+    (4) **Profundizar en 1-2 componentes críticos** (el que el
+    entrevistador señale, o el que tenga más riesgo técnico); (5)
+    **Discutir trade-offs** (qué se sacrificó y por qué, qué se haría
+    distinto con más tiempo/escala).
+  - **Ejemplo aplicado**: "Diseña un feed de noticias tipo Twitter"
+    ```
+    1. Clarificar: ¿feed cronológico o con algoritmo de relevancia?
+       ¿en tiempo real (llegan posts nuevos sin refrescar) o al recargar?
+       ¿solo web o también móvil?
+
+    2. Estimar escala: si son millones de usuarios con feeds que se
+       actualizan constantemente, descarta polling agresivo -> mejor
+       WebSocket o SSE (sección 1) para push de posts nuevos.
+
+    3. Arquitectura de alto nivel: SSR para el primer post visible (LCP
+       rápido y SEO si aplica, sección 7-8) + CSR para el scroll
+       infinito posterior; paginación por cursor (sección 5, estable con
+       un feed que crece constantemente); estado de servidor con caché
+       tipo React Query (sección 6) para los posts ya vistos.
+
+    4. Profundizar: el scroll infinito -- virtualización de la lista
+       (sección 8, no se puede mantener miles de posts en el DOM real),
+       y cómo insertar posts nuevos que llegan por SSE sin romper la
+       posición de scroll del usuario que está leyendo más abajo.
+
+    5. Trade-offs: cursor-based pagination complica saltar a "post
+       número 500" directamente, pero es el trade-off correcto para un
+       feed que cambia constantemente; con más tiempo, se profundizaría
+       en la estrategia de invalidación de caché cuando alguien edita o
+       borra un post ya cacheado en el cliente.
+    ```
+
+- Método STAR para preguntas comportamentales
+
+  - **Teoría**: **STAR** (*Situation, Task, Action, Result* — ver
+    Glosario) estructura una respuesta a preguntas del tipo "cuéntame de
+    una vez que..." de forma que sea concreta y verificable, en vez de
+    una generalización vaga. **Situación** da el contexto mínimo
+    necesario; **Tarea** aclara cuál era específicamente tu
+    responsabilidad en esa situación; **Acción** detalla qué hiciste **tú**
+    (no "el equipo", que diluye tu aporte real); **Resultado** cierra con
+    el impacto medible, cuando sea posible con números.
+  - **Ejemplo** (pregunta: "cuéntame de una vez que tuviste que tomar una
+    decisión técnica difícil bajo presión de tiempo"):
+    ```
+    Situación: A dos días de un lanzamiento importante, descubrimos que
+    el checkout tenía un bug de re-render que hacía la app inutilizable
+    en gama baja de gama baja de dispositivos móviles.
+
+    Tarea: Como responsable del frontend de esa feature, debía decidir
+    si retrasábamos el lanzamiento o desplegábamos con el bug conocido.
+
+    Acción: Diagnostiqué que el problema venía de un Context que
+    re-renderizaba todo el árbol del checkout en cada tecla (sección 6).
+    En vez de un refactor completo bajo presión, apliqué React.memo en
+    los componentes más pesados como mitigación de corto plazo, y
+    documenté un ADR (sección 16) proponiendo la migración a una
+    librería con selectores para después del lanzamiento.
+
+    Resultado: Lanzamos a tiempo, el tiempo de interacción bajó de ~800ms
+    a ~120ms en los dispositivos de prueba, y la migración documentada
+    en el ADR se hizo dos semanas después sin presión de tiempo.
+    ```
+
 ## Glosario
 
 - **DNS (Domain Name System)**: sistema jerárquico que traduce un dominio
@@ -1703,3 +3675,163 @@ Definiciones de las siglas usadas en la sección 4 (React en profundidad):
   reutilizar lógica con estado — una función que recibe un componente y
   retorna otro componente "envuelto" con lógica adicional. En su mayoría
   reemplazado hoy por custom hooks, más simples de componer y depurar.
+
+Definiciones de las siglas usadas en la sección 5 (APIs y comunicación
+cliente-servidor):
+
+- **REST (REpresentational State Transfer)**: estilo de diseño de APIs que
+  modela el dominio como recursos identificados por URL, manipulados con
+  los verbos HTTP estándar (`GET`, `POST`, `PUT`, `DELETE`), en vez de
+  codificar la acción en la propia ruta.
+- **CRUD (Create, Read, Update, Delete)**: las cuatro operaciones básicas
+  sobre un recurso de datos, que en una API REST se mapean directamente a
+  `POST`, `GET`, `PUT`/`PATCH` y `DELETE`.
+- **XHR (XMLHttpRequest)**: la API original del navegador para hacer
+  peticiones asíncronas, basada en eventos; `fetch` es su reemplazo
+  moderno, basado en Promises.
+- **URL (Uniform Resource Locator)**: la dirección que identifica un
+  recurso en la web (protocolo, dominio, ruta y, opcionalmente, query
+  params). Es lo que el navegador parsea como primer paso al cargar
+  cualquier página (sección 1) y lo que estructura el diseño de rutas de
+  una API REST.
+
+Definiciones de las siglas usadas en la sección 6 (Gestión de estado y
+datos):
+
+- **UI (User Interface / interfaz de usuario)**: la capa visual e
+  interactiva con la que la persona usuaria opera la aplicación. Se usa
+  para distinguir "estado de UI" (datos propios de la interfaz, como un
+  modal abierto o el tema activo) de "estado de servidor" (una copia
+  cacheada de datos que en realidad viven en el backend).
+- **SWR (stale-while-revalidate)**: patrón de caché (y nombre de una
+  librería popular que lo implementa) que muestra de inmediato el último
+  dato conocido, aunque esté desactualizado ("stale"), mientras revalida
+  en segundo plano contra el servidor y actualiza la UI si el dato
+  cambió, sin bloquear al usuario con un estado de carga.
+
+Definiciones de las siglas usadas en la sección 7 (Estrategias de
+renderizado y meta-frameworks):
+
+- **CSR (Client-Side Rendering)**: el navegador descarga un HTML casi
+  vacío y genera toda la interfaz con JS ejecutado en el propio cliente.
+- **SSR (Server-Side Rendering)**: el servidor genera el HTML completo en
+  cada petición, antes de enviarlo al navegador.
+- **SSG (Static Site Generation)**: el HTML se genera una sola vez, en
+  tiempo de build, y se sirve como archivo estático (habitualmente desde
+  un CDN).
+- **ISR (Incremental Static Regeneration)**: híbrido entre SSR y SSG —
+  sirve una versión estática cacheada y la regenera en segundo plano
+  pasado un tiempo, sin requerir un build completo del sitio.
+- **SPA (Single Page Application)**: una aplicación que carga una sola
+  vez y actualiza el contenido dinámicamente con JS en el cliente, sin
+  recargar la página completa en cada navegación — el resultado típico
+  de usar CSR.
+- **TTI (Time To Interactive)**: métrica que mide cuánto tarda una página
+  en volverse completamente interactiva (responder de forma fiable a la
+  entrada del usuario), no solo en verse cargada visualmente.
+
+Definiciones de las siglas usadas en la sección 9 (Accesibilidad e i18n):
+
+- **RTL (Right-To-Left)**: dirección de lectura de idiomas como árabe o
+  hebreo, de derecha a izquierda. Requiere usar propiedades lógicas de
+  CSS en vez de propiedades físicas para que el layout se adapte
+  correctamente.
+- **LTR (Left-To-Right)**: dirección de lectura de idiomas como español o
+  inglés, de izquierda a derecha; es la dirección opuesta a RTL.
+- **ICU (International Components for Unicode)**: conjunto de estándares
+  (entre ellos MessageFormat) para internacionalización, usado por
+  librerías de i18n para manejar reglas de pluralización complejas que
+  varían según el idioma.
+- **NVDA (NonVisual Desktop Access)**: lector de pantalla gratuito y de
+  código abierto para Windows, uno de los más usados para pruebas
+  manuales de accesibilidad fuera del ecosistema Apple (donde se usa
+  VoiceOver).
+- **WAI (Web Accessibility Initiative)**: la iniciativa del W3C que
+  publica las WAI-ARIA Authoring Practices, la guía de referencia sobre
+  qué comportamiento de teclado y semántica ARIA debe tener cada patrón
+  de componente interactivo (combobox, listbox, modal, etc.).
+- **QA (Quality Assurance / aseguramiento de calidad)**: la disciplina y
+  el proceso de verificar que un producto funciona como se espera antes
+  de llegar a producción, incluyendo pruebas manuales de accesibilidad
+  con teclado y lector de pantalla que ninguna herramienta automatizada
+  cubre por completo.
+
+Definiciones de las siglas usadas en la sección 10 (Seguridad en
+frontend):
+
+- **OWASP (Open Web Application Security Project)**: organización que
+  publica el "Top 10" de riesgos de seguridad web más comunes, una
+  referencia estándar de la industria para clasificar vulnerabilidades.
+- **OAuth (Open Authorization)**: protocolo de autorización que permite a
+  una aplicación acceder a un recurso en nombre de un usuario sin que
+  este comparta su contraseña directamente con ella.
+- **OIDC (OpenID Connect)**: capa de autenticación construida encima de
+  OAuth 2.0, que además de autorizar acceso permite identificar quién es
+  el usuario.
+- **PKCE (Proof Key for Code Exchange)**: extensión de OAuth 2.0 que
+  permite a clientes públicos (como una SPA, sin un secreto que puedan
+  proteger) completar el flujo de login de forma segura, usando un
+  secreto temporal generado en cada intento de login.
+- **JWT (JSON Web Token)**: formato estándar y compacto para representar
+  tokens de autenticación/autorización, comúnmente usado como access
+  token en flujos OAuth/OIDC.
+- **UX (User Experience / experiencia de usuario)**: la calidad de la
+  experiencia percibida por quien usa el producto (facilidad, claridad,
+  fricción); se usa para distinguir un riesgo puramente de negocio o de
+  percepción de un riesgo técnico o de seguridad real.
+- **SHA (Secure Hash Algorithm)**: familia de funciones hash
+  criptográficas (por ejemplo, SHA-256) que producen una huella digital
+  de longitud fija a partir de cualquier dato; en PKCE se usa para
+  derivar el `code_challenge` a partir del `code_verifier` sin exponer
+  este último.
+
+Definiciones de las siglas usadas en la sección 11 (Testing y calidad):
+
+- **E2E (end-to-end)**: pruebas que ejercitan la aplicación completa, de
+  principio a fin, en un entorno lo más parecido posible al real (un
+  navegador real contra un backend real o casi real).
+- **TDD (Test-Driven Development)**: metodología donde el test se escribe
+  antes que el código de producción, siguiendo el ciclo red (test falla),
+  green (código mínimo para pasar) y refactor (mejora sin cambiar el
+  comportamiento).
+
+Definiciones de las siglas usadas en la sección 14 (CI/CD, despliegue y
+observabilidad):
+
+- **CD (Continuous Delivery / Continuous Deployment)**: la práctica de
+  automatizar la entrega de cada cambio validado hacia producción (o al
+  menos dejarlo listo para desplegarse con un solo paso), complementando
+  a CI, que valida el cambio antes de llegar a esa etapa.
+
+Definiciones de las siglas usadas en la sección 15 (IA aplicada al
+desarrollo frontend):
+
+- **IA (Inteligencia Artificial)**: el campo y las técnicas (incluyendo
+  los modelos de lenguaje) que permiten a un sistema generar código,
+  sugerencias o ejecutar tareas de forma autónoma o semi-autónoma, con
+  distintos niveles de supervisión humana requerida.
+- **LLM (Large Language Model / modelo de lenguaje grande)**: el tipo de
+  modelo de IA (entrenado con grandes cantidades de texto) que da
+  soporte tanto al autocompletado inline como a los agentes de código;
+  genera texto estadísticamente plausible, lo que explica tanto su
+  utilidad como su riesgo de "alucinar" APIs que no existen.
+- **CSV (Comma-Separated Values)**: formato de texto plano para datos
+  tabulares, donde cada línea es una fila y las columnas se separan por
+  comas; un formato de exportación/importación común en features de
+  reportes o tablas de datos.
+
+Definiciones de las siglas usadas en la sección 16 (Habilidades de senior):
+
+- **ADR (Architecture Decision Record)**: documento corto que registra
+  una decisión de arquitectura en el momento en que se toma, con su
+  contexto, la decisión en sí y sus consecuencias conocidas — para que
+  alguien futuro entienda el porqué sin depender de la memoria del
+  equipo original.
+
+Definiciones de las siglas usadas en la sección 17 (Preparación específica
+para entrevistas):
+
+- **STAR (Situation, Task, Action, Result)**: estructura para responder
+  preguntas comportamentales en una entrevista, describiendo el contexto,
+  la responsabilidad propia, las acciones concretas tomadas y el
+  resultado medible obtenido.
