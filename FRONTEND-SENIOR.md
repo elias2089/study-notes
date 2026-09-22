@@ -1956,6 +1956,23 @@ Orden del plan completo (este archivo desarrolla el punto 1):
     dato cacheado — "stale", desactualizado — de inmediato, mientras en
     segundo plano se revalida contra el servidor y se actualiza la UI si
     cambió, sin bloquear al usuario con un spinner).
+    Mientras que useEffect te obliga a orquestar manualmente cada paso del
+    ciclo de vida de una petición (cuándo cargar, cómo manejar errores, cuándo    limpiar),
+    React Query te permite declarar qué datos necesitas y él se encarga de la
+    gestión del estado del servidor.
+    Diferencias claves:
+    - Gestión de Estado y Boilerplate: Con useEffect necesitas crear manualmente múltiples
+      estados (data, isLoading, error) y actualizarlos tú mismo. React Query abstrae todo esto;
+      solo usas el hook y obtienes esos estados listos para usar.
+    - Caché y Deduplicación: useEffect no tiene caché. Si dos componentes piden los mismos datos
+      al montarse, se harán dos peticiones. React Query guarda los datos en caché (basado en la queryKey)
+      y si dos componentes piden lo mismo, solo se hace una petición y ambos comparten la respuesta.
+    - Manejo de Errores y Reintentos: En useEffect debes escribir try/catch manualmente.
+      React Query incluye lógica de reintento automático por defecto y te da el estado isError directamente
+    - Refetching Inteligente: Con useEffect los datos pueden quedar obsoletos (stale) al volver a la pestaña.
+      React Query actualiza los datos automáticamente en segundo plano cuando la ventana recupera el foco,
+      sin que el usuario lo note.
+    
   - **Ejemplo**:
     ```tsx
     import { useQuery, useQueryClient } from '@tanstack/react-query';
