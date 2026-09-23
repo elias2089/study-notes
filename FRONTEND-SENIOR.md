@@ -282,32 +282,256 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Cómo el navegador construye la página (Critical Rendering Path)
 
-  - **Teoría**: el navegador no puede pintar nada hasta tener **DOM +
-    CSSOM** combinados en un Render Tree. Un `<script>` sin `async`/`defer`
-    en el `<head>` **bloquea** el parseo del HTML hasta que se descarga y
-    ejecuta (por eso tradicionalmente se ponían al final del `<body>`, y
-    hoy se usa `defer`). Un elemento con `display: none` no entra al Render
-    Tree en absoluto (no ocupa espacio ni se pinta); uno con `visibility:
-    hidden` sí entra (ocupa su espacio en el layout) pero no se pinta.
-  - **Ejemplo**:
-    ```html
-    <head>
-      <!-- Bloquea el parseo del HTML hasta descargar y ejecutar este script -->
-      <script src="/analytics.js"></script>
+  - **Teoría**: el Critical Rendering Path es la secuencia que convierte
+    bytes de HTML/CSS en píxeles en pantalla. El HTML no trae píxeles: es
+    texto. Cada etapa transforma un tipo de dato en otro. El navegador no
+    puede pintar hasta tener **DOM + CSSOM** combinados en un Render Tree;
+    layout da geometría; paint genera un plan de dibujo; raster convierte
+    ese plan en bitmaps (texturas); composite mezcla esas capas en un
+    frame; el monitor muestra ese frame (~60 veces por segundo).
 
-      <!-- No bloquea: se descarga en paralelo, se ejecuta cuando el HTML
-           termina de parsear, en el orden en que aparecen en el documento -->
-      <script src="/analytics.js" defer></script>
-    </head>
+    Un `<script>` sin `async`/`defer` en el `<head>` **bloquea** el parseo
+    del HTML hasta descargarse y ejecutarse (por eso se usa `defer` o
+    `type="module"`). Un elemento con `display: none` no entra al Render
+    Tree; uno con `visibility: hidden` sí entra (ocupa espacio) pero no
+    se pinta.
+
+    **React (u otro framework) no sustituye el CRP**: es JavaScript que
+    corre en el Renderer Process. En el primer paint puede: (a) bloquear
+    el parser si el `<script>` es clásico en medio del HTML, o (b) correr
+    después del parseo (`defer` / bundle al final) y montar la app sobre
+    un nodo vacío (`#root`). Cuando React hace commit (cambia el DOM
+    real), el navegador no "reparsea el HTML desde la red": invalida
+    estilos/layout/paint de lo que cambió y reentra el pipeline desde
+    ahí (pasos 4–9, o solo paint/composite si no cambió geometría).
+
+    Diagrama del pipeline:
+
+    ```
+    1. Bytes HTML llegan por red
+    2. Parser → DOM
+       2b. <script> React/bundle → descarga + ejecuta
+           (bloquea el parser si no hay async/defer;
+            si hay defer/module, se ejecuta al terminar el parseo)
+    3. CSS → CSSOM
+    4. DOM + CSSOM → Render Tree   (qué se ve; display:none fuera)
+    5. Layout (reflow)             (dónde está cada caja y qué tamaño tiene)
+    6. Paint (record)              (qué dibujar: "rellena rectángulo…")
+    7. Rasterize                   (ejecuta esas órdenes → bitmap / textura)
+    8. Composite                   (GPU mezcla capas → frame)
+    9. Monitor muestra el frame    (~60 veces por segundo)
+
+    10. React commit (setState / click / fetch) → muta el DOM
+    11. Reentrada: Style → Layout? → Paint? → Raster? → Composite → Monitor
+        (solo las etapas que el cambio invalidó)
+    ```
+
+  - **Ejemplo paso a paso** (CSR típico con React; viewport 800×600):
+
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <link rel="stylesheet" href="app.css" />
+      </head>
+      <body>
+        <div id="root"></div>
+        <!-- type=module: no bloquea el parseo; se ejecuta cuando el HTML ya es DOM -->
+        <script type="module" src="/main.jsx"></script>
+      </body>
+    </html>
     ```
     ```css
-    /* No entra al Render Tree: no ocupa espacio, no se pinta */
-    .modal-cerrado { display: none; }
-
-    /* Sí entra al Render Tree: ocupa su espacio en el layout,
-       pero es invisible (útil para animaciones de fade) */
-    .tooltip-oculto { visibility: hidden; }
+    /* app.css */
+    body { margin: 0; font-family: system-ui; }
+    h1 { font-size: 32px; color: #111; }
+    .cta {
+      width: 120px;
+      height: 40px;
+      background: #2563eb;
+      color: white;
+      border: none;
+    }
+    .oculto { display: none; }
     ```
+    ```jsx
+    // main.jsx (bundle de React)
+    import { createRoot } from 'react-dom/client';
+    import { useState } from 'react';
+
+    function App() {
+      const [n, setN] = useState(0);
+      return (
+        <>
+          <h1>Hola</h1>
+          <button className="cta" onClick={() => setN(n + 1)}>
+            Comprar ({n})
+          </button>
+          <div className="oculto">No me veas</div>
+        </>
+      );
+    }
+
+    createRoot(document.getElementById('root')).render(<App />);
+    ```
+
+    **Paso 1 — Bytes HTML llegan por red**  
+    Tras DNS/TCP/TLS, el servidor responde el HTML como bytes
+    (`text/html; charset=utf-8`). En el body solo hay un
+    `<div id="root"></div>` vacío y la etiqueta del script: **aún no
+    existen** el `h1` ni el botón en el documento. Todavía no hay DOM ni
+    píxeles: solo un stream de caracteres. El navegador puede empezar a
+    parsear **antes** de que termine de llegar todo (streaming).
+
+    **Paso 2 — Parser → DOM**  
+    El HTML parser convierte etiquetas en un árbol de nodos en memoria:
+
+    ```
+    Document
+    └── html
+        ├── head
+        │   └── link[rel=stylesheet, href=app.css]
+        └── body
+            ├── div#root   (vacío)
+            └── script[type=module src=/main.jsx]
+    ```
+
+    `document.getElementById('root')` ya apunta a ese nodo, pero aún no
+    hay hijos ni se sabe tamaño, color ni posición en pantalla. Con
+    `type="module"` el script **no bloquea** el resto del parseo; se
+    descarga en paralelo y se ejecuta cuando el documento ya está
+    parseado (equivalente práctico a `defer`).
+
+    **Paso 2b — Descarga y ejecución de React**  
+    El navegador pide `/main.jsx` (y el runtime de React). Al
+    ejecutarse, React no "pinta" solo: llama a `createRoot(...).render`,
+    calcula el Virtual DOM y hace el **primer commit** al DOM real:
+
+    ```
+    div#root
+    ├── h1 → "Hola"
+    ├── button.cta → "Comprar (0)"
+    └── div.oculto → "No me veas"
+    ```
+
+    Eso es una mutación del DOM **después** del HTML inicial. Si el
+    script hubiera sido clásico sin `defer` en el `<head>`, el parser
+    se habría **pausado** aquí hasta terminar de bajar y ejecutar React
+    (peor para FCP). React no dibuja píxeles: solo cambia el DOM; quien
+    produce píxeles sigue siendo paint → raster → composite.
+
+    **Paso 3 — CSS → CSSOM**  
+    Al ver el `<link>`, descarga `app.css`, lo parsea y construye el
+    CSSOM (árbol de reglas: selectores + declaraciones). Hasta tener el
+    CSSOM, el navegador suele **bloquear el primer paint** (evitar FOUC:
+    flash of unstyled content). El CSSOM de este ejemplo queda así:
+
+    ```
+    body    → { margin: 0; font-family: system-ui }
+    h1      → { font-size: 32px; color: #111 }
+    .cta    → { width: 120px; height: 40px; background: #2563eb;
+                color: white; border: none }
+    .oculto → { display: none }
+    ```
+
+    En la práctica CSS y el module pueden solaparse en red; el primer
+    paint útil de la app suele esperar a CSSOM + a que React haya metido
+    nodos en `#root` (si no, verías solo la página vacía).
+
+    **Paso 4 — DOM + CSSOM → Render Tree**  
+    Se combinan solo los nodos **visibles** con sus estilos computados.
+    Tras el mount de React, el DOM bajo `#root` tiene `h1`, `.cta` y
+    `.oculto`, pero `div.oculto` tiene `display: none` → **no entra** al
+    Render Tree (ni layout ni paint). El árbol a renderizar queda:
+
+    ```
+    body (margin: 0, font-family: system-ui, …)
+    └── div#root
+        ├── h1 ("Hola", font-size 32px, color #111)
+        └── button.cta ("Comprar (0)", 120×40, fondo #2563eb, color white)
+        ✗ div.oculto  ← fuera: display:none (no ocupa espacio, no se pinta)
+    ```
+
+    Nota: si fuera `visibility: hidden` en vez de `display: none`, el
+    nodo **sí** entraría al Render Tree (reserva su caja en layout) pero
+    no se pintaría — útil para animaciones de fade. `#root` es solo el
+    contenedor; lo visible son sus hijos.
+
+    **Paso 5 — Layout (reflow)**  
+    El navegador calcula la caja de cada nodo del Render Tree: x, y,
+    width, height en coordenadas del viewport. Ejemplo (simplificado):
+
+    ```
+    body:   x=0,   y=0,   width=800, height=… (según contenido)
+    h1:     x=0,   y=0,   width=800, height≈38  (línea de 32px)
+    button: x=0,   y=38,  width=120, height=40
+    ```
+
+    Todavía no hay píxeles: solo números de geometría. Cambiar `width` o
+    el texto del `h1` forzaría otro layout (reflow).
+
+    **Paso 6 — Paint (record)**  
+    Con las cajas listas, genera una **lista de dibujo** (display items),
+    no bitmaps aún. Órdenes conceptuales:
+
+    ```
+    Capa principal:
+      1. Rellenar rect (0,0)–(800,600) con fondo (blanco por defecto)
+      2. Dibujar texto "Hola" en (0, ~32) con color #111, font 32px
+      3. Rellenar rect (0,38)–(120,78) con #2563eb
+      4. Dibujar texto "Comprar (0)" centrado en ese rect, color white
+    ```
+
+    `div.oculto` no genera ninguna orden. Paint responde a "qué dibujar";
+    aún no llena la grilla de píxeles.
+
+    **Paso 7 — Rasterize**  
+    Un rasterizer (CPU o GPU) ejecuta esa lista y produce **texturas**:
+    matrices de píxeles RGBA. Ejemplo: la capa del botón puede ser un
+    bitmap ~120×40 donde cada celda es un color (`#2563eb` en el fondo,
+    blanco en los glifos de "Comprar (0)"). Ahí nacen los píxeles en
+    memoria (VRAM/RAM), no todavía en el monitor.
+
+    **Paso 8 — Composite**  
+    El **GPU Process** / compositor toma las texturas (capas), aplica
+    `transform`, `opacity`, `z-index`, y las mezcla en un **frame**
+    (framebuffer del tamaño del viewport, p. ej. 800×600). Si más tarde
+    solo animas `transform: translateY(10px)` en el botón y ya es su
+    propia capa, se reutiliza el bitmap del paso 7 y solo se recompone
+    (composite-only; ver sección 8).
+
+    **Paso 9 — Monitor muestra el frame**  
+    El framebuffer se envía a la pantalla. A ~60 Hz el compositor
+    intenta entregar un frame cada ~16.7 ms. Lo que ves es esa imagen
+    final: tipografía del `h1` y botón azul "Comprar (0)". El
+    `div.oculto` nunca apareció porque salió del pipeline en el paso 4.
+    Hasta aquí: **primer paint de la app**.
+
+    **Paso 10 — React actualiza el DOM (interacción)**  
+    El usuario hace clic. React corre el `onClick` en el hilo
+    principal → `setN(1)` → re-render en Virtual DOM → **commit**: no
+    reescribe todo el HTML desde el servidor; solo actualiza el texto
+    del botón en el DOM ya existente:
+
+    ```
+    button.cta: "Comprar (0)"  →  "Comprar (1)"
+    ```
+
+    (React usa el reconciler: mismo nodo `button`, cambia el text node.)
+
+    **Paso 11 — Reentrada al pipeline**  
+    El navegador detecta el cambio de contenido. Como cambió el texto,
+    puede invalidar **layout** (el ancho del texto puede cambiar) +
+    **paint** + raster + composite de esa región — **sin** repetir
+    pasos 1–3. Si solo cambiaras un `color` vía clase, saltarías layout
+    y harías paint→…; si solo `transform`/`opacity` en una capa,
+    composite-only (sección 8).
+
+    En DevTools → Performance: el primer load muestra `Parse HTML`,
+    evaluación del script/React, luego `Layout`/`Paint`/`Composite`.
+    Cada clic con `setState` añade de nuevo trabajo de script + las
+    etapas de render que ese commit invalidó. Network cubre el paso 1
+    (y la descarga de `app.css` / `main.jsx`).
 
 - Arquitectura interna del navegador (multi-proceso)
 
@@ -2917,8 +3141,383 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 ## 8. Performance web y Core Web Vitals
 
-Esto amplía la sección 1 de `GOOD-FRONTEND-PRACTICES.md` con temas de nivel
-senior que no se cubrieron ahí:
+Esto amplía la sección 1 de `GOOD-FRONTEND-PRACTICES.md` (donde ya hay un
+resumen corto de LCP/CLS/INP) con la definición senior de **Core Web
+Vitals (CWV)** — en español, las *métricas web esenciales* de experiencia
+de página que usa Google (carga, interactividad y estabilidad visual) —
+y con temas de pipeline, budgets y diagnóstico que no se cubrieron ahí.
+
+### Básico
+
+- Qué son los Core Web Vitals y cómo se evalúan
+
+  - **Teoría**: los **Core Web Vitals (CWV)** — *Core* = esenciales,
+    *Web Vitals* = métricas vitales de la web — son el subconjunto de Web
+    Vitals que Google usa como señal de *page experience* en Search: tres
+    métricas de **campo** (usuarios reales) que miden carga percibida
+    (**LCP**), interactividad (**INP**) y estabilidad visual (**CLS**).
+    Una página "pasa" solo si las **tres** están en umbral *good* en el
+    **percentil 75 (p75)**, evaluado por separado en móvil y desktop —
+    no basta con que la media se vea bien ni con que Lighthouse en tu
+    laptop esté en verde.
+
+    Umbrales oficiales (estables; INP reemplazó a FID en marzo 2024):
+
+    ```
+    Métrica   Good (esperado)   Needs improvement    Poor
+    LCP       ≤ 2.5 s           ≤ 4 s                > 4 s
+    INP       ≤ 200 ms          ≤ 500 ms             > 500 ms
+    CLS       ≤ 0.1             ≤ 0.25               > 0.25
+    ```
+
+    Objetivo en producción: **p75 ≤ Good** en las tres, en móvil y en
+    desktop. Eso es lo "esperado" / correcto para Search y UX.
+
+    **No son Core Web Vitals** (pero sí útiles en lab/CI):
+
+    ```
+    FCP   ~≤ 1.8 s     primer contenido pintado (orientativo Lighthouse)
+    TBT   ~≤ 200–300 ms  proxy de INP en lab (Lighthouse no mide INP de campo)
+    ```
+
+    **Herramientas — campo** (usuarios reales; lo que cuenta para Search):
+
+    ```
+    Herramienta              LCP  INP  CLS  Dónde verlo
+    PageSpeed Insights        ✓    ✓    ✓   pagespeed.web.dev → bloque
+                                            "real users" / field (CrUX)
+    Search Console            ✓    ✓    ✓   Informe "Core Web Vitals"
+    CrUX (dataset / dash)     ✓    ✓    ✓   Agregados Chrome a escala
+    Librería web-vitals       ✓    ✓    ✓   onLCP / onINP / onCLS → tu RUM
+    DevTools Performance*     ✓    ✓*   ✓   *INP solo si tú interactúas
+                                            (1 sesión, no es p75)
+    ```
+
+    **Herramientas — laboratorio** (simulación; depurar y CI):
+
+    ```
+    Herramienta              LCP  INP     CLS  Dónde verlo
+    Lighthouse (DevTools/CI)  ✓   no→TBT   ✓   Panel Lighthouse / PSI lab
+    DevTools → Performance    ✓   parcial  ✓   Marcadores Web Vitals,
+                                               Layout shifts, long tasks
+    Lighthouse CI             ✓   no→TBT   ✓   Asserts en lighthouserc.json
+    WebPageTest               ✓   limitado ✓   Lab avanzado (filmstrip)
+    ```
+
+    Por métrica, qué usar:
+
+    - **LCP**: campo = PSI field / Search Console / `onLCP`. Lab =
+      Lighthouse + Performance (elemento LCP). Esperado: p75 ≤ 2.5 s.
+    - **INP**: campo = PSI field / Search Console / `onINP` (hace falta
+      clic/tap/tecla). Lab = no hay INP fiable en Lighthouse → mira
+      **TBT** + long tasks. Esperado: p75 ≤ 200 ms.
+    - **CLS**: campo = PSI field / Search Console / `onCLS`. Lab =
+      Lighthouse + Performance (Layout shifts). Esperado: p75 ≤ 0.1.
+
+    Regla: **campo = verdad del umbral**; **lab = cómo arreglarlo**. En
+    budgets de CI suele medirse LCP/CLS + TBT/FCP + peso JS.
+
+    En una app **React**, los CWV no se "arreglan" solo con CSS: el
+    tamaño del bundle, la hidratación, el code splitting y cómo actualizas
+    el estado empujan LCP/INP/CLS. Más abajo: cómo mejorar cada métrica
+    en React y una checklist de lo que siempre deberías evaluar.
+  - **Ejemplo** (medir + flujo práctico):
+    ```ts
+    import { onLCP, onINP, onCLS } from 'web-vitals';
+
+    // RUM propio: el agregador calcula p75 por URL / dispositivo
+    onLCP((m) => enviarAMonitoreo('LCP', m.value)); // ms; good ≤ 2500
+    onINP((m) => enviarAMonitoreo('INP', m.value)); // ms; good ≤ 200
+    onCLS((m) => enviarAMonitoreo('CLS', m.value)); // score; good ≤ 0.1
+    ```
+    ```
+    Flujo recomendado:
+      1. Search Console / PSI (field) → ¿p75 móvil pasa LCP+INP+CLS?
+      2. PSI (lab) / Lighthouse       → ¿qué falla y por qué?
+      3. DevTools Performance         → debug (elemento LCP, shifts, tasks)
+      4. web-vitals en prod           → RUM continuo por URL
+      5. Lighthouse CI                → budget LCP, CLS, TBT, peso JS
+
+    En PSI: bloque field = CrUX (Search); bloque lab = Lighthouse (debug).
+    Optimiza con lab; valida el resultado con field.
+    ```
+
+- LCP (*Largest Contentful Paint*): cuándo aparece el contenido principal
+
+  - **Teoría**: El LCP se mide desde el instante en que el usuario inicia
+    la carga de la página (clic, enter, navegación interna, etc.), es
+    decir, cuando el navegador comienza a procesar la nueva navegación:
+    incluye tiempos de red y backend antes de que se vea cualquier
+    contenido. El evento clave es cuando se **pinta el elemento de
+    contenido más grande** visible en el viewport (por ejemplo, imagen
+    hero, póster de video, bloque relevante de texto, etc.). Es la
+    métrica de "¿cuándo el usuario siente que la página ya cargó lo
+    importante?". Conectar con el Critical Rendering Path (sección 1):
+    el LCP no puede ocurrir antes de layout + paint de ese elemento.
+
+    Para depurar, descompón LCP en subpartes:
+
+    ```
+    LCP ≈ TTFB
+        + resource load delay
+        + resource load duration
+        + element render delay
+    ```
+
+    - **TTFB**: HTML lento (servidor, red, redirects).
+    - **Resource load delay**: el recurso LCP se descubrió tarde (solo
+      referenciado desde CSS/JS, no desde el HTML inicial).
+    - **Resource load duration**: peso, formato, CDN.
+    - **Element render delay**: hilo principal ocupado (CSS/JS
+      bloqueante, hidratación pesada) aunque el recurso ya llegó.
+
+    **Cómo mejorarlo en React**: el LCP suele ser un `<img>` o un título
+    en el HTML; si ese nodo solo aparece *después* de hidratar toda la
+    app (`#root` vacío + bundle grande), pagas *render delay* y a veces
+    *load delay* (la imagen se pide tarde desde un componente). Prioriza
+    HTML temprano (SSR/RSC), code splitting de lo que no es el hero, y
+    que el recurso LCP esté descubrible sin esperar a React.
+  - **Ejemplo** (HTML del LCP + patrón React):
+    ```html
+    <!-- Mal: lazy en el hero retrasa el LCP a propósito -->
+    <img src="/hero.jpg" alt="Hero" loading="lazy" />
+
+    <!-- Bien: priorizar, reservar espacio, formato moderno -->
+    <img
+      src="/hero.avif"
+      alt="Hero"
+      width="1600"
+      height="900"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <link rel="preload" as="image" href="/hero.avif" fetchpriority="high" />
+    ```
+    ```tsx
+    // Mal (CSR puro): el hero no existe hasta que React hidrata → LCP tarde
+    createRoot(document.getElementById('root')!).render(<App />);
+    // App monta Header + Hero + Dashboard + Charts de golpe
+
+    // Mejor: lazy de lo no crítico; el LCP (Hero) en el chunk inicial
+    // o, mejor aún, en HTML de SSR/RSC ya pintado
+    const Dashboard = lazy(() => import('./Dashboard'));
+    const Charts = lazy(() => import('./Charts'));
+
+    function App() {
+      return (
+        <>
+          <Hero /> {/* crítico: en el bundle inicial / HTML del servidor */}
+          <Suspense fallback={<Skeleton />}>
+            <Dashboard />
+            <Charts />
+          </Suspense>
+        </>
+      );
+    }
+    ```
+    Otras prácticas React: `next/image` (o equivalente) con prioridad en
+    el LCP; no envolver el hero en un Client Component pesado si puede
+    ser estático/SSR; reducir JS del path crítico (menos providers
+    globales en el árbol del primer paint).
+
+- INP (*Interaction to Next Paint*): qué tan rápido responde la página
+
+  - **Teoría**: INP (Interaction to Next Paint) mide el tiempo que tarda
+    la página en mostrar un cambio visual después de una interacción del
+    usuario (**clic, tap o tecla**), considerando **todas** las
+    interacciones relevantes durante la visita, no solo la primera. Así
+    evalúa la *respuesta visual* real de la app a lo largo de toda la
+    sesión, excluyendo los casos extremos (*outliers*). Esta métrica
+    reemplazó a **FID** (*First Input Delay*), que solo medía el retraso
+    de la *primera* interacción y no refleja realmente cómo responde la
+    app en el uso cotidiano.
+
+    Tres fases dentro de cada interacción:
+
+    ```
+    INP ≈ input delay + processing duration + presentation delay
+    ```
+
+    - **Input delay**: el hilo principal está ocupado (long tasks > 50 ms)
+      antes de poder empezar el handler.
+    - **Processing duration**: tu `onClick`, `setState`, filtros, etc.
+    - **Presentation delay**: style → layout → paint → composite hasta
+      el frame visible (enlaza con reflow/repaint más abajo).
+
+    **Cómo mejorarlo en React**: la mayoría de INP malo en SPAs viene de
+    (1) hidratación / JS parse que deja el hilo ocupado (*input delay*),
+    (2) handlers que hacen mucho trabajo síncrono o re-renderizan árboles
+    enormes (*processing* + *presentation*). Usa actualizaciones
+    no urgentes (`startTransition`), memoización selectiva, listas
+    virtualizadas y evita contexto global que re-renderiza toda la app
+    en cada tecla.
+  - **Ejemplo** (buenas prácticas en React):
+    ```tsx
+    // Mal: trabajo pesado síncrono + setState que re-renderiza todo
+    function onFiltrar(texto: string) {
+      const resultado = productos.filter(/* … */).sort(/* … */); // 10k ítems
+      setLista(resultado);
+    }
+
+    // Mejor: feedback inmediato + trabajo no urgente
+    import { startTransition, useTransition } from 'react';
+
+    function Buscador({ productos }: { productos: Producto[] }) {
+      const [texto, setTexto] = useState('');
+      const [lista, setLista] = useState(productos);
+      const [pending, startTrans] = useTransition();
+
+      function onFiltrar(value: string) {
+        setTexto(value); // urgente: el input debe pintarse ya (INP)
+        startTrans(() => {
+          setLista(productos.filter((p) => p.nombre.includes(value)));
+        });
+      }
+
+      return (
+        <>
+          <input value={texto} onChange={(e) => onFiltrar(e.target.value)} />
+          {pending ? <span>Filtrando…</span> : null}
+          <ListaVirtualizada items={lista} />
+        </>
+      );
+    }
+    ```
+    Otras prácticas React: `lazy` + `Suspense` para bajar JS inicial (menos
+    *input delay* al cargar); no hacer `JSON.parse` enorme ni filtros en
+    el click sin partir el trabajo; `memo` / estado local cerca del
+    control (evitar Context que actualiza 200 consumidores); diferir
+    analytics al idle; ver long tasks + Performance API más abajo.
+
+- CLS (*Cumulative Layout Shift*): cuánto "salta" el contenido
+
+  - **Teoría**: CLS (Cumulative Layout Shift) mide el total de movimientos
+    inesperados de los elementos visibles en pantalla mientras la página
+    está activa. El CLS aumenta cuanto mayor sea la proporción de área
+    movida y mayor la distancia desplazada. Un valor alto suele deberse
+    a imágenes, anuncios o banners que se insertan sin reservar su
+    espacio, haciendo que el contenido "salte" y confundiendo al usuario.
+
+    Para evitar CLS, siempre **reserva el espacio** que ocuparán imágenes,
+    anuncios o embeds (definiendo `width`/`height` o `aspect-ratio`)
+    antes de que carguen, y prefiere animar con `transform` o `opacity`
+    para no provocar reflow de elementos vecinos.
+
+    **Cómo mejorarlo en React**: el patrón típico es `return null` /
+    skeleton que aparece tarde, o datos que llegan con `useEffect` e
+    insertan un banner above-the-fold sin `min-height`. Reserva el slot
+    en el primer render (aunque aún no haya datos) y no cambies el
+    tamaño de tipografía/fuentes de forma que desplace el layout.
+  - **Ejemplo** (buenas prácticas HTML/CSS + React):
+    ```html
+    <!-- Mal: sin tamaño → al cargar la imagen empuja todo lo de abajo -->
+    <img src="/producto.jpg" alt="Producto" />
+
+    <!-- Bien: reserva espacio (width/height o aspect-ratio) -->
+    <img src="/producto.jpg" alt="Producto" width="400" height="300" />
+    ```
+    ```tsx
+    // Mal: cuando llega el banner, empuja el contenido (CLS)
+    function Page() {
+      const [banner, setBanner] = useState<Banner | null>(null);
+      useEffect(() => {
+        fetchBanner().then(setBanner);
+      }, []);
+      return (
+        <>
+          {banner ? <Banner data={banner} /> : null}
+          <Contenido />
+        </>
+      );
+    }
+
+    // Mejor: el slot ya ocupa espacio (skeleton / min-height)
+    function Page() {
+      const [banner, setBanner] = useState<Banner | null>(null);
+      useEffect(() => {
+        fetchBanner().then(setBanner);
+      }, []);
+      return (
+        <>
+          <div className="slot-banner" style={{ minHeight: 250 }}>
+            {banner ? <Banner data={banner} /> : <BannerSkeleton />}
+          </div>
+          <Contenido />
+        </>
+      );
+    }
+    ```
+    ```css
+    .slot-banner { min-height: 250px; aspect-ratio: 16 / 9; }
+
+    @font-face {
+      font-family: Inter;
+      src: url('/inter.woff2') format('woff2');
+      font-display: swap;
+    }
+    ```
+    Otras prácticas React: dimensiones en `<img>` / `next/image`; no
+    montar toasts/modales que empujen el flujo (usa overlay/`fixed`);
+    animar entrada con `transform`/`opacity`, no con `height`/`margin`.
+
+- Checklist React: qué evaluar siempre para buen rendimiento
+
+  - **Teoría**: antes de dar por "lista" una página o un PR, no basta
+    mirar que "se vea rápido en localhost". Evalúa siempre estas
+    dimensiones (CWV + causas habituales en React); si alguna falla, el
+    p75 de campo o el budget de CI lo acabarán mostrando.
+  - **Ejemplo** (lista de chequeo por PR / release):
+    ```
+    LCP / carga percibida
+      [ ] ¿Cuál es el elemento LCP? (DevTools → Performance / Lighthouse)
+      [ ] ¿Ese recurso está en el HTML o se descubre solo tras hidratar?
+      [ ] ¿Hero sin loading="lazy" y con fetchpriority="high" + tamaño?
+      [ ] ¿SSR/RSC o HTML útil, o #root vacío hasta que corre todo React?
+      [ ] ¿Code splitting: lo no crítico va en lazy/Suspense?
+
+    INP / interactividad
+      [ ] ¿Peso del JS inicial (gzip) dentro del budget?
+      [ ] ¿Hay long tasks > 50ms al cargar o al hacer clic? (Performance)
+      [ ] ¿Handlers pesados usan startTransition / trabajo diferido?
+      [ ] ¿Listas largas virtualizadas (no 10k nodos en el DOM)?
+      [ ] ¿Un Context/store global re-renderiza de más en cada tecla?
+
+    CLS / estabilidad
+      [ ] ¿Imágenes/embeds con width/height o aspect-ratio?
+      [ ] ¿Slots (banner, ads, skeleton) con min-height desde el 1er paint?
+      [ ] ¿Fuentes con font-display y sin saltos grandes de métricas?
+      [ ] ¿Animaciones con transform/opacity, no top/height?
+
+    Medición (siempre)
+      [ ] Lab: Lighthouse en la URL crítica (móvil) — LCP, CLS, TBT
+      [ ] Campo: web-vitals / CrUX / Search Console en p75
+      [ ] CI: performance budget (peso JS + LCP/CLS/TBT) en el PR
+      [ ] ¿Probaste la ruta que importa (/checkout), no solo la home?
+    ```
+    Si solo puedes hacer tres cosas en cada feature: (1) no engordar el
+    JS del path crítico, (2) no retrasar el elemento LCP, (3) no insertar
+    UI above-the-fold sin espacio reservado. El resto de la checklist
+    evita regresiones silenciosas.
+
+- Campo vs laboratorio: qué mide cada uno
+
+  - **Teoría**: **campo (RUM / CrUX)** es lo que importa para el p75 de
+    CWV y para Search: dispositivos reales, redes reales, usuarios
+    reales. **Laboratorio (Lighthouse, CI)** es reproducible y sirve
+    para atrapar regresiones antes del merge, pero no sustituye al
+    campo (un lab en desktop cableado no ve el móvil 3G del p75). Por
+    eso los performance budgets (más abajo) usan lab (LCP/CLS/TBT/peso)
+    como red de seguridad, y el monitoreo RUM valida INP/LCP/CLS reales.
+  - **Ejemplo**:
+    ```
+    Flujo sano:
+      Lab/CI  → no dejes entrar regresiones (budget falla el PR)
+      Campo   → confirma que el p75 móvil sigue ≤ umbrales CWV
+
+    Si CI verde y Search Console rojo:
+      el budget no representa la página/dispositivo crítico
+      (p. ej. solo medías / en desktop y el problema es /checkout móvil).
+    ```
 
 ### En profundidad
 
@@ -3041,37 +3640,138 @@ senior que no se cubrieron ahí:
 - Diagnosticar long tasks e INP con la Performance API
 
   - **Teoría**: una **long task** es cualquier trabajo síncrono en el
-    hilo principal que dura más de 50ms — durante ese tiempo el
-    navegador no puede responder a ninguna interacción del usuario
-    (clic, tecla), lo que degrada directamente el INP (ya visto en
-    `GOOD-FRONTEND-PRACTICES.md`). `PerformanceObserver` permite
-    detectar estas long tasks en producción real, en vez de solo en un
-    entorno de laboratorio como Lighthouse, capturando exactamente qué
-    interacción del usuario real se vio afectada y cuánto duró.
+    hilo principal que dura más de **50 ms**. Durante ese tiempo el
+    navegador no puede procesar clics, teclas ni pintar feedback visual,
+    lo que degrada el **INP** — sobre todo la fase *input delay* (ya
+    vista en Core Web Vitals arriba).
+
+    Cómo se conectan:
+
+    ```
+    Usuario hace clic
+        → [input delay]      ← hilo ocupado por long task(s)
+        → [processing]       ← onClick / setState / filtro
+        → [presentation]     ← style → layout → paint → composite
+        → siguiente paint    = lo que mide INP
+    ```
+
+    Long task *antes* del handler → sube input delay. Trabajo pesado
+    *dentro* del handler → sube processing (y a veces presentation si
+    mutas mucho el DOM). Varias long tasks encadenadas → la UI “no
+    responde” aunque la red esté bien.
+
+    La **Performance API** expone esas mediciones. Con
+    `PerformanceObserver` te suscribes a tipos de entry:
+
+    - `'longtask'` — bloqueos del hilo > 50 ms (causa típica de input
+      delay). Cada entry trae `duration`, `startTime` y a veces
+      `attribution` (script/frame; soporte limitado).
+    - `'event'` (Event Timing) — duración de interacciones
+      (clic/tap/tecla ≈ input + processing + presentation). Es la base
+      de medir INP en campo; `onINP` de `web-vitals` lo encapsula.
+    - User Timing (`mark`/`measure`) — marcas tuyas para atribuir
+      “quién” dentro de la app.
+
+    Lab vs campo: en Lighthouse/CI usas **TBT** como proxy; en
+    producción `longtask` + Event Timing / `onINP` te dicen si el
+    problema ocurre de verdad y en qué URL. En DevTools → Performance,
+    los bloques largos de la pista **Main** son long tasks; el track de
+    Interactions / Web Vitals muestra la interacción lenta.
+
+    Al detectar una: partir trabajo (`scheduler.yield`, chunks);
+    `startTransition` en React; menos JS al cargar (code splitting /
+    hidratación); Web Worker si no toca el DOM; third-parties en idle,
+    no en el path del clic.
   - **Ejemplo**:
     ```ts
-    const observer = new PerformanceObserver((list) => {
+    // 1) Causa: long tasks (> 50 ms en el hilo principal)
+    const longTasks = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        // Cualquier tarea de más de 50ms bloqueó el hilo principal
-        console.warn(`Long task detectada: ${entry.duration}ms`, entry);
-        // En producción, esto se enviaría a RUM (ver Glosario) para
-        // correlacionar long tasks con caídas reales de INP.
+        console.warn(
+          `Long task: ${entry.duration.toFixed(0)} ms @ ${entry.startTime.toFixed(0)}`,
+          entry,
+        );
+        // enviarAMonitoreo('longtask', {
+        //   duration: entry.duration,
+        //   startTime: entry.startTime,
+        // });
       }
     });
-    observer.observe({ type: 'longtask', buffered: true });
+    // buffered: true → también captura tareas justo antes de suscribirte
+    // (útil en SPAs si el observer se monta después del hydrate)
+    longTasks.observe({ type: 'longtask', buffered: true });
+
+    // 2) Síntoma: interacciones lentas (base de INP)
+    const events = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        // entry.name: 'click' | 'keydown' | …
+        // entry.duration ≈ input delay + processing + presentation
+        if (entry.duration > 200) {
+          // umbral "good" de INP
+          console.warn('Interacción lenta', entry.name, entry.duration, entry);
+        }
+      }
+    });
+    // durationThreshold por defecto ~104 ms; mínimo práctico ~16
+    events.observe({ type: 'event', buffered: true, durationThreshold: 16 });
     ```
+    ```
+    Correlación en RUM (misma URL / ventana de tiempo):
+      Clic @ t=1200 ms, duration=380 ms   → INP malo (> 200 ms)
+      Long task @ t=1100–1180 ms (80 ms) → explica gran parte del input delay
+      → revisar qué JS corría ahí (hydrate, filtro sync, third-party)
+    ```
+    Alternativa lista para producción: `onINP` de `web-vitals` (mismo
+    dato de Event Timing, con el cálculo de INP ya resuelto) + enviar
+    long tasks al mismo backend para cruzar causa y síntoma.
 
 - Virtualización de listas largas (*windowing*)
 
-  - **Teoría**: renderizar 10,000 filas al DOM real es inviable — cada
-    nodo del DOM tiene un costo de memoria y de cálculo de layout, y el
-    navegador se vuelve inmanejable mucho antes de llegar a esa cantidad.
-    La **virtualización** (o *windowing*) renderiza únicamente las filas
-    que son visibles en el viewport en un momento dado (más un pequeño
-    margen), y a medida que el usuario hace scroll, reemplaza y reposiciona
-    ese pequeño conjunto de nodos del DOM en vez de crear nodos nuevos
-    para cada fila — el usuario percibe una lista infinita, pero el DOM
-    real nunca tiene más de unas pocas decenas de nodos a la vez.
+  - **Teoría**: renderizar miles de filas en el DOM real es inviable —
+    cada nodo cuesta memoria, layout y tiempo en el hilo principal, y el
+    navegador se vuelve inmanejable mucho antes de llegar a 10,000
+    ítems. Eso empeora scroll, montaje (TBT / long tasks) e **INP**.
+
+    La **virtualización** (o *windowing*) solo monta las filas
+    **visibles** en el viewport (más un pequeño margen u *overscan*) y,
+    al hacer scroll, **reutiliza** ese puñado de nodos con datos nuevos.
+    El usuario percibe una lista enorme; el DOM real suele tener solo
+    unas pocas decenas de nodos.
+
+    Cómo funciona:
+
+    ```
+    1. Sabes (o estimas) itemSize y la altura del viewport
+    2. startIndex = floor(scrollTop / itemSize)
+       endIndex   = startIndex + ceil(viewportHeight / itemSize)
+    3. Añades overscan (p. ej. 3–5 filas) para no ver huecos al scrollear
+    4. Solo esas filas existen en el DOM, posicionadas (absolute /
+       transform) según su índice
+    5. Un "spacer" interno mide itemCount × itemSize para que la
+       scrollbar refleje toda la lista lógica
+    6. En cada scroll se recalcula el rango y se re-renderizan esos
+       pocos nodos — no se crean 10,000 elementos
+    ```
+
+    ```
+    ┌─ viewport (p. ej. 600px) ────────────┐
+    │  (overscan)                           │
+    │  filas visibles  ← solo estas en DOM  │
+    │  (overscan)                           │
+    └───────────────────────────────────────┘
+      spacer: 10,000 × 50px  (el scroll “cree” que la lista es enorme)
+    ```
+
+    Con **altura fija** (`FixedSizeList`) el índice es aritmética
+    simple. Con **altura variable** (`VariableSizeList`) hay que medir
+    o cachear alturas — misma idea, más complejo. El array de datos
+    puede seguir entero en memoria JS; lo que se reduce es el **DOM**
+    (y el trabajo de reconciliación de React).
+
+    Usar cuando hay cientos/miles de filas o el Profiler muestra montaje
+    caro. No hace falta en listas cortas. Limitaciones: Ctrl+F no ve
+    filas no montadas; focus/ARIA y filas de altura dinámica requieren
+    cuidado; alternativas: `react-window`, `@tanstack/react-virtual`.
   - **Ejemplo (`react-window`)**:
     ```tsx
     import { FixedSizeList } from 'react-window';
@@ -3079,26 +3779,108 @@ senior que no se cubrieron ahí:
     function ListaVirtualizada({ productos }) {
       return (
         <FixedSizeList
-          height={600}
-          itemCount={productos.length} // puede ser 10,000+ items
-          itemSize={50}
+          height={600}                 // alto del viewport de la lista
+          itemCount={productos.length} // ítems lógicos (puede ser 10,000+)
+          itemSize={50}                // alto fijo de cada fila
           width="100%"
         >
           {({ index, style }) => (
-            // Solo se llama esta función para las filas realmente visibles
+            // Solo se llama para filas de la ventana visible (+ overscan)
+            // style posiciona la fila dentro del spacer
             <div style={style}>{productos[index].name}</div>
           )}
         </FixedSizeList>
       );
     }
     ```
+    Relación con CWV / pipeline: menos nodos → menos layout/paint al
+    scrollear; menos trabajo al montar → mejor TBT / menos long tasks;
+    interacciones más baratas → ayuda a INP. No arregla LCP por sí solo,
+    salvo que montar la lista entera bloqueara el paint del contenido
+    principal.
 
 ## 9. Accesibilidad e i18n
 
-Esto amplía la sección 2 de `GOOD-FRONTEND-PRACTICES.md` con temas de nivel
-senior que no se cubrieron ahí:
+**Accesibilidad (a11y)** significa que personas con discapacidades —por ejemplo, ceguera, problemas motores o baja visión— puedan usar una web igual que cualquier usuario, sin depender de ver la pantalla o usar solo el mouse. Ejemplos: navegar solo con el teclado (Tab, flechas); lectores de pantalla que leen los textos y estructura (roles semánticos, ARIA), alto contraste para baja visión, roles ARIA para describir componentes. Sirve para que el producto sea utilizable para todos, cumple leyes y mejora la experiencia en general (incluso atajos de teclado y foco visible benefician a todos).  
+**i18n** (*internationalization* / internacionalización): preparar la app para varios idiomas y culturas; el numerónimo viene de *i* + 18 letras + *n*.
+preparar la app para varios idiomas y culturas; el numerónimo viene de
+*i* + 18 letras + *n*. En un producto real se usan para cumplir
+requisitos legales y de inclusividad (WCAG), expandir a mercados con
+idiomas LTR/RTL y plurales distintos, y evitar bugs “solo visibles”
+(modales sin focus trap, textos hardcodeados, `margin-left` que se
+rompe en árabe/hebreo). En corto: accesibilidad = que todos puedan
+usarla; i18n = que funcione bien en cualquier idioma/cultura.
 
 ### En profundidad
+
+- Cómo atacar a11y en un componente (orden de decisión)
+
+  - **Qué resuelve**: evita el antipatrón “primero `div` + ARIA y después
+    arreglar teclado”. La mayoría de bugs a11y (botones que no responden a
+    Enter/Espacio, modales que dejan tabular el fondo, iconos sin nombre)
+    vienen de saltarse el HTML nativo o de inventar un widget sin el
+    contrato de teclado del patrón APG.
+
+  - **Solución (orden fijo al implementar o revisar un componente)**:
+    1. **¿Hay control HTML nativo?** → úsalo (`button`, `a`, `input`,
+       `select`, `label`, `dialog` donde aplique). Ganas foco, teclado y
+       rol “gratis”.
+    2. **Si no alcanza** → elige el patrón del WAI-ARIA Authoring
+       Practices Guide (dialog, combobox, listbox, menu…) e implementa
+       **atributos + teclado + manejo de foco**, no solo `role`.
+    3. **Si el patrón es complejo** → no lo reinventes: Radix UI, React
+       Aria u otra librería headless ya auditada.
+    4. **Verifica** nombre + rol + estado (qué anuncia el lector) y un
+       pase solo con teclado antes de merge.
+
+  - **¿En todos los componentes?** No. La intensidad depende del tipo:
+
+    | Tipo de UI | Qué aplicar |
+    |---|---|
+    | Texto / layout / cards estáticas | Semántica básica (headings, landmarks). Casi nunca ARIA custom. |
+    | Controles simples (`button`, link, input, checkbox) | **Siempre** nativo + label/nombre accesible. Aquí el “orden de decisión” termina en el paso 1. |
+    | Icon-only, toggles, tabs simples | Nativo o poco ARIA (`aria-label`, `aria-pressed`, `aria-selected`). |
+    | Overlays (modal, popover, dropdown, drawer) | Focus trap, restaurar foco, `Escape`, fondo no enfocable (`inert` / librería). Candidatos fuertes a Radix/React Aria. |
+    | Widgets compuestos (combobox, date picker, menu, listbox virtualizado) | Patrón APG completo o librería. **No** copiar de otro feature a mano. |
+    | Design system / primitives compartidos | Aquí se concentra la inversión: las features solo componen primitives correctas. |
+
+    Regla práctica de code review: si el componente **recibe foco**,
+    **dispara una acción** o **cambia de estado anunciable**, aplica el
+    orden de decisión. Si solo pinta UI no interactiva, no fuerces ARIA.
+
+  - **Ejemplo con buena práctica** (mismo problema, tres niveles):
+
+    ```tsx
+    // 1) Malo: parece botón, no lo es (sin teclado/rol reales)
+    <div className="btn" onClick={onSave}>Guardar</div>
+
+    // 2) Bueno para control simple: HTML nativo (paso 1 del orden)
+    <button type="button" onClick={onSave}>
+      Guardar
+    </button>
+
+    // 3) Bueno para overlay: no reinventar el dialog
+    import * as Dialog from '@radix-ui/react-dialog';
+
+    <Dialog.Root open={open} onOpenChange={setOpen}>
+      <Dialog.Trigger asChild>
+        <button type="button">Editar perfil</button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay />
+        <Dialog.Content aria-describedby={undefined}>
+          <Dialog.Title>Editar perfil</Dialog.Title>
+          {/* foco, Escape y restore los resuelve Radix */}
+          <button type="button" onClick={onSave}>Guardar</button>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+    ```
+
+    En el caso 2, “atacar a11y” = elegir `<button>`. En el caso 3,
+    “atacar a11y” = reconocer que es un **dialog** y delegar el patrón
+    (o implementarlo entero según APG), no poner `role="dialog"` en un
+    `div` y darlo por cerrado.
 
 - Patrones ARIA avanzados con manejo de teclado completo
 
@@ -3212,32 +3994,53 @@ senior que no se cubrieron ahí:
 
 - Pluralización compleja con ICU MessageFormat
 
-  - **Teoría**: la pluralización de dos formas (singular/plural) que
-    alcanza para español o inglés no alcanza para todos los idiomas —
-    ruso y polaco, por ejemplo, tienen hasta **cuatro formas plurales**
-    distintas según reglas gramaticales sobre el número exacto (una
-    forma para 1, otra para 2-4, otra para 5-20, etc.). **ICU**
-    (*International Components for Unicode* — ver Glosario)
-    **MessageFormat** es el estándar que las librerías de i18n
-    (`react-intl`, `next-intl`) usan para declarar todas las formas
-    plurales necesarias por idioma, delegando en la librería la regla de
-    cuál aplica para cada número.
+  - **Qué es**: ICU (*International Components for Unicode* — ver
+    Glosario) MessageFormat es el formato de mensajes que usan
+    `react-intl`, `next-intl`, FormatJS, etc. En vez de armar el texto
+    con `if`/`ternario` en el código, el traductor declara **todas las
+    formas** en el string; la librería elige la correcta según locale +
+    número.
+
+  - **Qué resuelve**: idiomas con más de dos plurales. Español/inglés
+    suelen bastar con `one`/`other`; ruso o polaco necesitan
+    `one`/`few`/`many`/`other` (reglas CLDR). Concatenar
+    `` `Tienes ${n} mensajes` `` o un `n === 1` en JSX falla en esos
+    locales y rompe el orden de palabras.
+
+  - **Cómo funciona**:
+    1. El mensaje declara un selector: `{count, plural, …}`.
+    2. En runtime pasas `{ count: 3 }` y el locale activo (`ru`, `es`…).
+    3. ICU aplica las reglas de plural de ese locale al número.
+    4. Entra a la categoría (`one`, `few`, `many`, `other`…) y rellena
+       `#` (o `{count}`) con el número ya formateado.
+    El JSX nunca ramifica por idioma: solo `t('unread', { count })`.
+
   - **Ejemplo**:
     ```json
-    // en.json -- dos formas alcanzan para inglés
-    { "unread": "{count, plural, one {# unread message} other {# unread messages}}" }
+    // en.json — inglés: one / other alcanza
+    {
+      "unread": "{count, plural, one {# unread message} other {# unread messages}}"
+    }
 
-    // ru.json -- el ruso necesita más formas para ser gramaticalmente correcto
+    // ru.json — mismas categorías del estándar; el traductor rellena las que usa el ruso
     {
       "unread": "{count, plural, one {# непрочитанное сообщение} few {# непрочитанных сообщения} many {# непрочитанных сообщений} other {# непрочитанных сообщений}}"
     }
     ```
     ```tsx
-    <FormattedMessage id="unread" values={{ count: 3 }} />
-    // La librería elige automáticamente la forma plural correcta
-    // según el idioma activo y el valor de "count" -- el componente
-    // nunca necesita saber cuántas formas tiene cada idioma.
+    // Malo: lógica de plural en código (rompe en ru/pl/ar)
+    const msg = count === 1 ? '1 mensaje' : `${count} mensajes`;
+
+    // Bueno: MessageFormat decide la rama
+    t('unread', { count: 3 });
+    // locale=en → "3 unread messages"
+    // locale=ru → rama "few" → "3 непрочитанных сообщения"
     ```
+
+  - **Buena práctica**: una key por mensaje completo (no trozos
+    concatenados); pasar el número como valor; dejar las categorías en
+    los JSON por idioma. En code review, un `count === 1 ?` sobre texto
+    visible es olor a i18n incompleto.
 
 ## 10. Seguridad en frontend
 
@@ -4470,8 +5273,36 @@ renderizado y meta-frameworks):
   en volverse completamente interactiva (responder de forma fiable a la
   entrada del usuario), no solo en verse cargada visualmente.
 
-Definiciones de las siglas usadas en la sección 9 (Accesibilidad e i18n):
+Definiciones de las siglas usadas en la sección 8 (Performance web y Core
+Web Vitals):
 
+- **CWV (Core Web Vitals)**: las tres métricas de campo que Google usa
+  como señal de page experience: LCP (carga), INP (interactividad) y CLS
+  (estabilidad visual). Se evalúan en el percentil 75, por móvil y
+  desktop; hay que pasar las tres.
+- **LCP (Largest Contentful Paint)**: tiempo hasta pintar el elemento de
+  contenido más grande del viewport. Bueno: ≤ 2.5 s.
+- **INP (Interaction to Next Paint)**: latencia desde una interacción
+  (clic/tap/tecla) hasta el siguiente paint, a lo largo de toda la
+  visita. Reemplazó a FID en marzo de 2024. Bueno: ≤ 200 ms.
+- **CLS (Cumulative Layout Shift)**: score acumulado de desplazamientos
+  inesperados del layout. Bueno: ≤ 0.1.
+- **FID (First Input Delay)**: métrica antigua que solo medía el delay de
+  la *primera* interacción; ya no es Core Web Vital (sustituida por INP).
+- **FCP (First Contentful Paint)**: cuándo se pinta el primer contenido
+  (texto/imagen); útil en lab, no es Core Web Vital.
+- **TBT (Total Blocking Time)**: en lab, suma del tiempo que long tasks
+  (> 50 ms) bloquean el hilo principal entre FCP y TTI; proxy habitual
+  de INP en Lighthouse/CI.
+- **TTFB (Time To First Byte)**: tiempo hasta el primer byte del HTML;
+  subparte típica al depurar LCP.
+- **CrUX (Chrome User Experience Report)**: dataset público de métricas
+  de campo de usuarios de Chrome; alimenta PageSpeed Insights y el
+  informe de CWV en Search Console.
+- **RUM (Real User Monitoring)**: medir LCP/INP/CLS (u otras) en los
+  navegadores reales de producción, p. ej. con la librería `web-vitals`.
+
+Definiciones de las siglas usadas en la sección 9 (Accesibilidad e i18n):
 - **RTL (Right-To-Left)**: dirección de lectura de idiomas como árabe o
   hebreo, de derecha a izquierda. Requiere usar propiedades lógicas de
   CSS en vez de propiedades físicas para que el layout se adapte
