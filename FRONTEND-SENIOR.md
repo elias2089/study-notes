@@ -554,6 +554,15 @@ Orden del plan completo (este archivo desarrolla el punto 1):
     resultante es más declarativo (dice *qué* quieres, no *cómo* iterar) y
     porque React (y otras librerías de estado) dependen de que las
     actualizaciones sean inmutables para detectar cambios correctamente.
+
+    Diferencia entre los tres:
+    - `map` — transforma **cada** elemento; devuelve un array **del mismo tamaño**.
+    - `filter` — decide **quién queda** (true/false); devuelve un array **igual o más corto**.
+    - `reduce` — acumula todo en **un solo valor** (número, objeto, array, etc.).
+
+    Regla rápida: ¿mismo array pero cambiado? → `map`. ¿Solo algunos? →
+    `filter`. ¿Un resumen / resultado final? → `reduce`. Orden típico al
+    encadenarlos: filtrar → mapear → reducir.
   - **Ejemplo**:
     ```js
     const precios = [10, 20, 30];
@@ -561,10 +570,30 @@ Orden del plan completo (este archivo desarrolla el punto 1):
     // Malo: muta el array original (problemático si "precios" es estado de React)
     precios.push(40);
 
-    // Bueno: crea arrays nuevos, nunca toca el original
+    // map — transforma cada uno → array del mismo tamaño
     const conDescuento = precios.map((p) => p * 0.9);
+    // [9, 18, 27]
+
+    // filter — deja pasar solo los que cumplen → array igual o más corto
     const caros = precios.filter((p) => p > 15);
-    const total = precios.reduce((acumulado, p) => acumulado + p, 0); // 60
+    // [20, 30]
+
+    // reduce — acumula en un solo valor
+    const total = precios.reduce((acumulado, p) => acumulado + p, 0);
+    // 60
+
+    // Encadenados: filtrar → mapear → reducir
+    const productos = [
+      { nombre: 'Zapato', precio: 80, stock: true },
+      { nombre: 'Gorra', precio: 20, stock: false },
+      { nombre: 'Camisa', precio: 45, stock: true },
+    ];
+
+    const totalEnStock = productos
+      .filter((p) => p.stock) // solo con stock
+      .map((p) => p.precio) // de objeto → número
+      .reduce((sum, precio) => sum + precio, 0); // suma
+    // 125 (80 + 45)
     ```
 
 - Manejo de errores
@@ -619,16 +648,38 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Scope y Closures
 
-  - **Teoría**: el *scope* (ámbito) determina qué variables son visibles
-    desde un punto del código. JavaScript usa *lexical scoping*: el ámbito
-    de una función se decide por **dónde se escribió** en el código, no por
-    dónde se llama. Un **closure** es lo que ocurre cuando una función
-    "recuerda" las variables de su ámbito exterior incluso después de que
-    esa función exterior ya terminó de ejecutarse. No es magia: el motor de
-    JS mantiene viva esa variable en memoria mientras exista una función
-    que todavía pueda leerla. Esto es la base de patrones como contadores
-    privados, memoización, y también la causa más común de *memory leaks*
-    si no se tiene cuidado (ver el punto de memoria más abajo).
+  - **Teoría**: en una frase — **scope** = qué variables puedes ver;
+    **closure** = una función que se lleva ese scope consigo aunque la
+    función exterior ya terminó.
+
+    **Scope** (ámbito) determina desde dónde es visible una variable.
+    Hay tres niveles comunes: global, de función y de bloque. JavaScript
+    usa *lexical scoping*: el ámbito se decide por **dónde se escribió**
+    la función en el código, no por dónde se llama después.
+
+    ```js
+    const global = 'todos me ven'; // scope global
+
+    function ejemplo() {
+      const local = 'solo dentro de ejemplo'; // scope de función
+
+      if (true) {
+        const bloque = 'solo dentro del if'; // scope de bloque
+      }
+      // aquí: global ✓, local ✓, bloque ✗
+    }
+    // aquí: global ✓, local ✗, bloque ✗
+    ```
+
+    Un **closure** es cuando una función **sigue recordando** variables
+    de afuera aunque esa función "afuera" ya terminó. Analogía: sales de
+    una habitación, pero te llevas una caja con las cosas que había
+    dentro — la habitación ya no existe; la caja sí. No es magia: el
+    motor de JS mantiene viva esa variable en memoria mientras exista
+    una función que todavía pueda leerla. Es la base de contadores
+    privados, memoización y hooks; también una causa frecuente de
+    *memory leaks* si el closure guarda referencias grandes y nunca se
+    suelta (ver el punto de memoria más abajo).
   - **Ejemplo paso a paso**:
     ```ts
     function crearContador() {
@@ -649,26 +700,48 @@ Orden del plan completo (este archivo desarrolla el punto 1):
     ```
     Paso a paso: (1) `crearContador()` se ejecuta y crea `cuenta = 0` en su
     propio scope; (2) retorna la función `incrementar`, que quedó "cerrada"
-    sobre ese scope; (3) aunque `crearContador()` ya devolvió y su
-    ejecución terminó, `cuenta` sigue viva en memoria porque `incrementar`
-    todavía la referencia; (4) cada llamada a `crearContador()` crea un
-    scope nuevo, por eso `contador1` y `contador2` no comparten `cuenta`.
+    sobre ese scope (se lleva la "caja" con `cuenta`); (3) aunque
+    `crearContador()` ya devolvió y su ejecución terminó, `cuenta` sigue
+    viva en memoria porque `incrementar` todavía la referencia; (4) cada
+    llamada a `crearContador()` crea un scope nuevo, por eso `contador1` y
+    `contador2` no comparten `cuenta`.
 
 - Prototypes y herencia prototípica
 
-  - **Teoría**: a diferencia de lenguajes con clases "de verdad" (Java,
-    C#), JavaScript resuelve la herencia mediante una **cadena de
-    prototipos**: cada objeto tiene una referencia interna (`[[Prototype]]`,
-    accesible con `Object.getPrototypeOf()`) a otro objeto, y cuando
-    accedes a una propiedad que el objeto no tiene, el motor la busca en su
-    prototipo, y en el prototipo de ese prototipo, hasta llegar a `null`.
-    La sintaxis `class` que se usa hoy es **azúcar sintáctico**: por debajo
-    sigue siendo prototipos — `class Foo {}` crea una función constructora
-    y define sus métodos en `Foo.prototype`, ni más ni menos.
+  - **Teoría**: en una frase — **prototipo** = el objeto "padre" al que se
+    pregunta si falta una propiedad; **herencia prototípica** = buscar
+    hacia arriba en esa cadena hasta encontrarla o llegar a `null`;
+    **`class`** = forma moderna de escribir eso, no un sistema distinto.
+
+    A diferencia de lenguajes con clases "de verdad" (Java, C#), JavaScript
+    no copia métodos a cada instancia. Cada objeto tiene un **enlace** a
+    otro objeto (su prototipo). Si no encuentra algo en sí mismo, pregunta
+    al de arriba. Eso es la **cadena de prototipos**.
+
+    Analogía — una fila de cajas:
+
+    ```
+    perro  →  Animal.prototype  →  Object.prototype  →  null
+    ```
+
+    Preguntas: "¿tienes `saludar`?" (1) `perro` mira su propia caja → no;
+    (2) mira `Animal.prototype` → sí → lo usa. No se copia el método a
+    `perro`; `perro` **usa el de arriba**.
+
+    Cada objeto tiene una referencia interna `[[Prototype]]` (accesible
+    con `Object.getPrototypeOf()`). Al hacer `new Animal('Rex')`, JS:
+    (1) crea un objeto vacío; (2) le pone `[[Prototype]]` =
+    `Animal.prototype`; (3) ejecuta `Animal` con `this` = ese objeto;
+    (4) lo devuelve. Por eso `nombre` vive **en la instancia** y
+    `saludar` se busca **en el prototipo** (compartido entre instancias).
+
+    La sintaxis `class` es **azúcar sintáctico**: por debajo sigue siendo
+    prototipos — `class Foo {}` crea una función constructora y define
+    sus métodos en `Foo.prototype`.
   - **Ejemplo paso a paso**:
     ```ts
     function Animal(nombre) {
-      this.nombre = nombre;
+      this.nombre = nombre; // propiedad propia de cada instancia
     }
     Animal.prototype.saludar = function () {
       return `Hola, soy ${this.nombre}`;
@@ -676,37 +749,91 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
     const perro = new Animal('Rex');
     perro.saludar(); // "Hola, soy Rex"
+
+    // Varias instancias comparten el mismo saludar en memoria
+    const otro = new Animal('Luna');
+    perro.saludar === otro.saludar; // true
     ```
     Paso a paso al llamar `perro.saludar()`: (1) el motor busca `saludar`
     directamente en `perro` — no está; (2) sube a `Object.getPrototypeOf(perro)`,
     que es `Animal.prototype` — ahí sí encuentra `saludar`; (3) lo ejecuta
-    con `this` apuntando a `perro`. Esto es exactamente lo mismo que hace
-    `class Animal { constructor(nombre) { this.nombre = nombre; } saludar() { ... } }`
-    — la clase es una forma más legible de escribir lo mismo.
+    con `this` apuntando a `perro` (usa `this.nombre` = `'Rex'`).
+
+    Con `class` es lo mismo, más legible:
+    ```ts
+    class Animal {
+      constructor(nombre) {
+        this.nombre = nombre;
+      }
+      saludar() {
+        return `Hola, soy ${this.nombre}`;
+      }
+    }
+
+    class Perro extends Animal {
+      ladrar() {
+        return 'guau';
+      }
+    }
+
+    const rex = new Perro();
+    rex.ladrar(); // en Perro.prototype
+    rex.saludar(); // no está en Perro → sube a Animal.prototype
+    // cadena: rex → Perro.prototype → Animal.prototype → Object.prototype → null
+    ```
 
 - Contexto de ejecución y `this`
 
-  - **Teoría**: `this` no se determina por dónde se *escribió* una función
-    (como el scope léxico), sino por **cómo se llama**. Las cuatro reglas,
-    de menor a mayor prioridad: (1) llamada simple `fn()` → `this` es
-    `undefined` en modo estricto (o el objeto global si no); (2) método de
-    un objeto `obj.fn()` → `this` es `obj`; (3) `fn.call(ctx)` /
-    `fn.apply(ctx)` → `this` es `ctx` explícito; (4) `new Fn()` → `this` es
-    el objeto recién creado. Las **arrow functions** son la excepción: no
-    tienen su propio `this`, heredan el del scope léxico donde se
-    definieron — por eso son la solución habitual al típico bug de "perder
-    el `this`" dentro de un callback.
+  - **Teoría**: en una frase — **`this`** = el objeto "dueño" de la
+    llamada actual. Si llamas `obj.fn()`, `this` es `obj`. Si llamas
+    `fn()` suelta, se pierde. Las **arrows** no cambian de `this`: se
+    quedan con el del sitio donde se definieron.
+
+    `this` **no** se decide por dónde **escribiste** la función (eso es
+    el scope). Se decide por **cómo la llamas**. Analogía: `this` es
+    "quién me está llamando ahora", no "dónde nací".
+
+    Las cuatro reglas, de menor a mayor prioridad:
+
+    1. Llamada suelta `fn()` → `this` es `undefined` en modo estricto
+       (o el objeto global si no).
+    2. Método de un objeto `obj.fn()` → `this` es `obj` (la clave es el
+       punto delante).
+    3. `fn.call(ctx)` / `fn.apply(ctx)` / `bind` → `this` es `ctx`
+       explícito; tú lo eliges.
+    4. `new Fn()` → `this` es el objeto recién creado.
+
+    Las **arrow functions** son la excepción: no tienen su propio
+    `this`, heredan el del scope léxico donde se definieron — por eso
+    son la solución habitual al bug de "perder el `this`" en callbacks.
+
+    Scope vs `this` (para no mezclarlos): el scope/closures se decide
+    por **dónde** escribiste la función; `this` por **cómo** la llamas
+    (salvo arrows, que sí usan el sitio donde se escribieron).
   - **Ejemplo paso a paso**:
     ```ts
+    // Regla 2: el punto decide this
+    const botonObj = {
+      etiqueta: 'Guardar',
+      click: function () {
+        console.log(this.etiqueta);
+      },
+    };
+    botonObj.click(); // "Guardar" — this = botonObj
+
+    // Bug clásico: perder this al llamar "suelta"
+    const handlerRoto = botonObj.click;
+    handlerRoto(); // undefined — ya no hay "botonObj." delante
+
     class Boton {
       etiqueta = 'Guardar';
 
-      // function normal: pierde el `this` al pasarla como callback
+      // function normal: this depende de cómo la llames
       onClickRoto = function () {
-        console.log(this.etiqueta); // undefined — `this` ya no es la instancia
+        console.log(this.etiqueta); // se rompe si la llaman suelta
       };
 
-      // arrow function: hereda el `this` léxico de la clase
+      // arrow: this siempre es la instancia de Boton
       onClickCorrecto = () => {
         console.log(this.etiqueta); // "Guardar" — siempre
       };
@@ -714,23 +841,42 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
     const boton = new Boton();
     const handler = boton.onClickCorrecto;
-    handler(); // sigue funcionando aunque se llame "suelta", sin boton.
+    handler(); // sigue "Guardar" aunque se llame suelta, sin boton.
     ```
 
 - El Event Loop: call stack, microtasks y macrotasks
 
-  - **Teoría**: JavaScript es de un solo hilo (*single-threaded*): solo
-    puede ejecutar una cosa a la vez en el **call stack**. Para no
-    bloquearse esperando cosas lentas (temporizadores, peticiones de red),
-    el navegador delega ese trabajo fuera del motor de JS y, cuando
-    termina, encola una función de vuelta para ejecutarse. El **event
-    loop** es el mecanismo que decide el orden: primero vacía por completo
-    el call stack, luego procesa **todas** las microtasks pendientes
-    (promesas resueltas, `queueMicrotask`), y recién después toma **una**
-    macrotask de la cola (`setTimeout`, eventos de I/O) antes de repetir el
-    ciclo. Por eso una promesa siempre se resuelve antes que un
-    `setTimeout(fn, 0)`, aunque ambos se hayan "programado" en el mismo
-    instante.
+  - **Teoría**: en una frase — **call stack** = lo que corre ahora;
+    **microtasks** (promesas) = cola prioritaria, se vacía entera;
+    **macrotasks** (`setTimeout`, etc.) = cola normal, una por ciclo;
+    **event loop** = el que aplica ese orden una y otra vez.
+
+    JavaScript es de un solo hilo (*single-threaded*): solo puede
+    ejecutar una cosa a la vez. El event loop es el "recepcionista" que
+    decide qué toca después cuando hay trabajo asíncrono.
+
+    Piezas:
+    - **Call stack** — pila donde corre el código ahora. Mientras no
+      esté vacío, el event loop espera.
+    - **Microtasks** — promesas resueltas (`.then`), `queueMicrotask`.
+      Prioridad alta: se procesan **todas**.
+    - **Macrotasks** — `setTimeout`, `setInterval`, eventos de I/O.
+      Prioridad baja: se toma **una** por ciclo.
+
+    Ciclo del event loop: (1) vacía el call stack (código síncrono);
+    (2) ejecuta **todas** las microtasks pendientes; (3) toma **una**
+    macrotask; (4) repite. Por eso una promesa siempre corre antes que
+    un `setTimeout(fn, 0)`, aunque ambos se hayan "programado" en el
+    mismo instante. `setTimeout(..., 0)` no significa "ya": significa
+    "en la próxima macrotask", después de las microtasks.
+
+    Analogía — cocina con un solo chef (call stack): termina el plato
+    actual; atiende **todos** los tickets urgentes (microtasks); atiende
+    **un** pedido de la fila normal (macrotask); repite.
+
+    Importa en frontend para el orden de logs/bugs de timing; una cadena
+    larga de `.then()` puede retrasar el pintado de la UI (el navegador
+    pinta entre macrotasks); `await` también encola microtasks.
   - **Ejemplo paso a paso**:
     ```ts
     console.log('1: síncrono');
@@ -743,60 +889,107 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
     // Orden real de salida: 1, 4, 3, 2
     ```
-    Paso a paso: (1) el código síncrono corre primero y por completo — se
-    imprime `1` y `4`; (2) el call stack queda vacío; (3) el event loop
-    procesa **todas** las microtasks pendientes antes de continuar — se
-    imprime `3`; (4) recién ahí toma la macrotask del `setTimeout` — se
-    imprime `2`. Esta prioridad de microtasks es también la razón por la
-    que una cadena larga de `.then()` puede "hambrear" el renderizado del
-    navegador si nunca le cede el turno a una macrotask.
+    Paso a paso: (1) imprime `1`; (2) programa el `setTimeout` → cola de
+    macrotasks; (3) programa el `.then` → cola de microtasks; (4)
+    imprime `4`; (5) stack vacío → vacía microtasks → imprime `3`;
+    (6) toma una macrotask → imprime `2`. Esta prioridad de microtasks
+    es también la razón por la que una cadena larga de `.then()` puede
+    "hambrear" el renderizado del navegador si nunca le cede el turno a
+    una macrotask.
 
 - Memory management y memory leaks
 
-  - **Teoría**: JavaScript tiene *garbage collection* automático — el
-    motor libera memoria de objetos que ya no son alcanzables desde
-    ninguna raíz activa (variables globales, el call stack, closures
-    vivos), usando principalmente el algoritmo *mark-and-sweep* (marca
-    todo lo alcanzable, libera lo que no lo es). Un **memory leak** en JS
-    no es "olvidar liberar memoria" como en C — es mantener accidentalmente
-    una referencia a algo que ya no necesitas, lo que impide que el
-    garbage collector lo libere. Las tres causas más comunes en frontend:
-    listeners de eventos nunca removidos, `setInterval`/`setTimeout` nunca
-    limpiados, y closures que retienen referencias a nodos del DOM ya
-    eliminados.
+  - **Teoría**: en una frase — **GC** = el motor tira lo que ya no es
+    alcanzable; **leak** = mantienes una referencia accidental (listener,
+    timer, closure) y bloqueas esa liberación; **fix típico** = cleanup
+    en `useEffect` (`removeEventListener`, `clearInterval`, etc.).
+
+    JavaScript tiene *garbage collection* automático: tú no haces
+    `free()` como en C. El motor libera memoria de objetos que ya no son
+    alcanzables desde ninguna raíz activa (variables globales, el call
+    stack, closures vivos), usando principalmente *mark-and-sweep*:
+    (1) parte de las raíces; (2) **marca** todo lo alcanzable siguiendo
+    referencias; (3) **libera** lo que no quedó marcado.
+
+    Analogía: el basurero solo recoge lo que **nadie tiene en la mano**.
+    Si dejas un hilo atado a una caja vieja, esa caja nunca se tira.
+
+    ```js
+    let user = { name: 'Ana' }; // alcanzable → vive
+    user = null; // nadie lo apunta → se puede liberar
+    ```
+
+    Un **memory leak** en JS no es "olvidar liberar memoria" — es
+    mantener accidentalmente una referencia a algo que ya no necesitas.
+    Las tres causas más comunes en frontend: listeners nunca removidos,
+    `setInterval`/`setTimeout` nunca limpiados, y closures que retienen
+    referencias a nodos del DOM o datos grandes ya "descartados".
   - **Ejemplo**:
     ```tsx
-    // Malo: el listener queda vivo para siempre, incluso si el componente
-    // se desmonta — cada montaje/desmontaje añade uno más (leak acumulativo)
+    // 1) Listeners — malo: cada montaje suma uno; al desmontar sigue vivo
     useEffect(() => {
       window.addEventListener('resize', handleResize);
     }, []);
 
-    // Bueno: se limpia al desmontar el componente
+    // Bueno: cleanup al desmontar
     useEffect(() => {
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    // 2) Timers — sin clearInterval sigue corriendo tras desmontar
+    useEffect(() => {
+      const id = setInterval(() => fetchData(), 1000);
+      return () => clearInterval(id);
+    }, []);
+
+    // 3) Closures que agarran datos grandes / DOM
+    function attach(el) {
+      const huge = /* datos enormes */;
+      el.addEventListener('click', () => {
+        console.log(huge.length); // el listener guarda `huge` vivo
+      });
+    }
     ```
-    Para detectar leaks reales: Chrome DevTools → pestaña **Memory** → tomar
-    dos "heap snapshots" (antes y después de montar/desmontar el mismo
-    componente varias veces) y comparar — si la memoria crece de forma
-    sostenida sin bajar nunca, hay un leak.
+    Para detectar leaks reales: Chrome DevTools → pestaña **Memory** →
+    tomar dos "heap snapshots" (antes y después de montar/desmontar el
+    mismo componente varias veces) y comparar — si la memoria crece de
+    forma sostenida sin bajar nunca, hay un leak. Si sube y luego baja,
+    era uso normal + GC.
 
 - Promises, async/await y generators
 
-  - **Teoría**: los callbacks anidados ("callback hell") se reemplazaron
-    por **Promises** (un objeto que representa un valor que existirá en el
-    futuro, con tres estados: *pending*, *fulfilled*, *rejected*).
-    `async/await` es azúcar sintáctico sobre Promises: hace que código
-    asíncrono se **lea** como si fuera síncrono, pero por debajo sigue
-    siendo asíncrono y no bloqueante — cada `await` en realidad pausa la
-    función y la reanuda como una microtask cuando la promesa se resuelve.
-    Los **generators** (`function*`, `yield`) son el mecanismo de más bajo
-    nivel que hace esto posible: una función que puede "pausarse" y
-    "reanudarse" a voluntad; `async/await` es, conceptualmente, un
-    generator que se auto-reanuda cada vez que la promesa que arrojó con
-    `yield` se resuelve.
+  - **Teoría**: en una frase — **Promise** = valor futuro (`pending` / ok /
+    error); **async/await** = misma Promise escrita como si fuera
+    síncrona (`await` pausa solo esa función y reanuda como microtask);
+    **generator** = pausa/reanuda a mano; `async/await` es esa idea
+    aplicada a Promises.
+
+    Trabajo asíncrono = "esto todavía no está listo; avísame cuando sí".
+    Evolución del estilo: callbacks anidados → Promises (`.then`) →
+    `async/await` → (por debajo, idea de generators).
+
+    Una **Promise** es un objeto que representa un valor que existirá en
+    el futuro, con tres estados: *pending* (esperando), *fulfilled*
+    (éxito → `.then`), *rejected* (fallo → `.catch`). Analogía: ticket de
+    un restaurante — no tienes la comida aún; el ticket *es* la promesa
+    de que llegará.
+
+    `async/await` es azúcar sintáctico sobre Promises: se **lee** como
+    código síncrono, pero **no bloquea** el hilo. Una `async function`
+    siempre devuelve una Promise. Cada `await`: (1) recibe una Promise;
+    (2) pausa *solo esta función*; (3) el resto del programa sigue
+    (event loop, UI); (4) al resolverse, reanuda como **microtask**.
+
+    Los **generators** (`function*`, `yield`) son el mecanismo de más
+    bajo nivel: una función que se puede pausar y reanudar a voluntad.
+    Conceptualemente, `async/await` es un generator que se auto-reanuda
+    cada vez que la Promise de un `yield`/`await` se resuelve. No hace
+    falta escribir generators a diario; sirven para entender por qué
+    `await` puede "pausar" sin congelar el hilo.
+
+    Relación con el event loop: `await` / `.then` → microtask;
+    `setTimeout` → macrotask.
   - **Ejemplo paso a paso**:
     ```ts
     // Con Promises encadenadas
@@ -814,6 +1007,17 @@ Orden del plan completo (este archivo desarrolla el punto 1):
       const ordersRes = await fetch(`/api/orders?userId=${user.id}`);
       return await ordersRes.json();
     }
+
+    // Generator: pausa/reanuda a mano (idea detrás de async/await)
+    function* contador() {
+      yield 1;
+      yield 2;
+      return 3;
+    }
+    const g = contador();
+    g.next(); // { value: 1, done: false }
+    g.next(); // { value: 2, done: false }
+    g.next(); // { value: 3, done: true }
     ```
     Paso a paso en la versión `async/await`: (1) se llama `fetch(...)`, que
     devuelve una Promise inmediatamente; (2) `await` pausa *solo esta
@@ -824,20 +1028,38 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Módulos: ESM vs CommonJS
 
-  - **Teoría**: **CommonJS** (`require`/`module.exports`) es el sistema de
-    módulos original de Node.js: la resolución es **síncrona** y dinámica
-    (puedes hacer `require(variable)` en tiempo de ejecución). **ESM**
-    (*ECMAScript Modules*, `import`/`export`) es el estándar oficial del
-    lenguaje: la resolución es **estática** (los `import` se analizan antes
-    de ejecutar el código, no se pueden condicionar con lógica), lo que
-    permite algo que CommonJS no puede hacer bien: **tree-shaking** — el
-    bundler sabe exactamente qué exports se usan y puede eliminar del
-    bundle final el código que nunca se importa.
+  - **Teoría**: en una frase — **CommonJS** (`require`) = módulos de Node
+    antiguos, dinámicos en runtime; **ESM** (`import`/`export`) =
+    estándar actual, estático, permite **tree-shaking**; en frontend
+    moderno, piensa en **ESM**.
+
+    Un módulo es un archivo que **exporta** cosas e **importa** de otros,
+    en lugar de mezclarlo todo en un scope global.
+
+    **CommonJS** (`require`/`module.exports`) es el sistema original de
+    Node.js: la resolución es **síncrona** y **dinámica** (puedes hacer
+    `require(variable)` o `require` dentro de un `if` en tiempo de
+    ejecución). Sigue apareciendo en packages viejos de Node.
+
+    **ESM** (*ECMAScript Modules*, `import`/`export`) es el estándar
+    oficial del lenguaje: la resolución es **estática** (los `import` se
+    analizan *antes* de ejecutar; no se pueden condicionar con lógica
+    “clásica”). Eso permite algo que CommonJS no hace bien:
+    **tree-shaking** — el bundler sabe exactamente qué exports se usan y
+    elimina del bundle el código que nunca se importa.
+
+    Analogía: CommonJS = “abre la caja cuando llegues”; ESM = “la lista
+    de contenido viene en la etiqueta” → puedes dejar lo que no necesitas
+    en el almacén.
   - **Ejemplo**:
     ```js
     // CommonJS: dinámico, resuelto en runtime
     const { calcularDescuento } = require('./utils');
     module.exports = { procesarPedido };
+
+    // También válido en CJS: el path se decide en runtime
+    const nombre = condicion ? './a' : './b';
+    const mod = require(nombre);
 
     // ESM: estático, analizable antes de ejecutar -> permite tree-shaking
     import { calcularDescuento } from './utils.js';
@@ -881,44 +1103,83 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - `interface` vs `type`
 
-  - **Teoría**: ambos describen la forma de un objeto y en la mayoría de
-    casos son intercambiables. Las diferencias prácticas: una `interface`
-    se puede **extender** con `extends` y admite *declaration merging*
-    (declarar la misma interface dos veces combina sus propiedades — útil
-    para tipar librerías de terceros); un `type` puede describir uniones,
-    intersecciones, tuplas y tipos primitivos con alias, cosas que una
-    `interface` no puede. Regla práctica: usa `interface` para formas de
-    objetos/props que pueden necesitar extenderse; usa `type` para
-    uniones, intersecciones o cuando necesitas alias de cualquier otra
-    cosa.
+  - **Teoría**: en una frase — **`interface`** = contratos de objetos,
+    extensibles y fusionables; **`type`** = alias flexible (uniones,
+    intersecciones, lo que sea); para objetos simples, **ambos sirven**.
+
+    Ambos describen la forma de un objeto y en la mayoría de casos son
+    intercambiables. La diferencia no es "cuál es mejor", sino qué puede
+    hacer cada uno.
+
+    Lo que destaca `interface`: se puede **extender** con `extends` y
+    admite *declaration merging* (declarar la misma interface dos veces
+    combina sus propiedades — útil para tipar/ampliar librerías de
+    terceros). Un `type` **no** se fusiona así.
+
+    Lo que destaca `type`: puede describir uniones, intersecciones,
+    tuplas y alias de primitivos — cosas que una `interface` no puede.
+
+    Regla práctica: usa `interface` para formas de objetos/props que
+    pueden necesitar extenderse; usa `type` para uniones, intersecciones
+    o alias de cualquier otra cosa. Si el equipo ya tiene convención,
+    la consistencia importa más que la pelea entre ambos.
   - **Ejemplo**:
     ```ts
+    // Ambos pueden describir un objeto
     interface Usuario {
       nombre: string;
     }
+    // type Usuario = { nombre: string }; // equivalente
+
     interface UsuarioAdmin extends Usuario {
       permisos: string[];
     }
+
+    // Declaration merging: solo interface
+    interface Ventana {
+      titulo: string;
+    }
+    interface Ventana {
+      ancho: number;
+    }
+    // Ventana = { titulo: string; ancho: number }
 
     // type puede describir una unión: interface no puede hacer esto
     type Estado = 'cargando' | 'listo' | 'error';
 
     // type con intersección (equivalente a extends en este caso)
     type UsuarioAdmin2 = Usuario & { permisos: string[] };
+
+    type ID = string | number;
+    type Par = [string, number];
     ```
 
 - `any` vs `unknown` vs `never`
 
-  - **Teoría**: son tres extremos distintos. `any` **desactiva** el chequeo
-    de tipos por completo (puedes hacer cualquier cosa con esa variable
-    sin que TypeScript se queje — es literalmente el escape hatch, úsalo
-    lo menos posible). `unknown` es el opuesto seguro: acepta cualquier
-    valor, pero **te obliga a verificar el tipo** antes de operar con él
-    (no puedes llamar métodos ni acceder propiedades directamente). `never`
-    representa un valor que **nunca ocurre** — una función que siempre
-    lanza una excepción retorna `never`, y también aparece cuando
-    TypeScript detecta que un `switch` cubrió todos los casos posibles
-    (ver *exhaustiveness checking* más abajo).
+  - **Teoría**: en una frase — **`any`** = cualquier cosa y sin chequeo
+    (peligroso); **`unknown`** = cualquier cosa, pero verifica antes de
+    usar; **`never`** = valor imposible / código que no debería
+    alcanzarse.
+
+    Son tres extremos distintos:
+
+    - `any` **desactiva** el chequeo de tipos por completo (puedes hacer
+      cualquier cosa sin que TypeScript se queje — es el escape hatch;
+      úsalo lo menos posible).
+    - `unknown` es el opuesto seguro: acepta cualquier valor, pero **te
+      obliga a verificar el tipo** antes de operar con él (no puedes
+      llamar métodos ni acceder propiedades directamente). Ideal para
+      data externa (`JSON.parse`, respuestas de API). Analogía: `any` =
+      caja abierta a ciegas; `unknown` = caja cerrada, primero miras la
+      etiqueta.
+    - `never` representa un valor que **nunca ocurre** — una función que
+      siempre lanza una excepción retorna `never`, y también aparece
+      cuando TypeScript detecta que un `switch` cubrió todos los casos
+      posibles (*exhaustiveness checking*).
+
+    Regla práctica: ¿no sabes el tipo y quieres seguridad? → `unknown`.
+    ¿Apagar TypeScript? → `any` (casi nunca). ¿Rama/retorno imposible? →
+    `never`.
   - **Ejemplo**:
     ```ts
     function procesar(valor: any) {
@@ -926,7 +1187,7 @@ Orden del plan completo (este archivo desarrolla el punto 1):
     }
 
     function procesarSeguro(valor: unknown) {
-      valor.metodoQueNoExiste(); // Error de compilación: hay que verificar el tipo primero
+      // valor.metodoQueNoExiste(); // Error: hay que verificar el tipo primero
       if (typeof valor === 'string') {
         valor.toUpperCase(); // válido: ya se verificó que es string
       }
@@ -934,6 +1195,20 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
     function lanzarError(): never {
       throw new Error('esto siempre falla');
+    }
+
+    // Exhaustiveness: si añades un estado nuevo, el default falla al compilar
+    type Estado = 'ok' | 'error';
+    function handle(e: Estado) {
+      switch (e) {
+        case 'ok':
+          return;
+        case 'error':
+          return;
+        default: {
+          const _exhaustive: never = e;
+        }
+      }
     }
     ```
 
@@ -1023,19 +1298,39 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Enums vs uniones de literales de string
 
-  - **Teoría**: TypeScript incluye `enum` como construcción propia del
-    lenguaje, pero hoy muchos equipos prefieren **uniones de literales de
-    string** para el mismo propósito: son más simples, no generan código
-    JS extra en el bundle (un `enum` numérico sí compila a un objeto
-    real), y funcionan mejor con serialización JSON (un enum numérico
-    pierde legibilidad al serializarse como número).
+  - **Teoría**: en una frase — **unión de literales** = mismos valores
+    fijos, sin código JS extra, mejor para JSON; **`enum`** = también
+    valores fijos, pero genera un objeto real y (si es numérico) se
+    vuelve opaco al serializar. Preferencia moderna: **unión**, salvo
+    que necesites el objeto en runtime.
+
+    Ambos sirven para decir: "esta variable solo puede ser uno de estos
+    valores fijos". TypeScript incluye `enum` como construcción propia,
+    pero hoy muchos equipos prefieren **uniones de literales de string**
+    para el mismo propósito: son más simples, no generan código JS extra
+    en el bundle (un `enum` numérico sí compila a un objeto real), y
+    funcionan mejor con serialización JSON (un enum numérico pierde
+    legibilidad al serializarse como `0`, `1`, `2`).
+
+    Cuándo sí tiene sentido un `enum`: convención del equipo/librería,
+    necesitas el objeto en runtime (`Object.values(Estado)`), o código
+    legacy. Para estados de UI, flags de API, roles, etc., la unión
+    suele bastar.
   - **Ejemplo**:
     ```ts
     // Con enum: genera un objeto JS real en el output compilado
-    enum Estado {
-      Cargando,
-      Listo,
-      Error,
+    enum EstadoEnum {
+      Cargando, // 0
+      Listo, // 1
+      Error, // 2
+    }
+    EstadoEnum.Cargando; // 0 — en JSON se ve el número, no el nombre
+
+    // Enum de strings: más legible, pero sigue generando código JS
+    enum EstadoStr {
+      Cargando = 'cargando',
+      Listo = 'listo',
+      Error = 'error',
     }
 
     // Con unión de literales: no genera nada extra, mismo chequeo de tipos
@@ -1084,13 +1379,25 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Conditional types e `infer`
 
-  - **Teoría**: un *conditional type* aplica lógica condicional a nivel de
-    tipos: `T extends U ? X : Y` — "si T es asignable a U, el tipo
-    resultante es X, si no, es Y". `infer` se usa **dentro** de un
-    conditional type para "capturar" y nombrar una parte del tipo que
-    estás inspeccionando, para poder reutilizarla en el resultado. Es la
-    base de utility types como `ReturnType<T>` (extrae el tipo de retorno
-    de una función).
+  - **Teoría**: en una frase — **conditional type** = `if` a nivel de
+    tipos (`T extends U ? X : Y`); **`infer`** = dentro de ese `if`,
+    captura un fragmento del tipo y reutilízalo. Ejemplo clásico: sacar
+    el retorno de una función → `ReturnType`.
+
+    Un *conditional type* aplica lógica condicional a nivel de tipos:
+    `T extends U ? X : Y` — "si T es asignable a U, el tipo resultante
+    es X; si no, es Y". Analogía: como un ternario `condicion ? a : b`,
+    pero TypeScript lo resuelve al **compilar**, no al correr.
+
+    `infer` se usa **dentro** de un conditional type para "capturar" y
+    nombrar una parte del tipo que estás inspeccionando, y reutilizarla
+    en el resultado. Sin `infer` solo preguntas "¿es esto o aquello?";
+    con `infer` preguntas "si es una función, **qué tipo retorna**?".
+
+    Es la base de utility types como `ReturnType<T>`. También sirve para
+    derivar el tipo de elementos de un array o el valor dentro de una
+    Promise. Se usa más al tipar utilidades/librerías que en UI día a
+    día, pero explica de dónde salen muchos helpers de TypeScript.
   - **Ejemplo paso a paso**:
     ```ts
     // Conditional type simple
@@ -1100,12 +1407,17 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
     // Reimplementando ReturnType con infer
     type MiReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+    // Léelo: si T es función (...)=>algo, captura ese algo como R; si no, never
 
     function obtenerUsuario() {
       return { nombre: 'Ana', edad: 30 };
     }
     type Usuario = MiReturnType<typeof obtenerUsuario>;
     // Usuario = { nombre: string; edad: number }
+
+    // Otros usos típicos de infer
+    type ElementoDe<T> = T extends (infer U)[] ? U : never;
+    type DentroDePromise<T> = T extends Promise<infer U> ? U : T;
     ```
     Paso a paso: (1) `T` es el tipo de la función `obtenerUsuario`; (2)
     TypeScript verifica si `T` calza con el patrón "una función que
@@ -1250,27 +1562,66 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - JSX y cómo se compila
 
-  - **Teoría**: JSX (la sintaxis parecida a HTML dentro de JS) no es algo
-    que el navegador entienda de forma nativa — es **azúcar sintáctico**
-    que un compilador (Babel, o el propio compilador de Vite/Next.js)
-    transforma en llamadas normales a `React.createElement()`. Cada
-    elemento JSX se convierte en un objeto plano (un "elemento de React")
-    que describe qué renderizar, no en un nodo del DOM real todavía.
-    Entender esto ayuda a explicar por qué JSX puede usar expresiones de
-    JS entre llaves `{}`, pero no declaraciones (`if`, `for`) directamente
-    — porque por debajo son argumentos de una llamada a función.
+  - **Teoría**: en una frase — **JSX** = sintaxis cómoda que se compila a
+    `createElement` / `jsx`; produce un **objeto descripción**, no DOM.
+    Por eso dentro de `{}` solo van **expresiones**, no `if`/`for`
+    sueltos. Al DOM llega después, en el **commit** de ReactDOM.
+
+    JSX (sintaxis parecida a HTML dentro de JS) no es algo que el
+    navegador entienda — es **azúcar sintáctico** que un compilador
+    (Babel, Vite, Next.js) transforma en llamadas normales a
+    `React.createElement()` (o `jsx()` en el transform moderno). Cada
+    elemento JSX se convierte en un **objeto plano** ("elemento de
+    React") que describe qué renderizar, no en un nodo del DOM todavía.
+
+    Cadena completa hasta el DOM:
+
+    ```
+    JSX → createElement/jsx() → render (árbol) → reconciliación (diff) → commit (ReactDOM → DOM real)
+    ```
+
+    1. **Elemento** — `createElement` solo crea el objeto descripción;
+       no pinta nada.
+    2. **Render + reconciliación** — al hacer
+       `createRoot(...).render(<App />)`, React ejecuta componentes,
+       obtiene el árbol de elementos y lo compara con el anterior
+       (Virtual DOM / Fiber).
+    3. **Commit** — ReactDOM aplica el mínimo de cambios con APIs del
+       navegador (`document.createElement`, `appendChild`, actualizar
+       atributos, etc.). Ahí sí aparece el nodo real.
+
+    Analogía: JSX/`createElement` = plano de la casa; reconciliación =
+    "solo cambia la ventana"; commit = los albañiles tocan el edificio.
+
+    Por debajo, lo de dentro de un tag son **argumentos de una función**,
+    por eso JSX acepta expresiones entre `{}` pero no declaraciones
+    (`if`, `for`) directamente — esas van fuera, o se usan ternario /
+    `&&` / `.map`.
   - **Ejemplo**:
     ```tsx
     // Esto...
     const elemento = <h1 className="titulo">Hola {nombre}</h1>;
 
-    // ...se compila aproximadamente a esto:
+    // ...se compila aproximadamente a esto (aún NO es DOM):
     const elemento = React.createElement(
       'h1',
       { className: 'titulo' },
       'Hola ',
       nombre,
     );
+    // ≈ { type: 'h1', props: { className: 'titulo', children: [...] } }
+
+    // El anclaje al DOM real ocurre aquí (ReactDOM):
+    const root = createRoot(document.getElementById('root'));
+    root.render(<App />); // render → diff → commit (createElement/appendChild del browser)
+
+    // OK — expresiones
+    // <h1>{nombre}</h1>
+    // {isAdmin ? <Admin /> : <Guest />}
+    // {items.map((i) => <li key={i}>{i}</li>)}
+
+    // NO — declaraciones dentro de JSX
+    // {if (isAdmin) { return <Admin />; }}
     ```
 
 - Props vs State
@@ -1302,48 +1653,77 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Componentes controlados vs no controlados
 
-  - **Teoría**: un input **controlado** tiene su valor manejado por React
-    (`value` + `onChange`) — React es la única fuente de verdad. Uno **no
-    controlado** deja que el DOM maneje su propio valor internamente, y
-    React solo lo lee cuando lo necesita (vía `ref`). Los controlados dan
-    más control (validar en cada tecla, formatear el valor) a costa de un
-    re-render por cada cambio; los no controlados son más simples y
-    performantes para formularios grandes donde no necesitas reaccionar a
-    cada tecla.
+  - **Teoría**: en una frase — **controlado** = React es la fuente de
+    verdad (`value` + `onChange`); **no controlado** = el DOM es la
+    fuente de verdad; React lee con `ref` cuando hace falta.
+
+    La pregunta clave: ¿quién es dueño del valor del input?
+
+    Un input **controlado** tiene su valor manejado por React — cada
+    tecla dispara `onChange` → actualiza state → re-render con el nuevo
+    `value`. Da más control (validar/formatear en cada tecla,
+    sincronizar UI) a costa de un re-render por cambio.
+
+    Uno **no controlado** deja que el DOM maneje el valor con
+    `defaultValue`; React solo lo consulta cuando lo necesita (vía
+    `ref`, p. ej. al enviar). Más simple y barato para formularios donde
+    no reaccionas a cada tecla.
+
+    Analogía: controlado = todo pasa por la mesa de mezcla (React);
+    no controlado = grabas directo y al final lees la cinta (`ref`).
+
+    Regla práctica: ¿valor en cada cambio / UI reactiva? → controlado.
+    ¿Solo al enviar / form grande y simple? → no controlado. No mezcles
+    `value` controlado sin `onChange`: React peleará con el input.
   - **Ejemplo**:
     ```tsx
     // Controlado: React es dueño del valor
     function InputControlado() {
       const [valor, setValor] = useState('');
+      // 1) usuario escribe → 2) onChange actualiza state → 3) re-render con value nuevo
       return <input value={valor} onChange={(e) => setValor(e.target.value)} />;
     }
 
-    // No controlado: el DOM es dueño del valor, React solo lo consulta al enviar
+    // No controlado: el DOM es dueño; React solo consulta al enviar
     function InputNoControlado() {
       const ref = useRef<HTMLInputElement>(null);
       const enviar = () => console.log(ref.current?.value);
-      return <input ref={ref} defaultValue="" />;
+      return <input ref={ref} defaultValue="" />; // defaultValue, no value
     }
     ```
 
 - `key` en listas
 
-  - **Teoría**: React usa la prop `key` para identificar de forma estable
-    qué elemento de una lista es cuál entre un render y el siguiente, y
-    así decidir si reutiliza el nodo del DOM existente o crea uno nuevo.
+  - **Teoría**: en una frase — **`key`** = identidad estable entre
+    renders. Con **id** React sabe qué ítem es cuál; con **índice** se
+    confunde al reordenar/borrar y el estado puede "saltar" de un ítem a
+    otro.
+
+    React usa la prop `key` para identificar de forma estable qué
+    elemento de una lista es cuál entre un render y el siguiente, y así
+    decidir si **reutiliza** el nodo del DOM (y el estado interno) o
+    crea/desmonta uno nuevo.
+
+    Analogía: fichas con nombre. Si las etiquetas son "1º, 2º, 3º" y
+    quitas la primera, la que era "2º" pasa a ser "1º" — React cree que
+    es la misma ficha con otro contenido, y el estado (input a medias,
+    checkbox, focus) se pega al lugar equivocado.
+
     Usar el índice del array como `key` es un antipatrón común: si la
     lista se reordena, se inserta o se elimina un elemento del medio, los
-    índices "se corren" y React puede asociar el estado interno del
-    componente equivocado con el elemento equivocado (bugs sutiles de UI
-    que "recuerdan" el estado del elemento anterior).
+    índices "se corren" y React asocia el estado del componente
+    equivocado. Preferir un **id único y estable**. El índice solo es
+    aceptable si la lista es estática y los ítems no tienen estado
+    interno. Nunca `key={Math.random()}` (remount constante).
   - **Ejemplo**:
     ```tsx
-    // Malo: si se elimina el primer elemento, todos los índices cambian
+    // Malo: [A,B,C] → keys 0,1,2; borras A → [B,C] keys 0,1
+    // React cree que key 0 "sigue" siendo el mismo ítem, pero ahora es B con estado de A
     {tareas.map((tarea, i) => (
       <TareaItem key={i} tarea={tarea} />
     ))}
 
-    // Bueno: un id estable identifica siempre al mismo elemento, sin importar el orden
+    // Bueno: A siempre es key="a", sin importar el orden
     {tareas.map((tarea) => (
       <TareaItem key={tarea.id} tarea={tarea} />
     ))}
@@ -1351,23 +1731,50 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - `useEffect`: dependencias, cleanup y timing
 
-  - **Teoría**: `useEffect` sincroniza un componente con un sistema
-    externo (una suscripción, una petición, el DOM directamente). Se
-    ejecuta **después** de que el navegador pintó la pantalla, no durante
-    el render. El array de dependencias le dice a React "vuelve a
-    ejecutar este efecto solo si alguno de estos valores cambió"; omitirlo
-    ejecuta el efecto en cada render, y un array vacío `[]` lo ejecuta
-    solo una vez (al montar). La función que retorna el efecto es el
-    **cleanup**: corre antes de la siguiente ejecución del efecto y al
-    desmontar el componente — es donde se cancelan suscripciones,
-    listeners o timers (conecta directamente con los *memory leaks* vistos
-    en la sección 2).
+  - **Teoría**: en una frase — **`useEffect`** sincroniza con el mundo
+    exterior **después** de pintar; **deps** = cuándo repetirlo;
+    **cleanup** = qué deshacer antes de repetir o al desmontar (timers,
+    listeners, fetches).
+
+    No es para calcular UI: es para efectos secundarios (fetch,
+    suscripciones, timers, DOM). Timing:
+
+    ```
+    1. Render → 2. Commit (DOM) → 3. Navegador pinta → 4. useEffect corre
+    ```
+
+    El array de dependencias le dice a React cuándo volver a ejecutar:
+
+    - `[]` — solo al montar (cleanup al desmontar)
+    - `[userId]` — al montar y cada vez que `userId` cambia
+    - omitido — después de cada render (casi nunca lo quieres)
+
+    Si alguna dep cambió: primero corre el **cleanup** del efecto
+    anterior, luego el efecto nuevo. La función que retorna el efecto es
+    ese cleanup — ahí se cancelan suscripciones, listeners o timers
+    (conecta con *memory leaks* de la sección 2).
+
+    Analogía: montas un aparato (efecto) y conectas cables; antes de
+    reconectar o al irte (cleanup), desconectas los cables viejos.
   - **Ejemplo**:
     ```tsx
     useEffect(() => {
       const id = setInterval(() => setSegundos((s) => s + 1), 1000);
       return () => clearInterval(id); // cleanup: evita timers acumulados
-    }, []); // [] -- se ejecuta una sola vez, al montar
+    }, []); // [] -- una sola vez, al montar
+
+    // Con deps: si cambia userId, limpia y vuelve a pedir
+    useEffect(() => {
+      let cancelado = false;
+      fetch(`/api/users/${userId}`)
+        .then((r) => r.json())
+        .then((data) => {
+          if (!cancelado) setUser(data);
+        });
+      return () => {
+        cancelado = true; // ignora respuesta vieja al cambiar userId / desmontar
+      };
+    }, [userId]);
     ```
 
 - `useState` vs `useRef`
@@ -1399,17 +1806,36 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Composición: `children` y levantar el estado (*lifting state up*)
 
-  - **Teoría**: React favorece **composición sobre herencia** — en vez de
-    crear jerarquías de componentes que extienden a otros, se combinan
-    componentes pequeños pasándolos como `children` o como props. Cuando
-    dos componentes hermanos necesitan compartir o sincronizar un mismo
-    dato, la solución no es que uno le pase el dato al otro directamente
-    (no son padre-hijo) — se "levanta" el estado al ancestro común más
-    cercano, que pasa el valor y el setter hacia abajo como props.
+  - **Teoría**: en una frase — **`children`** = hueco para que el padre
+    meta lo que quiera (composición); **lifting state up** = si hermanos
+    comparten datos, el state sube al padre común y baja como props.
+
+    React favorece **composición sobre herencia**: en vez de jerarquías
+    que extienden componentes, se combinan piezas pequeñas pasándolas
+    como `children` o como props.
+
+    **`children`** es lo que escribes entre las etiquetas — el
+    componente actúa de contenedor sin saber qué hay adentro. Analogía:
+    un marco de foto (`Card`) vs la foto (`children`).
+
+    **Lifting state up**: cuando dos hermanos necesitan el mismo dato, no
+    se lo pasan entre sí (no son padre-hijo). Se "levanta" el estado al
+    **ancestro común más cercano**, que pasa valor y setter hacia abajo
+    como props (flujo unidireccional: de arriba hacia abajo).
   - **Ejemplo**:
     ```tsx
-    // Los hermanos "FiltroInput" y "ListaProductos" no se comunican entre sí:
-    // el estado vive en el padre común, "PaginaProductos"
+    // children: el contenedor no decide el contenido
+    function Card({ children }: { children: React.ReactNode }) {
+      return <div className="card">{children}</div>;
+    }
+    // <Card><h2>Título</h2><p>Cuerpo</p></Card>
+
+    // Lifting state up: FiltroInput y ListaProductos son hermanos;
+    // el estado vive en el padre común PaginaProductos
+    //
+    // PaginaProductos  ← state aquí
+    // ├── FiltroInput  ← valor + onCambiar
+    // └── ListaProductos ← filtro
     function PaginaProductos() {
       const [filtro, setFiltro] = useState('');
       return (
@@ -1425,58 +1851,94 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Reconciliación y Fiber
 
-  - **Teoría**: cuando el estado cambia, React no vuelve a crear todo el
-    DOM real desde cero — construye un nuevo árbol de elementos (el
-    resultado de volver a llamar a la función del componente) y lo
-    **compara** (*diffing*) contra el árbol anterior para calcular el
-    mínimo conjunto de cambios necesarios en el DOM real. Este proceso se
-    llama **reconciliación**, y **Fiber** es la arquitectura interna
-    (desde React 16) que lo implementa de forma que se pueda pausar,
-    priorizar y reanudar trabajo — es lo que hace posible el modo
-    concurrente y las Transitions (ya vistas en `REACT19.md`): React puede
-    "pausar" un render de baja prioridad si llega una interacción urgente
-    del usuario.
+  - **Teoría**: en una frase — **reconciliación** = diff del árbol
+    virtual → mínimo cambio al DOM; **Fiber** = arquitectura que permite
+    pausar/priorizar ese trabajo. Práctica: mismo tipo se reutiliza; tipo
+    distinto se remonta (pierde estado); en listas usa `key` estable.
+
+    Cuando el estado cambia, React no recrea todo el DOM desde cero —
+    construye un nuevo árbol de elementos (vuelve a llamar al componente)
+    y lo **compara** (*diffing*) con el anterior para calcular el mínimo
+    de cambios. Ese proceso es la **reconciliación**. Encaja con la
+    cadena de JSX:
+
+    ```
+    createElement → árbol de elementos → reconciliación (diff) → commit (DOM real)
+    ```
+
+    Analogía: no rehaces toda la casa; miras el plano viejo y el nuevo y
+    solo cambias la ventana.
+
+    **Fiber** (desde React 16) es la arquitectura interna que implementa
+    la reconciliación de forma pausable y priorizable — hace posible el
+    modo concurrente y las Transitions (`REACT19.md`): React puede
+    pausar un render de baja prioridad si llega una interacción urgente.
+    No programas Fiber a mano; lo notas con `startTransition`, Suspense,
+    etc.
   - **Ejemplo (regla práctica que se deriva de esto)**: React asume que
-    componentes del mismo tipo en la misma posición del árbol son "el
-    mismo" entre renders (por eso reutiliza su estado interno), y que
-    componentes de distinto tipo son completamente diferentes (destruye el
-    viejo y crea uno nuevo desde cero, perdiendo su estado interno):
+    componentes del mismo tipo en la misma posición son "el mismo" entre
+    renders (reutiliza DOM y estado interno), y que tipos distintos son
+    completamente diferentes (destruye el viejo y monta uno nuevo,
+    perdiendo estado):
     ```tsx
-    // Si "mostrarEditor" cambia, React destruye el <InputSimple> anterior
-    // y crea un <TextAreaAvanzado> nuevo -- son tipos distintos, sin relación
+    // Mismo tipo → se reutiliza (conserva estado interno del input)
+    return <input />;
+
+    // Tipo distinto → desmonta InputSimple y monta TextAreaAvanzado
     {mostrarEditor ? <TextAreaAvanzado /> : <InputSimple />}
+
+    // Listas: key estable = misma identidad aunque cambie de posición
+    // (ver sección `key` en listas)
     ```
 
 - Server Components vs Client Components
 
-  - **Teoría**: los **Server Components** (RSC) se ejecutan **solo en el
-    servidor**, nunca viajan al navegador como JS — pueden acceder
-    directamente a una base de datos o al sistema de archivos, y su
-    output es HTML/una descripción serializada, reduciendo el bundle de
-    JS que el cliente debe descargar. Los **Client Components** (marcados
-    con la directiva `'use client'` en frameworks como Next.js) son los
-    componentes React "de siempre": corren en el navegador, pueden usar
-    `useState`, `useEffect`, manejar eventos. La regla mental: por defecto
-    todo es Server Component; solo marcas `'use client'` en el límite
-    exacto donde empieza la interactividad.
+  - **Teoría**: en una frase — **Server Component** = corre en servidor,
+    cero JS de ese archivo al cliente, ideal para datos; **Client
+    Component** = `'use client'`, React "de siempre" con hooks y eventos.
+    Marca cliente solo en el borde de la interactividad.
+
+    No son dos "tipos de UI" distintos: es **dónde corre** el componente.
+
+    Los **Server Components** (RSC) se ejecutan **solo en el servidor**,
+    su código no viaja al navegador como JS — pueden hacer `await` a una
+    DB o al filesystem, y su output es HTML/una descripción serializada,
+    reduciendo el bundle. Analogía: cocinan en el restaurante y te traen
+    el plato; no te mandan la cocina a casa.
+
+    Los **Client Components** (directiva `'use client'` en Next.js, etc.)
+    son los de siempre: corren en el navegador, pueden usar `useState`,
+    `useEffect`, `onClick`.
+
+    Regla mental: por defecto todo es Server Component; solo marcas
+    `'use client'` en el límite exacto donde empieza la interactividad, y
+    empujas ese límite lo más abajo posible. Un Server puede renderizar
+    un Client como hijo (props serializables); aísla la interactividad en
+    hojas cliente.
   - **Ejemplo**:
     ```tsx
-    // ProductPage.tsx -- Server Component (sin 'use client'): corre solo en servidor
+    // ProductPage.tsx -- Server Component (sin 'use client')
+    // ProductPage (Server) ← datos, async, sin JS al cliente
+    //   └── BotonAgregarCarrito (Client) ← solo este baja al bundle
     async function ProductPage({ id }: { id: string }) {
-      const producto = await db.productos.findById(id); // acceso directo a datos, sin API intermedia
+      const producto = await db.productos.findById(id); // acceso directo, sin API intermedia
       return (
         <div>
           <h1>{producto.nombre}</h1>
-          <BotonAgregarCarrito productoId={producto.id} /> {/* este sí es interactivo */}
+          <BotonAgregarCarrito productoId={producto.id} />
         </div>
       );
     }
 
-    // BotonAgregarCarrito.tsx -- Client Component: necesita estado y eventos
+    // BotonAgregarCarrito.tsx -- Client: estado y eventos
     'use client';
     function BotonAgregarCarrito({ productoId }: { productoId: string }) {
       const [agregado, setAgregado] = useState(false);
-      return <button onClick={() => setAgregado(true)}>{agregado ? 'Agregado ✓' : 'Agregar'}</button>;
+      return (
+        <button onClick={() => setAgregado(true)}>
+          {agregado ? 'Agregado ✓' : 'Agregar'}
+        </button>
+      );
     }
     ```
 
@@ -1517,18 +1979,39 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Patrones de composición: *compound components* y custom hooks
 
-  - **Teoría**: los **compound components** son un grupo de componentes
-    que comparten estado implícito entre sí a través de Context, dando una
-    API declarativa donde el usuario del componente no necesita conocer el
-    estado interno (`<Tabs><Tabs.List><Tabs.Tab /></Tabs.List></Tabs>`,
-    similar a `<select><option>`). Los **custom hooks** son la forma
-    moderna de extraer y reutilizar *lógica con estado* entre componentes
-    (reemplazan en gran parte a los antiguos *Higher-Order Components* y
-    *render props*, que resolvían el mismo problema con más código
-    ceremonial).
+  - **Teoría**: en una frase — **compound components** = piezas de UI que
+    comparten estado implícito (Context) y se componen como HTML;
+    **custom hooks** = lógica con estado reutilizable, sin fijar el
+    markup. Uno organiza la API visual; el otro extrae comportamiento.
+
+    Los **compound components** son un grupo de componentes que comparten
+    estado entre sí (casi siempre vía Context), dando una API declarativa
+    donde quien usa el componente no necesita conocer el estado interno
+    (`<Tabs><Tabs.List><Tabs.Tab /></Tabs.List></Tabs>`, similar a
+    `<select><option>`). Analogía: Lego — piezas sueltas (`Tab`, `Panel`)
+    que solo tienen sentido juntas bajo el set (`Tabs`). Ideal cuando
+    quieres una API flexible tipo tabs / accordion / menú.
+
+    Los **custom hooks** son la forma moderna de extraer y reutilizar
+    *lógica con estado* entre componentes (reemplazan en gran parte a
+    HOCs y *render props*). No imponen un árbol de JSX: cada componente
+    decide su UI. Deben llamar a otros hooks (por eso el prefijo `use`).
+    Ideal para fetch, resize, form state, etc. A menudo se combinan: el
+    compound component por dentro usa custom hooks.
   - **Ejemplo**:
     ```tsx
-    // Custom hook: extrae lógica reutilizable (suscripción a resize) de la UI
+    // Compound components: el padre coordina estado; el consumidor arma el JSX
+    // (por debajo, Tabs comparte activeTab vía Context — simplificado aquí)
+    <Tabs defaultValue="a">
+      <Tabs.List>
+        <Tabs.Tab value="a">Uno</Tabs.Tab>
+        <Tabs.Tab value="b">Dos</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="a">Contenido A</Tabs.Panel>
+      <Tabs.Panel value="b">Contenido B</Tabs.Panel>
+    </Tabs>
+
+    // Custom hook: extrae lógica reutilizable (resize) de la UI
     function useWindowWidth() {
       const [width, setWidth] = useState(window.innerWidth);
       useEffect(() => {
@@ -1539,7 +2022,6 @@ Orden del plan completo (este archivo desarrolla el punto 1):
       return width;
     }
 
-    // Cualquier componente puede reutilizar la lógica sin repetirla:
     function Header() {
       const width = useWindowWidth();
       return <h1>{width < 768 ? 'Menú móvil' : 'Menú completo'}</h1>;
@@ -1548,17 +2030,29 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Performance: `React.memo`, `useMemo` y `useCallback`
 
-  - **Teoría**: por defecto, cuando un componente padre re-renderiza,
-    **todos** sus hijos vuelven a renderizar también, aunque sus props no
-    hayan cambiado. `React.memo` evita eso: memoiza el componente y solo
-    lo vuelve a renderizar si sus props cambiaron (comparación superficial).
-    `useMemo` memoiza el **resultado** de un cálculo costoso entre renders;
-    `useCallback` memoiza la **referencia** de una función (importante
-    porque en JS dos funciones con el mismo código son objetos distintos
-    en cada render, lo que rompería la comparación superficial de
-    `React.memo` si se la pasas como prop). Esta optimización tiene costo
-    propio (memoria, comparación) — no se aplica "por si acaso" en todos
-    lados, solo donde un profiling real muestra un re-render costoso.
+  - **Teoría**: en una frase — **`React.memo`** = no re-renderices el
+    hijo si las props no cambiaron; **`useMemo`** = no recalcules un
+    valor caro; **`useCallback`** = no crees una función nueva en cada
+    render (para que `memo` funcione). Úsalos donde el profiling lo
+    justifique.
+
+    Por defecto, cuando un padre re-renderiza, **todos** sus hijos
+    también, aunque sus props "parezcan" iguales. Estas tres tools evitan
+    trabajo innecesario, pero tienen costo (memoria, comparación) — no
+    "por si acaso".
+
+    - `React.memo` — memoiza el **componente**; solo re-renderiza si las
+      props cambiaron (comparación superficial `===`).
+    - `useMemo` — memoiza el **resultado** de un cálculo / valor entre
+      renders (cálculos pesados u objetos/arrays estables como props).
+    - `useCallback` — memoiza la **referencia** de una función. En JS dos
+      funciones con el mismo código son objetos distintos en cada render;
+      sin `useCallback`, eso rompe `React.memo` al pasarlas como prop.
+
+    Analogía: `memo` es un filtro en la puerta del hijo;
+    `useMemo`/`useCallback` hacen que las llaves (props) no cambien sin
+    necesidad. Regla: mide con Profiler → si el hijo es caro, `memo` →
+    estabiliza props con `useMemo`/`useCallback`.
   - **Ejemplo**:
     ```tsx
     const ListaCara = React.memo(function ListaCara({ items, onSelect }) {
@@ -1568,32 +2062,38 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
     function Padre() {
       const [contador, setContador] = useState(0);
-      const items = useMemo(() => calcularItemsCostosos(), []); // no se recalcula en cada render
-      const onSelect = useCallback((id) => console.log(id), []); // misma referencia siempre
+      const items = useMemo(() => calcularItemsCostosos(), []); // valor estable
+      const onSelect = useCallback((id) => console.log(id), []); // misma referencia
 
       return (
         <>
-          <button onClick={() => setContador(contador + 1)}>{contador}</button>
+          <button onClick={() => setContador((c) => c + 1)}>{contador}</button>
           <ListaCara items={items} onSelect={onSelect} />
         </>
       );
     }
     ```
-    Sin `useCallback` en `onSelect`, cada vez que `Padre` re-renderiza (al
-    hacer clic en el botón) se crearía una función nueva, `React.memo` la
-    vería como "prop distinta" y `ListaCara` re-renderizaría igual,
-    anulando la optimización.
+    Sin `useCallback` en `onSelect`, cada clic en el botón re-renderiza
+    `Padre`, crea una función nueva, `React.memo` la ve como "prop
+    distinta" y `ListaCara` re-renderiza igual — anula la optimización.
 
 - Testing de componentes: probar comportamiento, no implementación
 
-  - **Teoría**: la filosofía de Testing Library (la librería estándar hoy
-    para testear componentes React) es probar la app **como la usaría una
+  - **Teoría**: en una frase — **buen test de componente** = renderiza →
+    actúa como usuario → afirma lo visible. No mires state interno ni
+    detalles de implementación; así el test sobrevive a refactors.
+
+    La filosofía de Testing Library es probar la app **como la usaría una
     persona real**: buscar elementos por texto visible o rol accesible, y
-    simular clics/tecleo reales, en vez de acceder a detalles internos de
-    implementación (estado interno, nombres de métodos). Esto hace que los
-    tests sobrevivan a refactors internos (cambiar de `useState` a
-    `useReducer` no debería romper un test que solo verifica lo que el
-    usuario ve).
+    simular clics/tecleo reales — no acceder a estado interno, nombres de
+    métodos o `className` frágiles. Analogía: examinas si la puerta se
+    abre al girar la llave, no si el cerrojo es de marca X.
+
+    Probar comportamiento (bien) vs implementación (frágil): ¿aparece
+    "1" al hacer clic? sí; ¿el state `count` es `1`? no. Prioridad al
+    buscar: `getByRole` → `getByLabelText` / `getByText` → `getByTestId`
+    (último recurso). Beneficio: refactors (`useState` → `useReducer`) no
+    rompen el test; además empujas UI más accesible.
   - **Ejemplo**:
     ```tsx
     import { render, screen } from '@testing-library/react';
@@ -1617,16 +2117,26 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Diseño REST desde el punto de vista del consumidor
 
-  - **Teoría**: REST (*REpresentational State Transfer* — ver Glosario) no
-    es un estándar rígido, es un estilo: modela el dominio como
-    **recursos** (sustantivos, `/products`, `/orders/42`) y usa los verbos
-    HTTP (ya vistos en la sección 1) para las operaciones sobre ellos
-    (**CRUD** — *Create, Read, Update, Delete* — ver Glosario), en vez de
-    codificar la acción en la URL (`/getProduct?id=42`). Desde el lado del
-    consumidor (el frontend) esto importa porque una API bien diseñada es
+  - **Teoría**: en una frase — **REST (visto desde el frontend)** =
+    recursos en la URL + verbos HTTP para CRUD. Predecible: misma forma
+    de URL, distinta operación según el método. Evita meter la acción en
+    el path (`/delete`, `/getX`).
+
+    REST (*REpresentational State Transfer* — ver Glosario) no es un
+    estándar rígido, es un estilo: modela el dominio como **recursos**
+    (sustantivos, `/products`, `/orders/42`) y usa los verbos HTTP para
+    las operaciones (**CRUD** — *Create, Read, Update, Delete*), en vez
+    de codificar la acción en la URL (`/getProduct?id=42`).
+
+    Analogía: la URL es la dirección de la casa (`/products/42`); el
+    verbo es la acción — mirar (GET), entregar algo nuevo (POST),
+    reemplazar (PUT), retocar (PATCH), tirar abajo (DELETE).
+
+    Desde el consumidor importa porque una API bien diseñada es
     predecible: si sabes que `GET /products/42` trae un producto, ya
-    intuyes que `DELETE /products/42` lo elimina, sin tener que leer
-    documentación para cada endpoint nuevo.
+    intuyes que `DELETE /products/42` lo elimina, sin leer docs por cada
+    endpoint. También encaja mejor con caché HTTP, herramientas y
+    librerías del ecosistema.
   - **Ejemplo**:
     ```
     GET    /products          -- lista de productos
@@ -1635,34 +2145,43 @@ Orden del plan completo (este archivo desarrolla el punto 1):
     PUT    /products/42       -- reemplaza el producto 42 completo
     PATCH  /products/42       -- actualiza parcialmente el producto 42
     DELETE /products/42       -- elimina el producto 42
+
+    ❌  /getProduct?id=42
+    ✅  GET /products/42
     ```
-    Un anti-patrón común visto desde el consumidor: una API que expone
-    `POST /products/42/delete` en vez de `DELETE /products/42` — funciona,
-    pero rompe la convención que el resto del ecosistema (herramientas,
-    librerías HTTP, caché) da por sentada.
+    Anti-patrón común: `POST /products/42/delete` en vez de
+    `DELETE /products/42` — funciona, pero rompe la convención que el
+    resto del ecosistema (herramientas, librerías HTTP, caché) da por
+    sentada.
 
 - Fetch API vs XMLHttpRequest, y por qué `fetch` no rechaza en 4xx/5xx
 
-  - **Teoría**: **XHR** (*XMLHttpRequest* — ver Glosario) es la API
-    original del navegador para peticiones asíncronas, basada en eventos
-    (`onload`, `onerror`) y con una sintaxis verbosa. `fetch` es la API
-    moderna, basada en Promises. La trampa que sorprende a quien recién
-    empieza: la Promise que devuelve `fetch` **solo se rechaza por errores
-    de red** (sin conexión, DNS que falla, CORS bloqueado) — un `404` o un
-    `500` son respuestas HTTP **válidas** desde la perspectiva del
-    protocolo, así que `fetch` las resuelve normalmente. Hay que revisar
-    `response.ok` (o `response.status`) explícitamente para saber si la
-    petición "tuvo éxito" en términos de la aplicación.
+  - **Teoría**: en una frase — **`fetch`** es la API moderna basada en
+    Promises; **XHR** es la antigua. `fetch` **solo rechaza por red**;
+    4xx/5xx hay que detectarlos con `response.ok` / `status` y lanzar
+    error tú mismo.
+
+    **XHR** (*XMLHttpRequest*) es la API original del navegador para
+    peticiones asíncronas: eventos (`onload`, `onerror`), sintaxis
+    verbosa, hoy legacy. `fetch` es la moderna, basada en Promises /
+    `async-await`.
+
+    La trampa: la Promise de `fetch` **solo se rechaza por errores de
+    red** (sin conexión, DNS, CORS bloqueado). Un `404` o `500` son
+    respuestas HTTP **válidas** (el servidor contestó), así que `fetch`
+    las resuelve con éxito a nivel Promise. Analogía: el cartero sí
+    entregó el sobre; que dentro diga "no encontrado" lo ves al abrir el
+    sobre (`response.ok` / `status`).
   - **Ejemplo**:
     ```ts
     async function obtenerProducto(id: string) {
       const response = await fetch(`/api/products/${id}`);
 
       // BUG común: asumir que si no lanzó, todo salió bien
-      // const data = await response.json(); // explotaría feo en un 404
+      // const data = await response.json(); // explotaría feo / datos basura en un 404
 
       if (!response.ok) {
-        // response.ok es false para cualquier status fuera del rango 200-299
+        // ok === false si status fuera de 200-299
         throw new Error(`Error ${response.status}: no se pudo obtener el producto`);
       }
       return response.json();
@@ -1671,99 +2190,158 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Serialización JSON y `Content-Type`
 
-  - **Teoría**: HTTP transporta bytes, no objetos de JS — hay que
-    serializar el cuerpo de la petición (normalmente a **JSON**, ya visto
-    en la sección 3) y declarar explícitamente qué formato es con el header
-    `Content-Type`. Si lo omites o lo pones mal, el servidor puede
-    interpretar el body como texto plano en vez de JSON y fallar el
-    parseo, incluso si el JSON en sí es válido.
+  - **Teoría**: en una frase — **serializar** = objeto JS → string JSON
+    (`stringify`); **`Content-Type`** = etiqueta que dice al servidor
+    "léelo como JSON". Sin las dos, el body puede viajar mal o no
+    parsearse aunque el JSON sea correcto.
+
+    HTTP transporta bytes/texto, no objetos de JS. Al enviar hay que:
+    (1) convertir el objeto a string con `JSON.stringify`; (2) declarar
+    el formato con el header `Content-Type: application/json`. Analogía:
+    metes la carta en el sobre (`stringify`) y pegas la etiqueta del
+    idioma (`Content-Type`). Sin etiqueta, el servidor puede no saber
+    cómo leerlo.
+
+    Flujo: cliente hace `stringify` + header → viaja el body → servidor
+    ve `Content-Type` y hace el equivalente a `JSON.parse`. Al recibir,
+    `response.json()` parsea el body de vuelta a objeto JS. Si omites el
+    header o el body, muchos backends ignoran el body o fallan el parseo
+    (400, body vacío) aunque el JSON en sí sea válido.
   - **Ejemplo**:
     ```ts
+    const pedido = { productId: 42, quantity: 2 };
+
     fetch('/api/orders', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' }, // sin esto, muchos backends ignoran el body
-      body: JSON.stringify({ productId: 42, quantity: 2 }),
+      headers: { 'Content-Type': 'application/json' }, // etiqueta: "esto es JSON"
+      body: JSON.stringify(pedido), // '{"productId":42,"quantity":2}'
     });
+
+    // ❌ body: { productId: 42 }  — fetch no serializa objetos solo
+    // ❌ stringify sin Content-Type — el server puede no parsear
+    // Nota: con FormData el browser pone otro Content-Type; no mezclar con stringify
     ```
 
 - Query params vs path params vs body
 
-  - **Teoría**: cada uno comunica una intención distinta. Los **path
-    params** identifican un recurso específico dentro de la jerarquía de
-    la URL (`/products/42` — el `42` no tiene sentido sin la ruta). Los
-    **query params** filtran, ordenan o paginan una colección, son
-    opcionales por naturaleza (`/products?category=zapatos&sort=price`).
-    El **body** transporta datos estructurados que no caben legibles en
-    una URL (un formulario completo, un array de items) y es obligatorio
-    para `POST`/`PUT`/`PATCH` con payloads no triviales — los navegadores y
-    proxies además imponen límites de longitud a las URLs, así que datos
-    grandes nunca deberían ir en query params.
+  - **Teoría**: en una frase — **path** = *quién* (identidad del
+    recurso); **query** = *cómo* (filtros/opciones opcionales en la
+    URL); **body** = *qué datos* estructurados mando (sobre todo en
+    POST/PUT/PATCH).
+
+    Cada uno comunica una intención distinta:
+
+    - **Path params** — van dentro de la URL (`/products/42`). Identifican
+      un recurso concreto; el `42` no tiene sentido sin la ruta. Suelen
+      ser obligatorios. Analogía: número de departamento en la dirección.
+    - **Query params** — después de `?`, separados por `&`
+      (`/products?category=zapatos&sort=price`). Filtran, ordenan o
+      paginan; son opcionales. Visibles y compartibles, pero no para
+      secretos ni payloads grandes (límite de longitud de URL). Analogía:
+      instrucciones al portero.
+    - **Body** — no va en la URL; viaja en el cuerpo (JSON, etc.). Para
+      datos estructurados en `POST`/`PUT`/`PATCH`. Las URLs tienen límite
+      de longitud: datos grandes nunca en query. En `GET` casi no se usa
+      body. Analogía: el paquete que entregas.
+
+    Regla rápida: ¿identidad? → path. ¿filtro opcional? → query. ¿objeto
+    grande a crear/actualizar? → body.
   - **Ejemplo**:
     ```
     GET /products/42?include=reviews&currency=USD
-    -- "42"                -> path param: identifica el recurso
+    -- "42"                  -> path param: identifica el recurso
     -- "include", "currency" -> query params: modifican la respuesta, opcionales
 
     POST /orders
     { "items": [...], "shippingAddress": {...} }
     -- body: estructura completa, no cabría legible en una URL
+
+    // En JS, armar query:
+    // const params = new URLSearchParams({ category: 'zapatos', sort: 'price' });
+    // fetch(`/api/products?${params}`);
+
+    ✅ GET /products/42?currency=USD
+    ❌ GET /products?id=42              (id debería ser path)
+    ❌ GET /orders?items=[...]          (payload grande → body + POST)
     ```
 
 - Paginación: offset-based vs cursor-based
 
-  - **Teoría**: la paginación por **offset** (`?page=3&limit=20`) es simple
-    de implementar y permite saltar a cualquier página directamente, pero
-    tiene un problema real con datos que cambian: si se inserta un
-    elemento nuevo mientras el usuario pagina, los resultados se
-    "corren" y puede ver un elemento duplicado o saltarse uno. La
-    paginación por **cursor** (`?after=eyJpZCI6NDJ9`) usa un puntero
-    opaco al último elemento visto en vez de una posición numérica, es
-    estable frente a inserciones/eliminaciones concurrentes, y escala
-    mejor en bases de datos grandes (un `OFFSET` alto obliga a la base de
-    datos a recorrer y descartar todas las filas anteriores). El costo:
-    no puedes saltar directamente a "la página 8", solo avanzar
-    secuencialmente.
+  - **Teoría**: en una frase — **offset** = salta N ítems (páginas
+    numeradas; frágil si la lista cambia; malo con OFFSET alto);
+    **cursor** = "después de este ítem" (estable, mejor para infinite
+    scroll; no salta a página arbitraria).
+
+    Paginación = pedir la lista por trozos, no toda de una vez.
+
+    **Offset** (`?page=3&limit=20`): "ignora los primeros
+    `(page-1)*limit` y dame `limit`". Permite saltar a cualquier página
+    (UI 1, 2, 3…). Problema si la lista cambia mientras paginas: los
+    resultados se "corren" (duplicados o ítems saltados). Además, un
+    `OFFSET` alto obliga a la DB a recorrer y descartar todas las filas
+    anteriores. Analogía: "ábreme el libro en la página 50" — si insertan
+    hojas al inicio, esa página ya no es el mismo contenido.
+
+    **Cursor** (`?after=CURSOR&limit=20`): puntero opaco al último
+    elemento visto; "dame los siguientes después de este". Estable frente
+    a inserciones/eliminaciones y escala mejor (`WHERE id > último`
+    en vez de descartar filas). Costo: no puedes ir directo a "página 8",
+    solo avanzar (a veces también atrás). Ideal para feeds infinitos.
+    Analogía: "continúa desde el marcador", no "página 50".
   - **Ejemplo**:
     ```ts
-    // Offset-based: simple, pero inestable si la lista cambia mientras se pagina
+    // Offset: página 3 = OFFSET 40, LIMIT 20 — simple, inestable si la lista cambia
     fetch('/api/products?page=3&limit=20');
+    // SQL conceptual: SELECT * FROM products ORDER BY id LIMIT 20 OFFSET 40;
 
-    // Cursor-based: estable, típico en feeds infinitos (redes sociales, timelines)
+    // Cursor: estable, típico en feeds infinitos (timelines, redes sociales)
     fetch('/api/products?after=eyJpZCI6NDJ9&limit=20').then((res) => res.json());
-    // La respuesta trae el siguiente cursor a usar:
-    // { data: [...], nextCursor: "eyJpZCI6NjJ9" }
+    // Respuesta: { data: [...], nextCursor: "eyJpZCI6NjJ9" }
+    // Siguiente: fetch(`/api/products?after=${nextCursor}&limit=20`);
+    // SQL conceptual: SELECT * FROM products WHERE id > 42 ORDER BY id LIMIT 20;
+
+    // ¿Cuándo? Admin con "página 1 2 3" / datos chicos → offset
+    // Feed infinito / muchos datos / lista que cambia → cursor
     ```
 
 ### En profundidad
 
 - GraphQL: qué problema resuelve y su propio problema (N+1)
 
-  - **Teoría**: en REST, cada endpoint devuelve una forma fija de datos —
-    si necesitas menos campos de los que trae, hay **over-fetching**
-    (descargas datos que no usas); si necesitas combinar varios endpoints
-    para armar una pantalla, hay **under-fetching** (múltiples round-trips
-    para una sola vista). GraphQL resuelve ambos con un único endpoint
-    donde el **cliente declara exactamente qué campos necesita** en una
-    **query**, y las escrituras se hacen con **mutations**. El costo que
-    introduce: el problema **N+1** — si resolver una lista de N elementos
-    dispara una consulta a la base de datos por cada uno (en vez de una
-    sola consulta por lote), una query aparentemente simple puede generar
-    cientos de queries a la base de datos en el backend. Mitigarlo
-    (con *DataLoader* y batching) es responsabilidad del backend, pero un
-    frontend senior debe reconocer el síntoma al ver latencias altas en
-    queries anidadas.
+  - **Teoría**: en una frase — **GraphQL** = el cliente declara los
+    campos; un endpoint evita over/under-fetching de REST. **N+1** =
+    esa query anidada puede disparar 1+N consultas en DB; se mitiga con
+    batching (DataLoader). Un HTTP ≠ una query barata en base de datos.
+
+    En REST cada endpoint devuelve una forma fija: **over-fetching**
+    (traes campos que no usas) o **under-fetching** (varios round-trips
+    para una pantalla). Analogía: REST = menú fijo del restaurante;
+    GraphQL = pides solo lo que quieres.
+
+    Cómo funciona: un endpoint (p. ej. `POST /graphql`); el cliente manda
+    una **query** (lectura) o **mutation** (escritura) con el árbol de
+    campos; el servidor resuelve y responde con esa misma forma. El
+    cliente declara exactamente qué necesita — sin over-fetching; datos
+    anidados en un request — sin under-fetching.
+
+    El costo: **N+1** — resolver una lista de N elementos puede disparar
+    una consulta a la DB por cada uno (1 de la lista + N hijos) en vez de
+    un lote. Mitigarlo (*DataLoader*, batching) es del backend; el
+    frontend senior reconoce el síntoma: latencia alta en queries
+    anidadas aunque sea "un solo request HTTP".
   - **Ejemplo**:
     ```graphql
-    # El cliente pide exactamente estos campos, ni uno más: sin over-fetching
+    # El cliente pide exactamente estos campos: sin over-fetching
     query ObtenerPedido($id: ID!) {
       order(id: $id) {
         id
         total
         customer {
-          name # sin GraphQL, esto exigiría un segundo request a /customers/:id
+          name # sin GraphQL sería un segundo request a /customers/:id
         }
       }
     }
+    # Respuesta con la misma forma: { data: { order: { id, total, customer: { name } } } }
 
     mutation CrearPedido($input: OrderInput!) {
       createOrder(input: $input) {
@@ -1771,31 +2349,42 @@ Orden del plan completo (este archivo desarrolla el punto 1):
       }
     }
     ```
-    Si `order` trae 50 líneas de pedido y cada una resuelve su producto
-    con una consulta individual a la base de datos, son 51 consultas para
-    una sola query — el clásico N+1 visible en el tiempo de respuesta.
+    Si `order` trae 50 líneas y cada una resuelve su producto con una
+    consulta individual: 1 + 50 = 51 queries a la DB — el clásico N+1.
+    Con batching: una sola `WHERE id IN (...)` para los 50 productos.
 
 - Diseño de contrato API desde el consumidor: tipos compartidos y generación de tipos
 
-  - **Teoría**: cuando el frontend define manualmente los tipos de la
-    respuesta de una API (`interface Product { ... }`) sin ninguna
-    garantía de que coincidan con lo que el backend realmente envía, el
-    contrato puede desincronizarse en silencio — TypeScript valida contra
-    un tipo que ya no refleja la realidad, dando falsa seguridad. Dos
-    soluciones consolidadas: generar los tipos del cliente automáticamente
-    a partir de un **OpenAPI** (especificación estándar de una API REST)
-    con herramientas como `openapi-typescript`; o usar **tRPC**, que
-    comparte directamente los tipos de TypeScript del backend con el
-    frontend en un monorepo, sin generación de código ni esquema
-    intermedio — el tipo de retorno de un procedimiento del servidor es,
-    literalmente, el mismo tipo que ve el cliente.
+  - **Teoría**: en una frase — **contrato tipado** = que el frontend no
+    invente la forma de la API; **OpenAPI** = generar tipos desde el
+    spec; **tRPC** = compartir el tipo del router del server con el
+    client. Así TypeScript valida el contrato real, no una interface
+    desactualizada.
+
+    Si el frontend define a mano `interface Product { ... }` sin garantía
+    de que coincida con lo que el backend envía, el contrato se
+    desincroniza en silencio: TS valida contra un tipo que ya no refleja
+    la realidad (falsa seguridad). Analogía: un plano que ya no coincide
+    con la obra; el inspector solo mira el plano.
+
+    Dos soluciones consolidadas:
+
+    1. **OpenAPI** → generador (`openapi-typescript`): el spec YAML/JSON
+       describe la API REST; se generan tipos TS del cliente. Flujo:
+       `openapi.yaml` → herramienta → `api-types.ts` → fetch tipado.
+       Cuando cambia la API, regeneras. Ideal si backend/frontend están
+       separados (el OpenAPI debe mantenerse al día).
+    2. **tRPC**: en un monorepo, el tipo de retorno de un procedure del
+       servidor *es* el tipo del cliente (`AppRouter`). Sin esquema
+       intermedio ni `.d.ts` manual; un cambio en el server rompe el
+       compile del client.
   - **Ejemplo**:
     ```bash
     # A partir de un openapi.yaml, genera tipos TS reales para el cliente
     npx openapi-typescript ./openapi.yaml -o ./src/api-types.ts
     ```
     ```ts
-    // Con tRPC: el tipo de "getProduct" viaja del backend al frontend sin generación
+    // Con tRPC: el tipo de "getProduct" viaja del backend al frontend
     // server.ts
     export const appRouter = router({
       getProduct: publicProcedure
@@ -1811,49 +2400,59 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Manejo robusto de errores de red: reintentos, timeouts y cancelación
 
-  - **Teoría**: una petición de red puede fallar de formas que no son "el
-    servidor rechazó la petición": puede quedarse colgada indefinidamente,
-    fallar por una caída momentánea de red, o volverse innecesaria porque
-    el usuario navegó a otra pantalla. Un frontend senior maneja los tres
-    casos: **timeout** (aborta si tarda demasiado, en vez de dejar al
-    usuario esperando para siempre), **retry con backoff exponencial**
-    (reintenta solo errores transitorios — `5xx`, timeouts, nunca un `4xx`,
-    que es un error del propio cliente que no se arregla repitiendo — con
-    una espera creciente entre intentos para no saturar un servidor ya
-    sobrecargado), y **cancelación** con `AbortController` (si el usuario
-    cambia de búsqueda antes de que responda la anterior, cancelarla evita
-    una condición de carrera donde la respuesta vieja "gana" y sobrescribe
-    la más reciente).
+  - **Teoría**: en una frase — **timeout** = aborta si tarda demasiado;
+    **retry + backoff** = reintenta solo fallos transitorios, con espera
+    creciente; **cancelación** = mata peticiones obsoletas para evitar
+    resultados viejos. Los tres evitan UX colgada, spam al server y
+    races en búsquedas.
+
+    Una petición puede fallar de formas que no son "el servidor rechazó":
+    quedarse colgada, caer por red momentánea, o volverse innecesaria
+    (el usuario navegó / cambió la búsqueda).
+
+    - **Timeout** — con `AbortController` + `setTimeout` → `abort()` si
+      pasa el límite (p. ej. 5s). Analogía: si el ascensor no abre, dejas
+      de esperar.
+    - **Retry con backoff exponencial** — reintenta solo errores
+      transitorios (`5xx`, timeouts, red); **nunca** un `4xx` (error del
+      cliente que no se arregla repitiendo). Espera creciente: 500ms,
+      1s, 2s… para no saturar un servidor sobrecargado.
+    - **Cancelación** — `AbortController` al cambiar de búsqueda/pantalla:
+      cancela la petición en vuelo y evita que una respuesta vieja pise
+      la nueva (race condition). Librerías como React Query / SWR ya
+      cubren mucho de esto.
   - **Ejemplo paso a paso**:
     ```ts
     async function fetchConTimeoutYRetry(url: string, intentos = 3): Promise<Response> {
       for (let intento = 0; intento < intentos; intento++) {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000); // timeout de 5s
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // timeout 5s
 
         try {
           const res = await fetch(url, { signal: controller.signal });
           clearTimeout(timeoutId);
           if (res.status >= 500 && intento < intentos - 1) {
-            // Error del servidor: reintentable. Backoff exponencial: 500ms, 1000ms, 2000ms...
+            // 5xx reintentable. Backoff: 500ms, 1000ms, 2000ms...
             await new Promise((r) => setTimeout(r, 500 * 2 ** intento));
             continue;
           }
           return res; // éxito, o un 4xx que no tiene sentido reintentar
         } catch (err) {
           clearTimeout(timeoutId);
-          if (intento === intentos - 1) throw err; // se acabaron los intentos
+          if (intento === intentos - 1) throw err;
         }
       }
       throw new Error('No se pudo completar la petición');
     }
 
-    // Cancelación al escribir en un buscador: cada tecleo cancela la búsqueda anterior
+    // Cancelación en buscador: cada tecleo cancela la búsqueda anterior
     let controladorActual: AbortController | null = null;
     async function buscar(texto: string) {
-      controladorActual?.abort(); // cancela la petición en vuelo, si había una
+      controladorActual?.abort();
       controladorActual = new AbortController();
-      const res = await fetch(`/api/search?q=${texto}`, { signal: controladorActual.signal });
+      const res = await fetch(`/api/search?q=${texto}`, {
+        signal: controladorActual.signal,
+      });
       return res.json();
     }
     ```
@@ -1864,28 +2463,40 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Las tres categorías de estado, y por qué mezclarlas es un antipatrón
 
-  - **Teoría**: no todo "estado" es del mismo tipo, y tratarlo como si lo
-    fuera lleva a arquitecturas confusas. **Estado local de componente**
-    (un input abierto/cerrado, el valor de un formulario) solo le importa
-    a ese componente y sus hijos directos. **Estado global de UI**
-    (usuario autenticado, tema claro/oscuro, idioma) es compartido pero no
-    viene de una API, cambia poco. **Estado de servidor** (la lista de
-    productos, el perfil del usuario) es una **copia cacheada** de datos
-    que en realidad viven en el backend, pueden quedar desactualizados, y
-    necesitan revalidarse. El antipatrón común es meter estado de servidor
-    dentro de un store global de UI (Redux, Context) y reimplementar a
-    mano problemas que una librería especializada ya resuelve: caché,
-    invalidación, refetch, estados de carga por petición.
+  - **Teoría**: en una frase — **local** = UI de un componente;
+    **global de UI** = preferencias/sesión compartidas, no caché de API;
+    **servidor** = copia de datos remotos (usa librería de server state).
+    Mezclar servidor en el store de UI es antipatrón: pierdes
+    caché/invalidación y complicas la arquitectura.
+
+    No todo "estado" es del mismo tipo. Pregunta de dónde viene y a quién
+    le importa → eliges categoría → eliges herramienta.
+
+    - **Estado local** — solo le importa a ese componente y sus hijos
+      (`useState`/`useReducer`): modal abierto, valor de un input. Nace y
+      muere con el componente.
+    - **Estado global de UI** — compartido, no viene de una API; cambia
+      poco (tema, idioma, sesión). Context o store ligero. Fuente de
+      verdad: la app.
+    - **Estado de servidor** — copia cacheada de datos que viven en el
+      backend (productos, perfil remoto). Puede quedar desactualizado;
+      necesita loading, error, refetch, invalidación, deduplicación.
+      Librerías especializadas (ver "en profundidad") ya lo resuelven.
+
+    Analogía: local = post-it; global UI = pizarra de la oficina;
+    servidor = fotocopia del archivo central (hay que revalidar).
+
+    El antipatrón: meter estado de servidor en el mismo store que la UI
+    global y reimplementar a mano caché, invalidación y loading.
   - **Ejemplo**:
     ```tsx
     // Antipatrón: tratar datos del servidor igual que estado de UI puro
-    const [usuarioActual, setUsuarioActual] = useState(null); // esto sí es UI global: OK
+    const [usuarioActual, setUsuarioActual] = useState(null); // UI global: OK
     const [productos, setProductos] = useState([]); // esto es estado de SERVIDOR
     useEffect(() => {
       fetch('/api/products').then((r) => r.json()).then(setProductos);
-      // A mano tocaría reimplementar: caché, revalidación, deduplicación,
-      // reintentos, estado de loading/error... todo lo que una librería
-      // de estado de servidor (ver "en profundidad") ya resuelve.
+      // A mano: caché, revalidación, deduplicación, loading/error...
+      // lo que una librería de estado de servidor ya resuelve.
     }, []);
     ```
 
@@ -1944,46 +2555,38 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - Estado de servidor con caché: el patrón *stale-while-revalidate*
 
-  - **Teoría**: librerías como React Query y **SWR** (*stale-while-revalidate*
-    — ver Glosario, también el nombre de la librería) tratan cada
-    petición como una entrada de caché identificada por una "query key",
-    y resuelven exactamente lo que un `useEffect` + `useState` manual no
-    resuelve bien: **caché** (si dos componentes piden los mismos datos,
-    solo se hace una petición real), **deduplicación** (varias llamadas
-    simultáneas a la misma query key se combinan en una sola petición de
-    red), **invalidación** (marcar datos como obsoletos tras una mutación,
-    para que se vuelvan a pedir), y **refetch en background** (mostrar el
-    dato cacheado — "stale", desactualizado — de inmediato, mientras en
-    segundo plano se revalida contra el servidor y se actualiza la UI si
-    cambió, sin bloquear al usuario con un spinner).
-    Mientras que useEffect te obliga a orquestar manualmente cada paso del
-    ciclo de vida de una petición (cuándo cargar, cómo manejar errores, cuándo    limpiar),
-    React Query te permite declarar qué datos necesitas y él se encarga de la
-    gestión del estado del servidor.
-    Diferencias claves:
-    - Gestión de Estado y Boilerplate: Con useEffect necesitas crear manualmente múltiples
-      estados (data, isLoading, error) y actualizarlos tú mismo. React Query abstrae todo esto;
-      solo usas el hook y obtienes esos estados listos para usar.
-    - Caché y Deduplicación: useEffect no tiene caché. Si dos componentes piden los mismos datos
-      al montarse, se harán dos peticiones. React Query guarda los datos en caché (basado en la queryKey)
-      y si dos componentes piden lo mismo, solo se hace una petición y ambos comparten la respuesta.
-    - Manejo de Errores y Reintentos: En useEffect debes escribir try/catch manualmente.
-      React Query incluye lógica de reintento automático por defecto y te da el estado isError directamente
-    - Refetching Inteligente: Con useEffect los datos pueden quedar obsoletos (stale) al volver a la pestaña.
-      React Query actualiza los datos automáticamente en segundo plano cuando la ventana recupera el foco,
-      sin que el usuario lo note.
-    
+  - **Teoría**: en una frase — **SWR** = muestra caché ya + revalida en
+    segundo plano; la **query key** identifica y comparte esa caché; tras
+    mutaciones, **invalidas** para forzar refetch. Evita reinventar
+    caché/loading/dedupe con `useEffect`.
+
+    Librerías como React Query y **SWR** (*stale-while-revalidate* — ver
+    Glosario; también el nombre de la librería) tratan cada petición como
+    una entrada de caché. Analogía: enseñas la fotocopia de ayer al
+    instante; mientras, alguien verifica en el archivo si cambió.
+
+    Cómo funciona: (1) primera visita → sin caché → fetch → spinner →
+    guardas con una query key; (2) vuelves / otro componente usa la misma
+    key → muestras data cacheada ya (aunque esté *stale*) y en background
+    revalidas; si cambió, actualizas la UI sin spinner; (3) tras una
+    mutación → `invalidateQueries` marca la key obsoleta → refetch.
+
+    Frente a `useEffect` + `useState` manual resuelven: **caché** y
+    **deduplicación** (misma key = una petición), **invalidación** tras
+    mutar, **refetch en background** (también al recuperar el foco de la
+    pestaña), estados `data`/`isLoading`/`isError` y reintentos sin
+    orquestarlo a mano. Tú declaras qué datos necesitas; la librería
+    gestiona el ciclo de vida del estado de servidor.
   - **Ejemplo**:
     ```tsx
     import { useQuery, useQueryClient } from '@tanstack/react-query';
 
     function ListaProductos() {
-      // "products" es la query key: si otro componente usa la misma key,
-      // React Query reutiliza el caché en vez de pedir de nuevo
+      // query key: misma key → misma caché / una sola petición
       const { data, isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: () => fetch('/api/products').then((r) => r.json()),
-        staleTime: 60_000, // considera los datos "frescos" por 1 minuto
+        staleTime: 60_000, // "frescos" 1 min: no revalida de inmediato
       });
 
       if (isLoading) return <Spinner />;
@@ -1993,80 +2596,122 @@ Orden del plan completo (este archivo desarrolla el punto 1):
     function useCrearProducto() {
       const queryClient = useQueryClient();
       return async (producto) => {
-        await fetch('/api/products', { method: 'POST', body: JSON.stringify(producto) });
-        queryClient.invalidateQueries({ queryKey: ['products'] }); // fuerza refetch: la lista se actualiza sola
+        await fetch('/api/products', {
+          method: 'POST',
+          body: JSON.stringify(producto),
+        });
+        // marca ['products'] obsoleto → refetch → la lista se actualiza
+        queryClient.invalidateQueries({ queryKey: ['products'] });
       };
     }
     ```
-    Ninguna de estas cuatro garantías (caché, dedup, invalidación,
-    refetch en background) existe en un `useState` + `useEffect` manual
-    sin reimplementarlas a mano.
+    Ninguna de estas garantías (caché, dedup, invalidación, refetch en
+    background) existe en un `useState` + `useEffect` manual sin
+    reimplementarlas a mano.
 
 - Zustand vs Redux vs Jotai: qué problema resuelve cada uno
 
-  - **Teoría**: los tres son librerías de estado global de **UI** (no de
-    servidor), pero con filosofías distintas. **Redux** centraliza todo
-    el estado en un único store inmutable, con actualizaciones explícitas
-    vía *reducers* y *actions* — muy predecible y con buenas herramientas
-    de debugging (time-travel), a costa de bastante código ceremonial
-    (aunque Redux Toolkit lo redujo mucho). **Zustand** ofrece un store
-    global minimalista sin *boilerplate*, con suscripción granular por
-    selector (un componente solo re-renderiza si el pedazo de estado que
-    lee cambió, sin el problema de Context visto arriba). **Jotai** usa un
-    modelo **atómico**: en vez de un store único, defines "átomos" de
-    estado pequeños e independientes que se combinan bottom-up, útil
-    cuando el estado global es en realidad muchos pedazos no
-    relacionados entre sí.
+  - **Teoría**: en una frase — **Redux** = store único + actions/reducers
+    (predecible, más ceremonia); **Zustand** = store mínimo + selectors
+    (poco boilerplate, re-renders finos); **Jotai** = átomos
+    independientes que combinas. Los tres = estado de **UI**; no
+    reemplazan caché de servidor (React Query / SWR).
+
+    **Redux** centraliza el estado en un único store inmutable:
+    `dispatch(action)` → `reducer` → nuevo state. Muy predecible y con
+    DevTools (time-travel); más código ceremonial (Redux Toolkit lo
+    reduce). Analogía: banco central con formularios oficiales.
+
+    **Zustand** ofrece un store global minimalista: estado + funciones
+    `set`, suscripción granular por selector (el componente solo
+    re-renderiza si el pedazo que lee cambió — evita el problema de
+    Context). Analogía: caja compartida; solo te avisan si cambió lo que
+    miras.
+
+    **Jotai** usa un modelo **atómico** bottom-up: en vez de un store
+    único, defines átomos pequeños e independientes y los combinas.
+    Útil cuando el "global" son muchos pedazos no relacionados. Analogía:
+    Lego.
+
+    Regla práctica: Zustand por simplicidad; Redux si el equipo/tooling
+    lo pide; Jotai si el estado se siente más átomos que un store.
   - **Ejemplo**:
     ```tsx
-    // Zustand: sin boilerplate, con selector para suscripción granular
+    // Zustand: sin boilerplate, selector = suscripción granular
     const useCarritoStore = create((set) => ({
       items: [],
       agregar: (item) => set((state) => ({ items: [...state.items, item] })),
     }));
     function ContadorCarrito() {
-      // Solo re-renderiza si "items.length" cambia, no por cualquier otro cambio del store
+      // Solo re-renderiza si items.length cambia
       const cantidad = useCarritoStore((state) => state.items.length);
       return <span>{cantidad}</span>;
     }
 
-    // Jotai: átomos independientes, se combinan según se necesiten
+    // Jotai: átomos independientes
     const temaAtom = atom('claro');
     const usuarioAtom = atom(null);
     function BotonTema() {
-      const [tema, setTema] = useAtom(temaAtom); // no le importa nada de "usuarioAtom"
-      return <button onClick={() => setTema(tema === 'claro' ? 'oscuro' : 'claro')}>{tema}</button>;
+      const [tema, setTema] = useAtom(temaAtom); // no le importa usuarioAtom
+      return (
+        <button onClick={() => setTema(tema === 'claro' ? 'oscuro' : 'claro')}>
+          {tema}
+        </button>
+      );
     }
+
+    // Redux (idea): dispatch({ type: 'carrito/agregar', payload: item })
+    // → reducer actualiza el store central → subscribers
     ```
 
 - Normalización de estado
 
-  - **Teoría**: guardar datos anidados y duplicados en el estado (una
-    lista de pedidos donde cada pedido incluye una copia completa del
-    objeto cliente) genera un problema real: si el nombre del cliente
-    cambia, hay que encontrar y actualizar **todas** las copias
-    duplicadas, y es fácil olvidar una y dejar el estado inconsistente.
-    **Normalizar** el estado significa guardarlo como una base de datos
-    en memoria — entidades planas indexadas por id, y referencias por id
-    en vez de objetos anidados completos — igual que se normalizan tablas
-    relacionales en una base de datos.
+  - **Teoría**: en una frase — **normalizar** = entidades planas por id +
+    referencias, como tablas de una DB. Evita copias duplicadas
+    anidadas; un cambio se hace en un solo lugar. En UI haces el "join"
+    al leer.
+
+    Guardar datos anidados y duplicados (cada pedido con una copia
+    completa del cliente) genera inconsistencias: si cambia el nombre del
+    cliente, hay que actualizar **todas** las copias. Analogía: el mismo
+    contacto pegado en 50 hojas; cambias el teléfono y se te olvidan 3.
+
+    **Normalizar** = guardarlo como mini base de datos en memoria:
+    entidades planas indexadas por id (`byId`), orden en `allIds`, y
+    relaciones por id (`clienteId`) en vez de objetos anidados. Igual que
+    tablas relacionales. Al renderizar, resuelves el join en memoria.
+    Herramientas como Normalizr o Entity Adapter (Redux Toolkit)
+    automatizan el patrón.
   - **Ejemplo**:
     ```ts
-    // Sin normalizar: el mismo cliente duplicado en cada pedido
+    // Sin normalizar: Ana duplicada en cada pedido
     const pedidos = [
       { id: 1, cliente: { id: 9, nombre: 'Ana' }, total: 100 },
-      { id: 2, cliente: { id: 9, nombre: 'Ana' }, total: 50 }, // copia duplicada
+      { id: 2, cliente: { id: 9, nombre: 'Ana' }, total: 50 },
     ];
 
-    // Normalizado: una sola fuente de verdad por entidad, referenciada por id
+    // Normalizado: una fuente de verdad por entidad
     const estado = {
       pedidos: {
-        byId: { 1: { id: 1, clienteId: 9, total: 100 }, 2: { id: 2, clienteId: 9, total: 50 } },
+        byId: {
+          1: { id: 1, clienteId: 9, total: 100 },
+          2: { id: 2, clienteId: 9, total: 50 },
+        },
         allIds: [1, 2],
       },
-      clientes: { byId: { 9: { id: 9, nombre: 'Ana' } } },
+      clientes: {
+        byId: { 9: { id: 9, nombre: 'Ana' } },
+      },
     };
-    // Actualizar el nombre de Ana ahora es un solo cambio, en un solo lugar
+    // Actualizar Ana = un solo cambio
+    // estado.clientes.byId[9].nombre = 'Ana María';
+
+    // Al leer en UI: join en memoria
+    // estado.pedidos.allIds.map((id) => {
+    //   const pedido = estado.pedidos.byId[id];
+    //   const cliente = estado.clientes.byId[pedido.clienteId];
+    //   return `${pedido.id} — ${cliente.nombre}`;
+    // });
     ```
 
 - Actualizaciones optimistas a nivel de librería
@@ -2100,77 +2745,99 @@ Orden del plan completo (este archivo desarrolla el punto 1):
 
 - CSR, SSR, SSG e ISR: definición y trade-offs
 
-  - **Teoría**: son cuatro formas distintas de responder a la misma
-    pregunta — "¿dónde y cuándo se genera el HTML?" — cada una con un
-    trade-off distinto entre velocidad, SEO, costo de servidor y
-    frescura de datos.
-    - **CSR** (*Client-Side Rendering* — ver Glosario): el servidor manda
-      un HTML casi vacío y todo el renderizado ocurre en el navegador con
-      JS. Tiempo a interactivo más lento (hay que descargar y ejecutar
-      todo el JS antes de ver algo), y SEO pobre si el crawler no ejecuta
-      JS; a cambio, tras la carga inicial las navegaciones son muy
-      rápidas (SPA — *Single Page Application* — ver Glosario) y el costo
-      de servidor es mínimo (solo sirve archivos estáticos).
-    - **SSR** (*Server-Side Rendering* — ver Glosario): el servidor genera
-      el HTML completo en cada petición. Buen SEO y buen primer pintado
-      con contenido real, pero cada visita cuesta cómputo de servidor y
-      depende de la latencia del backend en ese momento.
-    - **SSG** (*Static Site Generation* — ver Glosario): el HTML se genera
-      **una vez, en build time**, y se sirve como archivo estático desde
-      un CDN. El más rápido y barato posible, pero los datos quedan
-      fijos hasta el próximo build — no sirve para contenido que cambia
-      todo el tiempo.
-    - **ISR** (*Incremental Static Regeneration* — ver Glosario): un
-      híbrido — sirve la versión estática cacheada (rápida, como SSG),
-      pero la regenera en segundo plano después de un tiempo configurado,
-      sin necesitar un build completo del sitio para reflejar datos
-      nuevos.
-  - **Ejemplo**: una tienda online real suele combinar las cuatro
-    estrategias según la página:
+  - **Teoría**: en una frase — **CSR** = HTML en el cliente (SPA);
+    **SSR** = HTML en cada request en el server (+ hidratación JS);
+    **SSG** = HTML en build, CDN; **ISR** = estático + regeneración
+    periódica. Eliges según SEO, frescura de datos y costo de servidor.
+
+    Las cuatro responden: "¿dónde y cuándo se genera el HTML?"
+
+    - **CSR** (*Client-Side Rendering*): el servidor manda HTML casi
+      vacío; el browser descarga JS y React renderiza ahí. Tras la carga,
+      navegaciones SPA rápidas y costo de servidor mínimo. Trade-off: TTI
+      más lento; SEO flojo si el crawler no ejecuta JS.
+      Flujo: request → HTML vacío + JS → render en cliente → contenido.
+
+    - **SSR** (*Server-Side Rendering*): el servidor genera el HTML
+      completo en cada petición (buen SEO y primer pintado con datos).
+      Ese HTML llega **inerte**: se ve, pero los `onClick` aún no
+      funcionan. Luego el browser descarga el JS y React **hidrata**:
+      vuelve a ejecutar el árbol en memoria, adjunta listeners al DOM
+      existente y verifica que coincida con lo del server. Hidratar ≠
+      volver a pintar desde cero; es enlazar React al HTML ya pintado.
+      Hasta que termina, la página puede verse lista pero no responder
+      al primer clic. Trade-off: cada visita cuesta CPU/latencia de
+      servidor.
+      Flujo: request → server arma HTML → browser pinta → JS → hidrata →
+      interactivo.
+
+    - **SSG** (*Static Site Generation*): el HTML se genera **una vez en
+      build** y se sirve desde un CDN (lo más rápido y barato). Trade-off:
+      datos fijos hasta el próximo build.
+      Flujo: build → HTML estático → request sirve archivo.
+
+    - **ISR** (*Incremental Static Regeneration*): híbrido — sirve la
+      versión estática cacheada (rápida, como SSG) y la regenera en
+      segundo plano tras un tiempo configurado, sin rebuild completo del
+      sitio. Puede servir un instante "viejo" mientras regenera.
+
+    Analogía: CSR = montas el mueble en casa; SSR = te lo arman en cada
+    pedido (+ baterías = hidratación); SSG = viene armado de fábrica;
+    ISR = armado de fábrica y cada cierto tiempo lo rehacen.
+  - **Ejemplo**: una tienda online suele combinar las cuatro:
     ```
-    /                     -> SSG (la home cambia poco, se puede pre-generar)
-    /productos/[slug]     -> ISR (miles de productos, precios cambian, no todo el tiempo)
-    /checkout             -> CSR (muy interactivo, no necesita SEO, ya autenticado)
-    /buscar?q=zapatillas  -> SSR (resultado depende 100% de la query, cada vez distinto)
+    /                     -> SSG (home estable, se pre-genera)
+    /productos/[slug]     -> ISR (miles de productos, precios cambian a ratos)
+    /checkout             -> CSR (muy interactivo, autenticado, sin SEO)
+    /buscar?q=zapatillas  -> SSR (resultado distinto en cada query)
     ```
 
 - Hidratación y por qué puede ser costosa
 
-  - **Teoría**: cuando SSR/SSG entregan HTML ya generado, ese HTML es
-    "inerte" — se ve completo, pero ningún `onClick` funciona todavía
-    porque React aún no tomó control de él. La **hidratación** es el
-    proceso donde React descarga su JS, vuelve a ejecutar el árbol de
-    componentes en el navegador, y "adjunta" los event listeners sobre el
-    HTML que ya existe, verificando que coincida con lo que el servidor
-    generó. El costo real: React tiene que procesar **todo** el árbol de
-    componentes de la página para hidratarlo, aunque el 90% del HTML sea
-    estático y jamás vaya a cambiar (un footer, una barra de navegación) —
-    es trabajo de CPU que compite directamente con la interactividad
-    temprana, sobre todo notorio en dispositivos de gama baja.
+  - **Teoría**: en una frase — **hidratación** = React descarga el JS,
+    reconstruye el árbol en memoria y **adjunta** listeners al HTML del
+    server (no lo vuelve a pintar desde cero). Hasta que termina, la
+    página se ve lista pero puede no responder al clic.
+
+    Cuando SSR/SSG entregan HTML ya generado, ese HTML es "inerte" — se
+    ve completo, pero ningún `onClick` funciona todavía. Analogía: un
+    muñeco ya vestido; hidratar es ponerle baterías y cables.
+
+    El costo: React procesa **todo** el árbol para hidratarlo, aunque el
+    90% sea estático (footer, nav) y jamás cambie — CPU que compite con
+    la interactividad temprana, sobre todo en dispositivos de gama baja.
   - **Ejemplo**: el síntoma clásico es una página que **se ve** lista
-    (el HTML ya está pintado) pero no responde al primer clic durante un
-    instante — el usuario hace clic en un botón y no pasa nada porque
-    React todavía está hidratando ese árbol en segundo plano. Esto es
-    justamente lo que las soluciones de "en profundidad" (streaming,
-    islands, resumability) atacan desde ángulos distintos.
+    (el HTML ya está pintado) pero no responde al primer clic un instante
+    — React todavía está hidratando. Eso es lo que atacan streaming,
+    islands y resumability (más abajo).
 
 ### En profundidad
 
 - Streaming SSR y Suspense en el servidor
 
-  - **Teoría**: el SSR tradicional espera a que **todo** el árbol de
-    componentes esté listo (incluyendo datos lentos de una API o base de
-    datos) antes de enviar el primer byte de HTML — si una sola sección
-    de la página es lenta, retrasa a toda la página. El **streaming SSR**
-    (ya visto en `REACT19.md`) envía el HTML por partes: el shell
-    principal sale de inmediato, y cada `<Suspense>` que envuelve una
-    parte lenta se resuelve y se "inyecta" en el HTML ya enviado en
-    cuanto sus datos están listos, sin bloquear el resto de la página.
+  - **Teoría**: en una frase — **streaming SSR** = enviar HTML por
+    trozos; **Suspense en servidor** = frontera de lo que puede llegar
+    tarde (fallback primero, contenido después). Una sección lenta ya no
+    bloquea el shell de toda la página.
+
+    El SSR tradicional espera a que **todo** el árbol esté listo
+    (incluyendo datos lentos) antes del primer byte de HTML — una parte
+    lenta retrasa toda la página. El **streaming SSR** (ver `REACT19.md`)
+    envía HTML por partes: el shell sale de inmediato; cada `<Suspense>`
+    que envuelve algo lento manda primero el fallback y, cuando los datos
+    están listos, un fragmento que reemplaza ese placeholder in-place.
+
+    Flujo: request → server envía layout + fallbacks → resuelve la parte
+    lenta → envía chunk que sustituye el spinner → el browser actualiza
+    esa zona sin esperar el documento completo. Analogía: te traen pan y
+    plato principal ya; el postre llega después — no esperas en la puerta
+    a que esté todo.
+
+    Streaming mejora *cuándo* llega el HTML; después sigue haciendo falta
+    hidratar para la interactividad (no elimina la hidratación).
   - **Ejemplo**:
     ```tsx
-    // El header y el layout salen de inmediato; los reviews (lentos de
-    // consultar en la base de datos) se transmiten después, sin bloquear
-    // el resto de la página
+    // Header/layout salen ya; reviews (lentas) en un chunk posterior
     function ProductPage({ id }: { id: string }) {
       return (
         <Layout>
@@ -2182,38 +2849,46 @@ Orden del plan completo (este archivo desarrolla el punto 1):
       );
     }
     ```
-    El navegador recibe el fallback del spinner de inmediato dentro del
-    HTML inicial, y cuando el servidor termina de resolver `ProductReviews`,
-    envía un fragmento adicional que reemplaza ese spinner in-place, sin
-    esperar a que termine toda la respuesta.
+    El navegador recibe el spinner en el HTML inicial; cuando el servidor
+    termina `ProductReviews`, envía un fragmento que reemplaza ese
+    spinner, sin bloquear el resto de la página.
 
 - Islands architecture y resumability como alternativas a hidratar todo
 
-  - **Teoría**: dos frameworks atacan el costo de hidratación desde raíces
-    distintas. **Astro** usa *islands architecture* (arquitectura de
-    islas): por defecto todo se renderiza a HTML estático puro, sin JS, y
-    solo los componentes explícitamente marcados como interactivos
-    ("islas") se hidratan de forma **independiente y aislada** — el resto
-    de la página nunca paga el costo de hidratación porque nunca tuvo
-    JS que ejecutar. **Qwik** va un paso más allá con **resumability**:
-    en vez de re-ejecutar todo el árbol de componentes en el cliente para
-    "reconstruir" dónde estaban los event listeners (lo que hace la
-    hidratación tradicional), serializa ese estado directamente en el
-    HTML, de modo que el navegador puede "resumir" la ejecución exacta
-    donde la dejó el servidor, sin repetir trabajo — el JS de un
-    componente ni siquiera se descarga hasta el momento en que el
-    usuario interactúa con él.
+  - **Teoría**: en una frase — **islands** = HTML estático por defecto;
+    solo hidratas componentes interactivos aislados (Astro).
+    **Resumability** = el client reanuda el trabajo del server sin
+    rehidratar todo el árbol; JS al interactuar (Qwik). Ambas evitan el
+    costo de "hidratar toda la página".
+
+    La hidratación clásica de React hace que el cliente re-ejecute casi
+    todo el árbol en JS para activar clicks — caro aunque el 90% sea
+    estático. Dos enfoques atacan eso:
+
+    **Islands (Astro)** — océano de HTML con islas de interactividad. Por
+    defecto todo es HTML puro (cero JS). Solo lo marcado
+    (`client:load`, `client:visible`, etc.) se hidrata, de forma
+    **independiente y aislada**. El resto nunca paga hidratación.
+    Analogía: no enciendes toda la ciudad; solo las casas con gente.
+
+    **Resumability (Qwik)** — en vez de re-ejecutar el árbol para
+    reconstruir listeners, el server **serializa** en el HTML dónde
+    estaban estado/handlers. El browser **reanuda** ahí (como un
+    marcador en un libro), sin repetir trabajo. El JS de un componente
+    ni se descarga hasta que el usuario interactúa con él.
   - **Ejemplo**:
     ```astro
     ---
-    // Astro: el carrusel es una isla, todo lo demás es HTML puro sin JS
+    // Astro: el carrusel es una isla; el resto es HTML puro sin JS
     import Carousel from '../components/Carousel.jsx';
     ---
     <Layout>
-      <h1>Bienvenida</h1> {/* HTML estático puro, cero JS enviado */}
-      <Carousel client:visible /> {/* solo esta isla se hidrata, y solo cuando entra al viewport */}
+      <h1>Bienvenida</h1> {/* HTML estático, cero JS */}
+      <Carousel client:visible /> {/* isla: hidrata al entrar al viewport */}
     </Layout>
     ```
+    Qwik (idea): al hacer clic se descarga solo el handler de ese
+    botón — no se rehidrata toda la página al cargar.
 
 - Framework para decidir qué estrategia usar según el tipo de página
 
@@ -2252,20 +2927,53 @@ senior que no se cubrieron ahí:
   - **Teoría**: no todos los cambios visuales cuestan lo mismo, y saber
     cuál dispara qué es la base de animar sin destruir el rendimiento
     (conectando con el Critical Rendering Path visto en la sección 1).
-    Cambiar una propiedad que afecta el **layout** (`width`, `top`,
-    agregar/quitar contenido) fuerza un **reflow**: el navegador
-    recalcula la posición y tamaño de ese elemento y potencialmente de
-    todos sus hermanos y descendientes, y luego repinta. Cambiar solo el
-    **color** (`background-color`, `color`) dispara un **repaint** sin
-    reflow: no cambia el layout, pero sí hay que redibujar los píxeles.
-    Cambiar `transform` u `opacity` es **composite-only**: el navegador ya
-    tiene esa capa pintada en la GPU (ver sección 1) y solo tiene que
-    recombinarla, sin recalcular layout ni repintar nada — es la única
-    categoría que puede animarse a 60fps de forma confiable incluso en
-    hardware modesto.
+    Tras el primer pintado, cada frame no reconstruye la página desde
+    cero: el navegador invalida solo las etapas necesarias y las
+    recalcula en este orden:
+
+    ```
+    JS → Style → Layout (reflow) → Paint (repaint) → Composite
+    ```
+
+    A 60 fps el presupuesto por frame es ~16.7 ms. El hilo principal
+    hace JS, estilos, layout y las órdenes de paint; la rasterización y
+    el composite suelen ir al hilo compositor / proceso de GPU. Por eso
+    una animación que se queda en **composite-only** puede seguir a 60
+    fps aunque el hilo principal esté ocupado.
+
+    Invalidar una etapa obliga a repetir las posteriores (layout implica
+    paint + composite; paint implica composite). El costo relativo es
+    **layout > paint > composite**:
+
+    - **Reflow (layout)**: cambia la geometría (`width`, `height`,
+      `margin`, `padding`, `top`/`left` con `position`, `font-size`,
+      `display`, flex/grid, agregar/quitar contenido). El navegador
+      recalcula posición y tamaño de ese elemento y potencialmente de
+      hermanos, padres y descendientes, y luego tiene que repintar y
+      componer. Es lo más caro.
+    - **Repaint (paint)**: la caja no se mueve, pero cambian los
+      píxeles (`color`, `background-color`, `box-shadow`,
+      `visibility`). No hay reflow, pero sí hay que grabar comandos de
+      pintado y rasterizar la capa; luego se compone. Costo intermedio.
+    - **Composite-only**: `transform` y `opacity` sobre un elemento que
+      ya es su propia capa. La textura ya está en la GPU; el compositor
+      solo actualiza la matriz (mover/escalar/rotar) o la transparencia
+      y recombina capas, sin recalcular layout ni repintar. Es la única
+      categoría que se puede animar a 60 fps de forma confiable en
+      hardware modesto.
+
+    Dos matices que cambian el costo real: (1) `transform`/`opacity`
+    solo son composite-only si el elemento ya es una **capa del
+    compositor** (el navegador la crea solo, o la fuerzas con
+    `will-change: transform`); promover demasiados nodos gasta memoria
+    de GPU. (2) **Layout thrashing**: el navegador intenta agrupar
+    escrituras de estilo y hacer un solo layout al final del frame; si
+    lees geometría (`offsetWidth`, `getBoundingClientRect`) justo
+    después de escribir estilos, fuerza un layout síncrono — y en un
+    bucle de leer-luego-escribir eso se multiplica.
   - **Ejemplo**:
     ```css
-    /* Costoso: cambia el layout en cada frame -> reflow + repaint + composite */
+    /* Costoso: cambia el layout en cada frame -> reflow + paint + composite */
     .modal-mala {
       transition: top 0.3s, left 0.3s;
     }
@@ -2279,15 +2987,30 @@ senior que no se cubrieron ahí:
       transition: transform 0.3s, opacity 0.3s;
       transform: translateY(-20px);
       opacity: 0;
+      /* opcional: sugiere al navegador crear la capa ya, no en el primer frame */
+      will-change: transform, opacity;
     }
     .modal-buena.abierto {
       transform: translateY(0);
       opacity: 1;
     }
     ```
-    En Chrome DevTools → Performance, un reflow aparece como una barra
-    morada "Layout"; si tu animación genera esas barras en cada frame,
-    es candidata a reescribirse con `transform`/`opacity`.
+    ```js
+    // Layout thrashing: un layout forzado por ítem (escribe, luego lee)
+    for (const el of items) {
+      el.style.width = el.offsetWidth + 10 + 'px';
+    }
+
+    // Mejor: leer todo, luego escribir todo (un solo layout)
+    const widths = items.map((el) => el.offsetWidth);
+    items.forEach((el, i) => {
+      el.style.width = widths[i] + 10 + 'px';
+    });
+    ```
+    En Chrome DevTools → Performance, un reflow aparece como barra
+    morada "Layout", el paint como "Paint", y el composite en la pista
+    del compositor. Si tu animación genera barras de Layout en cada
+    frame, es candidata a reescribirse con `transform`/`opacity`.
 
 - Presupuestos de performance (*performance budgets*) automatizados en CI
 
