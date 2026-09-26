@@ -2,9 +2,30 @@
 1. No es necesario repetir “I” al inicio de cada frase u oración si el sujeto ya está claro por el contexto.
 
 BAD: woke up early. I made coffee. I checked my email. I went to work.
+
 GOOD: I woke up early, made coffee, checked my email, and went to work.
 
 # Las preposiciones in, at, on
+
+USO DE LUGAR:
+At
+(Punto exacto): Se usa para direcciones precisas o lugares específicos.Ejemplo: at the bus stop (en la parada de autobús), at home (en casa).
+
+On
+(Superficie): Se usa cuando algo está sobre una línea o superficie.Ejemplo: on the table (sobre la mesa), on the wall (en la pared).
+
+In
+(Espacio cerrado o área grande): Se usa para el interior de un contenedor, ciudades o países.
+
+USO DE TIEMPO
+At
+(Hora o momento exacto): Se usa para horas puntuales y momentos específicos del día.Ejemplo: at 5:00 p.m. (a las 5:00), at night (por la noche).
+
+On
+Días y fechas): Se usa para días de la semana y fechas completas.Ejemplo: on Monday (el lunes), on July 4th (el 4 de julio).
+
+In
+(Periodos largos): Se usa para meses, años, estaciones o partes del día.Ejemplo: in 2026 (en 2026), in summer (en verano), in the morning (por la mañana).
 
 # Entrevista personal
 
