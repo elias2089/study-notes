@@ -5,6 +5,36 @@ BAD: woke up early. I made coffee. I checked my email. I went to work.
 
 GOOD: I woke up early, made coffee, checked my email, and went to work.
 
+# Uso de the
+
+Usa "the" cuando hablas de algo específico o conocido por quien te escucha. Por ejemplo: the book on the table (ese libro concreto), the movie you told me about (esa película en particular).
+
+También se usa con cosas únicas: the sun, the moon, the president.
+
+Con superlativos y ordinales: the best restaurant, the first time.
+
+Con geografía en plural o grupos: the United States, the Netherlands, the Andes, the Nile, the Pacific.
+
+Con instrumentos musicales: I play the piano, she plays the guitar.
+
+Y en la segunda mención de algo: I bought a car. The car is red.
+
+En cambio, NO se usa cuando hablas en general: dogs are loyal, life is beautiful, I like music.
+
+Tampoco con nombres propios: John is my friend, I live in Mexico.
+
+Ni con idiomas: she speaks English, I study French.
+
+Ni con deportes: he plays soccer, I love tennis.
+
+Ni con comidas: I have breakfast at 8, we ate dinner.
+
+Ni con días, meses o estaciones: see you on Monday, I was born in May, I love summer.
+
+Ni con países singulares: Spain is beautiful, France is in Europe.
+
+La clave: pregúntate si tu oyente sabe exactamente de qué hablas. Si sí, usa "the"; si es algo general, no lo uses.
+
 # Las preposiciones in, at, on
 
 USO DE LUGAR:
