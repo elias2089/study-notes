@@ -5,6 +5,18 @@ BAD: woke up early. I made coffee. I checked my email. I went to work.
 
 GOOD: I woke up early, made coffee, checked my email, and went to work.
 
+# Uso de an y a
+
+Se usa "a" antes de palabras que empiezan con sonido de consonante: a car, a dog, a book, a house, a university (suena "yu"), a European country (suena "yu").
+
+Se usa "an" antes de palabras que empiezan con sonido de vocal: an apple, an elephant, an idea, an orange, an hour (la "h" es muda), an honest man (la "h" es muda).
+
+¿Cuándo se usan? Cuando hablas de algo por primera vez, no específico, uno entre muchos: I saw a dog in the park (un perro cualquiera), She wants to buy a car (un coche, no uno en particular), He's a doctor (profesión), I need an umbrella (una cualquiera).
+
+¿Cuándo NO se usan? Con plurales en general: I like dogs (NO: a dogs). Con incontables: I need water (NO: a water). Con nombres propios: John is here (NO: a John). Cuando ya es específico o conocido: The dog is mine (ese perro concreto), no a dog.
+
+La clave: "a" con sonido de consonante, "an" con sonido de vocal, y ambos solo cuando mencionas algo por primera vez y no específico.
+
 # Uso de the
 
    Cuándo usar "the"
