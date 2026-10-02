@@ -3,30 +3,28 @@
 ## 1. Antes de hablar en inglés (3 min)
 Lee en voz alta los 14 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
 
-## 2 Vocabulario mío (5 min)
+## 2. Gramática (10 min) Ejercicios
+Entrenador de grámitica de Elsa speak, en caso de haber errores anteriores, repararlos.
+
+## 3. Vocabulario mío (5 min)
 Repasar las palabras con dificultad y las nuevas **Elsa Speak**
 
-## 3. Gramática (10 min) Ejercicios
-Continuar por donde me quedé. **Gemini, ect**
+## 4. Shadowing y comparar audios (10 min)
+Escucha el audio nativo, repítela casi a la vez, grábate y compara **tu audio con el original**.
 
-# Plan diario Tarde
+# Plan diario Tarde ELSA Speak (30 min)
 
-## 1. ELSA Speak (30 min)
-
-### 1.1 Tareas del día (15 min)
+## 1. Tareas del día (15 min)
 Haz las tareas que ELSA te asigne hoy y anota las palabras que más fallaste.
 
-### 1.2 Vocabulario mío (5 min)
+## 2. Vocabulario mío (5 min)
 Anotar palabras nuevas del día. (Repaso leve)
 
-## 2. Pronunciación (25 min)
+## 3. Pronunciación (25 min)
+Usar el entrenador de pronunciacíon Elsa Speak, seguir el plan
 
-## 2.1 Plan por semanas (15 min)
-Sigue el [Plan por semanas](#plan-por-semanas-un-sonido-por-semana): un sonido por semana. **Repositorio Github**
-- Ejercicios del sonido en ELSA. (Usar la función de hablar con IA de Elsa speak) **Elsa Speak**
-
-### 2.2 Shadowing de ELSA y comparar audios (10 min)
-Elige una frase corta de ELSA, escucha el audio nativo, repítela casi a la vez, grábate y compara **tu audio con el original**. **Elsa speak** 
+## 4. Ver alguna serie
+COn pronunciación y subtiyulos en ingles
 
 # Antes de hablar en inglés
 
@@ -44,13 +42,14 @@ Elige una frase corta de ELSA, escucha el audio nativo, repítela casi a la vez,
 - ✅ *It depends on the weather.*
 - ✅ *I used to play football.*
 
-## 2. Arma la frase (SVOPT)
+## 2. Arma la frase (SVOMPT)
 
-**3. Orden fijo: Sujeto → Verbo → Objeto → Lugar → Tiempo.**
+**3. Orden fijo: Sujeto → Verbo → Objeto → Modo → Lugar → Tiempo.**
 - ❌ *I went yesterday to the supermarket.* → ✅ *I went to the supermarket yesterday.*
 - ❌ *She sent yesterday the email at the office.* → ✅ *She sent the email at the office yesterday.*
 - ✅ *We met our friends at the park last night.*
 - ✅ *He studies English at home every day.*
+- ✅ *She solved the problem quickly at work yesterday.* (Objeto → Modo → Lugar → Tiempo)
 
 **4. Siempre pon sujeto, pero no lo repitas si ya está claro.**
 - ❌ *Is raining a lot today.* → ✅ *It is raining a lot today.*
@@ -91,16 +90,30 @@ Elige una frase corta de ELSA, escucha el audio nativo, repítela casi a la vez,
 - ✅ *I like coffee and I play tennis.* (en general, sin artículo)
 
 **10. in / at / on.**
-- `at` = punto exacto → ✅ *at 5:00*, ✅ *at home*
-- `on` = superficie o día → ✅ *on the table*, ✅ *on Monday*
-- `in` = espacio cerrado o ciudad → ✅ *in Madrid*, ✅ *in the room*
+
+Lugar:
+- `at` = punto exacto → ✅ *at home*, ✅ *at the bus stop*
+- `on` = superficie → ✅ *on the table*, ✅ *on the wall*
+- `in` = espacio cerrado o ciudad → ✅ *in the room*, ✅ *in Madrid*
+
+Tiempo:
+- `at` = hora o momento puntual → ✅ *at 5:00*, ✅ *at night*
+- `on` = día o fecha → ✅ *on Monday*, ✅ *on 2 October*
 - `in` = periodo largo → ✅ *in June*, ✅ *in the morning*
 
-**11. "Para" depende de lo que viene después.**
-- verbo → `to`: ❌ *I use it for code* → ✅ *I use it **to** code.*
-- verbo → `to`: ✅ *I came here **to** study.*
-- persona o cosa → `for`: ✅ *This gift is **for** you.*
-- función del objeto → `for + -ing`: ✅ *This knife is **for cutting** bread.*
+**11. "Para": mira la palabra que va justo después en español.**
+- **Después va un verbo** (*estudiar, ayudar, codear*) → inglés **`to` + verbo**.
+  💭 *Vine aquí **para** estudiar* → ❌ *I came here **for** study* → ✅ *I came here **to** study.*
+  💭 *Lo uso **para** codear* → ❌ *I use it **for** code* → ✅ *I use it **to** code.*
+  💭 *Paré **para** descansar* → ❌ *I stopped **for** rest* → ✅ *I stopped **to** rest.*
+- **Después va una persona o una cosa** (*ti, el examen, la fiesta*) → inglés **`for`**.
+  💭 *Este regalo es **para** ti* → ❌ *This gift is **to** you* → ✅ *This gift is **for** you.*
+  💭 *Estudio **para** el examen* → ❌ *I study **to** the exam* → ✅ *I study **for** the exam.*
+  💭 *Lo compré **para** la fiesta* → ❌ *I bought it **to** the party* → ✅ *I bought it **for** the party.*
+- **Después describes para qué sirve un objeto** (*cortar, leer*) → inglés **`for` + -ing**.
+  💭 *Este cuchillo es **para** cortar pan* → ❌ *This knife is **to** cut bread* → ✅ *This knife is **for cutting** bread.*
+  💭 *Estas gafas son **para** leer* → ❌ *These glasses are **to** read* → ✅ *These glasses are **for reading**.*
+- Truco: **verbo que yo voy a hacer → `to`**. **Persona/cosa → `for`**. **Para qué sirve esa cosa → `for + -ing`**.
 
 **12. "Que" no siempre es `that`.**
 - Quieres que otro haga algo: ❌ *I want that you come* → ✅ *I want **you to** come.*
