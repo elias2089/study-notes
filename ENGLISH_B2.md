@@ -1,3 +1,211 @@
+# Plan diario Mañana
+
+## 1. Antes de hablar en inglés (3 min)
+Lee en voz alta los 14 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
+
+## 2 Vocabulario mío (5 min)
+Repasar las palabras con dificultad y las nuevas **Elsa Speak**
+
+## 3. Gramática (10 min) Ejercicios
+Continuar por donde me quedé. **Gemini, ect**
+
+# Plan diario Tarde
+
+## 1. ELSA Speak (30 min)
+
+### 1.1 Tareas del día (15 min)
+Haz las tareas que ELSA te asigne hoy y anota las palabras que más fallaste.
+
+### 1.2 Vocabulario mío (5 min)
+Anotar palabras nuevas del día. (Repaso leve)
+
+## 2. Pronunciación (25 min)
+
+## 2.1 Plan por semanas (15 min)
+Sigue el [Plan por semanas](#plan-por-semanas-un-sonido-por-semana): un sonido por semana. **Repositorio Github**
+- Ejercicios del sonido en ELSA. (Usar la función de hablar con IA de Elsa speak) **Elsa Speak**
+
+### 2.2 Shadowing de ELSA y comparar audios (10 min)
+Elige una frase corta de ELSA, escucha el audio nativo, repítela casi a la vez, grábate y compara **tu audio con el original**. **Elsa speak** 
+
+# Antes de hablar en inglés
+
+## 1. Piensa
+
+**1. No traduzcas del español.** Piensa en una idea corta y llévala al inglés. Si te falta una palabra, descríbela.
+- 💭 *no tiempo, proyecto, terminar* → ✅ *I haven't had time to finish the project.*
+- 💭 *llegar tarde, tráfico* → ✅ *I'm late because of the traffic.*
+- 💭 *no saber, fin de semana, hacer* → ✅ *I don't know what to do this weekend.*
+- 💭 No sabes decir "tuerca" → ✅ *the small metal thing you screw onto a bolt.*
+
+**2. Habla en frases cortas y aprende bloques completos.**
+- ❌ *I think that the project that you gave me which is...* → ✅ *I think the project is almost ready. I just need one more day.*
+- ✅ *I'm thinking about changing jobs.*
+- ✅ *It depends on the weather.*
+- ✅ *I used to play football.*
+
+## 2. Arma la frase (SVOPT)
+
+**3. Orden fijo: Sujeto → Verbo → Objeto → Lugar → Tiempo.**
+- ❌ *I went yesterday to the supermarket.* → ✅ *I went to the supermarket yesterday.*
+- ❌ *She sent yesterday the email at the office.* → ✅ *She sent the email at the office yesterday.*
+- ✅ *We met our friends at the park last night.*
+- ✅ *He studies English at home every day.*
+
+**4. Siempre pon sujeto, pero no lo repitas si ya está claro.**
+- ❌ *Is raining a lot today.* → ✅ *It is raining a lot today.*
+- ❌ *Is very late.* → ✅ *It is very late.*
+- ❌ *Are many people here.* → ✅ *There are many people here.*
+- ❌ *I woke up. I made coffee. I left.* → ✅ *I woke up, made coffee and left.*
+
+**5. Adjetivo antes del sustantivo, en orden (opinión → tamaño → edad → forma → color → origen → material).**
+- ❌ *a house big* → ✅ *a big house*
+- ❌ *a car red* → ✅ *a red car*
+- ✅ *a long red silk dress* (tamaño → color → material)
+- ✅ *a beautiful small old wooden table* (opinión → tamaño → edad → material)
+
+**6. Adverbios: frecuencia antes del verbo, modo después del objeto.**
+- ❌ *I go always to the gym.* → ✅ *I always go to the gym.*
+- ❌ *She solved quickly the problem.* → ✅ *She solved the problem quickly.*
+- ❌ *He speaks very well English.* → ✅ *He speaks English very well.*
+- ✅ *She is always late.* (con `be`, el adverbio va después)
+
+**7. Una sola negación.**
+- ❌ *I don't have nothing.* → ✅ *I don't have anything.* / *I have nothing.*
+- ❌ *I don't know nobody.* → ✅ *I don't know anybody.*
+- ❌ *She doesn't never call.* → ✅ *She never calls.*
+- ❌ *We don't need no help.* → ✅ *We don't need any help.*
+
+**8. Pregunta: palabra de pregunta + auxiliar + sujeto + verbo.**
+- ❌ *Where you live?* → ✅ *Where do you live?*
+- ❌ *What you want?* → ✅ *What do you want?*
+- ❌ *Who you called last night?* → ✅ *Who did you call last night?*
+- ❌ *Who did call you?* → ✅ *Who called you?* (si "who" es el sujeto, sin auxiliar)
+
+## 3. Elige las palabras pequeñas
+
+**9. a / an / the.** *a/an* = algo nuevo o cualquiera. *the* = algo específico o único. Sin artículo: cosas en general, países, deportes, idiomas.
+- ✅ *I saw a dog. The dog was big.* (primero nuevo, luego específico)
+- ✅ *I need an umbrella.* (uno cualquiera, sonido de vocal)
+- ✅ *She is the best student in class.* (superlativo, único)
+- ✅ *I like coffee and I play tennis.* (en general, sin artículo)
+
+**10. in / at / on.**
+- `at` = punto exacto → ✅ *at 5:00*, ✅ *at home*
+- `on` = superficie o día → ✅ *on the table*, ✅ *on Monday*
+- `in` = espacio cerrado o ciudad → ✅ *in Madrid*, ✅ *in the room*
+- `in` = periodo largo → ✅ *in June*, ✅ *in the morning*
+
+**11. "Para" depende de lo que viene después.**
+- verbo → `to`: ❌ *I use it for code* → ✅ *I use it **to** code.*
+- verbo → `to`: ✅ *I came here **to** study.*
+- persona o cosa → `for`: ✅ *This gift is **for** you.*
+- función del objeto → `for + -ing`: ✅ *This knife is **for cutting** bread.*
+
+**12. "Que" no siempre es `that`.**
+- Quieres que otro haga algo: ❌ *I want that you come* → ✅ *I want **you to** come.*
+- Persona → `who`: ✅ *The man **who** called is my boss.*
+- Cosa → `which` o `that`, y muchas veces se quita: ✅ *The book **(that)** I read was great.*
+- Con comas nunca `that`: ✅ *My brother**, who** lives in Madrid, is a developer.*
+
+**13. Posesión con `'s`, no con "de".**
+- ❌ *the car of Juan* → ✅ *Juan's car*
+- ❌ *the house of my parents* → ✅ *my parents' house*
+- ❌ *the phone of my sister* → ✅ *my sister's phone*
+- ✅ *the door of the house* (con cosas sí se usa `of`)
+
+## 4. Último chequeo antes de decirlo
+
+**14. Tres preguntas rápidas.**
+- ¿Tiene **sujeto**? → ✅ *It is late.*
+- ¿El **verbo** va justo después del sujeto? → ❌ *I it want* → ✅ *I want it.*
+- ¿**Lugar antes que tiempo**? → ✅ *at the office yesterday*
+- Todo junto: ✅ *My sister always cooks dinner at home on Sundays.*
+
+# Cómo pronunciar bien
+
+1. **Aprende la palabra por su sonido, no por cómo se escribe.** Búscala con audio e IPA antes de decirla.
+   - *though* (/ðoʊ/), *through* (/θruː/), *tough* (/tʌf/): se escriben parecido y suenan distinto.
+
+2. **Marca la sílaba fuerte.** Si la cambias, no te entienden.
+   - *PHOtograph*, *phoTOGraphy*
+   - *REcord* (sustantivo), *reCORD* (verbo)
+
+3. **Practica los sonidos que el español no tiene**, con pares mínimos.
+   - *ship / sheep*, *very / berry*, *think / sink*, *bad / bed*
+
+4. **No te comas las terminaciones.**
+   - *-ed*: *worked* (workt), *played* (pleid), *wanted* (wan-tid)
+   - *-s*: *cats* (s), *dogs* (z), *watches* (iz)
+   - *student* y no "estudent"
+
+5. **Shadowing diario (10 min).** Escucha una frase corta y repítela casi a la vez, copiando ritmo y entonación.
+
+6. **Grábate y compárate** con el audio original. Lo que no oyes al hablar, lo oyes al reproducirlo.
+
+7. **Un problema por semana.** Una semana "th", otra "-ed", otra "i corta vs larga". Si atacas todo a la vez, no avanzas.
+
+8. **Entrena por sonido (IPA), no por letra.** Una letra suena distinto según la palabra (la "a" suena distinto en *cat, cake, father, about*), así que practica un sonido a la vez y haz que cada ejercicio de ELSA cuente para ese sonido.
+
+## Prioridad de sonidos
+
+**Vocales** (el español tiene 5, el inglés unas 12):
+
+| Prioridad | Sonidos | Par para practicar |
+|---|---|---|
+| Alta | /ɪ/ vs /iː/ | *ship / sheep* |
+| Alta | /æ/ vs /e/ | *bad / bed* |
+| Alta | /ʌ/ | *cup, love* |
+| Alta | /ə/ (schwa) | *about, the* |
+| Alta | /ʊ/ vs /uː/ | *full / fool* |
+| Media | /ɑː/ vs /ɔː/ | *cot / caught* |
+| Baja | /e/, /oʊ/, /aɪ/ | casi iguales al español |
+
+**Consonantes** (salta las que ya suenan como en español: *m, n, p, f, l, s, k*):
+
+| Sonido | Par para practicar |
+|---|---|
+| /θ/ y /ð/ | *think / sink*, *this* |
+| /v/ vs /b/ | *very / berry* |
+| /ʃ/, /tʃ/, /dʒ/ | *ship / chip / jet* |
+| /h/ | *hat / at* |
+| /r/ y /z/ | *red*, *zoo* |
+| Terminaciones | *worked, cats, wanted* |
+
+## Plan por semanas (un sonido por semana)
+
+| Semana | Tipo | Sonido | Pares para practicar |
+|---|---|---|---|
+| 1 | Vocal (alta) | /ɪ/ vs /iː/ | *ship / sheep*, *live / leave* |
+| 2 | Vocal (alta) | /æ/ vs /e/ | *bad / bed*, *man / men* |
+| 3 | Vocal (alta) | /ʌ/ | *cup / cap*, *love*, *bus* |
+| 4 | Vocal (alta) | /ə/ (schwa) | *about, banana, the, to* |
+| 5 | Vocal (alta) | /ʊ/ vs /uː/ | *full / fool*, *pull / pool* |
+| 6 | Consonante | /θ/ y /ð/ | *think / sink*, *this, the* |
+| 7 | Consonante | /v/ vs /b/ | *very / berry*, *vest / best* |
+| 8 | Consonante | /ʃ/, /tʃ/, /dʒ/ | *ship / chip*, *jet / yet* |
+| 9 | Consonante | /h/ | *hat / at*, *hair / air* |
+| 10 | Consonante | /r/ y /z/ | *red, right*, *zoo / Sue*, *rise / rice* |
+| 11 | Vocal (media) | /ɑː/ vs /ɔː/ | *cot / caught*, *car / core* |
+| 12 | Terminaciones | *-ed* y *-s* | *worked, played, wanted*, *cats, dogs, watches* |
+| 13 | Vocal (baja) | /e/, /oʊ/, /aɪ/ | *pen / pin* (/e/), *low / law, boat / bought* (/oʊ/), *my / may, buy / boy* (/aɪ/) |
+
+**Qué practicar en la semana 13.** Como suenan parecido al español, aquí el trabajo es afinar, no aprender un sonido nuevo:
+- **/e/** (*bed, pen*): en inglés es algo más abierta que la "e" española. Ya la trabajaste como contraste en la semana 2.
+- **/oʊ/** (*go, know, boat*): es un **diptongo**. La "o" se desliza hacia una "u" suave al final, mientras que en español la "o" es pura y corta.
+- **/aɪ/** (*my, time, buy*): se parece a la "ai" española, pero el inglés la alarga más y termina en una "i" suave.
+
+## Rutina
+
+**Cada día de la semana (15 min):**
+1. Haz en ELSA los ejercicios del sonido de la semana.
+2. Compara tu grabación con la nativa.
+3. Di 5 frases propias con ese sonido.
+
+**Último día de la semana:** repasa las palabras que más fallaste y revisa tu progreso en ELSA para elegir el sonido de la semana siguiente.
+
+**Si un sonido no se fija en la semana,** repítelo una semana más antes de pasar al siguiente.
+
 # Errores
 1. No es necesario repetir “I” al inicio de cada frase u oración si el sujeto ya está claro por el contexto.
 
@@ -136,6 +344,79 @@ El error más común es justo el primer par: agregar "did" de más cuando la wh-
 - Con varios adjetivos, aplica el orden OSASCOMP (ver arriba).
 - El verbo en inglés casi no cambia de forma (salvo -s en 3ª persona y -ed en pasado), así que el orden de palabras carga el peso gramatical que en español lleva la conjugación.
 
+## Cómo dejar de traducir mentalmente (y de usar "que" y "en" para todo)
+
+### Dejar de traducir del español
+
+1. **Piensa en ideas simples, no en la frase española.** Tu oración en español ya trae su estructura, sus "que" y sus "en". Reduce lo que quieres decir a una idea corta y construye directamente en inglés.
+   - Quieres decir: *"Lo que pasa es que no he tenido tiempo de terminar el proyecto que me pediste."*
+   - Idea simple: *no tiempo, proyecto, terminar.*
+   - Inglés directo: *"I haven't had time to finish the project."*
+2. **Usa el orden fijo como esqueleto: sujeto → verbo → objeto → lugar → tiempo.** Solo rellenas huecos: *I / work / on the project / at home / today.*
+3. **Habla en frases cortas.** Una frase larga te obliga a traducir de golpe y a cargar con "que", "el cual", "lo que". Divídela:
+   - ❌ "I think that the project that you gave me which is..." (traducción literal larga)
+   - ✅ "I think the project is almost ready. I just need one more day."
+4. **Aprende bloques completos (chunks), no palabras sueltas.** Si memorizas la frase entera, sale sola:
+
+| Bloque | Úsalo para |
+|---|---|
+| *I'm thinking about...* | Opinar o planear |
+| *It depends on...* | Matizar |
+| *I used to...* | Hábitos del pasado |
+| *Can you help me with...?* | Pedir ayuda |
+| *I'm looking forward to...* | Esperar algo con ganas |
+| *The thing is,...* | Introducir un problema |
+
+5. **Aprende cada palabra nueva con una frase, no con su traducción.** En vez de *"deadline = fecha límite"*, anota *"The deadline is on Friday."* Así asocias la palabra con su uso real y su preposición (*deadline* llama a *by Friday*, no a *for Friday*).
+6. **Describe en inglés lo que no sabes decir.** Si no sabes "tuerca": *"the small metal thing you screw onto a bolt"*. Es lo que hacen los nativos y es mejor que quedarte en blanco.
+7. **Piensa en voz alta en inglés.** Cuenta lo que haces mientras lo haces: *"I'm making coffee. I need a cup. Now I'm adding sugar."* Verbos simples, presente continuo, cero traducción.
+8. **Shadowing.** Escucha una frase corta (podcast, serie con subtítulos en inglés) y repítela casi a la vez, con la misma entonación. Aprendes el ritmo y los bloques sin pasar por el español.
+9. **Acepta ir más lento al principio.** Traducir da ilusión de control pero te frena a largo plazo. Es normal sonar simple (*"I like it. It's good."*). La fluidez viene de hablar mucho con frases sencillas y correctas.
+
+### El "que" español se reparte en muchas formas en inglés
+
+| "Que" en español | En inglés | Ejemplo |
+|---|---|---|
+| Relativo (*el libro **que** leí*) | `that / which / who` o **nada** | The book **(that)** I read |
+| Conjunción (*creo **que** es bueno*) | `that` o **nada** | I think **(that)** it's good |
+| Con deseos (*quiero **que** vengas*) | **persona + to + verbo** | I want **you to** come |
+| Comparación (*más alto **que** yo*) | `than` | Taller **than** me |
+| Pregunta (*¿**qué** haces?*) | `what` | **What** are you doing? |
+| Finalidad (*habla despacio **para que** entienda*) | `so (that)` | Speak slowly **so that** I understand |
+| Obligación (*tengo **que** irme*) | `have to` | I **have to** go |
+
+**Consejo:** cuando quieras decir "que", pregúntate cuál de estas funciones es. Si no tienes respuesta rápida, **prueba sin ninguna palabra**: *I think it's good*, *The book I read*, *The man I met*. En inglés hablado, muchas veces el "que" simplemente desaparece.
+
+Convierte los "que" de deseo y opinión en estructuras fijas:
+- *Quiero que / Necesito que / Te pido que* → **want / need / ask + you + to + verbo**
+- *Es importante que* → **It's important for you to / It's important to**
+
+### El "en" español también se reparte
+
+| "En" en español | En inglés | Ejemplo |
+|---|---|---|
+| Dentro de algo (lugar cerrado, ciudad, país) | `in` | **in** the room, **in** Madrid |
+| Un punto concreto | `at` | **at** home, **at** the door |
+| Sobre una superficie | `on` | **on** the table |
+| Meses, años, estaciones | `in` | **in** June, **in** 2024 |
+| Días y fechas | `on` | **on** Monday |
+| Hora exacta | `at` | **at** 5:00 |
+| Medio de transporte | `by` | **by** bus, **by** car |
+| "Pensar en" | `think about` | I'm **thinking about** it |
+| "Interesado en" | `interested in` | I'm **interested in** it |
+| "Confiar en" | `trust` (sin preposición) | I **trust** you |
+| "Entrar en" | `enter` o `go into` | **Enter** the room |
+
+**Consejo:** deja de pensar en "en" y piensa en **qué relación espacial o temporal** quieres expresar: ¿dentro, en un punto, sobre una superficie, en un periodo, en un día? Cada una tiene su palabra.
+
+### Rutina práctica (15 minutos al día)
+
+1. **Shadowing (5 min):** elige un audio corto y repite frases completas.
+2. **Voz alta (5 min):** describe lo que haces o ves, en frases cortas.
+3. **Un error por día (5 min):** elige uno de los errores de estas notas (*"I want that you come"* → *"I want you to come"*) y haz 5 frases propias con la forma correcta.
+
+Con el tiempo pasas de **traducir una frase española** a **elegir un bloque ya aprendido**, y ese cambio es el que quita la traducción mental.
+
 ## Dónde van artículos, preposiciones, adverbios y adjetivos dentro de SVOPT
 
 Artículos y adjetivos NO tienen su propio slot en SVOPT — viven dentro del bloque S u O, como parte del grupo nominal:
@@ -242,6 +523,248 @@ Días y fechas): Se usa para días de la semana y fechas completas.Ejemplo: on M
 
 In
 (Periodos largos): Se usa para meses, años, estaciones o partes del día.Ejemplo: in 2026 (en 2026), in summer (en verano), in the morning (por la mañana).
+
+# Uso de to, that, who o which, for
+
+## La idea que lo explica casi todo
+
+En español **"para"** hace dos trabajos: va antes de verbos (*para comprar*) y antes de sustantivos (*para ti*). El inglés reparte esos dos trabajos en dos palabras según **lo que viene después**:
+
+| Lo que viene después | Palabra | Por qué |
+|---|---|---|
+| Un **verbo** (una acción) | **to** | Aquí `to` no es preposición. Es la marca del infinitivo, como *-ar/-er/-ir* en español. |
+| Un **sustantivo** (una cosa o persona) | **for** | `for` sí es preposición, y una preposición necesita un sustantivo detrás. |
+| Un verbo en **-ing** | **for** | Es la única forma en que un verbo puede ir detrás de una preposición. Se comporta como sustantivo. |
+
+Por eso *"I went to the store **for buy** milk"* está mal. Después de `for` nunca puede ir el verbo base, solo un sustantivo o `-ing`.
+
+**Prueba rápida:** si puedes poner *in order to* delante y la frase sigue teniendo sentido, usa `to`. *I went to the store (in order) **to buy** milk* ✅.
+
+## 1. TO
+
+### a) `to + verbo`: verbos de intención (want, need, decide, hope, plan...)
+
+- I want **to learn** English. (Quiero aprender inglés)
+- She decided **to leave**.
+
+**Por qué `to` y no otra cosa:**
+- **No `for`:** `for` es preposición y aquí viene un verbo, no un sustantivo.
+- **No el verbo solo (*I want learn*):** el inglés exige la marca `to` para el infinitivo. En español el infinitivo ya se reconoce por su terminación (*aprender*), y en inglés *learn* solo no lo indica.
+- **Por qué `to` y no `-ing` (*I want learning*):** los verbos de deseo o plan hablan de acciones que **aún no han pasado** (querer, esperar, decidir, planear), y esas llevan `to`. Los verbos de acciones reales o ya en marcha llevan `-ing`: *enjoy, finish, avoid, stop* (*I enjoy **learning***, *I finished **working***). No hay regla perfecta y hay que memorizar cada verbo, pero esta idea de futuro (`to`) frente a real (`-ing`) ayuda mucho.
+
+### b) Finalidad: ¿"para" = to o for?
+
+Hay tres casos distintos, y en cada uno la palabra la decide lo que viene después.
+
+| Lo que sigue a "para" | Palabra | Ejemplo | Por qué |
+|---|---|---|---|
+| **Acción que tú haces** (tu intención) | `to + verbo` | I went to the store **to buy** milk | Responde a "¿para qué fuiste?". Es una acción tuya con un objetivo. |
+| **Cosa que buscas** | `for + sustantivo` | I went to the store **for milk** | Detrás va un sustantivo (*milk*), así que se usa preposición. |
+| **Función de un objeto** | `for + -ing` | This knife is **for cutting** bread | Describe para qué sirve el objeto en general, no una acción tuya concreta. |
+
+**Por qué *"I went to the store for buying milk"* suena raro, aunque `for + -ing` exista.** Porque `for + -ing` habla de la función permanente de algo: un cuchillo existe *para cortar*. No habla de lo que una persona se propone hacer en un momento concreto. Para tu intención se usa `to + verbo`.
+
+**Pares mínimos para fijarlo:**
+
+| Frase con `to` (tu acción) | Frase con `for` (función o cosa) |
+|---|---|
+| I use a hammer **to hit** nails. (yo, ahora) | A hammer is **for hitting** nails. (para qué sirve) |
+| I came here **to study**. (mi acción) | I came here **for the course**. (el motivo es una cosa) |
+| She called **to ask** a question. | She called **for help**. |
+| I'm here **to work**. (a trabajar) | I'm here **for work**. (por motivos de trabajo) |
+
+### c) Dirección y destinatario: `to` frente a `for`
+
+| Caso | Ejemplo | Por qué |
+|---|---|---|
+| Llegar a un destino | I go **to** work by bus | `to` = el movimiento termina allí. Con *home / here / there* no se pone: *go home* (no *go to home*). |
+| Salir en dirección a un sitio | I'm leaving **for** Madrid | `for` = apuntas hacia ahí, sin importar que llegues. Se usa con *leave, depart, head*. |
+| Recibe algo (transferencia) | She sent an email **to** the client | `to` = alguien **recibe** algo que pasa de ti a él. |
+| Se beneficia (sin recibir nada) | She opened the door **for** me | `for` = lo hiciste **en favor de** alguien. No le pasaste nada. |
+
+**Pares mínimos:**
+- I **gave** a gift **to** you. (se lo entregué) frente a I **bought** a gift **for** you. (lo compré en tu favor; quizá aún no lo tienes)
+- *Listen **to** me*, *talk **to** her*: en español no hay preposición, pero en inglés esos verbos la exigen para conectar con la persona. Se aprenden de memoria con su `to`.
+
+### d) Adjetivo + `to + verbo`
+
+- This app is easy **to use**.
+- I'm happy **to help**.
+- It's hard **to explain**.
+
+**Por qué `to`:** el infinitivo completa al adjetivo y dice *a qué acción se refiere* (¿fácil de qué? → de usar). El español pone "de" o "para" (*fácil **de** usar*), pero el inglés usa siempre `to + verbo`.
+
+**Cuándo aparece `for` aquí:** solo para decir **a quién** le aplica, y `to` sigue detrás.
+- Easy **for me to use**. (fácil para mí usarlo)
+- Easy **for beginners** → `for` + sustantivo, sin verbo.
+
+### e) *too ... to* y *enough to*
+
+- It's **too** late **to call**. (demasiado tarde para llamar)
+- It's too late **for the meeting**. (demasiado tarde para la reunión)
+
+**Por qué:** es la misma lógica de (b). Si lo que bloquea o permite es una **acción**, usa `to + verbo`. Si es una **cosa o evento**, usa `for + sustantivo`.
+
+## 2. FOR
+
+### a) Beneficiario: `for` y no `to`
+Ya está explicado en 1c: `for` es el que se beneficia (*I cooked dinner **for** you*), `to` es el que recibe algo (*I gave it **to** you*).
+
+### b) Función de un objeto: `for + -ing`
+Ya está explicado en 1b: *What is this tool **for**?* → *It's **for cutting** wood.*
+
+### c) Duración: `for`, `since` y `during`
+
+| Palabra | Responde a | Ejemplo | Por qué |
+|---|---|---|---|
+| `for` | ¿Cuánto tiempo? | I've lived here **for five years** | Va con un **periodo** (cinco años, dos horas). |
+| `since` | ¿Desde cuándo? | I've lived here **since 2020** | Va con un **punto de inicio** (2020, lunes, enero). |
+| `during` | ¿En qué momento? | I slept **during the movie** | Va con un **evento con nombre** (la película, la reunión). |
+
+**Errores típicos por el español:**
+- *Since five years* ❌ (en español "desde hace cinco años", pero `since` necesita un punto de inicio).
+- *I live here for five years* ❌. En español se dice en presente, pero en inglés es presente perfecto: *I **have lived** here for five years*.
+
+### d) Razón, agradecimiento, disculpa: `for + -ing`
+
+- Thank you **for coming**. (gracias *por* venir)
+- Sorry **for being** late.
+
+**Por qué `for` y no `to`:** agradeces o te disculpas **por algo ya ocurrido**, y `for` conecta la emoción con su motivo. Como `for` es preposición, el verbo va en `-ing`.
+
+**Contraste con `to`:**
+- *Sorry **for being** late* → ya llegaste tarde (motivo pasado).
+- *Sorry **to bother** you* → te molesto ahora mismo (acción en curso o futura).
+- *Thank you **for helping** me* → ya ayudó.
+- *I'm happy **to help*** → me ofrezco a ayudar.
+
+**Resumen de la diferencia:** `for + -ing` es el motivo de algo que ya pasó, y `to + verbo` es acción en curso o por hacer.
+
+### e) Precio e intercambio
+
+- I paid $20 **for** this shirt.
+- I sold it **for** $50.
+
+**Por qué `for`:** aquí significa *a cambio de*. Es el "por" español de intercambio.
+
+### f) `for + persona + to + verbo` (el "para que" con otra persona)
+
+- It's important **for you to** practice.
+- I waited **for her to** arrive.
+
+**Por qué `for` aquí:** `for` sirve para meter **quién** hace la acción cuando ese alguien no es el sujeto de la frase. El español usa "que" con subjuntivo (*es importante que practiques*), y el inglés **no tiene subjuntivo así**, así que lo resuelve con `for + persona + to`.
+
+**Ojo, con `want / need / ask / tell` no se usa `for`:**
+- I want **you to** come ✅ (no *I want for you to come* ni *I want that you come*).
+- **Por qué:** estos verbos aceptan a la persona directamente como objeto (*I want you*), y después solo falta el `to`. En cambio `wait` y los adjetivos (*important, easy*) no aceptan objeto directo, así que necesitan `for` como puente.
+
+### g) Verbos con `for` obligatorio
+
+| Español (sin preposición) | English |
+|---|---|
+| Esperar el bus | **wait for** the bus |
+| Buscar las llaves | **look for** the keys |
+| Pedir la cuenta | **ask for** the bill |
+| Pagar la cena | **pay for** dinner |
+| Solicitar un trabajo | **apply for** a job |
+
+**Por qué `for`:** todos expresan **ir tras algo** o **dirigir un esfuerzo hacia un objetivo**, y `for` marca ese objetivo. El español incluye ese sentido dentro del verbo (*esperar, buscar*). El inglés separa el verbo base (*wait, look*) de la preposición que dice qué persigues. Por eso se aprenden como bloque: `wait for`, `look for`, `ask for`, `search for`, `hope for`.
+
+## 3. "Para" en español → inglés, con el motivo
+
+| "Para" en español | Se dice | Ejemplo | Por qué |
+|---|---|---|---|
+| para + **verbo** (tu acción) | `to + verbo` | Lo hago **para ganar** dinero → I do it **to earn** money | Es el infinitivo de finalidad. |
+| para + **persona** | `for` | Es **para ti** → It's **for you** | Preposición + sustantivo. |
+| para + **función del objeto** | `for + -ing` | Sirve **para cortar** → It's **for cutting** | Preposición + verbo = `-ing`. |
+| para + **cosa que buscas** | `for + sustantivo` | Fui **por pan** / **para comprar pan** → I went **for bread** / **to buy bread** | Cosa → `for`, acción → `to`. |
+| para que + subjuntivo | `so (that)` + oración | Habla despacio **para que entienda** → Speak slowly **so (that) I can understand** | Hay un sujeto nuevo con su propio verbo conjugado. Va con `so that`, no con `to`. |
+| para (fecha límite) | `by` | **Para el viernes** → **By** Friday | `by` marca un límite de tiempo. `for` marcaría duración. |
+| para (destino) | `for` | Salgo **para Madrid** → I'm leaving **for** Madrid | Ver 1c. |
+| para + comparación | `for` | **Para** ser principiante... → **For** a beginner... | Compara con lo esperable. |
+| para mí (opinión) | `for me` / `in my opinion` | **Para mí**, es difícil → **For me**, it's hard | |
+
+## 4. THAT / WHO / WHICH (el "que" relativo)
+
+El español usa "que" para todo. El inglés elige según **a qué se refiere** y **si lleva comas**.
+
+### a) Quién es el referente
+
+| Se refiere a | Palabra | Por qué |
+|---|---|---|
+| **Personas** | `who` | Es la palabra específica para personas. |
+| **Cosas o animales** | `which` | Es la palabra específica para cosas. |
+| **Personas o cosas** (sin comas) | `that` | Palabra comodín, muy usada al hablar. |
+
+**Por qué no *the man **which** called*:** `which` es solo para cosas. Para personas se usa `who` o `that`.
+**Por qué no *the man **what** called*:** `what` no existe como pronombre relativo. En español "lo que" a veces se traduce por `what`, pero para *el hombre que llamó* no sirve.
+
+### b) La regla de las comas: ¿`that` sí o no?
+
+- **Sin comas (información esencial, identifica de quién o de qué hablas):** `that`, `who` o `which`.
+  - The developer **who/that** wrote this code is on vacation. (sin este dato no sé de qué desarrollador hablas)
+- **Con comas (información extra, el referente ya está identificado):** **solo** `who` o `which`, **nunca `that`**.
+  - My brother**, who** lives in Madrid, is a developer. ✅
+  - My laptop**, which** I bought last year, is slow. ✅
+  - My brother, ~~that~~ lives in Madrid ❌
+
+**Por qué `that` no va con comas:** `that` viene del mismo `that` que señala (*that car*, ese coche) y sirve para **señalar a uno concreto entre varios**. Cuando la información es extra, no estás eligiendo entre varios, solo añades un dato, y entonces va `who` o `which` con comas.
+
+### c) Cuándo se puede omitir el pronombre
+
+- The book **(that)** I read was great. → **se puede omitir**
+- The woman **who** lives next door is a doctor. → **no se puede omitir**
+
+**Por qué:** después del pronombre mira qué viene.
+- Si viene **otro sujeto** (*I, she, we, the team*), el pronombre es el objeto de ese verbo y la frase se entiende sin él.
+- Si viene **directamente un verbo** (*lives, called, works*), el pronombre **es** el sujeto de ese verbo, y si lo quitas el verbo se queda sin sujeto.
+
+### d) Preposición al final (muy natural al hablar)
+
+- The person **(who) I talked to**. (la persona con la que hablé)
+- The tool **(that) I work with**.
+- Formal y poco hablado: *the person **to whom** I talked*.
+
+### e) `which` para toda una idea
+
+- He was late, **which** annoyed me. (lo cual me molestó)
+
+**Por qué `which` y no `that`:** `that` no puede ir tras coma y no puede referirse a una idea completa.
+
+### f) Otros usos de `that` que no son relativos
+
+| Uso | Ejemplo | Traducción |
+|---|---|---|
+| Conjunción (opcional) | I think **(that)** he's right | creo **que** tiene razón |
+| Demostrativo | **That** is my car | **eso** es mi coche |
+| `so that` | I study **so that** I can get a job | para que |
+
+## 5. Errores típicos al hablar, con su causa
+
+| ❌ Error | ✅ Correcto | Por qué se comete |
+|---|---|---|
+| I want **that** you come | I want **you to** come | Calco de "quiero **que** vengas". El inglés no usa `that + subjuntivo` aquí. |
+| It's important **that** study | It's important **to** study | Mismo calco. Es `to + verbo`. |
+| I use it **for** code | I use it **to** code | "Para + verbo" es `to`, no `for`. |
+| This is **to** cutting | This is **for** cutting | Función de objeto + `-ing` = `for`. |
+| I wait the bus | I **wait for** the bus | En español no hay preposición. En inglés `wait` la necesita. |
+| Thanks **to** come | Thanks **for** coming | Motivo de algo ya hecho = `for + -ing`. |
+| Since five years | **For** five years | `since` necesita un punto de inicio, no una duración. |
+| The man **which** called | The man **who** called | `which` es solo para cosas. |
+| My dad, **that** is a teacher | My dad, **who** is a teacher | Con comas no se usa `that`. |
+| I go **to** home | I go home | Con *home / here / there* no se pone `to`. |
+
+## 6. Guía rápida para decidir mientras hablas
+
+1. **¿Qué viene después de "para"?**
+   - Un verbo (tu acción) → `to + verbo`
+   - Un sustantivo (cosa o persona) → `for + sustantivo`
+   - Un verbo que describe la función de un objeto → `for + -ing`
+2. **¿Quieres que otra persona haga algo?** → `want/need/ask/tell + persona + to + verbo`
+3. **¿Das las gracias o pides perdón por algo que ya pasó?** → `for + -ing`
+4. **¿Hablas de una persona con "que"?** → `who`
+5. **¿Hablas de una cosa con "que"?** → `which` o `that`
+6. **¿Hay comas y es un dato extra?** → `who` o `which`, nunca `that`
 
 # Entrevista personal
 
