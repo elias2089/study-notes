@@ -1,7 +1,7 @@
 # Plan diario Mañana
 
 ## 1. Antes de hablar en inglés (3 min)
-Lee en voz alta los 14 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
+Lee en voz alta los 15 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
 
 ## 2. Gramática (10 min) Ejercicios
 Entrenador de grámitica de Elsa speak, en caso de haber errores anteriores, repararlos.
@@ -127,9 +127,23 @@ Tiempo:
 - ❌ *the phone of my sister* → ✅ *my sister's phone*
 - ✅ *the door of the house* (con cosas sí se usa `of`)
 
+**14. Después de un auxiliar, ¿lleva `to`? Casi nunca.**
+
+| Auxiliar | Después va | Ejemplo |
+|---|---|---|
+| **Modales:** can, could, may, might, will, would, shall, should, must | verbo base, **sin `to`** | ❌ *I can to run* → ✅ *I can run* |
+| **do / does / did** | verbo base, **sin `to`** | ❌ *I don't to run* → ✅ *I don't run* |
+| **be** (am/is/are/was/were) | `-ing` (acción) o participio (pasiva) | ✅ *I am running* · *It was made* |
+| **have / has / had** (auxiliar) | participio | ✅ *I have run* |
+
+- **Por qué no `to`:** los modales ya traen el significado (habilidad, permiso, obligación) y no son verbos completos: no llevan `-s` (*she can*, no *she cans*) ni tienen infinitivo (*to can* no existe). `do`, `be` y `have` solo ayudan al verbo principal, así que tampoco.
+- **Sí llevan `to`** (son verbos normales o semimodales): *want to, need to, have to, ought to, used to, be able to, be going to*.
+  - ✅ *I want to run.* · ✅ *I have to go.* (obligación) · ✅ *I'm going to run.*
+  - Ojo: ✅ *I have run* (he corrido) ≠ ✅ *I have to run* (tengo que correr).
+
 ## 4. Último chequeo antes de decirlo
 
-**14. Tres preguntas rápidas.**
+**15. Tres preguntas rápidas.**
 - ¿Tiene **sujeto**? → ✅ *It is late.*
 - ¿El **verbo** va justo después del sujeto? → ❌ *I it want* → ✅ *I want it.*
 - ¿**Lugar antes que tiempo**? → ✅ *at the office yesterday*
