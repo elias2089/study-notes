@@ -113,7 +113,7 @@ Tiempo:
 - **Después describes para qué sirve un objeto** (*cortar, leer*) → inglés **`for` + -ing**.
   💭 *Este cuchillo es **para** cortar pan* → ❌ *This knife is **to** cut bread* → ✅ *This knife is **for cutting** bread.*
   💭 *Estas gafas son **para** leer* → ❌ *These glasses are **to** read* → ✅ *These glasses are **for reading**.*
-- Truco: **verbo que yo voy a hacer → `to`**. **Persona/cosa → `for`**. **Para qué sirve esa cosa → `for + -ing`**.
+- Truco: **verbo que yo voy a hacer y expresa dirección → `to`**. **Persona/cosa, expresa proposito → `for`**. **Para qué es la acción que se realiza → `for + -ing`**.
 
 **12. "Que" no siempre es `that`.**
 - Quieres que otro haga algo: ❌ *I want that you come* → ✅ *I want **you to** come.*
