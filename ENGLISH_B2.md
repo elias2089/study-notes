@@ -30,7 +30,7 @@ COn pronunciación y subtiyulos en ingles
 
 ## 1. Piensa
 
-**1. No traduzcas del español.** Piensa en una idea corta y llévala al inglés. Si te falta una palabra, descríbela.
+**1. No traduzcas del español.** Piensa en una idea corta, el tiempo que es y llévala al inglés. Si te falta una palabra, descríbela.
 - 💭 *no tiempo, proyecto, terminar* → ✅ *I haven't had time to finish the project.*
 - 💭 *llegar tarde, tráfico* → ✅ *I'm late because of the traffic.*
 - 💭 *no saber, fin de semana, hacer* → ✅ *I don't know what to do this weekend.*
