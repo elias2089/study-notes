@@ -12,6 +12,8 @@ Repasar las palabras con dificultad y las nuevas **Elsa Speak**
 ## 4. Shadowing y comparar audios (10 min)
 Escucha el audio nativo, repítela casi a la vez, grábate y compara **tu audio con el original**.
 
+## 5. Videos cortos y repetir (Elsa speak)
+
 # Plan diario Tarde ELSA Speak (30 min)
 
 ## 1. Tareas del día (15 min)
