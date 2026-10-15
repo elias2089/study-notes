@@ -14,6 +14,8 @@ Escucha el audio nativo, repítela casi a la vez, grábate y compara **tu audio 
 
 ## 5. Videos cortos y repetir (Elsa speak)
 
+## 6. Estudiar lista de verbos regular-irregulares
+
 # Plan diario Tarde ELSA Speak (30 min)
 
 ## 1. Tareas del día (15 min)
@@ -26,7 +28,13 @@ Anotar palabras nuevas del día. (Repaso leve)
 Usar el entrenador de pronunciacíon Elsa Speak, seguir el plan
 
 ## 4. Ver alguna serie
-COn pronunciación y subtiyulos en ingles
+Con pronunciación y subtiyulos en ingles
+
+## 5. Decir lo que  hice en el día
+Usar google translator
+. Poner el texto en español en el día
+. Luego decir mi traducción
+. Luego la traducción de Gemini
 
 # Antes de hablar en inglés
 
