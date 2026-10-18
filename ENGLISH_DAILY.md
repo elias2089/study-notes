@@ -32,16 +32,16 @@ Fuentes consultadas: [Oxford Learner's Dictionary – morning](https://www.oxfor
 
 ### New concepts
 
-| English | Significado |
-|---|---|
-| took (the dog) to the park | llevé (al perro) al parque |
-| When I got back home | Cuando regresé a casa |
-| got back | regresé / volví |
-| home (adverbio) | a casa (sin "to") |
-| already awake | ya despierta |
-| by then | para entonces / para ese momento |
-| bottle of milk | biberón / pomo de leche |
-| once she finished it | una vez que lo terminó |
-| my daughter's school | la escuela de mi hija |
-| dropping her off | dejándola (en un lugar) |
-| walked back | regresamos caminando |
+| English (Google) | Significado | Mi versión | Qué significa lo mío / cuándo se usa |
+|---|---|---|---|
+| took (the dog) to the park | llevé (al perro) al parque | went to the park with my dog | "fui al parque con mi perro": tú vas y el perro te acompaña; no enfatiza que tú lo llevaste |
+| When I got back home | Cuando regresé a casa | I came back | "volví": correcto, pero `come back` es volver al lugar donde está quien habla; `get back` es más natural para "llegar de vuelta" |
+| got back | regresé / volví | came back | "regresé": válido, más genérico |
+| home (adverbio) | a casa (sin "to") | to house | "a la casa" (el edificio): `house` es el edificio, `home` es el hogar; sin "to" |
+| already awake | ya despierta | was wake up | "estaba despertar(se)": `wake up` es la acción de despertar; para el estado se usa `awake` |
+| by then | para entonces / para ese momento | at this moment | "en este momento": solo se usa para el presente |
+| bottle of milk | biberón / pomo de leche | milk jug | "jarra de leche": `jug` es un recipiente grande, no un biberón |
+| once she finished it | una vez que lo terminó | ones she finished | "unos que ella terminó": `ones` es el plural de `one`, no es un conector |
+| my daughter's school | la escuela de mi hija | my child's school | "la escuela de mi niño/a": válido, pero más vago que `daughter` |
+| dropping her off | dejándola (en un lugar) | leave her | "dejarla / abandonarla": `leave` sugiere irse y dejarla sola; `drop off` es dejarla en un sitio para que se quede |
+| walked back | regresamos caminando | came back | "regresamos": válido, pero no dice cómo regresaron |
