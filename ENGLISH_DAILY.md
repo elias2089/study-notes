@@ -1,47 +1,3504 @@
-# DAY 1
+# English Daily Routine
 
-## Español 
-Me levante temprano en la mañana y fui al baño, luego lleve al perro al parque. al regresar a casa me bañe, mi hija ya estaba derpierta en ese momento. le di su pomo de leche, una vez que termino su leche la bañe. Luego nos fuimos a la escuela de la niña. tomamos un bus y despues de dejarla, regresamos caminando hasta la casa.
+> Cada frase base va en **presente simple** (hábito). Debajo se muestran otros tiempos según tenga sentido:
+> - **Pasado** → lo que hice hoy, ayer o una vez (past simple)
+> - **Ahora** → lo que estoy haciendo en este momento (present continuous)
+> - **Ya** → algo que ya hice o que dura hasta hoy (present perfect)
+> - **Futuro** → lo que haré o voy a hacer (will / going to)
 
+## 1. Al despertar
 
-## Mío English
-I got up early on moring and went to the bathroom. After that I went to the park with my dog, I came back and took a shower. My daugther was wake up at this moment. I gave her his milk jug, ones she finished, I bathed her. Then we went to my child's school. We took a bus and after leave her, We came back to house.
+### Despertarse
+- *I wake up at 6:30.* → Me despierto a las 6:30.
+  - Pasado: *I woke up at 6:30.* → Me desperté a las 6:30.
+  - Ya: *I've been awake since 6:30.* → Estoy despierto desde las 6:30.
+  - Futuro: *I'll wake up at 6:30 tomorrow.* → Mañana me despertaré a las 6:30.
+- *I wake up early.* → Me despierto temprano.
+  - Pasado: *I woke up early yesterday.* → Ayer me desperté temprano.
+  - Ya: *I've woken up early all week.* → He madrugado toda la semana.
+  - Futuro: *I'm going to wake up early tomorrow.* → Mañana voy a despertarme temprano.
+- *I wake up late on weekends.* → Me despierto tarde los fines de semana.
+  - Pasado: *I woke up late last Sunday.* → Me desperté tarde el domingo pasado.
+  - Ya: *I've woken up late every weekend this month.* → Me he despertado tarde todos los fines de semana este mes.
+  - Futuro: *I'll wake up late this weekend.* → Este fin de semana me despertaré tarde.
+- *I wake up before my alarm.* → Me despierto antes de que suene la alarma.
+  - Pasado: *I woke up before my alarm this morning.* → Esta mañana me desperté antes de que sonara la alarma.
+  - Ya: *I've woken up before my alarm all week.* → Me he despertado antes de la alarma toda la semana.
+  - Futuro: *I'm going to wake up before my alarm tomorrow.* → Mañana voy a despertarme antes de la alarma.
+- *I set the alarm for 6.* → Pongo la alarma a las 6.
+  - Pasado: *I set the alarm for 6 last night.* → Anoche puse la alarma a las 6.
+  - Ya: *I've already set the alarm for 6.* → Ya puse la alarma a las 6.
+  - Futuro: *I'll set the alarm for 6 tonight.* → Esta noche pondré la alarma a las 6.
+- *My alarm goes off at 6.* → Mi alarma suena a las 6.
+  - Pasado: *My alarm went off at 6.* → Mi alarma sonó a las 6.
+  - Ahora: *My alarm is going off right now.* → Mi alarma está sonando ahora mismo.
+  - Futuro: *My alarm will go off at 6 tomorrow.* → Mañana mi alarma sonará a las 6.
+- *I turn off the alarm.* → Apago la alarma.
+  - Pasado: *I turned off the alarm.* → Apagué la alarma.
+  - Ahora: *I'm turning off the alarm.* → Estoy apagando la alarma.
+  - Futuro: *I'll turn off the alarm.* → Apagaré la alarma.
+- *I hit the snooze button.* → Pospongo la alarma.
+  - Pasado: *I hit the snooze button twice.* → Pospuse la alarma dos veces.
+  - Ya: *I've hit the snooze button three times already.* → Ya he pospuesto la alarma tres veces.
+  - Futuro: *I'm not going to hit the snooze button tomorrow.* → Mañana no voy a posponer la alarma.
+- *I sleep through the alarm.* → No oigo la alarma y sigo durmiendo.
+  - Pasado: *I slept through the alarm this morning.* → Esta mañana no oí la alarma y seguí durmiendo.
+  - Ya: *I've slept through the alarm twice this week.* → Esta semana he dormido sin oír la alarma dos veces.
+  - Futuro: *I'll sleep through the alarm if I go to bed late.* → No oiré la alarma si me acuesto tarde.
+- *I sleep in.* → Me quedo durmiendo / Duermo hasta tarde.
+  - Pasado: *I slept in yesterday.* → Ayer dormí hasta tarde.
+  - Ya: *I've slept in every day this week.* → He dormido hasta tarde todos los días esta semana.
+  - Futuro: *I'm going to sleep in tomorrow.* → Mañana voy a dormir hasta tarde.
+- *I oversleep.* → Me quedo dormido (más de lo planeado).
+  - Pasado: *I overslept today.* → Hoy me quedé dormido.
+  - Ya: *I've overslept again.* → Me he quedado dormido otra vez.
+  - Futuro: *I'll oversleep if I don't set the alarm.* → Me quedaré dormido si no pongo la alarma.
+- *I lie in.* → Me quedo en la cama un rato más (UK).
+  - Pasado: *I lay in until 9.* → Me quedé en la cama hasta las 9.
+  - Ya: *I've lain in all morning.* → Me he quedado en la cama toda la mañana.
+  - Futuro: *I'll lie in on Sunday.* → El domingo me quedaré más rato en la cama.
+- *I'm not a morning person.* → No soy una persona madrugadora.
+  - Pasado: *I was never a morning person.* → Nunca fui una persona madrugadora.
+  - Ya: *I've never been a morning person.* → Nunca he sido una persona madrugadora.
+  - Futuro: *I'll never be a morning person.* → Nunca seré una persona madrugadora.
+- *I'm a morning person.* → Soy una persona madrugadora.
+  - Pasado: *I was a morning person when I was a kid.* → Era una persona madrugadora cuando era niño.
+  - Ya: *I've always been a morning person.* → Siempre he sido una persona madrugadora.
+  - Futuro: *I'm going to become a morning person.* → Voy a convertirme en una persona madrugadora.
+- *I'm a night owl.* → Soy una persona noctámbula.
+  - Pasado: *I was a night owl in college.* → Era noctámbulo en la universidad.
+  - Ya: *I've always been a night owl.* → Siempre he sido noctámbulo.
+  - Futuro: *I'll probably stay a night owl.* → Probablemente seguiré siendo noctámbulo.
+- *I'm an early bird.* → Soy una persona que madruga.
+  - Pasado: *I was an early bird as a kid.* → De niño madrugaba.
+  - Ya: *I've been an early bird since I started this job.* → Madrugo desde que empecé este trabajo.
+  - Futuro: *I'm going to be an early bird this year.* → Este año voy a madrugar.
 
-## Google Translate
-I got up early in the morning and went to the bathroom, then took the dog to the park. When I got back home, I took a shower; my daughter was already awake by then. I gave her her bottle of milk, and once she finished it, I bathed her. Then we went to my daughter's school; we took a bus, and after dropping her off, we walked back home.
+### Levantarse y arreglar la cama
+- *I get out of bed.* → Me levanto de la cama.
+  - Pasado: *I got out of bed at 7.* → Me levanté de la cama a las 7.
+  - Ahora: *I'm getting out of bed.* → Me estoy levantando de la cama.
+  - Futuro: *I'll get out of bed at 7 tomorrow.* → Mañana me levantaré de la cama a las 7.
+- *I get up right away.* → Me levanto de inmediato.
+  - Pasado: *I got up right away.* → Me levanté de inmediato.
+  - Ya: *I've already gotten up.* → Ya me levanté.
+  - Futuro: *I'll get up right away tomorrow.* → Mañana me levantaré de inmediato.
+- *I roll out of bed.* → Salgo de la cama a regañadientes.
+  - Pasado: *I rolled out of bed at the last minute.* → Salí de la cama a regañadientes en el último minuto.
+  - Ahora: *I'm rolling out of bed.* → Estoy saliendo de la cama a regañadientes.
+  - Futuro: *I'll roll out of bed when the alarm goes off.* → Saldré de la cama a regañadientes cuando suene la alarma.
+- *I jump out of bed.* → Salto de la cama (con energía).
+  - Pasado: *I jumped out of bed this morning.* → Esta mañana salté de la cama.
+  - Ya: *I've jumped out of bed every day since I started running.* → He saltado de la cama todos los días desde que empecé a correr.
+  - Futuro: *I'm going to jump out of bed tomorrow.* → Mañana voy a saltar de la cama.
+- *I drag myself out of bed.* → Me arrastro fuera de la cama.
+  - Pasado: *I dragged myself out of bed.* → Me arrastré fuera de la cama.
+  - Ahora: *I'm dragging myself out of bed.* → Me estoy arrastrando fuera de la cama.
+  - Futuro: *I'll drag myself out of bed somehow.* → De alguna manera me arrastraré fuera de la cama.
+- *I sit up in bed.* → Me incorporo en la cama.
+  - Pasado: *I sat up in bed.* → Me incorporé en la cama.
+  - Ahora: *I'm sitting up in bed.* → Estoy incorporándome en la cama.
+  - Futuro: *I'll sit up in bed and stretch.* → Me incorporaré en la cama y me estiraré.
+- *I stay in bed for a few minutes.* → Me quedo en la cama unos minutos.
+  - Pasado: *I stayed in bed for ten minutes.* → Me quedé en la cama diez minutos.
+  - Ahora: *I'm staying in bed for a few more minutes.* → Me estoy quedando en la cama unos minutos más.
+  - Futuro: *I'll stay in bed for a few minutes tomorrow.* → Mañana me quedaré en la cama unos minutos.
+- *I make the bed.* → Tiendo la cama.
+  - Pasado: *I made the bed.* → Tendí la cama.
+  - Ahora: *I'm making the bed.* → Estoy tendiendo la cama.
+  - Ya: *I've already made the bed.* → Ya tendí la cama.
+  - Futuro: *I'll make the bed later.* → Tenderé la cama más tarde.
+- *I fold the blanket.* → Doblo la manta.
+  - Pasado: *I folded the blanket.* → Doblé la manta.
+  - Ahora: *I'm folding the blanket.* → Estoy doblando la manta.
+  - Futuro: *I'll fold the blanket.* → Doblaré la manta.
+- *I fluff the pillow.* → Mullo la almohada.
+  - Pasado: *I fluffed the pillow.* → Mullí la almohada.
+  - Ahora: *I'm fluffing the pillow.* → Estoy mullendo la almohada.
+  - Futuro: *I'll fluff the pillow.* → Mulliré la almohada.
+- *I straighten the sheets.* → Estiro las sábanas.
+  - Pasado: *I straightened the sheets.* → Estiré las sábanas.
+  - Ahora: *I'm straightening the sheets.* → Estoy estirando las sábanas.
+  - Futuro: *I'll straighten the sheets.* → Estiraré las sábanas.
+- *I open the curtains.* → Abro las cortinas.
+  - Pasado: *I opened the curtains.* → Abrí las cortinas.
+  - Ahora: *I'm opening the curtains.* → Estoy abriendo las cortinas.
+  - Futuro: *I'll open the curtains.* → Abriré las cortinas.
+- *I open the blinds.* → Abro las persianas.
+  - Pasado: *I opened the blinds.* → Abrí las persianas.
+  - Ahora: *I'm opening the blinds.* → Estoy abriendo las persianas.
+  - Futuro: *I'll open the blinds.* → Abriré las persianas.
+- *I open the window.* → Abro la ventana.
+  - Pasado: *I opened the window.* → Abrí la ventana.
+  - Ahora: *I'm opening the window.* → Estoy abriendo la ventana.
+  - Futuro: *I'll open the window.* → Abriré la ventana.
+- *I let some fresh air in.* → Dejo entrar aire fresco.
+  - Pasado: *I let some fresh air in.* → Dejé entrar aire fresco.
+  - Ahora: *I'm letting some fresh air in.* → Estoy dejando entrar aire fresco.
+  - Futuro: *I'll let some fresh air in.* → Dejaré entrar aire fresco.
+- *I turn on the light.* → Enciendo la luz.
+  - Pasado: *I turned on the light.* → Encendí la luz.
+  - Ahora: *I'm turning on the light.* → Estoy encendiendo la luz.
+  - Futuro: *I'll turn on the light.* → Encenderé la luz.
+- *I put on my slippers.* → Me pongo las pantuflas.
+  - Pasado: *I put on my slippers.* → Me puse las pantuflas.
+  - Ahora: *I'm putting on my slippers.* → Me estoy poniendo las pantuflas.
+  - Futuro: *I'll put on my slippers.* → Me pondré las pantuflas.
 
-### Comparison
+### Cómo me siento al despertar
+- *I feel groggy.* → Me siento aturdido / con sueño.
+  - Pasado: *I felt groggy this morning.* → Esta mañana me sentí aturdido.
+  - Ya: *I've felt groggy all morning.* → Me he sentido aturdido toda la mañana.
+  - Futuro: *I'll feel groggy if I don't sleep enough.* → Me sentiré aturdido si no duermo lo suficiente.
+- *I feel refreshed.* → Me siento descansado.
+  - Pasado: *I felt refreshed after the nap.* → Me sentí descansado después de la siesta.
+  - Ya: *I've felt refreshed since I started sleeping eight hours.* → Me siento descansado desde que duermo ocho horas.
+  - Futuro: *I'll feel refreshed tomorrow.* → Mañana me sentiré descansado.
+- *I feel rested.* → Me siento descansado.
+  - Pasado: *I felt rested yesterday.* → Ayer me sentí descansado.
+  - Ya: *I've felt rested all week.* → Me he sentido descansado toda la semana.
+  - Futuro: *I'll feel rested after the weekend.* → Me sentiré descansado después del fin de semana.
+- *I feel tired.* → Me siento cansado.
+  - Pasado: *I felt tired when I woke up.* → Me sentí cansado al despertar.
+  - Ya: *I've felt tired all day.* → Me he sentido cansado todo el día.
+  - Futuro: *I'll feel tired tomorrow if I stay up late.* → Mañana me sentiré cansado si me quedo despierto hasta tarde.
+- *I feel sleepy.* → Tengo sueño.
+  - Pasado: *I felt sleepy after breakfast.* → Tuve sueño después del desayuno.
+  - Ahora: *I'm feeling sleepy right now.* → Tengo sueño ahora mismo.
+  - Futuro: *I'll feel sleepy later.* → Tendré sueño más tarde.
+- *I'm half asleep.* → Estoy medio dormido.
+  - Pasado: *I was half asleep.* → Estaba medio dormido.
+  - Ya: *I've been half asleep since I woke up.* → Estoy medio dormido desde que desperté.
+  - Futuro: *I'll be half asleep tomorrow morning.* → Mañana por la mañana estaré medio dormido.
+- *I'm wide awake.* → Estoy completamente despierto.
+  - Pasado: *I was wide awake at 5 a.m.* → Estaba completamente despierto a las 5 de la mañana.
+  - Ya: *I've been wide awake since 5 a.m.* → Estoy completamente despierto desde las 5 de la mañana.
+  - Futuro: *I'll be wide awake after my coffee.* → Estaré completamente despierto después del café.
+- *I rub my eyes.* → Me froto los ojos.
+  - Pasado: *I rubbed my eyes.* → Me froté los ojos.
+  - Ahora: *I'm rubbing my eyes.* → Me estoy frotando los ojos.
+  - Futuro: *I'll rub my eyes.* → Me frotaré los ojos.
+- *I yawn.* → Bostezo.
+  - Pasado: *I yawned all morning.* → Bostecé toda la mañana.
+  - Ahora: *I'm yawning.* → Estoy bostezando.
+  - Futuro: *I'll yawn through the meeting.* → Bostezaré durante toda la reunión.
+- *I stretch my arms and legs.* → Estiro los brazos y las piernas.
+  - Pasado: *I stretched my arms and legs.* → Estiré los brazos y las piernas.
+  - Ahora: *I'm stretching my arms and legs.* → Estoy estirando los brazos y las piernas.
+  - Futuro: *I'll stretch my arms and legs.* → Estiraré los brazos y las piernas.
+- *I sleep well.* → Duermo bien.
+  - Pasado: *I slept well last night.* → Anoche dormí bien.
+  - Ya: *I've slept well all week.* → He dormido bien toda la semana.
+  - Futuro: *I'll sleep well tonight.* → Dormiré bien esta noche.
+- *I sleep badly.* → Duermo mal.
+  - Pasado: *I slept badly last night.* → Anoche dormí mal.
+  - Ya: *I've slept badly lately.* → He dormido mal últimamente.
+  - Futuro: *I'll sleep badly if I drink coffee tonight.* → Dormiré mal si tomo café esta noche.
 
-| # | Tu versión | Google | Qué cambió | Por qué lo hizo así | Tipo de error | Recomendación |
-|---|---|---|---|---|---|---|
-| 1 | early **on** moring | early **in the** morning | `on` → `in the`; typo `moring` | "In the morning" es la colocación fija para la parte del día. `on the morning of` solo se usa con un día/evento concreto ("on the morning of the wedding"). | Preposición (calco de "en la mañana") + typo | Parte del día = `in the morning/afternoon/evening`; solo `at night`. |
-| 2 | I went to the park **with my dog** | **took the dog** to the park | `went with` → `took ... to` | `take someone/something somewhere` expresa que tú lo llevas; es más directo y natural que ir "con" él. | Naturalidad (traducción literal de "llevé al perro") | Llevar a alguien a un sitio = `take + persona + to + lugar`. |
-| 3 | I went..., After that I went ..., I came back and took... (coma + frase nueva) | When I got back home, I took a shower | Unió con `When` y quitó la coma suelta | Dos frases independientes no se unen solo con coma (comma splice). Se usa un conector (`when`, `and`, `then`) o punto. | Puntuación / conectores | Si dos acciones se suceden, une con `when`, `after`, `then` o separa con punto. |
-| 4 | I came back and took a shower / We came back **to house** | got back **home** / walked back **home** | `to house` → `home` | `home` funciona como adverbio de lugar tras `go/come/get back/arrive`: **no lleva preposición** ni artículo. `to house` además omite el artículo. | Preposición + artículo (calco de "regresar a casa") | `go home`, `come home`, `get home`, `arrive home`. Con ubicación sí hay preposición: `at home`. |
-| 5 | My daugther **was wake up** | my daughter **was already awake** | `wake up` → `awake`; añadió `already`; typo `daugther` | `awake` es adjetivo (estado: no dormida) y va con `be`. `wake up` es phrasal verb de acción (despertar) y no se combina con `was`. | Adjetivo vs. phrasal verb + typo | Estado = `be awake`; acción = `wake up / woke up`. |
-| 6 | **at this moment** | **by then** | `at this moment` → `by then` | `at this moment` habla del presente. Para referirse a un momento ya pasado de la historia se usa `by then` / `at that moment`. | Tiempo / referencia temporal | En narración pasada usa `then`, `at that time`, `by then`; `now/at this moment` es para el presente. |
-| 7 | I gave her **his milk jug** | I gave her **her bottle of milk** | `his` → `her`; `milk jug` → `bottle of milk` | El posesivo concuerda con **quien posee** (la niña = `her`), no con el objeto ni con el sexo del padre. `jug` es una jarra grande; el biberón es `bottle`. | Posesivo + vocabulario | Posesivo = dueño: ella → `her`, él → `his`. Biberón = `(baby) bottle`. |
-| 8 | **ones** she finished | **once** she finished it | `ones` → `once`; añadió `it` | `once` como conjunción significa "una vez que / en cuanto". `ones` es el plural del pronombre `one` ("the black ones"), otra palabra. Además, `finish` necesita objeto: `finished it`. | Palabra equivocada (suenan parecido) + objeto omitido | `once + sujeto + verbo` = "una vez que". Verbos como `finish` piden objeto (`finished it`). |
-| 9 | **my child's** school | **my daughter's** school | `child` → `daughter` | Ya dijiste que es tu hija; repetir `daughter` es más específico y natural. `child` es válido pero vago. | Vocabulario / precisión | Si el género es conocido, usa `son/daughter` en vez de `child`. |
-| 10 | after **leave** her | after **dropping her off** | `leave` → `dropping ... off` | Tras una preposición (`after`) el verbo va en **-ing**. Además `drop off` es el phrasal verb exacto para "dejar a alguien en un sitio" (`leave` suena a abandonar). | Forma verbal (gerundio) + phrasal verb | `after / before / without + verbo-ing`. Dejar a alguien en la escuela = `drop (her) off`. |
-| 11 | ..., **We** came back | ...; we walked back | `We` → `we`; añadió `walked` | Tras coma no se usa mayúscula. Google también especificó cómo regresaron (`walked`) en vez del genérico `came back`. | Mayúsculas + precisión | Mayúscula solo al inicio de frase o en nombres propios. Verbo de movimiento concreto > `came/went`. |
+### Primeras cosas al levantarme
+- *I check my phone.* → Reviso el teléfono.
+  - Pasado: *I checked my phone.* → Revisé el teléfono.
+  - Ahora: *I'm checking my phone.* → Estoy revisando el teléfono.
+  - Futuro: *I'll check my phone later.* → Revisaré el teléfono más tarde.
+- *I check the time.* → Miro la hora.
+  - Pasado: *I checked the time.* → Miré la hora.
+  - Ahora: *I'm checking the time.* → Estoy mirando la hora.
+  - Futuro: *I'll check the time.* → Miraré la hora.
+- *I check the weather.* → Veo el clima.
+  - Pasado: *I checked the weather.* → Vi el clima.
+  - Ahora: *I'm checking the weather.* → Estoy viendo el clima.
+  - Futuro: *I'll check the weather before I go out.* → Veré el clima antes de salir.
+- *I scroll through social media.* → Navego por las redes sociales.
+  - Pasado: *I scrolled through social media for ten minutes.* → Navegué por las redes sociales diez minutos.
+  - Ahora: *I'm scrolling through social media.* → Estoy navegando por las redes sociales.
+  - Futuro: *I won't scroll through social media tomorrow.* → Mañana no navegaré por las redes sociales.
+- *I read the news.* → Leo las noticias.
+  - Pasado: *I read the news.* → Leí las noticias.
+  - Ahora: *I'm reading the news.* → Estoy leyendo las noticias.
+  - Futuro: *I'll read the news after breakfast.* → Leeré las noticias después del desayuno.
+- *I check my messages and emails.* → Reviso mis mensajes y correos.
+  - Pasado: *I checked my messages and emails.* → Revisé mis mensajes y correos.
+  - Ya: *I've already checked my messages and emails.* → Ya revisé mis mensajes y correos.
+  - Futuro: *I'll check my messages and emails at work.* → Revisaré mis mensajes y correos en el trabajo.
+- *I drink a glass of water.* → Bebo un vaso de agua.
+  - Pasado: *I drank a glass of water.* → Bebí un vaso de agua.
+  - Ahora: *I'm drinking a glass of water.* → Estoy bebiendo un vaso de agua.
+  - Futuro: *I'll drink a glass of water.* → Beberé un vaso de agua.
+- *I go to the bathroom.* → Voy al baño.
+  - Pasado: *I went to the bathroom.* → Fui al baño.
+  - Ahora: *I'm going to the bathroom.* → Estoy yendo al baño.
+  - Futuro: *I'll go to the bathroom first.* → Iré primero al baño.
+- *I do some morning stretches.* → Hago estiramientos matutinos.
+  - Pasado: *I did some morning stretches.* → Hice estiramientos matutinos.
+  - Ahora: *I'm doing some morning stretches.* → Estoy haciendo estiramientos matutinos.
+  - Futuro: *I'll do some morning stretches tomorrow.* → Mañana haré estiramientos matutinos.
+- *I do a few push-ups.* → Hago unas flexiones.
+  - Pasado: *I did a few push-ups.* → Hice unas flexiones.
+  - Ahora: *I'm doing a few push-ups.* → Estoy haciendo unas flexiones.
+  - Futuro: *I'm going to do a few push-ups.* → Voy a hacer unas flexiones.
+- *I meditate for a few minutes.* → Medito unos minutos.
+  - Pasado: *I meditated for ten minutes.* → Medité diez minutos.
+  - Ahora: *I'm meditating.* → Estoy meditando.
+  - Futuro: *I'll meditate for a few minutes tomorrow.* → Mañana meditaré unos minutos.
 
-**Errores repetidos en este día:** preposiciones (1, 4), typos (1, 5), vocabulario/naturalidad (2, 7, 9, 10), conectores y puntuación (3, 11).
+## 2. Higiene y arreglo personal
 
-Fuentes consultadas: [Oxford Learner's Dictionary – morning](https://www.oxfordlearnersdictionaries.com/us/definition/english/morning), [English Current – go home](https://www.englishcurrent.com/grammar/go-home-adverb-no-preposition/), [Espresso English – wake/awake](https://www.espressoenglish.net/?p=493), [Grammar.cl – possessive adjectives](https://www.grammar.cl/Notes/Possessive_Adjectives.htm), [PrepEdu – after + V-ing](https://prepedu.com/en/blog/usage-of-after-in-english).
+### Ducharse y lavarse
+- *I take a shower.* → Me ducho.
+  - Pasado: *I took a shower.* → Me duché.
+  - Ahora: *I'm taking a shower.* → Me estoy duchando.
+  - Ya: *I've already taken a shower.* → Ya me duché.
+  - Futuro: *I'll take a shower after the gym.* → Me ducharé después del gimnasio.
+- *I take a bath.* → Me baño (en la bañera).
+  - Pasado: *I took a bath last night.* → Anoche me bañé en la bañera.
+  - Ahora: *I'm taking a bath.* → Me estoy bañando en la bañera.
+  - Futuro: *I'll take a bath tonight.* → Esta noche me bañaré en la bañera.
+- *I take a quick shower.* → Me doy una ducha rápida.
+  - Pasado: *I took a quick shower.* → Me di una ducha rápida.
+  - Ahora: *I'm taking a quick shower.* → Me estoy dando una ducha rápida.
+  - Futuro: *I'll take a quick shower.* → Me daré una ducha rápida.
+- *I take a long, hot shower.* → Me doy una ducha larga y caliente.
+  - Pasado: *I took a long, hot shower.* → Me di una ducha larga y caliente.
+  - Ahora: *I'm taking a long, hot shower.* → Me estoy dando una ducha larga y caliente.
+  - Futuro: *I'm going to take a long, hot shower.* → Voy a darme una ducha larga y caliente.
+- *I turn on the water.* → Abro el agua.
+  - Pasado: *I turned on the water.* → Abrí el agua.
+  - Ahora: *I'm turning on the water.* → Estoy abriendo el agua.
+  - Futuro: *I'll turn on the water.* → Abriré el agua.
+- *I wait for the water to get warm.* → Espero a que el agua se caliente.
+  - Pasado: *I waited for the water to get warm.* → Esperé a que el agua se calentara.
+  - Ahora: *I'm waiting for the water to get warm.* → Estoy esperando a que el agua se caliente.
+  - Futuro: *I'll wait for the water to get warm.* → Esperaré a que el agua se caliente.
+- *I adjust the water temperature.* → Ajusto la temperatura del agua.
+  - Pasado: *I adjusted the water temperature.* → Ajusté la temperatura del agua.
+  - Ahora: *I'm adjusting the water temperature.* → Estoy ajustando la temperatura del agua.
+  - Futuro: *I'll adjust the water temperature.* → Ajustaré la temperatura del agua.
+- *I get in the shower.* → Entro a la ducha.
+  - Pasado: *I got in the shower.* → Entré a la ducha.
+  - Ahora: *I'm getting in the shower.* → Estoy entrando a la ducha.
+  - Futuro: *I'll get in the shower.* → Entraré a la ducha.
+- *I wash my hair.* → Me lavo el pelo.
+  - Pasado: *I washed my hair.* → Me lavé el pelo.
+  - Ahora: *I'm washing my hair.* → Me estoy lavando el pelo.
+  - Ya: *I've already washed my hair.* → Ya me lavé el pelo.
+  - Futuro: *I'll wash my hair tonight.* → Me lavaré el pelo esta noche.
+- *I shampoo my hair.* → Me aplico champú.
+  - Pasado: *I shampooed my hair.* → Me apliqué champú.
+  - Ahora: *I'm shampooing my hair.* → Me estoy aplicando champú.
+  - Futuro: *I'll shampoo my hair.* → Me aplicaré champú.
+- *I use conditioner.* → Uso acondicionador.
+  - Pasado: *I used conditioner.* → Usé acondicionador.
+  - Ahora: *I'm using conditioner.* → Estoy usando acondicionador.
+  - Futuro: *I'll use conditioner.* → Usaré acondicionador.
+- *I wash my body with soap.* → Me lavo el cuerpo con jabón.
+  - Pasado: *I washed my body with soap.* → Me lavé el cuerpo con jabón.
+  - Ahora: *I'm washing my body with soap.* → Me estoy lavando el cuerpo con jabón.
+  - Futuro: *I'll wash my body with soap.* → Me lavaré el cuerpo con jabón.
+- *I rinse off.* → Me enjuago.
+  - Pasado: *I rinsed off.* → Me enjuagué.
+  - Ahora: *I'm rinsing off.* → Me estoy enjuagando.
+  - Futuro: *I'll rinse off.* → Me enjuagaré.
+- *I turn off the water.* → Cierro el agua.
+  - Pasado: *I turned off the water.* → Cerré el agua.
+  - Ahora: *I'm turning off the water.* → Estoy cerrando el agua.
+  - Futuro: *I'll turn off the water.* → Cerraré el agua.
+- *I get out of the shower.* → Salgo de la ducha.
+  - Pasado: *I got out of the shower.* → Salí de la ducha.
+  - Ahora: *I'm getting out of the shower.* → Estoy saliendo de la ducha.
+  - Futuro: *I'll get out of the shower in five minutes.* → Saldré de la ducha en cinco minutos.
+- *I dry myself with a towel.* → Me seco con una toalla.
+  - Pasado: *I dried myself with a towel.* → Me sequé con una toalla.
+  - Ahora: *I'm drying myself with a towel.* → Me estoy secando con una toalla.
+  - Futuro: *I'll dry myself with a towel.* → Me secaré con una toalla.
+- *I wrap a towel around myself.* → Me envuelvo en una toalla.
+  - Pasado: *I wrapped a towel around myself.* → Me envolví en una toalla.
+  - Ahora: *I'm wrapping a towel around myself.* → Me estoy envolviendo en una toalla.
+  - Futuro: *I'll wrap a towel around myself.* → Me envolveré en una toalla.
+- *I wash my face.* → Me lavo la cara.
+  - Pasado: *I washed my face.* → Me lavé la cara.
+  - Ahora: *I'm washing my face.* → Me estoy lavando la cara.
+  - Ya: *I've already washed my face.* → Ya me lavé la cara.
+  - Futuro: *I'll wash my face before bed.* → Me lavaré la cara antes de dormir.
+- *I wash my hands.* → Me lavo las manos.
+  - Pasado: *I washed my hands.* → Me lavé las manos.
+  - Ahora: *I'm washing my hands.* → Me estoy lavando las manos.
+  - Ya: *I've just washed my hands.* → Acabo de lavarme las manos.
+  - Futuro: *I'll wash my hands before eating.* → Me lavaré las manos antes de comer.
 
-### New concepts
+### Dientes y cuidado bucal
+- *I brush my teeth.* → Me cepillo los dientes.
+  - Pasado: *I brushed my teeth.* → Me cepillé los dientes.
+  - Ahora: *I'm brushing my teeth.* → Me estoy cepillando los dientes.
+  - Ya: *I've already brushed my teeth.* → Ya me cepillé los dientes.
+  - Futuro: *I'll brush my teeth after breakfast.* → Me cepillaré los dientes después del desayuno.
+- *I put toothpaste on my toothbrush.* → Le pongo pasta de dientes al cepillo.
+  - Pasado: *I put toothpaste on my toothbrush.* → Le puse pasta de dientes al cepillo.
+  - Ahora: *I'm putting toothpaste on my toothbrush.* → Le estoy poniendo pasta de dientes al cepillo.
+  - Futuro: *I'll put toothpaste on my toothbrush.* → Le pondré pasta de dientes al cepillo.
+- *I brush my teeth for two minutes.* → Me cepillo los dientes durante dos minutos.
+  - Pasado: *I brushed my teeth for two minutes.* → Me cepillé los dientes durante dos minutos.
+  - Ahora: *I'm brushing my teeth for two minutes.* → Me estoy cepillando los dientes durante dos minutos.
+  - Futuro: *I'll brush my teeth for two minutes.* → Me cepillaré los dientes durante dos minutos.
+- *I floss.* → Uso hilo dental.
+  - Pasado: *I flossed last night.* → Anoche usé hilo dental.
+  - Ahora: *I'm flossing.* → Estoy usando hilo dental.
+  - Futuro: *I'll floss before bed.* → Usaré hilo dental antes de dormir.
+- *I use mouthwash.* → Uso enjuague bucal.
+  - Pasado: *I used mouthwash.* → Usé enjuague bucal.
+  - Ahora: *I'm using mouthwash.* → Estoy usando enjuague bucal.
+  - Futuro: *I'll use mouthwash.* → Usaré enjuague bucal.
+- *I rinse my mouth.* → Me enjuago la boca.
+  - Pasado: *I rinsed my mouth.* → Me enjuagué la boca.
+  - Ahora: *I'm rinsing my mouth.* → Me estoy enjuagando la boca.
+  - Futuro: *I'll rinse my mouth.* → Me enjuagaré la boca.
+- *I spit out the toothpaste.* → Escupo la pasta de dientes.
+  - Pasado: *I spat out the toothpaste.* → Escupí la pasta de dientes.
+  - Ahora: *I'm spitting out the toothpaste.* → Estoy escupiendo la pasta de dientes.
+  - Futuro: *I'll spit out the toothpaste.* → Escupiré la pasta de dientes.
+- *I brush my tongue.* → Me cepillo la lengua.
+  - Pasado: *I brushed my tongue.* → Me cepillé la lengua.
+  - Ahora: *I'm brushing my tongue.* → Me estoy cepillando la lengua.
+  - Futuro: *I'll brush my tongue.* → Me cepillaré la lengua.
 
-| English (Google) | Significado | Mi versión | Qué significa lo mío / cuándo se usa |
-|---|---|---|---|
-| took (the dog) to the park | llevé (al perro) al parque | went to the park with my dog | "fui al parque con mi perro": tú vas y el perro te acompaña; no enfatiza que tú lo llevaste |
-| When I got back home | Cuando regresé a casa | I came back | "volví": correcto, pero `come back` es volver al lugar donde está quien habla; `get back` es más natural para "llegar de vuelta" |
-| got back | regresé / volví | came back | "regresé": válido, más genérico |
-| home (adverbio) | a casa (sin "to") | to house | "a la casa" (el edificio): `house` es el edificio, `home` es el hogar; sin "to" |
-| already awake | ya despierta | was wake up | "estaba despertar(se)": `wake up` es la acción de despertar; para el estado se usa `awake` |
-| by then | para entonces / para ese momento | at this moment | "en este momento": solo se usa para el presente |
-| bottle of milk | biberón / pomo de leche | milk jug | "jarra de leche": `jug` es un recipiente grande, no un biberón |
-| once she finished it | una vez que lo terminó | ones she finished | "unos que ella terminó": `ones` es el plural de `one`, no es un conector |
-| my daughter's school | la escuela de mi hija | my child's school | "la escuela de mi niño/a": válido, pero más vago que `daughter` |
-| dropping her off | dejándola (en un lugar) | leave her | "dejarla / abandonarla": `leave` sugiere irse y dejarla sola; `drop off` es dejarla en un sitio para que se quede |
-| walked back | regresamos caminando | came back | "regresamos": válido, pero no dice cómo regresaron |
+### Afeitarse y cuidado de la piel
+- *I shave.* → Me afeito.
+  - Pasado: *I shaved this morning.* → Esta mañana me afeité.
+  - Ahora: *I'm shaving.* → Me estoy afeitando.
+  - Ya: *I haven't shaved today.* → Hoy no me he afeitado.
+  - Futuro: *I'll shave tomorrow.* → Mañana me afeitaré.
+- *I shave my face.* → Me afeito la cara.
+  - Pasado: *I shaved my face.* → Me afeité la cara.
+  - Ahora: *I'm shaving my face.* → Me estoy afeitando la cara.
+  - Futuro: *I'll shave my face.* → Me afeitaré la cara.
+- *I apply shaving cream.* → Me aplico crema de afeitar.
+  - Pasado: *I applied shaving cream.* → Me apliqué crema de afeitar.
+  - Ahora: *I'm applying shaving cream.* → Me estoy aplicando crema de afeitar.
+  - Futuro: *I'll apply shaving cream.* → Me aplicaré crema de afeitar.
+- *I trim my beard.* → Me recorto la barba.
+  - Pasado: *I trimmed my beard.* → Me recorté la barba.
+  - Ahora: *I'm trimming my beard.* → Me estoy recortando la barba.
+  - Futuro: *I'll trim my beard this weekend.* → Me recortaré la barba este fin de semana.
+- *I use an electric razor.* → Uso una afeitadora eléctrica.
+  - Pasado: *I used an electric razor.* → Usé una afeitadora eléctrica.
+  - Ahora: *I'm using an electric razor.* → Estoy usando una afeitadora eléctrica.
+  - Futuro: *I'll use an electric razor.* → Usaré una afeitadora eléctrica.
+- *I cut myself while shaving.* → Me corto al afeitarme.
+  - Pasado: *I cut myself while shaving.* → Me corté al afeitarme.
+  - Ya: *I've cut myself while shaving twice this month.* → Me he cortado al afeitarme dos veces este mes.
+  - Futuro: *I'll cut myself if I rush.* → Me cortaré si me apuro.
+- *I moisturize my face.* → Me hidrato la cara.
+  - Pasado: *I moisturized my face.* → Me hidraté la cara.
+  - Ahora: *I'm moisturizing my face.* → Me estoy hidratando la cara.
+  - Futuro: *I'll moisturize my face.* → Me hidrataré la cara.
+- *I put on sunscreen.* → Me pongo protector solar.
+  - Pasado: *I put on sunscreen.* → Me puse protector solar.
+  - Ahora: *I'm putting on sunscreen.* → Me estoy poniendo protector solar.
+  - Futuro: *I'll put on sunscreen before going out.* → Me pondré protector solar antes de salir.
+- *I put on deodorant.* → Me pongo desodorante.
+  - Pasado: *I put on deodorant.* → Me puse desodorante.
+  - Ahora: *I'm putting on deodorant.* → Me estoy poniendo desodorante.
+  - Futuro: *I'll put on deodorant.* → Me pondré desodorante.
+- *I put on perfume.* → Me pongo perfume.
+  - Pasado: *I put on perfume.* → Me puse perfume.
+  - Ahora: *I'm putting on perfume.* → Me estoy poniendo perfume.
+  - Futuro: *I'll put on perfume.* → Me pondré perfume.
+- *I put on cologne.* → Me pongo colonia.
+  - Pasado: *I put on cologne.* → Me puse colonia.
+  - Ahora: *I'm putting on cologne.* → Me estoy poniendo colonia.
+  - Futuro: *I'll put on cologne.* → Me pondré colonia.
+- *I put on lotion.* → Me pongo crema corporal.
+  - Pasado: *I put on lotion.* → Me puse crema corporal.
+  - Ahora: *I'm putting on lotion.* → Me estoy poniendo crema corporal.
+  - Futuro: *I'll put on lotion.* → Me pondré crema corporal.
+- *I put on makeup.* → Me maquillo.
+  - Pasado: *I put on makeup.* → Me maquillé.
+  - Ahora: *I'm putting on makeup.* → Me estoy maquillando.
+  - Futuro: *I'll put on makeup.* → Me maquillaré.
+- *I apply lip balm.* → Me aplico bálsamo labial.
+  - Pasado: *I applied lip balm.* → Me apliqué bálsamo labial.
+  - Ahora: *I'm applying lip balm.* → Me estoy aplicando bálsamo labial.
+  - Futuro: *I'll apply lip balm.* → Me aplicaré bálsamo labial.
+
+### Peinarse y arreglarse el pelo
+- *I comb my hair.* → Me peino con peine.
+  - Pasado: *I combed my hair.* → Me peiné con peine.
+  - Ahora: *I'm combing my hair.* → Me estoy peinando con peine.
+  - Futuro: *I'll comb my hair.* → Me peinaré con peine.
+- *I brush my hair.* → Me cepillo el pelo.
+  - Pasado: *I brushed my hair.* → Me cepillé el pelo.
+  - Ahora: *I'm brushing my hair.* → Me estoy cepillando el pelo.
+  - Futuro: *I'll brush my hair.* → Me cepillaré el pelo.
+- *I dry my hair with a hairdryer.* → Me seco el pelo con secador.
+  - Pasado: *I dried my hair with a hairdryer.* → Me sequé el pelo con secador.
+  - Ahora: *I'm drying my hair with a hairdryer.* → Me estoy secando el pelo con secador.
+  - Futuro: *I'll dry my hair with a hairdryer.* → Me secaré el pelo con secador.
+- *I style my hair.* → Me arreglo el pelo.
+  - Pasado: *I styled my hair.* → Me arreglé el pelo.
+  - Ahora: *I'm styling my hair.* → Me estoy arreglando el pelo.
+  - Futuro: *I'll style my hair.* → Me arreglaré el pelo.
+- *I put gel in my hair.* → Me pongo gel en el pelo.
+  - Pasado: *I put gel in my hair.* → Me puse gel en el pelo.
+  - Ahora: *I'm putting gel in my hair.* → Me estoy poniendo gel en el pelo.
+  - Futuro: *I'll put gel in my hair.* → Me pondré gel en el pelo.
+- *I tie my hair back.* → Me recojo el pelo.
+  - Pasado: *I tied my hair back.* → Me recogí el pelo.
+  - Ahora: *I'm tying my hair back.* → Me estoy recogiendo el pelo.
+  - Futuro: *I'll tie my hair back.* → Me recogeré el pelo.
+- *I put my hair up in a ponytail.* → Me hago una cola de caballo.
+  - Pasado: *I put my hair up in a ponytail.* → Me hice una cola de caballo.
+  - Ahora: *I'm putting my hair up in a ponytail.* → Me estoy haciendo una cola de caballo.
+  - Futuro: *I'll put my hair up in a ponytail.* → Me haré una cola de caballo.
+- *I look at myself in the mirror.* → Me miro en el espejo.
+  - Pasado: *I looked at myself in the mirror.* → Me miré en el espejo.
+  - Ahora: *I'm looking at myself in the mirror.* → Me estoy mirando en el espejo.
+  - Futuro: *I'll look at myself in the mirror.* → Me miraré en el espejo.
+
+### Vestirse
+- *I get dressed.* → Me visto.
+  - Pasado: *I got dressed.* → Me vestí.
+  - Ahora: *I'm getting dressed.* → Me estoy vistiendo.
+  - Ya: *I've already gotten dressed.* → Ya me vestí.
+  - Futuro: *I'll get dressed in a minute.* → Me vestiré en un minuto.
+- *I choose what to wear.* → Elijo qué ponerme.
+  - Pasado: *I chose what to wear.* → Elegí qué ponerme.
+  - Ahora: *I'm choosing what to wear.* → Estoy eligiendo qué ponerme.
+  - Futuro: *I'll choose what to wear.* → Elegiré qué ponerme.
+- *I pick out my clothes.* → Escojo mi ropa.
+  - Pasado: *I picked out my clothes last night.* → Escogí mi ropa anoche.
+  - Ahora: *I'm picking out my clothes.* → Estoy escogiendo mi ropa.
+  - Futuro: *I'll pick out my clothes tonight.* → Escogeré mi ropa esta noche.
+- *I put on my clothes.* → Me pongo la ropa.
+  - Pasado: *I put on my clothes.* → Me puse la ropa.
+  - Ahora: *I'm putting on my clothes.* → Me estoy poniendo la ropa.
+  - Futuro: *I'll put on my clothes.* → Me pondré la ropa.
+- *I put on a shirt.* → Me pongo una camisa.
+  - Pasado: *I put on a shirt.* → Me puse una camisa.
+  - Ahora: *I'm putting on a shirt.* → Me estoy poniendo una camisa.
+  - Futuro: *I'll put on a shirt.* → Me pondré una camisa.
+- *I put on my pants.* → Me pongo los pantalones.
+  - Pasado: *I put on my pants.* → Me puse los pantalones.
+  - Ahora: *I'm putting on my pants.* → Me estoy poniendo los pantalones.
+  - Futuro: *I'll put on my pants.* → Me pondré los pantalones.
+- *I put on my shoes.* → Me pongo los zapatos.
+  - Pasado: *I put on my shoes.* → Me puse los zapatos.
+  - Ahora: *I'm putting on my shoes.* → Me estoy poniendo los zapatos.
+  - Ya: *I've already put on my shoes.* → Ya me puse los zapatos.
+  - Futuro: *I'll put on my shoes.* → Me pondré los zapatos.
+- *I tie my shoelaces.* → Me ato los cordones.
+  - Pasado: *I tied my shoelaces.* → Me até los cordones.
+  - Ahora: *I'm tying my shoelaces.* → Me estoy atando los cordones.
+  - Futuro: *I'll tie my shoelaces.* → Me ataré los cordones.
+- *I button up my shirt.* → Me abotono la camisa.
+  - Pasado: *I buttoned up my shirt.* → Me abotoné la camisa.
+  - Ahora: *I'm buttoning up my shirt.* → Me estoy abotonando la camisa.
+  - Futuro: *I'll button up my shirt.* → Me abotonaré la camisa.
+- *I zip up my jacket.* → Me subo la cremallera de la chaqueta.
+  - Pasado: *I zipped up my jacket.* → Me subí la cremallera de la chaqueta.
+  - Ahora: *I'm zipping up my jacket.* → Me estoy subiendo la cremallera de la chaqueta.
+  - Futuro: *I'll zip up my jacket.* → Me subiré la cremallera de la chaqueta.
+- *I put on a belt.* → Me pongo un cinturón.
+  - Pasado: *I put on a belt.* → Me puse un cinturón.
+  - Ahora: *I'm putting on a belt.* → Me estoy poniendo un cinturón.
+  - Futuro: *I'll put on a belt.* → Me pondré un cinturón.
+- *I put on a watch.* → Me pongo un reloj.
+  - Pasado: *I put on a watch.* → Me puse un reloj.
+  - Ahora: *I'm putting on a watch.* → Me estoy poniendo un reloj.
+  - Futuro: *I'll put on a watch.* → Me pondré un reloj.
+- *I take off my pajamas.* → Me quito el pijama.
+  - Pasado: *I took off my pajamas.* → Me quité el pijama.
+  - Ahora: *I'm taking off my pajamas.* → Me estoy quitando el pijama.
+  - Futuro: *I'll take off my pajamas.* → Me quitaré el pijama.
+- *I change my clothes.* → Me cambio de ropa.
+  - Pasado: *I changed my clothes.* → Me cambié de ropa.
+  - Ahora: *I'm changing my clothes.* → Me estoy cambiando de ropa.
+  - Ya: *I've already changed my clothes.* → Ya me cambié de ropa.
+  - Futuro: *I'll change my clothes.* → Me cambiaré de ropa.
+- *I iron my shirt.* → Plancho mi camisa.
+  - Pasado: *I ironed my shirt.* → Planché mi camisa.
+  - Ahora: *I'm ironing my shirt.* → Estoy planchando mi camisa.
+  - Futuro: *I'll iron my shirt tonight.* → Plancharé mi camisa esta noche.
+- *I wear a suit.* → Llevo traje.
+  - Pasado: *I wore a suit yesterday.* → Ayer llevé traje.
+  - Ahora: *I'm wearing a suit today.* → Hoy llevo traje.
+  - Futuro: *I'll wear a suit to the interview.* → Llevaré traje a la entrevista.
+- *I dress casually.* → Me visto de manera informal.
+  - Pasado: *I dressed casually.* → Me vestí de manera informal.
+  - Ahora: *I'm dressing casually today.* → Hoy me visto de manera informal.
+  - Futuro: *I'll dress casually.* → Me vestiré de manera informal.
+
+### Preparar mis cosas
+- *I pack my bag.* → Preparo mi mochila.
+  - Pasado: *I packed my bag.* → Preparé mi mochila.
+  - Ahora: *I'm packing my bag.* → Estoy preparando mi mochila.
+  - Ya: *I've already packed my bag.* → Ya preparé mi mochila.
+  - Futuro: *I'll pack my bag tonight.* → Prepararé mi mochila esta noche.
+- *I check that I have everything.* → Compruebo que tengo todo.
+  - Pasado: *I checked that I had everything.* → Comprobé que tenía todo.
+  - Ahora: *I'm checking that I have everything.* → Estoy comprobando que tengo todo.
+  - Futuro: *I'll check that I have everything.* → Comprobaré que tengo todo.
+- *I grab my keys.* → Agarro mis llaves.
+  - Pasado: *I grabbed my keys.* → Agarré mis llaves.
+  - Ahora: *I'm grabbing my keys.* → Estoy agarrando mis llaves.
+  - Futuro: *I'll grab my keys.* → Agarraré mis llaves.
+- *I grab my wallet.* → Agarro mi billetera.
+  - Pasado: *I grabbed my wallet.* → Agarré mi billetera.
+  - Ahora: *I'm grabbing my wallet.* → Estoy agarrando mi billetera.
+  - Futuro: *I'll grab my wallet.* → Agarraré mi billetera.
+- *I put my phone in my pocket.* → Me guardo el teléfono en el bolsillo.
+  - Pasado: *I put my phone in my pocket.* → Me guardé el teléfono en el bolsillo.
+  - Ahora: *I'm putting my phone in my pocket.* → Me estoy guardando el teléfono en el bolsillo.
+  - Futuro: *I'll put my phone in my pocket.* → Me guardaré el teléfono en el bolsillo.
+- *I put on my glasses.* → Me pongo las gafas.
+  - Pasado: *I put on my glasses.* → Me puse las gafas.
+  - Ahora: *I'm putting on my glasses.* → Me estoy poniendo las gafas.
+  - Futuro: *I'll put on my glasses.* → Me pondré las gafas.
+- *I put in my contact lenses.* → Me pongo los lentes de contacto.
+  - Pasado: *I put in my contact lenses.* → Me puse los lentes de contacto.
+  - Ahora: *I'm putting in my contact lenses.* → Me estoy poniendo los lentes de contacto.
+  - Futuro: *I'll put in my contact lenses.* → Me pondré los lentes de contacto.
+- *I put on my mask.* → Me pongo la mascarilla.
+  - Pasado: *I put on my mask.* → Me puse la mascarilla.
+  - Ahora: *I'm putting on my mask.* → Me estoy poniendo la mascarilla.
+  - Futuro: *I'll put on my mask.* → Me pondré la mascarilla.
+- *I check myself in the mirror before leaving.* → Me reviso en el espejo antes de salir.
+  - Pasado: *I checked myself in the mirror before leaving.* → Me revisé en el espejo antes de salir.
+  - Ahora: *I'm checking myself in the mirror.* → Me estoy revisando en el espejo.
+  - Futuro: *I'll check myself in the mirror before leaving.* → Me revisaré en el espejo antes de salir.
+
+## 3. Desayuno
+
+### Decidir y preparar el desayuno
+- *I go to the kitchen.* → Voy a la cocina.
+  - Pasado: *I went to the kitchen.* → Fui a la cocina.
+  - Ahora: *I'm going to the kitchen.* → Estoy yendo a la cocina.
+  - Futuro: *I'll go to the kitchen.* → Iré a la cocina.
+- *I have breakfast.* → Desayuno.
+  - Pasado: *I had breakfast at 7.* → Desayuné a las 7.
+  - Ahora: *I'm having breakfast.* → Estoy desayunando.
+  - Ya: *I've already had breakfast.* → Ya desayuné.
+  - Futuro: *I'll have breakfast with my family.* → Desayunaré con mi familia.
+- *I skip breakfast.* → Me salto el desayuno.
+  - Pasado: *I skipped breakfast today.* → Hoy me salté el desayuno.
+  - Ya: *I've skipped breakfast all week.* → Me he saltado el desayuno toda la semana.
+  - Futuro: *I won't skip breakfast tomorrow.* → Mañana no me saltaré el desayuno.
+- *I make breakfast.* → Preparo el desayuno.
+  - Pasado: *I made breakfast.* → Preparé el desayuno.
+  - Ahora: *I'm making breakfast.* → Estoy preparando el desayuno.
+  - Ya: *I've already made breakfast.* → Ya preparé el desayuno.
+  - Futuro: *I'll make breakfast.* → Prepararé el desayuno.
+- *I cook scrambled eggs.* → Cocino huevos revueltos.
+  - Pasado: *I cooked scrambled eggs.* → Cociné huevos revueltos.
+  - Ahora: *I'm cooking scrambled eggs.* → Estoy cocinando huevos revueltos.
+  - Futuro: *I'll cook scrambled eggs.* → Cocinaré huevos revueltos.
+- *I fry an egg.* → Frío un huevo.
+  - Pasado: *I fried an egg.* → Freí un huevo.
+  - Ahora: *I'm frying an egg.* → Estoy friendo un huevo.
+  - Futuro: *I'll fry an egg.* → Freiré un huevo.
+- *I boil some eggs.* → Hiervo unos huevos.
+  - Pasado: *I boiled some eggs.* → Herví unos huevos.
+  - Ahora: *I'm boiling some eggs.* → Estoy hirviendo unos huevos.
+  - Futuro: *I'll boil some eggs.* → Herviré unos huevos.
+- *I toast some bread.* → Tuesto pan.
+  - Pasado: *I toasted some bread.* → Tosté pan.
+  - Ahora: *I'm toasting some bread.* → Estoy tostando pan.
+  - Futuro: *I'll toast some bread.* → Tostaré pan.
+- *I spread butter on my toast.* → Unto mantequilla en mi tostada.
+  - Pasado: *I spread butter on my toast.* → Unté mantequilla en mi tostada.
+  - Ahora: *I'm spreading butter on my toast.* → Estoy untando mantequilla en mi tostada.
+  - Futuro: *I'll spread butter on my toast.* → Untaré mantequilla en mi tostada.
+- *I pour milk over my cereal.* → Echo leche sobre mis cereales.
+  - Pasado: *I poured milk over my cereal.* → Eché leche sobre mis cereales.
+  - Ahora: *I'm pouring milk over my cereal.* → Estoy echando leche sobre mis cereales.
+  - Futuro: *I'll pour milk over my cereal.* → Echaré leche sobre mis cereales.
+- *I slice some fruit.* → Corto fruta en rodajas.
+  - Pasado: *I sliced some fruit.* → Corté fruta en rodajas.
+  - Ahora: *I'm slicing some fruit.* → Estoy cortando fruta en rodajas.
+  - Futuro: *I'll slice some fruit.* → Cortaré fruta en rodajas.
+- *I heat up yesterday's leftovers.* → Caliento las sobras de ayer.
+  - Pasado: *I heated up yesterday's leftovers.* → Calenté las sobras de ayer.
+  - Ahora: *I'm heating up yesterday's leftovers.* → Estoy calentando las sobras de ayer.
+  - Futuro: *I'll heat up yesterday's leftovers.* → Calentaré las sobras de ayer.
+- *I set the table.* → Pongo la mesa.
+  - Pasado: *I set the table.* → Puse la mesa.
+  - Ahora: *I'm setting the table.* → Estoy poniendo la mesa.
+  - Ya: *I've already set the table.* → Ya puse la mesa.
+  - Futuro: *I'll set the table.* → Pondré la mesa.
+
+### Café, té y otras bebidas
+- *I make coffee.* → Preparo café.
+  - Pasado: *I made coffee.* → Preparé café.
+  - Ahora: *I'm making coffee.* → Estoy preparando café.
+  - Ya: *I've already made coffee.* → Ya preparé café.
+  - Futuro: *I'll make coffee.* → Prepararé café.
+- *I brew a pot of coffee.* → Preparo una cafetera de café.
+  - Pasado: *I brewed a pot of coffee.* → Preparé una cafetera de café.
+  - Ahora: *I'm brewing a pot of coffee.* → Estoy preparando una cafetera de café.
+  - Futuro: *I'll brew a pot of coffee.* → Prepararé una cafetera de café.
+- *I boil water for tea.* → Hiervo agua para el té.
+  - Pasado: *I boiled water for tea.* → Herví agua para el té.
+  - Ahora: *I'm boiling water for tea.* → Estoy hirviendo agua para el té.
+  - Futuro: *I'll boil water for tea.* → Herviré agua para el té.
+- *I drink a cup of coffee.* → Bebo una taza de café.
+  - Pasado: *I drank a cup of coffee.* → Bebí una taza de café.
+  - Ahora: *I'm drinking a cup of coffee.* → Estoy bebiendo una taza de café.
+  - Ya: *I've already drunk two cups of coffee.* → Ya he bebido dos tazas de café.
+  - Futuro: *I'll drink a cup of coffee.* → Beberé una taza de café.
+- *I add sugar to my coffee.* → Le echo azúcar a mi café.
+  - Pasado: *I added sugar to my coffee.* → Le eché azúcar a mi café.
+  - Ahora: *I'm adding sugar to my coffee.* → Le estoy echando azúcar a mi café.
+  - Futuro: *I'll add sugar to my coffee.* → Le echaré azúcar a mi café.
+- *I take my coffee black.* → Tomo el café solo.
+  - Pasado: *I took my coffee black.* → Tomé el café solo.
+  - Ya: *I've always taken my coffee black.* → Siempre he tomado el café solo.
+  - Futuro: *I'll take my coffee black.* → Tomaré el café solo.
+- *I take my coffee with milk.* → Tomo el café con leche.
+  - Pasado: *I took my coffee with milk.* → Tomé el café con leche.
+  - Ya: *I've always taken my coffee with milk.* → Siempre he tomado el café con leche.
+  - Futuro: *I'll take my coffee with milk.* → Tomaré el café con leche.
+- *I squeeze some orange juice.* → Exprimo jugo de naranja.
+  - Pasado: *I squeezed some orange juice.* → Exprimí jugo de naranja.
+  - Ahora: *I'm squeezing some orange juice.* → Estoy exprimiendo jugo de naranja.
+  - Futuro: *I'll squeeze some orange juice.* → Exprimiré jugo de naranja.
+- *I drink a glass of juice.* → Bebo un vaso de jugo.
+  - Pasado: *I drank a glass of juice.* → Bebí un vaso de jugo.
+  - Ahora: *I'm drinking a glass of juice.* → Estoy bebiendo un vaso de jugo.
+  - Futuro: *I'll drink a glass of juice.* → Beberé un vaso de jugo.
+- *I blend a smoothie.* → Licúo un batido.
+  - Pasado: *I blended a smoothie.* → Licué un batido.
+  - Ahora: *I'm blending a smoothie.* → Estoy licuando un batido.
+  - Futuro: *I'll blend a smoothie.* → Licuaré un batido.
+
+### Qué desayuno
+- *I eat cereal with milk.* → Como cereales con leche.
+  - Pasado: *I ate cereal with milk.* → Comí cereales con leche.
+  - Ahora: *I'm eating cereal with milk.* → Estoy comiendo cereales con leche.
+  - Futuro: *I'll eat cereal with milk.* → Comeré cereales con leche.
+- *I eat toast with jam.* → Como tostadas con mermelada.
+  - Pasado: *I ate toast with jam.* → Comí tostadas con mermelada.
+  - Ahora: *I'm eating toast with jam.* → Estoy comiendo tostadas con mermelada.
+  - Futuro: *I'll eat toast with jam.* → Comeré tostadas con mermelada.
+- *I eat eggs and bacon.* → Como huevos con tocino.
+  - Pasado: *I ate eggs and bacon.* → Comí huevos con tocino.
+  - Ahora: *I'm eating eggs and bacon.* → Estoy comiendo huevos con tocino.
+  - Futuro: *I'll eat eggs and bacon.* → Comeré huevos con tocino.
+- *I eat oatmeal.* → Como avena.
+  - Pasado: *I ate oatmeal.* → Comí avena.
+  - Ahora: *I'm eating oatmeal.* → Estoy comiendo avena.
+  - Futuro: *I'll eat oatmeal.* → Comeré avena.
+- *I eat yogurt with fruit.* → Como yogur con fruta.
+  - Pasado: *I ate yogurt with fruit.* → Comí yogur con fruta.
+  - Ahora: *I'm eating yogurt with fruit.* → Estoy comiendo yogur con fruta.
+  - Futuro: *I'll eat yogurt with fruit.* → Comeré yogur con fruta.
+- *I have a sandwich.* → Como un sándwich.
+  - Pasado: *I had a sandwich.* → Comí un sándwich.
+  - Ahora: *I'm having a sandwich.* → Estoy comiendo un sándwich.
+  - Futuro: *I'll have a sandwich.* → Comeré un sándwich.
+- *I have a light breakfast.* → Desayuno ligero.
+  - Pasado: *I had a light breakfast.* → Desayuné ligero.
+  - Ya: *I've had a light breakfast.* → He desayunado ligero.
+  - Futuro: *I'll have a light breakfast.* → Desayunaré ligero.
+- *I have a big breakfast.* → Desayuno mucho.
+  - Pasado: *I had a big breakfast.* → Desayuné mucho.
+  - Ya: *I've had a big breakfast.* → He desayunado mucho.
+  - Futuro: *I'll have a big breakfast on Sunday.* → El domingo desayunaré mucho.
+- *I have a quick bite.* → Como algo rápido.
+  - Pasado: *I had a quick bite.* → Comí algo rápido.
+  - Ya: *I've just had a quick bite.* → Acabo de comer algo rápido.
+  - Futuro: *I'll have a quick bite.* → Comeré algo rápido.
+- *I grab something on the go.* → Agarro algo para el camino.
+  - Pasado: *I grabbed something on the go.* → Agarré algo para el camino.
+  - Ahora: *I'm grabbing something on the go.* → Estoy agarrando algo para el camino.
+  - Futuro: *I'll grab something on the go.* → Agarraré algo para el camino.
+- *I eat out for breakfast.* → Desayuno fuera.
+  - Pasado: *I ate out for breakfast.* → Desayuné fuera.
+  - Ya: *I've eaten out for breakfast all week.* → He desayunado fuera toda la semana.
+  - Futuro: *I'll eat out for breakfast.* → Desayunaré fuera.
+
+### Desayunar
+- *I sit down at the table.* → Me siento a la mesa.
+  - Pasado: *I sat down at the table.* → Me senté a la mesa.
+  - Ahora: *I'm sitting down at the table.* → Me estoy sentando a la mesa.
+  - Futuro: *I'll sit down at the table.* → Me sentaré a la mesa.
+- *I eat my breakfast slowly.* → Desayuno despacio.
+  - Pasado: *I ate my breakfast slowly.* → Desayuné despacio.
+  - Ahora: *I'm eating my breakfast slowly.* → Estoy desayunando despacio.
+  - Futuro: *I'll eat my breakfast slowly.* → Desayunaré despacio.
+- *I eat in a hurry.* → Como con prisa.
+  - Pasado: *I ate in a hurry.* → Comí con prisa.
+  - Ahora: *I'm eating in a hurry.* → Estoy comiendo con prisa.
+  - Futuro: *I'll eat in a hurry.* → Comeré con prisa.
+- *I chat with my family at breakfast.* → Converso con mi familia en el desayuno.
+  - Pasado: *I chatted with my family at breakfast.* → Conversé con mi familia en el desayuno.
+  - Ahora: *I'm chatting with my family.* → Estoy conversando con mi familia.
+  - Futuro: *I'll chat with my family at breakfast.* → Conversaré con mi familia en el desayuno.
+- *I watch the news while I eat.* → Veo las noticias mientras como.
+  - Pasado: *I watched the news while I ate.* → Vi las noticias mientras comía.
+  - Ahora: *I'm watching the news while I eat.* → Estoy viendo las noticias mientras como.
+  - Futuro: *I'll watch the news while I eat.* → Veré las noticias mientras como.
+- *I look at my phone while I eat.* → Miro el teléfono mientras como.
+  - Pasado: *I looked at my phone while I ate.* → Miré el teléfono mientras comía.
+  - Ahora: *I'm looking at my phone while I eat.* → Estoy mirando el teléfono mientras como.
+  - Futuro: *I won't look at my phone while I eat.* → No miraré el teléfono mientras coma.
+- *I'm still hungry.* → Todavía tengo hambre.
+  - Pasado: *I was still hungry.* → Todavía tenía hambre.
+  - Ya: *I've been hungry since I woke up.* → Tengo hambre desde que desperté.
+  - Futuro: *I'll be hungry again soon.* → Pronto tendré hambre otra vez.
+- *I'm full.* → Estoy lleno.
+  - Pasado: *I was full after breakfast.* → Estaba lleno después del desayuno.
+  - Ya: *I've eaten too much.* → He comido demasiado.
+  - Futuro: *I'll be full until lunch.* → Estaré lleno hasta el almuerzo.
+- *I finish my breakfast.* → Termino de desayunar.
+  - Pasado: *I finished my breakfast.* → Terminé de desayunar.
+  - Ya: *I've just finished my breakfast.* → Acabo de terminar de desayunar.
+  - Futuro: *I'll finish my breakfast in five minutes.* → Terminaré de desayunar en cinco minutos.
+
+### Recoger la cocina
+- *I clear the table.* → Recojo la mesa.
+  - Pasado: *I cleared the table.* → Recogí la mesa.
+  - Ahora: *I'm clearing the table.* → Estoy recogiendo la mesa.
+  - Ya: *I've already cleared the table.* → Ya recogí la mesa.
+  - Futuro: *I'll clear the table.* → Recogeré la mesa.
+- *I wash the dishes.* → Lavo los platos.
+  - Pasado: *I washed the dishes.* → Lavé los platos.
+  - Ahora: *I'm washing the dishes.* → Estoy lavando los platos.
+  - Ya: *I've already washed the dishes.* → Ya lavé los platos.
+  - Futuro: *I'll wash the dishes later.* → Lavaré los platos más tarde.
+- *I rinse my cup.* → Enjuago mi taza.
+  - Pasado: *I rinsed my cup.* → Enjuagué mi taza.
+  - Ahora: *I'm rinsing my cup.* → Estoy enjuagando mi taza.
+  - Futuro: *I'll rinse my cup.* → Enjuagaré mi taza.
+- *I load the dishwasher.* → Cargo el lavavajillas.
+  - Pasado: *I loaded the dishwasher.* → Cargué el lavavajillas.
+  - Ahora: *I'm loading the dishwasher.* → Estoy cargando el lavavajillas.
+  - Futuro: *I'll load the dishwasher.* → Cargaré el lavavajillas.
+- *I wipe the counter.* → Limpio la encimera.
+  - Pasado: *I wiped the counter.* → Limpié la encimera.
+  - Ahora: *I'm wiping the counter.* → Estoy limpiando la encimera.
+  - Futuro: *I'll wipe the counter.* → Limpiaré la encimera.
+- *I put the milk back in the fridge.* → Guardo la leche en la nevera.
+  - Pasado: *I put the milk back in the fridge.* → Guardé la leche en la nevera.
+  - Ahora: *I'm putting the milk back in the fridge.* → Estoy guardando la leche en la nevera.
+  - Futuro: *I'll put the milk back in the fridge.* → Guardaré la leche en la nevera.
+- *I take out the trash.* → Saco la basura.
+  - Pasado: *I took out the trash.* → Saqué la basura.
+  - Ahora: *I'm taking out the trash.* → Estoy sacando la basura.
+  - Futuro: *I'll take out the trash.* → Sacaré la basura.
+- *I turn off the stove.* → Apago la estufa.
+  - Pasado: *I turned off the stove.* → Apagué la estufa.
+  - Ahora: *I'm turning off the stove.* → Estoy apagando la estufa.
+  - Futuro: *I'll turn off the stove.* → Apagaré la estufa.
+
+## 3b. Mascotas por la mañana
+
+### Dar de comer y de beber
+- *I feed my dog.* → Le doy de comer a mi perro.
+  - Pasado: *I fed my dog.* → Le di de comer a mi perro.
+  - Ahora: *I'm feeding my dog.* → Le estoy dando de comer a mi perro.
+  - Ya: *I've already fed my dog.* → Ya le di de comer a mi perro.
+  - Futuro: *I'll feed my dog after the walk.* → Le daré de comer a mi perro después del paseo.
+- *I feed my cat.* → Le doy de comer a mi gato.
+  - Pasado: *I fed my cat.* → Le di de comer a mi gato.
+  - Ahora: *I'm feeding my cat.* → Le estoy dando de comer a mi gato.
+  - Ya: *I've already fed my cat.* → Ya le di de comer a mi gato.
+  - Futuro: *I'll feed my cat.* → Le daré de comer a mi gato.
+- *I fill the food bowl.* → Lleno el plato de comida.
+  - Pasado: *I filled the food bowl.* → Llené el plato de comida.
+  - Ahora: *I'm filling the food bowl.* → Estoy llenando el plato de comida.
+  - Futuro: *I'll fill the food bowl.* → Llenaré el plato de comida.
+- *I change the water in the bowl.* → Le cambio el agua al bebedero.
+  - Pasado: *I changed the water in the bowl.* → Le cambié el agua al bebedero.
+  - Ahora: *I'm changing the water in the bowl.* → Le estoy cambiando el agua al bebedero.
+  - Futuro: *I'll change the water in the bowl.* → Le cambiaré el agua al bebedero.
+- *My dog wakes me up for breakfast.* → Mi perro me despierta para desayunar.
+  - Pasado: *My dog woke me up for breakfast.* → Mi perro me despertó para desayunar.
+  - Ya: *My dog has woken me up every day this week.* → Mi perro me ha despertado todos los días esta semana.
+  - Futuro: *My dog will wake me up for breakfast.* → Mi perro me despertará para desayunar.
+- *My cat meows for food.* → Mi gato maúlla pidiendo comida.
+  - Pasado: *My cat meowed for food.* → Mi gato maulló pidiendo comida.
+  - Ahora: *My cat is meowing for food.* → Mi gato está maullando pidiendo comida.
+  - Futuro: *My cat will meow for food.* → Mi gato maullará pidiendo comida.
+- *I clean the litter box.* → Limpio la caja de arena.
+  - Pasado: *I cleaned the litter box.* → Limpié la caja de arena.
+  - Ahora: *I'm cleaning the litter box.* → Estoy limpiando la caja de arena.
+  - Ya: *I've already cleaned the litter box.* → Ya limpié la caja de arena.
+  - Futuro: *I'll clean the litter box.* → Limpiaré la caja de arena.
+
+### Prepararnos para salir
+- *I call my dog.* → Llamo a mi perro.
+  - Pasado: *I called my dog.* → Llamé a mi perro.
+  - Ahora: *I'm calling my dog.* → Estoy llamando a mi perro.
+  - Futuro: *I'll call my dog.* → Llamaré a mi perro.
+- *My dog gets excited.* → Mi perro se emociona.
+  - Pasado: *My dog got excited.* → Mi perro se emocionó.
+  - Ahora: *My dog is getting excited.* → Mi perro se está emocionando.
+  - Futuro: *My dog will get excited.* → Mi perro se emocionará.
+- *My dog wags its tail.* → Mi perro mueve la cola.
+  - Pasado: *My dog wagged its tail.* → Mi perro movió la cola.
+  - Ahora: *My dog is wagging its tail.* → Mi perro está moviendo la cola.
+  - Futuro: *My dog will wag its tail.* → Mi perro moverá la cola.
+- *I get the leash.* → Agarro la correa.
+  - Pasado: *I got the leash.* → Agarré la correa.
+  - Ahora: *I'm getting the leash.* → Estoy agarrando la correa.
+  - Futuro: *I'll get the leash.* → Agarraré la correa.
+- *I put the leash on my dog.* → Le pongo la correa a mi perro.
+  - Pasado: *I put the leash on my dog.* → Le puse la correa a mi perro.
+  - Ahora: *I'm putting the leash on my dog.* → Le estoy poniendo la correa a mi perro.
+  - Futuro: *I'll put the leash on my dog.* → Le pondré la correa a mi perro.
+- *I put a harness on my dog.* → Le pongo el arnés a mi perro.
+  - Pasado: *I put a harness on my dog.* → Le puse el arnés a mi perro.
+  - Ahora: *I'm putting a harness on my dog.* → Le estoy poniendo el arnés a mi perro.
+  - Futuro: *I'll put a harness on my dog.* → Le pondré el arnés a mi perro.
+- *I grab poop bags.* → Agarro bolsas para las heces.
+  - Pasado: *I grabbed poop bags.* → Agarré bolsas para las heces.
+  - Ahora: *I'm grabbing poop bags.* → Estoy agarrando bolsas para las heces.
+  - Futuro: *I'll grab poop bags.* → Agarraré bolsas para las heces.
+- *I take a toy for my dog.* → Llevo un juguete para mi perro.
+  - Pasado: *I took a toy for my dog.* → Llevé un juguete para mi perro.
+  - Ahora: *I'm taking a toy for my dog.* → Estoy llevando un juguete para mi perro.
+  - Futuro: *I'll take a toy for my dog.* → Llevaré un juguete para mi perro.
+
+### Pasear al perro
+- *I walk my dog.* → Paseo a mi perro.
+  - Pasado: *I walked my dog.* → Paseé a mi perro.
+  - Ahora: *I'm walking my dog.* → Estoy paseando a mi perro.
+  - Ya: *I've already walked my dog.* → Ya paseé a mi perro.
+  - Futuro: *I'll walk my dog before work.* → Pasearé a mi perro antes del trabajo.
+- *I take my dog for a walk.* → Saco a pasear a mi perro.
+  - Pasado: *I took my dog for a walk.* → Saqué a pasear a mi perro.
+  - Ahora: *I'm taking my dog for a walk.* → Estoy sacando a pasear a mi perro.
+  - Ya: *I've just taken my dog for a walk.* → Acabo de sacar a pasear a mi perro.
+  - Futuro: *I'll take my dog for a walk.* → Sacaré a pasear a mi perro.
+- *I take my dog out.* → Saco a mi perro a la calle.
+  - Pasado: *I took my dog out.* → Saqué a mi perro a la calle.
+  - Ahora: *I'm taking my dog out.* → Estoy sacando a mi perro a la calle.
+  - Futuro: *I'll take my dog out.* → Sacaré a mi perro a la calle.
+- *I walk my dog around the block.* → Paseo a mi perro por la cuadra.
+  - Pasado: *I walked my dog around the block.* → Paseé a mi perro por la cuadra.
+  - Ahora: *I'm walking my dog around the block.* → Estoy paseando a mi perro por la cuadra.
+  - Futuro: *I'll walk my dog around the block.* → Pasearé a mi perro por la cuadra.
+- *I walk my dog for twenty minutes.* → Paseo a mi perro durante veinte minutos.
+  - Pasado: *I walked my dog for twenty minutes.* → Paseé a mi perro durante veinte minutos.
+  - Ahora: *I'm walking my dog for twenty minutes.* → Estoy paseando a mi perro durante veinte minutos.
+  - Futuro: *I'll walk my dog for twenty minutes.* → Pasearé a mi perro durante veinte minutos.
+- *My dog pulls on the leash.* → Mi perro tira de la correa.
+  - Pasado: *My dog pulled on the leash.* → Mi perro tiró de la correa.
+  - Ahora: *My dog is pulling on the leash.* → Mi perro está tirando de la correa.
+  - Futuro: *My dog will pull on the leash.* → Mi perro tirará de la correa.
+- *My dog sniffs everything.* → Mi perro huele todo.
+  - Pasado: *My dog sniffed everything.* → Mi perro olió todo.
+  - Ahora: *My dog is sniffing everything.* → Mi perro está oliendo todo.
+  - Futuro: *My dog will sniff everything.* → Mi perro olerá todo.
+- *My dog barks at other dogs.* → Mi perro les ladra a otros perros.
+  - Pasado: *My dog barked at other dogs.* → Mi perro les ladró a otros perros.
+  - Ahora: *My dog is barking at another dog.* → Mi perro le está ladrando a otro perro.
+  - Futuro: *My dog will bark at other dogs.* → Mi perro les ladrará a otros perros.
+- *My dog pees on a tree.* → Mi perro orina en un árbol.
+  - Pasado: *My dog peed on a tree.* → Mi perro orinó en un árbol.
+  - Ahora: *My dog is peeing on a tree.* → Mi perro está orinando en un árbol.
+  - Futuro: *My dog will pee on a tree.* → Mi perro orinará en un árbol.
+- *I pick up my dog's poop.* → Recojo las heces de mi perro.
+  - Pasado: *I picked up my dog's poop.* → Recogí las heces de mi perro.
+  - Ahora: *I'm picking up my dog's poop.* → Estoy recogiendo las heces de mi perro.
+  - Futuro: *I'll pick up my dog's poop.* → Recogeré las heces de mi perro.
+- *I throw the bag in the trash.* → Tiro la bolsa a la basura.
+  - Pasado: *I threw the bag in the trash.* → Tiré la bolsa a la basura.
+  - Ahora: *I'm throwing the bag in the trash.* → Estoy tirando la bolsa a la basura.
+  - Futuro: *I'll throw the bag in the trash.* → Tiraré la bolsa a la basura.
+
+### Llevarlo al parque
+- *I take my dog to the park.* → Llevo a mi perro al parque.
+  - Pasado: *I took my dog to the park.* → Llevé a mi perro al parque.
+  - Ahora: *I'm taking my dog to the park.* → Estoy llevando a mi perro al parque.
+  - Futuro: *I'll take my dog to the park.* → Llevaré a mi perro al parque.
+- *I let my dog off the leash.* → Suelto a mi perro de la correa.
+  - Pasado: *I let my dog off the leash.* → Solté a mi perro de la correa.
+  - Ahora: *I'm letting my dog off the leash.* → Estoy soltando a mi perro de la correa.
+  - Futuro: *I'll let my dog off the leash.* → Soltaré a mi perro de la correa.
+- *My dog runs around the park.* → Mi perro corre por el parque.
+  - Pasado: *My dog ran around the park.* → Mi perro corrió por el parque.
+  - Ahora: *My dog is running around the park.* → Mi perro está corriendo por el parque.
+  - Futuro: *My dog will run around the park.* → Mi perro correrá por el parque.
+- *I throw a ball for my dog.* → Le tiro una pelota a mi perro.
+  - Pasado: *I threw a ball for my dog.* → Le tiré una pelota a mi perro.
+  - Ahora: *I'm throwing a ball for my dog.* → Le estoy tirando una pelota a mi perro.
+  - Futuro: *I'll throw a ball for my dog.* → Le tiraré una pelota a mi perro.
+- *My dog fetches the ball.* → Mi perro trae la pelota.
+  - Pasado: *My dog fetched the ball.* → Mi perro trajo la pelota.
+  - Ahora: *My dog is fetching the ball.* → Mi perro está trayendo la pelota.
+  - Futuro: *My dog will fetch the ball.* → Mi perro traerá la pelota.
+- *My dog plays with other dogs.* → Mi perro juega con otros perros.
+  - Pasado: *My dog played with other dogs.* → Mi perro jugó con otros perros.
+  - Ahora: *My dog is playing with other dogs.* → Mi perro está jugando con otros perros.
+  - Futuro: *My dog will play with other dogs.* → Mi perro jugará con otros perros.
+- *I sit on a bench while my dog plays.* → Me siento en un banco mientras mi perro juega.
+  - Pasado: *I sat on a bench while my dog played.* → Me senté en un banco mientras mi perro jugaba.
+  - Ahora: *I'm sitting on a bench while my dog plays.* → Estoy sentado en un banco mientras mi perro juega.
+  - Futuro: *I'll sit on a bench while my dog plays.* → Me sentaré en un banco mientras mi perro juega.
+- *I keep an eye on my dog.* → Vigilo a mi perro.
+  - Pasado: *I kept an eye on my dog.* → Vigilé a mi perro.
+  - Ahora: *I'm keeping an eye on my dog.* → Estoy vigilando a mi perro.
+  - Futuro: *I'll keep an eye on my dog.* → Vigilaré a mi perro.
+- *I chat with other dog owners.* → Converso con otros dueños de perros.
+  - Pasado: *I chatted with other dog owners.* → Conversé con otros dueños de perros.
+  - Ahora: *I'm chatting with other dog owners.* → Estoy conversando con otros dueños de perros.
+  - Futuro: *I'll chat with other dog owners.* → Conversaré con otros dueños de perros.
+- *My dog gets tired.* → Mi perro se cansa.
+  - Pasado: *My dog got tired.* → Mi perro se cansó.
+  - Ahora: *My dog is getting tired.* → Mi perro se está cansando.
+  - Futuro: *My dog will get tired.* → Mi perro se cansará.
+- *I call my dog back.* → Llamo a mi perro para que vuelva.
+  - Pasado: *I called my dog back.* → Llamé a mi perro para que volviera.
+  - Ahora: *I'm calling my dog back.* → Estoy llamando a mi perro para que vuelva.
+  - Futuro: *I'll call my dog back.* → Llamaré a mi perro para que vuelva.
+- *I put the leash back on.* → Le vuelvo a poner la correa.
+  - Pasado: *I put the leash back on.* → Le volví a poner la correa.
+  - Ahora: *I'm putting the leash back on.* → Le estoy volviendo a poner la correa.
+  - Futuro: *I'll put the leash back on.* → Le volveré a poner la correa.
+
+### Volver a casa con la mascota
+- *I walk back home.* → Vuelvo caminando a casa.
+  - Pasado: *I walked back home.* → Volví caminando a casa.
+  - Ahora: *I'm walking back home.* → Estoy volviendo caminando a casa.
+  - Futuro: *I'll walk back home.* → Volveré caminando a casa.
+- *I take off the leash.* → Le quito la correa.
+  - Pasado: *I took off the leash.* → Le quité la correa.
+  - Ahora: *I'm taking off the leash.* → Le estoy quitando la correa.
+  - Futuro: *I'll take off the leash.* → Le quitaré la correa.
+- *I wipe my dog's paws.* → Le limpio las patas a mi perro.
+  - Pasado: *I wiped my dog's paws.* → Le limpié las patas a mi perro.
+  - Ahora: *I'm wiping my dog's paws.* → Le estoy limpiando las patas a mi perro.
+  - Futuro: *I'll wipe my dog's paws.* → Le limpiaré las patas a mi perro.
+- *My dog drinks a lot of water.* → Mi perro bebe mucha agua.
+  - Pasado: *My dog drank a lot of water.* → Mi perro bebió mucha agua.
+  - Ahora: *My dog is drinking a lot of water.* → Mi perro está bebiendo mucha agua.
+  - Futuro: *My dog will drink a lot of water.* → Mi perro beberá mucha agua.
+- *I give my dog a treat.* → Le doy un premio a mi perro.
+  - Pasado: *I gave my dog a treat.* → Le di un premio a mi perro.
+  - Ahora: *I'm giving my dog a treat.* → Le estoy dando un premio a mi perro.
+  - Futuro: *I'll give my dog a treat.* → Le daré un premio a mi perro.
+- *My dog lies down and rests.* → Mi perro se acuesta y descansa.
+  - Pasado: *My dog lay down and rested.* → Mi perro se acostó y descansó.
+  - Ahora: *My dog is lying down and resting.* → Mi perro está acostado descansando.
+  - Futuro: *My dog will lie down and rest.* → Mi perro se acostará y descansará.
+- *I say goodbye to my pet before leaving.* → Me despido de mi mascota antes de salir.
+  - Pasado: *I said goodbye to my pet before leaving.* → Me despedí de mi mascota antes de salir.
+  - Ahora: *I'm saying goodbye to my pet.* → Me estoy despidiendo de mi mascota.
+  - Futuro: *I'll say goodbye to my pet before leaving.* → Me despediré de mi mascota antes de salir.
+
+## 4. Traslado al trabajo
+
+### Salir de casa
+- *I leave the house at 7:30.* → Salgo de casa a las 7:30.
+  - Pasado: *I left the house at 7:30.* → Salí de casa a las 7:30.
+  - Ahora: *I'm leaving the house.* → Estoy saliendo de casa.
+  - Ya: *I've just left the house.* → Acabo de salir de casa.
+  - Futuro: *I'll leave the house at 7:30 tomorrow.* → Mañana saldré de casa a las 7:30.
+- *I check that I have everything before I leave.* → Verifico que tengo todo antes de salir.
+  - Pasado: *I checked that I had everything before I left.* → Verifiqué que tenía todo antes de salir.
+  - Ahora: *I'm checking that I have everything.* → Estoy verificando que tengo todo.
+  - Futuro: *I'll check that I have everything before I leave.* → Verificaré que tengo todo antes de salir.
+- *I turn off the lights.* → Apago las luces.
+  - Pasado: *I turned off the lights.* → Apagué las luces.
+  - Ahora: *I'm turning off the lights.* → Estoy apagando las luces.
+  - Futuro: *I'll turn off the lights.* → Apagaré las luces.
+- *I lock the door.* → Cierro la puerta con llave.
+  - Pasado: *I locked the door.* → Cerré la puerta con llave.
+  - Ahora: *I'm locking the door.* → Estoy cerrando la puerta con llave.
+  - Ya: *I've already locked the door.* → Ya cerré la puerta con llave.
+  - Futuro: *I'll lock the door.* → Cerraré la puerta con llave.
+- *I double-check that the door is locked.* → Compruebo dos veces que la puerta está cerrada.
+  - Pasado: *I double-checked that the door was locked.* → Comprobé dos veces que la puerta estaba cerrada.
+  - Ahora: *I'm double-checking the door.* → Estoy comprobando la puerta otra vez.
+  - Futuro: *I'll double-check the door.* → Comprobaré la puerta otra vez.
+- *I forget my keys.* → Olvido mis llaves.
+  - Pasado: *I forgot my keys.* → Olvidé mis llaves.
+  - Ya: *I've forgotten my keys.* → He olvidado mis llaves.
+  - Futuro: *I'll forget my keys if I rush.* → Olvidaré mis llaves si me apuro.
+- *I go back for something I forgot.* → Regreso por algo que olvidé.
+  - Pasado: *I went back for something I forgot.* → Regresé por algo que olvidé.
+  - Ahora: *I'm going back for something I forgot.* → Estoy regresando por algo que olvidé.
+  - Futuro: *I'll go back for my phone.* → Regresaré por mi teléfono.
+- *I take the elevator down.* → Bajo en el ascensor.
+  - Pasado: *I took the elevator down.* → Bajé en el ascensor.
+  - Ahora: *I'm taking the elevator down.* → Estoy bajando en el ascensor.
+  - Futuro: *I'll take the elevator down.* → Bajaré en el ascensor.
+- *I take the stairs.* → Bajo por las escaleras.
+  - Pasado: *I took the stairs.* → Bajé por las escaleras.
+  - Ahora: *I'm taking the stairs.* → Estoy bajando por las escaleras.
+  - Futuro: *I'll take the stairs.* → Bajaré por las escaleras.
+- *I say goodbye to my family.* → Me despido de mi familia.
+  - Pasado: *I said goodbye to my family.* → Me despedí de mi familia.
+  - Ahora: *I'm saying goodbye to my family.* → Me estoy despidiendo de mi familia.
+  - Futuro: *I'll say goodbye to my family.* → Me despediré de mi familia.
+- *I head to work.* → Me dirijo al trabajo.
+  - Pasado: *I headed to work.* → Me dirigí al trabajo.
+  - Ahora: *I'm heading to work.* → Voy camino al trabajo.
+  - Futuro: *I'll head to work.* → Me dirigiré al trabajo.
+
+### Ir caminando
+- *I walk to work.* → Voy caminando al trabajo.
+  - Pasado: *I walked to work.* → Fui caminando al trabajo.
+  - Ahora: *I'm walking to work.* → Voy caminando al trabajo ahora mismo.
+  - Ya: *I've walked to work all week.* → He ido caminando al trabajo toda la semana.
+  - Futuro: *I'll walk to work tomorrow.* → Mañana iré caminando al trabajo.
+- *I walk to the bus stop.* → Camino hasta la parada del bus.
+  - Pasado: *I walked to the bus stop.* → Caminé hasta la parada del bus.
+  - Ahora: *I'm walking to the bus stop.* → Estoy caminando hasta la parada del bus.
+  - Futuro: *I'll walk to the bus stop.* → Caminaré hasta la parada del bus.
+- *I walk to the subway station.* → Camino hasta la estación del metro.
+  - Pasado: *I walked to the subway station.* → Caminé hasta la estación del metro.
+  - Ahora: *I'm walking to the subway station.* → Estoy caminando hasta la estación del metro.
+  - Futuro: *I'll walk to the subway station.* → Caminaré hasta la estación del metro.
+- *I cross the street.* → Cruzo la calle.
+  - Pasado: *I crossed the street.* → Crucé la calle.
+  - Ahora: *I'm crossing the street.* → Estoy cruzando la calle.
+  - Futuro: *I'll cross the street.* → Cruzaré la calle.
+- *I wait for the light to change.* → Espero a que cambie el semáforo.
+  - Pasado: *I waited for the light to change.* → Esperé a que cambiara el semáforo.
+  - Ahora: *I'm waiting for the light to change.* → Estoy esperando a que cambie el semáforo.
+  - Futuro: *I'll wait for the light to change.* → Esperaré a que cambie el semáforo.
+- *I listen to music on my way to work.* → Escucho música de camino al trabajo.
+  - Pasado: *I listened to music on my way to work.* → Escuché música de camino al trabajo.
+  - Ahora: *I'm listening to music.* → Estoy escuchando música.
+  - Futuro: *I'll listen to music on my way to work.* → Escucharé música de camino al trabajo.
+- *I listen to a podcast.* → Escucho un pódcast.
+  - Pasado: *I listened to a podcast.* → Escuché un pódcast.
+  - Ahora: *I'm listening to a podcast.* → Estoy escuchando un pódcast.
+  - Futuro: *I'll listen to a podcast.* → Escucharé un pódcast.
+
+### Transporte público
+- *I take the bus.* → Tomo el bus.
+  - Pasado: *I took the bus.* → Tomé el bus.
+  - Ahora: *I'm taking the bus.* → Estoy tomando el bus.
+  - Ya: *I've taken the bus all week.* → He tomado el bus toda la semana.
+  - Futuro: *I'll take the bus tomorrow.* → Mañana tomaré el bus.
+- *I wait at the bus stop.* → Espero en la parada del bus.
+  - Pasado: *I waited at the bus stop.* → Esperé en la parada del bus.
+  - Ahora: *I'm waiting at the bus stop.* → Estoy esperando en la parada del bus.
+  - Futuro: *I'll wait at the bus stop.* → Esperaré en la parada del bus.
+- *I catch the bus.* → Alcanzo el bus.
+  - Pasado: *I caught the bus.* → Alcancé el bus.
+  - Ahora: *I'm catching the bus.* → Estoy alcanzando el bus.
+  - Futuro: *I'll catch the 7:45 bus.* → Alcanzaré el bus de las 7:45.
+- *I miss the bus.* → Pierdo el bus.
+  - Pasado: *I missed the bus.* → Perdí el bus.
+  - Ya: *I've missed the bus again.* → He perdido el bus otra vez.
+  - Futuro: *I'll miss the bus if I don't hurry.* → Perderé el bus si no me apuro.
+- *I get on the bus.* → Subo al bus.
+  - Pasado: *I got on the bus.* → Subí al bus.
+  - Ahora: *I'm getting on the bus.* → Estoy subiendo al bus.
+  - Futuro: *I'll get on the bus.* → Subiré al bus.
+- *I pay the fare.* → Pago el pasaje.
+  - Pasado: *I paid the fare.* → Pagué el pasaje.
+  - Ahora: *I'm paying the fare.* → Estoy pagando el pasaje.
+  - Futuro: *I'll pay the fare.* → Pagaré el pasaje.
+- *I tap my card.* → Paso mi tarjeta.
+  - Pasado: *I tapped my card.* → Pasé mi tarjeta.
+  - Ahora: *I'm tapping my card.* → Estoy pasando mi tarjeta.
+  - Futuro: *I'll tap my card.* → Pasaré mi tarjeta.
+- *I find a seat.* → Encuentro un asiento.
+  - Pasado: *I found a seat.* → Encontré un asiento.
+  - Ahora: *I'm looking for a seat.* → Estoy buscando un asiento.
+  - Futuro: *I'll find a seat.* → Encontraré un asiento.
+- *I stand the whole way.* → Voy de pie todo el camino.
+  - Pasado: *I stood the whole way.* → Fui de pie todo el camino.
+  - Ahora: *I'm standing the whole way.* → Voy de pie todo el camino.
+  - Futuro: *I'll stand the whole way.* → Iré de pie todo el camino.
+- *I hold on to the handrail.* → Me agarro del pasamanos.
+  - Pasado: *I held on to the handrail.* → Me agarré del pasamanos.
+  - Ahora: *I'm holding on to the handrail.* → Me estoy agarrando del pasamanos.
+  - Futuro: *I'll hold on to the handrail.* → Me agarraré del pasamanos.
+- *I give up my seat to an older person.* → Le cedo mi asiento a una persona mayor.
+  - Pasado: *I gave up my seat to an older person.* → Le cedí mi asiento a una persona mayor.
+  - Ahora: *I'm giving up my seat.* → Estoy cediendo mi asiento.
+  - Futuro: *I'll give up my seat.* → Cederé mi asiento.
+- *I take the subway.* → Tomo el metro.
+  - Pasado: *I took the subway.* → Tomé el metro.
+  - Ahora: *I'm taking the subway.* → Estoy tomando el metro.
+  - Ya: *I've taken the subway every day.* → He tomado el metro todos los días.
+  - Futuro: *I'll take the subway.* → Tomaré el metro.
+- *I change trains.* → Hago transbordo.
+  - Pasado: *I changed trains at Central Station.* → Hice transbordo en la estación Central.
+  - Ahora: *I'm changing trains.* → Estoy haciendo transbordo.
+  - Futuro: *I'll change trains at Central Station.* → Haré transbordo en la estación Central.
+- *I get off at the next stop.* → Me bajo en la próxima parada.
+  - Pasado: *I got off at the next stop.* → Me bajé en la próxima parada.
+  - Ahora: *I'm getting off at the next stop.* → Me estoy bajando en la próxima parada.
+  - Futuro: *I'll get off at the next stop.* → Me bajaré en la próxima parada.
+- *I miss my stop.* → Me paso de mi parada.
+  - Pasado: *I missed my stop.* → Me pasé de mi parada.
+  - Ya: *I've missed my stop before.* → Ya me he pasado de mi parada antes.
+  - Futuro: *I'll miss my stop if I fall asleep.* → Me pasaré de mi parada si me duermo.
+- *I read a book on the train.* → Leo un libro en el tren.
+  - Pasado: *I read a book on the train.* → Leí un libro en el tren.
+  - Ahora: *I'm reading a book on the train.* → Estoy leyendo un libro en el tren.
+  - Futuro: *I'll read a book on the train.* → Leeré un libro en el tren.
+- *I doze off on the bus.* → Me quedo dormido en el bus.
+  - Pasado: *I dozed off on the bus.* → Me quedé dormido en el bus.
+  - Ya: *I've dozed off on the bus twice this week.* → Me he quedado dormido en el bus dos veces esta semana.
+  - Futuro: *I'll doze off on the bus.* → Me quedaré dormido en el bus.
+
+### Conducir
+- *I drive to work.* → Voy en carro al trabajo.
+  - Pasado: *I drove to work.* → Fui en carro al trabajo.
+  - Ahora: *I'm driving to work.* → Voy conduciendo al trabajo.
+  - Ya: *I've driven to work every day this month.* → He ido en carro al trabajo todos los días este mes.
+  - Futuro: *I'll drive to work tomorrow.* → Mañana iré en carro al trabajo.
+- *I get in the car.* → Me subo al carro.
+  - Pasado: *I got in the car.* → Me subí al carro.
+  - Ahora: *I'm getting in the car.* → Me estoy subiendo al carro.
+  - Futuro: *I'll get in the car.* → Me subiré al carro.
+- *I fasten my seat belt.* → Me abrocho el cinturón de seguridad.
+  - Pasado: *I fastened my seat belt.* → Me abroché el cinturón de seguridad.
+  - Ahora: *I'm fastening my seat belt.* → Me estoy abrochando el cinturón de seguridad.
+  - Futuro: *I'll fasten my seat belt.* → Me abrocharé el cinturón de seguridad.
+- *I start the engine.* → Enciendo el motor.
+  - Pasado: *I started the engine.* → Encendí el motor.
+  - Ahora: *I'm starting the engine.* → Estoy encendiendo el motor.
+  - Futuro: *I'll start the engine.* → Encenderé el motor.
+- *I back out of the driveway.* → Salgo en reversa del garaje.
+  - Pasado: *I backed out of the driveway.* → Salí en reversa del garaje.
+  - Ahora: *I'm backing out of the driveway.* → Estoy saliendo en reversa del garaje.
+  - Futuro: *I'll back out of the driveway.* → Saldré en reversa del garaje.
+- *I turn on the radio.* → Enciendo la radio.
+  - Pasado: *I turned on the radio.* → Encendí la radio.
+  - Ahora: *I'm turning on the radio.* → Estoy encendiendo la radio.
+  - Futuro: *I'll turn on the radio.* → Encenderé la radio.
+- *I stop at a red light.* → Me detengo en un semáforo en rojo.
+  - Pasado: *I stopped at a red light.* → Me detuve en un semáforo en rojo.
+  - Ahora: *I'm stopping at a red light.* → Me estoy deteniendo en un semáforo en rojo.
+  - Futuro: *I'll stop at the red light.* → Me detendré en el semáforo en rojo.
+- *I turn left / right.* → Giro a la izquierda / derecha.
+  - Pasado: *I turned left at the corner.* → Giré a la izquierda en la esquina.
+  - Ahora: *I'm turning right.* → Estoy girando a la derecha.
+  - Futuro: *I'll turn left at the next light.* → Giraré a la izquierda en el próximo semáforo.
+- *I change lanes.* → Cambio de carril.
+  - Pasado: *I changed lanes.* → Cambié de carril.
+  - Ahora: *I'm changing lanes.* → Estoy cambiando de carril.
+  - Futuro: *I'll change lanes.* → Cambiaré de carril.
+- *I find a parking spot.* → Encuentro un lugar para estacionar.
+  - Pasado: *I found a parking spot.* → Encontré un lugar para estacionar.
+  - Ahora: *I'm looking for a parking spot.* → Estoy buscando un lugar para estacionar.
+  - Futuro: *I'll find a parking spot.* → Encontraré un lugar para estacionar.
+- *I park the car.* → Estaciono el carro.
+  - Pasado: *I parked the car.* → Estacioné el carro.
+  - Ahora: *I'm parking the car.* → Estoy estacionando el carro.
+  - Ya: *I've already parked the car.* → Ya estacioné el carro.
+  - Futuro: *I'll park the car.* → Estacionaré el carro.
+- *I fill up the tank.* → Lleno el tanque.
+  - Pasado: *I filled up the tank.* → Llené el tanque.
+  - Ahora: *I'm filling up the tank.* → Estoy llenando el tanque.
+  - Futuro: *I'll fill up the tank.* → Llenaré el tanque.
+- *I pay the toll.* → Pago el peaje.
+  - Pasado: *I paid the toll.* → Pagué el peaje.
+  - Ahora: *I'm paying the toll.* → Estoy pagando el peaje.
+  - Futuro: *I'll pay the toll.* → Pagaré el peaje.
+- *I share a ride with a coworker.* → Comparto el viaje con un compañero.
+  - Pasado: *I shared a ride with a coworker.* → Compartí el viaje con un compañero.
+  - Ya: *I've shared a ride with a coworker all week.* → He compartido el viaje con un compañero toda la semana.
+  - Futuro: *I'll share a ride with a coworker.* → Compartiré el viaje con un compañero.
+
+### Otros medios de transporte
+- *I ride my bike to work.* → Voy en bicicleta al trabajo.
+  - Pasado: *I rode my bike to work.* → Fui en bicicleta al trabajo.
+  - Ahora: *I'm riding my bike to work.* → Voy en bicicleta al trabajo ahora mismo.
+  - Futuro: *I'll ride my bike to work.* → Iré en bicicleta al trabajo.
+- *I ride my motorcycle.* → Voy en moto.
+  - Pasado: *I rode my motorcycle.* → Fui en moto.
+  - Ahora: *I'm riding my motorcycle.* → Voy en moto ahora mismo.
+  - Futuro: *I'll ride my motorcycle.* → Iré en moto.
+- *I take a taxi.* → Tomo un taxi.
+  - Pasado: *I took a taxi.* → Tomé un taxi.
+  - Ahora: *I'm taking a taxi.* → Estoy tomando un taxi.
+  - Futuro: *I'll take a taxi.* → Tomaré un taxi.
+- *I call a ride-share.* → Pido un viaje por aplicación.
+  - Pasado: *I called a ride-share.* → Pedí un viaje por aplicación.
+  - Ahora: *I'm calling a ride-share.* → Estoy pidiendo un viaje por aplicación.
+  - Futuro: *I'll call a ride-share.* → Pediré un viaje por aplicación.
+- *I ride an electric scooter.* → Voy en un monopatín eléctrico.
+  - Pasado: *I rode an electric scooter.* → Fui en un monopatín eléctrico.
+  - Ahora: *I'm riding an electric scooter.* → Voy en un monopatín eléctrico ahora mismo.
+  - Futuro: *I'll ride an electric scooter.* → Iré en un monopatín eléctrico.
+- *I work from home.* → Trabajo desde casa.
+  - Pasado: *I worked from home.* → Trabajé desde casa.
+  - Ahora: *I'm working from home today.* → Hoy trabajo desde casa.
+  - Ya: *I've worked from home since March.* → Trabajo desde casa desde marzo.
+  - Futuro: *I'll work from home tomorrow.* → Mañana trabajaré desde casa.
+
+### Imprevistos en el camino
+- *I get stuck in traffic.* → Me quedo atascado en el tráfico.
+  - Pasado: *I got stuck in traffic.* → Me quedé atascado en el tráfico.
+  - Ahora: *I'm stuck in traffic.* → Estoy atascado en el tráfico.
+  - Ya: *I've been stuck in traffic for an hour.* → Llevo una hora atascado en el tráfico.
+  - Futuro: *I'll get stuck in traffic if I leave late.* → Me quedaré atascado en el tráfico si salgo tarde.
+- *The traffic is terrible.* → El tráfico está terrible.
+  - Pasado: *The traffic was terrible.* → El tráfico estaba terrible.
+  - Ya: *The traffic has been terrible all week.* → El tráfico ha estado terrible toda la semana.
+  - Futuro: *The traffic will be terrible at rush hour.* → El tráfico estará terrible en la hora pico.
+- *It's rush hour.* → Es hora pico.
+  - Pasado: *It was rush hour.* → Era hora pico.
+  - Ahora: *It's rush hour right now.* → Es hora pico ahora mismo.
+  - Futuro: *It'll be rush hour soon.* → Pronto será hora pico.
+- *The bus is late.* → El bus está retrasado.
+  - Pasado: *The bus was late.* → El bus estaba retrasado.
+  - Ya: *The bus has been late all week.* → El bus ha estado retrasado toda la semana.
+  - Futuro: *The bus will be late.* → El bus llegará tarde.
+- *The train is delayed.* → El tren está retrasado.
+  - Pasado: *The train was delayed.* → El tren estaba retrasado.
+  - Ya: *The train has been delayed twice.* → El tren se ha retrasado dos veces.
+  - Futuro: *The train will be delayed.* → El tren se retrasará.
+- *The subway is packed.* → El metro está lleno.
+  - Pasado: *The subway was packed.* → El metro estaba lleno.
+  - Ahora: *The subway is packed right now.* → El metro está lleno ahora mismo.
+  - Futuro: *The subway will be packed.* → El metro estará lleno.
+- *I run to catch the bus.* → Corro para alcanzar el bus.
+  - Pasado: *I ran to catch the bus.* → Corrí para alcanzar el bus.
+  - Ahora: *I'm running to catch the bus.* → Estoy corriendo para alcanzar el bus.
+  - Futuro: *I'll run to catch the bus.* → Correré para alcanzar el bus.
+- *It rains on my way to work.* → Llueve de camino al trabajo.
+  - Pasado: *It rained on my way to work.* → Llovió de camino al trabajo.
+  - Ahora: *It's raining on my way to work.* → Está lloviendo de camino al trabajo.
+  - Futuro: *It'll rain on my way to work.* → Lloverá de camino al trabajo.
+- *I take an umbrella.* → Llevo un paraguas.
+  - Pasado: *I took an umbrella.* → Llevé un paraguas.
+  - Ahora: *I'm taking an umbrella.* → Estoy llevando un paraguas.
+  - Futuro: *I'll take an umbrella.* → Llevaré un paraguas.
+- *I take a different route.* → Tomo otra ruta.
+  - Pasado: *I took a different route.* → Tomé otra ruta.
+  - Ahora: *I'm taking a different route.* → Estoy tomando otra ruta.
+  - Futuro: *I'll take a different route.* → Tomaré otra ruta.
+- *I'm running late.* → Voy tarde.
+  - Pasado: *I was running late.* → Iba tarde.
+  - Ya: *I've been running late all week.* → He ido tarde toda la semana.
+  - Futuro: *I'll be late if I don't leave now.* → Llegaré tarde si no salgo ahora.
+- *I call to say I'll be late.* → Llamo para avisar que llegaré tarde.
+  - Pasado: *I called to say I'd be late.* → Llamé para avisar que llegaría tarde.
+  - Ahora: *I'm calling to say I'll be late.* → Estoy llamando para avisar que llegaré tarde.
+  - Futuro: *I'll call to say I'll be late.* → Llamaré para avisar que llegaré tarde.
+- *I'm on time.* → Llego a tiempo.
+  - Pasado: *I was on time.* → Llegué a tiempo.
+  - Ya: *I've been on time every day.* → He llegado a tiempo todos los días.
+  - Futuro: *I'll be on time.* → Llegaré a tiempo.
+
+### Llegar al trabajo
+- *I arrive at work at 8:15.* → Llego al trabajo a las 8:15.
+  - Pasado: *I arrived at work at 8:15.* → Llegué al trabajo a las 8:15.
+  - Ya: *I've just arrived at work.* → Acabo de llegar al trabajo.
+  - Futuro: *I'll arrive at work at 8:15.* → Llegaré al trabajo a las 8:15.
+- *I get to the office early.* → Llego temprano a la oficina.
+  - Pasado: *I got to the office early.* → Llegué temprano a la oficina.
+  - Ya: *I've gotten to the office early all week.* → He llegado temprano a la oficina toda la semana.
+  - Futuro: *I'll get to the office early tomorrow.* → Mañana llegaré temprano a la oficina.
+- *I get to the office late.* → Llego tarde a la oficina.
+  - Pasado: *I got to the office late.* → Llegué tarde a la oficina.
+  - Ya: *I've gotten to the office late twice.* → He llegado tarde a la oficina dos veces.
+  - Futuro: *I'll get to the office late.* → Llegaré tarde a la oficina.
+- *It takes me thirty minutes to get to work.* → Tardo treinta minutos en llegar al trabajo.
+  - Pasado: *It took me thirty minutes to get to work.* → Tardé treinta minutos en llegar al trabajo.
+  - Ya: *It's taken me an hour to get to work today.* → Hoy he tardado una hora en llegar al trabajo.
+  - Futuro: *It'll take me thirty minutes to get to work.* → Tardaré treinta minutos en llegar al trabajo.
+- *My commute is short.* → Mi trayecto es corto.
+  - Pasado: *My commute was short.* → Mi trayecto fue corto.
+  - Ya: *My commute has always been short.* → Mi trayecto siempre ha sido corto.
+  - Futuro: *My commute will be longer after the move.* → Mi trayecto será más largo después de la mudanza.
+- *My commute is long.* → Mi trayecto es largo.
+  - Pasado: *My commute was long.* → Mi trayecto fue largo.
+  - Ya: *My commute has been long since I moved.* → Mi trayecto es largo desde que me mudé.
+  - Futuro: *My commute will be long.* → Mi trayecto será largo.
+- *I get off the bus.* → Me bajo del bus.
+  - Pasado: *I got off the bus.* → Me bajé del bus.
+  - Ahora: *I'm getting off the bus.* → Me estoy bajando del bus.
+  - Futuro: *I'll get off the bus.* → Me bajaré del bus.
+- *I walk into the building.* → Entro al edificio.
+  - Pasado: *I walked into the building.* → Entré al edificio.
+  - Ahora: *I'm walking into the building.* → Estoy entrando al edificio.
+  - Futuro: *I'll walk into the building.* → Entraré al edificio.
+- *I show my ID at the entrance.* → Muestro mi identificación en la entrada.
+  - Pasado: *I showed my ID at the entrance.* → Mostré mi identificación en la entrada.
+  - Ahora: *I'm showing my ID at the entrance.* → Estoy mostrando mi identificación en la entrada.
+  - Futuro: *I'll show my ID at the entrance.* → Mostraré mi identificación en la entrada.
+- *I swipe my badge.* → Paso mi tarjeta de acceso.
+  - Pasado: *I swiped my badge.* → Pasé mi tarjeta de acceso.
+  - Ahora: *I'm swiping my badge.* → Estoy pasando mi tarjeta de acceso.
+  - Futuro: *I'll swipe my badge.* → Pasaré mi tarjeta de acceso.
+- *I clock in.* → Marco mi entrada.
+  - Pasado: *I clocked in at 8:00.* → Marqué mi entrada a las 8:00.
+  - Ahora: *I'm clocking in.* → Estoy marcando mi entrada.
+  - Ya: *I've already clocked in.* → Ya marqué mi entrada.
+  - Futuro: *I'll clock in at 8:00.* → Marcaré mi entrada a las 8:00.
+
+## 5. Jornada de trabajo
+
+### Empezar la jornada
+- *I go to my desk.* → Voy a mi escritorio.
+  - Pasado: *I went to my desk.* → Fui a mi escritorio.
+  - Ahora: *I'm going to my desk.* → Estoy yendo a mi escritorio.
+  - Futuro: *I'll go to my desk.* → Iré a mi escritorio.
+- *I greet my coworkers.* → Saludo a mis compañeros.
+  - Pasado: *I greeted my coworkers.* → Saludé a mis compañeros.
+  - Ahora: *I'm greeting my coworkers.* → Estoy saludando a mis compañeros.
+  - Futuro: *I'll greet my coworkers.* → Saludaré a mis compañeros.
+- *I say good morning to everyone.* → Les doy los buenos días a todos.
+  - Pasado: *I said good morning to everyone.* → Les di los buenos días a todos.
+  - Ahora: *I'm saying good morning to everyone.* → Les estoy dando los buenos días a todos.
+  - Futuro: *I'll say good morning to everyone.* → Les daré los buenos días a todos.
+- *I turn on my computer.* → Enciendo mi computadora.
+  - Pasado: *I turned on my computer.* → Encendí mi computadora.
+  - Ahora: *I'm turning on my computer.* → Estoy encendiendo mi computadora.
+  - Ya: *I've already turned on my computer.* → Ya encendí mi computadora.
+  - Futuro: *I'll turn on my computer.* → Encenderé mi computadora.
+- *I log in to my computer.* → Inicio sesión en mi computadora.
+  - Pasado: *I logged in to my computer.* → Inicié sesión en mi computadora.
+  - Ahora: *I'm logging in to my computer.* → Estoy iniciando sesión en mi computadora.
+  - Ya: *I've already logged in.* → Ya inicié sesión.
+  - Futuro: *I'll log in to my computer.* → Iniciaré sesión en mi computadora.
+- *I connect to the VPN.* → Me conecto a la VPN.
+  - Pasado: *I connected to the VPN.* → Me conecté a la VPN.
+  - Ahora: *I'm connecting to the VPN.* → Me estoy conectando a la VPN.
+  - Futuro: *I'll connect to the VPN.* → Me conectaré a la VPN.
+- *I organize my desk.* → Organizo mi escritorio.
+  - Pasado: *I organized my desk.* → Organicé mi escritorio.
+  - Ahora: *I'm organizing my desk.* → Estoy organizando mi escritorio.
+  - Futuro: *I'll organize my desk.* → Organizaré mi escritorio.
+- *I open my notebook.* → Abro mi cuaderno.
+  - Pasado: *I opened my notebook.* → Abrí mi cuaderno.
+  - Ahora: *I'm opening my notebook.* → Estoy abriendo mi cuaderno.
+  - Futuro: *I'll open my notebook.* → Abriré mi cuaderno.
+
+### Correos y organización del día
+- *I check my email.* → Reviso mi correo.
+  - Pasado: *I checked my email.* → Revisé mi correo.
+  - Ahora: *I'm checking my email.* → Estoy revisando mi correo.
+  - Ya: *I've already checked my email.* → Ya revisé mi correo.
+  - Futuro: *I'll check my email first thing.* → Revisaré mi correo a primera hora.
+- *I answer emails.* → Respondo correos.
+  - Pasado: *I answered emails all morning.* → Respondí correos toda la mañana.
+  - Ahora: *I'm answering emails.* → Estoy respondiendo correos.
+  - Ya: *I've answered ten emails so far.* → Hasta ahora he respondido diez correos.
+  - Futuro: *I'll answer emails after the meeting.* → Responderé correos después de la reunión.
+- *I send an email.* → Envío un correo.
+  - Pasado: *I sent an email.* → Envié un correo.
+  - Ahora: *I'm sending an email.* → Estoy enviando un correo.
+  - Ya: *I've just sent the email.* → Acabo de enviar el correo.
+  - Futuro: *I'll send the email today.* → Enviaré el correo hoy.
+- *I reply to a message.* → Respondo un mensaje.
+  - Pasado: *I replied to a message.* → Respondí un mensaje.
+  - Ahora: *I'm replying to a message.* → Estoy respondiendo un mensaje.
+  - Futuro: *I'll reply to the message later.* → Responderé el mensaje más tarde.
+- *I forward an email to my boss.* → Reenvío un correo a mi jefe.
+  - Pasado: *I forwarded an email to my boss.* → Reenvié un correo a mi jefe.
+  - Ahora: *I'm forwarding an email to my boss.* → Estoy reenviando un correo a mi jefe.
+  - Futuro: *I'll forward the email to my boss.* → Reenviaré el correo a mi jefe.
+- *I attach a file.* → Adjunto un archivo.
+  - Pasado: *I attached a file.* → Adjunté un archivo.
+  - Ahora: *I'm attaching a file.* → Estoy adjuntando un archivo.
+  - Futuro: *I'll attach the file.* → Adjuntaré el archivo.
+- *I check my calendar.* → Reviso mi calendario.
+  - Pasado: *I checked my calendar.* → Revisé mi calendario.
+  - Ahora: *I'm checking my calendar.* → Estoy revisando mi calendario.
+  - Futuro: *I'll check my calendar.* → Revisaré mi calendario.
+- *I make a to-do list.* → Hago una lista de tareas.
+  - Pasado: *I made a to-do list.* → Hice una lista de tareas.
+  - Ahora: *I'm making a to-do list.* → Estoy haciendo una lista de tareas.
+  - Futuro: *I'll make a to-do list.* → Haré una lista de tareas.
+- *I prioritize my tasks.* → Priorizo mis tareas.
+  - Pasado: *I prioritized my tasks.* → Prioricé mis tareas.
+  - Ahora: *I'm prioritizing my tasks.* → Estoy priorizando mis tareas.
+  - Futuro: *I'll prioritize my tasks.* → Priorizaré mis tareas.
+- *I plan my day.* → Planifico mi día.
+  - Pasado: *I planned my day.* → Planifiqué mi día.
+  - Ahora: *I'm planning my day.* → Estoy planificando mi día.
+  - Futuro: *I'll plan my day.* → Planificaré mi día.
+- *I check my to-do list.* → Reviso mi lista de tareas.
+  - Pasado: *I checked my to-do list.* → Revisé mi lista de tareas.
+  - Ahora: *I'm checking my to-do list.* → Estoy revisando mi lista de tareas.
+  - Futuro: *I'll check my to-do list.* → Revisaré mi lista de tareas.
+- *I cross a task off my list.* → Tacho una tarea de mi lista.
+  - Pasado: *I crossed a task off my list.* → Taché una tarea de mi lista.
+  - Ahora: *I'm crossing a task off my list.* → Estoy tachando una tarea de mi lista.
+  - Ya: *I've crossed five tasks off my list.* → He tachado cinco tareas de mi lista.
+  - Futuro: *I'll cross it off my list.* → La tacharé de mi lista.
+
+### Trabajo concentrado
+- *I work on a project.* → Trabajo en un proyecto.
+  - Pasado: *I worked on a project.* → Trabajé en un proyecto.
+  - Ahora: *I'm working on a project.* → Estoy trabajando en un proyecto.
+  - Ya: *I've been working on this project for a week.* → Llevo una semana trabajando en este proyecto.
+  - Futuro: *I'll work on the project this afternoon.* → Trabajaré en el proyecto esta tarde.
+- *I write a report.* → Escribo un informe.
+  - Pasado: *I wrote a report.* → Escribí un informe.
+  - Ahora: *I'm writing a report.* → Estoy escribiendo un informe.
+  - Ya: *I've finished the report.* → Terminé el informe.
+  - Futuro: *I'll write the report tomorrow.* → Escribiré el informe mañana.
+- *I write code.* → Escribo código.
+  - Pasado: *I wrote code all morning.* → Escribí código toda la mañana.
+  - Ahora: *I'm writing code.* → Estoy escribiendo código.
+  - Futuro: *I'll write code after lunch.* → Escribiré código después del almuerzo.
+- *I fix a bug.* → Arreglo un error.
+  - Pasado: *I fixed a bug.* → Arreglé un error.
+  - Ahora: *I'm fixing a bug.* → Estoy arreglando un error.
+  - Ya: *I've fixed three bugs today.* → Hoy he arreglado tres errores.
+  - Futuro: *I'll fix the bug.* → Arreglaré el error.
+- *I review a document.* → Reviso un documento.
+  - Pasado: *I reviewed a document.* → Revisé un documento.
+  - Ahora: *I'm reviewing a document.* → Estoy revisando un documento.
+  - Futuro: *I'll review the document.* → Revisaré el documento.
+- *I prepare a presentation.* → Preparo una presentación.
+  - Pasado: *I prepared a presentation.* → Preparé una presentación.
+  - Ahora: *I'm preparing a presentation.* → Estoy preparando una presentación.
+  - Futuro: *I'll prepare a presentation.* → Prepararé una presentación.
+- *I fill out a spreadsheet.* → Completo una hoja de cálculo.
+  - Pasado: *I filled out a spreadsheet.* → Completé una hoja de cálculo.
+  - Ahora: *I'm filling out a spreadsheet.* → Estoy completando una hoja de cálculo.
+  - Futuro: *I'll fill out the spreadsheet.* → Completaré la hoja de cálculo.
+- *I focus on my work.* → Me concentro en mi trabajo.
+  - Pasado: *I focused on my work.* → Me concentré en mi trabajo.
+  - Ahora: *I'm focusing on my work.* → Me estoy concentrando en mi trabajo.
+  - Futuro: *I'll focus on my work.* → Me concentraré en mi trabajo.
+- *I get distracted.* → Me distraigo.
+  - Pasado: *I got distracted.* → Me distraje.
+  - Ahora: *I'm getting distracted.* → Me estoy distrayendo.
+  - Futuro: *I'll get distracted if I check my phone.* → Me distraeré si reviso mi teléfono.
+- *I meet a deadline.* → Cumplo con una fecha límite.
+  - Pasado: *I met the deadline.* → Cumplí con la fecha límite.
+  - Ya: *I've met every deadline this month.* → He cumplido todas las fechas límite este mes.
+  - Futuro: *I'll meet the deadline.* → Cumpliré con la fecha límite.
+- *I miss a deadline.* → Incumplo una fecha límite.
+  - Pasado: *I missed the deadline.* → Incumplí la fecha límite.
+  - Ya: *I've missed a deadline once.* → He incumplido una fecha límite una vez.
+  - Futuro: *I'll miss the deadline if I don't hurry.* → Incumpliré la fecha límite si no me apuro.
+- *I work overtime.* → Hago horas extra.
+  - Pasado: *I worked overtime.* → Hice horas extra.
+  - Ahora: *I'm working overtime tonight.* → Esta noche hago horas extra.
+  - Ya: *I've worked overtime all week.* → He hecho horas extra toda la semana.
+  - Futuro: *I'll work overtime tomorrow.* → Mañana haré horas extra.
+
+### Reuniones
+- *I go to a meeting.* → Voy a una reunión.
+  - Pasado: *I went to a meeting.* → Fui a una reunión.
+  - Ahora: *I'm going to a meeting.* → Estoy yendo a una reunión.
+  - Futuro: *I'll go to a meeting at 10.* → Iré a una reunión a las 10.
+- *I attend a meeting.* → Asisto a una reunión.
+  - Pasado: *I attended a meeting.* → Asistí a una reunión.
+  - Ahora: *I'm attending a meeting.* → Estoy asistiendo a una reunión.
+  - Futuro: *I'll attend the meeting.* → Asistiré a la reunión.
+- *I join a video call.* → Me uno a una videollamada.
+  - Pasado: *I joined a video call.* → Me uní a una videollamada.
+  - Ahora: *I'm joining a video call.* → Me estoy uniendo a una videollamada.
+  - Futuro: *I'll join the video call.* → Me uniré a la videollamada.
+- *I schedule a meeting.* → Programo una reunión.
+  - Pasado: *I scheduled a meeting.* → Programé una reunión.
+  - Ahora: *I'm scheduling a meeting.* → Estoy programando una reunión.
+  - Futuro: *I'll schedule a meeting.* → Programaré una reunión.
+- *I reschedule a meeting.* → Reprogramo una reunión.
+  - Pasado: *I rescheduled the meeting.* → Reprogramé la reunión.
+  - Ahora: *I'm rescheduling the meeting.* → Estoy reprogramando la reunión.
+  - Futuro: *I'll reschedule the meeting.* → Reprogramaré la reunión.
+- *I cancel a meeting.* → Cancelo una reunión.
+  - Pasado: *I canceled the meeting.* → Cancelé la reunión.
+  - Ahora: *I'm canceling the meeting.* → Estoy cancelando la reunión.
+  - Futuro: *I'll cancel the meeting.* → Cancelaré la reunión.
+- *I take notes in the meeting.* → Tomo notas en la reunión.
+  - Pasado: *I took notes in the meeting.* → Tomé notas en la reunión.
+  - Ahora: *I'm taking notes.* → Estoy tomando notas.
+  - Futuro: *I'll take notes.* → Tomaré notas.
+- *I give a presentation.* → Hago una presentación.
+  - Pasado: *I gave a presentation.* → Hice una presentación.
+  - Ahora: *I'm giving a presentation.* → Estoy haciendo una presentación.
+  - Ya: *I've given three presentations this month.* → He hecho tres presentaciones este mes.
+  - Futuro: *I'll give a presentation tomorrow.* → Mañana haré una presentación.
+- *I share my screen.* → Comparto mi pantalla.
+  - Pasado: *I shared my screen.* → Compartí mi pantalla.
+  - Ahora: *I'm sharing my screen.* → Estoy compartiendo mi pantalla.
+  - Futuro: *I'll share my screen.* → Compartiré mi pantalla.
+- *I mute my microphone.* → Silencio mi micrófono.
+  - Pasado: *I muted my microphone.* → Silencié mi micrófono.
+  - Ahora: *I'm muting my microphone.* → Estoy silenciando mi micrófono.
+  - Futuro: *I'll mute my microphone.* → Silenciaré mi micrófono.
+- *I ask a question.* → Hago una pregunta.
+  - Pasado: *I asked a question.* → Hice una pregunta.
+  - Ahora: *I'm asking a question.* → Estoy haciendo una pregunta.
+  - Futuro: *I'll ask a question.* → Haré una pregunta.
+- *I share my opinion.* → Doy mi opinión.
+  - Pasado: *I shared my opinion.* → Di mi opinión.
+  - Ahora: *I'm sharing my opinion.* → Estoy dando mi opinión.
+  - Futuro: *I'll share my opinion.* → Daré mi opinión.
+- *The meeting runs long.* → La reunión se alarga.
+  - Pasado: *The meeting ran long.* → La reunión se alargó.
+  - Ahora: *The meeting is running long.* → La reunión se está alargando.
+  - Futuro: *The meeting will run long.* → La reunión se alargará.
+- *I follow up after the meeting.* → Doy seguimiento después de la reunión.
+  - Pasado: *I followed up after the meeting.* → Di seguimiento después de la reunión.
+  - Ahora: *I'm following up on the meeting.* → Estoy dando seguimiento a la reunión.
+  - Futuro: *I'll follow up after the meeting.* → Daré seguimiento después de la reunión.
+
+### Trabajo en equipo y llamadas
+- *I talk to my coworkers.* → Hablo con mis compañeros.
+  - Pasado: *I talked to my coworkers.* → Hablé con mis compañeros.
+  - Ahora: *I'm talking to my coworkers.* → Estoy hablando con mis compañeros.
+  - Futuro: *I'll talk to my coworkers.* → Hablaré con mis compañeros.
+- *I ask a coworker for help.* → Le pido ayuda a un compañero.
+  - Pasado: *I asked a coworker for help.* → Le pedí ayuda a un compañero.
+  - Ahora: *I'm asking a coworker for help.* → Le estoy pidiendo ayuda a un compañero.
+  - Futuro: *I'll ask a coworker for help.* → Le pediré ayuda a un compañero.
+- *I help a coworker.* → Ayudo a un compañero.
+  - Pasado: *I helped a coworker.* → Ayudé a un compañero.
+  - Ahora: *I'm helping a coworker.* → Estoy ayudando a un compañero.
+  - Futuro: *I'll help a coworker.* → Ayudaré a un compañero.
+- *I collaborate with my team.* → Colaboro con mi equipo.
+  - Pasado: *I collaborated with my team.* → Colaboré con mi equipo.
+  - Ahora: *I'm collaborating with my team.* → Estoy colaborando con mi equipo.
+  - Futuro: *I'll collaborate with my team.* → Colaboraré con mi equipo.
+- *I talk to my boss.* → Hablo con mi jefe.
+  - Pasado: *I talked to my boss.* → Hablé con mi jefe.
+  - Ahora: *I'm talking to my boss.* → Estoy hablando con mi jefe.
+  - Futuro: *I'll talk to my boss.* → Hablaré con mi jefe.
+- *I report to my manager.* → Le reporto a mi gerente.
+  - Pasado: *I reported to my manager.* → Le reporté a mi gerente.
+  - Ahora: *I'm reporting to my manager.* → Le estoy reportando a mi gerente.
+  - Futuro: *I'll report to my manager.* → Le reportaré a mi gerente.
+- *I send a message on Slack.* → Envío un mensaje por Slack.
+  - Pasado: *I sent a message on Slack.* → Envié un mensaje por Slack.
+  - Ahora: *I'm sending a message on Slack.* → Estoy enviando un mensaje por Slack.
+  - Futuro: *I'll send a message on Slack.* → Enviaré un mensaje por Slack.
+- *I make a phone call.* → Hago una llamada.
+  - Pasado: *I made a phone call.* → Hice una llamada.
+  - Ahora: *I'm making a phone call.* → Estoy haciendo una llamada.
+  - Futuro: *I'll make a phone call.* → Haré una llamada.
+- *I answer the phone.* → Contesto el teléfono.
+  - Pasado: *I answered the phone.* → Contesté el teléfono.
+  - Ahora: *I'm answering the phone.* → Estoy contestando el teléfono.
+  - Futuro: *I'll answer the phone.* → Contestaré el teléfono.
+- *I call a client.* → Llamo a un cliente.
+  - Pasado: *I called a client.* → Llamé a un cliente.
+  - Ahora: *I'm calling a client.* → Estoy llamando a un cliente.
+  - Futuro: *I'll call the client.* → Llamaré al cliente.
+- *I leave a voicemail.* → Dejo un mensaje de voz.
+  - Pasado: *I left a voicemail.* → Dejé un mensaje de voz.
+  - Ahora: *I'm leaving a voicemail.* → Estoy dejando un mensaje de voz.
+  - Futuro: *I'll leave a voicemail.* → Dejaré un mensaje de voz.
+- *I put someone on hold.* → Pongo a alguien en espera.
+  - Pasado: *I put someone on hold.* → Puse a alguien en espera.
+  - Ahora: *I'm putting someone on hold.* → Estoy poniendo a alguien en espera.
+  - Futuro: *I'll put you on hold.* → Te pondré en espera.
+
+### Pausas para café
+- *I take a short break.* → Hago una pausa corta.
+  - Pasado: *I took a short break.* → Hice una pausa corta.
+  - Ahora: *I'm taking a short break.* → Estoy haciendo una pausa corta.
+  - Ya: *I haven't taken a break yet.* → Todavía no he hecho una pausa.
+  - Futuro: *I'll take a short break.* → Haré una pausa corta.
+- *I have a coffee break.* → Hago una pausa para el café.
+  - Pasado: *I had a coffee break.* → Hice una pausa para el café.
+  - Ahora: *I'm having a coffee break.* → Estoy en mi pausa para el café.
+  - Futuro: *I'll have a coffee break.* → Haré una pausa para el café.
+- *I get a cup of coffee.* → Me sirvo una taza de café.
+  - Pasado: *I got a cup of coffee.* → Me serví una taza de café.
+  - Ahora: *I'm getting a cup of coffee.* → Me estoy sirviendo una taza de café.
+  - Futuro: *I'll get a cup of coffee.* → Me serviré una taza de café.
+- *I fill my water bottle.* → Lleno mi botella de agua.
+  - Pasado: *I filled my water bottle.* → Llené mi botella de agua.
+  - Ahora: *I'm filling my water bottle.* → Estoy llenando mi botella de agua.
+  - Futuro: *I'll fill my water bottle.* → Llenaré mi botella de agua.
+- *I grab a snack.* → Agarro un snack.
+  - Pasado: *I grabbed a snack.* → Agarré un snack.
+  - Ahora: *I'm grabbing a snack.* → Estoy agarrando un snack.
+  - Futuro: *I'll grab a snack.* → Agarraré un snack.
+- *I chat with a coworker by the coffee machine.* → Converso con un compañero junto a la cafetera.
+  - Pasado: *I chatted with a coworker by the coffee machine.* → Conversé con un compañero junto a la cafetera.
+  - Ahora: *I'm chatting with a coworker by the coffee machine.* → Estoy conversando con un compañero junto a la cafetera.
+  - Futuro: *I'll chat with a coworker by the coffee machine.* → Conversaré con un compañero junto a la cafetera.
+- *I stretch my legs.* → Estiro las piernas.
+  - Pasado: *I stretched my legs.* → Estiré las piernas.
+  - Ahora: *I'm stretching my legs.* → Estoy estirando las piernas.
+  - Futuro: *I'll stretch my legs.* → Estiraré las piernas.
+- *I go outside for some fresh air.* → Salgo a tomar aire fresco.
+  - Pasado: *I went outside for some fresh air.* → Salí a tomar aire fresco.
+  - Ahora: *I'm going outside for some fresh air.* → Estoy saliendo a tomar aire fresco.
+  - Futuro: *I'll go outside for some fresh air.* → Saldré a tomar aire fresco.
+- *I rest my eyes from the screen.* → Descanso la vista de la pantalla.
+  - Pasado: *I rested my eyes from the screen.* → Descansé la vista de la pantalla.
+  - Ahora: *I'm resting my eyes from the screen.* → Estoy descansando la vista de la pantalla.
+  - Futuro: *I'll rest my eyes from the screen.* → Descansaré la vista de la pantalla.
+- *I go back to my desk.* → Vuelvo a mi escritorio.
+  - Pasado: *I went back to my desk.* → Volví a mi escritorio.
+  - Ahora: *I'm going back to my desk.* → Estoy volviendo a mi escritorio.
+  - Futuro: *I'll go back to my desk.* → Volveré a mi escritorio.
+
+## 6. Hora del almuerzo
+
+### Decidir dónde comer
+- *I take my lunch break at noon.* → Tomo mi hora de almuerzo al mediodía.
+  - Pasado: *I took my lunch break at noon.* → Tomé mi hora de almuerzo al mediodía.
+  - Ahora: *I'm on my lunch break.* → Estoy en mi hora de almuerzo.
+  - Futuro: *I'll take my lunch break at noon.* → Tomaré mi hora de almuerzo al mediodía.
+- *I have lunch.* → Almuerzo.
+  - Pasado: *I had lunch at 1.* → Almorcé a la 1.
+  - Ahora: *I'm having lunch.* → Estoy almorzando.
+  - Ya: *I've already had lunch.* → Ya almorcé.
+  - Futuro: *I'll have lunch with my coworkers.* → Almorzaré con mis compañeros.
+- *I skip lunch.* → Me salto el almuerzo.
+  - Pasado: *I skipped lunch.* → Me salté el almuerzo.
+  - Ya: *I've skipped lunch today.* → Hoy me he saltado el almuerzo.
+  - Futuro: *I won't skip lunch.* → No me saltaré el almuerzo.
+- *I decide where to eat.* → Decido dónde comer.
+  - Pasado: *I decided where to eat.* → Decidí dónde comer.
+  - Ahora: *I'm deciding where to eat.* → Estoy decidiendo dónde comer.
+  - Futuro: *I'll decide where to eat.* → Decidiré dónde comer.
+- *I ask my coworkers where they want to eat.* → Les pregunto a mis compañeros dónde quieren comer.
+  - Pasado: *I asked my coworkers where they wanted to eat.* → Les pregunté a mis compañeros dónde querían comer.
+  - Ahora: *I'm asking my coworkers where they want to eat.* → Les estoy preguntando a mis compañeros dónde quieren comer.
+  - Futuro: *I'll ask my coworkers where they want to eat.* → Les preguntaré a mis compañeros dónde quieren comer.
+- *I look at the menu.* → Miro el menú.
+  - Pasado: *I looked at the menu.* → Miré el menú.
+  - Ahora: *I'm looking at the menu.* → Estoy mirando el menú.
+  - Futuro: *I'll look at the menu.* → Miraré el menú.
+
+### Almorzar fuera
+- *I go out for lunch.* → Salgo a almorzar.
+  - Pasado: *I went out for lunch.* → Salí a almorzar.
+  - Ahora: *I'm going out for lunch.* → Estoy saliendo a almorzar.
+  - Futuro: *I'll go out for lunch.* → Saldré a almorzar.
+- *I eat at a restaurant.* → Como en un restaurante.
+  - Pasado: *I ate at a restaurant.* → Comí en un restaurante.
+  - Ahora: *I'm eating at a restaurant.* → Estoy comiendo en un restaurante.
+  - Futuro: *I'll eat at a restaurant.* → Comeré en un restaurante.
+- *I eat at the cafeteria.* → Como en la cafetería.
+  - Pasado: *I ate at the cafeteria.* → Comí en la cafetería.
+  - Ahora: *I'm eating at the cafeteria.* → Estoy comiendo en la cafetería.
+  - Futuro: *I'll eat at the cafeteria.* → Comeré en la cafetería.
+- *I wait in line.* → Hago fila.
+  - Pasado: *I waited in line.* → Hice fila.
+  - Ahora: *I'm waiting in line.* → Estoy haciendo fila.
+  - Futuro: *I'll wait in line.* → Haré fila.
+- *I order the set menu.* → Pido el menú del día.
+  - Pasado: *I ordered the set menu.* → Pedí el menú del día.
+  - Ahora: *I'm ordering the set menu.* → Estoy pidiendo el menú del día.
+  - Futuro: *I'll order the set menu.* → Pediré el menú del día.
+- *I order a salad.* → Pido una ensalada.
+  - Pasado: *I ordered a salad.* → Pedí una ensalada.
+  - Ahora: *I'm ordering a salad.* → Estoy pidiendo una ensalada.
+  - Futuro: *I'll order a salad.* → Pediré una ensalada.
+- *I order takeout.* → Pido comida para llevar.
+  - Pasado: *I ordered takeout.* → Pedí comida para llevar.
+  - Ahora: *I'm ordering takeout.* → Estoy pidiendo comida para llevar.
+  - Futuro: *I'll order takeout.* → Pediré comida para llevar.
+- *I order delivery.* → Pido comida a domicilio.
+  - Pasado: *I ordered delivery.* → Pedí comida a domicilio.
+  - Ahora: *I'm ordering delivery.* → Estoy pidiendo comida a domicilio.
+  - Futuro: *I'll order delivery.* → Pediré comida a domicilio.
+- *I pay the bill.* → Pago la cuenta.
+  - Pasado: *I paid the bill.* → Pagué la cuenta.
+  - Ahora: *I'm paying the bill.* → Estoy pagando la cuenta.
+  - Futuro: *I'll pay the bill.* → Pagaré la cuenta.
+- *We split the bill.* → Dividimos la cuenta.
+  - Pasado: *We split the bill yesterday.* → Ayer dividimos la cuenta.
+  - Ahora: *We're splitting the bill.* → Estamos dividiendo la cuenta.
+  - Futuro: *We'll split the bill.* → Dividiremos la cuenta.
+- *I leave a tip.* → Dejo propina.
+  - Pasado: *I left a tip.* → Dejé propina.
+  - Ahora: *I'm leaving a tip.* → Estoy dejando propina.
+  - Futuro: *I'll leave a tip.* → Dejaré propina.
+- *I pick up my order.* → Recojo mi pedido.
+  - Pasado: *I picked up my order.* → Recogí mi pedido.
+  - Ahora: *I'm picking up my order.* → Estoy recogiendo mi pedido.
+  - Futuro: *I'll pick up my order.* → Recogeré mi pedido.
+
+### Llevar comida de casa
+- *I bring my lunch from home.* → Traigo mi almuerzo de casa.
+  - Pasado: *I brought my lunch from home.* → Traje mi almuerzo de casa.
+  - Ya: *I've brought my lunch every day this week.* → He traído mi almuerzo todos los días esta semana.
+  - Futuro: *I'll bring my lunch tomorrow.* → Mañana traeré mi almuerzo.
+- *I pack my lunch.* → Preparo mi almuerzo para llevar.
+  - Pasado: *I packed my lunch last night.* → Preparé mi almuerzo para llevar anoche.
+  - Ahora: *I'm packing my lunch.* → Estoy preparando mi almuerzo para llevar.
+  - Futuro: *I'll pack my lunch tonight.* → Prepararé mi almuerzo para llevar esta noche.
+- *I take my lunchbox out of my bag.* → Saco mi lonchera de la mochila.
+  - Pasado: *I took my lunchbox out of my bag.* → Saqué mi lonchera de la mochila.
+  - Ahora: *I'm taking my lunchbox out of my bag.* → Estoy sacando mi lonchera de la mochila.
+  - Futuro: *I'll take my lunchbox out of my bag.* → Sacaré mi lonchera de la mochila.
+- *I heat my food in the microwave.* → Caliento mi comida en el microondas.
+  - Pasado: *I heated my food in the microwave.* → Calenté mi comida en el microondas.
+  - Ahora: *I'm heating my food in the microwave.* → Estoy calentando mi comida en el microondas.
+  - Futuro: *I'll heat my food in the microwave.* → Calentaré mi comida en el microondas.
+- *I wait for the microwave.* → Espero el microondas.
+  - Pasado: *I waited for the microwave.* → Esperé el microondas.
+  - Ahora: *I'm waiting for the microwave.* → Estoy esperando el microondas.
+  - Futuro: *I'll wait for the microwave.* → Esperaré el microondas.
+- *I eat at my desk.* → Como en mi escritorio.
+  - Pasado: *I ate at my desk.* → Comí en mi escritorio.
+  - Ahora: *I'm eating at my desk.* → Estoy comiendo en mi escritorio.
+  - Futuro: *I'll eat at my desk.* → Comeré en mi escritorio.
+
+### Comer y conversar
+- *I sit with my coworkers.* → Me siento con mis compañeros.
+  - Pasado: *I sat with my coworkers.* → Me senté con mis compañeros.
+  - Ahora: *I'm sitting with my coworkers.* → Estoy sentado con mis compañeros.
+  - Futuro: *I'll sit with my coworkers.* → Me sentaré con mis compañeros.
+- *I chat with my coworkers.* → Converso con mis compañeros.
+  - Pasado: *I chatted with my coworkers.* → Conversé con mis compañeros.
+  - Ahora: *I'm chatting with my coworkers.* → Estoy conversando con mis compañeros.
+  - Futuro: *I'll chat with my coworkers.* → Conversaré con mis compañeros.
+- *I talk about the weekend.* → Hablo del fin de semana.
+  - Pasado: *I talked about the weekend.* → Hablé del fin de semana.
+  - Ahora: *I'm talking about the weekend.* → Estoy hablando del fin de semana.
+  - Futuro: *I'll talk about the weekend.* → Hablaré del fin de semana.
+- *I eat my lunch.* → Me como mi almuerzo.
+  - Pasado: *I ate my lunch.* → Me comí mi almuerzo.
+  - Ahora: *I'm eating my lunch.* → Me estoy comiendo mi almuerzo.
+  - Futuro: *I'll eat my lunch.* → Me comeré mi almuerzo.
+- *I eat a healthy lunch.* → Almuerzo saludable.
+  - Pasado: *I ate a healthy lunch.* → Almorcé saludable.
+  - Ya: *I've eaten a healthy lunch all week.* → He almorzado saludable toda la semana.
+  - Futuro: *I'll eat a healthy lunch.* → Almorzaré saludable.
+- *I eat too much.* → Como demasiado.
+  - Pasado: *I ate too much.* → Comí demasiado.
+  - Ya: *I've eaten too much.* → He comido demasiado.
+  - Futuro: *I'll eat too much if I'm hungry.* → Comeré demasiado si tengo hambre.
+- *I try a new dish.* → Pruebo un plato nuevo.
+  - Pasado: *I tried a new dish.* → Probé un plato nuevo.
+  - Ahora: *I'm trying a new dish.* → Estoy probando un plato nuevo.
+  - Futuro: *I'll try a new dish.* → Probaré un plato nuevo.
+- *I have dessert.* → Como postre.
+  - Pasado: *I had dessert.* → Comí postre.
+  - Ahora: *I'm having dessert.* → Estoy comiendo postre.
+  - Futuro: *I'll have dessert.* → Comeré postre.
+- *I drink a coffee after lunch.* → Tomo un café después del almuerzo.
+  - Pasado: *I drank a coffee after lunch.* → Tomé un café después del almuerzo.
+  - Ahora: *I'm drinking a coffee.* → Estoy tomando un café.
+  - Futuro: *I'll drink a coffee after lunch.* → Tomaré un café después del almuerzo.
+
+### Descansar un momento
+- *I take a short walk after lunch.* → Doy un paseo corto después del almuerzo.
+  - Pasado: *I took a short walk after lunch.* → Di un paseo corto después del almuerzo.
+  - Ahora: *I'm taking a short walk.* → Estoy dando un paseo corto.
+  - Futuro: *I'll take a short walk after lunch.* → Daré un paseo corto después del almuerzo.
+- *I take a nap.* → Echo una siesta.
+  - Pasado: *I took a nap.* → Eché una siesta.
+  - Ahora: *I'm taking a nap.* → Estoy echando una siesta.
+  - Futuro: *I'll take a nap.* → Echaré una siesta.
+- *I relax for a few minutes.* → Me relajo unos minutos.
+  - Pasado: *I relaxed for a few minutes.* → Me relajé unos minutos.
+  - Ahora: *I'm relaxing for a few minutes.* → Me estoy relajando unos minutos.
+  - Futuro: *I'll relax for a few minutes.* → Me relajaré unos minutos.
+- *I scroll on my phone.* → Navego en mi teléfono.
+  - Pasado: *I scrolled on my phone.* → Navegué en mi teléfono.
+  - Ahora: *I'm scrolling on my phone.* → Estoy navegando en mi teléfono.
+  - Futuro: *I'll scroll on my phone.* → Navegaré en mi teléfono.
+- *I call my family.* → Llamo a mi familia.
+  - Pasado: *I called my family.* → Llamé a mi familia.
+  - Ahora: *I'm calling my family.* → Estoy llamando a mi familia.
+  - Futuro: *I'll call my family.* → Llamaré a mi familia.
+- *I brush my teeth after lunch.* → Me cepillo los dientes después del almuerzo.
+  - Pasado: *I brushed my teeth after lunch.* → Me cepillé los dientes después del almuerzo.
+  - Ahora: *I'm brushing my teeth.* → Me estoy cepillando los dientes.
+  - Futuro: *I'll brush my teeth after lunch.* → Me cepillaré los dientes después del almuerzo.
+- *My lunch break is over.* → Mi hora de almuerzo ha terminado.
+  - Pasado: *My lunch break was over.* → Mi hora de almuerzo ya había terminado.
+  - Ya: *My lunch break has just ended.* → Mi hora de almuerzo acaba de terminar.
+  - Futuro: *My lunch break will be over soon.* → Mi hora de almuerzo terminará pronto.
+- *I head back to the office.* → Regreso a la oficina.
+  - Pasado: *I headed back to the office.* → Regresé a la oficina.
+  - Ahora: *I'm heading back to the office.* → Estoy regresando a la oficina.
+  - Futuro: *I'll head back to the office.* → Regresaré a la oficina.
+
+## 7. Tarde en el trabajo
+
+### Retomar las tareas
+- *I get back to work.* → Vuelvo al trabajo.
+  - Pasado: *I got back to work.* → Volví al trabajo.
+  - Ahora: *I'm getting back to work.* → Estoy volviendo al trabajo.
+  - Futuro: *I'll get back to work.* → Volveré al trabajo.
+- *I pick up where I left off.* → Retomo donde lo dejé.
+  - Pasado: *I picked up where I left off.* → Retomé donde lo dejé.
+  - Ahora: *I'm picking up where I left off.* → Estoy retomando donde lo dejé.
+  - Futuro: *I'll pick up where I left off.* → Retomaré donde lo dejé.
+- *I feel sleepy after lunch.* → Me da sueño después del almuerzo.
+  - Pasado: *I felt sleepy after lunch.* → Me dio sueño después del almuerzo.
+  - Ahora: *I'm feeling sleepy.* → Me está dando sueño.
+  - Futuro: *I'll feel sleepy after lunch.* → Me dará sueño después del almuerzo.
+- *I hit a slump in the afternoon.* → Me baja la energía por la tarde.
+  - Pasado: *I hit a slump in the afternoon.* → Me bajó la energía por la tarde.
+  - Ahora: *I'm hitting a slump.* → Me está bajando la energía.
+  - Futuro: *I'll hit a slump around 3.* → Me bajará la energía hacia las 3.
+- *I drink another coffee.* → Tomo otro café.
+  - Pasado: *I drank another coffee.* → Tomé otro café.
+  - Ahora: *I'm drinking another coffee.* → Estoy tomando otro café.
+  - Futuro: *I'll drink another coffee.* → Tomaré otro café.
+- *I stay productive.* → Me mantengo productivo.
+  - Pasado: *I stayed productive.* → Me mantuve productivo.
+  - Ahora: *I'm staying productive.* → Me estoy manteniendo productivo.
+  - Futuro: *I'll stay productive.* → Me mantendré productivo.
+- *I have a busy afternoon.* → Tengo una tarde ocupada.
+  - Pasado: *I had a busy afternoon.* → Tuve una tarde ocupada.
+  - Ya: *I've had a busy afternoon.* → He tenido una tarde ocupada.
+  - Futuro: *I'll have a busy afternoon.* → Tendré una tarde ocupada.
+- *I have a quiet afternoon.* → Tengo una tarde tranquila.
+  - Pasado: *I had a quiet afternoon.* → Tuve una tarde tranquila.
+  - Ya: *I've had a quiet afternoon.* → He tenido una tarde tranquila.
+  - Futuro: *I'll have a quiet afternoon.* → Tendré una tarde tranquila.
+
+### Cerrar pendientes
+- *I finish my tasks.* → Termino mis tareas.
+  - Pasado: *I finished my tasks.* → Terminé mis tareas.
+  - Ahora: *I'm finishing my tasks.* → Estoy terminando mis tareas.
+  - Ya: *I've finished all my tasks.* → He terminado todas mis tareas.
+  - Futuro: *I'll finish my tasks before 5.* → Terminaré mis tareas antes de las 5.
+- *I wrap up my work.* → Termino de ordenar mi trabajo.
+  - Pasado: *I wrapped up my work.* → Terminé de ordenar mi trabajo.
+  - Ahora: *I'm wrapping up my work.* → Estoy terminando de ordenar mi trabajo.
+  - Futuro: *I'll wrap up my work.* → Terminaré de ordenar mi trabajo.
+- *I submit my report.* → Entrego mi informe.
+  - Pasado: *I submitted my report.* → Entregué mi informe.
+  - Ahora: *I'm submitting my report.* → Estoy entregando mi informe.
+  - Ya: *I've submitted my report.* → Ya entregué mi informe.
+  - Futuro: *I'll submit my report.* → Entregaré mi informe.
+- *I send a final email.* → Envío un último correo.
+  - Pasado: *I sent a final email.* → Envié un último correo.
+  - Ahora: *I'm sending a final email.* → Estoy enviando un último correo.
+  - Futuro: *I'll send a final email.* → Enviaré un último correo.
+- *I answer the last messages.* → Respondo los últimos mensajes.
+  - Pasado: *I answered the last messages.* → Respondí los últimos mensajes.
+  - Ahora: *I'm answering the last messages.* → Estoy respondiendo los últimos mensajes.
+  - Futuro: *I'll answer the last messages.* → Responderé los últimos mensajes.
+- *I save my files.* → Guardo mis archivos.
+  - Pasado: *I saved my files.* → Guardé mis archivos.
+  - Ahora: *I'm saving my files.* → Estoy guardando mis archivos.
+  - Futuro: *I'll save my files.* → Guardaré mis archivos.
+- *I back up my work.* → Hago una copia de seguridad de mi trabajo.
+  - Pasado: *I backed up my work.* → Hice una copia de seguridad de mi trabajo.
+  - Ahora: *I'm backing up my work.* → Estoy haciendo una copia de seguridad de mi trabajo.
+  - Futuro: *I'll back up my work.* → Haré una copia de seguridad de mi trabajo.
+- *I leave something for tomorrow.* → Dejo algo para mañana.
+  - Pasado: *I left something for tomorrow.* → Dejé algo para mañana.
+  - Ahora: *I'm leaving something for tomorrow.* → Estoy dejando algo para mañana.
+  - Futuro: *I'll leave it for tomorrow.* → Lo dejaré para mañana.
+- *I hand over my work to a coworker.* → Le paso mi trabajo a un compañero.
+  - Pasado: *I handed over my work to a coworker.* → Le pasé mi trabajo a un compañero.
+  - Ahora: *I'm handing over my work to a coworker.* → Le estoy pasando mi trabajo a un compañero.
+  - Futuro: *I'll hand over my work to a coworker.* → Le pasaré mi trabajo a un compañero.
+
+### Planear el día siguiente
+- *I plan tomorrow's tasks.* → Planifico las tareas de mañana.
+  - Pasado: *I planned tomorrow's tasks.* → Planifiqué las tareas de mañana.
+  - Ahora: *I'm planning tomorrow's tasks.* → Estoy planificando las tareas de mañana.
+  - Futuro: *I'll plan tomorrow's tasks.* → Planificaré las tareas de mañana.
+- *I update my to-do list.* → Actualizo mi lista de tareas.
+  - Pasado: *I updated my to-do list.* → Actualicé mi lista de tareas.
+  - Ahora: *I'm updating my to-do list.* → Estoy actualizando mi lista de tareas.
+  - Futuro: *I'll update my to-do list.* → Actualizaré mi lista de tareas.
+- *I set a reminder.* → Pongo un recordatorio.
+  - Pasado: *I set a reminder.* → Puse un recordatorio.
+  - Ahora: *I'm setting a reminder.* → Estoy poniendo un recordatorio.
+  - Futuro: *I'll set a reminder.* → Pondré un recordatorio.
+- *I schedule a meeting for tomorrow.* → Programo una reunión para mañana.
+  - Pasado: *I scheduled a meeting for tomorrow.* → Programé una reunión para mañana.
+  - Ahora: *I'm scheduling a meeting for tomorrow.* → Estoy programando una reunión para mañana.
+  - Futuro: *I'll schedule a meeting for tomorrow.* → Programaré una reunión para mañana.
+- *I check tomorrow's calendar.* → Reviso el calendario de mañana.
+  - Pasado: *I checked tomorrow's calendar.* → Revisé el calendario de mañana.
+  - Ahora: *I'm checking tomorrow's calendar.* → Estoy revisando el calendario de mañana.
+  - Futuro: *I'll check tomorrow's calendar.* → Revisaré el calendario de mañana.
+
+### Terminar la jornada
+- *I tidy up my desk.* → Ordeno mi escritorio.
+  - Pasado: *I tidied up my desk.* → Ordené mi escritorio.
+  - Ahora: *I'm tidying up my desk.* → Estoy ordenando mi escritorio.
+  - Futuro: *I'll tidy up my desk.* → Ordenaré mi escritorio.
+- *I log out of my computer.* → Cierro sesión en mi computadora.
+  - Pasado: *I logged out of my computer.* → Cerré sesión en mi computadora.
+  - Ahora: *I'm logging out of my computer.* → Estoy cerrando sesión en mi computadora.
+  - Futuro: *I'll log out of my computer.* → Cerraré sesión en mi computadora.
+- *I shut down my computer.* → Apago mi computadora.
+  - Pasado: *I shut down my computer.* → Apagué mi computadora.
+  - Ahora: *I'm shutting down my computer.* → Estoy apagando mi computadora.
+  - Futuro: *I'll shut down my computer.* → Apagaré mi computadora.
+- *I clock out.* → Marco mi salida.
+  - Pasado: *I clocked out at 5.* → Marqué mi salida a las 5.
+  - Ahora: *I'm clocking out.* → Estoy marcando mi salida.
+  - Ya: *I've already clocked out.* → Ya marqué mi salida.
+  - Futuro: *I'll clock out at 5.* → Marcaré mi salida a las 5.
+- *I say goodbye to my coworkers.* → Me despido de mis compañeros.
+  - Pasado: *I said goodbye to my coworkers.* → Me despedí de mis compañeros.
+  - Ahora: *I'm saying goodbye to my coworkers.* → Me estoy despidiendo de mis compañeros.
+  - Futuro: *I'll say goodbye to my coworkers.* → Me despediré de mis compañeros.
+- *I say "see you tomorrow."* → Digo "nos vemos mañana".
+  - Pasado: *I said "see you tomorrow."* → Dije "nos vemos mañana".
+  - Ahora: *I'm saying "see you tomorrow."* → Estoy diciendo "nos vemos mañana".
+  - Futuro: *I'll say "see you tomorrow."* → Diré "nos vemos mañana".
+- *I leave the office.* → Salgo de la oficina.
+  - Pasado: *I left the office at 5:30.* → Salí de la oficina a las 5:30.
+  - Ahora: *I'm leaving the office.* → Estoy saliendo de la oficina.
+  - Ya: *I've just left the office.* → Acabo de salir de la oficina.
+  - Futuro: *I'll leave the office at 5:30.* → Saldré de la oficina a las 5:30.
+- *I leave work on time.* → Salgo del trabajo a tiempo.
+  - Pasado: *I left work on time.* → Salí del trabajo a tiempo.
+  - Ya: *I've left work on time all week.* → He salido del trabajo a tiempo toda la semana.
+  - Futuro: *I'll leave work on time.* → Saldré del trabajo a tiempo.
+- *I stay late at work.* → Me quedo hasta tarde en el trabajo.
+  - Pasado: *I stayed late at work.* → Me quedé hasta tarde en el trabajo.
+  - Ahora: *I'm staying late at work.* → Me estoy quedando hasta tarde en el trabajo.
+  - Ya: *I've stayed late every day this week.* → Me he quedado hasta tarde todos los días esta semana.
+  - Futuro: *I'll stay late tomorrow.* → Mañana me quedaré hasta tarde.
+- *My workday is over.* → Mi jornada ha terminado.
+  - Pasado: *My workday was over at 5.* → Mi jornada terminó a las 5.
+  - Ya: *My workday has just ended.* → Mi jornada acaba de terminar.
+  - Futuro: *My workday will be over soon.* → Mi jornada terminará pronto.
+
+## 8. Regreso a casa
+
+### Volver a casa
+- *I head home.* → Me voy a casa.
+  - Pasado: *I headed home.* → Me fui a casa.
+  - Ahora: *I'm heading home.* → Me estoy yendo a casa.
+  - Futuro: *I'll head home at 5.* → Me iré a casa a las 5.
+- *I go home after work.* → Voy a casa después del trabajo.
+  - Pasado: *I went home after work.* → Fui a casa después del trabajo.
+  - Ahora: *I'm going home.* → Voy a casa.
+  - Futuro: *I'll go home after work.* → Iré a casa después del trabajo.
+- *I take the bus home.* → Tomo el bus a casa.
+  - Pasado: *I took the bus home.* → Tomé el bus a casa.
+  - Ahora: *I'm taking the bus home.* → Estoy tomando el bus a casa.
+  - Futuro: *I'll take the bus home.* → Tomaré el bus a casa.
+- *I take the subway home.* → Tomo el metro a casa.
+  - Pasado: *I took the subway home.* → Tomé el metro a casa.
+  - Ahora: *I'm taking the subway home.* → Estoy tomando el metro a casa.
+  - Futuro: *I'll take the subway home.* → Tomaré el metro a casa.
+- *I drive home.* → Voy en carro a casa.
+  - Pasado: *I drove home.* → Fui en carro a casa.
+  - Ahora: *I'm driving home.* → Voy conduciendo a casa.
+  - Futuro: *I'll drive home.* → Iré en carro a casa.
+- *I walk home.* → Voy caminando a casa.
+  - Pasado: *I walked home.* → Fui caminando a casa.
+  - Ahora: *I'm walking home.* → Voy caminando a casa.
+  - Futuro: *I'll walk home.* → Iré caminando a casa.
+- *I get a ride home.* → Me llevan a casa.
+  - Pasado: *I got a ride home.* → Me llevaron a casa.
+  - Ahora: *I'm getting a ride home.* → Me están llevando a casa.
+  - Futuro: *I'll get a ride home.* → Me llevarán a casa.
+- *I give a coworker a ride home.* → Llevo a un compañero a su casa.
+  - Pasado: *I gave a coworker a ride home.* → Llevé a un compañero a su casa.
+  - Ahora: *I'm giving a coworker a ride home.* → Estoy llevando a un compañero a su casa.
+  - Futuro: *I'll give a coworker a ride home.* → Llevaré a un compañero a su casa.
+- *I get stuck in rush-hour traffic.* → Me quedo atascado en el tráfico de la hora pico.
+  - Pasado: *I got stuck in rush-hour traffic.* → Me quedé atascado en el tráfico de la hora pico.
+  - Ahora: *I'm stuck in rush-hour traffic.* → Estoy atascado en el tráfico de la hora pico.
+  - Futuro: *I'll get stuck in rush-hour traffic.* → Me quedaré atascado en el tráfico de la hora pico.
+- *I listen to music on the way home.* → Escucho música de camino a casa.
+  - Pasado: *I listened to music on the way home.* → Escuché música de camino a casa.
+  - Ahora: *I'm listening to music.* → Estoy escuchando música.
+  - Futuro: *I'll listen to music on the way home.* → Escucharé música de camino a casa.
+- *I call my family on the way home.* → Llamo a mi familia de camino a casa.
+  - Pasado: *I called my family on the way home.* → Llamé a mi familia de camino a casa.
+  - Ahora: *I'm calling my family.* → Estoy llamando a mi familia.
+  - Futuro: *I'll call my family on the way home.* → Llamaré a mi familia de camino a casa.
+- *I unwind on the way home.* → Me desconecto de camino a casa.
+  - Pasado: *I unwound on the way home.* → Me desconecté de camino a casa.
+  - Ahora: *I'm unwinding.* → Me estoy desconectando.
+  - Futuro: *I'll unwind on the way home.* → Me desconectaré de camino a casa.
+
+### Compras y diligencias
+- *I stop by the supermarket.* → Paso por el supermercado.
+  - Pasado: *I stopped by the supermarket.* → Pasé por el supermercado.
+  - Ahora: *I'm stopping by the supermarket.* → Estoy pasando por el supermercado.
+  - Futuro: *I'll stop by the supermarket.* → Pasaré por el supermercado.
+- *I do the grocery shopping.* → Hago las compras del supermercado.
+  - Pasado: *I did the grocery shopping.* → Hice las compras del supermercado.
+  - Ahora: *I'm doing the grocery shopping.* → Estoy haciendo las compras del supermercado.
+  - Ya: *I've already done the grocery shopping.* → Ya hice las compras del supermercado.
+  - Futuro: *I'll do the grocery shopping.* → Haré las compras del supermercado.
+- *I make a shopping list.* → Hago una lista de compras.
+  - Pasado: *I made a shopping list.* → Hice una lista de compras.
+  - Ahora: *I'm making a shopping list.* → Estoy haciendo una lista de compras.
+  - Futuro: *I'll make a shopping list.* → Haré una lista de compras.
+- *I push a shopping cart.* → Empujo un carrito de compras.
+  - Pasado: *I pushed a shopping cart.* → Empujé un carrito de compras.
+  - Ahora: *I'm pushing a shopping cart.* → Estoy empujando un carrito de compras.
+  - Futuro: *I'll push a shopping cart.* → Empujaré un carrito de compras.
+- *I buy fruit and vegetables.* → Compro frutas y verduras.
+  - Pasado: *I bought fruit and vegetables.* → Compré frutas y verduras.
+  - Ahora: *I'm buying fruit and vegetables.* → Estoy comprando frutas y verduras.
+  - Futuro: *I'll buy fruit and vegetables.* → Compraré frutas y verduras.
+- *I buy bread and milk.* → Compro pan y leche.
+  - Pasado: *I bought bread and milk.* → Compré pan y leche.
+  - Ahora: *I'm buying bread and milk.* → Estoy comprando pan y leche.
+  - Futuro: *I'll buy bread and milk.* → Compraré pan y leche.
+- *I run out of milk.* → Se me acaba la leche.
+  - Pasado: *I ran out of milk.* → Se me acabó la leche.
+  - Ya: *I've run out of milk.* → Se me ha acabado la leche.
+  - Futuro: *I'll run out of milk.* → Se me acabará la leche.
+- *I stand in line at the checkout.* → Hago fila en la caja.
+  - Pasado: *I stood in line at the checkout.* → Hice fila en la caja.
+  - Ahora: *I'm standing in line at the checkout.* → Estoy haciendo fila en la caja.
+  - Futuro: *I'll stand in line at the checkout.* → Haré fila en la caja.
+- *I pay by card.* → Pago con tarjeta.
+  - Pasado: *I paid by card.* → Pagué con tarjeta.
+  - Ahora: *I'm paying by card.* → Estoy pagando con tarjeta.
+  - Futuro: *I'll pay by card.* → Pagaré con tarjeta.
+- *I pay in cash.* → Pago en efectivo.
+  - Pasado: *I paid in cash.* → Pagué en efectivo.
+  - Ahora: *I'm paying in cash.* → Estoy pagando en efectivo.
+  - Futuro: *I'll pay in cash.* → Pagaré en efectivo.
+- *I carry the grocery bags.* → Cargo las bolsas del supermercado.
+  - Pasado: *I carried the grocery bags.* → Cargué las bolsas del supermercado.
+  - Ahora: *I'm carrying the grocery bags.* → Estoy cargando las bolsas del supermercado.
+  - Futuro: *I'll carry the grocery bags.* → Cargaré las bolsas del supermercado.
+- *I go to the pharmacy.* → Voy a la farmacia.
+  - Pasado: *I went to the pharmacy.* → Fui a la farmacia.
+  - Ahora: *I'm going to the pharmacy.* → Estoy yendo a la farmacia.
+  - Futuro: *I'll go to the pharmacy.* → Iré a la farmacia.
+- *I pick up a prescription.* → Recojo una receta médica.
+  - Pasado: *I picked up a prescription.* → Recogí una receta médica.
+  - Ahora: *I'm picking up a prescription.* → Estoy recogiendo una receta médica.
+  - Futuro: *I'll pick up a prescription.* → Recogeré una receta médica.
+- *I go to the bank.* → Voy al banco.
+  - Pasado: *I went to the bank.* → Fui al banco.
+  - Ahora: *I'm going to the bank.* → Estoy yendo al banco.
+  - Futuro: *I'll go to the bank.* → Iré al banco.
+- *I withdraw some cash.* → Retiro algo de efectivo.
+  - Pasado: *I withdrew some cash.* → Retiré algo de efectivo.
+  - Ahora: *I'm withdrawing some cash.* → Estoy retirando algo de efectivo.
+  - Futuro: *I'll withdraw some cash.* → Retiraré algo de efectivo.
+- *I go to the post office.* → Voy a la oficina de correos.
+  - Pasado: *I went to the post office.* → Fui a la oficina de correos.
+  - Ahora: *I'm going to the post office.* → Estoy yendo a la oficina de correos.
+  - Futuro: *I'll go to the post office.* → Iré a la oficina de correos.
+- *I mail a package.* → Envío un paquete.
+  - Pasado: *I mailed a package.* → Envié un paquete.
+  - Ahora: *I'm mailing a package.* → Estoy enviando un paquete.
+  - Futuro: *I'll mail a package.* → Enviaré un paquete.
+- *I pick up a package.* → Recojo un paquete.
+  - Pasado: *I picked up a package.* → Recogí un paquete.
+  - Ahora: *I'm picking up a package.* → Estoy recogiendo un paquete.
+  - Futuro: *I'll pick up a package.* → Recogeré un paquete.
+- *I get gas.* → Pongo gasolina.
+  - Pasado: *I got gas.* → Puse gasolina.
+  - Ahora: *I'm getting gas.* → Estoy poniendo gasolina.
+  - Futuro: *I'll get gas.* → Pondré gasolina.
+- *I run some errands.* → Hago algunas diligencias.
+  - Pasado: *I ran some errands.* → Hice algunas diligencias.
+  - Ahora: *I'm running some errands.* → Estoy haciendo algunas diligencias.
+  - Ya: *I've run all my errands.* → Ya hice todas mis diligencias.
+  - Futuro: *I'll run some errands.* → Haré algunas diligencias.
+- *I pick up the kids from school.* → Recojo a los niños del colegio.
+  - Pasado: *I picked up the kids from school.* → Recogí a los niños del colegio.
+  - Ahora: *I'm picking up the kids from school.* → Estoy recogiendo a los niños del colegio.
+  - Futuro: *I'll pick up the kids from school.* → Recogeré a los niños del colegio.
+
+### Llegar a casa
+- *I get home at 6.* → Llego a casa a las 6.
+  - Pasado: *I got home at 6.* → Llegué a casa a las 6.
+  - Ya: *I've just gotten home.* → Acabo de llegar a casa.
+  - Futuro: *I'll get home at 6.* → Llegaré a casa a las 6.
+- *I arrive home exhausted.* → Llego a casa agotado.
+  - Pasado: *I arrived home exhausted.* → Llegué a casa agotado.
+  - Ya: *I've arrived home exhausted every day.* → He llegado a casa agotado todos los días.
+  - Futuro: *I'll arrive home exhausted.* → Llegaré a casa agotado.
+- *I unlock the door.* → Abro la puerta con llave.
+  - Pasado: *I unlocked the door.* → Abrí la puerta con llave.
+  - Ahora: *I'm unlocking the door.* → Estoy abriendo la puerta con llave.
+  - Futuro: *I'll unlock the door.* → Abriré la puerta con llave.
+- *I walk in.* → Entro.
+  - Pasado: *I walked in.* → Entré.
+  - Ahora: *I'm walking in.* → Estoy entrando.
+  - Futuro: *I'll walk in.* → Entraré.
+- *I take off my shoes.* → Me quito los zapatos.
+  - Pasado: *I took off my shoes.* → Me quité los zapatos.
+  - Ahora: *I'm taking off my shoes.* → Me estoy quitando los zapatos.
+  - Futuro: *I'll take off my shoes.* → Me quitaré los zapatos.
+- *I hang up my jacket.* → Cuelgo mi chaqueta.
+  - Pasado: *I hung up my jacket.* → Colgué mi chaqueta.
+  - Ahora: *I'm hanging up my jacket.* → Estoy colgando mi chaqueta.
+  - Futuro: *I'll hang up my jacket.* → Colgaré mi chaqueta.
+- *I put my bag down.* → Dejo mi bolso.
+  - Pasado: *I put my bag down.* → Dejé mi bolso.
+  - Ahora: *I'm putting my bag down.* → Estoy dejando mi bolso.
+  - Futuro: *I'll put my bag down.* → Dejaré mi bolso.
+- *I put my keys on the table.* → Dejo mis llaves en la mesa.
+  - Pasado: *I put my keys on the table.* → Dejé mis llaves en la mesa.
+  - Ahora: *I'm putting my keys on the table.* → Estoy dejando mis llaves en la mesa.
+  - Futuro: *I'll put my keys on the table.* → Dejaré mis llaves en la mesa.
+- *I greet my family.* → Saludo a mi familia.
+  - Pasado: *I greeted my family.* → Saludé a mi familia.
+  - Ahora: *I'm greeting my family.* → Estoy saludando a mi familia.
+  - Futuro: *I'll greet my family.* → Saludaré a mi familia.
+- *I ask my family about their day.* → Le pregunto a mi familia cómo les fue el día.
+  - Pasado: *I asked my family about their day.* → Le pregunté a mi familia cómo les fue el día.
+  - Ahora: *I'm asking my family about their day.* → Le estoy preguntando a mi familia cómo les fue el día.
+  - Futuro: *I'll ask my family about their day.* → Le preguntaré a mi familia cómo les fue el día.
+- *I change into comfortable clothes.* → Me pongo ropa cómoda.
+  - Pasado: *I changed into comfortable clothes.* → Me puse ropa cómoda.
+  - Ahora: *I'm changing into comfortable clothes.* → Me estoy poniendo ropa cómoda.
+  - Ya: *I've already changed into comfortable clothes.* → Ya me puse ropa cómoda.
+  - Futuro: *I'll change into comfortable clothes.* → Me pondré ropa cómoda.
+- *I put on my pajamas.* → Me pongo el pijama.
+  - Pasado: *I put on my pajamas.* → Me puse el pijama.
+  - Ahora: *I'm putting on my pajamas.* → Me estoy poniendo el pijama.
+  - Futuro: *I'll put on my pajamas.* → Me pondré el pijama.
+- *I put away the groceries.* → Guardo las compras.
+  - Pasado: *I put away the groceries.* → Guardé las compras.
+  - Ahora: *I'm putting away the groceries.* → Estoy guardando las compras.
+  - Futuro: *I'll put away the groceries.* → Guardaré las compras.
+- *I relax on the couch.* → Me relajo en el sofá.
+  - Pasado: *I relaxed on the couch.* → Me relajé en el sofá.
+  - Ahora: *I'm relaxing on the couch.* → Me estoy relajando en el sofá.
+  - Futuro: *I'll relax on the couch.* → Me relajaré en el sofá.
+
+## 9. Tarde-noche en casa
+
+### Tareas domésticas
+- *I do the housework.* → Hago las tareas del hogar.
+  - Pasado: *I did the housework.* → Hice las tareas del hogar.
+  - Ahora: *I'm doing the housework.* → Estoy haciendo las tareas del hogar.
+  - Ya: *I've done all the housework.* → Ya hice todas las tareas del hogar.
+  - Futuro: *I'll do the housework.* → Haré las tareas del hogar.
+- *I clean the house.* → Limpio la casa.
+  - Pasado: *I cleaned the house.* → Limpié la casa.
+  - Ahora: *I'm cleaning the house.* → Estoy limpiando la casa.
+  - Ya: *I've already cleaned the house.* → Ya limpié la casa.
+  - Futuro: *I'll clean the house on Saturday.* → Limpiaré la casa el sábado.
+- *I vacuum the living room.* → Paso la aspiradora por la sala.
+  - Pasado: *I vacuumed the living room.* → Pasé la aspiradora por la sala.
+  - Ahora: *I'm vacuuming the living room.* → Estoy pasando la aspiradora por la sala.
+  - Futuro: *I'll vacuum the living room.* → Pasaré la aspiradora por la sala.
+- *I sweep the floor.* → Barro el piso.
+  - Pasado: *I swept the floor.* → Barrí el piso.
+  - Ahora: *I'm sweeping the floor.* → Estoy barriendo el piso.
+  - Futuro: *I'll sweep the floor.* → Barreré el piso.
+- *I mop the floor.* → Trapeo el piso.
+  - Pasado: *I mopped the floor.* → Trapeé el piso.
+  - Ahora: *I'm mopping the floor.* → Estoy trapeando el piso.
+  - Futuro: *I'll mop the floor.* → Trapearé el piso.
+- *I dust the furniture.* → Quito el polvo de los muebles.
+  - Pasado: *I dusted the furniture.* → Quité el polvo de los muebles.
+  - Ahora: *I'm dusting the furniture.* → Estoy quitando el polvo de los muebles.
+  - Futuro: *I'll dust the furniture.* → Quitaré el polvo de los muebles.
+- *I clean the bathroom.* → Limpio el baño.
+  - Pasado: *I cleaned the bathroom.* → Limpié el baño.
+  - Ahora: *I'm cleaning the bathroom.* → Estoy limpiando el baño.
+  - Futuro: *I'll clean the bathroom.* → Limpiaré el baño.
+- *I do the laundry.* → Lavo la ropa.
+  - Pasado: *I did the laundry.* → Lavé la ropa.
+  - Ahora: *I'm doing the laundry.* → Estoy lavando la ropa.
+  - Ya: *I've already done the laundry.* → Ya lavé la ropa.
+  - Futuro: *I'll do the laundry tomorrow.* → Lavaré la ropa mañana.
+- *I put the clothes in the washing machine.* → Pongo la ropa en la lavadora.
+  - Pasado: *I put the clothes in the washing machine.* → Puse la ropa en la lavadora.
+  - Ahora: *I'm putting the clothes in the washing machine.* → Estoy poniendo la ropa en la lavadora.
+  - Futuro: *I'll put the clothes in the washing machine.* → Pondré la ropa en la lavadora.
+- *I hang the clothes out to dry.* → Tiendo la ropa para que se seque.
+  - Pasado: *I hung the clothes out to dry.* → Tendí la ropa para que se secara.
+  - Ahora: *I'm hanging the clothes out to dry.* → Estoy tendiendo la ropa para que se seque.
+  - Futuro: *I'll hang the clothes out to dry.* → Tenderé la ropa para que se seque.
+- *I fold the clothes.* → Doblo la ropa.
+  - Pasado: *I folded the clothes.* → Doblé la ropa.
+  - Ahora: *I'm folding the clothes.* → Estoy doblando la ropa.
+  - Futuro: *I'll fold the clothes.* → Doblaré la ropa.
+- *I put the clothes away.* → Guardo la ropa.
+  - Pasado: *I put the clothes away.* → Guardé la ropa.
+  - Ahora: *I'm putting the clothes away.* → Estoy guardando la ropa.
+  - Futuro: *I'll put the clothes away.* → Guardaré la ropa.
+- *I iron the clothes.* → Plancho la ropa.
+  - Pasado: *I ironed the clothes.* → Planché la ropa.
+  - Ahora: *I'm ironing the clothes.* → Estoy planchando la ropa.
+  - Futuro: *I'll iron the clothes.* → Plancharé la ropa.
+- *I water the plants.* → Riego las plantas.
+  - Pasado: *I watered the plants.* → Regué las plantas.
+  - Ahora: *I'm watering the plants.* → Estoy regando las plantas.
+  - Futuro: *I'll water the plants.* → Regaré las plantas.
+- *I take out the trash.* → Saco la basura.
+  - Pasado: *I took out the trash.* → Saqué la basura.
+  - Ahora: *I'm taking out the trash.* → Estoy sacando la basura.
+  - Futuro: *I'll take out the trash tonight.* → Sacaré la basura esta noche.
+- *I tidy up the house.* → Ordeno la casa.
+  - Pasado: *I tidied up the house.* → Ordené la casa.
+  - Ahora: *I'm tidying up the house.* → Estoy ordenando la casa.
+  - Futuro: *I'll tidy up the house.* → Ordenaré la casa.
+- *I fix something at home.* → Arreglo algo en casa.
+  - Pasado: *I fixed something at home.* → Arreglé algo en casa.
+  - Ahora: *I'm fixing something at home.* → Estoy arreglando algo en casa.
+  - Futuro: *I'll fix it this weekend.* → Lo arreglaré este fin de semana.
+
+### Ejercicio
+- *I go to the gym.* → Voy al gimnasio.
+  - Pasado: *I went to the gym.* → Fui al gimnasio.
+  - Ahora: *I'm going to the gym.* → Estoy yendo al gimnasio.
+  - Ya: *I've gone to the gym three times this week.* → He ido al gimnasio tres veces esta semana.
+  - Futuro: *I'll go to the gym after work.* → Iré al gimnasio después del trabajo.
+- *I work out.* → Hago ejercicio.
+  - Pasado: *I worked out for an hour.* → Hice ejercicio durante una hora.
+  - Ahora: *I'm working out.* → Estoy haciendo ejercicio.
+  - Ya: *I've worked out every day this week.* → He hecho ejercicio todos los días esta semana.
+  - Futuro: *I'll work out tonight.* → Haré ejercicio esta noche.
+- *I lift weights.* → Levanto pesas.
+  - Pasado: *I lifted weights.* → Levanté pesas.
+  - Ahora: *I'm lifting weights.* → Estoy levantando pesas.
+  - Futuro: *I'll lift weights.* → Levantaré pesas.
+- *I go for a run.* → Salgo a correr.
+  - Pasado: *I went for a run.* → Salí a correr.
+  - Ahora: *I'm going for a run.* → Estoy saliendo a correr.
+  - Ya: *I've just gone for a run.* → Acabo de salir a correr.
+  - Futuro: *I'll go for a run.* → Saldré a correr.
+- *I run five kilometers.* → Corro cinco kilómetros.
+  - Pasado: *I ran five kilometers.* → Corrí cinco kilómetros.
+  - Ahora: *I'm running five kilometers.* → Estoy corriendo cinco kilómetros.
+  - Futuro: *I'll run five kilometers.* → Correré cinco kilómetros.
+- *I do yoga.* → Hago yoga.
+  - Pasado: *I did yoga.* → Hice yoga.
+  - Ahora: *I'm doing yoga.* → Estoy haciendo yoga.
+  - Futuro: *I'll do yoga.* → Haré yoga.
+- *I ride my bike around the neighborhood.* → Doy una vuelta en bicicleta por el barrio.
+  - Pasado: *I rode my bike around the neighborhood.* → Di una vuelta en bicicleta por el barrio.
+  - Ahora: *I'm riding my bike around the neighborhood.* → Estoy dando una vuelta en bicicleta por el barrio.
+  - Futuro: *I'll ride my bike around the neighborhood.* → Daré una vuelta en bicicleta por el barrio.
+- *I take a walk after dinner.* → Doy un paseo después de la cena.
+  - Pasado: *I took a walk after dinner.* → Di un paseo después de la cena.
+  - Ahora: *I'm taking a walk.* → Estoy dando un paseo.
+  - Futuro: *I'll take a walk after dinner.* → Daré un paseo después de la cena.
+- *I stretch after my workout.* → Estiro después de entrenar.
+  - Pasado: *I stretched after my workout.* → Estiré después de entrenar.
+  - Ahora: *I'm stretching after my workout.* → Estoy estirando después de entrenar.
+  - Futuro: *I'll stretch after my workout.* → Estiraré después de entrenar.
+- *I sweat a lot.* → Sudo mucho.
+  - Pasado: *I sweated a lot.* → Sudé mucho.
+  - Ahora: *I'm sweating a lot.* → Estoy sudando mucho.
+  - Futuro: *I'll sweat a lot.* → Sudaré mucho.
+- *I take a shower after my workout.* → Me ducho después de entrenar.
+  - Pasado: *I took a shower after my workout.* → Me duché después de entrenar.
+  - Ahora: *I'm taking a shower.* → Me estoy duchando.
+  - Futuro: *I'll take a shower after my workout.* → Me ducharé después de entrenar.
+
+### Tiempo con familia y amigos
+- *I spend time with my family.* → Paso tiempo con mi familia.
+  - Pasado: *I spent time with my family.* → Pasé tiempo con mi familia.
+  - Ahora: *I'm spending time with my family.* → Estoy pasando tiempo con mi familia.
+  - Futuro: *I'll spend time with my family.* → Pasaré tiempo con mi familia.
+- *I help my kids with their homework.* → Ayudo a mis hijos con la tarea.
+  - Pasado: *I helped my kids with their homework.* → Ayudé a mis hijos con la tarea.
+  - Ahora: *I'm helping my kids with their homework.* → Estoy ayudando a mis hijos con la tarea.
+  - Futuro: *I'll help my kids with their homework.* → Ayudaré a mis hijos con la tarea.
+- *I play with my kids.* → Juego con mis hijos.
+  - Pasado: *I played with my kids.* → Jugué con mis hijos.
+  - Ahora: *I'm playing with my kids.* → Estoy jugando con mis hijos.
+  - Futuro: *I'll play with my kids.* → Jugaré con mis hijos.
+- *I talk to my partner about the day.* → Hablo con mi pareja sobre el día.
+  - Pasado: *I talked to my partner about the day.* → Hablé con mi pareja sobre el día.
+  - Ahora: *I'm talking to my partner about the day.* → Estoy hablando con mi pareja sobre el día.
+  - Futuro: *I'll talk to my partner about the day.* → Hablaré con mi pareja sobre el día.
+- *I call a friend.* → Llamo a un amigo.
+  - Pasado: *I called a friend.* → Llamé a un amigo.
+  - Ahora: *I'm calling a friend.* → Estoy llamando a un amigo.
+  - Futuro: *I'll call a friend.* → Llamaré a un amigo.
+- *I meet my friends for a drink.* → Quedo con mis amigos para tomar algo.
+  - Pasado: *I met my friends for a drink.* → Quedé con mis amigos para tomar algo.
+  - Ahora: *I'm meeting my friends for a drink.* → Estoy quedando con mis amigos para tomar algo.
+  - Futuro: *I'll meet my friends for a drink.* → Quedaré con mis amigos para tomar algo.
+- *I have friends over.* → Invito amigos a casa.
+  - Pasado: *I had friends over.* → Invité amigos a casa.
+  - Ahora: *I'm having friends over.* → Estoy teniendo amigos en casa.
+  - Futuro: *I'll have friends over on Friday.* → El viernes invitaré amigos a casa.
+- *I video call my parents.* → Hago una videollamada con mis padres.
+  - Pasado: *I video called my parents.* → Hice una videollamada con mis padres.
+  - Ahora: *I'm video calling my parents.* → Estoy haciendo una videollamada con mis padres.
+  - Futuro: *I'll video call my parents.* → Haré una videollamada con mis padres.
+
+### Mascotas por la tarde-noche
+- *I take my dog on a long walk.* → Llevo a mi perro a dar un paseo largo.
+  - Pasado: *I took my dog on a long walk.* → Llevé a mi perro a dar un paseo largo.
+  - Ahora: *I'm taking my dog on a long walk.* → Estoy llevando a mi perro a dar un paseo largo.
+  - Futuro: *I'll take my dog on a long walk.* → Llevaré a mi perro a dar un paseo largo.
+- *I walk my dog after work.* → Paseo a mi perro después del trabajo.
+  - Pasado: *I walked my dog after work.* → Paseé a mi perro después del trabajo.
+  - Ahora: *I'm walking my dog.* → Estoy paseando a mi perro.
+  - Futuro: *I'll walk my dog after work.* → Pasearé a mi perro después del trabajo.
+- *My dog waits for me at the door.* → Mi perro me espera en la puerta.
+  - Pasado: *My dog was waiting for me at the door.* → Mi perro me esperaba en la puerta.
+  - Ahora: *My dog is waiting for me at the door.* → Mi perro me está esperando en la puerta.
+  - Futuro: *My dog will be waiting for me at the door.* → Mi perro me estará esperando en la puerta.
+- *My dog jumps on me when I get home.* → Mi perro salta sobre mí cuando llego a casa.
+  - Pasado: *My dog jumped on me when I got home.* → Mi perro saltó sobre mí cuando llegué a casa.
+  - Ahora: *My dog is jumping on me.* → Mi perro está saltando sobre mí.
+  - Futuro: *My dog will jump on me when I get home.* → Mi perro saltará sobre mí cuando llegue a casa.
+- *I play fetch with my dog in the yard.* → Juego a traer la pelota con mi perro en el patio.
+  - Pasado: *I played fetch with my dog in the yard.* → Jugué a traer la pelota con mi perro en el patio.
+  - Ahora: *I'm playing fetch with my dog.* → Estoy jugando a traer la pelota con mi perro.
+  - Futuro: *I'll play fetch with my dog.* → Jugaré a traer la pelota con mi perro.
+- *I teach my dog a new trick.* → Le enseño un truco nuevo a mi perro.
+  - Pasado: *I taught my dog a new trick.* → Le enseñé un truco nuevo a mi perro.
+  - Ahora: *I'm teaching my dog a new trick.* → Le estoy enseñando un truco nuevo a mi perro.
+  - Futuro: *I'll teach my dog a new trick.* → Le enseñaré un truco nuevo a mi perro.
+- *I tell my dog to sit.* → Le digo a mi perro que se siente.
+  - Pasado: *I told my dog to sit.* → Le dije a mi perro que se sentara.
+  - Ahora: *I'm telling my dog to sit.* → Le estoy diciendo a mi perro que se siente.
+  - Futuro: *I'll tell my dog to sit.* → Le diré a mi perro que se siente.
+- *I give my dog dinner.* → Le doy la cena a mi perro.
+  - Pasado: *I gave my dog dinner.* → Le di la cena a mi perro.
+  - Ahora: *I'm giving my dog dinner.* → Le estoy dando la cena a mi perro.
+  - Futuro: *I'll give my dog dinner.* → Le daré la cena a mi perro.
+- *I brush my dog's fur.* → Cepillo el pelo de mi perro.
+  - Pasado: *I brushed my dog's fur.* → Cepillé el pelo de mi perro.
+  - Ahora: *I'm brushing my dog's fur.* → Estoy cepillando el pelo de mi perro.
+  - Futuro: *I'll brush my dog's fur.* → Cepillaré el pelo de mi perro.
+- *I give my dog a bath.* → Baño a mi perro.
+  - Pasado: *I gave my dog a bath.* → Bañé a mi perro.
+  - Ahora: *I'm giving my dog a bath.* → Estoy bañando a mi perro.
+  - Futuro: *I'll give my dog a bath.* → Bañaré a mi perro.
+- *I dry my dog with a towel.* → Seco a mi perro con una toalla.
+  - Pasado: *I dried my dog with a towel.* → Sequé a mi perro con una toalla.
+  - Ahora: *I'm drying my dog with a towel.* → Estoy secando a mi perro con una toalla.
+  - Futuro: *I'll dry my dog with a towel.* → Secaré a mi perro con una toalla.
+- *I trim my dog's nails.* → Le corto las uñas a mi perro.
+  - Pasado: *I trimmed my dog's nails.* → Le corté las uñas a mi perro.
+  - Ahora: *I'm trimming my dog's nails.* → Le estoy cortando las uñas a mi perro.
+  - Futuro: *I'll trim my dog's nails.* → Le cortaré las uñas a mi perro.
+- *I give my dog his medicine.* → Le doy su medicina a mi perro.
+  - Pasado: *I gave my dog his medicine.* → Le di su medicina a mi perro.
+  - Ahora: *I'm giving my dog his medicine.* → Le estoy dando su medicina a mi perro.
+  - Futuro: *I'll give my dog his medicine.* → Le daré su medicina a mi perro.
+- *I take my dog to the vet.* → Llevo a mi perro al veterinario.
+  - Pasado: *I took my dog to the vet.* → Llevé a mi perro al veterinario.
+  - Ahora: *I'm taking my dog to the vet.* → Estoy llevando a mi perro al veterinario.
+  - Futuro: *I'll take my dog to the vet.* → Llevaré a mi perro al veterinario.
+- *I play with my cat.* → Juego con mi gato.
+  - Pasado: *I played with my cat.* → Jugué con mi gato.
+  - Ahora: *I'm playing with my cat.* → Estoy jugando con mi gato.
+  - Futuro: *I'll play with my cat.* → Jugaré con mi gato.
+- *My cat purrs on my lap.* → Mi gato ronronea en mi regazo.
+  - Pasado: *My cat purred on my lap.* → Mi gato ronroneó en mi regazo.
+  - Ahora: *My cat is purring on my lap.* → Mi gato está ronroneando en mi regazo.
+  - Futuro: *My cat will purr on my lap.* → Mi gato ronroneará en mi regazo.
+- *My cat scratches the sofa.* → Mi gato rasca el sofá.
+  - Pasado: *My cat scratched the sofa.* → Mi gato rascó el sofá.
+  - Ahora: *My cat is scratching the sofa.* → Mi gato está rascando el sofá.
+  - Futuro: *My cat will scratch the sofa.* → Mi gato rascará el sofá.
+- *I scoop the litter box.* → Recojo la arena sucia de la caja.
+  - Pasado: *I scooped the litter box.* → Recogí la arena sucia de la caja.
+  - Ahora: *I'm scooping the litter box.* → Estoy recogiendo la arena sucia de la caja.
+  - Futuro: *I'll scoop the litter box.* → Recogeré la arena sucia de la caja.
+- *I take my dog out one last time before bed.* → Saco a mi perro una última vez antes de dormir.
+  - Pasado: *I took my dog out one last time before bed.* → Saqué a mi perro una última vez antes de dormir.
+  - Ahora: *I'm taking my dog out one last time.* → Estoy sacando a mi perro una última vez.
+  - Futuro: *I'll take my dog out one last time before bed.* → Sacaré a mi perro una última vez antes de dormir.
+
+## 10. Cena
+
+### Decidir y preparar la cena
+- *I decide what to have for dinner.* → Decido qué cenar.
+  - Pasado: *I decided what to have for dinner.* → Decidí qué cenar.
+  - Ahora: *I'm deciding what to have for dinner.* → Estoy decidiendo qué cenar.
+  - Futuro: *I'll decide what to have for dinner.* → Decidiré qué cenar.
+- *I have dinner at 8.* → Ceno a las 8.
+  - Pasado: *I had dinner at 8.* → Cené a las 8.
+  - Ahora: *I'm having dinner.* → Estoy cenando.
+  - Ya: *I've already had dinner.* → Ya cené.
+  - Futuro: *I'll have dinner at 8.* → Cenaré a las 8.
+- *I cook dinner.* → Preparo la cena.
+  - Pasado: *I cooked dinner.* → Preparé la cena.
+  - Ahora: *I'm cooking dinner.* → Estoy preparando la cena.
+  - Ya: *I've already cooked dinner.* → Ya preparé la cena.
+  - Futuro: *I'll cook dinner.* → Prepararé la cena.
+- *I follow a recipe.* → Sigo una receta.
+  - Pasado: *I followed a recipe.* → Seguí una receta.
+  - Ahora: *I'm following a recipe.* → Estoy siguiendo una receta.
+  - Futuro: *I'll follow a recipe.* → Seguiré una receta.
+- *I take food out of the freezer.* → Saco comida del congelador.
+  - Pasado: *I took food out of the freezer.* → Saqué comida del congelador.
+  - Ahora: *I'm taking food out of the freezer.* → Estoy sacando comida del congelador.
+  - Futuro: *I'll take food out of the freezer.* → Sacaré comida del congelador.
+- *I wash the vegetables.* → Lavo las verduras.
+  - Pasado: *I washed the vegetables.* → Lavé las verduras.
+  - Ahora: *I'm washing the vegetables.* → Estoy lavando las verduras.
+  - Futuro: *I'll wash the vegetables.* → Lavaré las verduras.
+- *I peel the potatoes.* → Pelo las papas.
+  - Pasado: *I peeled the potatoes.* → Pelé las papas.
+  - Ahora: *I'm peeling the potatoes.* → Estoy pelando las papas.
+  - Futuro: *I'll peel the potatoes.* → Pelaré las papas.
+- *I chop the onions.* → Pico las cebollas.
+  - Pasado: *I chopped the onions.* → Piqué las cebollas.
+  - Ahora: *I'm chopping the onions.* → Estoy picando las cebollas.
+  - Futuro: *I'll chop the onions.* → Picaré las cebollas.
+- *I slice the tomatoes.* → Corto los tomates en rodajas.
+  - Pasado: *I sliced the tomatoes.* → Corté los tomates en rodajas.
+  - Ahora: *I'm slicing the tomatoes.* → Estoy cortando los tomates en rodajas.
+  - Futuro: *I'll slice the tomatoes.* → Cortaré los tomates en rodajas.
+- *I boil some pasta.* → Hiervo pasta.
+  - Pasado: *I boiled some pasta.* → Herví pasta.
+  - Ahora: *I'm boiling some pasta.* → Estoy hirviendo pasta.
+  - Futuro: *I'll boil some pasta.* → Herviré pasta.
+- *I cook rice.* → Cocino arroz.
+  - Pasado: *I cooked rice.* → Cociné arroz.
+  - Ahora: *I'm cooking rice.* → Estoy cocinando arroz.
+  - Futuro: *I'll cook rice.* → Cocinaré arroz.
+- *I fry some chicken.* → Frío pollo.
+  - Pasado: *I fried some chicken.* → Freí pollo.
+  - Ahora: *I'm frying some chicken.* → Estoy friendo pollo.
+  - Futuro: *I'll fry some chicken.* → Freiré pollo.
+- *I grill the meat.* → Aso la carne.
+  - Pasado: *I grilled the meat.* → Asé la carne.
+  - Ahora: *I'm grilling the meat.* → Estoy asando la carne.
+  - Futuro: *I'll grill the meat.* → Asaré la carne.
+- *I bake a potato in the oven.* → Horneo una papa.
+  - Pasado: *I baked a potato in the oven.* → Horneé una papa.
+  - Ahora: *I'm baking a potato in the oven.* → Estoy horneando una papa.
+  - Futuro: *I'll bake a potato in the oven.* → Hornearé una papa.
+- *I preheat the oven.* → Precalento el horno.
+  - Pasado: *I preheated the oven.* → Precalenté el horno.
+  - Ahora: *I'm preheating the oven.* → Estoy precalentando el horno.
+  - Futuro: *I'll preheat the oven.* → Precalentaré el horno.
+- *I stir the sauce.* → Revuelvo la salsa.
+  - Pasado: *I stirred the sauce.* → Revolví la salsa.
+  - Ahora: *I'm stirring the sauce.* → Estoy revolviendo la salsa.
+  - Futuro: *I'll stir the sauce.* → Revolveré la salsa.
+- *I add salt and pepper.* → Le echo sal y pimienta.
+  - Pasado: *I added salt and pepper.* → Le eché sal y pimienta.
+  - Ahora: *I'm adding salt and pepper.* → Le estoy echando sal y pimienta.
+  - Futuro: *I'll add salt and pepper.* → Le echaré sal y pimienta.
+- *I taste the food.* → Pruebo la comida.
+  - Pasado: *I tasted the food.* → Probé la comida.
+  - Ahora: *I'm tasting the food.* → Estoy probando la comida.
+  - Futuro: *I'll taste the food.* → Probaré la comida.
+- *I burn the food.* → Se me quema la comida.
+  - Pasado: *I burned the food.* → Se me quemó la comida.
+  - Ya: *I've burned the food.* → Se me ha quemado la comida.
+  - Futuro: *I'll burn the food if I'm not careful.* → Se me quemará la comida si no tengo cuidado.
+- *I order dinner.* → Pido la cena.
+  - Pasado: *I ordered dinner.* → Pedí la cena.
+  - Ahora: *I'm ordering dinner.* → Estoy pidiendo la cena.
+  - Futuro: *I'll order dinner.* → Pediré la cena.
+- *I heat up leftovers.* → Caliento las sobras.
+  - Pasado: *I heated up leftovers.* → Calenté las sobras.
+  - Ahora: *I'm heating up leftovers.* → Estoy calentando las sobras.
+  - Futuro: *I'll heat up leftovers.* → Calentaré las sobras.
+- *I set the table for dinner.* → Pongo la mesa para la cena.
+  - Pasado: *I set the table for dinner.* → Puse la mesa para la cena.
+  - Ahora: *I'm setting the table for dinner.* → Estoy poniendo la mesa para la cena.
+  - Futuro: *I'll set the table for dinner.* → Pondré la mesa para la cena.
+
+### Cenar
+- *Dinner is ready.* → La cena está lista.
+  - Pasado: *Dinner was ready at 8.* → La cena estuvo lista a las 8.
+  - Ya: *Dinner has been ready for ten minutes.* → La cena lleva diez minutos lista.
+  - Futuro: *Dinner will be ready in ten minutes.* → La cena estará lista en diez minutos.
+- *I call everyone to the table.* → Llamo a todos a la mesa.
+  - Pasado: *I called everyone to the table.* → Llamé a todos a la mesa.
+  - Ahora: *I'm calling everyone to the table.* → Estoy llamando a todos a la mesa.
+  - Futuro: *I'll call everyone to the table.* → Llamaré a todos a la mesa.
+- *We sit down to eat.* → Nos sentamos a comer.
+  - Pasado: *We sat down to eat.* → Nos sentamos a comer.
+  - Ahora: *We're sitting down to eat.* → Nos estamos sentando a comer.
+  - Futuro: *We'll sit down to eat.* → Nos sentaremos a comer.
+- *I serve the food.* → Sirvo la comida.
+  - Pasado: *I served the food.* → Serví la comida.
+  - Ahora: *I'm serving the food.* → Estoy sirviendo la comida.
+  - Futuro: *I'll serve the food.* → Serviré la comida.
+- *I pour a glass of water.* → Sirvo un vaso de agua.
+  - Pasado: *I poured a glass of water.* → Serví un vaso de agua.
+  - Ahora: *I'm pouring a glass of water.* → Estoy sirviendo un vaso de agua.
+  - Futuro: *I'll pour a glass of water.* → Serviré un vaso de agua.
+- *I have a glass of wine.* → Tomo una copa de vino.
+  - Pasado: *I had a glass of wine.* → Tomé una copa de vino.
+  - Ahora: *I'm having a glass of wine.* → Estoy tomando una copa de vino.
+  - Futuro: *I'll have a glass of wine.* → Tomaré una copa de vino.
+- *I pass the salt.* → Paso la sal.
+  - Pasado: *I passed the salt.* → Pasé la sal.
+  - Ahora: *I'm passing the salt.* → Estoy pasando la sal.
+  - Futuro: *I'll pass the salt.* → Pasaré la sal.
+- *I eat dinner with my family.* → Ceno con mi familia.
+  - Pasado: *I ate dinner with my family.* → Cené con mi familia.
+  - Ahora: *I'm eating dinner with my family.* → Estoy cenando con mi familia.
+  - Futuro: *I'll eat dinner with my family.* → Cenaré con mi familia.
+- *I eat dinner alone.* → Ceno solo.
+  - Pasado: *I ate dinner alone.* → Cené solo.
+  - Ahora: *I'm eating dinner alone.* → Estoy cenando solo.
+  - Futuro: *I'll eat dinner alone.* → Cenaré solo.
+- *I eat dinner in front of the TV.* → Ceno frente al televisor.
+  - Pasado: *I ate dinner in front of the TV.* → Cené frente al televisor.
+  - Ahora: *I'm eating dinner in front of the TV.* → Estoy cenando frente al televisor.
+  - Futuro: *I'll eat dinner in front of the TV.* → Cenaré frente al televisor.
+- *I have a light dinner.* → Ceno ligero.
+  - Pasado: *I had a light dinner.* → Cené ligero.
+  - Ya: *I've had a light dinner.* → He cenado ligero.
+  - Futuro: *I'll have a light dinner.* → Cenaré ligero.
+- *The food is delicious.* → La comida está deliciosa.
+  - Pasado: *The food was delicious.* → La comida estaba deliciosa.
+  - Ya: *The food has been delicious.* → La comida ha estado deliciosa.
+  - Futuro: *The food will be delicious.* → La comida estará deliciosa.
+- *I have seconds.* → Repito plato.
+  - Pasado: *I had seconds.* → Repetí plato.
+  - Ahora: *I'm having seconds.* → Estoy repitiendo plato.
+  - Futuro: *I'll have seconds.* → Repetiré plato.
+- *I have dessert.* → Como postre.
+  - Pasado: *I had dessert.* → Comí postre.
+  - Ahora: *I'm having dessert.* → Estoy comiendo postre.
+  - Futuro: *I'll have dessert.* → Comeré postre.
+- *I'm stuffed.* → Estoy lleno.
+  - Pasado: *I was stuffed.* → Estaba lleno.
+  - Ya: *I've eaten too much.* → He comido demasiado.
+  - Futuro: *I'll be stuffed.* → Estaré lleno.
+- *I finish my dinner.* → Termino mi cena.
+  - Pasado: *I finished my dinner.* → Terminé mi cena.
+  - Ya: *I've just finished my dinner.* → Acabo de terminar mi cena.
+  - Futuro: *I'll finish my dinner.* → Terminaré mi cena.
+
+### Recoger después de cenar
+- *I clear the table after dinner.* → Recojo la mesa después de cenar.
+  - Pasado: *I cleared the table after dinner.* → Recogí la mesa después de cenar.
+  - Ahora: *I'm clearing the table.* → Estoy recogiendo la mesa.
+  - Futuro: *I'll clear the table after dinner.* → Recogeré la mesa después de cenar.
+- *I wash the dishes.* → Lavo los platos.
+  - Pasado: *I washed the dishes.* → Lavé los platos.
+  - Ahora: *I'm washing the dishes.* → Estoy lavando los platos.
+  - Ya: *I've already washed the dishes.* → Ya lavé los platos.
+  - Futuro: *I'll wash the dishes.* → Lavaré los platos.
+- *I dry the dishes.* → Seco los platos.
+  - Pasado: *I dried the dishes.* → Sequé los platos.
+  - Ahora: *I'm drying the dishes.* → Estoy secando los platos.
+  - Futuro: *I'll dry the dishes.* → Secaré los platos.
+- *I put the leftovers in the fridge.* → Guardo las sobras en la nevera.
+  - Pasado: *I put the leftovers in the fridge.* → Guardé las sobras en la nevera.
+  - Ahora: *I'm putting the leftovers in the fridge.* → Estoy guardando las sobras en la nevera.
+  - Futuro: *I'll put the leftovers in the fridge.* → Guardaré las sobras en la nevera.
+- *I wipe the table.* → Limpio la mesa.
+  - Pasado: *I wiped the table.* → Limpié la mesa.
+  - Ahora: *I'm wiping the table.* → Estoy limpiando la mesa.
+  - Futuro: *I'll wipe the table.* → Limpiaré la mesa.
+- *I clean the kitchen.* → Limpio la cocina.
+  - Pasado: *I cleaned the kitchen.* → Limpié la cocina.
+  - Ahora: *I'm cleaning the kitchen.* → Estoy limpiando la cocina.
+  - Ya: *I've cleaned the kitchen.* → Ya limpié la cocina.
+  - Futuro: *I'll clean the kitchen.* → Limpiaré la cocina.
+- *I take out the garbage.* → Saco la basura.
+  - Pasado: *I took out the garbage.* → Saqué la basura.
+  - Ahora: *I'm taking out the garbage.* → Estoy sacando la basura.
+  - Futuro: *I'll take out the garbage.* → Sacaré la basura.
+
+## 11. Ocio y tiempo libre
+
+### Ver series y películas
+- *I watch TV.* → Veo televisión.
+  - Pasado: *I watched TV.* → Vi televisión.
+  - Ahora: *I'm watching TV.* → Estoy viendo televisión.
+  - Futuro: *I'll watch TV.* → Veré televisión.
+- *I watch a series.* → Veo una serie.
+  - Pasado: *I watched a series.* → Vi una serie.
+  - Ahora: *I'm watching a series.* → Estoy viendo una serie.
+  - Ya: *I've watched three episodes.* → He visto tres episodios.
+  - Futuro: *I'll watch a series.* → Veré una serie.
+- *I watch a movie.* → Veo una película.
+  - Pasado: *I watched a movie.* → Vi una película.
+  - Ahora: *I'm watching a movie.* → Estoy viendo una película.
+  - Ya: *I've already seen that movie.* → Ya vi esa película.
+  - Futuro: *I'll watch a movie tonight.* → Veré una película esta noche.
+- *I binge-watch a show.* → Me maratoneo una serie.
+  - Pasado: *I binge-watched a show.* → Me maratoneé una serie.
+  - Ahora: *I'm binge-watching a show.* → Me estoy maratoneando una serie.
+  - Futuro: *I'll binge-watch a show.* → Me maratonearé una serie.
+- *I choose what to watch.* → Elijo qué ver.
+  - Pasado: *I chose what to watch.* → Elegí qué ver.
+  - Ahora: *I'm choosing what to watch.* → Estoy eligiendo qué ver.
+  - Futuro: *I'll choose what to watch.* → Elegiré qué ver.
+- *I put on subtitles.* → Pongo subtítulos.
+  - Pasado: *I put on subtitles.* → Puse subtítulos.
+  - Ahora: *I'm putting on subtitles.* → Estoy poniendo subtítulos.
+  - Futuro: *I'll put on subtitles.* → Pondré subtítulos.
+- *I fall asleep on the couch.* → Me quedo dormido en el sofá.
+  - Pasado: *I fell asleep on the couch.* → Me quedé dormido en el sofá.
+  - Ya: *I've fallen asleep on the couch.* → Me he quedado dormido en el sofá.
+  - Futuro: *I'll fall asleep on the couch.* → Me quedaré dormido en el sofá.
+- *I go to the movies.* → Voy al cine.
+  - Pasado: *I went to the movies.* → Fui al cine.
+  - Ahora: *I'm going to the movies.* → Estoy yendo al cine.
+  - Futuro: *I'll go to the movies.* → Iré al cine.
+- *I buy popcorn.* → Compro palomitas.
+  - Pasado: *I bought popcorn.* → Compré palomitas.
+  - Ahora: *I'm buying popcorn.* → Estoy comprando palomitas.
+  - Futuro: *I'll buy popcorn.* → Compraré palomitas.
+
+### Leer, escuchar y jugar
+- *I read a book.* → Leo un libro.
+  - Pasado: *I read a book.* → Leí un libro.
+  - Ahora: *I'm reading a book.* → Estoy leyendo un libro.
+  - Ya: *I've just finished a book.* → Acabo de terminar un libro.
+  - Futuro: *I'll read a book.* → Leeré un libro.
+- *I read a few chapters.* → Leo unos capítulos.
+  - Pasado: *I read a few chapters.* → Leí unos capítulos.
+  - Ahora: *I'm reading a few chapters.* → Estoy leyendo unos capítulos.
+  - Futuro: *I'll read a few chapters.* → Leeré unos capítulos.
+- *I listen to music.* → Escucho música.
+  - Pasado: *I listened to music.* → Escuché música.
+  - Ahora: *I'm listening to music.* → Estoy escuchando música.
+  - Futuro: *I'll listen to music.* → Escucharé música.
+- *I listen to a podcast.* → Escucho un pódcast.
+  - Pasado: *I listened to a podcast.* → Escuché un pódcast.
+  - Ahora: *I'm listening to a podcast.* → Estoy escuchando un pódcast.
+  - Futuro: *I'll listen to a podcast.* → Escucharé un pódcast.
+- *I play video games.* → Juego videojuegos.
+  - Pasado: *I played video games.* → Jugué videojuegos.
+  - Ahora: *I'm playing video games.* → Estoy jugando videojuegos.
+  - Futuro: *I'll play video games.* → Jugaré videojuegos.
+- *I play with my friends online.* → Juego en línea con mis amigos.
+  - Pasado: *I played with my friends online.* → Jugué en línea con mis amigos.
+  - Ahora: *I'm playing with my friends online.* → Estoy jugando en línea con mis amigos.
+  - Futuro: *I'll play with my friends online.* → Jugaré en línea con mis amigos.
+- *I play a board game.* → Juego un juego de mesa.
+  - Pasado: *I played a board game.* → Jugué un juego de mesa.
+  - Ahora: *I'm playing a board game.* → Estoy jugando un juego de mesa.
+  - Futuro: *I'll play a board game.* → Jugaré un juego de mesa.
+- *I play the guitar.* → Toco la guitarra.
+  - Pasado: *I played the guitar.* → Toqué la guitarra.
+  - Ahora: *I'm playing the guitar.* → Estoy tocando la guitarra.
+  - Futuro: *I'll play the guitar.* → Tocaré la guitarra.
+- *I scroll through social media.* → Navego por las redes sociales.
+  - Pasado: *I scrolled through social media.* → Navegué por las redes sociales.
+  - Ahora: *I'm scrolling through social media.* → Estoy navegando por las redes sociales.
+  - Futuro: *I'll scroll through social media.* → Navegaré por las redes sociales.
+- *I watch videos online.* → Veo videos en internet.
+  - Pasado: *I watched videos online.* → Vi videos en internet.
+  - Ahora: *I'm watching videos online.* → Estoy viendo videos en internet.
+  - Futuro: *I'll watch videos online.* → Veré videos en internet.
+- *I text my friends.* → Les escribo a mis amigos.
+  - Pasado: *I texted my friends.* → Les escribí a mis amigos.
+  - Ahora: *I'm texting my friends.* → Les estoy escribiendo a mis amigos.
+  - Futuro: *I'll text my friends.* → Les escribiré a mis amigos.
+
+### Estudiar y hobbies
+- *I study English.* → Estudio inglés.
+  - Pasado: *I studied English.* → Estudié inglés.
+  - Ahora: *I'm studying English.* → Estoy estudiando inglés.
+  - Ya: *I've been studying English for a year.* → Llevo un año estudiando inglés.
+  - Futuro: *I'll study English tonight.* → Estudiaré inglés esta noche.
+- *I practice speaking English.* → Practico hablar inglés.
+  - Pasado: *I practiced speaking English.* → Practiqué hablar inglés.
+  - Ahora: *I'm practicing speaking English.* → Estoy practicando hablar inglés.
+  - Futuro: *I'll practice speaking English.* → Practicaré hablar inglés.
+- *I take an online course.* → Hago un curso en línea.
+  - Pasado: *I took an online course.* → Hice un curso en línea.
+  - Ahora: *I'm taking an online course.* → Estoy haciendo un curso en línea.
+  - Futuro: *I'll take an online course.* → Haré un curso en línea.
+- *I learn something new.* → Aprendo algo nuevo.
+  - Pasado: *I learned something new.* → Aprendí algo nuevo.
+  - Ahora: *I'm learning something new.* → Estoy aprendiendo algo nuevo.
+  - Futuro: *I'll learn something new.* → Aprenderé algo nuevo.
+- *I work on a personal project.* → Trabajo en un proyecto personal.
+  - Pasado: *I worked on a personal project.* → Trabajé en un proyecto personal.
+  - Ahora: *I'm working on a personal project.* → Estoy trabajando en un proyecto personal.
+  - Futuro: *I'll work on a personal project.* → Trabajaré en un proyecto personal.
+- *I draw.* → Dibujo.
+  - Pasado: *I drew.* → Dibujé.
+  - Ahora: *I'm drawing.* → Estoy dibujando.
+  - Futuro: *I'll draw.* → Dibujaré.
+- *I paint.* → Pinto.
+  - Pasado: *I painted.* → Pinté.
+  - Ahora: *I'm painting.* → Estoy pintando.
+  - Futuro: *I'll paint.* → Pintaré.
+- *I cook something special.* → Cocino algo especial.
+  - Pasado: *I cooked something special.* → Cociné algo especial.
+  - Ahora: *I'm cooking something special.* → Estoy cocinando algo especial.
+  - Futuro: *I'll cook something special.* → Cocinaré algo especial.
+- *I take photos.* → Tomo fotos.
+  - Pasado: *I took photos.* → Tomé fotos.
+  - Ahora: *I'm taking photos.* → Estoy tomando fotos.
+  - Futuro: *I'll take photos.* → Tomaré fotos.
+- *I write in my journal.* → Escribo en mi diario.
+  - Pasado: *I wrote in my journal.* → Escribí en mi diario.
+  - Ahora: *I'm writing in my journal.* → Estoy escribiendo en mi diario.
+  - Futuro: *I'll write in my journal.* → Escribiré en mi diario.
+
+### Salir y socializar
+- *I go out with my friends.* → Salgo con mis amigos.
+  - Pasado: *I went out with my friends.* → Salí con mis amigos.
+  - Ahora: *I'm going out with my friends.* → Estoy saliendo con mis amigos.
+  - Futuro: *I'll go out with my friends.* → Saldré con mis amigos.
+- *I hang out with my friends.* → Paso el rato con mis amigos.
+  - Pasado: *I hung out with my friends.* → Pasé el rato con mis amigos.
+  - Ahora: *I'm hanging out with my friends.* → Estoy pasando el rato con mis amigos.
+  - Futuro: *I'll hang out with my friends.* → Pasaré el rato con mis amigos.
+- *I meet someone for coffee.* → Quedo con alguien para tomar un café.
+  - Pasado: *I met someone for coffee.* → Quedé con alguien para tomar un café.
+  - Ahora: *I'm meeting someone for coffee.* → Estoy quedando con alguien para tomar un café.
+  - Futuro: *I'll meet someone for coffee.* → Quedaré con alguien para tomar un café.
+- *I go to the park.* → Voy al parque.
+  - Pasado: *I went to the park.* → Fui al parque.
+  - Ahora: *I'm going to the park.* → Estoy yendo al parque.
+  - Futuro: *I'll go to the park.* → Iré al parque.
+- *I go shopping.* → Voy de compras.
+  - Pasado: *I went shopping.* → Fui de compras.
+  - Ahora: *I'm going shopping.* → Estoy yendo de compras.
+  - Futuro: *I'll go shopping.* → Iré de compras.
+- *I go to a concert.* → Voy a un concierto.
+  - Pasado: *I went to a concert.* → Fui a un concierto.
+  - Ahora: *I'm going to a concert.* → Estoy yendo a un concierto.
+  - Futuro: *I'll go to a concert.* → Iré a un concierto.
+- *I go dancing.* → Salgo a bailar.
+  - Pasado: *I went dancing.* → Salí a bailar.
+  - Ahora: *I'm going dancing.* → Estoy saliendo a bailar.
+  - Futuro: *I'll go dancing.* → Saldré a bailar.
+- *I talk on the phone.* → Hablo por teléfono.
+  - Pasado: *I talked on the phone.* → Hablé por teléfono.
+  - Ahora: *I'm talking on the phone.* → Estoy hablando por teléfono.
+  - Futuro: *I'll talk on the phone.* → Hablaré por teléfono.
+- *I do nothing.* → No hago nada.
+  - Pasado: *I did nothing.* → No hice nada.
+  - Ahora: *I'm doing nothing.* → No estoy haciendo nada.
+  - Futuro: *I'll do nothing.* → No haré nada.
+- *I relax.* → Me relajo.
+  - Pasado: *I relaxed.* → Me relajé.
+  - Ahora: *I'm relaxing.* → Me estoy relajando.
+  - Futuro: *I'll relax.* → Me relajaré.
+
+## 12. Antes de dormir
+
+### Prepararme para la noche
+- *I check that the doors are locked.* → Compruebo que las puertas están cerradas con llave.
+  - Pasado: *I checked that the doors were locked.* → Comprobé que las puertas estaban cerradas con llave.
+  - Ahora: *I'm checking that the doors are locked.* → Estoy comprobando que las puertas están cerradas con llave.
+  - Futuro: *I'll check that the doors are locked.* → Comprobaré que las puertas están cerradas con llave.
+- *I lock up the house.* → Cierro la casa con llave.
+  - Pasado: *I locked up the house.* → Cerré la casa con llave.
+  - Ahora: *I'm locking up the house.* → Estoy cerrando la casa con llave.
+  - Futuro: *I'll lock up the house.* → Cerraré la casa con llave.
+- *I turn off the lights.* → Apago las luces.
+  - Pasado: *I turned off the lights.* → Apagué las luces.
+  - Ahora: *I'm turning off the lights.* → Estoy apagando las luces.
+  - Futuro: *I'll turn off the lights.* → Apagaré las luces.
+- *I turn off the TV.* → Apago el televisor.
+  - Pasado: *I turned off the TV.* → Apagué el televisor.
+  - Ahora: *I'm turning off the TV.* → Estoy apagando el televisor.
+  - Futuro: *I'll turn off the TV.* → Apagaré el televisor.
+- *I charge my phone.* → Cargo mi teléfono.
+  - Pasado: *I charged my phone.* → Cargué mi teléfono.
+  - Ahora: *I'm charging my phone.* → Estoy cargando mi teléfono.
+  - Futuro: *I'll charge my phone.* → Cargaré mi teléfono.
+- *I put my phone on silent.* → Pongo mi teléfono en silencio.
+  - Pasado: *I put my phone on silent.* → Puse mi teléfono en silencio.
+  - Ahora: *I'm putting my phone on silent.* → Estoy poniendo mi teléfono en silencio.
+  - Futuro: *I'll put my phone on silent.* → Pondré mi teléfono en silencio.
+- *I set the alarm for tomorrow.* → Pongo la alarma para mañana.
+  - Pasado: *I set the alarm for tomorrow.* → Puse la alarma para mañana.
+  - Ahora: *I'm setting the alarm for tomorrow.* → Estoy poniendo la alarma para mañana.
+  - Futuro: *I'll set the alarm for tomorrow.* → Pondré la alarma para mañana.
+- *I lay out my clothes for tomorrow.* → Dejo lista mi ropa para mañana.
+  - Pasado: *I laid out my clothes for tomorrow.* → Dejé lista mi ropa para mañana.
+  - Ahora: *I'm laying out my clothes for tomorrow.* → Estoy dejando lista mi ropa para mañana.
+  - Futuro: *I'll lay out my clothes for tomorrow.* → Dejaré lista mi ropa para mañana.
+- *I pack my bag for tomorrow.* → Preparo mi mochila para mañana.
+  - Pasado: *I packed my bag for tomorrow.* → Preparé mi mochila para mañana.
+  - Ahora: *I'm packing my bag for tomorrow.* → Estoy preparando mi mochila para mañana.
+  - Futuro: *I'll pack my bag for tomorrow.* → Prepararé mi mochila para mañana.
+- *I check my schedule for tomorrow.* → Reviso mi horario de mañana.
+  - Pasado: *I checked my schedule for tomorrow.* → Revisé mi horario de mañana.
+  - Ahora: *I'm checking my schedule for tomorrow.* → Estoy revisando mi horario de mañana.
+  - Futuro: *I'll check my schedule for tomorrow.* → Revisaré mi horario de mañana.
+
+### Higiene nocturna
+- *I wash my face before bed.* → Me lavo la cara antes de dormir.
+  - Pasado: *I washed my face before bed.* → Me lavé la cara antes de dormir.
+  - Ahora: *I'm washing my face.* → Me estoy lavando la cara.
+  - Futuro: *I'll wash my face before bed.* → Me lavaré la cara antes de dormir.
+- *I take off my makeup.* → Me desmaquillo.
+  - Pasado: *I took off my makeup.* → Me desmaquillé.
+  - Ahora: *I'm taking off my makeup.* → Me estoy desmaquillando.
+  - Futuro: *I'll take off my makeup.* → Me desmaquillaré.
+- *I apply night cream.* → Me aplico crema de noche.
+  - Pasado: *I applied night cream.* → Me apliqué crema de noche.
+  - Ahora: *I'm applying night cream.* → Me estoy aplicando crema de noche.
+  - Futuro: *I'll apply night cream.* → Me aplicaré crema de noche.
+- *I brush my teeth before bed.* → Me cepillo los dientes antes de dormir.
+  - Pasado: *I brushed my teeth before bed.* → Me cepillé los dientes antes de dormir.
+  - Ahora: *I'm brushing my teeth.* → Me estoy cepillando los dientes.
+  - Ya: *I've already brushed my teeth.* → Ya me cepillé los dientes.
+  - Futuro: *I'll brush my teeth before bed.* → Me cepillaré los dientes antes de dormir.
+- *I floss and use mouthwash.* → Uso hilo dental y enjuague bucal.
+  - Pasado: *I flossed and used mouthwash.* → Usé hilo dental y enjuague bucal.
+  - Ahora: *I'm flossing and using mouthwash.* → Estoy usando hilo dental y enjuague bucal.
+  - Futuro: *I'll floss and use mouthwash.* → Usaré hilo dental y enjuague bucal.
+- *I take a shower before bed.* → Me ducho antes de dormir.
+  - Pasado: *I took a shower before bed.* → Me duché antes de dormir.
+  - Ahora: *I'm taking a shower.* → Me estoy duchando.
+  - Futuro: *I'll take a shower before bed.* → Me ducharé antes de dormir.
+- *I put on my pajamas.* → Me pongo el pijama.
+  - Pasado: *I put on my pajamas.* → Me puse el pijama.
+  - Ahora: *I'm putting on my pajamas.* → Me estoy poniendo el pijama.
+  - Ya: *I've already put on my pajamas.* → Ya me puse el pijama.
+  - Futuro: *I'll put on my pajamas.* → Me pondré el pijama.
+- *I wear a retainer.* → Uso un retenedor.
+  - Pasado: *I wore a retainer.* → Usé un retenedor.
+  - Ahora: *I'm wearing a retainer.* → Estoy usando un retenedor.
+  - Futuro: *I'll wear a retainer.* → Usaré un retenedor.
+- *I take my medication.* → Tomo mi medicina.
+  - Pasado: *I took my medication.* → Tomé mi medicina.
+  - Ahora: *I'm taking my medication.* → Estoy tomando mi medicina.
+  - Ya: *I've already taken my medication.* → Ya tomé mi medicina.
+  - Futuro: *I'll take my medication.* → Tomaré mi medicina.
+- *I drink a glass of water before bed.* → Bebo un vaso de agua antes de dormir.
+  - Pasado: *I drank a glass of water before bed.* → Bebí un vaso de agua antes de dormir.
+  - Ahora: *I'm drinking a glass of water.* → Estoy bebiendo un vaso de agua.
+  - Futuro: *I'll drink a glass of water before bed.* → Beberé un vaso de agua antes de dormir.
+- *I go to the bathroom before bed.* → Voy al baño antes de dormir.
+  - Pasado: *I went to the bathroom before bed.* → Fui al baño antes de dormir.
+  - Ahora: *I'm going to the bathroom.* → Estoy yendo al baño.
+  - Futuro: *I'll go to the bathroom before bed.* → Iré al baño antes de dormir.
+
+### Meterme en la cama
+- *I go to bed at 11.* → Me acuesto a las 11.
+  - Pasado: *I went to bed at 11.* → Me acosté a las 11.
+  - Ahora: *I'm going to bed.* → Me estoy yendo a la cama.
+  - Ya: *I've already gone to bed.* → Ya me acosté.
+  - Futuro: *I'll go to bed at 11.* → Me acostaré a las 11.
+- *I go to bed early.* → Me acuesto temprano.
+  - Pasado: *I went to bed early.* → Me acosté temprano.
+  - Ya: *I've gone to bed early all week.* → Me he acostado temprano toda la semana.
+  - Futuro: *I'll go to bed early tonight.* → Me acostaré temprano esta noche.
+- *I go to bed late.* → Me acuesto tarde.
+  - Pasado: *I went to bed late.* → Me acosté tarde.
+  - Ya: *I've gone to bed late all week.* → Me he acostado tarde toda la semana.
+  - Futuro: *I'll go to bed late tonight.* → Me acostaré tarde esta noche.
+- *I stay up late.* → Me quedo despierto hasta tarde.
+  - Pasado: *I stayed up late.* → Me quedé despierto hasta tarde.
+  - Ahora: *I'm staying up late.* → Me estoy quedando despierto hasta tarde.
+  - Futuro: *I'll stay up late.* → Me quedaré despierto hasta tarde.
+- *I get into bed.* → Me meto en la cama.
+  - Pasado: *I got into bed.* → Me metí en la cama.
+  - Ahora: *I'm getting into bed.* → Me estoy metiendo en la cama.
+  - Futuro: *I'll get into bed.* → Me meteré en la cama.
+- *I pull up the covers.* → Me arropo.
+  - Pasado: *I pulled up the covers.* → Me arropé.
+  - Ahora: *I'm pulling up the covers.* → Me estoy arropando.
+  - Futuro: *I'll pull up the covers.* → Me arroparé.
+- *I turn off the bedside lamp.* → Apago la lámpara de la mesita de noche.
+  - Pasado: *I turned off the bedside lamp.* → Apagué la lámpara de la mesita de noche.
+  - Ahora: *I'm turning off the bedside lamp.* → Estoy apagando la lámpara de la mesita de noche.
+  - Futuro: *I'll turn off the bedside lamp.* → Apagaré la lámpara de la mesita de noche.
+- *I read in bed.* → Leo en la cama.
+  - Pasado: *I read in bed.* → Leí en la cama.
+  - Ahora: *I'm reading in bed.* → Estoy leyendo en la cama.
+  - Futuro: *I'll read in bed.* → Leeré en la cama.
+- *I scroll on my phone in bed.* → Navego en mi teléfono en la cama.
+  - Pasado: *I scrolled on my phone in bed.* → Navegué en mi teléfono en la cama.
+  - Ahora: *I'm scrolling on my phone in bed.* → Estoy navegando en mi teléfono en la cama.
+  - Futuro: *I'll scroll on my phone in bed.* → Navegaré en mi teléfono en la cama.
+- *I say goodnight to my family.* → Les doy las buenas noches a mi familia.
+  - Pasado: *I said goodnight to my family.* → Les di las buenas noches a mi familia.
+  - Ahora: *I'm saying goodnight to my family.* → Les estoy dando las buenas noches a mi familia.
+  - Futuro: *I'll say goodnight to my family.* → Les daré las buenas noches a mi familia.
+- *I give my partner a kiss goodnight.* → Le doy un beso de buenas noches a mi pareja.
+  - Pasado: *I gave my partner a kiss goodnight.* → Le di un beso de buenas noches a mi pareja.
+  - Ahora: *I'm giving my partner a kiss goodnight.* → Le estoy dando un beso de buenas noches a mi pareja.
+  - Futuro: *I'll give my partner a kiss goodnight.* → Le daré un beso de buenas noches a mi pareja.
+
+### Dormirme
+- *I fall asleep quickly.* → Me duermo rápido.
+  - Pasado: *I fell asleep quickly.* → Me dormí rápido.
+  - Ya: *I've fallen asleep quickly all week.* → Me he dormido rápido toda la semana.
+  - Futuro: *I'll fall asleep quickly.* → Me dormiré rápido.
+- *I drift off to sleep.* → Me voy quedando dormido.
+  - Pasado: *I drifted off to sleep.* → Me fui quedando dormido.
+  - Ahora: *I'm drifting off to sleep.* → Me estoy quedando dormido.
+  - Futuro: *I'll drift off to sleep.* → Me quedaré dormido poco a poco.
+- *I can't fall asleep.* → No puedo dormirme.
+  - Pasado: *I couldn't fall asleep.* → No pude dormirme.
+  - Ya: *I haven't been able to fall asleep.* → No he podido dormirme.
+  - Futuro: *I won't be able to fall asleep.* → No podré dormirme.
+- *I toss and turn.* → Doy vueltas en la cama.
+  - Pasado: *I tossed and turned all night.* → Di vueltas en la cama toda la noche.
+  - Ahora: *I'm tossing and turning.* → Estoy dando vueltas en la cama.
+  - Futuro: *I'll toss and turn.* → Daré vueltas en la cama.
+- *I count sheep.* → Cuento ovejas.
+  - Pasado: *I counted sheep.* → Conté ovejas.
+  - Ahora: *I'm counting sheep.* → Estoy contando ovejas.
+  - Futuro: *I'll count sheep.* → Contaré ovejas.
+- *I lie awake.* → Me quedo despierto en la cama.
+  - Pasado: *I lay awake for an hour.* → Me quedé despierto en la cama durante una hora.
+  - Ahora: *I'm lying awake.* → Estoy despierto en la cama.
+  - Futuro: *I'll lie awake.* → Me quedaré despierto en la cama.
+- *I have insomnia.* → Tengo insomnio.
+  - Pasado: *I had insomnia.* → Tuve insomnio.
+  - Ya: *I've had insomnia for a week.* → Llevo una semana con insomnio.
+  - Futuro: *I'll have insomnia if I drink coffee.* → Tendré insomnio si tomo café.
+- *I sleep eight hours.* → Duermo ocho horas.
+  - Pasado: *I slept eight hours.* → Dormí ocho horas.
+  - Ya: *I've slept eight hours every night.* → He dormido ocho horas cada noche.
+  - Futuro: *I'll sleep eight hours.* → Dormiré ocho horas.
+- *I sleep like a log.* → Duermo como un tronco.
+  - Pasado: *I slept like a log.* → Dormí como un tronco.
+  - Ya: *I've slept like a log all week.* → He dormido como un tronco toda la semana.
+  - Futuro: *I'll sleep like a log.* → Dormiré como un tronco.
+- *I snore.* → Ronco.
+  - Pasado: *I snored.* → Ronqué.
+  - Ahora: *I'm snoring.* → Estoy roncando.
+  - Futuro: *I'll snore.* → Roncaré.
+- *I talk in my sleep.* → Hablo dormido.
+  - Pasado: *I talked in my sleep.* → Hablé dormido.
+  - Ya: *I've talked in my sleep.* → He hablado dormido.
+  - Futuro: *I'll talk in my sleep.* → Hablaré dormido.
+- *I have a dream.* → Tengo un sueño.
+  - Pasado: *I had a dream.* → Tuve un sueño.
+  - Ahora: *I'm having a dream.* → Estoy teniendo un sueño.
+  - Futuro: *I'll have a dream.* → Tendré un sueño.
+- *I have a nightmare.* → Tengo una pesadilla.
+  - Pasado: *I had a nightmare.* → Tuve una pesadilla.
+  - Ahora: *I'm having a nightmare.* → Estoy teniendo una pesadilla.
+  - Futuro: *I'll have a nightmare.* → Tendré una pesadilla.
+- *I wake up in the middle of the night.* → Me despierto en medio de la noche.
+  - Pasado: *I woke up in the middle of the night.* → Me desperté en medio de la noche.
+  - Ya: *I've woken up in the middle of the night twice.* → Me he despertado en medio de la noche dos veces.
+  - Futuro: *I'll wake up in the middle of the night.* → Me despertaré en medio de la noche.
+- *I go back to sleep.* → Me vuelvo a dormir.
+  - Pasado: *I went back to sleep.* → Me volví a dormir.
+  - Ahora: *I'm going back to sleep.* → Me estoy volviendo a dormir.
+  - Futuro: *I'll go back to sleep.* → Me volveré a dormir.
+
+## 13. Rutina de fin de semana
+
+### Mañana tranquila
+- *I don't set an alarm on weekends.* → No pongo alarma los fines de semana.
+  - Pasado: *I didn't set an alarm on Saturday.* → No puse alarma el sábado.
+  - Ya: *I haven't set an alarm all weekend.* → No he puesto alarma en todo el fin de semana.
+  - Futuro: *I won't set an alarm this weekend.* → No pondré alarma este fin de semana.
+- *I sleep in on Saturday.* → Duermo hasta tarde el sábado.
+  - Pasado: *I slept in on Saturday.* → Dormí hasta tarde el sábado.
+  - Ya: *I've slept in every Saturday this month.* → He dormido hasta tarde todos los sábados este mes.
+  - Futuro: *I'll sleep in on Saturday.* → Dormiré hasta tarde el sábado.
+- *I stay in bed for a while.* → Me quedo un rato en la cama.
+  - Pasado: *I stayed in bed for a while.* → Me quedé un rato en la cama.
+  - Ahora: *I'm staying in bed for a while.* → Me estoy quedando un rato en la cama.
+  - Futuro: *I'll stay in bed for a while.* → Me quedaré un rato en la cama.
+- *I have a lazy morning.* → Tengo una mañana perezosa.
+  - Pasado: *I had a lazy morning.* → Tuve una mañana perezosa.
+  - Ya: *I've had a lazy morning.* → He tenido una mañana perezosa.
+  - Futuro: *I'll have a lazy morning.* → Tendré una mañana perezosa.
+- *I have a big breakfast.* → Desayuno en grande.
+  - Pasado: *I had a big breakfast.* → Desayuné en grande.
+  - Ahora: *I'm having a big breakfast.* → Estoy desayunando en grande.
+  - Futuro: *I'll have a big breakfast.* → Desayunaré en grande.
+- *I make pancakes.* → Hago panqueques.
+  - Pasado: *I made pancakes.* → Hice panqueques.
+  - Ahora: *I'm making pancakes.* → Estoy haciendo panqueques.
+  - Futuro: *I'll make pancakes.* → Haré panqueques.
+- *I have brunch.* → Hago un brunch.
+  - Pasado: *I had brunch.* → Hice un brunch.
+  - Ahora: *I'm having brunch.* → Estoy haciendo un brunch.
+  - Futuro: *I'll have brunch with my friends.* → Haré un brunch con mis amigos.
+- *I stay in my pajamas all morning.* → Me quedo en pijama toda la mañana.
+  - Pasado: *I stayed in my pajamas all morning.* → Me quedé en pijama toda la mañana.
+  - Ahora: *I'm staying in my pajamas.* → Me estoy quedando en pijama.
+  - Futuro: *I'll stay in my pajamas all morning.* → Me quedaré en pijama toda la mañana.
+- *I take my time getting ready.* → Me tomo mi tiempo para arreglarme.
+  - Pasado: *I took my time getting ready.* → Me tomé mi tiempo para arreglarme.
+  - Ahora: *I'm taking my time getting ready.* → Me estoy tomando mi tiempo para arreglarme.
+  - Futuro: *I'll take my time getting ready.* → Me tomaré mi tiempo para arreglarme.
+
+### Tareas y compras
+- *I do the weekly grocery shopping.* → Hago las compras de la semana.
+  - Pasado: *I did the weekly grocery shopping.* → Hice las compras de la semana.
+  - Ahora: *I'm doing the weekly grocery shopping.* → Estoy haciendo las compras de la semana.
+  - Ya: *I've done the weekly grocery shopping.* → Ya hice las compras de la semana.
+  - Futuro: *I'll do the weekly grocery shopping.* → Haré las compras de la semana.
+- *I do a deep clean of the house.* → Hago una limpieza a fondo de la casa.
+  - Pasado: *I did a deep clean of the house.* → Hice una limpieza a fondo de la casa.
+  - Ahora: *I'm doing a deep clean of the house.* → Estoy haciendo una limpieza a fondo de la casa.
+  - Futuro: *I'll do a deep clean of the house.* → Haré una limpieza a fondo de la casa.
+- *I change the bed sheets.* → Cambio las sábanas.
+  - Pasado: *I changed the bed sheets.* → Cambié las sábanas.
+  - Ahora: *I'm changing the bed sheets.* → Estoy cambiando las sábanas.
+  - Futuro: *I'll change the bed sheets.* → Cambiaré las sábanas.
+- *I catch up on laundry.* → Me pongo al día con la ropa.
+  - Pasado: *I caught up on laundry.* → Me puse al día con la ropa.
+  - Ahora: *I'm catching up on laundry.* → Me estoy poniendo al día con la ropa.
+  - Futuro: *I'll catch up on laundry.* → Me pondré al día con la ropa.
+- *I wash the car.* → Lavo el carro.
+  - Pasado: *I washed the car.* → Lavé el carro.
+  - Ahora: *I'm washing the car.* → Estoy lavando el carro.
+  - Futuro: *I'll wash the car.* → Lavaré el carro.
+- *I mow the lawn.* → Corto el césped.
+  - Pasado: *I mowed the lawn.* → Corté el césped.
+  - Ahora: *I'm mowing the lawn.* → Estoy cortando el césped.
+  - Futuro: *I'll mow the lawn.* → Cortaré el césped.
+- *I do some gardening.* → Hago algo de jardinería.
+  - Pasado: *I did some gardening.* → Hice algo de jardinería.
+  - Ahora: *I'm doing some gardening.* → Estoy haciendo algo de jardinería.
+  - Futuro: *I'll do some gardening.* → Haré algo de jardinería.
+- *I organize my closet.* → Organizo mi clóset.
+  - Pasado: *I organized my closet.* → Organicé mi clóset.
+  - Ahora: *I'm organizing my closet.* → Estoy organizando mi clóset.
+  - Futuro: *I'll organize my closet.* → Organizaré mi clóset.
+- *I pay the bills.* → Pago las cuentas.
+  - Pasado: *I paid the bills.* → Pagué las cuentas.
+  - Ahora: *I'm paying the bills.* → Estoy pagando las cuentas.
+  - Futuro: *I'll pay the bills.* → Pagaré las cuentas.
+- *I run errands.* → Hago diligencias.
+  - Pasado: *I ran errands.* → Hice diligencias.
+  - Ahora: *I'm running errands.* → Estoy haciendo diligencias.
+  - Futuro: *I'll run errands.* → Haré diligencias.
+- *I cook for the whole week.* → Cocino para toda la semana.
+  - Pasado: *I cooked for the whole week.* → Cociné para toda la semana.
+  - Ahora: *I'm cooking for the whole week.* → Estoy cocinando para toda la semana.
+  - Futuro: *I'll cook for the whole week.* → Cocinaré para toda la semana.
+
+### Salir y planes sociales
+- *I go out on Saturday night.* → Salgo el sábado por la noche.
+  - Pasado: *I went out on Saturday night.* → Salí el sábado por la noche.
+  - Ahora: *I'm going out tonight.* → Voy a salir esta noche.
+  - Futuro: *I'll go out on Saturday night.* → Saldré el sábado por la noche.
+- *I meet up with friends.* → Quedo con amigos.
+  - Pasado: *I met up with friends.* → Quedé con amigos.
+  - Ahora: *I'm meeting up with friends.* → Estoy quedando con amigos.
+  - Futuro: *I'll meet up with friends.* → Quedaré con amigos.
+- *I go to a party.* → Voy a una fiesta.
+  - Pasado: *I went to a party.* → Fui a una fiesta.
+  - Ahora: *I'm going to a party.* → Estoy yendo a una fiesta.
+  - Futuro: *I'll go to a party.* → Iré a una fiesta.
+- *I go out to dinner.* → Salgo a cenar.
+  - Pasado: *I went out to dinner.* → Salí a cenar.
+  - Ahora: *I'm going out to dinner.* → Estoy saliendo a cenar.
+  - Futuro: *I'll go out to dinner.* → Saldré a cenar.
+- *I go to a bar.* → Voy a un bar.
+  - Pasado: *I went to a bar.* → Fui a un bar.
+  - Ahora: *I'm going to a bar.* → Estoy yendo a un bar.
+  - Futuro: *I'll go to a bar.* → Iré a un bar.
+- *I visit my family.* → Visito a mi familia.
+  - Pasado: *I visited my family.* → Visité a mi familia.
+  - Ahora: *I'm visiting my family.* → Estoy visitando a mi familia.
+  - Futuro: *I'll visit my family.* → Visitaré a mi familia.
+- *I have a barbecue with friends.* → Hago una parrillada con amigos.
+  - Pasado: *I had a barbecue with friends.* → Hice una parrillada con amigos.
+  - Ahora: *I'm having a barbecue with friends.* → Estoy haciendo una parrillada con amigos.
+  - Futuro: *I'll have a barbecue with friends.* → Haré una parrillada con amigos.
+- *I go on a date.* → Salgo en una cita.
+  - Pasado: *I went on a date.* → Salí en una cita.
+  - Ahora: *I'm going on a date.* → Voy a una cita.
+  - Futuro: *I'll go on a date.* → Saldré en una cita.
+- *I get home late.* → Llego tarde a casa.
+  - Pasado: *I got home late.* → Llegué tarde a casa.
+  - Ya: *I've just gotten home.* → Acabo de llegar a casa.
+  - Futuro: *I'll get home late.* → Llegaré tarde a casa.
+
+### Aire libre y deporte
+- *I go hiking.* → Salgo de excursión.
+  - Pasado: *I went hiking.* → Salí de excursión.
+  - Ahora: *I'm going hiking.* → Estoy yendo de excursión.
+  - Futuro: *I'll go hiking.* → Saldré de excursión.
+- *I go to the beach.* → Voy a la playa.
+  - Pasado: *I went to the beach.* → Fui a la playa.
+  - Ahora: *I'm going to the beach.* → Estoy yendo a la playa.
+  - Futuro: *I'll go to the beach.* → Iré a la playa.
+- *I go camping.* → Salgo de campamento.
+  - Pasado: *I went camping.* → Salí de campamento.
+  - Ahora: *I'm going camping.* → Estoy yendo de campamento.
+  - Futuro: *I'll go camping.* → Saldré de campamento.
+- *I ride my bike on a trail.* → Voy en bicicleta por un sendero.
+  - Pasado: *I rode my bike on a trail.* → Fui en bicicleta por un sendero.
+  - Ahora: *I'm riding my bike on a trail.* → Estoy yendo en bicicleta por un sendero.
+  - Futuro: *I'll ride my bike on a trail.* → Iré en bicicleta por un sendero.
+- *I play soccer with my friends.* → Juego fútbol con mis amigos.
+  - Pasado: *I played soccer with my friends.* → Jugué fútbol con mis amigos.
+  - Ahora: *I'm playing soccer with my friends.* → Estoy jugando fútbol con mis amigos.
+  - Futuro: *I'll play soccer with my friends.* → Jugaré fútbol con mis amigos.
+- *I go for a long run.* → Salgo a correr largo.
+  - Pasado: *I went for a long run.* → Salí a correr largo.
+  - Ahora: *I'm going for a long run.* → Estoy saliendo a correr largo.
+  - Futuro: *I'll go for a long run.* → Saldré a correr largo.
+- *I have a picnic in the park.* → Hago un picnic en el parque.
+  - Pasado: *I had a picnic in the park.* → Hice un picnic en el parque.
+  - Ahora: *I'm having a picnic in the park.* → Estoy haciendo un picnic en el parque.
+  - Futuro: *I'll have a picnic in the park.* → Haré un picnic en el parque.
+- *I take a day trip.* → Hago una excursión de un día.
+  - Pasado: *I took a day trip.* → Hice una excursión de un día.
+  - Ahora: *I'm taking a day trip.* → Estoy haciendo una excursión de un día.
+  - Futuro: *I'll take a day trip.* → Haré una excursión de un día.
+- *I go away for the weekend.* → Me voy de viaje el fin de semana.
+  - Pasado: *I went away for the weekend.* → Me fui de viaje el fin de semana.
+  - Ahora: *I'm going away for the weekend.* → Me voy de viaje el fin de semana.
+  - Futuro: *I'll go away for the weekend.* → Me iré de viaje el fin de semana.
+
+### Domingo y preparar la semana
+- *I relax on Sunday.* → Descanso el domingo.
+  - Pasado: *I relaxed on Sunday.* → Descansé el domingo.
+  - Ahora: *I'm relaxing today.* → Estoy descansando hoy.
+  - Futuro: *I'll relax on Sunday.* → Descansaré el domingo.
+- *I go to church on Sunday.* → Voy a la iglesia el domingo.
+  - Pasado: *I went to church on Sunday.* → Fui a la iglesia el domingo.
+  - Ahora: *I'm going to church.* → Estoy yendo a la iglesia.
+  - Futuro: *I'll go to church on Sunday.* → Iré a la iglesia el domingo.
+- *I have Sunday lunch with my family.* → Almuerzo con mi familia el domingo.
+  - Pasado: *I had Sunday lunch with my family.* → Almorcé con mi familia el domingo.
+  - Ahora: *I'm having lunch with my family.* → Estoy almorzando con mi familia.
+  - Futuro: *I'll have Sunday lunch with my family.* → Almorzaré con mi familia el domingo.
+- *I take a nap in the afternoon.* → Echo una siesta por la tarde.
+  - Pasado: *I took a nap in the afternoon.* → Eché una siesta por la tarde.
+  - Ahora: *I'm taking a nap.* → Estoy echando una siesta.
+  - Futuro: *I'll take a nap in the afternoon.* → Echaré una siesta por la tarde.
+- *I prepare for the week ahead.* → Me preparo para la semana que viene.
+  - Pasado: *I prepared for the week ahead.* → Me preparé para la semana que viene.
+  - Ahora: *I'm preparing for the week ahead.* → Me estoy preparando para la semana que viene.
+  - Futuro: *I'll prepare for the week ahead.* → Me prepararé para la semana que viene.
+- *I plan my week.* → Planifico mi semana.
+  - Pasado: *I planned my week.* → Planifiqué mi semana.
+  - Ahora: *I'm planning my week.* → Estoy planificando mi semana.
+  - Futuro: *I'll plan my week.* → Planificaré mi semana.
+- *I iron my clothes for the week.* → Plancho mi ropa para la semana.
+  - Pasado: *I ironed my clothes for the week.* → Planché mi ropa para la semana.
+  - Ahora: *I'm ironing my clothes for the week.* → Estoy planchando mi ropa para la semana.
+  - Futuro: *I'll iron my clothes for the week.* → Plancharé mi ropa para la semana.
+- *I get the Sunday blues.* → Me da la tristeza del domingo.
+  - Pasado: *I got the Sunday blues.* → Me dio la tristeza del domingo.
+  - Ahora: *I'm getting the Sunday blues.* → Me está dando la tristeza del domingo.
+  - Futuro: *I'll get the Sunday blues.* → Me dará la tristeza del domingo.
+- *I go to bed early on Sunday.* → Me acuesto temprano el domingo.
+  - Pasado: *I went to bed early on Sunday.* → Me acosté temprano el domingo.
+  - Ahora: *I'm going to bed early.* → Me voy a acostar temprano.
+  - Futuro: *I'll go to bed early on Sunday.* → Me acostaré temprano el domingo.
+
+## 14. Rutina con hijos
+
+### Despertar a los niños
+- *I wake the kids up.* → Despierto a los niños.
+  - Pasado: *I woke the kids up at 6:30.* → Desperté a los niños a las 6:30.
+  - Ahora: *I'm waking the kids up.* → Estoy despertando a los niños.
+  - Futuro: *I'll wake the kids up.* → Despertaré a los niños.
+- *My kids wake up early.* → Mis hijos se despiertan temprano.
+  - Pasado: *My kids woke up early.* → Mis hijos se despertaron temprano.
+  - Ya: *My kids have woken up early all week.* → Mis hijos se han despertado temprano toda la semana.
+  - Futuro: *My kids will wake up early.* → Mis hijos se despertarán temprano.
+- *My kids don't want to get up.* → Mis hijos no quieren levantarse.
+  - Pasado: *My kids didn't want to get up.* → Mis hijos no quisieron levantarse.
+  - Ahora: *My kids don't want to get up right now.* → Mis hijos no quieren levantarse ahora mismo.
+  - Futuro: *My kids won't want to get up.* → Mis hijos no querrán levantarse.
+- *I get the kids out of bed.* → Saco a los niños de la cama.
+  - Pasado: *I got the kids out of bed.* → Saqué a los niños de la cama.
+  - Ahora: *I'm getting the kids out of bed.* → Estoy sacando a los niños de la cama.
+  - Futuro: *I'll get the kids out of bed.* → Sacaré a los niños de la cama.
+- *I help my kids get dressed.* → Ayudo a mis hijos a vestirse.
+  - Pasado: *I helped my kids get dressed.* → Ayudé a mis hijos a vestirse.
+  - Ahora: *I'm helping my kids get dressed.* → Estoy ayudando a mis hijos a vestirse.
+  - Futuro: *I'll help my kids get dressed.* → Ayudaré a mis hijos a vestirse.
+- *I dress my son.* → Visto a mi hijo.
+  - Pasado: *I dressed my son.* → Vestí a mi hijo.
+  - Ahora: *I'm dressing my son.* → Estoy vistiendo a mi hijo.
+  - Futuro: *I'll dress my son.* → Vestiré a mi hijo.
+- *I comb my daughter's hair.* → Peino a mi hija.
+  - Pasado: *I combed my daughter's hair.* → Peiné a mi hija.
+  - Ahora: *I'm combing my daughter's hair.* → Estoy peinando a mi hija.
+  - Futuro: *I'll comb my daughter's hair.* → Peinaré a mi hija.
+- *I braid my daughter's hair.* → Le hago trenzas a mi hija.
+  - Pasado: *I braided my daughter's hair.* → Le hice trenzas a mi hija.
+  - Ahora: *I'm braiding my daughter's hair.* → Le estoy haciendo trenzas a mi hija.
+  - Futuro: *I'll braid my daughter's hair.* → Le haré trenzas a mi hija.
+- *I brush my kids' teeth.* → Les cepillo los dientes a mis hijos.
+  - Pasado: *I brushed my kids' teeth.* → Les cepillé los dientes a mis hijos.
+  - Ahora: *I'm brushing my kids' teeth.* → Les estoy cepillando los dientes a mis hijos.
+  - Futuro: *I'll brush my kids' teeth.* → Les cepillaré los dientes a mis hijos.
+- *I tell my kids to hurry up.* → Les digo a mis hijos que se apuren.
+  - Pasado: *I told my kids to hurry up.* → Les dije a mis hijos que se apuraran.
+  - Ahora: *I'm telling my kids to hurry up.* → Les estoy diciendo a mis hijos que se apuren.
+  - Futuro: *I'll tell my kids to hurry up.* → Les diré a mis hijos que se apuren.
+
+### Desayuno y salida al colegio
+- *I make breakfast for the kids.* → Preparo el desayuno para los niños.
+  - Pasado: *I made breakfast for the kids.* → Preparé el desayuno para los niños.
+  - Ahora: *I'm making breakfast for the kids.* → Estoy preparando el desayuno para los niños.
+  - Futuro: *I'll make breakfast for the kids.* → Prepararé el desayuno para los niños.
+- *I pack their lunches.* → Les preparo el almuerzo para llevar.
+  - Pasado: *I packed their lunches.* → Les preparé el almuerzo para llevar.
+  - Ahora: *I'm packing their lunches.* → Les estoy preparando el almuerzo para llevar.
+  - Futuro: *I'll pack their lunches.* → Les prepararé el almuerzo para llevar.
+- *I check their backpacks.* → Reviso sus mochilas.
+  - Pasado: *I checked their backpacks.* → Revisé sus mochilas.
+  - Ahora: *I'm checking their backpacks.* → Estoy revisando sus mochilas.
+  - Futuro: *I'll check their backpacks.* → Revisaré sus mochilas.
+- *I sign the permission slip.* → Firmo la autorización.
+  - Pasado: *I signed the permission slip.* → Firmé la autorización.
+  - Ahora: *I'm signing the permission slip.* → Estoy firmando la autorización.
+  - Futuro: *I'll sign the permission slip.* → Firmaré la autorización.
+- *I take the kids to school.* → Llevo a los niños al colegio.
+  - Pasado: *I took the kids to school.* → Llevé a los niños al colegio.
+  - Ahora: *I'm taking the kids to school.* → Estoy llevando a los niños al colegio.
+  - Futuro: *I'll take the kids to school.* → Llevaré a los niños al colegio.
+- *I drop the kids off at school.* → Dejo a los niños en el colegio.
+  - Pasado: *I dropped the kids off at school.* → Dejé a los niños en el colegio.
+  - Ahora: *I'm dropping the kids off at school.* → Estoy dejando a los niños en el colegio.
+  - Futuro: *I'll drop the kids off at school.* → Dejaré a los niños en el colegio.
+- *I walk my kids to the school bus.* → Acompaño a mis hijos al bus escolar.
+  - Pasado: *I walked my kids to the school bus.* → Acompañé a mis hijos al bus escolar.
+  - Ahora: *I'm walking my kids to the school bus.* → Estoy acompañando a mis hijos al bus escolar.
+  - Futuro: *I'll walk my kids to the school bus.* → Acompañaré a mis hijos al bus escolar.
+- *I wave goodbye to my kids.* → Me despido de mis hijos con la mano.
+  - Pasado: *I waved goodbye to my kids.* → Me despedí de mis hijos con la mano.
+  - Ahora: *I'm waving goodbye to my kids.* → Me estoy despidiendo de mis hijos con la mano.
+  - Futuro: *I'll wave goodbye to my kids.* → Me despediré de mis hijos con la mano.
+- *We're late for school.* → Llegamos tarde al colegio.
+  - Pasado: *We were late for school.* → Llegamos tarde al colegio.
+  - Ya: *We've been late for school twice this week.* → Hemos llegado tarde al colegio dos veces esta semana.
+  - Futuro: *We'll be late for school.* → Llegaremos tarde al colegio.
+
+### Después del colegio
+- *I pick up the kids from school.* → Recojo a los niños del colegio.
+  - Pasado: *I picked up the kids from school.* → Recogí a los niños del colegio.
+  - Ahora: *I'm picking up the kids from school.* → Estoy recogiendo a los niños del colegio.
+  - Futuro: *I'll pick up the kids from school.* → Recogeré a los niños del colegio.
+- *I ask my kids about their day.* → Les pregunto a mis hijos cómo les fue el día.
+  - Pasado: *I asked my kids about their day.* → Les pregunté a mis hijos cómo les fue el día.
+  - Ahora: *I'm asking my kids about their day.* → Les estoy preguntando a mis hijos cómo les fue el día.
+  - Futuro: *I'll ask my kids about their day.* → Les preguntaré a mis hijos cómo les fue el día.
+- *I give my kids an after-school snack.* → Les doy una merienda a mis hijos.
+  - Pasado: *I gave my kids an after-school snack.* → Les di una merienda a mis hijos.
+  - Ahora: *I'm giving my kids a snack.* → Les estoy dando una merienda a mis hijos.
+  - Futuro: *I'll give my kids an after-school snack.* → Les daré una merienda a mis hijos.
+- *I help my kids with their homework.* → Ayudo a mis hijos con la tarea.
+  - Pasado: *I helped my kids with their homework.* → Ayudé a mis hijos con la tarea.
+  - Ahora: *I'm helping my kids with their homework.* → Estoy ayudando a mis hijos con la tarea.
+  - Futuro: *I'll help my kids with their homework.* → Ayudaré a mis hijos con la tarea.
+- *My kids do their homework.* → Mis hijos hacen la tarea.
+  - Pasado: *My kids did their homework.* → Mis hijos hicieron la tarea.
+  - Ahora: *My kids are doing their homework.* → Mis hijos están haciendo la tarea.
+  - Ya: *My kids have already done their homework.* → Mis hijos ya hicieron la tarea.
+  - Futuro: *My kids will do their homework.* → Mis hijos harán la tarea.
+- *I check their homework.* → Reviso su tarea.
+  - Pasado: *I checked their homework.* → Revisé su tarea.
+  - Ahora: *I'm checking their homework.* → Estoy revisando su tarea.
+  - Futuro: *I'll check their homework.* → Revisaré su tarea.
+- *I take my kids to soccer practice.* → Llevo a mis hijos al entrenamiento de fútbol.
+  - Pasado: *I took my kids to soccer practice.* → Llevé a mis hijos al entrenamiento de fútbol.
+  - Ahora: *I'm taking my kids to soccer practice.* → Estoy llevando a mis hijos al entrenamiento de fútbol.
+  - Futuro: *I'll take my kids to soccer practice.* → Llevaré a mis hijos al entrenamiento de fútbol.
+- *I take my kids to their classes.* → Llevo a mis hijos a sus clases.
+  - Pasado: *I took my kids to their classes.* → Llevé a mis hijos a sus clases.
+  - Ahora: *I'm taking my kids to their classes.* → Estoy llevando a mis hijos a sus clases.
+  - Futuro: *I'll take my kids to their classes.* → Llevaré a mis hijos a sus clases.
+- *I take my kids to the doctor.* → Llevo a mis hijos al médico.
+  - Pasado: *I took my kids to the doctor.* → Llevé a mis hijos al médico.
+  - Ahora: *I'm taking my kids to the doctor.* → Estoy llevando a mis hijos al médico.
+  - Futuro: *I'll take my kids to the doctor.* → Llevaré a mis hijos al médico.
+- *I go to a parent-teacher meeting.* → Voy a una reunión de padres y profesores.
+  - Pasado: *I went to a parent-teacher meeting.* → Fui a una reunión de padres y profesores.
+  - Ahora: *I'm going to a parent-teacher meeting.* → Estoy yendo a una reunión de padres y profesores.
+  - Futuro: *I'll go to a parent-teacher meeting.* → Iré a una reunión de padres y profesores.
+
+### Jugar y cuidar
+- *I play with my kids.* → Juego con mis hijos.
+  - Pasado: *I played with my kids.* → Jugué con mis hijos.
+  - Ahora: *I'm playing with my kids.* → Estoy jugando con mis hijos.
+  - Futuro: *I'll play with my kids.* → Jugaré con mis hijos.
+- *I take my kids to the playground.* → Llevo a mis hijos al parque infantil.
+  - Pasado: *I took my kids to the playground.* → Llevé a mis hijos al parque infantil.
+  - Ahora: *I'm taking my kids to the playground.* → Estoy llevando a mis hijos al parque infantil.
+  - Futuro: *I'll take my kids to the playground.* → Llevaré a mis hijos al parque infantil.
+- *I push my kid on the swing.* → Empujo a mi hijo en el columpio.
+  - Pasado: *I pushed my kid on the swing.* → Empujé a mi hijo en el columpio.
+  - Ahora: *I'm pushing my kid on the swing.* → Estoy empujando a mi hijo en el columpio.
+  - Futuro: *I'll push my kid on the swing.* → Empujaré a mi hijo en el columpio.
+- *I watch my kids play.* → Veo jugar a mis hijos.
+  - Pasado: *I watched my kids play.* → Vi jugar a mis hijos.
+  - Ahora: *I'm watching my kids play.* → Estoy viendo jugar a mis hijos.
+  - Futuro: *I'll watch my kids play.* → Veré jugar a mis hijos.
+- *I keep an eye on my kids.* → Vigilo a mis hijos.
+  - Pasado: *I kept an eye on my kids.* → Vigilé a mis hijos.
+  - Ahora: *I'm keeping an eye on my kids.* → Estoy vigilando a mis hijos.
+  - Futuro: *I'll keep an eye on my kids.* → Vigilaré a mis hijos.
+- *I read my kids a story.* → Les leo un cuento a mis hijos.
+  - Pasado: *I read my kids a story.* → Les leí un cuento a mis hijos.
+  - Ahora: *I'm reading my kids a story.* → Les estoy leyendo un cuento a mis hijos.
+  - Futuro: *I'll read my kids a story.* → Les leeré un cuento a mis hijos.
+- *I draw with my kids.* → Dibujo con mis hijos.
+  - Pasado: *I drew with my kids.* → Dibujé con mis hijos.
+  - Ahora: *I'm drawing with my kids.* → Estoy dibujando con mis hijos.
+  - Futuro: *I'll draw with my kids.* → Dibujaré con mis hijos.
+- *I watch cartoons with my kids.* → Veo dibujos animados con mis hijos.
+  - Pasado: *I watched cartoons with my kids.* → Vi dibujos animados con mis hijos.
+  - Ahora: *I'm watching cartoons with my kids.* → Estoy viendo dibujos animados con mis hijos.
+  - Futuro: *I'll watch cartoons with my kids.* → Veré dibujos animados con mis hijos.
+- *I limit their screen time.* → Limito su tiempo de pantalla.
+  - Pasado: *I limited their screen time.* → Limité su tiempo de pantalla.
+  - Ahora: *I'm limiting their screen time.* → Estoy limitando su tiempo de pantalla.
+  - Futuro: *I'll limit their screen time.* → Limitaré su tiempo de pantalla.
+- *I tell my kids to clean up their toys.* → Les digo a mis hijos que recojan sus juguetes.
+  - Pasado: *I told my kids to clean up their toys.* → Les dije a mis hijos que recogieran sus juguetes.
+  - Ahora: *I'm telling my kids to clean up their toys.* → Les estoy diciendo a mis hijos que recojan sus juguetes.
+  - Futuro: *I'll tell my kids to clean up their toys.* → Les diré a mis hijos que recojan sus juguetes.
+- *I give my kids a bath.* → Baño a mis hijos.
+  - Pasado: *I gave my kids a bath.* → Bañé a mis hijos.
+  - Ahora: *I'm giving my kids a bath.* → Estoy bañando a mis hijos.
+  - Futuro: *I'll give my kids a bath.* → Bañaré a mis hijos.
+
+### Bebés y niños pequeños
+- *I change the baby's diaper.* → Le cambio el pañal al bebé.
+  - Pasado: *I changed the baby's diaper.* → Le cambié el pañal al bebé.
+  - Ahora: *I'm changing the baby's diaper.* → Le estoy cambiando el pañal al bebé.
+  - Futuro: *I'll change the baby's diaper.* → Le cambiaré el pañal al bebé.
+- *I feed the baby.* → Le doy de comer al bebé.
+  - Pasado: *I fed the baby.* → Le di de comer al bebé.
+  - Ahora: *I'm feeding the baby.* → Le estoy dando de comer al bebé.
+  - Futuro: *I'll feed the baby.* → Le daré de comer al bebé.
+- *I give the baby a bottle.* → Le doy el biberón al bebé.
+  - Pasado: *I gave the baby a bottle.* → Le di el biberón al bebé.
+  - Ahora: *I'm giving the baby a bottle.* → Le estoy dando el biberón al bebé.
+  - Futuro: *I'll give the baby a bottle.* → Le daré el biberón al bebé.
+- *I burp the baby.* → Le saco los gases al bebé.
+  - Pasado: *I burped the baby.* → Le saqué los gases al bebé.
+  - Ahora: *I'm burping the baby.* → Le estoy sacando los gases al bebé.
+  - Futuro: *I'll burp the baby.* → Le sacaré los gases al bebé.
+- *I rock the baby to sleep.* → Arrullo al bebé para que se duerma.
+  - Pasado: *I rocked the baby to sleep.* → Arrullé al bebé para que se durmiera.
+  - Ahora: *I'm rocking the baby to sleep.* → Estoy arrullando al bebé para que se duerma.
+  - Futuro: *I'll rock the baby to sleep.* → Arrullaré al bebé para que se duerma.
+- *The baby cries.* → El bebé llora.
+  - Pasado: *The baby cried all night.* → El bebé lloró toda la noche.
+  - Ahora: *The baby is crying.* → El bebé está llorando.
+  - Futuro: *The baby will cry.* → El bebé llorará.
+- *The baby wakes up at night.* → El bebé se despierta por la noche.
+  - Pasado: *The baby woke up at night.* → El bebé se despertó por la noche.
+  - Ya: *The baby has woken up three times tonight.* → El bebé se ha despertado tres veces esta noche.
+  - Futuro: *The baby will wake up at night.* → El bebé se despertará por la noche.
+- *I put the baby down for a nap.* → Acuesto al bebé para su siesta.
+  - Pasado: *I put the baby down for a nap.* → Acosté al bebé para su siesta.
+  - Ahora: *I'm putting the baby down for a nap.* → Estoy acostando al bebé para su siesta.
+  - Futuro: *I'll put the baby down for a nap.* → Acostaré al bebé para su siesta.
+- *I take the baby for a walk in the stroller.* → Saco al bebé a pasear en el cochecito.
+  - Pasado: *I took the baby for a walk in the stroller.* → Saqué al bebé a pasear en el cochecito.
+  - Ahora: *I'm taking the baby for a walk in the stroller.* → Estoy sacando al bebé a pasear en el cochecito.
+  - Futuro: *I'll take the baby for a walk in the stroller.* → Sacaré al bebé a pasear en el cochecito.
+- *I take my toddler to daycare.* → Llevo a mi niño pequeño a la guardería.
+  - Pasado: *I took my toddler to daycare.* → Llevé a mi niño pequeño a la guardería.
+  - Ahora: *I'm taking my toddler to daycare.* → Estoy llevando a mi niño pequeño a la guardería.
+  - Futuro: *I'll take my toddler to daycare.* → Llevaré a mi niño pequeño a la guardería.
+- *My toddler throws a tantrum.* → Mi niño pequeño hace una rabieta.
+  - Pasado: *My toddler threw a tantrum.* → Mi niño pequeño hizo una rabieta.
+  - Ahora: *My toddler is throwing a tantrum.* → Mi niño pequeño está haciendo una rabieta.
+  - Futuro: *My toddler will throw a tantrum.* → Mi niño pequeño hará una rabieta.
+- *I calm my child down.* → Calmo a mi hijo.
+  - Pasado: *I calmed my child down.* → Calmé a mi hijo.
+  - Ahora: *I'm calming my child down.* → Estoy calmando a mi hijo.
+  - Futuro: *I'll calm my child down.* → Calmaré a mi hijo.
+- *I hug my child.* → Abrazo a mi hijo.
+  - Pasado: *I hugged my child.* → Abracé a mi hijo.
+  - Ahora: *I'm hugging my child.* → Estoy abrazando a mi hijo.
+  - Futuro: *I'll hug my child.* → Abrazaré a mi hijo.
+
+### Disciplina y cariño
+- *I scold my child.* → Regaño a mi hijo.
+  - Pasado: *I scolded my child.* → Regañé a mi hijo.
+  - Ahora: *I'm scolding my child.* → Estoy regañando a mi hijo.
+  - Futuro: *I'll scold my child.* → Regañaré a mi hijo.
+- *I set rules for my kids.* → Les pongo reglas a mis hijos.
+  - Pasado: *I set rules for my kids.* → Les puse reglas a mis hijos.
+  - Ahora: *I'm setting rules for my kids.* → Les estoy poniendo reglas a mis hijos.
+  - Futuro: *I'll set rules for my kids.* → Les pondré reglas a mis hijos.
+- *My kids misbehave.* → Mis hijos se portan mal.
+  - Pasado: *My kids misbehaved.* → Mis hijos se portaron mal.
+  - Ahora: *My kids are misbehaving.* → Mis hijos se están portando mal.
+  - Futuro: *My kids will misbehave.* → Mis hijos se portarán mal.
+- *My kids behave well.* → Mis hijos se portan bien.
+  - Pasado: *My kids behaved well.* → Mis hijos se portaron bien.
+  - Ya: *My kids have behaved well all week.* → Mis hijos se han portado bien toda la semana.
+  - Futuro: *My kids will behave well.* → Mis hijos se portarán bien.
+- *My kids fight with each other.* → Mis hijos pelean entre ellos.
+  - Pasado: *My kids fought with each other.* → Mis hijos pelearon entre ellos.
+  - Ahora: *My kids are fighting with each other.* → Mis hijos están peleando entre ellos.
+  - Futuro: *My kids will fight with each other.* → Mis hijos pelearán entre ellos.
+- *I praise my kids.* → Elogio a mis hijos.
+  - Pasado: *I praised my kids.* → Elogié a mis hijos.
+  - Ahora: *I'm praising my kids.* → Estoy elogiando a mis hijos.
+  - Futuro: *I'll praise my kids.* → Elogiaré a mis hijos.
+- *I give my kids a kiss.* → Les doy un beso a mis hijos.
+  - Pasado: *I gave my kids a kiss.* → Les di un beso a mis hijos.
+  - Ahora: *I'm giving my kids a kiss.* → Les estoy dando un beso a mis hijos.
+  - Futuro: *I'll give my kids a kiss.* → Les daré un beso a mis hijos.
+
+### Cena y hora de dormir de los niños
+- *I make dinner for the kids.* → Preparo la cena para los niños.
+  - Pasado: *I made dinner for the kids.* → Preparé la cena para los niños.
+  - Ahora: *I'm making dinner for the kids.* → Estoy preparando la cena para los niños.
+  - Futuro: *I'll make dinner for the kids.* → Prepararé la cena para los niños.
+- *My kids are picky eaters.* → Mis hijos son quisquillosos con la comida.
+  - Pasado: *My kids were picky eaters.* → Mis hijos eran quisquillosos con la comida.
+  - Ya: *My kids have always been picky eaters.* → Mis hijos siempre han sido quisquillosos con la comida.
+  - Futuro: *My kids will be picky eaters.* → Mis hijos serán quisquillosos con la comida.
+- *I tell my kids to eat their vegetables.* → Les digo a mis hijos que se coman las verduras.
+  - Pasado: *I told my kids to eat their vegetables.* → Les dije a mis hijos que se comieran las verduras.
+  - Ahora: *I'm telling my kids to eat their vegetables.* → Les estoy diciendo a mis hijos que se coman las verduras.
+  - Futuro: *I'll tell my kids to eat their vegetables.* → Les diré a mis hijos que se coman las verduras.
+- *I tell my kids to wash their hands.* → Les digo a mis hijos que se laven las manos.
+  - Pasado: *I told my kids to wash their hands.* → Les dije a mis hijos que se lavaran las manos.
+  - Ahora: *I'm telling my kids to wash their hands.* → Les estoy diciendo a mis hijos que se laven las manos.
+  - Futuro: *I'll tell my kids to wash their hands.* → Les diré a mis hijos que se laven las manos.
+- *I tell my kids it's bedtime.* → Les digo a mis hijos que es hora de dormir.
+  - Pasado: *I told my kids it was bedtime.* → Les dije a mis hijos que era hora de dormir.
+  - Ahora: *I'm telling my kids it's bedtime.* → Les estoy diciendo a mis hijos que es hora de dormir.
+  - Futuro: *I'll tell my kids it's bedtime.* → Les diré a mis hijos que es hora de dormir.
+- *I put my kids to bed.* → Acuesto a mis hijos.
+  - Pasado: *I put my kids to bed.* → Acosté a mis hijos.
+  - Ahora: *I'm putting my kids to bed.* → Estoy acostando a mis hijos.
+  - Ya: *I've already put my kids to bed.* → Ya acosté a mis hijos.
+  - Futuro: *I'll put my kids to bed.* → Acostaré a mis hijos.
+- *I tuck my kids in.* → Arropo a mis hijos.
+  - Pasado: *I tucked my kids in.* → Arropé a mis hijos.
+  - Ahora: *I'm tucking my kids in.* → Estoy arropando a mis hijos.
+  - Futuro: *I'll tuck my kids in.* → Arroparé a mis hijos.
+- *I read a bedtime story.* → Leo un cuento antes de dormir.
+  - Pasado: *I read a bedtime story.* → Leí un cuento antes de dormir.
+  - Ahora: *I'm reading a bedtime story.* → Estoy leyendo un cuento antes de dormir.
+  - Futuro: *I'll read a bedtime story.* → Leeré un cuento antes de dormir.
+- *I sing a lullaby.* → Canto una canción de cuna.
+  - Pasado: *I sang a lullaby.* → Canté una canción de cuna.
+  - Ahora: *I'm singing a lullaby.* → Estoy cantando una canción de cuna.
+  - Futuro: *I'll sing a lullaby.* → Cantaré una canción de cuna.
+- *I say goodnight to my kids.* → Les doy las buenas noches a mis hijos.
+  - Pasado: *I said goodnight to my kids.* → Les di las buenas noches a mis hijos.
+  - Ahora: *I'm saying goodnight to my kids.* → Les estoy dando las buenas noches a mis hijos.
+  - Futuro: *I'll say goodnight to my kids.* → Les daré las buenas noches a mis hijos.
+- *I turn on the night light.* → Enciendo la luz de noche.
+  - Pasado: *I turned on the night light.* → Encendí la luz de noche.
+  - Ahora: *I'm turning on the night light.* → Estoy encendiendo la luz de noche.
+  - Futuro: *I'll turn on the night light.* → Encenderé la luz de noche.
+- *My kids can't fall asleep.* → Mis hijos no pueden dormirse.
+  - Pasado: *My kids couldn't fall asleep.* → Mis hijos no pudieron dormirse.
+  - Ya: *My kids haven't been able to fall asleep.* → Mis hijos no han podido dormirse.
+  - Futuro: *My kids won't be able to fall asleep.* → Mis hijos no podrán dormirse.
+- *I check on my kids during the night.* → Voy a ver a mis hijos durante la noche.
+  - Pasado: *I checked on my kids during the night.* → Fui a ver a mis hijos durante la noche.
+  - Ahora: *I'm checking on my kids.* → Estoy yendo a ver a mis hijos.
+  - Futuro: *I'll check on my kids during the night.* → Iré a ver a mis hijos durante la noche.
+
+## Mi rutina completa en un párrafo
+
+> Cuatro versiones con detalles distintos: **Presente** (hábito), **Pasado** (un día que ya pasó), **Futuro** (el plan de mañana) y **Perfecto** (lo que ya hice hasta ahora).
+
+### Presente
+
+**English**
+
+On weekdays, my alarm goes off at 6:30, but I usually hit the snooze button once before I get out of bed. I stretch, make the bed, check my phone, and drink a glass of water. Then I take a quick shower, brush my teeth, get dressed, and pack my bag. In the kitchen, I make coffee, toast some bread, and have breakfast while I help my kids get ready for school. After that, I feed my dog, put the leash on him, and take him for a short walk around the block. At 7:30, I leave the house, lock the door, and take the bus to work. It takes me thirty minutes, so I listen to a podcast on the way. I arrive at the office at 8:15, greet my coworkers, turn on my computer, and check my email. During the morning, I work on my projects, go to a couple of meetings, and take a short coffee break. At noon, I take my lunch break and eat with my coworkers. In the afternoon, I get back to work, finish my tasks, plan tomorrow, and clock out at 5. On my way home, I stop by the supermarket, and when I get home, I change into comfortable clothes. In the evening, I do some housework, go to the gym, and take my dog on a longer walk, and then I help my kids with their homework. Around 8, I cook dinner, we sit down to eat together, and afterward I wash the dishes. Then I relax: I watch a series, read a few pages, or practice my English. Before bed, I check that the doors are locked, brush my teeth, set the alarm, and put my kids to bed with a story. Finally, I turn off the lights and fall asleep. On weekends, I sleep in, have a big breakfast, do the grocery shopping, and spend time with my family and friends.
+
+**Español**
+
+Entre semana, mi alarma suena a las 6:30, pero normalmente pospongo la alarma una vez antes de levantarme de la cama. Me estiro, tiendo la cama, reviso el teléfono y bebo un vaso de agua. Luego me doy una ducha rápida, me cepillo los dientes, me visto y preparo mi mochila. En la cocina, preparo café, tuesto pan y desayuno mientras ayudo a mis hijos a prepararse para el colegio. Después, le doy de comer a mi perro, le pongo la correa y lo saco a dar un paseo corto por la cuadra. A las 7:30 salgo de casa, cierro la puerta con llave y tomo el bus al trabajo. Tardo treinta minutos, así que escucho un pódcast en el camino. Llego a la oficina a las 8:15, saludo a mis compañeros, enciendo mi computadora y reviso mi correo. Durante la mañana trabajo en mis proyectos, voy a un par de reuniones y hago una pausa corta para el café. Al mediodía tomo mi hora de almuerzo y como con mis compañeros. Por la tarde vuelvo al trabajo, termino mis tareas, planifico el día siguiente y marco mi salida a las 5. De camino a casa paso por el supermercado, y cuando llego a casa me pongo ropa cómoda. Por la noche hago algunas tareas del hogar, voy al gimnasio y llevo a mi perro a dar un paseo más largo, y después ayudo a mis hijos con la tarea. Hacia las 8 preparo la cena, nos sentamos a comer juntos y después lavo los platos. Luego me relajo: veo una serie, leo unas páginas o practico mi inglés. Antes de dormir compruebo que las puertas están cerradas con llave, me cepillo los dientes, pongo la alarma y acuesto a mis hijos con un cuento. Por último, apago las luces y me duermo. Los fines de semana duermo hasta tarde, desayuno en grande, hago las compras del supermercado y paso tiempo con mi familia y mis amigos.
+
+### Pasado
+
+**English**
+
+Yesterday was a hectic Tuesday. My alarm went off at 6:30, but I hit the snooze button twice and overslept, so I jumped out of bed and rushed to the bathroom. I took a quick shower, brushed my teeth, put on my gray suit, and packed my laptop. In the kitchen, I burned the toast, so I just grabbed an apple and drank a cup of coffee while I braided my daughter's hair and checked my son's backpack. Then I fed the cat, put the leash on my dog, and walked him around the block in the rain. I left the house at 7:50, locked the door, and caught the bus just in time. I got stuck in traffic, so I arrived at the office at 8:40, said good morning to everyone, and logged in to my computer. Before noon, I answered emails, went to a long meeting, gave a short presentation, and fixed a couple of problems. At lunch, I went out with two coworkers, ordered a salad, split the bill, and walked back to the office. In the afternoon, I got back to work, finished my report, planned today's tasks, and clocked out at 5:30. On the way home, I stopped by the pharmacy, and when I got home, I changed into comfortable clothes. In the evening, I did the laundry, went for a run, played fetch with my dog in the yard, and helped my kids with their homework. We had dinner at 8: I cooked pasta, we sat down together, and I washed the dishes. Afterward, I watched an episode of a series and studied English for twenty minutes. Before bed, I locked up the house, took my medication, read a bedtime story to my kids, and fell asleep around eleven. Last weekend, by contrast, I slept in on Saturday, had brunch with my friends, and went to the beach on Sunday.
+
+**Español**
+
+Ayer fue un martes agitado. Mi alarma sonó a las 6:30, pero pospuse la alarma dos veces y me quedé dormido, así que salté de la cama y corrí al baño. Me di una ducha rápida, me cepillé los dientes, me puse mi traje gris y preparé mi laptop. En la cocina se me quemó la tostada, así que solo agarré una manzana y bebí una taza de café mientras le hacía trenzas a mi hija y revisaba la mochila de mi hijo. Luego le di de comer al gato, le puse la correa a mi perro y lo paseé por la cuadra bajo la lluvia. Salí de casa a las 7:50, cerré la puerta con llave y alcancé el bus justo a tiempo. Me quedé atascado en el tráfico, así que llegué a la oficina a las 8:40, di los buenos días a todos e inicié sesión en mi computadora. Antes del mediodía respondí correos, fui a una reunión larga, hice una presentación corta y arreglé un par de problemas. A la hora del almuerzo salí con dos compañeros, pedí una ensalada, dividimos la cuenta y volví caminando a la oficina. Por la tarde volví al trabajo, terminé mi informe, planifiqué las tareas de hoy y marqué mi salida a las 5:30. De camino a casa pasé por la farmacia, y cuando llegué a casa me puse ropa cómoda. Por la noche lavé la ropa, salí a correr, jugué a traer la pelota con mi perro en el patio y ayudé a mis hijos con la tarea. Cenamos a las 8: preparé pasta, nos sentamos juntos y lavé los platos. Después vi un episodio de una serie y estudié inglés durante veinte minutos. Antes de dormir cerré la casa con llave, tomé mi medicina, les leí un cuento a mis hijos y me dormí hacia las once. El fin de semana pasado, en cambio, dormí hasta tarde el sábado, hice un brunch con mis amigos y el domingo fui a la playa.
+
+### Futuro
+
+**English**
+
+Tomorrow is going to be a busy but organized day. Tonight, I'll set the alarm for 6:00, and I'm going to wake up before it goes off. I'll stretch, make the bed, and drink a glass of water. Then I'll take a hot shower, brush my teeth, put on a clean shirt, and pack my bag. In the kitchen, I'll make scrambled eggs and coffee, and I'll help my kids get dressed. After that, I'll feed my dog, take him to the park, and let him run off the leash for a while. I'll leave the house at 7:30, lock the door, and take the subway to work, and I'll listen to music on the way. I'll get to the office at 8:15, greet my coworkers, and plan my day. In the morning, I'll write a report, join a video call, and share my screen during a presentation. At noon, I'll bring my lunch from home and eat at my desk, and then I'll take a short walk. In the afternoon, I'll finish my tasks, set a reminder for the next day, and clock out at 5. On my way home, I'll do the grocery shopping, and when I arrive, I'll change my clothes. In the evening, I'll clean the kitchen, work out at the gym, and give my dog a bath. We'll have dinner at 8: I'll cook chicken and rice, and my kids will help me set the table. Later, I'll read a book and call my parents. Before bed, I'll charge my phone, lay out my clothes, tuck my kids in, and turn off the lights. This weekend, I'm going to sleep in, mow the lawn, visit my family, and go hiking on Sunday.
+
+**Español**
+
+Mañana va a ser un día ocupado pero organizado. Esta noche pondré la alarma a las 6:00 y voy a despertarme antes de que suene. Me estiraré, tenderé la cama y beberé un vaso de agua. Luego me daré una ducha caliente, me cepillaré los dientes, me pondré una camisa limpia y prepararé mi bolso. En la cocina haré huevos revueltos y café, y ayudaré a mis hijos a vestirse. Después le daré de comer a mi perro, lo llevaré al parque y lo dejaré correr suelto un rato. Saldré de casa a las 7:30, cerraré la puerta con llave y tomaré el metro al trabajo, y escucharé música en el camino. Llegaré a la oficina a las 8:15, saludaré a mis compañeros y planificaré mi día. Por la mañana escribiré un informe, me uniré a una videollamada y compartiré mi pantalla durante una presentación. Al mediodía traeré mi almuerzo de casa y comeré en mi escritorio, y luego daré un paseo corto. Por la tarde terminaré mis tareas, pondré un recordatorio para el día siguiente y marcaré mi salida a las 5. De camino a casa haré las compras del supermercado, y cuando llegue me cambiaré de ropa. Por la noche limpiaré la cocina, haré ejercicio en el gimnasio y bañaré a mi perro. Cenaremos a las 8: cocinaré pollo con arroz y mis hijos me ayudarán a poner la mesa. Más tarde leeré un libro y llamaré a mis padres. Antes de dormir cargaré mi teléfono, dejaré lista mi ropa, arroparé a mis hijos y apagaré las luces. Este fin de semana voy a dormir hasta tarde, cortaré el césped, visitaré a mi familia y saldré de excursión el domingo.
+
+### Perfecto
+
+**English**
+
+It's only six in the evening, but I've already had a very full day. I've woken up early all week, and today I've been up since 5:45. I've stretched, I've made the bed, and I've already taken a shower. I've had breakfast with my kids, and I've helped them with their lunches. I've walked my dog twice, and he's already exhausted. I've left the house on time every day this week, and I've taken the bus without any problems. Since I got to the office, I've answered about thirty emails, I've been working on the same project for four hours, and I've just finished a meeting. I've already had lunch, and I haven't taken a coffee break yet. I've crossed most of the tasks off my list, and I've sent my report. I've just clocked out, and I've stopped by the supermarket on my way home. Now I've changed into comfortable clothes, I've put away the groceries, and I've started the laundry. I've done the housework twice this week, and I've been to the gym three times. I haven't cooked dinner yet, but I've already chosen the recipe and I've taken the chicken out of the freezer. I haven't watched any TV today, and I've read two chapters of my book. I've been studying English every night for a month, and I've finally started to feel more confident. I haven't gone to bed yet, but I've already set the alarm and packed my bag for tomorrow. For the last three weekends, I've stayed home and rested, and I've spent a lot of time with my family.
+
+**Español**
+
+Son solo las seis de la tarde, pero ya he tenido un día muy completo. He madrugado toda la semana, y hoy llevo despierto desde las 5:45. Me he estirado, he tendido la cama y ya me he duchado. He desayunado con mis hijos y los he ayudado con sus almuerzos. He paseado a mi perro dos veces, y ya está agotado. He salido de casa a tiempo todos los días esta semana y he tomado el bus sin problemas. Desde que llegué a la oficina he respondido unos treinta correos, llevo cuatro horas trabajando en el mismo proyecto y acabo de terminar una reunión. Ya he almorzado y todavía no he hecho una pausa para el café. He tachado casi todas las tareas de mi lista y he enviado mi informe. Acabo de marcar mi salida y he pasado por el supermercado de camino a casa. Ahora me he puesto ropa cómoda, he guardado las compras y he empezado a lavar la ropa. He hecho las tareas del hogar dos veces esta semana y he ido al gimnasio tres veces. Todavía no he preparado la cena, pero ya he elegido la receta y he sacado el pollo del congelador. Hoy no he visto nada de televisión y he leído dos capítulos de mi libro. Llevo un mes estudiando inglés todas las noches y por fin he empezado a sentirme más seguro. Todavía no me he acostado, pero ya puse la alarma y preparé mi bolso para mañana. Los últimos tres fines de semana me he quedado en casa descansando y he pasado mucho tiempo con mi familia.
