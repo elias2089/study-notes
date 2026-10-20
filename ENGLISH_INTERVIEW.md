@@ -1,5 +1,7 @@
 # English Interview
 
+https://elias2089.github.io/study-notes/listen-interview.html
+
 > Perfil: ingeniero informático / desarrollador de software, entrevista de trabajo en inglés (sin vocabulario técnico de código).
 > - Cada frase base va en el tiempo más natural para esa idea, en primera persona.
 > - Debajo se muestran otros tiempos cuando tienen sentido: **Presente**, **Pasado**, **Ahora** (present continuous), **Ya** (present perfect / hasta hoy) y **Futuro**.

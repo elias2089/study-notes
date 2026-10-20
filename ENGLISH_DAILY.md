@@ -1,5 +1,7 @@
 # English Daily Routine
 
+https://elias2089.github.io/study-notes/listen-daily.html
+
 > Cada frase base va en **presente simple** (hábito). Debajo se muestran otros tiempos según tenga sentido:
 > - **Pasado** → lo que hice hoy, ayer o una vez (past simple)
 > - **Ahora** → lo que estoy haciendo en este momento (present continuous)
