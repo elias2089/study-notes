@@ -7,6 +7,138 @@ https://elias2089.github.io/study-notes/listen-interview.html
 > - Debajo se muestran otros tiempos cuando tienen sentido: **Presente**, **Pasado**, **Ahora** (present continuous), **Ya** (present perfect / hasta hoy) y **Futuro**.
 > - Los corchetes `[ ]` son datos que reemplazas con los tuyos.
 
+## ⭐ Lo esencial primero
+> Aprende esto primero: unas 8 frases por epígrafe.
+> Las demás frases y las variantes de tiempo están más abajo, en cada epígrafe.
+
+### 1. Saludo y presentación
+- *Good morning. It's a pleasure to meet you.* → Buenos días. Es un placer conocerlo.
+- *Good afternoon. Thank you for having me.* → Buenas tardes. Gracias por recibirme.
+- *Nice to meet you.* → Mucho gusto.
+- *My name is [name].* → Me llamo [nombre].
+- *I'm a software developer.* → Soy desarrollador de software.
+- *I have [number] years of experience.* → Tengo [número] años de experiencia.
+- *Thank you for the opportunity.* → Gracias por la oportunidad.
+- *I'm excited about this interview.* → Estoy emocionado por esta entrevista.
+
+### 2. Datos personales y de dónde soy
+- *I'm from [country].* → Soy de [país].
+- *I was born in [city].* → Nací en [ciudad].
+- *I live in [city].* → Vivo en [ciudad].
+- *I live with my family.* → Vivo con mi familia.
+- *I speak Spanish and English.* → Hablo español e inglés.
+- *I'm learning English.* → Estoy aprendiendo inglés.
+- *I'm single.* → Estoy soltero.
+- *I'm married.* → Estoy casado.
+- *I like to read.* → Me gusta leer.
+- *I enjoy traveling.* → Disfruto viajar.
+
+### 3. Educación
+- *I studied computer engineering.* → Estudié ingeniería informática.
+- *I studied at [university].* → Estudié en [universidad].
+- *I graduated from [university] in [year].* → Me gradué de [universidad] en [año].
+- *I have a degree in software engineering.* → Tengo un título en ingeniería de software.
+- *I did my thesis on [topic].* → Hice mi tesis sobre [tema].
+- *I took a course in [subject].* → Hice un curso de [tema].
+- *I keep learning new things.* → Sigo aprendiendo cosas nuevas.
+- *I work on side projects.* → Trabajo en proyectos personales.
+
+### 4. Experiencia laboral
+- *I work at [company].* → Trabajo en [empresa].
+- *I work as a software developer.* → Trabajo como desarrollador de software.
+- *I've been working here for [number] years.* → Llevo [número] años trabajando aquí.
+- *I'm part of a development team.* → Formo parte de un equipo de desarrollo.
+- *Before that, I worked at [company].* → Antes de eso, trabajé en [empresa].
+- *I started as a junior developer.* → Empecé como desarrollador junior.
+- *I'm responsible for building new features.* → Soy responsable de crear nuevas funcionalidades.
+- *I work in an agile team.* → Trabajo en un equipo ágil.
+
+### 5. Logros y habilidades
+- *I delivered a project ahead of schedule.* → Entregué un proyecto antes de lo previsto.
+- *I improved the quality of our product.* → Mejoré la calidad de nuestro producto.
+- *I helped the team reach its goals.* → Ayudé al equipo a alcanzar sus metas.
+- *I'm good at solving problems.* → Soy bueno resolviendo problemas.
+- *I'm good at working in a team.* → Soy bueno trabajando en equipo.
+- *I learn quickly.* → Aprendo rápido.
+- *I adapt easily to change.* → Me adapto fácilmente al cambio.
+- *I manage my time well.* → Gestiono bien mi tiempo.
+
+### 6. Fortalezas y debilidades
+- *My greatest strength is my ability to learn.* → Mi mayor fortaleza es mi capacidad de aprender.
+- *One of my strengths is communication.* → Una de mis fortalezas es la comunicación.
+- *One of my weaknesses is that I'm a perfectionist.* → Una de mis debilidades es que soy perfeccionista.
+- *I'm still improving my English.* → Todavía estoy mejorando mi inglés.
+- *I stay calm under pressure.* → Mantengo la calma bajo presión.
+- *I meet my deadlines.* → Cumplo mis plazos.
+- *I welcome feedback.* → Recibo bien los comentarios.
+- *I learn from criticism.* → Aprendo de las críticas.
+
+### 7. Preguntas de comportamiento
+- *I'd like to give you an example.* → Me gustaría darle un ejemplo.
+- *I was working on [project].* → Estaba trabajando en [proyecto].
+- *My task was to [goal].* → Mi tarea era [objetivo].
+- *I decided to [action].* → Decidí [acción].
+- *The result was very positive.* → El resultado fue muy positivo.
+- *What I learned from that experience is [lesson].* → Lo que aprendí de esa experiencia es [lección].
+- *I once had a disagreement with a coworker.* → Una vez tuve un desacuerdo con un compañero.
+- *I took responsibility for the mistake.* → Asumí la responsabilidad del error.
+
+### 8. Por qué esta empresa y este puesto
+- *I'm interested in this position because of [reason].* → Me interesa este puesto por [razón].
+- *I applied because this role matches my skills.* → Postulé porque este puesto coincide con mis habilidades.
+- *I researched your company before this interview.* → Investigué sobre su empresa antes de esta entrevista.
+- *I admire your company's culture.* → Admiro la cultura de su empresa.
+- *I believe I can add value to your team.* → Creo que puedo aportar valor a su equipo.
+- *I'm looking for a new challenge.* → Busco un nuevo desafío.
+- *I think I'm a good fit for this role.* → Creo que soy una buena opción para este puesto.
+- *I want to grow professionally.* → Quiero crecer profesionalmente.
+
+### 9. Metas y planes a futuro
+- *In five years, I see myself as a senior developer.* → En cinco años me veo como desarrollador senior.
+- *I see myself growing with the company.* → Me veo creciendo con la empresa.
+- *I want to take on more responsibility.* → Quiero asumir más responsabilidad.
+- *I want to learn new skills.* → Quiero aprender nuevas habilidades.
+- *I want to improve my English.* → Quiero mejorar mi inglés.
+- *I'm looking for a collaborative environment.* → Busco un entorno colaborativo.
+
+### 10. Condiciones del trabajo
+- *I'm available to start immediately.* → Estoy disponible para empezar de inmediato.
+- *I can start in two weeks.* → Puedo empezar en dos semanas.
+- *I need to give two weeks' notice.* → Tengo que dar un preaviso de dos semanas.
+- *My salary expectation is [amount] per year.* → Mi expectativa salarial es [cantidad] al año.
+- *I'm open to discussing the salary.* → Estoy abierto a hablar del salario.
+- *I prefer to work remotely.* → Prefiero trabajar de forma remota.
+- *I'm comfortable with a hybrid schedule.* → Me siento cómodo con un horario híbrido.
+- *I'm willing to relocate.* → Estoy dispuesto a mudarme.
+- *I have a work permit.* → Tengo un permiso de trabajo.
+
+### 11. Mis preguntas al entrevistador
+- *Could you tell me more about the role?* → ¿Podría contarme más sobre el puesto?
+- *What does a typical day look like in this role?* → ¿Cómo es un día típico en este puesto?
+- *What are the expectations for the first three months?* → ¿Cuáles son las expectativas para los primeros tres meses?
+- *How would you describe the company culture?* → ¿Cómo describiría la cultura de la empresa?
+- *What opportunities are there for growth?* → ¿Qué oportunidades de crecimiento hay?
+- *What are the next steps in the process?* → ¿Cuáles son los siguientes pasos del proceso?
+- *When can I expect to hear back from you?* → ¿Cuándo puedo esperar una respuesta de ustedes?
+
+### 12. Frases para ganar tiempo y aclarar
+- *Could you repeat the question, please?* → ¿Podría repetir la pregunta, por favor?
+- *Sorry, I didn't catch that.* → Perdón, no lo entendí.
+- *Could you speak a little more slowly, please?* → ¿Podría hablar un poco más despacio, por favor?
+- *Could you rephrase the question?* → ¿Podría reformular la pregunta?
+- *Let me think about that for a moment.* → Déjeme pensarlo un momento.
+- *That's a great question.* → Es una gran pregunta.
+- *I'm not completely sure, but I think [answer].* → No estoy completamente seguro, pero creo que [respuesta].
+- *Could you give me an example?* → ¿Podría darme un ejemplo?
+
+### 13. Cierre y seguimiento
+- *Thank you very much for your time.* → Muchas gracias por su tiempo.
+- *I really enjoyed our conversation.* → Disfruté mucho nuestra conversación.
+- *I look forward to hearing from you.* → Espero tener noticias suyas.
+- *I'm very interested in this position.* → Me interesa mucho este puesto.
+- *I send a thank-you email after the interview.* → Envío un correo de agradecimiento después de la entrevista.
+- *Have a great day.* → Que tenga un excelente día.
+
 ## 1. Saludo y presentación
 
 ### Saludar al entrevistador

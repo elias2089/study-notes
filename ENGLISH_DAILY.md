@@ -8,6 +8,145 @@ https://elias2089.github.io/study-notes/listen-daily.html
 > - **Ya** → algo que ya hice o que dura hasta hoy (present perfect)
 > - **Futuro** → lo que haré o voy a hacer (will / going to)
 
+## ⭐ Lo esencial primero
+> Aprende esto primero: unas 7 frases por epígrafe, solo en presente.
+> Los demás tiempos y el resto de frases están más abajo, en cada epígrafe.
+
+### 1. Al despertar
+- *I wake up at 6:30.* → Me despierto a las 6:30.
+- *My alarm goes off at 6.* → Mi alarma suena a las 6.
+- *I hit the snooze button.* → Pospongo la alarma.
+- *I get out of bed.* → Me levanto de la cama.
+- *I make the bed.* → Tiendo la cama.
+- *I feel tired.* → Me siento cansado.
+- *I check my phone.* → Reviso el teléfono.
+
+### 2. Higiene y arreglo personal
+- *I take a shower.* → Me ducho.
+- *I brush my teeth.* → Me cepillo los dientes.
+- *I wash my face.* → Me lavo la cara.
+- *I comb my hair.* → Me peino con peine.
+- *I shave.* → Me afeito.
+- *I get dressed.* → Me visto.
+- *I put on my shoes.* → Me pongo los zapatos.
+- *I pack my bag.* → Preparo mi mochila.
+
+### 3. Desayuno
+- *I have breakfast.* → Desayuno.
+- *I make breakfast.* → Preparo el desayuno.
+- *I make coffee.* → Preparo café.
+- *I drink a cup of coffee.* → Bebo una taza de café.
+- *I toast some bread.* → Tuesto pan.
+- *I eat cereal with milk.* → Como cereales con leche.
+- *I wash the dishes.* → Lavo los platos.
+
+### 3b. Mascotas por la mañana
+- *I feed my dog.* → Le doy de comer a mi perro.
+- *I feed my cat.* → Le doy de comer a mi gato.
+- *I put the leash on my dog.* → Le pongo la correa a mi perro.
+- *I walk my dog.* → Paseo a mi perro.
+- *I take my dog to the park.* → Llevo a mi perro al parque.
+- *I pick up my dog's poop.* → Recojo las heces de mi perro.
+
+### 4. Traslado al trabajo
+- *I leave the house at 7:30.* → Salgo de casa a las 7:30.
+- *I lock the door.* → Cierro la puerta con llave.
+- *I walk to work.* → Voy caminando al trabajo.
+- *I take the bus.* → Tomo el bus.
+- *I take the subway.* → Tomo el metro.
+- *I drive to work.* → Voy en carro al trabajo.
+- *I get stuck in traffic.* → Me quedo atascado en el tráfico.
+- *I arrive at work at 8:15.* → Llego al trabajo a las 8:15.
+
+### 5. Jornada de trabajo
+- *I turn on my computer.* → Enciendo mi computadora.
+- *I check my email.* → Reviso mi correo.
+- *I answer emails.* → Respondo correos.
+- *I work on a project.* → Trabajo en un proyecto.
+- *I go to a meeting.* → Voy a una reunión.
+- *I talk to my coworkers.* → Hablo con mis compañeros.
+- *I make a phone call.* → Hago una llamada.
+- *I take a short break.* → Hago una pausa corta.
+
+### 6. Hora del almuerzo
+- *I have lunch.* → Almuerzo.
+- *I take my lunch break at noon.* → Tomo mi hora de almuerzo al mediodía.
+- *I go out for lunch.* → Salgo a almorzar.
+- *I bring my lunch from home.* → Traigo mi almuerzo de casa.
+- *I heat my food in the microwave.* → Caliento mi comida en el microondas.
+- *I chat with my coworkers.* → Converso con mis compañeros.
+
+### 7. Tarde en el trabajo
+- *I get back to work.* → Vuelvo al trabajo.
+- *I finish my tasks.* → Termino mis tareas.
+- *I plan tomorrow's tasks.* → Planifico las tareas de mañana.
+- *I log out of my computer.* → Cierro sesión en mi computadora.
+- *I clock out.* → Marco mi salida.
+- *I leave the office.* → Salgo de la oficina.
+
+### 8. Regreso a casa
+- *I head home.* → Me voy a casa.
+- *I take the bus home.* → Tomo el bus a casa.
+- *I do the grocery shopping.* → Hago las compras del supermercado.
+- *I get home at 6.* → Llego a casa a las 6.
+- *I take off my shoes.* → Me quito los zapatos.
+- *I change into comfortable clothes.* → Me pongo ropa cómoda.
+
+### 9. Tarde-noche en casa
+- *I do the housework.* → Hago las tareas del hogar.
+- *I clean the house.* → Limpio la casa.
+- *I do the laundry.* → Lavo la ropa.
+- *I go to the gym.* → Voy al gimnasio.
+- *I work out.* → Hago ejercicio.
+- *I spend time with my family.* → Paso tiempo con mi familia.
+- *I help my kids with their homework.* → Ayudo a mis hijos con la tarea.
+- *I take my dog on a long walk.* → Llevo a mi perro a dar un paseo largo.
+
+### 10. Cena
+- *I have dinner at 8.* → Ceno a las 8.
+- *I cook dinner.* → Preparo la cena.
+- *I set the table for dinner.* → Pongo la mesa para la cena.
+- *We sit down to eat.* → Nos sentamos a comer.
+- *I serve the food.* → Sirvo la comida.
+- *I clear the table after dinner.* → Recojo la mesa después de cenar.
+- *I clean the kitchen.* → Limpio la cocina.
+
+### 11. Ocio y tiempo libre
+- *I watch TV.* → Veo televisión.
+- *I watch a series.* → Veo una serie.
+- *I read a book.* → Leo un libro.
+- *I listen to music.* → Escucho música.
+- *I play video games.* → Juego videojuegos.
+- *I study English.* → Estudio inglés.
+- *I go out with my friends.* → Salgo con mis amigos.
+
+### 12. Antes de dormir
+- *I turn off the lights.* → Apago las luces.
+- *I set the alarm for tomorrow.* → Pongo la alarma para mañana.
+- *I brush my teeth before bed.* → Me cepillo los dientes antes de dormir.
+- *I put on my pajamas.* → Me pongo el pijama.
+- *I go to bed at 11.* → Me acuesto a las 11.
+- *I read in bed.* → Leo en la cama.
+- *I fall asleep quickly.* → Me duermo rápido.
+- *I can't fall asleep.* → No puedo dormirme.
+
+### 13. Rutina de fin de semana
+- *I sleep in on Saturday.* → Duermo hasta tarde el sábado.
+- *I have brunch.* → Hago un brunch.
+- *I do the weekly grocery shopping.* → Hago las compras de la semana.
+- *I go out on Saturday night.* → Salgo el sábado por la noche.
+- *I meet up with friends.* → Quedo con amigos.
+- *I relax on Sunday.* → Descanso el domingo.
+
+### 14. Rutina con hijos
+- *I wake the kids up.* → Despierto a los niños.
+- *I help my kids get dressed.* → Ayudo a mis hijos a vestirse.
+- *I take the kids to school.* → Llevo a los niños al colegio.
+- *I pick up the kids from school.* → Recojo a los niños del colegio.
+- *I help my kids with their homework.* → Ayudo a mis hijos con la tarea.
+- *I put my kids to bed.* → Acuesto a mis hijos.
+- *I read my kids a story.* → Les leo un cuento a mis hijos.
+
 ## 1. Al despertar
 
 ### Despertarse
