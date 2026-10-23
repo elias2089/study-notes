@@ -102,7 +102,7 @@ function cleanForSpeech(text) {
   return text
     .replace(/\[([^\]]+)\]/g, '$1')
     .replace(/\.{2,}/g, '')
-    .replace(/[*_`✱]/g, '')
+    .replace(/[*_`✱✚]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }

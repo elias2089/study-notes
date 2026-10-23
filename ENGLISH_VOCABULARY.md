@@ -4,6 +4,7 @@
 > Cada palabra lleva su fonética (como en tu app), cómo se lee con letras del español y su traducción.
 > Las palabras están agrupadas por el sonido o la regla que comparten, para aprender el patrón.
 > ✱ = fonética completada o corregida con un diccionario en internet (tu app la mostraba cortada o con error).
+> ✚ = palabra añadida después de las capturas de tu app: su fonética viene de un diccionario en internet.
 
 ## Cómo leer la fonética
 
@@ -76,6 +77,8 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | patience | /ˈpeɪ.ʃəns/ | PEI-shens | paciencia |
 | musician | /mjuˈzɪ.ʃən/ | myuu-ZI-shen | músico |
 | relationship | /rɪˈleɪ.ʃən.ʃɪp/ | ri-LEI-shen-ship | relación |
+| sufficient ✚ | /səˈfɪ.ʃənt/ | se-FI-shent | suficiente |
+| troubleshoot ✚ | /ˈtrʌ.bəl.ˌʃut/ | TRA-bel-shuut | solucionar problemas |
 
 ### /tʃ/ → "ch"
 
@@ -101,6 +104,9 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | objective | /əbˈdʒɛk.tɪv/ | eb-DYEK-tiv | objetivo |
 | regional | /ˈri.dʒə.nəl/ | RII-dye-nel | regional |
 | apologize | /əˈpɑ.ləˌdʒaɪz/ | e-PAA-le-dyaiz | disculparse |
+| imaginary ✚ | /ɪˈmæ.dʒɪˌnɛ.ri/ | i-MAE-dyi-ne-rii | imaginario |
+| strategies ✚ | /ˈstræ.tə.dʒiz/ | STRAE-te-dyiiz | estrategias |
+| management ✚ | /ˈmæ.nɪdʒ.mənt/ | MAE-nidy-ment | gestión |
 
 ### /ʒ/ → "zh"
 
@@ -110,6 +116,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 |---|---|---|---|
 | genre | /ˈʒɑn.rə/ | ZHAAN-re | género |
 | arbitrage | /ˈɑr.bɪˌtrɑʒ/ | AAR-bi-traazh | arbitraje |
+| pleasure ✚ | /ˈplɛ.ʒɚ/ | PLE-zher | placer |
 
 ### gh y ph suenan /f/
 
@@ -140,6 +147,9 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | relaxing | /riˈlæks.ɪŋ/ | rii-LAEKS-ing | relajante |
 | daring | /ˈdɛ.rɪŋ/ | DE-ring | atrevido |
 | mountaineering | /ˌmaʊn.təˈnɪ.rɪŋ/ | maun-te-NI-ring | alpinismo |
+| angry ✚ | /ˈæŋ.ɡri/ | AENG-grii | enojado |
+| struggling ✚ | /ˈstrʌ.ɡə.lɪŋ/ | STRA-gue-ling | luchando |
+| prioritizing ✚ | /praɪˈɔ.rə.taɪ.zɪŋ/ | prai-O-re-tai-zing | priorizando |
 
 ## 2. Letras mudas y s + consonante
 
@@ -163,6 +173,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | would | /wʊd/ | wud | haría |
 | could ✱ | /kʊd/ | kud | podría |
 | should | /ʃʊd/ | shud | debería |
+| calm ✚ | /kɑm/ | kaam | calmado |
 
 ### Empieza con s + consonante: no añadas "e" delante
 
@@ -177,6 +188,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | spicy | /ˈspaɪ.si/ | SPAI-sii | picante |
 | stylish | /ˈstaɪ.lɪʃ/ | STAI-lish | elegante |
 | stunning | /ˈstʌ.nɪŋ/ | STA-ning | impresionante |
+| stale ✚ | /steɪl/ | steil | obsoleto |
 
 ## 3. Terminaciones
 
@@ -191,6 +203,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | imagination | /ɪˌmæ.dʒəˈneɪ.ʃən/ | i-mae-dye-NEI-shen | imaginación |
 | migration | /maɪˈɡreɪ.ʃən/ | mai-GREI-shen | migración |
 | relocation ✱ | /ˌri.loʊˈkeɪ.ʃən/ | rii-lou-KEI-shen | reubicación |
+| function ✚ | /ˈfʌŋk.ʃən/ | FANGK-shen | función |
 
 ### -ge(s) → /ɪdʒ/ o /ədʒ/ (plural /ɪdʒɪz/)
 
@@ -222,6 +235,8 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | entered | /ˈɛ.nɚd/ | E-nerd | entró |
 | declared | /dɪˈklɛrd/ | di-KLERD | declaró |
 | tired | /ˈtaɪ.ɚd/ | TAI-erd | cansado |
+| postponed ✚ | /poʊstˈpoʊnd/ | poust-POUND | pospuesto |
+| enhanced ✚ | /ɪnˈhænst/ | in-JAENST | mejorado |
 
 ### -s / -es final: suena /s/, /z/ o /ɪz/
 
@@ -246,10 +261,15 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | describes | /dɪsˈkraɪbz/ | dis-KRAIBZ | describe |
 | bumps | /bʌmps/ | bamps | baches |
 | centuries | /ˈsɛn.tʃɚ.iz/ | SEN-cher-iiz | siglos |
+| characters ✚ | /ˈkɛr.ək.tɚz/ | KER-ek-terz | caracteres |
+| basics ✚ | /ˈbeɪ.sɪks/ | BEI-siks | conceptos básicos |
+| determiners ✚ | /dɪˈtɝ.mɪ.nɚz/ | di-TER-mi-nerz | determinantes |
+| identifiers ✚ | /aɪˈdɛn.tɪˌfaɪ.ɚz/ | ai-DEN-ti-fai-erz | identificadores |
+| ideas ✚ | /aɪˈdi.əz/ | ai-DII-ez | ideas |
 
 ### -ly: "li" corta y sin acento
 
-> En los adverbios, **-ly** se lee **li** corta y átona; el acento queda en la sílaba anterior: cor-**REKT**-li, ex-**AEKT**-li. En **-ically** se lee **i-ke-li**: lo-gi-**cal**-ly → "LAA-dyi-klii".
+> En los adverbios, **-ly** se lee **li** corta y átona; el acento queda en la sílaba anterior: cor-**REKT**-li, ex-**AEKT**-li. En **-ically** se lee **i-ke-li**: lo-gi-**cal**-ly → "LAA-dyi-kli".
 
 | Palabra | Fonética | Se lee | Español |
 |---|---|---|---|
@@ -269,6 +289,10 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | confidently | /ˈkɑn.fə.dənt.li/ | KAAN-fe-dent-lii | con confianza |
 | typically | /ˈtɪ.pɪ.kə.li/ | TI-pi-ke-lii | típicamente |
 | generally | /ˈdʒɛn.rə.li/ | DYEN-re-lii | generalmente |
+| actually ✚ | /ˈæk.tʃu.ə.li/ | AEK-chuu-e-lii | en realidad |
+| unfairly ✚ | /ʌnˈfɛr.li/ | an-FER-lii | injustamente |
+| mistakenly ✚ | /mɪˈsteɪ.kən.li/ | mi-STEI-ken-lii | por error |
+| mostly ✚ | /ˈmoʊst.li/ | MOUST-lii | mayormente |
 
 ### -le / -al final: sílaba débil "bel", "pel", "tel"
 
@@ -283,6 +307,11 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | multiple | /ˈmʌl.tə.pəl/ | MAL-te-pel | múltiple |
 | fatal ✱ | /ˈfeɪ.təl/ | FEI-tel | mortal |
 | vowel | /ˈvaʊ.əl/ | VAU-el | vocal |
+| trouble ✚ | /ˈtrʌ.bəl/ | TRA-bel | problema |
+| illegal ✚ | /ɪˈli.ɡəl/ | i-LII-guel | ilegal |
+| several ✚ | /ˈsɛv.rəl/ | SEV-rel | varios |
+| possible ✚ | /ˈpɑ.sə.bəl/ | PAA-se-bel | posible |
+| little ✚ | /ˈlɪ.təl/ | LI-tel | poco |
 
 ### -ate en verbos: /eɪt/ ("eit")
 
@@ -303,6 +332,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 |---|---|---|---|
 | curiosity | /ˌkjʊ.riˈɑ.sə.ti/ | kyu-rii-AA-se-tii | curiosidad |
 | university ✱ | /ˌju.nɪˈvɝ.sə.ti/ | yuu-ni-VER-se-tii | universidad |
+| variety ✚ | /vəˈraɪ.ə.ti/ | ve-RAI-e-tii | variedad |
 
 ### -er / -or final → /ɚ/ ("er" con r suave)
 
@@ -324,6 +354,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | neighborhood | /ˈneɪ.bɚˌhʊd/ | NEI-ber-jud | vecindario |
 | exercise | /ˈɛks.ɚˌsaɪz/ | EKS-er-saiz | ejercicio |
 | failure | /ˈfeɪl.jɚ/ | FEIL-yer | fracaso |
+| limiter ✚ | /ˈlɪ.mɪ.tɚ/ | LI-mi-ter | limitador |
 
 ## 4. Contracciones
 
@@ -381,6 +412,9 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | history | /ˈhɪs.tri/ | JIS-trii | historia |
 | victory | /ˈvɪk.tri/ | VIK-trii | victoria |
 | trick | /trɪk/ | trik | truco |
+| fix ✚ | /fɪks/ | fiks | arreglar |
+| criteria ✚ | /kraɪˈtɪr.i.ə/ | krai-TIR-ii-e | criterios |
+| realistic ✚ | /ˌri.əˈlɪs.tɪk/ | rii-e-LIS-tik | realista |
 
 ### /eɪ/ → "ei"
 
@@ -397,6 +431,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | great | /ɡreɪt/ | greit | genial |
 | overcame | /ˌoʊ.vəˈkeɪm/ | ou-ve-KEIM | superó |
 | ate | /eɪt/ | eit | comió |
+| rebase ✚ | /riˈbeɪs/ | rii-BEIS | rebasar |
 
 ### /ɛ/ → "e"
 
@@ -414,6 +449,12 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | mechanism | /ˈmɛ.kəˌnɪ.zəm/ | ME-ke-ni-zem | mecanismo |
 | emphasize | /ˈɛm.fəˌsaɪz/ | EM-fe-saiz | enfatizar |
 | quest | /kwɛst/ | kwest | búsqueda |
+| meant ✚ | /mɛnt/ | ment | quiso decir |
+| comparison ✚ | /kəmˈpɛ.rɪ.sən/ | kem-PE-ri-sen | comparación |
+| against ✚ | /əˈɡɛnst/ | e-GUENST | contra |
+| renege ✚ | /rɪˈnɛɡ/ | ri-NEG | faltar a una promesa |
+| plenty ✚ | /ˈplɛn.ti/ | PLEN-tii | de sobra |
+| express ✚ | /ɪkˈsprɛs/ | ik-SPRES | expresar |
 
 ### /æ/ → "ae"
 
@@ -448,6 +489,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | was | /wʌz/ | waz | era |
 | result | /rɪˈzʌlt/ | ri-ZALT | resultado |
 | subway | /ˈsʌbˌweɪ/ | SAB-wei | metro |
+| discuss ✚ | /dɪˈskʌs/ | di-SKAS | discutir |
 
 ### /ɑ/ → "aa": la a abierta y larga
 
@@ -462,6 +504,9 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | composite ✱ | /kəmˈpɑ.zɪt/ | kem-PAA-zit | compuesto |
 | combine | /ˈkɑm.baɪn/ | KAAM-bain | combinar |
 | positive | /ˈpɑ.zə.tɪv/ | PAA-ze-tiv | positivo |
+| beyond ✚ | /biˈɑnd/ | bii-AAND | más allá |
+| conflict ✚ | /ˈkɑn.flɪkt/ | KAAN-flikt | conflicto |
+| evolve ✚ | /ɪˈvɑlv/ | i-VAALV | evolucionar |
 
 ### /ɔ/ → "o" abierta
 
@@ -476,6 +521,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | report | /rɪˈpɔrt/ | ri-PORT | informe |
 | transform | /trænsˈfɔrm/ | traens-FORM | transformar |
 | awesome | /ˈɔ.səm/ | O-sem | increíble |
+| prioritize ✚ | /praɪˈɔ.rə.taɪz/ | prai-O-re-taiz | priorizar |
 
 ### /oʊ/ → "ou"
 
@@ -498,6 +544,11 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | nearby | /ˌnɪrˈbaɪ/ | nir-BAI | cerca |
 | kind | /kaɪnd/ | kaind | amable |
 | requirement | /rɪˈkwaɪr.mənt/ | ri-KWAIR-ment | requisito |
+| quiet ✚ | /ˈkwaɪ.ət/ | KWAI-et | silencioso |
+| admire ✚ | /ədˈmaɪr/ | ed-MAIR | admirar |
+| item ✚ | /ˈaɪ.təm/ | AI-tem | elemento |
+| imply ✚ | /ɪmˈplaɪ/ | im-PLAI | implicar |
+| reply ✚ | /rɪˈplaɪ/ | ri-PLAI | responder |
 
 ### /aʊ/ → "au"
 
@@ -532,6 +583,8 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | return | /rɪˈtɝn/ | ri-TERN | regresar |
 | purpose | /ˈpɝ.pəs/ | PER-pes | propósito |
 | confirm | /kənˈfɝm/ | ken-FERM | confirmar |
+| nervous ✚ | /ˈnɝ.vəs/ | NER-ves | nervioso |
+| certain ✚ | /ˈsɝ.tən/ | SER-ten | cierto |
 
 ### /ʊ/ → "u" corta
 
@@ -541,6 +594,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 |---|---|---|---|
 | understood | /ʌn.dəˈstʊd/ | an-de-STUD | entendió |
 | tourist | /ˈtʊ.rɪst/ | TU-rist | turista |
+| curious ✚ | /ˈkjʊr.i.əs/ | KYUR-ii-es | curioso |
 
 ### /u/ → "uu": la u larga
 
