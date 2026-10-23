@@ -64,6 +64,19 @@ button.play { flex: none; width: 2rem; height: 2rem; padding: 0; border-radius: 
 .para.es .para-text, .para-text.es { color: var(--muted); }
 .sentence { border-radius: 0.25rem; }
 
+.word-row .text { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0.1rem 0.9rem; }
+.word-row .en { font-style: normal; font-weight: 600; min-width: 7rem; }
+.ipa { font-family: ui-monospace, "Cascadia Mono", Menlo, monospace; font-size: 0.9rem; color: var(--muted); }
+.say { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.word-row .es { font-size: 0.92rem; }
+a { color: var(--accent); }
+
+table.legend { border-collapse: collapse; width: 100%; margin: 0.5rem 0; font-size: 0.95rem; }
+table.legend th, table.legend td { border-bottom: 1px solid var(--line); padding: 0.3rem 0.5rem; text-align: left; vertical-align: top; }
+table.legend th { color: var(--muted); font-weight: 600; }
+
 .hide-es .es { display: none; }
+.hide-ipa .ipa { display: none; }
+.hide-say .say { display: none; }
 .hide-tenses ul.tenses { display: none; }
 @media (prefers-reduced-motion: no-preference) { .row, .sentence { transition: background 0.2s; } }

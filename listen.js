@@ -31,13 +31,30 @@ function parseMarkdown(md) {
     }
     return section;
   };
-  const addNote = (text) => (epigraph ? epigraph.notes : doc.notes).push(text);
+  const addNote = (text) => {
+    const target = section || epigraph || doc;
+    (target.notes || (target.notes = [])).push(text);
+  };
+  let table = null;
 
   for (const rawLine of md.split(/\r?\n/)) {
     const line = rawLine.trimEnd();
     if (!line.trim()) continue;
+    if (!line.startsWith('|')) table = null;
 
-    if (line.startsWith('# ')) {
+    if (line.startsWith('|')) {
+      const cells = line.split('|').slice(1, -1).map((cell) => cell.trim());
+      if (cells.every((cell) => /^:?-{3,}:?$/.test(cell))) continue;
+      if (!table) {
+        // first row of a table is its header; a "Palabra" header marks a vocabulary table
+        table = { words: cells[0] === 'Palabra', rows: [] };
+        if (!table.words) currentSection().items.push({ type: 'table', header: cells, rows: table.rows });
+      } else if (table.words) {
+        currentSection().items.push({ type: 'word', word: cells[0], ipa: cells[1], say: cells[2], es: cells[3] });
+      } else {
+        table.rows.push(cells);
+      }
+    } else if (line.startsWith('# ')) {
       doc.title = line.slice(2).trim();
     } else if (line.startsWith('## ')) {
       epigraph = { title: line.slice(3).trim(), notes: [], sections: [] };
@@ -66,6 +83,8 @@ function parseMarkdown(md) {
       currentSection().items.push({ type: 'para', lang: paragraphLang, text: line.trim() });
       paragraphLang = null;
       lastItem = null;
+    } else if (section) {
+      section.items.push({ type: 'text', text: line.trim() });
     } else {
       addNote(line.trim());
     }
@@ -83,7 +102,7 @@ function cleanForSpeech(text) {
   return text
     .replace(/\[([^\]]+)\]/g, '$1')
     .replace(/\.{2,}/g, '')
-    .replace(/[*_`]/g, '')
+    .replace(/[*_`✱]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -95,11 +114,15 @@ function inlineMarkdown(text) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/`(.+?)`/g, '<code>$1</code>');
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1">$1</a>');
 }
 
 function initPage() {
-  const synth = window.speechSynthesis;
+  // without speech support the page still renders; playing shows a message
+  const synth = window.speechSynthesis || {
+    getVoices: () => [], cancel() {}, speak() {}, pause() {}, resume() {}, paused: false, speaking: false,
+  };
   const $ = (id) => document.getElementById(id);
   const main = $('main');
   const tabsEl = $('tabs');
@@ -112,6 +135,10 @@ function initPage() {
   const searchInput = $('search');
   const jumpSelect = $('jump');
   const messageEl = $('message');
+  // vocabulary-page controls (absent on the other pages)
+  const repeatSelect = $('repeat');
+  const gapInput = $('gap');
+  const gapValue = $('gapValue');
 
   const docs = new Map();
   let activeName = null;
@@ -179,19 +206,27 @@ function initPage() {
       return;
     }
     const current = token;
+    const repeat = repeatSelect ? Number(repeatSelect.value) : 1;
+    const gap = gapInput ? Number(gapInput.value) * 1000 : 0;
+    const queue = entries.flatMap((entry) => Array.from({ length: repeat }, () => entry));
     let index = 0;
     const next = () => {
       if (current !== token) return;
-      if (index >= entries.length) {
+      if (index >= queue.length) {
         stop();
         return;
       }
-      const { node, text } = entries[index++];
+      const { node, text } = queue[index++];
       mark(node);
       const utterance = new SpeechSynthesisUtterance(cleanForSpeech(text));
       utterance.voice = voices[Number(voiceSelect.value)] || voices[0];
       utterance.rate = Number(rateInput.value);
-      utterance.onend = next;
+      // the pause between repetitions leaves time to say the word out loud
+      utterance.onend = () => {
+        if (current !== token) return;
+        if (gap && index < queue.length) setTimeout(next, gap);
+        else next();
+      };
       utterance.onerror = (event) => {
         if (event.error !== 'canceled' && event.error !== 'interrupted') next();
       };
@@ -244,6 +279,48 @@ function initPage() {
   }
 
   function renderItem(item, sectionEntries) {
+    if (item.type === 'text') {
+      const p = el('p', 'note');
+      p.innerHTML = inlineMarkdown(item.text);
+      return p;
+    }
+
+    if (item.type === 'table') {
+      const table = el('table', 'legend');
+      const head = el('tr');
+      item.header.forEach((cell) => {
+        const th = el('th');
+        th.innerHTML = inlineMarkdown(cell);
+        head.append(th);
+      });
+      table.append(head);
+      item.rows.forEach((cells) => {
+        const tr = el('tr');
+        cells.forEach((cell) => {
+          const td = el('td');
+          td.innerHTML = inlineMarkdown(cell);
+          tr.append(td);
+        });
+        table.append(tr);
+      });
+      return table;
+    }
+
+    if (item.type === 'word') {
+      const li = el('li', 'item');
+      li.dataset.q = [item.word, item.ipa, item.say, item.es].join(' ').toLowerCase();
+      const row = el('div', 'row word-row');
+      const text = el('div', 'text');
+      const word = el('span', 'en word', item.word);
+      word.lang = 'en';
+      text.append(word, el('span', 'ipa', item.ipa), el('span', 'say', item.say), el('span', 'es', item.es));
+      const entries = () => [{ node: row, text: item.word }];
+      row.append(playButton(entries, `Listen: ${item.word}`), text);
+      li.append(row);
+      sectionEntries.push(entries);
+      return li;
+    }
+
     if (item.type === 'para') {
       const box = el('div', `para ${item.lang}`);
       box.dataset.q = item.text.toLowerCase();
@@ -310,11 +387,18 @@ function initPage() {
           if (node.tagName === 'LI') list.append(node);
           else wrap.append(node);
         });
+        const intro = (sec.notes || []).map((note) => {
+          const p = el('p', 'note');
+          p.innerHTML = inlineMarkdown(note);
+          return p;
+        });
         if (sec.title) {
           const head = el('div', 'sec-head');
           head.append(el('h3', '', sec.title));
           head.append(playButton(() => entryGetters.flatMap((get) => get()), `Listen to the whole section: ${sec.title}`));
-          wrap.prepend(head);
+          wrap.prepend(head, ...intro);
+        } else if (intro.length) {
+          wrap.prepend(...intro);
         }
         if (list.children.length) wrap.append(list);
         details.append(wrap);
@@ -382,6 +466,7 @@ function initPage() {
 
   function bindToggle(id, className, key) {
     const input = $(id);
+    if (!input) return;
     const apply = () => main.classList.toggle(className, !input.checked);
     if (key in settings) input.checked = Boolean(settings[key]);
     input.addEventListener('change', () => {
@@ -394,6 +479,26 @@ function initPage() {
 
   bindToggle('showSpanish', 'hide-es', 'showSpanish');
   bindToggle('showTenses', 'hide-tenses', 'showTenses');
+  bindToggle('showIpa', 'hide-ipa', 'showIpa');
+  bindToggle('showSay', 'hide-say', 'showSay');
+
+  if (repeatSelect) {
+    if (settings.repeat) repeatSelect.value = settings.repeat;
+    repeatSelect.addEventListener('change', () => {
+      settings.repeat = repeatSelect.value;
+      saveSettings();
+    });
+  }
+  if (gapInput) {
+    if (settings.gap) gapInput.value = settings.gap;
+    const showGap = () => (gapValue.textContent = `${Number(gapInput.value).toFixed(1)} s`);
+    showGap();
+    gapInput.addEventListener('input', () => {
+      settings.gap = gapInput.value;
+      showGap();
+      saveSettings();
+    });
+  }
 
   if (settings.rate) rateInput.value = settings.rate;
   rateValue.textContent = `${Number(rateInput.value).toFixed(1)}×`;
