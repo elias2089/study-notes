@@ -12,246 +12,364 @@ https://elias2089.github.io/study-notes/listen-daily.html
 > Aprende esto primero: unas 7 frases por epígrafe, solo en presente.
 > Los demás tiempos y el resto de frases están más abajo, en cada epígrafe.
 > 🔤 = cómo se lee con letras del español (las mismas reglas del vocabulario: sh, ch, dy, th→"th", dh=th con voz; la sílaba en MAYÚSCULAS lleva el acento).
+> 📝 = por qué lleva (o no lleva) preposición o artículo. Reglas rápidas:
+> - `at` + hora exacta · `on` + día · `in` + parte del día o mes.
+> - `the` = cosa concreta y conocida · `a/an` = una cualquiera.
+> - Sin artículo: comidas (*breakfast*), idiomas (*English*), medios (*TV*), incontables (*coffee*, *music*) y lugares-actividad (*work*, *school*, *bed*, *home*).
+> - Cuerpo y ropa propia: `my`/`their` en vez de `the` (*my teeth*).
+> - `to` = destino (*go to the gym*), pero *home* no lleva `to`.
+> - Phrasal verbs: la partícula (*up, out, on, off*) forma parte del verbo.
+> - El inglés no usa reflexivos ("me", "se"): *I get dressed*, *I fall asleep*.
+> - El inglés no usa la `a` personal: *I feed my dog* (no "a my dog").
 
 ### 1. Al despertar
 - *I wake up at 6:30.* → Me despierto a las 6:30.
   - 🔤 ai weik ap at siks-THER-ti
+  - 📝 `at` + hora exacta. `up` es parte del phrasal verb *wake up*.
 - *My alarm goes off at 6.* → Mi alarma suena a las 6.
   - 🔤 mai e-LAARM gouz of at siks
+  - 📝 `at` + hora exacta. `off` completa el phrasal verb *go off* (sonar).
+- *I turn off the alarm.* → Apago la alarma.
+  - 🔤 ai tern of dhi e-LAARM
+  - 📝 `turn off` = apagar. `the`: la alarma concreta que acaba de sonar.
 - *I hit the snooze button.* → Pospongo la alarma.
   - 🔤 ai jit dhe snuuz BA-ten
+  - 📝 El español dice "la alarma"; el inglés nombra el botón, y `the` lo señala (el botón concreto).
 - *I get out of bed.* → Me levanto de la cama.
   - 🔤 ai guet aut ev bed
+  - 📝 `out of` = salir de. `bed` sin `the`: en inglés es la actividad habitual, no un mueble concreto.
 - *I make the bed.* → Tiendo la cama.
   - 🔤 ai meik dhe bed
+  - 📝 `the`: aquí sí es tu cama concreta, la que arreglas. Contrasta con *get out of bed*.
 - *I feel tired.* → Me siento cansado.
   - 🔤 ai fiil TAI-erd
 - *I check my phone.* → Reviso el teléfono.
   - 🔤 ai chek mai foun
+  - 📝 El español dice "el teléfono"; el inglés usa `my` para lo que es tuyo.
 
 ### 2. Higiene y arreglo personal
 - *I take a shower.* → Me ducho.
   - 🔤 ai teik e SHAU-er
+  - 📝 En español es reflexivo ("me ducho"); en inglés la ducha es una cosa que se toma: `a shower`.
 - *I brush my teeth.* → Me cepillo los dientes.
   - 🔤 ai brash mai tiith
+  - 📝 El español dice "los dientes"; en inglés el cuerpo lleva posesivo: `my`, no `the`.
 - *I wash my face.* → Me lavo la cara.
   - 🔤 ai waash mai feis
+  - 📝 El español dice "la cara"; el inglés, `my face`. Tampoco hay "me".
 - *I comb my hair.* → Me peino con peine.
   - 🔤 ai koum mai jer
+  - 📝 `my hair` en vez de "el pelo". Sin "me" reflexivo, y el peine ya va dentro de *comb*.
 - *I shave.* → Me afeito.
   - 🔤 ai sheiv
 - *I get dressed.* → Me visto.
   - 🔤 ai guet drest
+  - 📝 El español es reflexivo ("me visto"); el inglés usa *get* + participio, sin pronombre.
 - *I put on my shoes.* → Me pongo los zapatos.
   - 🔤 ai put aan mai shuuz
+  - 📝 `put on` = ponerse. `my` en vez de "los" (ropa propia).
 - *I pack my bag.* → Preparo mi mochila.
   - 🔤 ai paek mai baeg
+  - 📝 `my` = "mi", igual que en español.
 
 ### 3. Desayuno
 - *I have breakfast.* → Desayuno.
   - 🔤 ai jaev BREK-fest
+  - 📝 Las comidas no llevan `the` en inglés (en español sí: "el desayuno").
 - *I make breakfast.* → Preparo el desayuno.
   - 🔤 ai meik BREK-fest
+  - 📝 El español dice "el desayuno"; en inglés, sin `the`.
 - *I make coffee.* → Preparo café.
   - 🔤 ai meik KO-fii
+  - 📝 Sin artículo: *coffee* es incontable, como en español.
 - *I drink a cup of coffee.* → Bebo una taza de café.
   - 🔤 ai dringk e kap ev KO-fii
+  - 📝 `a cup of`: la medida lleva `a`, y `of` la une con lo que contiene.
+- *I drink juice.* → Tomo jugo.
+  - 🔤 ai dringk DYUUS
+  - 📝 Sin artículo: *juice* es incontable. Se usa *drink*, no *take*.
 - *I toast some bread.* → Tuesto pan.
   - 🔤 ai toust sam bred
+  - 📝 `some` = una cantidad de algo incontable. El español no lo dice.
 - *I eat cereal with milk.* → Como cereales con leche.
   - 🔤 ai iit SIR-ii-el with milk
+  - 📝 `with` = con. Sin artículo (incontables).
 - *I wash the dishes.* → Lavo los platos.
   - 🔤 ai waash dhe DI-shiz
+  - 📝 `the`: los platos concretos que se usaron.
 
 ### 3b. Mascotas por la mañana
 - *I feed my dog.* → Le doy de comer a mi perro.
   - 🔤 ai fiid mai dog
+  - 📝 El español usa `a` ("a mi perro"); el inglés no: el verbo va directo con el objeto.
 - *I feed my cat.* → Le doy de comer a mi gato.
   - 🔤 ai fiid mai kaet
+  - 📝 Igual: sin `a` personal.
 - *I put the leash on my dog.* → Le pongo la correa a mi perro.
   - 🔤 ai put dhe liish aan mai dog
+  - 📝 `the leash`: la correa concreta. `on` = sobre/puesta en. El español dice `a`; el inglés, `on`.
 - *I walk my dog.* → Paseo a mi perro.
   - 🔤 ai wok mai dog
+  - 📝 El español lleva `a`; en inglés *walk* toma el objeto directo, sin preposición.
 - *I take my dog to the park.* → Llevo a mi perro al parque.
   - 🔤 ai teik mai dog tu dhe paark
+  - 📝 `to` = destino. `the park`: un lugar concreto. El español junta a + el = "al".
 - *I pick up my dog's poop.* → Recojo las heces de mi perro.
   - 🔤 ai pik ap mai dogz puup
+  - 📝 `pick up` = recoger (phrasal). `'s` reemplaza a "de": "de mi perro" = `my dog's`.
 
 ### 4. Traslado al trabajo
 - *I leave the house at 7:30.* → Salgo de casa a las 7:30.
   - 🔤 ai liiv dhe jaus at SE-ven-THER-ti
+  - 📝 *Leave* no lleva `de`. `the house`: tu casa concreta. `at` + hora exacta.
 - *I lock the door.* → Cierro la puerta con llave.
   - 🔤 ai laak dhe dor
+  - 📝 `the door`: la puerta concreta. La llave ya va dentro de *lock*.
 - *I walk to work.* → Voy caminando al trabajo.
   - 🔤 ai wok tu werk
+  - 📝 `to` = destino. `work` sin `the`: es una actividad (el español dice "al" = a + el).
 - *I take the bus.* → Tomo el bus.
   - 🔤 ai teik dhe bas
+  - 📝 `the`: el bus concreto de tu ruta, como en español.
 - *I take the subway.* → Tomo el metro.
   - 🔤 ai teik dhe SAB-wei
+  - 📝 `the`: el metro de tu ciudad, como en español.
 - *I drive to work.* → Voy en carro al trabajo.
   - 🔤 ai draiv tu werk
+  - 📝 *Drive* ya incluye "en carro" (sin `in`). `to` = destino; `work` sin `the`.
 - *I get stuck in traffic.* → Me quedo atascado en el tráfico.
   - 🔤 ai guet stak in TRAE-fik
+  - 📝 `in` = dentro del tráfico. `traffic` sin `the` (incontable). Sin "me" reflexivo.
 - *I arrive at work at 8:15.* → Llego al trabajo a las 8:15.
   - 🔤 ai e-RAIV at werk at eit-fif-TIIN
+  - 📝 *Arrive* pide `at` (lugar) o `in` (ciudad). El español no lo dice. `work` sin `the`; `at` + hora.
 
 ### 5. Jornada de trabajo
 - *I turn on my computer.* → Enciendo mi computadora.
   - 🔤 ai tern aan mai kem-PYUU-ter
+  - 📝 `turn on` = encender (phrasal). `my` = "mi", como en español.
 - *I check my email.* → Reviso mi correo.
   - 🔤 ai chek mai II-meil
+  - 📝 `my` = "mi". *Check* toma el objeto directo, sin preposición.
 - *I answer emails.* → Respondo correos.
   - 🔤 ai AEN-ser II-meilz
+  - 📝 Sin artículo: plural en general (todos los correos).
 - *I work on a project.* → Trabajo en un proyecto.
   - 🔤 ai werk aan e PRAA-dyekt
+  - 📝 *Work on* = trabajar en (preposición fija). `a`: un proyecto cualquiera.
 - *I go to a meeting.* → Voy a una reunión.
   - 🔤 ai gou tu e MII-ting
+  - 📝 `to` = destino. `a`: una reunión, como en español.
 - *I talk to my coworkers.* → Hablo con mis compañeros.
   - 🔤 ai tok tu mai KOU-wer-kerz
+  - 📝 *Talk to* = hablar con (se suele decir `to`, no `with`). `my` = "mis".
 - *I make a phone call.* → Hago una llamada.
   - 🔤 ai meik e foun kol
+  - 📝 `a`: una llamada. Con *call* se usa *make*, no *do*.
 - *I take a short break.* → Hago una pausa corta.
   - 🔤 ai teik e short breik
+  - 📝 `a`: una pausa. Con *break* se usa *take*, no *make*.
 
 ### 6. Hora del almuerzo
 - *I have lunch.* → Almuerzo.
   - 🔤 ai jaev lanch
+  - 📝 Las comidas no llevan `the`.
 - *I take my lunch break at noon.* → Tomo mi hora de almuerzo al mediodía.
   - 🔤 ai teik mai lanch breik at nuun
+  - 📝 `at noon`: momento fijo del día. El español dice "al" (a + el); el inglés, sin artículo.
 - *I go out for lunch.* → Salgo a almorzar.
   - 🔤 ai gou aut for lanch
+  - 📝 `go out` = salir (phrasal). `for` = con el propósito de. El español usa `a` + verbo; `lunch` sin `the`.
 - *I bring my lunch from home.* → Traigo mi almuerzo de casa.
   - 🔤 ai bring mai lanch fram joum
+  - 📝 `from` = de (origen). `home` sin `the`.
 - *I heat my food in the microwave.* → Caliento mi comida en el microondas.
   - 🔤 ai jiit mai fuud in dhe MAI-kre-weiv
+  - 📝 `in the`: dentro del microondas concreto. `my food`: "mi comida", como en español.
 - *I chat with my coworkers.* → Converso con mis compañeros.
   - 🔤 ai chaet with mai KOU-wer-kerz
+  - 📝 `with` = con.
 
 ### 7. Tarde en el trabajo
 - *I get back to work.* → Vuelvo al trabajo.
   - 🔤 ai guet baek tu werk
+  - 📝 `back to` = volver a. `work` sin `the` (el español dice "al").
 - *I finish my tasks.* → Termino mis tareas.
   - 🔤 ai FI-nish mai taesks
+  - 📝 `my` = "mis". *Finish* toma el objeto directo.
 - *I plan tomorrow's tasks.* → Planifico las tareas de mañana.
   - 🔤 ai plaen te-MAA-rouz taesks
+  - 📝 `'s` reemplaza a "de": "las tareas de mañana" = `tomorrow's tasks`. Sin `the`.
 - *I log out of my computer.* → Cierro sesión en mi computadora.
   - 🔤 ai log aut ev mai kem-PYUU-ter
+  - 📝 `log out of` = cerrar sesión en. El español dice `en`; el inglés, `of`.
 - *I clock out.* → Marco mi salida.
   - 🔤 ai klaak aut
+  - 📝 `out` es parte del phrasal *clock out*. El español usa "mi" y el inglés no.
 - *I leave the office.* → Salgo de la oficina.
   - 🔤 ai liiv dhi O-fis
+  - 📝 *Leave* no lleva `de`. `the office`: tu oficina concreta.
 
 ### 8. Regreso a casa
 - *I head home.* → Me voy a casa.
   - 🔤 ai jed joum
+  - 📝 `home` sin `to`: aquí funciona como adverbio ("a casa"). Sin "me".
 - *I take the bus home.* → Tomo el bus a casa.
   - 🔤 ai teik dhe bas joum
+  - 📝 `the bus`: el bus de tu ruta. `home` sin `to`, el español dice `a`.
 - *I do the grocery shopping.* → Hago las compras del supermercado.
   - 🔤 ai duu dhe GROU-ser-ii SHAA-ping
+  - 📝 `the`: la compra habitual. *Grocery* ya significa "del supermercado", así que no hay `of`.
 - *I get home at 6.* → Llego a casa a las 6.
   - 🔤 ai guet joum at siks
+  - 📝 `home` sin `to` (el español dice `a`). `at` + hora exacta.
 - *I take off my shoes.* → Me quito los zapatos.
   - 🔤 ai teik of mai shuuz
+  - 📝 `take off` = quitarse. `my` en vez de "los", y sin "me".
 - *I change into comfortable clothes.* → Me pongo ropa cómoda.
   - 🔤 ai cheindy IN-tu KAMF-ter-bel klouz
+  - 📝 `change into` = cambiarse a. *Clothes* sin artículo (plural en general).
 
 ### 9. Tarde-noche en casa
 - *I do the housework.* → Hago las tareas del hogar.
   - 🔤 ai duu dhe JAUS-werk
+  - 📝 `the`: las tareas de tu hogar. Con *housework* se usa *do*.
 - *I clean the house.* → Limpio la casa.
   - 🔤 ai kliin dhe jaus
+  - 📝 `the house`: tu casa concreta.
 - *I do the laundry.* → Lavo la ropa.
   - 🔤 ai duu dhe LON-drii
+  - 📝 `the laundry`: la ropa sucia que toca lavar. El español dice "lavo", pero el inglés usa *do*.
 - *I go to the gym.* → Voy al gimnasio.
   - 🔤 ai gou tu dhe dyim
+  - 📝 `to` = destino. `the gym`: tu gimnasio concreto (el español junta a + el = "al").
 - *I work out.* → Hago ejercicio.
   - 🔤 ai werk aut
+  - 📝 `out` cambia el sentido: *work out* = hacer ejercicio, y no es lo mismo que *work*.
 - *I spend time with my family.* → Paso tiempo con mi familia.
   - 🔤 ai spend taim with mai FAEM-lii
+  - 📝 `time` sin artículo (incontable). `with` = con.
 - *I help my kids with their homework.* → Ayudo a mis hijos con la tarea.
   - 🔤 ai jelp mai kidz with dher JOUM-werk
+  - 📝 Sin `a` personal. `with` = con. `their` en vez de "la": la tarea es de ellos.
 - *I take my dog on a long walk.* → Llevo a mi perro a dar un paseo largo.
   - 🔤 ai teik mai dog aan e long wok
+  - 📝 `on a walk` = de paseo. `on` va con *walk*. `a`: un paseo cualquiera. Sin `a` personal.
 
 ### 10. Cena
 - *I have dinner at 8.* → Ceno a las 8.
   - 🔤 ai jaev DI-ner at eit
+  - 📝 `dinner` sin `the` (comida). `at` + hora exacta.
 - *I cook dinner.* → Preparo la cena.
   - 🔤 ai kuk DI-ner
+  - 📝 El español dice "la cena"; el inglés, sin `the`.
 - *I set the table for dinner.* → Pongo la mesa para la cena.
   - 🔤 ai set dhe TEI-bel for DI-ner
+  - 📝 `the table`: la mesa concreta. `for` = para. `dinner` sin `the`.
 - *We sit down to eat.* → Nos sentamos a comer.
   - 🔤 wii sit daun tu iit
+  - 📝 `sit down` = sentarse (phrasal, sin "nos"). `to eat` = a comer; el infinitivo lleva `to`.
 - *I serve the food.* → Sirvo la comida.
   - 🔤 ai serv dhe fuud
+  - 📝 `the food`: la comida ya preparada.
 - *I clear the table after dinner.* → Recojo la mesa después de cenar.
   - 🔤 ai klir dhe TEI-bel AEF-ter DI-ner
+  - 📝 `after` = después de (el español usa verbo; el inglés, un sustantivo sin `the`).
 - *I clean the kitchen.* → Limpio la cocina.
   - 🔤 ai kliin dhe KI-chen
+  - 📝 `the kitchen`: tu cocina concreta.
 
 ### 11. Ocio y tiempo libre
 - *I watch TV.* → Veo televisión.
   - 🔤 ai waach tii-VII
+  - 📝 Sin `the`: *TV* es un medio, no un aparato concreto.
 - *I watch a series.* → Veo una serie.
   - 🔤 ai waach e SIR-iiz
+  - 📝 `a`: una serie cualquiera.
 - *I read a book.* → Leo un libro.
   - 🔤 ai riid e buk
+  - 📝 `a`: un libro cualquiera.
 - *I listen to music.* → Escucho música.
   - 🔤 ai LI-sen tu MYUU-zik
+  - 📝 *Listen* siempre lleva `to` (el español no). *Music* sin artículo (incontable).
 - *I play video games.* → Juego videojuegos.
   - 🔤 ai plei VI-dii-ou gueimz
+  - 📝 Sin artículo: plural en general. *Play* toma el objeto directo.
 - *I study English.* → Estudio inglés.
   - 🔤 ai STA-dii ING-glish
+  - 📝 Los idiomas no llevan `the`.
 - *I go out with my friends.* → Salgo con mis amigos.
   - 🔤 ai gou aut with mai frendz
+  - 📝 `go out` = salir (phrasal). `with` = con. `my` = "mis".
 
 ### 12. Antes de dormir
 - *I turn off the lights.* → Apago las luces.
   - 🔤 ai tern of dhe laits
+  - 📝 `turn off` = apagar. `the lights`: las luces de la habitación.
 - *I set the alarm for tomorrow.* → Pongo la alarma para mañana.
   - 🔤 ai set dhi e-LAARM for te-MAA-rou
+  - 📝 `for` = para. `the alarm`: tu alarma concreta. `tomorrow` sin `the`.
 - *I brush my teeth before bed.* → Me cepillo los dientes antes de dormir.
   - 🔤 ai brash mai tiith bi-FOR bed
+  - 📝 `my teeth` en vez de "los dientes". `before` = antes de. `bed` sin `the` (actividad habitual).
 - *I put on my pajamas.* → Me pongo el pijama.
   - 🔤 ai put aan mai pe-DYAA-mez
+  - 📝 `put on` = ponerse. `my` en vez de "el". *Pajamas* es plural en inglés.
 - *I go to bed at 11.* → Me acuesto a las 11.
   - 🔤 ai gou tu bed at i-LE-ven
+  - 📝 `to bed` sin `the`: es la actividad de acostarse. `at` + hora exacta. Sin "me".
 - *I read in bed.* → Leo en la cama.
   - 🔤 ai riid in bed
+  - 📝 `in bed` sin `the` (el español dice "la cama").
 - *I fall asleep quickly.* → Me duermo rápido.
   - 🔤 ai fol e-SLIIP KWIK-lii
+  - 📝 Sin "me" reflexivo: *fall asleep* ya significa "dormirse".
 - *I can't fall asleep.* → No puedo dormirme.
   - 🔤 ai kaent fol e-SLIIP
+  - 📝 Igual: sin pronombre reflexivo.
 
 ### 13. Rutina de fin de semana
 - *I sleep in on Saturday.* → Duermo hasta tarde el sábado.
   - 🔤 ai sliip in aan SAE-ter-dei
+  - 📝 `sleep in` = dormir hasta tarde (phrasal). `on` + día. El español lleva `el`; el inglés, no.
 - *I have brunch.* → Hago un brunch.
   - 🔤 ai jaev branch
+  - 📝 Las comidas no llevan `a`/`the`. Se usa *have*, no *do*.
 - *I do the weekly grocery shopping.* → Hago las compras de la semana.
   - 🔤 ai duu dhe WIIK-lii GROU-ser-ii SHAA-ping
+  - 📝 `the`: la compra semanal concreta. *Weekly* ya significa "de la semana", sin `of`.
 - *I go out on Saturday night.* → Salgo el sábado por la noche.
   - 🔤 ai gou aut aan SAE-ter-dei nait
+  - 📝 `on` + día (también con *Saturday night*). El español usa `el` y `por`; el inglés, solo `on`.
 - *I meet up with friends.* → Quedo con amigos.
   - 🔤 ai miit ap with frendz
+  - 📝 `meet up with` = quedar con. Sin `my`/`the`: amigos en general.
 - *I relax on Sunday.* → Descanso el domingo.
   - 🔤 ai rii-LAEKS aan SAN-dei
+  - 📝 `on` + día. Sin `el`.
 
 ### 14. Rutina con hijos
 - *I wake the kids up.* → Despierto a los niños.
   - 🔤 ai weik dhe kidz ap
+  - 📝 Sin `a` personal. `the kids`: tus niños. `up` va al final porque el objeto va en medio.
 - *I help my kids get dressed.* → Ayudo a mis hijos a vestirse.
   - 🔤 ai jelp mai kidz guet drest
+  - 📝 Sin `a` personal. Después de *help* + objeto, el verbo va sin `to`. Sin "se" reflexivo.
 - *I take the kids to school.* → Llevo a los niños al colegio.
   - 🔤 ai teik dhe kidz tu skuul
+  - 📝 `to` = destino. `school` sin `the` (actividad). El español dice "al" = a + el.
 - *I pick up the kids from school.* → Recojo a los niños del colegio.
   - 🔤 ai pik ap dhe kidz fram skuul
+  - 📝 `from` = de (origen). `school` sin `the`. Sin `a` personal.
 - *I help my kids with their homework.* → Ayudo a mis hijos con la tarea.
   - 🔤 ai jelp mai kidz with dher JOUM-werk
+  - 📝 Sin `a` personal. `with` = con. `their` en vez de "la".
 - *I put my kids to bed.* → Acuesto a mis hijos.
   - 🔤 ai put mai kidz tu bed
+  - 📝 `to bed` sin `the`. Sin `a` personal.
 - *I read my kids a story.* → Les leo un cuento a mis hijos.
   - 🔤 ai riid mai kidz e STO-rii
+  - 📝 Sin `to` ni `a`: *read* + a quién + qué. `a story`: un cuento cualquiera.
 
 ## 1. Al despertar
 

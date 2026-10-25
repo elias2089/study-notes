@@ -58,6 +58,8 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | otherwise | /ˈʌ.ðɚˌwaɪz/ | A-dher-waiz | de lo contrario |
 | algorithm | /ˈæl.ɡɚ.ɪ.ðəm/ | AEL-guer-i-dhem | algoritmo |
 | furthest ✱ | /ˈfɝ.ðɪst/ | FER-dhist | más lejano |
+| smooth ✚ | /smuð/ | smuudh | suave, fluido |
+| although ✚ | /ɔlˈðoʊ/ | ol-DHOU | aunque |
 
 ### /ʃ/ → "sh"
 
@@ -156,7 +158,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 
 ### Letras que no se pronuncian
 
-> Ojo con la escritura: la **w** de written, whole, answered; la **t** de listener; la **c** de scene, scenery, scientist; la **l** de would, could, should, halfway; las **gh** de sightseeing.
+> Ojo con la escritura: la **w** de written, write, whole, answered; la **t** de listener; la **c** de scene, scenery, scientist; la **l** de would, could, should, halfway; las **gh** de sightseeing.
 
 | Palabra | Fonética | Se lee | Español |
 |---|---|---|---|
@@ -175,6 +177,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | could ✱ | /kʊd/ | kud | podría |
 | should | /ʃʊd/ | shud | debería |
 | calm ✚ | /kɑm/ | kaam | calmado |
+| write ✚ | /raɪt/ | rait | escribir |
 
 ### Empieza con s + consonante: no añadas "e" delante
 
@@ -299,6 +302,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | unfairly ✚ | /ʌnˈfɛr.li/ | an-FER-lii | injustamente |
 | mistakenly ✚ | /mɪˈsteɪ.kən.li/ | mi-STEI-ken-lii | por error |
 | mostly ✚ | /ˈmoʊst.li/ | MOUST-lii | mayormente |
+| merely ✚ | /ˈmɪr.li/ | MIR-lii | meramente, simplemente |
 
 ### -le / -al final: sílaba débil "bel", "pel", "tel"
 
@@ -340,6 +344,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | curiosity | /ˌkjʊ.riˈɑ.sə.ti/ | kyu-rii-AA-se-tii | curiosidad |
 | university ✱ | /ˌju.nɪˈvɝ.sə.ti/ | yuu-ni-VER-se-tii | universidad |
 | variety ✚ | /vəˈraɪ.ə.ti/ | ve-RAI-e-tii | variedad |
+| tenacity ✚ | /təˈnæ.sə.ti/ | te-NAE-se-tii | tenacidad |
 
 ### -er / -or final → /ɚ/ ("er" con r suave)
 
@@ -423,6 +428,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | until ✚ | /ənˈtɪl/ | en-TIL | hasta que |
 | criteria ✚ | /kraɪˈtɪr.i.ə/ | krai-TIR-ii-e | criterios |
 | realistic ✚ | /ˌri.əˈlɪs.tɪk/ | rii-e-LIS-tik | realista |
+| busy ✚ | /ˈbɪ.zi/ | BI-zii | ocupado |
 
 ### /eɪ/ → "ei"
 
@@ -440,6 +446,8 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | overcame | /ˌoʊ.vəˈkeɪm/ | ou-ve-KEIM | superó |
 | ate | /eɪt/ | eit | comió |
 | rebase ✚ | /riˈbeɪs/ | rii-BEIS | rebasar |
+| awake ✚ | /əˈweɪk/ | e-WEIK | despierto |
+| wake up ✚ | /weɪk ʌp/ | weik ap | despertarse |
 
 ### /ɛ/ → "e"
 
@@ -466,6 +474,10 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | comparative ✚ | /kəmˈpɛ.rə.tɪv/ | kem-PE-re-tiv | comparativo |
 | bread ✚ | /brɛd/ | bred | pan |
 | pair ✚ | /pɛr/ | per | par |
+| however ✚ | /haʊˈɛ.vɚ/ | jau-E-ver | sin embargo |
+| get up ✚ | /ɡɛt ʌp/ | guet ap | levantarse |
+| get out ✚ | /ɡɛt aʊt/ | guet aut | salir |
+| get in ✚ | /ɡɛt ɪn/ | guet in | entrar |
 
 ### /æ/ → "ae"
 
@@ -502,6 +514,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | result | /rɪˈzʌlt/ | ri-ZALT | resultado |
 | subway | /ˈsʌbˌweɪ/ | SAB-wei | metro |
 | discuss ✚ | /dɪˈskʌs/ | di-SKAS | discutir |
+| must ✚ | /mʌst/ | mast | deber, tener que |
 
 ### /ɑ/ → "aa": la a abierta y larga
 
@@ -564,6 +577,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | item ✚ | /ˈaɪ.təm/ | AI-tem | elemento |
 | imply ✚ | /ɪmˈplaɪ/ | im-PLAI | implicar |
 | reply ✚ | /rɪˈplaɪ/ | ri-PLAI | responder |
+| despite ✚ | /dɪˈspaɪt/ | di-SPAIT | a pesar de |
 
 ### /aʊ/ → "au"
 
