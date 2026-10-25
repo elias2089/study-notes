@@ -2,6 +2,7 @@
 
 const DOC_FILES = ['ENGLISH_DAILY.md', 'ENGLISH_INTERVIEW.md'];
 const ITEM_RE = /^(\s*)- (?:([^\s:*]+): )?\*(.+?)\*\s*→\s*(.+?)\s*$/;
+const SAY_RE = /^\s+- 🔤 (.+?)\s*$/;
 const PARAGRAPH_LABEL_RE = /^\*\*(English|Español)\*\*\s*$/;
 const SETTINGS_KEY = 'english-listen-settings';
 
@@ -71,6 +72,8 @@ function parseMarkdown(md) {
       addNote(line.slice(2).trim());
     } else if (PARAGRAPH_LABEL_RE.test(line)) {
       paragraphLang = line.match(PARAGRAPH_LABEL_RE)[1] === 'English' ? 'en' : 'es';
+    } else if (SAY_RE.test(line) && lastItem && lastItem.type === 'item') {
+      lastItem.say = line.match(SAY_RE)[1];
     } else if (ITEM_RE.test(line)) {
       const [, indent, tense, en, es] = line.match(ITEM_RE);
       if (indent.length === 0) {
@@ -265,7 +268,9 @@ function initPage() {
     if (tense) text.append(el('span', 'tense', tense));
     const en = el('span', 'en', entry.en);
     en.lang = 'en';
-    text.append(en, el('span', 'es', entry.es));
+    text.append(en);
+    if (entry.say) text.append(el('span', 'say', entry.say));
+    text.append(el('span', 'es', entry.es));
     row.append(playButton(() => [{ node: row, text: entry.en }], `Listen: ${entry.en}`), text);
     return row;
   }
@@ -341,7 +346,7 @@ function initPage() {
     }
 
     const li = el('li', 'item');
-    li.dataset.q = [item.en, item.es, ...item.children.flatMap((c) => [c.en, c.es])].join(' ').toLowerCase();
+    li.dataset.q = [item.en, item.say || '', item.es, ...item.children.flatMap((c) => [c.en, c.es])].join(' ').toLowerCase();
     const row = lineRow(item);
     li.append(row);
     const childRows = [];

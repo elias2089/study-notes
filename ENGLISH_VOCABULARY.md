@@ -92,6 +92,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | structure | /ˈstrʌk.tʃɚ/ | STRAK-cher | estructura |
 | architecture | /ˈɑr.kəˌtɛk.tʃɚ/ | AAR-ke-tek-cher | arquitectura |
 | natural | /ˈnætʃ.rəl/ | NAECH-rel | natural |
+| chart ✚ | /tʃɑrt/ | chaart | gráfico |
 
 ### /dʒ/ → "dy"
 
@@ -189,6 +190,9 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | stylish | /ˈstaɪ.lɪʃ/ | STAI-lish | elegante |
 | stunning | /ˈstʌ.nɪŋ/ | STA-ning | impresionante |
 | stale ✚ | /steɪl/ | steil | obsoleto |
+| scared ✚ | /skɛrd/ | skerd | asustado |
+| spot on ✚ | /spɑt ɑn/ | spaat aan | exacto |
+| statistics ✚ | /stəˈtɪs.tɪks/ | ste-TIS-tiks | estadísticas |
 
 ## 3. Terminaciones
 
@@ -204,6 +208,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | migration | /maɪˈɡreɪ.ʃən/ | mai-GREI-shen | migración |
 | relocation ✱ | /ˌri.loʊˈkeɪ.ʃən/ | rii-lou-KEI-shen | reubicación |
 | function ✚ | /ˈfʌŋk.ʃən/ | FANGK-shen | función |
+| satisfaction ✚ | /ˌsæ.tɪsˈfæk.ʃən/ | sae-tis-FAEK-shen | satisfacción |
 
 ### -ge(s) → /ɪdʒ/ o /ədʒ/ (plural /ɪdʒɪz/)
 
@@ -266,6 +271,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | determiners ✚ | /dɪˈtɝ.mɪ.nɚz/ | di-TER-mi-nerz | determinantes |
 | identifiers ✚ | /aɪˈdɛn.tɪˌfaɪ.ɚz/ | ai-DEN-ti-fai-erz | identificadores |
 | ideas ✚ | /aɪˈdi.əz/ | ai-DII-ez | ideas |
+| exercises ✚ | /ˈɛk.sɚˌsaɪ.zɪz/ | EK-ser-sai-ziz | ejercicios |
 
 ### -ly: "li" corta y sin acento
 
@@ -323,6 +329,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | violate | /ˈvaɪ.ə.leɪt/ | VAI-e-leit | violar |
 | appreciate | /əˈpri.ʃi.eɪt/ | e-PRII-shii-eit | agradecer |
 | separate | /ˈsɛ.prət/ | SE-pret | separado |
+| hesitate ✚ | /ˈhɛ.zəˌteɪt/ | JE-ze-teit | dudar |
 
 ### -ity: el acento cae justo antes
 
@@ -413,6 +420,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | victory | /ˈvɪk.tri/ | VIK-trii | victoria |
 | trick | /trɪk/ | trik | truco |
 | fix ✚ | /fɪks/ | fiks | arreglar |
+| until ✚ | /ənˈtɪl/ | en-TIL | hasta que |
 | criteria ✚ | /kraɪˈtɪr.i.ə/ | krai-TIR-ii-e | criterios |
 | realistic ✚ | /ˌri.əˈlɪs.tɪk/ | rii-e-LIS-tik | realista |
 
@@ -455,6 +463,9 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | renege ✚ | /rɪˈnɛɡ/ | ri-NEG | faltar a una promesa |
 | plenty ✚ | /ˈplɛn.ti/ | PLEN-tii | de sobra |
 | express ✚ | /ɪkˈsprɛs/ | ik-SPRES | expresar |
+| comparative ✚ | /kəmˈpɛ.rə.tɪv/ | kem-PE-re-tiv | comparativo |
+| bread ✚ | /brɛd/ | bred | pan |
+| pair ✚ | /pɛr/ | per | par |
 
 ### /æ/ → "ae"
 
@@ -474,6 +485,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | automatics | /ˌɔ.təˈmæ.tɪks/ | o-te-MAE-tiks | automáticos |
 | exam | /ɪˈɡzæm/ | i-GZAEM | examen |
 | command | /kəˈmænd/ | ke-MAEND | comando |
+| happy ✚ | /ˈhæ.pi/ | JAE-pii | feliz |
 
 ### /ʌ/ → "a" corta y relajada
 
@@ -522,6 +534,8 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | transform | /trænsˈfɔrm/ | traens-FORM | transformar |
 | awesome | /ˈɔ.səm/ | O-sem | increíble |
 | prioritize ✚ | /praɪˈɔ.rə.taɪz/ | prai-O-re-taiz | priorizar |
+| bored ✚ | /bɔrd/ | bord | aburrido |
+| important ✚ | /ɪmˈpɔr.tənt/ | im-POR-tent | importante |
 
 ### /oʊ/ → "ou"
 
@@ -532,6 +546,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | code | /koʊd/ | koud | código |
 | sofa | /ˈsoʊ.fə/ | SOU-fe | sofá |
 | karaoke | /ˌkɛ.riˈoʊ.ki/ | ke-rii-OU-kii | karaoke |
+| toast ✚ | /toʊst/ | toust | tostada |
 
 ### /aɪ/ → "ai"
 
@@ -568,6 +583,7 @@ La sílaba que lleva el acento va en **MAYÚSCULAS**. Una "g" delante de e o i s
 | Palabra | Fonética | Se lee | Español |
 |---|---|---|---|
 | boil | /bɔɪl/ | boil | hervir |
+| annoyance ✚ | /əˈnɔɪ.əns/ | e-NOI-ens | molestia |
 
 ### /ɝ/ → "er" con r curvada
 

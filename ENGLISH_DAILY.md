@@ -11,141 +11,247 @@ https://elias2089.github.io/study-notes/listen-daily.html
 ## ⭐ Lo esencial primero
 > Aprende esto primero: unas 7 frases por epígrafe, solo en presente.
 > Los demás tiempos y el resto de frases están más abajo, en cada epígrafe.
+> 🔤 = cómo se lee con letras del español (las mismas reglas del vocabulario: sh, ch, dy, th→"th", dh=th con voz; la sílaba en MAYÚSCULAS lleva el acento).
 
 ### 1. Al despertar
 - *I wake up at 6:30.* → Me despierto a las 6:30.
+  - 🔤 ai weik ap at siks-THER-ti
 - *My alarm goes off at 6.* → Mi alarma suena a las 6.
+  - 🔤 mai e-LAARM gouz of at siks
 - *I hit the snooze button.* → Pospongo la alarma.
+  - 🔤 ai jit dhe snuuz BA-ten
 - *I get out of bed.* → Me levanto de la cama.
+  - 🔤 ai guet aut ev bed
 - *I make the bed.* → Tiendo la cama.
+  - 🔤 ai meik dhe bed
 - *I feel tired.* → Me siento cansado.
+  - 🔤 ai fiil TAI-erd
 - *I check my phone.* → Reviso el teléfono.
+  - 🔤 ai chek mai foun
 
 ### 2. Higiene y arreglo personal
 - *I take a shower.* → Me ducho.
+  - 🔤 ai teik e SHAU-er
 - *I brush my teeth.* → Me cepillo los dientes.
+  - 🔤 ai brash mai tiith
 - *I wash my face.* → Me lavo la cara.
+  - 🔤 ai waash mai feis
 - *I comb my hair.* → Me peino con peine.
+  - 🔤 ai koum mai jer
 - *I shave.* → Me afeito.
+  - 🔤 ai sheiv
 - *I get dressed.* → Me visto.
+  - 🔤 ai guet drest
 - *I put on my shoes.* → Me pongo los zapatos.
+  - 🔤 ai put aan mai shuuz
 - *I pack my bag.* → Preparo mi mochila.
+  - 🔤 ai paek mai baeg
 
 ### 3. Desayuno
 - *I have breakfast.* → Desayuno.
+  - 🔤 ai jaev BREK-fest
 - *I make breakfast.* → Preparo el desayuno.
+  - 🔤 ai meik BREK-fest
 - *I make coffee.* → Preparo café.
+  - 🔤 ai meik KO-fii
 - *I drink a cup of coffee.* → Bebo una taza de café.
+  - 🔤 ai dringk e kap ev KO-fii
 - *I toast some bread.* → Tuesto pan.
+  - 🔤 ai toust sam bred
 - *I eat cereal with milk.* → Como cereales con leche.
+  - 🔤 ai iit SIR-ii-el with milk
 - *I wash the dishes.* → Lavo los platos.
+  - 🔤 ai waash dhe DI-shiz
 
 ### 3b. Mascotas por la mañana
 - *I feed my dog.* → Le doy de comer a mi perro.
+  - 🔤 ai fiid mai dog
 - *I feed my cat.* → Le doy de comer a mi gato.
+  - 🔤 ai fiid mai kaet
 - *I put the leash on my dog.* → Le pongo la correa a mi perro.
+  - 🔤 ai put dhe liish aan mai dog
 - *I walk my dog.* → Paseo a mi perro.
+  - 🔤 ai wok mai dog
 - *I take my dog to the park.* → Llevo a mi perro al parque.
+  - 🔤 ai teik mai dog tu dhe paark
 - *I pick up my dog's poop.* → Recojo las heces de mi perro.
+  - 🔤 ai pik ap mai dogz puup
 
 ### 4. Traslado al trabajo
 - *I leave the house at 7:30.* → Salgo de casa a las 7:30.
+  - 🔤 ai liiv dhe jaus at SE-ven-THER-ti
 - *I lock the door.* → Cierro la puerta con llave.
+  - 🔤 ai laak dhe dor
 - *I walk to work.* → Voy caminando al trabajo.
+  - 🔤 ai wok tu werk
 - *I take the bus.* → Tomo el bus.
+  - 🔤 ai teik dhe bas
 - *I take the subway.* → Tomo el metro.
+  - 🔤 ai teik dhe SAB-wei
 - *I drive to work.* → Voy en carro al trabajo.
+  - 🔤 ai draiv tu werk
 - *I get stuck in traffic.* → Me quedo atascado en el tráfico.
+  - 🔤 ai guet stak in TRAE-fik
 - *I arrive at work at 8:15.* → Llego al trabajo a las 8:15.
+  - 🔤 ai e-RAIV at werk at eit-fif-TIIN
 
 ### 5. Jornada de trabajo
 - *I turn on my computer.* → Enciendo mi computadora.
+  - 🔤 ai tern aan mai kem-PYUU-ter
 - *I check my email.* → Reviso mi correo.
+  - 🔤 ai chek mai II-meil
 - *I answer emails.* → Respondo correos.
+  - 🔤 ai AEN-ser II-meilz
 - *I work on a project.* → Trabajo en un proyecto.
+  - 🔤 ai werk aan e PRAA-dyekt
 - *I go to a meeting.* → Voy a una reunión.
+  - 🔤 ai gou tu e MII-ting
 - *I talk to my coworkers.* → Hablo con mis compañeros.
+  - 🔤 ai tok tu mai KOU-wer-kerz
 - *I make a phone call.* → Hago una llamada.
+  - 🔤 ai meik e foun kol
 - *I take a short break.* → Hago una pausa corta.
+  - 🔤 ai teik e short breik
 
 ### 6. Hora del almuerzo
 - *I have lunch.* → Almuerzo.
+  - 🔤 ai jaev lanch
 - *I take my lunch break at noon.* → Tomo mi hora de almuerzo al mediodía.
+  - 🔤 ai teik mai lanch breik at nuun
 - *I go out for lunch.* → Salgo a almorzar.
+  - 🔤 ai gou aut for lanch
 - *I bring my lunch from home.* → Traigo mi almuerzo de casa.
+  - 🔤 ai bring mai lanch fram joum
 - *I heat my food in the microwave.* → Caliento mi comida en el microondas.
+  - 🔤 ai jiit mai fuud in dhe MAI-kre-weiv
 - *I chat with my coworkers.* → Converso con mis compañeros.
+  - 🔤 ai chaet with mai KOU-wer-kerz
 
 ### 7. Tarde en el trabajo
 - *I get back to work.* → Vuelvo al trabajo.
+  - 🔤 ai guet baek tu werk
 - *I finish my tasks.* → Termino mis tareas.
+  - 🔤 ai FI-nish mai taesks
 - *I plan tomorrow's tasks.* → Planifico las tareas de mañana.
+  - 🔤 ai plaen te-MAA-rouz taesks
 - *I log out of my computer.* → Cierro sesión en mi computadora.
+  - 🔤 ai log aut ev mai kem-PYUU-ter
 - *I clock out.* → Marco mi salida.
+  - 🔤 ai klaak aut
 - *I leave the office.* → Salgo de la oficina.
+  - 🔤 ai liiv dhi O-fis
 
 ### 8. Regreso a casa
 - *I head home.* → Me voy a casa.
+  - 🔤 ai jed joum
 - *I take the bus home.* → Tomo el bus a casa.
+  - 🔤 ai teik dhe bas joum
 - *I do the grocery shopping.* → Hago las compras del supermercado.
+  - 🔤 ai duu dhe GROU-ser-ii SHAA-ping
 - *I get home at 6.* → Llego a casa a las 6.
+  - 🔤 ai guet joum at siks
 - *I take off my shoes.* → Me quito los zapatos.
+  - 🔤 ai teik of mai shuuz
 - *I change into comfortable clothes.* → Me pongo ropa cómoda.
+  - 🔤 ai cheindy IN-tu KAMF-ter-bel klouz
 
 ### 9. Tarde-noche en casa
 - *I do the housework.* → Hago las tareas del hogar.
+  - 🔤 ai duu dhe JAUS-werk
 - *I clean the house.* → Limpio la casa.
+  - 🔤 ai kliin dhe jaus
 - *I do the laundry.* → Lavo la ropa.
+  - 🔤 ai duu dhe LON-drii
 - *I go to the gym.* → Voy al gimnasio.
+  - 🔤 ai gou tu dhe dyim
 - *I work out.* → Hago ejercicio.
+  - 🔤 ai werk aut
 - *I spend time with my family.* → Paso tiempo con mi familia.
+  - 🔤 ai spend taim with mai FAEM-lii
 - *I help my kids with their homework.* → Ayudo a mis hijos con la tarea.
+  - 🔤 ai jelp mai kidz with dher JOUM-werk
 - *I take my dog on a long walk.* → Llevo a mi perro a dar un paseo largo.
+  - 🔤 ai teik mai dog aan e long wok
 
 ### 10. Cena
 - *I have dinner at 8.* → Ceno a las 8.
+  - 🔤 ai jaev DI-ner at eit
 - *I cook dinner.* → Preparo la cena.
+  - 🔤 ai kuk DI-ner
 - *I set the table for dinner.* → Pongo la mesa para la cena.
+  - 🔤 ai set dhe TEI-bel for DI-ner
 - *We sit down to eat.* → Nos sentamos a comer.
+  - 🔤 wii sit daun tu iit
 - *I serve the food.* → Sirvo la comida.
+  - 🔤 ai serv dhe fuud
 - *I clear the table after dinner.* → Recojo la mesa después de cenar.
+  - 🔤 ai klir dhe TEI-bel AEF-ter DI-ner
 - *I clean the kitchen.* → Limpio la cocina.
+  - 🔤 ai kliin dhe KI-chen
 
 ### 11. Ocio y tiempo libre
 - *I watch TV.* → Veo televisión.
+  - 🔤 ai waach tii-VII
 - *I watch a series.* → Veo una serie.
+  - 🔤 ai waach e SIR-iiz
 - *I read a book.* → Leo un libro.
+  - 🔤 ai riid e buk
 - *I listen to music.* → Escucho música.
+  - 🔤 ai LI-sen tu MYUU-zik
 - *I play video games.* → Juego videojuegos.
+  - 🔤 ai plei VI-dii-ou gueimz
 - *I study English.* → Estudio inglés.
+  - 🔤 ai STA-dii ING-glish
 - *I go out with my friends.* → Salgo con mis amigos.
+  - 🔤 ai gou aut with mai frendz
 
 ### 12. Antes de dormir
 - *I turn off the lights.* → Apago las luces.
+  - 🔤 ai tern of dhe laits
 - *I set the alarm for tomorrow.* → Pongo la alarma para mañana.
+  - 🔤 ai set dhi e-LAARM for te-MAA-rou
 - *I brush my teeth before bed.* → Me cepillo los dientes antes de dormir.
+  - 🔤 ai brash mai tiith bi-FOR bed
 - *I put on my pajamas.* → Me pongo el pijama.
+  - 🔤 ai put aan mai pe-DYAA-mez
 - *I go to bed at 11.* → Me acuesto a las 11.
+  - 🔤 ai gou tu bed at i-LE-ven
 - *I read in bed.* → Leo en la cama.
+  - 🔤 ai riid in bed
 - *I fall asleep quickly.* → Me duermo rápido.
+  - 🔤 ai fol e-SLIIP KWIK-lii
 - *I can't fall asleep.* → No puedo dormirme.
+  - 🔤 ai kaent fol e-SLIIP
 
 ### 13. Rutina de fin de semana
 - *I sleep in on Saturday.* → Duermo hasta tarde el sábado.
+  - 🔤 ai sliip in aan SAE-ter-dei
 - *I have brunch.* → Hago un brunch.
+  - 🔤 ai jaev branch
 - *I do the weekly grocery shopping.* → Hago las compras de la semana.
+  - 🔤 ai duu dhe WIIK-lii GROU-ser-ii SHAA-ping
 - *I go out on Saturday night.* → Salgo el sábado por la noche.
+  - 🔤 ai gou aut aan SAE-ter-dei nait
 - *I meet up with friends.* → Quedo con amigos.
+  - 🔤 ai miit ap with frendz
 - *I relax on Sunday.* → Descanso el domingo.
+  - 🔤 ai rii-LAEKS aan SAN-dei
 
 ### 14. Rutina con hijos
 - *I wake the kids up.* → Despierto a los niños.
+  - 🔤 ai weik dhe kidz ap
 - *I help my kids get dressed.* → Ayudo a mis hijos a vestirse.
+  - 🔤 ai jelp mai kidz guet drest
 - *I take the kids to school.* → Llevo a los niños al colegio.
+  - 🔤 ai teik dhe kidz tu skuul
 - *I pick up the kids from school.* → Recojo a los niños del colegio.
+  - 🔤 ai pik ap dhe kidz fram skuul
 - *I help my kids with their homework.* → Ayudo a mis hijos con la tarea.
+  - 🔤 ai jelp mai kidz with dher JOUM-werk
 - *I put my kids to bed.* → Acuesto a mis hijos.
+  - 🔤 ai put mai kidz tu bed
 - *I read my kids a story.* → Les leo un cuento a mis hijos.
+  - 🔤 ai riid mai kidz e STO-rii
 
 ## 1. Al despertar
 
