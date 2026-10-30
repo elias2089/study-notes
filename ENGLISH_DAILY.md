@@ -134,9 +134,9 @@ https://elias2089.github.io/study-notes/listen-daily.html
 - *I get her dressed in her school clothes.* → La visto con la ropa de la escuela.
   - 🔤 ai guet jer drest in jer skuul klouz
   - 📝 *Get* + persona + participio = vestir a alguien. `school clothes` sin `the`: *school* funciona como adjetivo.
-  - 🔁 También se puede decir: *I dress her in her school clothes.* → La visto con la ropa de la escuela.
-    - 🔤 ai dres jer in jer skuul klouz
-    - 📝 `in` y no `with`: en inglés la ropa que alguien lleva puesta se dice con `in` (*dressed in black*, *a man in a suit*). `with` se usa para herramientas o cosas que acompañan (*I comb her hair with a brush*), no para la ropa puesta. El español usa "con" para las dos cosas.
+- *I dress her in her school clothes.* → La visto con la ropa de la escuela.
+  - 🔤 ai dres jer in jer skuul klouz
+  - 📝 Otra forma de decir la frase anterior. `in` y no `with`: en inglés la ropa que alguien lleva puesta se dice con `in` (*dressed in black*, *a man in a suit*). `with` se usa para herramientas o cosas que acompañan (*I comb her hair with a brush*), no para la ropa puesta. El español usa "con" para las dos cosas.
 - *I check the bus app.* → Reviso la aplicación del bus.
   - 🔤 ai chek dhe bas aep
   - 📝 `the bus app`: la aplicación concreta que usas. En inglés se juntan los dos sustantivos, sin `de`.
