@@ -119,21 +119,24 @@ https://elias2089.github.io/study-notes/listen-daily.html
   - 📝 `pick up` = recoger (phrasal). `'s` reemplaza a "de": "de mi perro" = `my dog's`.
 
 ### 3c. Llevar a mi hija a la escuela
-- *When I get back with the dog, my daughter is already up.* → Cuando regreso con el perro, mi hija ya está despierta.
-  - 🔤 juen ai guet bak with dhe dog, mai DO-ter is ol-RE-dii ap
-  - 📝 `get back` = regresar (phrasal). `up` = levantada/despierta. `the dog`: el perro concreto que acabas de pasear.
+- *When I get back with the dog, my daughter is already awake.* → Cuando regreso con el perro, mi hija ya está despierta.
+  - 🔤 juen ai guet bak with dhe dog, mai DO-ter is ol-RE-dii e-WEIK
+  - 📝 `get back` = regresar (phrasal). `awake` = despierta (adjetivo, va después de `be`). `the dog`: el perro concreto que acabas de pasear.
 - *I make her bottle of milk.* → Le preparo su pomo de leche.
   - 🔤 ai meik jer BA-tel ev milk
   - 📝 `her` = "su" (de ella). `bottle of milk`: la medida va con `of`, y *milk* es incontable (sin artículo).
-- *My wife does her hair.* → Mi esposa le peina el pelo.
-  - 🔤 mai waif daz jer jer
-  - 📝 `her hair` en vez de "el pelo" (cuerpo con posesivo). *Do* + `hair` = peinar/arreglar el pelo.
+- *My wife combs her hair.* → Mi esposa le peina el pelo.
+  - 🔤 mai waif koumz jer jer
+  - 📝 `her hair` en vez de "el pelo" (cuerpo con posesivo). `comb` = peinar con peine; la `b` final es muda. Con `s` en tercera persona: *combs*.
 - *I give her a bath.* → La baño.
   - 🔤 ai guiv jer e baeth
   - 📝 El español dice "la baño"; el inglés, "le doy un baño": `give her a bath`.
 - *I get her dressed in her school clothes.* → La visto con la ropa de la escuela.
   - 🔤 ai guet jer drest in jer skuul klouz
   - 📝 *Get* + persona + participio = vestir a alguien. `school clothes` sin `the`: *school* funciona como adjetivo.
+  - 🔁 También se puede decir: *I dress her in her school clothes.* → La visto con la ropa de la escuela.
+    - 🔤 ai dres jer in jer skuul klouz
+    - 📝 `in` y no `with`: en inglés la ropa que alguien lleva puesta se dice con `in` (*dressed in black*, *a man in a suit*). `with` se usa para herramientas o cosas que acompañan (*I comb her hair with a brush*), no para la ropa puesta. El español usa "con" para las dos cosas.
 - *I check the bus app.* → Reviso la aplicación del bus.
   - 🔤 ai chek dhe bas aep
   - 📝 `the bus app`: la aplicación concreta que usas. En inglés se juntan los dos sustantivos, sin `de`.
