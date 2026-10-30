@@ -1,7 +1,7 @@
 # Plan diario Mañana
 
 ## 1. Antes de hablar en inglés (3 min)
-Lee en voz alta los 15 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
+Lee en voz alta los 16 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
 
 ## 2. Gramática (10 min) Ejercicios
 Entrenador de grámitica de Elsa speak, en caso de haber errores anteriores, repararlos.
@@ -93,11 +93,29 @@ Usar google translator
 
 ## 3. Elige las palabras pequeñas
 
-**9. a / an / the.** *a/an* = algo nuevo o cualquiera. *the* = algo específico o único. Sin artículo: cosas en general, países, deportes, idiomas.
+**9. a / an / the.** *a/an* = algo nuevo o cualquiera. *the* = algo específico o único.
 - ✅ *I saw a dog. The dog was big.* (primero nuevo, luego específico)
 - ✅ *I need an umbrella.* (uno cualquiera, sonido de vocal)
 - ✅ *She is the best student in class.* (superlativo, único)
-- ✅ *I like coffee and I play tennis.* (en general, sin artículo)
+
+Sin artículo (el español sí lo pone, el inglés no):
+- **Comidas:** ❌ *I have the breakfast* → ✅ *I have breakfast.* Con adjetivo o algo específico sí lleva: ✅ *a big breakfast*, ✅ *the dinner we had yesterday was great.*
+- **Lugares-actividad:** ✅ *go to school / work / bed / church / university*, ✅ *at home*. *Home* tampoco lleva `to`: ❌ *go to home* → ✅ *go home.* Si es el edificio concreto sí lleva: ✅ *I went to **the** school to talk to the teacher.*
+- **Transporte con `by`:** ✅ *by bus, by car, by train, by plane.* Con `take` sí lleva: ✅ *take **the** bus.*
+- **Idiomas, deportes y materias:** ✅ *speak English, play tennis, study math.*
+- **Cosas en general (plural o incontable):** ❌ *I like the music* (en general) → ✅ *I like music.* · ✅ *I love dogs.* · ✅ *Coffee is expensive.*
+- **Días, meses y estaciones:** ✅ *on Monday, in June, in summer.*
+- **Ciudades, países y calles:** ✅ *in Madrid, in Spain, on Main Street.* Excepciones con `the`: ✅ *the US, the UK, the Netherlands.*
+
+Con `the` aunque no parezca necesario:
+- **Únicos:** ✅ *the sun, the moon, the internet, the world.*
+- **Océanos, ríos, mares y cordilleras:** ✅ *the Pacific, the Amazon, the Alps.*
+- **Instrumentos:** ✅ *play **the** guitar, play **the** piano.* (los deportes no llevan: ✅ *play tennis*)
+- **Parte del día:** ✅ *in **the** morning, in **the** afternoon.* Excepción: ✅ *at night.*
+
+Con `a/an` aunque en español no se diga:
+- **Profesiones:** ❌ *I'm developer* → ✅ *I'm **a** developer.* · ✅ *She's **an** engineer.*
+- **Dolores y exclamaciones:** ✅ *I have **a** headache.* · ✅ *What **a** day!*
 
 **10. in / at / on.**
 
@@ -158,6 +176,111 @@ Tiempo:
 - ¿El **verbo** va justo después del sujeto? → ❌ *I it want* → ✅ *I want it.*
 - ¿**Lugar antes que tiempo**? → ✅ *at the office yesterday*
 - Todo junto: ✅ *My sister always cooks dinner at home on Sundays.*
+
+## 5. Cuándo usar
+
+**16. Cuándo usar:**
+
+**Have vs take**
+- `have` = comer, beber, tener o experimentar: ✅ *have breakfast*, ✅ *have a coffee*, ✅ *have a meeting*, ✅ *have a problem*
+- `take` = acción con movimiento o tiempo: ✅ *take a shower*, ✅ *take the bus*, ✅ *take a photo*, ✅ *take 10 minutes*
+- ❌ *I take breakfast* → ✅ *I have breakfast.*
+- Ojo: *have a shower* y *take a shower* son correctos los dos. *Take* es más común en inglés de EE. UU.
+
+**Do vs make**
+- `do` = tareas, trabajo, actividades: ✅ *do homework*, ✅ *do the dishes*, ✅ *do my best*, ✅ *do a job*
+- `make` = crear o producir algo nuevo: ✅ *make coffee*, ✅ *make a decision*, ✅ *make a mistake*, ✅ *make a plan*
+- ❌ *I did a mistake* → ✅ *I made a mistake.*
+
+**To vs for** (detalle en el punto 11)
+- `to` + verbo (para qué lo hago): ✅ *I came here **to** study.*
+- `for` + persona o cosa: ✅ *This gift is **for** you.*
+- `for` + -ing (para qué sirve): ✅ *This knife is **for cutting** bread.*
+
+**Set vs put**
+- `put` = colocar algo en un lugar: ✅ *put the keys on the table*, ✅ *put on my shoes*
+- `set` = dejar algo listo, configurado o fijo: ✅ *set the alarm*, ✅ *set the table*, ✅ *set a goal*, ✅ *set a meeting*
+- ❌ *I put the alarm at 6* → ✅ *I set the alarm for 6.*
+
+**Agregar información (sumar una idea)**
+- `also` → ✅ *I work from home. I **also** study English.* (antes del verbo, o después de *be*)
+- `too` → ✅ *I like coffee, and my wife likes it **too**.* (al final)
+- `as well` → ✅ *I speak Spanish and English **as well**.* (al final)
+- `besides` / `in addition` → ✅ *Besides working, I study English.* · ✅ *In addition, I have a meeting at 3.*
+- `furthermore` / `moreover` / `what's more` (más formales, para sumar un argumento) → ✅ *The plan is cheap. **Furthermore**, it is fast.*
+- `not only… but also` → ✅ *She **not only** works, **but also** studies.*
+
+**Contrastar (la contraparte)**
+- `but` (el más común) → ✅ *I like it, **but** it's expensive.*
+- `however` (más formal, al inicio y con coma) → ✅ *It's cheap. **However**, it's slow.*
+- `although` / `though` / `even though` + oración → ✅ *Although it was late, I kept working.*
+- `despite` / `in spite of` + sustantivo o -ing, nunca con oración → ✅ *Despite the rain, we went out.* · ❌ *Despite it rained*
+- `while` / `whereas` (dos ideas opuestas) → ✅ *I like coffee, **while** my wife likes tea.*
+- `on the other hand` (el otro lado de un argumento) → ✅ *It's cheap. **On the other hand**, it's slow.*
+- `nevertheless` / `still` / `yet` ("aun así") → ✅ *It was hard. **Nevertheless**, I finished.*
+- `instead` / `instead of` (en lugar de) → ✅ *I walked **instead of** taking the bus.*
+
+**Incontables (no llevan `a` ni plural)**
+- Palabras comunes: *information, advice, news, furniture, homework, traffic, money, water, music, luggage.*
+- ❌ *an advice* → ✅ *a piece of advice* / *some advice.*
+- ❌ *informations* → ✅ *information.* · ❌ *the news are* → ✅ *the news is.*
+- Para contar, usa una medida: ✅ *two pieces of furniture*, ✅ *a glass of water*, ✅ *a cup of coffee.*
+
+**Much vs many**
+- `many` + contable en plural: ✅ *many friends, many questions.*
+- `much` + incontable: ✅ *much time, much money.*
+- En afirmativas se prefiere `a lot of` para ambos: ✅ *I have **a lot of** friends / time.*
+- Con preguntas: ✅ *How **many** books?* · ✅ *How **much** water?*
+
+**For vs since**
+- `for` = cuánto tiempo dura: ✅ *I've worked here **for** 3 years.* · ✅ *for two hours.*
+- `since` = desde cuándo empezó: ✅ *I've worked here **since** 2023.* · ✅ *since Monday.*
+- Ambos van con present perfect: ❌ *I work here since 2023* → ✅ *I've worked here since 2023.*
+
+**Say vs tell**
+- `say` + lo que se dice: ✅ *say hello, say "no", say something.* Con persona lleva `to`: ✅ *say it **to** me.*
+- `tell` + persona (directo): ✅ *tell me the truth, tell my boss, tell a story.*
+- ❌ *He said me the answer* → ✅ *He told me the answer.* / ✅ *He said the answer.*
+
+**Edad y sentimientos con `be`, no con `have`**
+- ❌ *I have 30 years* → ✅ *I'm 30 (years old).*
+- ❌ *I have hungry / thirsty / cold / afraid* → ✅ *I'm hungry / thirsty / cold / afraid.*
+- ❌ *I have sleepy* → ✅ *I'm sleepy.*
+- Excepción: ✅ *I have a cold* (un resfriado), ✅ *I have a headache* (dolor).
+
+**Preposición + -ing**
+- Después de una preposición el verbo va en `-ing`, nunca en infinitivo ni base.
+- ❌ *I'm good in cook* → ✅ *I'm good **at cooking**.*
+- ❌ *Thanks for help me* → ✅ *Thanks for **helping** me.*
+- ❌ *Before to leave* → ✅ *Before **leaving**.*
+- ✅ *interested in learning, tired of waiting, afraid of flying.*
+
+**Adjetivos con preposición fija**
+- `good at` → ✅ *I'm good at math.* · `bad at`
+- `interested in` → ✅ *She's interested in art.*
+- `afraid of` → ✅ *I'm afraid of dogs.*
+- `depend on` → ✅ *It depends **on** the weather.*
+- `married to` → ✅ *He's married to my sister.*
+- `different from` → ✅ *This is different from that.*
+- ❌ *I'm agree* → ✅ *I **agree** with you.* (*agree* es verbo, no lleva `be`)
+
+**Used to vs be used to**
+- `used to` + verbo base = antes lo hacía, ya no: ✅ *I **used to play** football.* (de niño jugaba)
+- `be used to` + -ing o sustantivo = estoy acostumbrado: ✅ *I'm **used to waking up** early.*
+- `get used to` = acostumbrarse (proceso): ✅ *I'm getting used to the new job.*
+- ❌ *I'm used to play* → ✅ *I'm used to playing.*
+
+**Enough**
+- Antes del sustantivo: ✅ *enough money, enough time.*
+- Después del adjetivo o adverbio: ✅ *big enough, fast enough, early enough.*
+- ❌ *enough big* → ✅ *big enough.* · ❌ *money enough* → ✅ *enough money.*
+- Con verbo: ✅ *I don't have enough time **to finish**.*
+
+**People y plurales irregulares**
+- `people` ya es plural: ✅ *People **are** here.* · ❌ *people is*
+- `a person` (uno) → `people` (varios): ✅ *two people.* · ❌ *two peoples*
+- Plurales irregulares: ✅ *man → men, woman → women, child → children, foot → feet, tooth → teeth.*
+- Palabras que no cambian: ✅ *one sheep → two sheep, one fish → two fish.*
 
 # Cómo pronunciar bien
 

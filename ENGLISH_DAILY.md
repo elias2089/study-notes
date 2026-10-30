@@ -118,6 +118,35 @@ https://elias2089.github.io/study-notes/listen-daily.html
   - 🔤 ai pik ap mai dogz puup
   - 📝 `pick up` = recoger (phrasal). `'s` reemplaza a "de": "de mi perro" = `my dog's`.
 
+### 3c. Llevar a mi hija a la escuela
+- *When I get back with the dog, my daughter is already up.* → Cuando regreso con el perro, mi hija ya está despierta.
+  - 🔤 juen ai guet bak with dhe dog, mai DO-ter is ol-RE-dii ap
+  - 📝 `get back` = regresar (phrasal). `up` = levantada/despierta. `the dog`: el perro concreto que acabas de pasear.
+- *I make her bottle of milk.* → Le preparo su pomo de leche.
+  - 🔤 ai meik jer BA-tel ev milk
+  - 📝 `her` = "su" (de ella). `bottle of milk`: la medida va con `of`, y *milk* es incontable (sin artículo).
+- *My wife does her hair.* → Mi esposa le peina el pelo.
+  - 🔤 mai waif daz jer jer
+  - 📝 `her hair` en vez de "el pelo" (cuerpo con posesivo). *Do* + `hair` = peinar/arreglar el pelo.
+- *I give her a bath.* → La baño.
+  - 🔤 ai guiv jer e baeth
+  - 📝 El español dice "la baño"; el inglés, "le doy un baño": `give her a bath`.
+- *I get her dressed in her school clothes.* → La visto con la ropa de la escuela.
+  - 🔤 ai guet jer drest in jer skuul klouz
+  - 📝 *Get* + persona + participio = vestir a alguien. `school clothes` sin `the`: *school* funciona como adjetivo.
+- *I check the bus app.* → Reviso la aplicación del bus.
+  - 🔤 ai chek dhe bas aep
+  - 📝 `the bus app`: la aplicación concreta que usas. En inglés se juntan los dos sustantivos, sin `de`.
+- *The bus usually comes around 7:45 AM.* → El bus normalmente pasa sobre las 7:45 AM.
+  - 🔤 dhe bas YUU-zhu-e-lii kamz e-RAUND SE-ven for-ti-FAIV ei-EM
+  - 📝 `usually` va antes del verbo. `around` = sobre/alrededor de (hora aproximada).
+- *We take the bus and drop her off at school.* → Tomamos el bus y la dejamos en la escuela.
+  - 🔤 wii teik dhe bas aend drap jer of aet skuul
+  - 📝 `drop off` = dejar (phrasal). `at school` sin `the` (actividad). El español dice "la dejamos"; el inglés pone `her` en medio.
+- *Then we walk back home.* → Luego regresamos caminando a la casa.
+  - 🔤 dhen wii wok baek joum
+  - 📝 `walk back` = regresar caminando. `home` sin `to` ni `the`.
+
 ### 4. Traslado al trabajo
 - *I leave the house at 7:30.* → Salgo de casa a las 7:30.
   - 🔤 ai liiv dhe jaus at SE-ven-THER-ti
@@ -143,6 +172,9 @@ https://elias2089.github.io/study-notes/listen-daily.html
 - *I arrive at work at 8:15.* → Llego al trabajo a las 8:15.
   - 🔤 ai e-RAIV at werk at eit-fif-TIIN
   - 📝 *Arrive* pide `at` (lugar) o `in` (ciudad). El español no lo dice. `work` sin `the`; `at` + hora.
+- *When I arrive, I greet my coworkers.* → Llegando, saludo a mis compañeros de trabajo.
+  - 🔤 juen ai e-RAIV, ai griit mai KOU-werk-erz
+  - 📝 El español usa gerundio ("llegando"); el inglés usa `when I arrive`. Sin `a` personal: *greet* toma el objeto directo. `my coworkers` = "mis compañeros de trabajo" en una sola palabra.
 
 ### 5. Jornada de trabajo
 - *I turn on my computer.* → Enciendo mi computadora.
