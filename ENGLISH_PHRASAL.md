@@ -1,26 +1,28 @@
 # English Phrasal Verbs
 
+https://elias2089.github.io/study-notes/listen-phrasal.html
+
 > Cada verbo tiene 5 frases: yo, otra persona, pronombre u objeto en medio, otro sentido y un caso útil.
 > 🔤 = cómo se lee con letras del español (la sílaba en MAYÚSCULAS lleva el acento).
 > 📝 = por qué se usa así. ✔ = la regla que aplica · ✖ = una regla que parece aplicar pero no.
-> Tres tipos de phrasal verbs:
-> - **Separables** (*put on, take off, turn on, pick up, drop off*): el objeto puede ir en medio o después. Con pronombre (*it, them, her, me*) va siempre en medio: ❌ *put on them* → ✅ *put them on.*
-> - **Verbo + preposición** (*get in, get off, look for, run out of*): el objeto va siempre después, nunca en medio: ❌ *get the car in.*
-> - **Sin objeto** (*log in, go off, meet up, show up*): la acción termina en el verbo.
+> Cada título indica el tipo de verbo y sus significados:
+> - ✂️ **Separable:** el objeto puede ir en medio o después. Con pronombre (*it, them, her, me*) va siempre en medio: ❌ *put on them* → ✅ *put them on.*
+> - 🔒 **No separable:** el objeto va siempre después, nunca en medio: ❌ *look my keys for.*
+> - 💬 **Sin objeto:** la acción termina en el verbo (*log in, go off, meet up*).
 > - El inglés no usa "me/se" reflexivo ni la `a` personal: *I get up*, *I pick up my daughter.*
 
 ## Get
 
-### Get in
+### Get in · 🔒 No separable · ✂️ separable con persona · subir (carro), entrar, llegar, meter a alguien
 - *I get in the car.* → Me subo al carro.
   - 🔤 ai guet in dhe kaar
-  - 📝 ✔ Verbo + preposición: el objeto va después. ✔ `in` para espacios cerrados (carro, taxi); el bus y el tren usan `on`. ✖ No es separable: ❌ *get the car in.* ✖ Sin "me" reflexivo.
+  - 📝 ✔ Verbo + preposición: el objeto va después. ✔ `in` para espacios cerrados (carro, taxi); el bus y el tren usan `on`. ✖ Para "subirse" el lugar va siempre después: *get the car in* significaría "meter el carro". ✖ Sin "me" reflexivo.
 - *I get in.* → Me subo.
   - 🔤 ai guet in
   - 📝 ✔ Sin objeto: ya se sabe a qué. ✖ Sin "me" reflexivo.
-- *I help her get in the car.* → La ayudo a subirse al carro.
-  - 🔤 ai jelp jer guet in dhe kaar
-  - 📝 ✔ *Help* + persona + verbo base, sin `to`. ✖ Sin `a` personal. ✖ No es *get her in*: aquí ella hace la acción.
+- *I get my daughter in the car seat.* → Meto a mi hija en la silla del carro.
+  - 🔤 ai guet mai DO-ter in dhe kaar siit
+  - 📝 ✔ *Get* + persona + `in` = meter a alguien: la persona va en medio. ✔ Con pronombre: *I get her in.* ✖ Sin `a` personal. ✖ ❌ *get in my daughter.*
 - *I get in at 8:15.* → Llego a las 8:15.
   - 🔤 ai guet in at eit-fif-TIIN
   - 📝 ✔ Otro sentido: llegar. ✔ `at` + hora exacta. ✖ No `in` para la hora.
@@ -28,7 +30,7 @@
   - 🔤 guet in
   - 📝 ✔ Imperativo: sin sujeto. ✖ No hace falta *please*, pero lo suaviza.
 
-### Get out
+### Get out · 🔒 No separable · ✂️ separable al sacar a alguien · bajarse, salir, sacar
 - *I get out of the car.* → Me bajo del carro.
   - 🔤 ai guet aut ev dhe kaar
   - 📝 ✔ `get out of` + lugar: `of` es obligatorio cuando dices el lugar. ✖ ❌ *get out the car.* ✖ Sin "me" reflexivo.
@@ -37,7 +39,7 @@
   - 📝 ✔ Sin lugar, `of` desaparece. ✖ No queda `of` suelto: ❌ *I get out of.*
 - *I get my daughter out of the car seat.* → Saco a mi hija de la silla del carro.
   - 🔤 ai guet mai DO-ter aut ev dhe kaar siit
-  - 📝 ✔ *Get* + persona + `out of` = sacar a alguien. ✖ Sin `a` personal. ✖ `the car seat`: la silla concreta, no `my`.
+  - 📝 ✔ *Get* + persona + `out of` = sacar a alguien: la persona va en medio, entre `get` y `out of`. ✖ ❌ *get out my daughter of the car seat.* ✖ Sin `a` personal.
 - *I get out of the house at 7:30.* → Salgo de la casa a las 7:30.
   - 🔤 ai guet aut ev dhe jaus at SE-ven-THER-ti
   - 📝 ✔ Salir moviéndote hacia afuera. ✔ `at` + hora exacta. ✖ *Leave the house* no lleva `of`; *get out* sí.
@@ -45,16 +47,16 @@
   - 🔤 guet aut ev jiir
   - 📝 ✔ Imperativo: sin sujeto. ✔ `of here`: `of` se mantiene con *here*. ✖ Es fuerte; entre amigos puede ser broma ("¡no puede ser!").
 
-### Get off
+### Get off · 🔒 No separable · ✂️ separable con persona · bajarse (bus), bajar a alguien, salir del trabajo, terminar una llamada
 - *I get off the bus.* → Me bajo del bus.
   - 🔤 ai guet of dhe bas
   - 📝 ✔ `off` para transporte donde caminas adentro (bus, tren, avión, bici). ✖ Contrasta con `out of` para el carro. ✖ No separable.
 - *I get off at the next stop.* → Me bajo en la próxima parada.
   - 🔤 ai guet of at dhe nekst staap
   - 📝 ✔ Sin objeto. ✔ `at` + punto exacto (la parada). ✖ No `in`.
-- *I help her get off the bus.* → La ayudo a bajarse del bus.
-  - 🔤 ai jelp jer guet of dhe bas
-  - 📝 ✔ *Help* + persona + verbo base, sin `to`. ✖ Sin `a` personal.
+- *I get my daughter off the bus.* → Bajo a mi hija del bus.
+  - 🔤 ai guet mai DO-ter of dhe bas
+  - 📝 ✔ *Get* + persona + `off` = bajar a alguien: la persona va en medio. ✔ Con pronombre: *I get her off the bus.* ✖ Sin `a` personal. ✖ ❌ *get off my daughter the bus.*
 - *I get off work at 5.* → Salgo del trabajo a las 5.
   - 🔤 ai guet of werk at faiv
   - 📝 ✔ Otro sentido: terminar la jornada. ✔ `work` sin `the` ni `of`. ✖ ❌ *get off from work.*
@@ -62,16 +64,16 @@
   - 🔤 ai guet of dhe foun
   - 📝 ✔ *Get off the phone* = terminar una llamada. ✔ `the phone`: el teléfono concreto de la llamada. ✖ No es bajarse de nada.
 
-### Get on
+### Get on · 🔒 No separable · ✂️ separable con persona · subirse (bus), subir a alguien, llevarse bien, continuar
 - *I get on the bus.* → Me subo al bus.
   - 🔤 ai guet aan dhe bas
   - 📝 ✔ `on` para bus, tren, avión, bici. ✖ Contrasta con `in` para el carro. ✖ No separable.
 - *I get on.* → Me subo.
   - 🔤 ai guet aan
   - 📝 ✔ Sin objeto. ✖ Sin "me" reflexivo.
-- *I help her get on the bus.* → La ayudo a subirse al bus.
-  - 🔤 ai jelp jer guet aan dhe bas
-  - 📝 ✔ *Help* + persona + verbo base, sin `to`. ✖ Sin `a` personal.
+- *I get my daughter on the bus.* → Subo a mi hija al bus.
+  - 🔤 ai guet mai DO-ter aan dhe bas
+  - 📝 ✔ *Get* + persona + `on` = subir a alguien: la persona va en medio. ✔ Con pronombre: *I get her on the bus.* ✖ Sin `a` personal. ✖ ❌ *get on my daughter the bus.*
 - *I get on well with my coworkers.* → Me llevo bien con mis compañeros de trabajo.
   - 🔤 ai guet aan wel with mai KOU-werk-erz
   - 📝 ✔ Otro sentido: llevarse bien. ✔ `well` va antes de `with`. ✖ No `to` ni `a`: *get on with* + persona.
@@ -79,7 +81,7 @@
   - 🔤 lets guet aan with dhe MII-ting
   - 📝 ✔ *Get on with* + cosa = continuar con algo. ✔ `the meeting`: la reunión concreta. ✖ No es subirse.
 
-### Get back
+### Get back · 🔒 No separable · ✂️ separable al recuperar · regresar, recuperar, responder luego
 - *I get back at 6.* → Regreso a las 6.
   - 🔤 ai guet bak at siks
   - 📝 ✔ Sin objeto. ✔ `at` + hora exacta. ✖ Sin "me" reflexivo.
@@ -96,7 +98,7 @@
   - 🔤 ail guet bak tu yuu
   - 📝 ✔ *Get back to* + persona = responder luego. ✔ `I'll` = *I will*, promesa. ✖ Sin `a` personal: *to you*, no "a ti".
 
-### Get up
+### Get up · 🔒 No separable · ✂️ separable con persona · levantarse, levantar a alguien
 - *I get up at 6:30.* → Me levanto a las 6:30.
   - 🔤 ai guet ap at siks-THER-ti
   - 📝 ✔ Levantarse de la cama. ✔ `at` + hora exacta. ✖ No es *get out of bed* (salir físicamente de la cama). ✖ Sin "me" reflexivo.
@@ -115,7 +117,7 @@
 
 ## Put
 
-### Put on
+### Put on · ✂️ Separable · ponerse (ropa), poner (música)
 - *I put on my shoes.* → Me pongo los zapatos.
   - 🔤 ai put aan mai shuuz
   - 📝 ✔ Separable: con un sustantivo puedes ponerlo después de `on`. ✔ `my`: la ropa propia lleva posesivo. ✖ Sin `the` ni "me" reflexivo.
@@ -132,7 +134,7 @@
   - 🔤 ai put aan sam MYUU-zik
   - 📝 ✔ Otro sentido: poner algo a funcionar. También separable: *put some music on.* ✔ `some` + incontable. ✖ Sin `a`: *music* no se cuenta.
 
-### Put off
+### Put off · ✂️ Separable · posponer, quitar las ganas
 - *I put off the meeting.* → Pospongo la reunión.
   - 🔤 ai put of dhe MII-ting
   - 📝 ✔ Separable: sustantivo después o en medio. ✔ `off` = posponer. ✖ No es `put on`.
@@ -149,7 +151,7 @@
   - 🔤 dhe nois puts mii of
   - 📝 ✔ Otro sentido: quitar las ganas. ✔ 3ª persona con `s` (*puts*). ✔ Pronombre en medio. ✖ No es posponer.
 
-### Put down
+### Put down · ✂️ Separable · dejar, soltar, acostar (bebé)
 - *I put down my phone.* → Dejo el teléfono.
   - 🔤 ai put daun mai foun
   - 📝 ✔ Separable. ✔ `down` = soltar sobre una superficie. ✖ No es colgar una llamada.
@@ -166,7 +168,7 @@
   - 🔤 put dhe naif daun
   - 📝 ✔ Imperativo: sin sujeto. ✔ `the knife`: el concreto. ✖ La `k` de *knife* es muda.
 
-### Put away
+### Put away · ✂️ Separable · guardar
 - *I put away my clothes.* → Guardo mi ropa.
   - 🔤 ai put e-WEI mai klouz
   - 📝 ✔ Separable. ✔ `my`: ropa propia. ✖ *Clothes* siempre plural: ❌ *a clothe.*
@@ -185,7 +187,7 @@
 
 ## Take
 
-### Take on
+### Take on · ✂️ Separable · asumir, contratar
 - *I take on a new project.* → Asumo un proyecto nuevo.
   - 🔤 ai teik aan e nuu PRA-dyekt
   - 📝 ✔ Separable. ✔ `take on` = asumir una tarea o responsabilidad. ✔ `a new project`: uno cualquiera. ✖ No es ponerse nada (eso es `put on`).
@@ -202,13 +204,13 @@
   - 🔤 shii teiks aan tuu mach
   - 📝 ✔ 3ª persona con `s` (*takes*). ✔ `too much` + incontable. ✖ No `too many` (no es contable).
 
-### Take off
+### Take off · ✂️ Separable · 💬 sin objeto al despegar · quitarse (ropa), tomarse un día libre, despegar
 - *I take off my shoes.* → Me quito los zapatos.
   - 🔤 ai teik of mai shuuz
   - 📝 ✔ Separable. ✔ Es el contrario de `put on`. ✔ `my`: ropa propia. ✖ Sin "me" reflexivo.
-- *I take my shoes off at the door.* → Me quito los zapatos en la puerta.
-  - 🔤 ai teik mai shuuz of at dhe dor
-  - 📝 ✔ Objeto en medio. ✔ `at the door`: punto exacto. ✖ No *in the door.*
+- *I take Friday off.* → Me tomo el viernes libre.
+  - 🔤 ai teik FRAI-dei of
+  - 📝 ✔ Otro sentido: tomarse un día libre. El día va en medio. También se dice *take a day off.* ✔ Sin `the` ante el día. ✖ Sin "me" reflexivo.
 - *I take them off.* → Me los quito.
   - 🔤 ai teik dhem of
   - 📝 ✔ Pronombre en medio. ✖ ❌ *take off them.*
@@ -219,7 +221,7 @@
   - 🔤 dhe plein teiks of at nain
   - 📝 ✔ Otro sentido: despegar (sin objeto, no separable). ✔ `at` + hora exacta. ✔ 3ª persona con `s`.
 
-### Take out
+### Take out · ✂️ Separable · sacar, invitar a salir
 - *I take out the trash.* → Saco la basura.
   - 🔤 ai teik aut dhe trash
   - 📝 ✔ Separable. ✔ `the trash`: la basura concreta. ✖ No es `get out of` (ese es salir tú).
@@ -238,7 +240,7 @@
 
 ## Turn
 
-### Turn on
+### Turn on · ✂️ Separable · 💬 sin objeto · encender, poner (TV), encenderse solo
 - *I turn on the light.* → Enciendo la luz.
   - 🔤 ai tern aan dhe lait
   - 📝 ✔ Separable. ✔ `the light`: la luz concreta. ✖ No es `put on`.
@@ -255,7 +257,7 @@
   - 🔤 dhi A-ven terns aan o-to-MAE-ti-kli
   - 📝 ✔ Sin objeto: se enciende por sí solo. ✔ 3ª persona con `s`. ✖ Sin "se" reflexivo.
 
-### Turn off
+### Turn off · ✂️ Separable · apagar
 - *I turn off the alarm.* → Apago la alarma.
   - 🔤 ai tern of dhi e-LAARM
   - 📝 ✔ Separable. ✔ `the alarm`: la que acaba de sonar. ✖ Es el contrario de `turn on`.
@@ -274,7 +276,7 @@
 
 ## Go y Come
 
-### Go off
+### Go off · 💬 Sin objeto · sonar, echarse a perder, apagarse
 - *My alarm goes off at 6.* → Mi alarma suena a las 6.
   - 🔤 mai e-LAARM gouz of at siks
   - 📝 ✔ Sin objeto: no se separa. ✔ 3ª persona con `es` (*goes*). ✔ `at` + hora exacta.
@@ -291,7 +293,7 @@
   - 🔤 ai tern of mai e-LAARM bi-FOR it gouz of
   - 📝 ✔ `before` + presente simple, no futuro. ✔ `it goes`: 3ª persona con `es`. ✖ No *before it will go off.*
 
-### Go on
+### Go on · 💬 Sin objeto · 🔒 *go on with* · continuar, pasar, "anda"
 - *Please go on.* → Por favor, continúa.
   - 🔤 pliis gou aan
   - 📝 ✔ Sin objeto: continuar. ✔ `please` suaviza. ✖ No es subirse a nada.
@@ -308,7 +310,7 @@
   - 🔤 gou aan, trai it
   - 📝 ✔ Imperativo para animar. ✔ `it`: la cosa que le das. ✖ No es continuar; es "adelante".
 
-### Go back
+### Go back · 💬 Sin objeto · volver
 - *I go back home.* → Vuelvo a casa.
   - 🔤 ai gou bak joum
   - 📝 ✔ `home` sin `to` ni `the`. ✖ ❌ *go back to home.*
@@ -325,7 +327,7 @@
   - 🔤 lets gou bak
   - 📝 ✔ `Let's` = *let us*: propuesta para los dos. ✖ No *we go back* como orden.
 
-### Come back
+### Come back · 💬 Sin objeto · regresar, volver
 - *I come back at 6.* → Regreso a las 6.
   - 🔤 ai kam bak at siks
   - 📝 ✔ `come` = hacia donde está quien habla; `go` = alejándose. ✔ `at` + hora exacta. ✖ Sin objeto.
@@ -344,7 +346,7 @@
 
 ## Drop y Pick
 
-### Drop off
+### Drop off · ✂️ Separable · dejar (persona o cosa)
 - *I drop off my daughter at school.* → Dejo a mi hija en la escuela.
   - 🔤 ai drap of mai DO-ter at skuul
   - 📝 ✔ Separable. ✔ `at school`: sin `the` (actividad). ✖ Sin `a` personal. ✖ No `in school`.
@@ -361,7 +363,7 @@
   - 🔤 kaen yuu drap mii of jiir
   - 📝 ✔ `me` va en medio. ✔ `here` sin preposición. ✖ No *at here.*
 
-### Drop by
+### Drop by · 🔒 No separable · pasar de visita
 - *I drop by my mother's house.* → Paso por la casa de mi madre.
   - 🔤 ai drap bai mai MA-dherz jaus
   - 📝 ✔ Verbo + preposición: no se separa. ✔ `'s` = de. ✖ No *drop my mother's house by.*
@@ -378,7 +380,7 @@
   - 🔤 drap bai juen-E-ver yuu waant
   - 📝 ✔ Imperativo: sin sujeto. ✔ `whenever` + presente simple. ✖ No *you will want.*
 
-### Pick up
+### Pick up · ✂️ Separable · recoger, contestar (teléfono), comprar de paso
 - *I pick up my daughter from school.* → Recojo a mi hija de la escuela.
   - 🔤 ai pik ap mai DO-ter fram skuul
   - 📝 ✔ Separable. ✔ `from` = origen; `school` sin `the`. ✖ Sin `a` personal.
@@ -397,7 +399,7 @@
 
 ## Log y Sign
 
-### Log in
+### Log in · 💬 Sin objeto · entrar, iniciar sesión
 - *I log in to my account.* → Entro a mi cuenta.
   - 🔤 ai log in tu mai e-KAUNT
   - 📝 ✔ `log in` + `to` + cuenta o sitio. ✔ `my account`: la tuya. ✖ No separable. ✖ El sustantivo se escribe junto (*login*); el verbo va separado.
@@ -414,7 +416,7 @@
   - 🔤 log in tu dhi aep
   - 📝 ✔ Imperativo: sin sujeto. ✔ `the app`: la concreta. ✔ `the` se pronuncia `dhi` antes de vocal.
 
-### Log out
+### Log out · 💬 Sin objeto · ✂️ separable (*log me out*) · cerrar sesión
 - *I log out of my account.* → Cierro sesión de mi cuenta.
   - 🔤 ai log aut ev mai e-KAUNT
   - 📝 ✔ `log out of` + cuenta: `of` obligatorio con el lugar. ✖ ❌ *log out my account.*
@@ -431,7 +433,7 @@
   - 🔤 it logz mii aut E-vri aur
   - 📝 ✔ Separable: `me` va en medio. ✔ 3ª persona con `s`. ✔ `every hour`: `hour` empieza con `h` muda.
 
-### Sign in
+### Sign in · 💬 Sin objeto · iniciar sesión, registrar tu llegada
 - *I sign in to my email.* → Entro a mi correo.
   - 🔤 ai sain in tu mai II-meil
   - 📝 ✔ Sinónimo de `log in`. ✔ `to` + sitio. ✖ No separable.
@@ -448,7 +450,7 @@
   - 🔤 ai kaent sain in
   - 📝 ✔ `can't` + verbo base. ✖ No *I don't can sign in.*
 
-### Sign up
+### Sign up · 💬 Sin objeto · ✂️ separable con persona · registrarse, inscribir
 - *I sign up for an account.* → Creo una cuenta.
   - 🔤 ai sain ap for an e-KAUNT
   - 📝 ✔ `sign up for` = registrarse. ✔ `an` ante vocal (*account*). ✖ No `to`.
@@ -467,7 +469,7 @@
 
 ## Other
 
-### Meet up
+### Meet up · 💬 Sin objeto · juntarse, quedar
 - *We meet up on Saturdays.* → Nos juntamos los sábados.
   - 🔤 wii miit ap aan SAE-ter-deiz
   - 📝 ✔ Sin objeto: no se separa. ✔ `on` + día en plural = todos los sábados. ✖ Sin "nos" reflexivo.
@@ -484,7 +486,7 @@
   - 🔤 juen kaen wii miit ap
   - 📝 ✔ Pregunta: palabra de pregunta + auxiliar + sujeto + verbo. ✖ No *when we can meet up?*
 
-### Wake up
+### Wake up · ✂️ Separable · 💬 sin objeto · despertar, despertarse
 - *I wake up at 6:30.* → Me despierto a las 6:30.
   - 🔤 ai weik ap at siks-THER-ti
   - 📝 ✔ Sin objeto: no se separa. ✔ `at` + hora exacta. ✖ Sin "me" reflexivo.
@@ -501,7 +503,7 @@
   - 🔤 weik ap
   - 📝 ✔ Imperativo: sin sujeto. ✖ Sin "te" reflexivo.
 
-### Throw away
+### Throw away · ✂️ Separable · botar, tirar
 - *I throw away the trash.* → Boto la basura.
   - 🔤 ai zrou e-WEI dhe trash
   - 📝 ✔ Separable. ✔ `the trash`: la concreta. ✖ La `th` de *throw* es sorda: lengua entre los dientes, sin voz.
@@ -518,7 +520,7 @@
   - 🔤 dount zrou it e-WEI
   - 📝 ✔ Imperativo negativo con `don't`. ✔ Pronombre en medio. ✖ No *don't throw away it.*
 
-### Clean up
+### Clean up · ✂️ Separable · limpiar y ordenar
 - *I clean up the kitchen.* → Limpio y ordeno la cocina.
   - 🔤 ai kliin ap dhe KI-chen
   - 📝 ✔ Separable. ✔ `clean up` = limpiar y dejar ordenado. ✖ *Clean* solo = limpiar la suciedad.
@@ -535,7 +537,7 @@
   - 🔤 ai jelp mai DO-ter kliin ap jer toiz
   - 📝 ✔ *Help* + persona + verbo base, sin `to`. ✔ `her toys`: `her` = de ella. ✖ Sin `a` personal.
 
-### Look for
+### Look for · 🔒 No separable · buscar
 - *I look for my keys.* → Busco mis llaves.
   - 🔤 ai luk for mai kiiz
   - 📝 ✔ Verbo + preposición: no se separa. ✔ `for` va siempre: *look* solo = mirar. ✖ ❌ *I look my keys.*
@@ -552,10 +554,10 @@
   - 🔤 juat aar yuu LU-king for
   - 📝 ✔ En preguntas la preposición va al final. ✔ Presente continuo: ahora. ✖ No *for what are you looking?*
 
-### Find out
+### Find out · ✂️ Separable (se usa poco: *find it out*) · averiguar, enterarse, descubrir
 - *I find out the result tomorrow.* → Averiguo el resultado mañana.
   - 🔤 ai faind aut dhe ri-ZALT tu-MO-rou
-  - 📝 ✔ `find out` = averiguar. ✔ `the result`: el concreto. ✔ Tiempo al final: *tomorrow*. ✖ No `look for` (buscar).
+  - 📝 ✔ `find out` = averiguar. ✔ `the result`: el concreto. ✔ Tiempo al final: *tomorrow*. ✔ Con pronombre se separa: *find it out* (se usa poco). ✖ No `look for` (buscar).
 - *I find out what time the bus comes.* → Averiguo a qué hora pasa el bus.
   - 🔤 ai faind aut juat taim dhe bas kamz
   - 📝 ✔ Después de `find out` el orden es de oración afirmativa. ✔ 3ª persona con `s`. ✖ ❌ *what time does the bus come.*
@@ -569,7 +571,7 @@
   - 🔤 let mii faind aut
   - 📝 ✔ *Let* + persona + verbo base, sin `to`. ✖ No *let me to find out.*
 
-### Call back
+### Call back · ✂️ Separable · devolver una llamada
 - *I call you back.* → Te devuelvo la llamada.
   - 🔤 ai kol yuu bak
   - 📝 ✔ Separable: persona en medio. ✔ `back` = devolver. ✖ Sin `a` personal.
@@ -586,7 +588,7 @@
   - 🔤 pliis kol mii bak
   - 📝 ✔ Imperativo con `please`. ✔ `me` en medio. ✖ No *call back me.*
 
-### Hang up
+### Hang up · ✂️ Separable · 💬 sin objeto · colgar (llamada), colgar (ropa)
 - *I hang up the phone.* → Cuelgo el teléfono.
   - 🔤 ai jaeng ap dhe foun
   - 📝 ✔ Separable. ✔ `the phone`: el concreto. ✖ No es `put down`.
@@ -603,7 +605,7 @@
   - 🔤 dount jaeng ap
   - 📝 ✔ Imperativo negativo con `don't`. ✖ No *no hang up.*
 
-### Show up
+### Show up · 💬 Sin objeto · llegar, aparecer
 - *I show up at 8.* → Llego a las 8.
   - 🔤 ai shou ap at eit
   - 📝 ✔ Sin objeto: llegar o aparecer. ✔ `at` + hora exacta. ✖ No separable.
@@ -620,7 +622,7 @@
   - 🔤 shou ap aan taim
   - 📝 ✔ Imperativo: sin sujeto. ✔ `on time` = puntual. ✖ No *in time* (a tiempo para algo concreto).
 
-### Fill out
+### Fill out · ✂️ Separable · llenar un formulario
 - *I fill out the form.* → Lleno el formulario.
   - 🔤 ai fil aut dhe form
   - 📝 ✔ Separable. ✔ `the form`: el concreto. ✖ En inglés británico se usa también `fill in`.
@@ -637,7 +639,7 @@
   - 🔤 ai fil aut dhe form for mai DO-ter
   - 📝 ✔ `for` + persona = para quién. ✖ Sin `a` personal. ✖ No *to my daughter.*
 
-### Give back
+### Give back · ✂️ Separable · devolver
 - *I give back the book.* → Devuelvo el libro.
   - 🔤 ai guiv bak dhe buk
   - 📝 ✔ Separable. ✔ `the book`: el concreto. ✖ No es `get back` (recuperar).
@@ -654,13 +656,13 @@
   - 🔤 guiv mii bak mai foun
   - 📝 ✔ Imperativo: `me` va antes de `back`. ✔ `my phone`: el tuyo. ✖ No *give back me.*
 
-### Run out of
+### Run out of · 🔒 No separable · 💬 sin `of` si la cosa es el sujeto · acabarse, quedarse sin
 - *I run out of milk.* → Se me acaba la leche.
   - 🔤 ai ran aut ev milk
   - 📝 ✔ Verbo + preposición: no se separa. ✔ Sin artículo: *milk* es incontable. ✖ ❌ *run out milk.* ✖ El español pone la cosa de sujeto; en inglés es *I*.
-- *We run out of time.* → Se nos acaba el tiempo.
-  - 🔤 wii ran aut ev taim
-  - 📝 ✔ Plural: sin `s`. ✔ *Time* sin artículo. ✖ No *the time.*
+- *The milk runs out fast.* → La leche se acaba rápido.
+  - 🔤 dhe milk ranz aut faest
+  - 📝 ✔ Sin `of`: la cosa que se acaba es el sujeto. ✔ 3ª persona con `s`. ✔ Adverbio de modo al final. ✖ ❌ *The milk runs out of fast.*
 - *We ran out of coffee.* → Nos quedamos sin café.
   - 🔤 wii raen aut ev KO-fii
   - 📝 ✔ Pasado irregular: *run → ran*. ✔ *Coffee* sin artículo. ✖ No *runned.*
@@ -671,7 +673,7 @@
   - 🔤 mai foun ranz aut ev BAE-te-rii
   - 📝 ✔ Sujeto cosa con `s`. ✔ *Battery* sin artículo. ✖ No *my phone runs out the battery.*
 
-### Set up
+### Set up · ✂️ Separable · configurar, organizar, crear
 - *I set up my laptop.* → Configuro mi laptop.
   - 🔤 ai set ap mai LAEP-taap
   - 📝 ✔ Separable. ✔ `my`: el tuyo. ✖ Pasado igual: *set* no cambia (*I set up* ayer).
