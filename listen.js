@@ -1,6 +1,6 @@
 'use strict';
 
-const DOC_FILES = ['ENGLISH_DAILY.md', 'ENGLISH_INTERVIEW.md'];
+const DOC_FILES = ['ENGLISH_DAILY.md', 'ENGLISH_INTERVIEW.md', 'ENGLISH_PHRASAL.md'];
 const ITEM_RE = /^(\s*)- (?:([^\s:*]+): )?\*(.+?)\*\s*→\s*(.+?)\s*$/;
 const SAY_RE = /^\s+- 🔤 (.+?)\s*$/;
 const PARAGRAPH_LABEL_RE = /^\*\*(English|Español)\*\*\s*$/;
