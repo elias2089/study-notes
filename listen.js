@@ -3,6 +3,7 @@
 const DOC_FILES = ['ENGLISH_DAILY.md', 'ENGLISH_INTERVIEW.md', 'ENGLISH_PHRASAL.md'];
 const ITEM_RE = /^(\s*)- (?:([^\s:*]+): )?\*(.+?)\*\s*→\s*(.+?)\s*$/;
 const SAY_RE = /^\s+- 🔤 (.+?)\s*$/;
+const WHY_RE = /^\s+- 📝 (.+?)\s*$/;
 const PARAGRAPH_LABEL_RE = /^\*\*(English|Español)\*\*\s*$/;
 const SETTINGS_KEY = 'english-listen-settings';
 
@@ -74,6 +75,8 @@ function parseMarkdown(md) {
       paragraphLang = line.match(PARAGRAPH_LABEL_RE)[1] === 'English' ? 'en' : 'es';
     } else if (SAY_RE.test(line) && lastItem && lastItem.type === 'item') {
       lastItem.say = line.match(SAY_RE)[1];
+    } else if (WHY_RE.test(line) && lastItem && lastItem.type === 'item') {
+      lastItem.why = line.match(WHY_RE)[1];
     } else if (ITEM_RE.test(line)) {
       const [, indent, tense, en, es] = line.match(ITEM_RE);
       if (indent.length === 0) {
@@ -110,13 +113,14 @@ function cleanForSpeech(text) {
     .trim();
 }
 
-/** Escapes HTML and applies the only inline markdown used in the notes (bold and code). */
+/** Escapes HTML and applies the only inline markdown used in the notes (bold, italic and code). */
 function inlineMarkdown(text) {
   return text
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+?)\*/g, '<em>$1</em>')
     .replace(/`(.+?)`/g, '<code>$1</code>')
     .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1">$1</a>');
 }
@@ -271,6 +275,11 @@ function initPage() {
     text.append(en);
     if (entry.say) text.append(el('span', 'say', entry.say));
     text.append(el('span', 'es', entry.es));
+    if (entry.why) {
+      const why = el('span', 'why');
+      why.innerHTML = inlineMarkdown(entry.why);
+      text.append(why);
+    }
     row.append(playButton(() => [{ node: row, text: entry.en }], `Listen: ${entry.en}`), text);
     return row;
   }
@@ -346,7 +355,7 @@ function initPage() {
     }
 
     const li = el('li', 'item');
-    li.dataset.q = [item.en, item.say || '', item.es, ...item.children.flatMap((c) => [c.en, c.es])].join(' ').toLowerCase();
+    li.dataset.q = [item.en, item.say || '', item.es, item.why || '', ...item.children.flatMap((c) => [c.en, c.es])].join(' ').toLowerCase();
     const row = lineRow(item);
     li.append(row);
     const childRows = [];
@@ -486,6 +495,7 @@ function initPage() {
   bindToggle('showTenses', 'hide-tenses', 'showTenses');
   bindToggle('showIpa', 'hide-ipa', 'showIpa');
   bindToggle('showSay', 'hide-say', 'showSay');
+  bindToggle('showWhy', 'hide-why', 'showWhy');
 
   if (repeatSelect) {
     if (settings.repeat) repeatSelect.value = settings.repeat;

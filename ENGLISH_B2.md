@@ -1,7 +1,7 @@
 # Plan diario Mañana
 
 ## 1. Antes de hablar en inglés (3 min)
-Lee en voz alta los 16 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
+Lee en voz alta los 17 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
 
 ## 2. Gramática (10 min) Ejercicios
 Entrenador de grámitica de Elsa speak, en caso de haber errores anteriores, repararlos.
@@ -169,9 +169,23 @@ Tiempo:
   - ✅ *I want to run.* · ✅ *I have to go.* (obligación) · ✅ *I'm going to run.*
   - Ojo: ✅ *I have run* (he corrido) ≠ ✅ *I have to run* (tengo que correr).
 
+**15. Después de un verbo: ¿`to` + verbo o `-ing`?**
+- **Con una persona en medio → `to`:** ✅ *Relative clauses allow **you to join** two ideas.*
+- **Sin persona, en general → `-ing`:** ✅ *Relative clauses allow **joining** two ideas.*
+- Las dos son correctas y significan lo mismo. La primera dice *a quién* se lo permiten, y la segunda habla en general.
+- ❌ *Relative clauses allow to join two ideas.* Con *allow* hace falta la persona (`you to join`) o el `-ing` (`joining`).
+- Lo mismo pasa con *permit, advise, recommend*: ✅ *They advise us to wait.* · ✅ *They advise waiting.*
+- **Solo `to`** (intención, algo que aún no pasa): *want, need, decide, hope, plan* → ✅ *I want to learn.* · ❌ *I want learning.*
+- **Solo `-ing`** (acción real o en marcha): *enjoy, finish, avoid, keep* → ✅ *I enjoy learning.* · ❌ *I enjoy to learn.*
+- **Cambian de significado:**
+  - ✅ *I stopped to rest* (paré para descansar) ≠ ✅ *I stopped smoking* (dejé de fumar).
+  - ✅ *Remember to lock the door* (acuérdate de cerrar) ≠ ✅ *I remember locking the door* (recuerdo que cerré).
+- **Después de una preposición, siempre `-ing`:** ✅ *Thanks for helping.* (ver "Preposición + -ing" en la sección 5).
+- Detalle del `to` frente al `-ing`: [Uso de to, that, who o which, for](#uso-de-to-that-who-o-which-for), apartado 1a.
+
 ## 4. Último chequeo antes de decirlo
 
-**15. Tres preguntas rápidas.**
+**16. Tres preguntas rápidas.**
 - ¿Tiene **sujeto**? → ✅ *It is late.*
 - ¿El **verbo** va justo después del sujeto? → ❌ *I it want* → ✅ *I want it.*
 - ¿**Lugar antes que tiempo**? → ✅ *at the office yesterday*
@@ -179,7 +193,7 @@ Tiempo:
 
 ## 5. Cuándo usar
 
-**16. Cuándo usar:**
+**17. Cuándo usar:**
 
 **Have vs take**
 - `have` = comer, beber, tener o experimentar: ✅ *have breakfast*, ✅ *have a coffee*, ✅ *have a meeting*, ✅ *have a problem*
