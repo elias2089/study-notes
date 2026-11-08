@@ -1,7 +1,7 @@
 # Plan diario Mañana
 
 ## 1. Antes de hablar en inglés (3 min)
-Lee en voz alta los 17 puntos de [Antes de hablar en inglés](#antes-de-hablar-en-inglés) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
+Lee en voz alta el [resumen de Antes de hablar en inglés](#resumen-qué-regla-aplico) (los 18 puntos) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
 
 ## 2. Gramática (10 min) Ejercicios
 Entrenador de grámitica de Elsa speak, en caso de haber errores anteriores, repararlos.
@@ -37,6 +37,59 @@ Usar google translator
 . Luego la traducción de Gemini
 
 # Antes de hablar en inglés
+
+## Resumen: qué regla aplico
+
+1. **No traduzcas.** Reduce lo que quieres decir a una idea corta (palabras clave y tiempo verbal) y arma la frase directamente en inglés. Si te falta una palabra, descríbela. *no tiempo, proyecto, terminar* → *I haven't had time to finish the project.*
+2. **Frases cortas y bloques.** Una idea por frase. Usa bloques ya memorizados (*I'm thinking about…*, *It depends on…*, *I used to…*) en vez de armar palabra por palabra. ❌ *I think that the project that you gave me which is…* → ✅ *I think the project is almost ready.*
+3. **Orden fijo.** Sujeto → Verbo → Objeto → Modo → Lugar → Tiempo. El lugar va siempre antes que el tiempo: *I went to the supermarket yesterday.*
+4. **Sujeto.** Ponlo siempre (*It is raining*, *There are many people*). Si ya está claro, no lo repitas: *I woke up, made coffee and left.*
+5. **Adjetivos.** Van antes del sustantivo, en este orden: opinión → tamaño → edad → forma → color → origen → material. *a long red silk dress.*
+6. **Adverbios.** Los de frecuencia van antes del verbo, pero después de *be*: *I always go*, *She is always late*. Los de modo van después del objeto: *solved the problem quickly*. Nunca van entre el verbo y el objeto.
+7. **Negación.** Una sola por frase: *I don't have anything* o *I have nothing*. Con *never* o *nobody* el verbo va en afirmativo: *She never calls.*
+8. **Preguntas.** Palabra de pregunta + auxiliar + sujeto + verbo: *Where do you live?* Si la palabra de pregunta es el sujeto, no lleva auxiliar: *Who called you?*
+9. **Pregunta dentro de otra.** Después de *do you think / do you know / can you tell me*, lo que sigue va en orden de afirmación: *Where do you think the office is?* Para describir cómo será algo se usa *What … like*: *What will social media be like?* *How* sirve para la manera o el estado: *How will it change?*
+10. **Artículos.**
+    - **`a/an`:** solo con singular contable: *a dog, an umbrella, a book*. Plural o incontable no lo lleva: *dogs, water, music* (o *some dogs, some water*).
+    - **`the`:** va con singular, plural e incontable cuando es algo específico o único.
+      - Singular: *the dog* (ese perro), *the sun* (único).
+      - Plural: *The dogs next door are loud.* (esos perros)
+      - Incontable: *The water in this bottle is cold.* (esa agua) · *The music is too loud.* (la que suena ahora)
+      - Contraste con lo general, que va sin artículo: *I like music* frente a *The music is too loud.*
+    - **Sin artículo:** comidas (*I have breakfast*), lugares-actividad (*go to school*), idiomas (*speak English*), deportes (*play tennis*), cosas en general (*I love dogs*), días y meses (*on Monday, in June*), ciudades (*in Madrid*).
+    - **Con `the` aunque no lo parezca:** cosas únicas (*the sun*), océanos y ríos (*the Pacific*), instrumentos (*play the guitar*) y partes del día (*in the morning*).
+    - **Con `a/an`:** profesiones: *I'm a developer.*
+11. **in / at / on.**
+    - **Lugar:** `at` punto exacto (*at the bus stop*), `on` superficie (*on the table*), `in` espacio cerrado o ciudad (*in the room, in Madrid*).
+    - **Tiempo:** `at` hora (*at 5:00*), `on` día o fecha (*on Monday*), `in` periodo largo (*in June*).
+12. **"Para", to vs for.** Mira lo que viene después.
+    - Un verbo (tu acción) → `to` + verbo: *I came here to study*.
+    - Una persona o una cosa → `for`: *This gift is for you*.
+    - Para qué sirve un objeto → `for` + `-ing`: *This knife is for cutting bread*.
+    - Dirección: `to` es el destino al que llegas (*I go to work*); `for` es hacia dónde sales (*I'm leaving for Madrid*).
+13. **"Que".**
+    - Quieres que otro haga algo → *I want you to come* (❌ *I want that you come*).
+    - Persona → `who`: *The man who called is my boss.*
+    - Cosa → `which` o `that`, que muchas veces se omite: *The book (that) I read was great.*
+    - Con comas, nunca `that`: *My brother, who lives in Madrid, is a developer.*
+14. **Posesión.** Con `'s`, no con "de": *Juan's car*, *my parents' house*. Con cosas sí se usa `of`: *the door of the house*.
+15. **Auxiliar + `to`.**
+    - Después de un modal (*can, will, must…*) o de *do/does/did*, el verbo va en forma base, sin `to`: *I can run*, *I don't run* (❌ *I can to run*).
+    - *be* va con `-ing` o participio: *I am running*, *It was made*. *have* va con participio: *I have run*.
+    - *want, need, have to, be going to, used to* sí llevan `to`: *I want to run*, *I have to go*.
+16. **`to` o `-ing` después de un verbo.**
+    - Con persona en medio → `to`: *allow you to join*. Sin persona → `-ing`: *allow joining*.
+    - Solo `to` para intención o futuro (*I want to learn*); solo `-ing` para acción real (*I enjoy learning*).
+    - *stop* y *remember* cambian de significado: *I stopped to rest* (paré para descansar) frente a *I stopped smoking* (dejé de fumar).
+    - Después de una preposición, siempre `-ing`: *Thanks for helping.*
+17. **Último chequeo.** Antes de hablar, tres preguntas: ¿tiene sujeto? (*It is late*), ¿el verbo va justo después del sujeto? (*I want it*, no *I it want*), ¿el lugar va antes que el tiempo? (*at the office yesterday*).
+18. **Cuándo usar.** Pares que se confunden:
+    - *have* (comer, tener) vs *take* (acción con movimiento): *have breakfast*, *take a shower*. *do* (tareas) vs *make* (crear): *do homework*, *make a mistake*. *put* (colocar) vs *set* (dejar listo): *put the keys on the table*, *set the alarm*.
+    - Sumar: *I also study English*. Contrastar: *I like it, but it's expensive* · *Despite the rain, we went out.*
+    - Incontables, sin *a* ni plural: *a piece of advice*. *many* + contable, *much* + incontable: *many friends*, *much time*.
+    - *for* + duración, *since* + punto de inicio: *for 3 years*, *since 2023*. *say* + lo dicho, *tell* + persona: *He told me the answer*.
+    - Edad y sensaciones con *be*: *I'm 30*, *I'm hungry*. Preposición + `-ing`: *good at cooking*. Preposiciones fijas: *depend on*.
+    - *used to* (antes lo hacía) vs *be used to* (estar acostumbrado): *I used to play football*, *I'm used to waking up early*. *enough* antes del sustantivo y después del adjetivo: *enough money*, *big enough*. *people* ya es plural: *People are here.*
 
 ## 1. Piensa
 
@@ -91,9 +144,20 @@ Usar google translator
 - ❌ *Who you called last night?* → ✅ *Who did you call last night?*
 - ❌ *Who did call you?* → ✅ *Who called you?* (si "who" es el sujeto, sin auxiliar)
 
+**9. Pregunta dentro de otra: lo que va después de `do you think` sigue el orden de una afirmación.**
+- ❌ *How do you think will be social media in 5 years?* → ✅ *What do you think social media will be like in 5 years?*
+- Después de *do you think*, *do you know* o *can you tell me*, la segunda parte ya no es pregunta: sujeto + verbo, sin invertir.
+- ❌ *Where do you think is the office?* → ✅ *Where do you think the office is?*
+- ❌ *Can you tell me where is the station?* → ✅ *Can you tell me where the station is?*
+- Para pedir la descripción de algo (cómo es o cómo será), usa **`What … like`**: ✅ *What will social media be like?* · ❌ *How will social media be?* (suena incompleto).
+- `How` se usa para la manera de una acción o para el estado de alguien: ✅ *How will social media change?* · ✅ *How are you?*
+
 ## 3. Elige las palabras pequeñas
 
-**9. a / an / the.** *a/an* = algo nuevo o cualquiera. *the* = algo específico o único.
+**10. a / an / the.** *a/an* = algo nuevo o cualquiera. *the* = algo específico o único.
+- **`a/an` solo con singular contable:** ✅ *a dog, an umbrella, a book.*
+- **Plural o incontable: sin `a/an`:** ❌ *a dogs, a water, a music* → ✅ *dogs, water, music* (o *some dogs, some water*).
+- **`the` sí va con plurales e incontables cuando son específicos:** ✅ *the dogs* (esos perros), ✅ *the water* (esa agua).
 - ✅ *I saw a dog. The dog was big.* (primero nuevo, luego específico)
 - ✅ *I need an umbrella.* (uno cualquiera, sonido de vocal)
 - ✅ *She is the best student in class.* (superlativo, único)
@@ -117,7 +181,7 @@ Con `a/an` aunque en español no se diga:
 - **Profesiones:** ❌ *I'm developer* → ✅ *I'm **a** developer.* · ✅ *She's **an** engineer.*
 - **Dolores y exclamaciones:** ✅ *I have **a** headache.* · ✅ *What **a** day!*
 
-**10. in / at / on.**
+**11. in / at / on.**
 
 Lugar:
 - `at` = punto exacto → ✅ *at home*, ✅ *at the bus stop*
@@ -129,7 +193,7 @@ Tiempo:
 - `on` = día o fecha → ✅ *on Monday*, ✅ *on 2 October*
 - `in` = periodo largo → ✅ *in June*, ✅ *in the morning*
 
-**11. "Para": mira la palabra que va justo después en español.**
+**12. "Para": mira la palabra que va justo después en español.**
 - **Después va un verbo** (*estudiar, ayudar, codear*) → inglés **`to` + verbo**.
   💭 *Vine aquí **para** estudiar* → ❌ *I came here **for** study* → ✅ *I came here **to** study.*
   💭 *Lo uso **para** codear* → ❌ *I use it **for** code* → ✅ *I use it **to** code.*
@@ -141,21 +205,24 @@ Tiempo:
 - **Después describes para qué sirve un objeto** (*cortar, leer*) → inglés **`for` + -ing**.
   💭 *Este cuchillo es **para** cortar pan* → ❌ *This knife is **to** cut bread* → ✅ *This knife is **for cutting** bread.*
   💭 *Estas gafas son **para** leer* → ❌ *These glasses are **to** read* → ✅ *These glasses are **for reading**.*
+- **Después va un lugar al que voy** (*trabajo, Madrid*) → **`to`** si llegas, **`for`** si solo sales en esa dirección.
+  💭 *Voy **para** el trabajo* → ✅ *I go **to** work.* (con *home* sin `to`: ✅ *I go home.*)
+  💭 *Salgo **para** Madrid* → ✅ *I'm leaving **for** Madrid.*
 - Truco: **verbo que yo voy a hacer y expresa dirección → `to`**. **Persona/cosa, expresa proposito → `for`**. **Para qué es la acción que se realiza → `for + -ing`**.
 
-**12. "Que" no siempre es `that`.**
+**13. "Que" no siempre es `that`.**
 - Quieres que otro haga algo: ❌ *I want that you come* → ✅ *I want **you to** come.*
 - Persona → `who`: ✅ *The man **who** called is my boss.*
 - Cosa → `which` o `that`, y muchas veces se quita: ✅ *The book **(that)** I read was great.*
 - Con comas nunca `that`: ✅ *My brother**, who** lives in Madrid, is a developer.*
 
-**13. Posesión con `'s`, no con "de".**
+**14. Posesión con `'s`, no con "de".**
 - ❌ *the car of Juan* → ✅ *Juan's car*
 - ❌ *the house of my parents* → ✅ *my parents' house*
 - ❌ *the phone of my sister* → ✅ *my sister's phone*
 - ✅ *the door of the house* (con cosas sí se usa `of`)
 
-**14. Después de un auxiliar, ¿lleva `to`? Casi nunca.**
+**15. Después de un auxiliar, ¿lleva `to`? Casi nunca.**
 
 | Auxiliar | Después va | Ejemplo |
 |---|---|---|
@@ -169,7 +236,7 @@ Tiempo:
   - ✅ *I want to run.* · ✅ *I have to go.* (obligación) · ✅ *I'm going to run.*
   - Ojo: ✅ *I have run* (he corrido) ≠ ✅ *I have to run* (tengo que correr).
 
-**15. Después de un verbo: ¿`to` + verbo o `-ing`?**
+**16. Después de un verbo: ¿`to` + verbo o `-ing`?**
 - **Con una persona en medio → `to`:** ✅ *Relative clauses allow **you to join** two ideas.*
 - **Sin persona, en general → `-ing`:** ✅ *Relative clauses allow **joining** two ideas.*
 - Las dos son correctas y significan lo mismo. La primera dice *a quién* se lo permiten, y la segunda habla en general.
@@ -185,7 +252,7 @@ Tiempo:
 
 ## 4. Último chequeo antes de decirlo
 
-**16. Tres preguntas rápidas.**
+**17. Tres preguntas rápidas.**
 - ¿Tiene **sujeto**? → ✅ *It is late.*
 - ¿El **verbo** va justo después del sujeto? → ❌ *I it want* → ✅ *I want it.*
 - ¿**Lugar antes que tiempo**? → ✅ *at the office yesterday*
@@ -193,7 +260,7 @@ Tiempo:
 
 ## 5. Cuándo usar
 
-**17. Cuándo usar:**
+**18. Cuándo usar:**
 
 **Have vs take**
 - `have` = comer, beber, tener o experimentar: ✅ *have breakfast*, ✅ *have a coffee*, ✅ *have a meeting*, ✅ *have a problem*
@@ -206,7 +273,7 @@ Tiempo:
 - `make` = crear o producir algo nuevo: ✅ *make coffee*, ✅ *make a decision*, ✅ *make a mistake*, ✅ *make a plan*
 - ❌ *I did a mistake* → ✅ *I made a mistake.*
 
-**To vs for** (detalle en el punto 11)
+**To vs for** (detalle en el punto 12)
 - `to` + verbo (para qué lo hago): ✅ *I came here **to** study.*
 - `for` + persona o cosa: ✅ *This gift is **for** you.*
 - `for` + -ing (para qué sirve): ✅ *This knife is **for cutting** bread.*
