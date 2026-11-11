@@ -1,7 +1,7 @@
 # Plan diario Mañana
 
 ## 1. Antes de hablar en inglés (3 min)
-Lee en voz alta el [resumen de Antes de hablar en inglés](#resumen-qué-regla-aplico) (los 18 puntos) y elige **un punto** para vigilarlo durante todo el día. **Repositorio en Git**
+Lee en voz alta el [resumen de Antes de hablar en inglés](#resumen-qué-regla-aplico) (las 4 preguntas) y elige **un paso** para vigilarlo durante todo el día. **Repositorio en Git**
 
 ## 2. Gramática (10 min) Ejercicios
 Entrenador de grámitica de Elsa speak, en caso de haber errores anteriores, repararlos.
@@ -40,58 +40,234 @@ Usar google translator
 
 ## Resumen: qué regla aplico
 
-1. **No traduzcas.** Reduce lo que quieres decir a una idea corta (palabras clave y tiempo verbal) y arma la frase directamente en inglés. Si te falta una palabra, descríbela. *no tiempo, proyecto, terminar* → *I haven't had time to finish the project.*
-2. **Frases cortas y bloques.** Una idea por frase. Usa bloques ya memorizados (*I'm thinking about…*, *It depends on…*, *I used to…*) en vez de armar palabra por palabra. ❌ *I think that the project that you gave me which is…* → ✅ *I think the project is almost ready.*
-3. **Orden fijo.** Sujeto → Verbo → Objeto → Modo → Lugar → Tiempo. El lugar va siempre antes que el tiempo: *I went to the supermarket yesterday.*
-4. **Sujeto.** Ponlo siempre (*It is raining*, *There are many people*). Si ya está claro, no lo repitas: *I woke up, made coffee and left.*
-5. **Adjetivos.** Van antes del sustantivo, en este orden: opinión → tamaño → edad → forma → color → origen → material. *a long red silk dress.*
-6. **Adverbios.** Los de frecuencia van antes del verbo, pero después de *be*: *I always go*, *She is always late*. Los de modo van después del objeto: *solved the problem quickly*. Nunca van entre el verbo y el objeto.
-7. **Negación.** Una sola por frase: *I don't have anything* o *I have nothing*. Con *never* o *nobody* el verbo va en afirmativo: *She never calls.*
-8. **Preguntas.** Palabra de pregunta + auxiliar + sujeto + verbo: *Where do you live?* Si la palabra de pregunta es el sujeto, no lleva auxiliar: *Who called you?*
-9. **Pregunta dentro de otra.** Después de *do you think / do you know / can you tell me*, lo que sigue va en orden de afirmación: *Where do you think the office is?* Para describir cómo será algo se usa *What … like*: *What will social media be like?* *How* sirve para la manera o el estado: *How will it change?*
-10. **Artículos.**
-    - **`a/an`:** solo con singular contable: *a dog, an umbrella, a book*. Plural o incontable no lo lleva: *dogs, water, music* (o *some dogs, some water*).
-    - **`the`:** va con singular, plural e incontable cuando es algo específico o único.
-      - Singular: *the dog* (ese perro), *the sun* (único).
-      - Plural: *The dogs next door are loud.* (esos perros)
-      - Incontable: *The water in this bottle is cold.* (esa agua) · *The music is too loud.* (la que suena ahora)
-      - Contraste con lo general, que va sin artículo: *I like music* frente a *The music is too loud.*
-    - **Sin artículo:** comidas (*I have breakfast*), lugares-actividad (*go to school*), idiomas (*speak English*), deportes (*play tennis*), cosas en general (*I love dogs*), días y meses (*on Monday, in June*), ciudades (*in Madrid*).
-    - **Con `the` aunque no lo parezca:** cosas únicas (*the sun*), océanos y ríos (*the Pacific*), instrumentos (*play the guitar*) y partes del día (*in the morning*).
-    - **Con `a/an`:** profesiones: *I'm a developer.*
-11. **in / at / on.**
-    - **Lugar:** `at` punto exacto (*at the bus stop*), `on` superficie (*on the table*), `in` espacio cerrado o ciudad (*in the room, in Madrid*).
-    - **Tiempo:** `at` hora (*at 5:00*), `on` día o fecha (*on Monday*), `in` periodo largo (*in June*).
-12. **"Para", to vs for.** Mira lo que viene después.
-    - Un verbo (tu acción) → `to` + verbo: *I came here to study*.
-    - Una persona o una cosa → `for`: *This gift is for you*.
-    - Para qué sirve un objeto → `for` + `-ing`: *This knife is for cutting bread*.
-    - Dirección: `to` es el destino al que llegas (*I go to work*); `for` es hacia dónde sales (*I'm leaving for Madrid*).
-13. **"Que".**
-    - Quieres que otro haga algo → *I want you to come* (❌ *I want that you come*).
-    - Persona → `who`: *The man who called is my boss.*
-    - Cosa → `which` o `that`, que muchas veces se omite: *The book (that) I read was great.*
-    - Con comas, nunca `that`: *My brother, who lives in Madrid, is a developer.*
-14. **Posesión.** Con `'s`, no con "de": *Juan's car*, *my parents' house*. Con cosas sí se usa `of`: *the door of the house*.
-15. **Auxiliar + `to`.**
-    - Después de un modal (*can, will, must…*) o de *do/does/did*, el verbo va en forma base, sin `to`: *I can run*, *I don't run* (❌ *I can to run*).
-    - *be* va con `-ing` o participio: *I am running*, *It was made*. *have* va con participio: *I have run*.
-    - *want, need, have to, be going to, used to* sí llevan `to`: *I want to run*, *I have to go*.
-16. **`to` o `-ing` después de un verbo.**
-    - Con persona en medio → `to`: *allow you to join*. Sin persona → `-ing`: *allow joining*.
-    - Solo `to` para intención o futuro (*I want to learn*); solo `-ing` para acción real (*I enjoy learning*).
-    - *stop* y *remember* cambian de significado: *I stopped to rest* (paré para descansar) frente a *I stopped smoking* (dejé de fumar).
-    - Después de una preposición, siempre `-ing`: *Thanks for helping.*
-17. **Último chequeo.** Antes de hablar, tres preguntas: ¿tiene sujeto? (*It is late*), ¿el verbo va justo después del sujeto? (*I want it*, no *I it want*), ¿el lugar va antes que el tiempo? (*at the office yesterday*).
-18. **Cuándo usar.** Pares que se confunden:
-    - *have* (comer, tener) vs *take* (acción con movimiento): *have breakfast*, *take a shower*. *do* (tareas) vs *make* (crear): *do homework*, *make a mistake*. *put* (colocar) vs *set* (dejar listo): *put the keys on the table*, *set the alarm*.
-    - Sumar: *I also study English*. Contrastar: *I like it, but it's expensive* · *Despite the rain, we went out.*
-    - Incontables, sin *a* ni plural: *a piece of advice*. *many* + contable, *much* + incontable: *many friends*, *much time*.
-    - *for* + duración, *since* + punto de inicio: *for 3 years*, *since 2023*. *say* + lo dicho, *tell* + persona: *He told me the answer*.
-    - Edad y sensaciones con *be*: *I'm 30*, *I'm hungry*. Preposición + `-ing`: *good at cooking*. Preposiciones fijas: *depend on*.
-    - *used to* (antes lo hacía) vs *be used to* (estar acostumbrado): *I used to play football*, *I'm used to waking up early*. *enough* antes del sustantivo y después del adjetivo: *enough money*, *big enough*. *people* ya es plural: *People are here.*
+Cuatro preguntas, siempre en este orden:
 
-## 1. Piensa
+1. **¿Cuándo pasa?** → eliges el tiempo verbal.
+2. **¿Afirmo, niego o pregunto?** → eliges el tipo de frase.
+3. **¿Qué quiero decir?** → sacas las palabras clave y las clasificas: quién (S), qué hace (V), qué cosa (O), cómo (M), dónde (P), cuándo (T).
+4. **¿Cómo la armo?** → ensamblas en orden: núcleo → lo que sigue al verbo → sustantivos → modo, lugar y tiempo → conectores.
+
+Chequeo final: ¿tiene sujeto? ¿el verbo va justo después? ¿el lugar va antes que el tiempo?
+
+## Paso 1. ¿Cuándo pasa? (marco temporal)
+
+Hazte la pregunta y sigue la tabla. El tiempo decide la forma del verbo.
+
+| Pregúntate | Tiempo | Ejemplo | Por qué |
+|---|---|---|---|
+| ¿Es hábito, rutina o algo siempre cierto? | Present simple | ✅ *I work from home every day.* → Trabajo desde casa todos los días. | 💡 Es una rutina, no una acción puntual. |
+| ¿Pasa ahora mismo o es temporal? | Present continuous | ✅ *I'm learning TypeScript this month.* → Estoy aprendiendo TypeScript este mes. | 💡 Está en proceso ahora o es temporal. |
+| ¿Ya terminó y digo cuándo? | Past simple | ✅ *I finished the project yesterday.* → Terminé el proyecto ayer. | 💡 Terminó y el momento está dicho (*yesterday*). |
+| ¿Pasó, pero importa ahora, o no digo cuándo? | Present perfect (`have/has` + participio) | ✅ *I've finished the project.* → He terminado el proyecto. | 💡 La acción ya ocurrió, pero **no digo cuándo** y lo que importa es el resultado de hoy: el proyecto está listo ahora. |
+| ¿Era un hábito que ya no tengo? | used to | ✅ *I used to play football.* → Antes jugaba fútbol. | 💡 Antes sí, ahora no. |
+| ¿Es un plan o intención? | be going to | ✅ *I'm going to learn Rust.* → Voy a aprender Rust. | 💡 Ya lo tengo decidido o planeado. |
+| ¿Lo decido ahora, predigo o prometo? | will | ✅ *I'll call you later.* → Te llamo luego. | 💡 La decisión o la promesa es en este momento. |
+
+### Atajo del present perfect
+
+Regla general: **present perfect = pasado que conecta con el presente.** Si dices cuándo pasó (*yesterday*, *last week*, *in 2020*), ya es past simple. Si ves `yet`, `already`, `just`, `ever`, `never`, `for` o `since`, casi siempre es present perfect. Cada palabra tiene su lugar:
+
+- **`yet`:** negativas y preguntas, al final.
+  - ✅ *I haven't tried it **yet**.* → Todavía no lo he probado.
+    - 💡 Por qué es perfect: hasta hoy no ha ocurrido, pero todavía puede ocurrir. Se habla del periodo que llega hasta ahora, sin fecha.
+  - ✅ *Have you finished **yet**?* → ¿Ya terminaste?
+    - 💡 Por qué es perfect: pregunto por el estado actual de algo que debió pasar antes de ahora, y no por una fecha.
+- **`already`:** afirmativas, entre `have` y el participio.
+  - ✅ *I've **already** sent the email.* → Ya envié el correo.
+    - 💡 Por qué es perfect: pasó antes de ahora, no importa cuándo, y el resultado cuenta hoy: el correo ya está enviado.
+- **`just`:** acaba de pasar.
+  - ✅ *I've **just** arrived.* → Acabo de llegar.
+    - 💡 Por qué es perfect: pasó hace muy poco y el efecto es de ahora: ya estoy aquí.
+- **`ever`:** preguntas, "alguna vez".
+  - ✅ *Have you **ever** used Rust?* → ¿Alguna vez has usado Rust?
+    - 💡 Por qué es perfect: pregunto por tu experiencia en **toda tu vida hasta hoy**, sin fecha concreta.
+- **`never`:** significa "nunca", y el verbo va afirmativo.
+  - ✅ *I've **never** been there.* → Nunca he estado allí.
+    - 💡 Por qué es perfect: en toda mi vida hasta ahora, y el periodo todavía no terminó (podría ir mañana).
+  - ❌ *I haven't never been there.*
+- **`for` y `since`:**
+  - ✅ *I've lived here **for** 3 years.* → Llevo 3 años viviendo aquí.
+    - 💡 Por qué es perfect: empezó en el pasado y **sigue hoy**: todavía vivo aquí.
+  - ✅ *I've lived here **since** 2023.* → Vivo aquí desde 2023.
+    - 💡 Por qué es perfect: lo mismo. `since` marca el punto de inicio y la acción llega hasta ahora.
+  - Contraste: ✅ *I lived here for 3 years.* → Viví aquí 3 años. Es past simple: ya no vivo aquí, la acción terminó.
+
+Práctica rápida:
+- 💭 *Todavía no he terminado* → "todavía no" = `yet` → ✅ *I haven't finished yet.*
+  - 💡 Es perfect porque sigue sin terminar hasta ahora.
+- 💭 *Ayer terminé* → "ayer" = fecha concreta → ✅ *I finished yesterday.*
+  - 💡 Es past simple porque doy el cuándo. Nunca *I have finished yesterday*.
+
+## Paso 2. ¿Afirmo, niego o pregunto?
+
+- **Afirmar:** sujeto + verbo. ✅ *She calls me.* → Ella me llama.
+- **Negar:** una sola negación.
+  - ❌ *I don't have nothing.*
+  - ✅ *I don't have anything.* / *I have nothing.* → No tengo nada.
+  - Con `never`, el verbo va afirmativo: ✅ *She never calls.* → Ella nunca llama.
+- **Preguntar:** palabra de pregunta + auxiliar + sujeto + verbo.
+  - ✅ *Where do you live?* → ¿Dónde vives?
+  - Si la palabra de pregunta es el sujeto, sin auxiliar: ✅ *Who called you?* → ¿Quién te llamó?
+- **Pregunta dentro de otra:** lo que sigue va en orden de afirmación.
+  - ❌ *Where do you think is the office?*
+  - ✅ *Where do you think the office is?* → ¿Dónde crees que está la oficina?
+  - Para describir cómo será algo se usa `What … like`: ✅ *What will social media be like?* → ¿Cómo serán las redes sociales? `How` sirve para la manera o el estado: ✅ *How will it change?* → ¿Cómo cambiará?
+- **`What if`** ("¿y si…?") es una frase fija, no una pregunta con auxiliar. Lo que sigue es una oración normal, con `doesn't` después del sujeto.
+  - ✅ *What if the bus **doesn't come**?* → ¿Y si el bus no llega?
+  - ✅ *What if it rains?* → ¿Y si llueve?
+  - ❌ *What if doesn't the bus come?*
+
+## Paso 3. ¿Qué quiero decir? (palabras clave y su función)
+
+**No traduzcas.** Reduce lo que quieres decir a 3 o 4 piezas, y a cada una ponle su función. Haz la pregunta en español y la respuesta es la pieza en inglés.
+
+| Pregúntate | Función | Letra | Ejemplo (💭 *ayer, yo, terminar, proyecto, oficina, rápido*) |
+|---|---|---|---|
+| ¿**Quién** hace la acción? | Sujeto | S | *I* |
+| ¿**Qué hace**? | Verbo (con el tiempo del Paso 1) | V | *finished* |
+| ¿**Qué cosa** recibe la acción? (o ¿a quién?) | Objeto | O | *the project* |
+| ¿**Cómo** lo hace? | Modo | M | *quickly* |
+| ¿**Dónde**? | Lugar | P (place) | *at the office* |
+| ¿**Cuándo**? | Tiempo | T | *yesterday* |
+
+Notas:
+- No todas las piezas aparecen siempre. Muchas frases solo tienen S + V + O, o S + V + T.
+- El verbo ya sale conjugado: el tiempo viene del Paso 1 y la forma (afirmativa, negativa o pregunta) del Paso 2.
+- Al final de este paso tienes las piezas sueltas. El Paso 4 les pone orden, artículos y preposiciones.
+
+Ejemplos:
+- 💭 *todavía no, probar, ese framework*
+  - S: *I* (si falta, lo pones tú) · V: *haven't tried* · O: *that framework* · T: *yet*
+  - ✅ *I haven't tried that framework yet.* → Todavía no he probado ese framework.
+- 💭 *ayer, reunión, cancelar*
+  - S: *they* · V: *canceled* · O: *the meeting* · T: *yesterday*
+  - ✅ *They canceled the meeting yesterday.* → Ayer cancelaron la reunión.
+- 💭 *ella, resolver, problema, rápido, trabajo, ayer*
+  - S: *she* · V: *solved* · O: *the problem* · M: *quickly* · P: *at work* · T: *yesterday*
+  - ✅ *She solved the problem quickly at work yesterday.* → Ella resolvió el problema rápido en el trabajo ayer.
+- 💭 Si no sabes una palabra (*tuerca*), descríbela con su función:
+  - O: *the small metal thing you screw onto a bolt* → la cosita de metal que enroscas en un tornillo.
+
+**Frases cortas y bloques.** Una idea por frase.
+- ❌ *I think that the project that you gave me which is…*
+- ✅ *I think the project is almost ready.* → Creo que el proyecto está casi listo.
+- ✅ *I'm thinking about…* → Estoy pensando en…
+- ✅ *It depends on…* → Depende de…
+
+## Paso 4. Ensambla, en este orden
+
+### 4a. Núcleo: sujeto + verbo + objeto
+
+Con las piezas del Paso 3, arma primero S + V + O (el Paso 4d coloca después M, P y T). Siempre pon sujeto.
+- ✅ *It is late.* → Es tarde.
+- ✅ *There are many people.* → Hay mucha gente.
+- ✅ *I woke up, made coffee and left.* → Me desperté, preparé café y salí.
+
+### 4b. Lo que sigue al verbo
+
+- Después de un modal o `do`: verbo base, sin `to`. ✅ *I can run.* → Puedo correr. (❌ *I can to run.*)
+- Intención o futuro → `to`: ✅ *I want to learn.* → Quiero aprender.
+- Acción real → `-ing`: ✅ *I enjoy learning.* → Disfruto aprender.
+- El verbo como sujeto va en `-ing`:
+  - ✅ ***Learning** English takes time.* → Aprender inglés toma tiempo.
+  - ✅ ***Swimming** is great exercise.* → Nadar es un gran ejercicio.
+- `like` + `-ing` = gusto general. `would like` + `to` = deseo concreto.
+  - ✅ *I like dancing.* → Me gusta bailar.
+  - ✅ *I'd like to dance.* → Me gustaría bailar.
+- Después de una preposición, siempre `-ing`: ✅ *Thanks for helping.* → Gracias por ayudar.
+- **Preposición al final:** la preposición pertenece al verbo o adjetivo (*curious about*, *experiment with*, *talk to*) y se queda con él aunque el objeto se mueva al inicio.
+  - ✅ *What tool are you curious **about**?* → ¿Sobre qué herramienta tienes curiosidad?
+  - ✅ *The framework (that) I want to experiment **with**.* → El framework con el que quiero experimentar.
+  - ✅ *Who are you talking **to**?* → ¿Con quién estás hablando?
+  - Ponerla antes (*about which*, *with whom*) es correcto, pero suena rígido al hablar.
+
+### 4c. Los sustantivos
+
+- **Artículo:** `a/an` con singular contable; `the` si es específico; nada con plural o incontable en general.
+  - ✅ *I saw a dog. The dog was big.* → Vi un perro. El perro era grande.
+  - ✅ *I love dogs.* → Amo a los perros.
+- **Adjetivos** antes del sustantivo, en orden: opinión → tamaño → edad → forma → color → origen → material.
+  - ✅ *a beautiful small old wooden table.* → una mesa de madera hermosa, pequeña y vieja.
+- **Posesión:** `'s`, no "de".
+  - ✅ *Juan's car.* → El carro de Juan.
+  - ✅ *the door of the house* → la puerta de la casa (con cosas, `of`).
+
+### 4d. Modo, lugar y tiempo
+
+- Orden: Modo → Lugar → Tiempo.
+  - ✅ *She solved the problem quickly at work yesterday.* → Ella resolvió el problema rápido en el trabajo ayer.
+- Frecuencia antes del verbo, después de `be`:
+  - ✅ *I always go.* → Siempre voy.
+  - ✅ *She is always late.* → Ella siempre llega tarde.
+- **in / at / on:** `at` = punto exacto, `on` = superficie, día o fecha, `in` = espacio cerrado, ciudad o periodo largo.
+  - ✅ *at 5:00* → a las 5:00 · ✅ *at home* → en casa
+  - ✅ *on the table* → sobre la mesa · ✅ *on Monday* → el lunes
+  - ✅ *in Madrid* → en Madrid · ✅ *in June* → en junio
+- **Otras preposiciones** (se memorizan con el verbo o adjetivo):
+
+| Preposición | Idea | Ejemplos |
+|---|---|---|
+| `from` | origen o punto de partida | ✅ *I built it **from** scratch.* → Lo construí desde cero. · ✅ *different **from*** → diferente de |
+| `of` | pertenencia, composición, miedo | ✅ *afraid **of** dogs* → miedo a los perros · ✅ *a piece **of** advice* → un consejo |
+| `with` | herramienta o compañía | ✅ *experiment **with** AI* → experimentar con IA · ✅ *work **with** React* → trabajar con React |
+| `by` | medio o autor | ✅ *by train* → en tren · ✅ *written **by** her* → escrito por ella |
+| `about` | tema | ✅ *curious **about** AI* → curioso sobre la IA · ✅ *talk **about** work* → hablar del trabajo |
+
+### 4e. Conectores
+
+- **"Para":** verbo → `to`; persona o cosa → `for`; función de un objeto → `for` + `-ing`.
+  - ✅ *I came here **to** study.* → Vine aquí para estudiar.
+  - ✅ *This gift is **for** you.* → Este regalo es para ti.
+  - ✅ *This knife is **for cutting** bread.* → Este cuchillo es para cortar pan.
+- **"Que":**
+  - ✅ *I want **you to** come.* → Quiero que vengas.
+  - ✅ *The man **who** called.* → El hombre que llamó.
+  - ✅ *The book **(that)** I read.* → El libro que leí.
+- **Contraste:** `while` = contraste o "mientras". `whereas` = solo contraste, más formal.
+  - ✅ *I like coffee, **whereas** my wife likes tea.* → Me gusta el café, mientras que a mi esposa le gusta el té.
+  - ✅ *I read **while** I eat.* → Leo mientras como.
+- **Paralelismo:** lo que une `and`, `but` u `or` mantiene la misma forma.
+  - ❌ *Changing the colors and show the result.*
+  - ✅ *Changing the colors and showing the result.* → Cambiar los colores y mostrar el resultado.
+  - ✅ *I want to read and write.* → Quiero leer y escribir.
+
+## Chequeo final
+
+1. ¿Tiene **sujeto**? → ✅ *It is late.* → Es tarde.
+2. ¿El **verbo** va justo después? → ❌ *I it want* → ✅ *I want it.* → Lo quiero.
+3. ¿**Lugar antes que tiempo**? → ✅ *at the office yesterday* → en la oficina ayer.
+
+## Ejemplos completos, paso por paso
+
+**Ejemplo 1.** 💭 *¿Qué herramienta nueva todavía no has usado, pero tienes curiosidad por probar?*
+1. **Cuándo:** "todavía no" → present perfect con `yet`.
+   - 💡 Por qué es perfect: hablo de algo que no has hecho **hasta hoy**, sin fecha, y que todavía podrías hacer. Verbo resultante: ***haven't used*** (have + participio de *use*).
+2. **Tipo:** pregunta con `What`.
+3. **Palabras clave:** S: *you* · V: *haven't used* · O: *a new tool* · T: *yet* · segundo verbo: *are curious to experiment with*.
+4. **Ensamble:** núcleo *What is a new tool…* → *you haven't used **yet*** → *but are curious to experiment **with*** (preposición al final, paralelismo con `haven't used`).
+5. ✅ ***What is a new tool you haven't used yet but are curious to experiment with?*** → ¿Cuál es una herramienta nueva que todavía no has usado pero con la que tienes curiosidad por experimentar?
+
+**Ejemplo 2.** 💭 *¿Y si el bus no llega?*
+1. **Cuándo:** hecho posible, present simple.
+2. **Tipo:** `What if` (frase fija + oración normal).
+3. **Palabras clave:** S: *the bus* · V: *doesn't come*.
+4. **Ensamble:** *the bus doesn't come*.
+5. ✅ ***What if the bus doesn't come?*** → ¿Y si el bus no llega?
+
+**Ejemplo 3.** 💭 *Cuando decides construir un proyecto propio desde cero.*
+1. **Cuándo:** situación general, present simple.
+2. **Tipo:** afirmación.
+3. **Palabras clave:** S: *you* · V: *choose to build* · O: *a side project* · M: *completely* · origen: *from scratch*.
+4. **Ensamble:** `to` + verbo después de *choose*; `from` = punto de partida.
+5. ✅ ***When you choose to build a side project completely from scratch…*** → Cuando decides construir un proyecto propio completamente desde cero…
+
+---
+
+## Detalle de las reglas (consulta)
+
+Las secciones siguientes amplían cada paso con más ejemplos y excepciones. Los números en negrita (1 a 18) son los de las reglas originales.
+
+### Detalle del Paso 3: Piensa
 
 **1. No traduzcas del español.** Piensa en una idea corta, el tiempo que es y llévala al inglés. Si te falta una palabra, descríbela.
 - 💭 *no tiempo, proyecto, terminar* → ✅ *I haven't had time to finish the project.*
@@ -105,7 +281,7 @@ Usar google translator
 - ✅ *It depends on the weather.*
 - ✅ *I used to play football.*
 
-## 2. Arma la frase (SVOMPT)
+### Detalle de los Pasos 2 y 4: Arma la frase (SVOMPT)
 
 **3. Orden fijo: Sujeto → Verbo → Objeto → Modo → Lugar → Tiempo.**
 - ❌ *I went yesterday to the supermarket.* → ✅ *I went to the supermarket yesterday.*
@@ -152,7 +328,7 @@ Usar google translator
 - Para pedir la descripción de algo (cómo es o cómo será), usa **`What … like`**: ✅ *What will social media be like?* · ❌ *How will social media be?* (suena incompleto).
 - `How` se usa para la manera de una acción o para el estado de alguien: ✅ *How will social media change?* · ✅ *How are you?*
 
-## 3. Elige las palabras pequeñas
+### Detalle del Paso 4: Elige las palabras pequeñas
 
 **10. a / an / the.** *a/an* = algo nuevo o cualquiera. *the* = algo específico o único.
 - **`a/an` solo con singular contable:** ✅ *a dog, an umbrella, a book.*
@@ -250,7 +426,7 @@ Tiempo:
 - **Después de una preposición, siempre `-ing`:** ✅ *Thanks for helping.* (ver "Preposición + -ing" en la sección 5).
 - Detalle del `to` frente al `-ing`: [Uso de to, that, who o which, for](#uso-de-to-that-who-o-which-for), apartado 1a.
 
-## 4. Último chequeo antes de decirlo
+### Detalle del chequeo final
 
 **17. Tres preguntas rápidas.**
 - ¿Tiene **sujeto**? → ✅ *It is late.*
@@ -258,7 +434,7 @@ Tiempo:
 - ¿**Lugar antes que tiempo**? → ✅ *at the office yesterday*
 - Todo junto: ✅ *My sister always cooks dinner at home on Sundays.*
 
-## 5. Cuándo usar
+### Consulta rápida: cuándo usar
 
 **18. Cuándo usar:**
 
@@ -296,7 +472,8 @@ Tiempo:
 - `however` (más formal, al inicio y con coma) → ✅ *It's cheap. **However**, it's slow.*
 - `although` / `though` / `even though` + oración → ✅ *Although it was late, I kept working.*
 - `despite` / `in spite of` + sustantivo o -ing, nunca con oración → ✅ *Despite the rain, we went out.* · ❌ *Despite it rained*
-- `while` / `whereas` (dos ideas opuestas) → ✅ *I like coffee, **while** my wife likes tea.*
+- `whereas` = solo contraste, más formal → ✅ *I like coffee, **whereas** my wife likes tea.* → Me gusta el café, mientras que a mi esposa le gusta el té.
+- `while` = contraste o "mientras" (al mismo tiempo) → ✅ *I like coffee, **while** my wife likes tea.* · ✅ *I read **while** I eat.* → Leo mientras como.
 - `on the other hand` (el otro lado de un argumento) → ✅ *It's cheap. **On the other hand**, it's slow.*
 - `nevertheless` / `still` / `yet` ("aun así") → ✅ *It was hard. **Nevertheless**, I finished.*
 - `instead` / `instead of` (en lugar de) → ✅ *I walked **instead of** taking the bus.*
@@ -314,9 +491,12 @@ Tiempo:
 - Con preguntas: ✅ *How **many** books?* · ✅ *How **much** water?*
 
 **For vs since**
-- `for` = cuánto tiempo dura: ✅ *I've worked here **for** 3 years.* · ✅ *for two hours.*
-- `since` = desde cuándo empezó: ✅ *I've worked here **since** 2023.* · ✅ *since Monday.*
+- `for` = cuánto tiempo dura: ✅ *I've worked here **for** 3 years.* → Llevo 3 años trabajando aquí. · ✅ *for two hours.* → durante dos horas.
+  - 💡 Por qué es perfect: empezó en el pasado y sigue hoy.
+- `since` = desde cuándo empezó: ✅ *I've worked here **since** 2023.* → Trabajo aquí desde 2023. · ✅ *since Monday.* → desde el lunes.
+  - 💡 Por qué es perfect: `since` marca el inicio y la acción llega hasta ahora.
 - Ambos van con present perfect: ❌ *I work here since 2023* → ✅ *I've worked here since 2023.*
+- Contraste: ✅ *I worked there for 3 years.* → Trabajé allí 3 años. (past simple: ya no trabajo allí)
 
 **Say vs tell**
 - `say` + lo que se dice: ✅ *say hello, say "no", say something.* Con persona lleva `to`: ✅ *say it **to** me.*
