@@ -12,6 +12,74 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 > - 💬 **Sin objeto:** la acción termina en el verbo (*log in, go off, meet up*).
 > - El inglés no usa "me/se" reflexivo ni la `a` personal: *I get up*, *I pick up my daughter.*
 
+## Índice de verbos
+
+**Comparativa 1 · Subir y bajar de transporte**
+- Get in · 🔒 No separable · ✂️ separable con persona · subir (carro), entrar, llegar, meter a alguien
+- Get out · 🔒 No separable · ✂️ separable al sacar a alguien · bajarse, salir, sacar
+- Get on · 🔒 No separable · ✂️ separable con persona · subirse (bus), subir a alguien, llevarse bien, continuar
+- Get off · 🔒 No separable · ✂️ separable con persona · bajarse (bus), bajar a alguien, salir del trabajo, terminar una llamada
+
+**Comparativa 2 · on / off con put, take, turn y go**
+- Put on · ✂️ Separable · ponerse (ropa), poner (música)
+- Put off · ✂️ Separable · posponer, quitar las ganas
+- Take on · ✂️ Separable · asumir, contratar
+- Take off · ✂️ Separable · 💬 sin objeto al despegar · quitarse (ropa), tomarse un día libre, despegar
+- Turn on · ✂️ Separable · 💬 sin objeto · encender, poner (TV), encenderse solo
+- Turn off · ✂️ Separable · apagar
+- Go on · 💬 Sin objeto · 🔒 *go on with* · continuar, pasar, "anda"
+- Go off · 💬 Sin objeto · sonar, echarse a perder, apagarse
+
+**Comparativa 3 · Los "back"**
+- Get back · 🔒 No separable · ✂️ separable al recuperar · regresar, recuperar, responder luego
+- Go back · 💬 Sin objeto · volver
+- Come back · 💬 Sin objeto · regresar, volver
+- Give back · ✂️ Separable · devolver
+- Call back · ✂️ Separable · devolver una llamada
+
+**Comparativa 4 · Dejar, guardar, colgar, botar y sacar**
+- Put down · ✂️ Separable · dejar, soltar, acostar (bebé)
+- Put away · ✂️ Separable · guardar
+- Hang up · ✂️ Separable · 💬 sin objeto · colgar (llamada), colgar (ropa)
+- Throw away · ✂️ Separable · botar, tirar
+- Take out · ✂️ Separable · sacar, invitar a salir
+- Clean up · ✂️ Separable · limpiar y ordenar
+
+**Comparativa 5 · Recoger y dejar**
+- Pick up · ✂️ Separable · recoger, contestar (teléfono), comprar de paso
+- Drop off · ✂️ Separable · dejar (persona o cosa)
+
+**Comparativa 6 · Llegar y encontrarse**
+- Show up · 💬 Sin objeto · llegar, aparecer
+- Meet up · 💬 Sin objeto · juntarse, quedar
+- Drop by · 🔒 No separable · pasar de visita
+
+**Comparativa 7 · Cuentas y configuración**
+- Log in · 💬 Sin objeto · entrar, iniciar sesión
+- Log out · 💬 Sin objeto · ✂️ separable (*log me out*) · cerrar sesión
+- Sign in · 💬 Sin objeto · iniciar sesión, registrar tu llegada
+- Sign up · 💬 Sin objeto · ✂️ separable con persona · registrarse, inscribir
+- Set up · ✂️ Separable · configurar, organizar, crear
+
+**Comparativa 8 · Despertarse y levantarse**
+- Wake up · ✂️ Separable · 💬 sin objeto · despertar, despertarse
+- Get up · 🔒 No separable · ✂️ separable con persona · levantarse, levantar a alguien
+
+**Comparativa 9 · Look y find out**
+- Look at · 🔒 No separable · mirar, revisar
+- Look for · 🔒 No separable · buscar
+- Look up · ✂️ Separable · buscar (un dato), consultar
+- Look after · 🔒 No separable · cuidar
+- Look forward to · 🔒 No separable · tener ganas de, esperar con ilusión
+- Look out · 💬 Sin objeto · 🔒 *look out for* · ¡cuidado!, estar atento
+- Look into · 🔒 No separable · investigar, analizar
+- Look around · 💬 Sin objeto · 🔒 con lugar · echar un vistazo, mirar alrededor
+- Find out · ✂️ Separable (se usa poco: *find it out*) · averiguar, enterarse, descubrir
+
+**Sin comparación**
+- Fill out · ✂️ Separable · llenar un formulario
+- Run out of · 🔒 No separable · 💬 sin `of` si la cosa es el sujeto · acabarse, quedarse sin
+
 ## Comparativa 1 · Subir y bajar de transporte
 
 **Cuándo usar cada uno**
