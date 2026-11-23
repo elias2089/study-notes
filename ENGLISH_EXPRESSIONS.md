@@ -300,11 +300,19 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 - Look out · 💬 Sin objeto · 🔒 *look out for* · ¡cuidado!, estar atento
 - Look into · 🔒 No separable · investigar, analizar
 - Look around · 💬 Sin objeto · 🔒 con lugar · echar un vistazo, mirar alrededor
+- Look like · 🔒 No separable · parecerse a, parecer que
 - Find out · ✂️ Separable (se usa poco: *find it out*) · averiguar, enterarse, descubrir
+
+**Comparativa 10 · Subir y bajar con go**
+- Go up · 💬 Sin objeto · 🔒 con lugar · subir, aumentar
+- Go down · 💬 Sin objeto · 🔒 con lugar · bajar, disminuir, caerse (sistema)
 
 **Sin comparación**
 - Fill out · ✂️ Separable · llenar un formulario
 - Run out of · 🔒 No separable · 💬 sin `of` si la cosa es el sujeto · acabarse, quedarse sin
+- Go ahead · 💬 Sin objeto · 🔒 *go ahead with* · adelante, seguir adelante con, ir delante
+- Wrap up · ✂️ Separable · 💬 sin objeto · terminar, cerrar (reunión), envolver
+- Out of · 🧩 Preposición (no es phrasal verb) · salir de, sin, fuera de, de cada
 
 ## Comparativa 1 · Subir y bajar de transporte
 
@@ -1135,9 +1143,10 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 | *look out* | avisas de un peligro | es una alerta | Con cosa concreta: *look out for* |
 | *look into* | investigas un problema | `into` = entrar en el tema | Más formal que *look at* |
 | *look around* | miras sin buscar nada concreto | `around` = alrededor | En tiendas: *I'm just looking around* |
+| *look like* | algo o alguien se parece a otra cosa | `like` = como | + sustantivo o + oración: *It looks like rain* |
 | *find out* | averiguas, te enteras o descubres | `out` = sacar a la luz | Ya llegaste a la respuesta |
 
-**Contraste clave:** *look at* (miro lo que está frente a mí), *look for* (busco lo que no veo), *look up* (busco un dato) y *find out* (averiguo y ya lo sé).
+**Contraste clave:** *look at* (miro lo que está frente a mí), *look for* (busco lo que no veo), *look up* (busco un dato) y *find out* (averiguo y ya lo sé). *Look like* no es mirar: es parecerse.
 
 **Todos los significados**
 
@@ -1155,6 +1164,9 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 | *look out for* | estar atento a | *Look out for cars.* | Ten cuidado con los carros. |
 | *look into* | investigar | *I look into the problem.* | Investigo el problema. |
 | *look around* | echar un vistazo | *I look around the store.* | Echo un vistazo en la tienda. |
+| *look like* | parecerse a | *I look like my father.* | Me parezco a mi padre. |
+| *look like* | parecer que | *It looks like rain.* | Parece que va a llover. |
+| *look like* | cómo es (pregunta) | *What does it look like?* | ¿Cómo es? |
 | *find out* | averiguar | *I find out the result tomorrow.* | Averiguo el resultado mañana. |
 | *find out* | enterarse | *She finds out about the party.* | Ella se entera de la fiesta. |
 | *find out* | descubrir | *I find out the truth.* | Descubro la verdad. |
@@ -1295,6 +1307,23 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
   - 🔤 lets luk e-RAUND dhe NEI-ber-jud
   - 📝 ✔ `Let's` + verbo base. ✔ `the neighborhood`: el barrio concreto. ✖ No *let's to look.*
 
+### Look like · 🔒 No separable · parecerse a, parecer que
+- *I look like my father.* → Me parezco a mi padre.
+  - 🔤 ai luk laik mai FAA-dher
+  - 📝 ✔ `look like` + sustantivo = parecerse físicamente. ✔ No se separa. ✖ ❌ *I look my father like.* ✖ Sin "me" reflexivo ni `a` personal.
+- *My daughter looks like her mother.* → Mi hija se parece a su madre.
+  - 🔤 mai DO-ter luks laik jer MA-dher
+  - 📝 ✔ 3ª persona con `s` (*looks*). ✔ `her` = de ella. ✖ ❌ *looks like to her mother.*
+- *It looks like rain.* → Parece que va a llover.
+  - 🔤 it luks laik rein
+  - 📝 ✔ Otro sentido: `It looks like` + sustantivo = parece que. ✔ `It` es obligatorio. ✖ El español no lleva sujeto; el inglés sí.
+- *It looks like we're late.* → Parece que vamos tarde.
+  - 🔤 it luks laik wiir leit
+  - 📝 ✔ `look like` + oración completa (sujeto + verbo). ✔ `we're` = *we are*. ✖ ❌ *It looks like late.*
+- *What does it look like?* → ¿Cómo es?
+  - 🔤 juat daz it luk laik
+  - 📝 ✔ Pregunta para pedir una descripción. ✔ Con `does` el verbo va sin `s`. ✖ ❌ *How does it look like?* (error muy común).
+
 ### Find out · ✂️ Separable (se usa poco: *find it out*) · averiguar, enterarse, descubrir
 - *I find out the result tomorrow.* → Averiguo el resultado mañana.
   - 🔤 ai faind aut dhe ri-ZALT tu-MO-rou
@@ -1311,6 +1340,63 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 - *Let me find out.* → Déjame averiguar.
   - 🔤 let mii faind aut
   - 📝 ✔ *Let* + persona + verbo base, sin `to`. ✖ No *let me to find out.*
+
+## Comparativa 10 · Subir y bajar con go
+
+**Cuándo usar cada uno**
+
+| Verbo | Qué haces | Ejemplo clave |
+|---|---|---|
+| *go up* | subir (escaleras, un piso); aumentar | *I go up the stairs.* |
+| *go down* | bajar (escaleras, una calle); disminuir; caerse un sistema | *I go down the stairs.* |
+
+**Regla rápida:** `up` = arriba o más; `down` = abajo o menos. No se separan: el lugar va después (*go up the stairs*). Para subir a un carro o bus no uses *go up*: usa *get in / get on* (Comparativa 1).
+
+**Todos los significados**
+
+| Verbo | Significado | Ejemplo | Español |
+|---|---|---|---|
+| *go up* | subir (escaleras) | *I go up the stairs.* | Subo las escaleras. |
+| *go up* | subir (a un piso) | *I go up to the third floor.* | Subo al tercer piso. |
+| *go up* | aumentar | *Prices go up every year.* | Los precios suben cada año. |
+| *go down* | bajar (escaleras) | *I go down the stairs.* | Bajo las escaleras. |
+| *go down* | bajar (una calle) | *Go down this street.* | Baja por esta calle. |
+| *go down* | disminuir | *The temperature goes down at night.* | La temperatura baja por la noche. |
+| *go down* | caerse (sistema) | *The server goes down.* | El servidor se cae. |
+
+### Go up · 💬 Sin objeto · 🔒 con lugar · subir, aumentar
+- *I go up the stairs.* → Subo las escaleras.
+  - 🔤 ai gou ap dhe sterz
+  - 📝 ✔ `up` + lugar: el lugar va después. ✔ `the stairs` en plural. ✖ ❌ *I go the stairs up.* ✖ No es `get up` (levantarse).
+- *My daughter goes up to her room.* → Mi hija sube a su cuarto.
+  - 🔤 mai DO-ter gouz ap tu jer ruum
+  - 📝 ✔ 3ª persona con `es` (*goes*). ✔ `up to` + destino. ✖ ❌ *goes up her room.*
+- *I go up to the third floor.* → Subo al tercer piso.
+  - 🔤 ai gou ap tu dhe zerd flor
+  - 📝 ✔ `up to` + piso. ✔ Número ordinal: *third*. ✖ No *the floor three.*
+- *Prices go up every year.* → Los precios suben cada año.
+  - 🔤 PRAI-sez gou ap E-vri yiir
+  - 📝 ✔ Otro sentido: aumentar. ✔ `Prices` sin artículo: en general. ✔ Sujeto plural: *go* sin `s`. ✖ No `raise` (ese verbo necesita objeto).
+- *The rent is going up.* → El alquiler está subiendo.
+  - 🔤 dhe rent iz GOU-ing ap
+  - 📝 ✔ Presente continuo: un cambio que pasa ahora. ✔ `the rent`: el tuyo, el concreto. ✖ ❌ *The rent is up going.*
+
+### Go down · 💬 Sin objeto · 🔒 con lugar · bajar, disminuir, caerse (sistema)
+- *I go down the stairs.* → Bajo las escaleras.
+  - 🔤 ai gou daun dhe sterz
+  - 📝 ✔ `down` + lugar: el lugar va después. ✖ ❌ *I go the stairs down.* ✖ No es `put down` (dejar algo).
+- *Go down this street.* → Baja por esta calle.
+  - 🔤 gou daun dhis striit
+  - 📝 ✔ Imperativo: típico al dar direcciones. ✔ Sin "por": `down` ya lo dice. ✖ ❌ *Go down for this street.*
+- *The temperature goes down at night.* → La temperatura baja por la noche.
+  - 🔤 dhe TEM-pre-cher gouz daun at nait
+  - 📝 ✔ Otro sentido: disminuir. ✔ 3ª persona con `es` (*goes*). ✔ `at night` sin artículo. ✖ No *in the night.*
+- *The server goes down.* → El servidor se cae.
+  - 🔤 dhe SER-ver gouz daun
+  - 📝 ✔ Otro sentido: dejar de funcionar (sistema, web, app). ✖ Sin "se". ✖ No *falls* (eso es caerse físicamente).
+- *The site went down yesterday.* → La web se cayó ayer.
+  - 🔤 dhe sait went daun YES-ter-dei
+  - 📝 ✔ Pasado irregular: *go → went*. ✔ Tiempo al final. ✖ No *goed.*
 
 ## Sin comparación
 
@@ -1349,3 +1435,55 @@ Estos verbos no se confunden con otros de la lista.
 - *My phone runs out of battery.* → A mi teléfono se le acaba la batería.
   - 🔤 mai foun ranz aut ev BAE-te-rii
   - 📝 ✔ Sujeto cosa con `s`. ✔ *Battery* sin artículo. ✖ No *my phone runs out the battery.*
+
+### Go ahead · 💬 Sin objeto · 🔒 *go ahead with* · adelante, seguir adelante con, ir delante
+- *Go ahead.* → Adelante.
+  - 🔤 gou e-JED
+  - 📝 ✔ Imperativo para dar permiso. ✔ Sin objeto. ✖ ❌ *Go ahead you.*
+- *Can I ask a question? — Sure, go ahead.* → ¿Puedo hacer una pregunta? — Claro, adelante.
+  - 🔤 kaen ai aesk e KUES-chen — shur, gou e-JED
+  - 📝 ✔ Respuesta típica en reuniones. ✔ `ask a question`, no *make*. ✖ ❌ *make a question.*
+- *We go ahead with the plan.* → Seguimos adelante con el plan.
+  - 🔤 wii gou e-JED widh dhe plaen
+  - 📝 ✔ `go ahead with` + cosa = seguir con algo decidido. ✖ ❌ *go ahead the plan.*
+- *My manager goes ahead with the release.* → Mi jefe sigue adelante con el lanzamiento.
+  - 🔤 mai MAE-ni-yer gouz e-JED widh dhe ri-LIIS
+  - 📝 ✔ 3ª persona con `es` (*goes*). ✔ `with` se mantiene. ✖ ❌ *goes ahead the release.*
+- *You go ahead, I'll catch up.* → Ve tú adelante, yo te alcanzo.
+  - 🔤 yuu gou e-JED, ail kaech ap
+  - 📝 ✔ Otro sentido: ir delante. ✔ `I'll` = *I will*, decisión ahora. ✔ `catch up` = alcanzar. ✖ Sin "te" en inglés.
+
+### Wrap up · ✂️ Separable · 💬 sin objeto · terminar, cerrar (reunión), envolver
+- *I wrap up the meeting.* → Cierro la reunión.
+  - 🔤 ai raep ap dhe MII-ting
+  - 📝 ✔ Separable. ✔ La `w` no suena: se lee "rap". ✔ `wrap up` = terminar de forma ordenada, más que *finish*.
+- *I wrap the meeting up.* → Cierro la reunión.
+  - 🔤 ai raep dhe MII-ting ap
+  - 📝 ✔ Objeto en medio. ✖ No es obligatorio con un sustantivo.
+- *I wrap it up.* → Lo termino.
+  - 🔤 ai raep it ap
+  - 📝 ✔ Con pronombre va siempre en medio. ✖ ❌ *wrap up it.*
+- *Let's wrap up.* → Terminemos.
+  - 🔤 lets raep ap
+  - 📝 ✔ Sin objeto. ✔ `Let's` + verbo base. ✔ Frase típica al final de una reunión. ✖ No *let's to wrap up.*
+- *I wrap up the gift for my daughter.* → Envuelvo el regalo para mi hija.
+  - 🔤 ai raep ap dhe gift for mai DO-ter
+  - 📝 ✔ Otro sentido: envolver. ✔ `for` + persona = para quién. ✖ Sin `a` personal.
+
+### Out of · 🧩 Preposición (no es phrasal verb) · salir de, sin, fuera de, de cada
+> No es un phrasal verb: es una preposición de dos palabras. Va con muchos verbos (*get out of*, *run out of*) y también sola delante de un sustantivo.
+- *I get out of the car.* → Me bajo del carro.
+  - 🔤 ai guet aut ev dhe kaar
+  - 📝 ✔ `out of` + lugar = salir desde dentro. ✔ `of` es obligatorio delante del lugar. ✖ ❌ *get out the car.* ✖ Sin lugar no lleva `of`: *I get out.*
+- *We're out of milk.* → Nos quedamos sin leche.
+  - 🔤 wiir aut ev milk
+  - 📝 ✔ `be out of` + cosa = ya no queda. ✔ *Milk* sin artículo: incontable. ✖ ❌ *We're out milk.* ✖ Parecido a *run out of*, pero aquí ya se acabó.
+- *The elevator is out of order.* → El ascensor no funciona.
+  - 🔤 dhi E-le-vei-ter iz aut ev OR-der
+  - 📝 ✔ `out of order` = averiado. ✔ Otras frases fijas: *out of office* (fuera de la oficina), *out of stock* (agotado), *out of time* (sin tiempo). ✖ No es "fuera de orden".
+- *Three out of ten people work from home.* → Tres de cada diez personas trabajan desde casa.
+  - 🔤 zrii aut ev ten PII-pel werk fram joum
+  - 📝 ✔ Número + `out of` + número = proporción (de cada). ✔ `people` es plural: *work* sin `s`. ✖ ❌ *three of ten.*
+- *My daughter makes a house out of boxes.* → Mi hija hace una casa con cajas.
+  - 🔤 mai DO-ter meiks e jaus aut ev BAK-sez
+  - 📝 ✔ `make` + cosa + `out of` + material = hacer algo con. ✔ 3ª persona con `s` (*makes*). ✔ *with boxes* también es correcto; `out of` deja más claro que las cajas son el material.
