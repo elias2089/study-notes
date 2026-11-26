@@ -56,6 +56,7 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 - Meet up · 💬 Sin objeto · juntarse, quedar
 - Hang out · 💬 Sin objeto · 🔒 *hang out with* · pasar el rato, juntarse, estar (en un lugar)
 - Drop by · 🔒 No separable · pasar de visita
+- Go out · 💬 Sin objeto · 🔒 *go out with* · salir (a divertirse), salir con alguien, apagarse
 
 **Comparativa 7 · Cuentas y configuración**
 - Log in · 💬 Sin objeto · entrar, iniciar sesión
@@ -80,6 +81,7 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 - Look around · 💬 Sin objeto · 🔒 con lugar · echar un vistazo, mirar alrededor
 - Look like · 🔒 No separable · parecerse a, parecer que
 - Find out · ✂️ Separable (se usa poco: *find it out*) · averiguar, enterarse, descubrir
+- Figure out · ✂️ Separable · resolver, entender, descubrir (pensando)
 
 **Comparativa 10 · Subir y bajar con go**
 - Go up · 💬 Sin objeto · 🔒 con lugar · subir, aumentar
@@ -91,6 +93,10 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 - Go ahead · 💬 Sin objeto · 🔒 *go ahead with* · adelante, seguir adelante con, ir delante
 - Wrap up · ✂️ Separable · 💬 sin objeto · terminar, cerrar (reunión), envolver
 - Out of · 🧩 Preposición (no es phrasal verb) · salir de, sin, fuera de, de cada
+- Lean on · 🔒 No separable · apoyarse en, contar con alguien
+- Hang in there · 🧩 Expresión fija (no se usa *hang in* solo) · aguanta, no te rindas
+- So far · 🧩 Expresión de tiempo (no es phrasal verb) · hasta ahora, por ahora
+- Out of the box · 🧩 Expresión (no es phrasal verb) · listo para usar, original
 
 ## Comparativa 1 · Subir y bajar de transporte
 
@@ -676,8 +682,9 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 | *meet up* | juntarse con alguien | Quedaron los dos. |
 | *hang out* | pasar el rato con alguien | Sin plan concreto, relajado. |
 | *drop by* | pasar de visita | Improvisado, de paso. |
+| *go out* | salir a divertirte (cine, cena, fiesta) | Sales de casa por un plan. |
 
-**Regla rápida:** te esperan → *show up*. Quedaron → *meet up*. Ya están juntos y pasan el rato → *hang out*. Pasas de paso → *drop by*. *Drop in* es sinónimo de *drop by.*
+**Regla rápida:** te esperan → *show up*. Quedaron → *meet up*. Ya están juntos y pasan el rato → *hang out*. Pasas de paso → *drop by*. Sales de casa a divertirte → *go out*. *Drop in* es sinónimo de *drop by.*
 
 **Todos los significados**
 
@@ -691,6 +698,9 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 | *hang out* | pasar el rato con alguien | *I hang out with my friends.* | Paso el rato con mis amigos. |
 | *hang out* | estar (en un lugar) | *The kids hang out at the park.* | Los niños pasan el rato en el parque. |
 | *drop by* | pasar de visita | *I drop by my mother's house.* | Paso por la casa de mi madre. |
+| *go out* | salir (a divertirse) | *We go out on Fridays.* | Salimos los viernes. |
+| *go out* | salir con alguien (pareja) | *She's going out with my friend.* | Ella está saliendo con mi amigo. |
+| *go out* | apagarse (luz, fuego) | *The lights went out.* | Se fue la luz. |
 
 ### Show up · 💬 Sin objeto · llegar, aparecer
 - *I show up at 8.* → Llego a las 8.
@@ -759,6 +769,23 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 - *Drop by whenever you want.* → Pasa cuando quieras.
   - 🔤 drap bai juen-E-ver yuu waant
   - 📝 ✔ Imperativo: sin sujeto. ✔ `whenever` + presente simple. ✖ No *you will want.*
+
+### Go out · 💬 Sin objeto · 🔒 *go out with* · salir (a divertirse), salir con alguien, apagarse
+- *We go out on Fridays.* → Salimos los viernes.
+  - 🔤 wii gou aut aan FRAI-deiz
+  - 📝 ✔ Sin objeto. ✔ `on` + día en plural = todos los viernes. ✖ No es `get out` (salir de un lugar o del carro).
+- *I go out with my wife for dinner.* → Salgo a cenar con mi esposa.
+  - 🔤 ai gou aut widh mai waif for DI-ner
+  - 📝 ✔ `go out with` + persona. ✔ `for` + comida = para qué sales. ✔ También se dice *go out to dinner*.
+- *She's going out with my friend.* → Ella está saliendo con mi amigo.
+  - 🔤 shiiz GOU-ing aut widh mai frend
+  - 📝 ✔ Otro sentido: tener una relación. ✔ Presente continuo: relación actual. ✖ ❌ *going out my friend.*
+- *The lights went out.* → Se fue la luz.
+  - 🔤 dhe laits went aut
+  - 📝 ✔ Otro sentido: apagarse (luz, fuego). ✔ Pasado irregular: *go → went*. ✖ Sin "se".
+- *Do you want to go out tonight?* → ¿Quieres salir esta noche?
+  - 🔤 du yuu waant tu gou aut tu-NAIT
+  - 📝 ✔ `want to` + verbo base. ✔ `tonight` sin preposición. ✖ No *this night.*
 
 ## Comparativa 7 · Cuentas y configuración
 
@@ -965,8 +992,9 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 | *look around* | miras sin buscar nada concreto | `around` = alrededor | En tiendas: *I'm just looking around* |
 | *look like* | algo o alguien se parece a otra cosa | `like` = como | + sustantivo o + oración: *It looks like rain* |
 | *find out* | averiguas, te enteras o descubres | `out` = sacar a la luz | Ya llegaste a la respuesta |
+| *figure out* | resuelves o entiendes algo pensando | `out` = sacar la solución | Lo razonas tú; con *find out* te dan el dato |
 
-**Contraste clave:** *look at* (miro lo que está frente a mí), *look for* (busco lo que no veo), *look up* (busco un dato) y *find out* (averiguo y ya lo sé). *Look like* no es mirar: es parecerse.
+**Contraste clave:** *look at* (miro lo que está frente a mí), *look for* (busco lo que no veo), *look up* (busco un dato) y *find out* (averiguo y ya lo sé). *Look like* no es mirar: es parecerse. *Figure out* = lo resuelves tú pensando; *find out* = te enteras por otra persona o fuente.
 
 **Todos los significados**
 
@@ -990,6 +1018,9 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
 | *find out* | averiguar | *I find out the result tomorrow.* | Averiguo el resultado mañana. |
 | *find out* | enterarse | *She finds out about the party.* | Ella se entera de la fiesta. |
 | *find out* | descubrir | *I find out the truth.* | Descubro la verdad. |
+| *figure out* | resolver | *I figure out the problem.* | Resuelvo el problema. |
+| *figure out* | descubrir (pensando) | *We need to figure out why it fails.* | Tenemos que descubrir por qué falla. |
+| *figure out* | entender a alguien | *I can't figure him out.* | No logro entenderlo. |
 
 ### Look at · 🔒 No separable · mirar, revisar
 - *I look at the photo.* → Miro la foto.
@@ -1161,6 +1192,23 @@ https://elias2089.github.io/study-notes/listen-phrasal.html
   - 🔤 let mii faind aut
   - 📝 ✔ *Let* + persona + verbo base, sin `to`. ✖ No *let me to find out.*
 
+### Figure out · ✂️ Separable · resolver, entender, descubrir (pensando)
+- *I figure out the problem.* → Resuelvo el problema.
+  - 🔤 ai FI-guier aut dhe PRA-blem
+  - 📝 ✔ Separable. ✔ `figure out` = encontrar la solución pensando. ✖ No es `find out` (enterarse por otra persona).
+- *I figure it out.* → Lo resuelvo.
+  - 🔤 ai FI-guier it aut
+  - 📝 ✔ Con pronombre va siempre en medio. ✖ ❌ *figure out it.*
+- *We need to figure out why it fails.* → Tenemos que descubrir por qué falla.
+  - 🔤 wii niid tu FI-guier aut wai it feilz
+  - 📝 ✔ Después de `figure out` el orden es de oración afirmativa: *why* + sujeto + verbo. ✔ `need to` + verbo base. ✖ ❌ *why does it fail.*
+- *My daughter figures out the puzzle.* → Mi hija resuelve el rompecabezas.
+  - 🔤 mai DO-ter FI-guierz aut dhe PA-zel
+  - 📝 ✔ 3ª persona con `s` (*figures*). ✔ `the puzzle`: el concreto. ✔ También: *figures the puzzle out.*
+- *I can't figure him out.* → No logro entenderlo.
+  - 🔤 ai kaent FI-guier jim aut
+  - 📝 ✔ Otro sentido: entender a una persona. ✔ `can't` + verbo base. ✔ Pronombre en medio. ✖ ❌ *figure out him.*
+
 ## Comparativa 10 · Subir y bajar con go
 
 **Cuándo usar cada uno**
@@ -1307,3 +1355,74 @@ Estos verbos no se confunden con otros de la lista.
 - *My daughter makes a house out of boxes.* → Mi hija hace una casa con cajas.
   - 🔤 mai DO-ter meiks e jaus aut ev BAK-sez
   - 📝 ✔ `make` + cosa + `out of` + material = hacer algo con. ✔ 3ª persona con `s` (*makes*). ✔ *with boxes* también es correcto; `out of` deja más claro que las cajas son el material.
+
+### Lean on · 🔒 No separable · apoyarse en, contar con alguien
+- *I lean on the wall.* → Me apoyo en la pared.
+  - 🔤 ai liin aan dhe wol
+  - 📝 ✔ Verbo + preposición: no se separa. ✔ `on` + superficie. ✖ Sin "me" reflexivo. ✖ ❌ *lean the wall on.*
+- *My daughter leans on me when she's tired.* → Mi hija se apoya en mí cuando está cansada.
+  - 🔤 mai DO-ter liinz aan mii juen shiiz TAI-erd
+  - 📝 ✔ 3ª persona con `s` (*leans*). ✔ `me` después de `on`. ✔ `when` + presente. ✖ Sin "se".
+- *You can lean on me.* → Puedes contar conmigo.
+  - 🔤 yuu kaen liin aan mii
+  - 📝 ✔ Otro sentido: apoyo emocional. ✔ `can` + verbo base. ✖ No *count with me* (se dice *count on me*).
+- *I lean on my team.* → Me apoyo en mi equipo.
+  - 🔤 ai liin aan mai tiim
+  - 📝 ✔ Contar con la ayuda de alguien. ✔ `my team`: el tuyo. ✖ Sin "me" reflexivo.
+- *Don't lean on the table.* → No te apoyes en la mesa.
+  - 🔤 dount liin aan dhe TEI-bel
+  - 📝 ✔ Imperativo negativo: `Don't` + verbo base. ✖ Sin "te" reflexivo.
+
+### Hang in there · 🧩 Expresión fija (no se usa *hang in* solo) · aguanta, no te rindas
+> *Hang in* casi nunca va solo: la expresión completa es *hang in there*. Se usa para animar a alguien en un momento difícil.
+- *Hang in there!* → ¡Aguanta! / ¡Ánimo!
+  - 🔤 jaeng in dher
+  - 📝 ✔ Imperativo para animar. ✔ `there` es parte fija de la frase. ✖ ❌ *Hang in!*
+- *Hang in there, it's almost Friday.* → Aguanta, ya casi es viernes.
+  - 🔤 jaeng in dher, its OL-moust FRAI-dei
+  - 📝 ✔ `it's` + `almost` + día. ✖ ❌ *almost is Friday.*
+- *I'm hanging in there.* → Ahí voy, aguantando.
+  - 🔤 aim JAENG-ing in dher
+  - 📝 ✔ Respuesta típica a *How are you?* cuando las cosas van difíciles. ✔ Presente continuo.
+- *My friend is hanging in there.* → Mi amigo está aguantando.
+  - 🔤 mai frend iz JAENG-ing in dher
+  - 📝 ✔ 3ª persona: `is`. ✔ Presente continuo: ahora. ✖ Sin "se".
+- *Just hang in there a little longer.* → Solo aguanta un poco más.
+  - 🔤 dyast jaeng in dher e LI-tel LON-guer
+  - 📝 ✔ `just` = solo. ✔ `a little longer` = un poco más de tiempo. ✖ No *a little more* (eso es más cantidad).
+
+### So far · 🧩 Expresión de tiempo (no es phrasal verb) · hasta ahora, por ahora
+> Va casi siempre con el *present perfect* (*have* + participio), porque habla de algo que empezó antes y llega hasta hoy.
+- *So far, so good.* → Hasta ahora, todo bien.
+  - 🔤 sou far, sou gud
+  - 📝 ✔ Frase fija: no se cambia. ✔ Respuesta típica cuando te preguntan cómo va algo.
+- *I haven't had any problems so far.* → Hasta ahora no he tenido problemas.
+  - 🔤 ai JAE-vent jaed E-ni PRA-blemz sou far
+  - 📝 ✔ Present perfect: llega hasta ahora. ✔ `any` en negativas. ✖ ❌ *I didn't have problems so far.*
+- *So far, the project is going well.* → Por ahora el proyecto va bien.
+  - 🔤 sou far, dhe PRA-yekt iz GOU-ing wel
+  - 📝 ✔ Al inicio, con coma. ✔ Presente continuo: algo en curso. ✖ No *the project goes sure* (traducción literal de "va seguro").
+- *We've finished three features so far.* → Hasta ahora hemos terminado tres funcionalidades.
+  - 🔤 wiiv FI-nisht zrii FII-cherz sou far
+  - 📝 ✔ `we've` = *we have*. ✔ Present perfect + cantidad. ✖ ❌ *Until now we finished three features.*
+- *How's it going so far?* → ¿Cómo va hasta ahora?
+  - 🔤 jauz it GOU-ing sou far
+  - 📝 ✔ `how's` = *how is*. ✔ Pregunta típica en el trabajo. ✖ ❌ *How is going so far?* (falta `it`).
+
+### Out of the box · 🧩 Expresión (no es phrasal verb) · listo para usar, original
+> En tecnología, *out of the box* = funciona sin configurar nada. Para "pensar de forma original" la frase fija es *think outside the box*.
+- *It works out of the box.* → Funciona sin configurar nada.
+  - 🔤 it werks aut ev dhe baks
+  - 📝 ✔ Uso tech: listo desde el primer momento. ✔ 3ª persona con `s` (*works*). ✖ No es "fuera de la caja".
+- *This library supports TypeScript out of the box.* → Esta librería soporta TypeScript de serie.
+  - 🔤 dhis LAI-bre-ri se-PORTS TAIP-skript aut ev dhe baks
+  - 📝 ✔ La expresión va al final de la oración. ✔ 3ª persona con `s` (*supports*).
+- *The app doesn't work out of the box.* → La app no funciona sin configurarla.
+  - 🔤 dhi aep DA-zent werk aut ev dhe baks
+  - 📝 ✔ Negativa: `doesn't` + verbo base. ✖ ❌ *doesn't works.*
+- *We need to think outside the box.* → Tenemos que pensar de forma original.
+  - 🔤 wii niid tu zink aut-SAID dhe baks
+  - 📝 ✔ Frase fija para creatividad: `outside`, no `out of` (aunque a veces se oye). ✔ `need to` + verbo base.
+- *She has some out-of-the-box ideas.* → Ella tiene ideas originales.
+  - 🔤 shii jaez sam aut-ev-dhe-baks ai-DII-ez
+  - 📝 ✔ Delante de un sustantivo funciona como adjetivo y lleva guiones. ✔ 3ª persona: `has`. ✖ ❌ *ideas out-of-the-box.*

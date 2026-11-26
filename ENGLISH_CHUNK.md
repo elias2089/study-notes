@@ -315,3 +315,12 @@ Junta dos o tres bloques para hablar con fluidez:
 - *The thing is, I don't have enough time this week.* → Lo que pasa es que no tengo suficiente tiempo esta semana.
 - *The thing is, the API changed and nobody told us.* → Lo que pasa es que la API cambió y nadie nos avisó.
 - *The thing is, our daughter goes to bed at eight.* → Lo que pasa es que nuestra hija se acuesta a las ocho.
+
+### Bloque 21 · What would you recommend [for + sustantivo / if + sujeto + verbo]?
+- **¿Para qué se usa?** Para pedir una recomendación en un restaurante, una tienda, el trabajo o con amigos (equivale a "¿Qué me recomiendas?"). Variantes: *Do you have any recommendations for...?* y, en un restaurante, *What's good here?*
+- **Estructura gramatical:** *Would* lo hace más amable que *What do you recommend?* Después va `for` + sustantivo o `if` + oración normal. *Recommend* no lleva "me" directo: ❌ *What do you recommend me?* → ✅ *What would you recommend?* / *Can you recommend something to me?*
+
+**Ejemplos**
+- *What would you recommend for dinner?* → ¿Qué me recomiendas para cenar?
+- *What would you recommend if I want to learn React?* → ¿Qué me recomiendas si quiero aprender React?
+- *Do you have any recommendations for a good series?* → ¿Me recomiendas alguna serie buena?
